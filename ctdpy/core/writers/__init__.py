@@ -5,8 +5,6 @@ Created on Thu Jul 05 11:38:08 2018
 @author: a002028
 """
 
-"""
-"""
 from .standard_formats import StandardCTDWriter
 from .txt_writer import TxtWriter
 from .with_style import StyleSheet

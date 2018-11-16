@@ -125,7 +125,7 @@ class SeaBirdSMHI(BaseReader, CNVreader, SeriesHandler):
 """
 
 
-class Metadata(DataFrameHandler):
+class MetadataSMHI(BaseReader, DataFrameHandler):
     #FIXME come on.. new name!
     """
     """

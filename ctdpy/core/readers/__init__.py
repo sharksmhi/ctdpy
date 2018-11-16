@@ -8,7 +8,8 @@ Created on Thu Jul 05 11:38:08 2018
 """
 """
 from .cnv_reader import CNVreader
-from .seabird_smhi import SeaBirdSMHI
+from .seabird_smhi import SeaBirdSMHI, MetadataSMHI
+from .seabird_umsc import SeaBirdUMSC
 from .file_handlers import BaseFileHandler
 #from .data_handlers import DataFrameHandler, SeriesHandler, BaseReader
 

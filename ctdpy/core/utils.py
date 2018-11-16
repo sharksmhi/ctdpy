@@ -9,6 +9,8 @@ import numpy as np
 from fnmatch import fnmatch
 from datetime import datetime
 import shutil
+from trollsift.parser import globify, parse
+
 
 def check_path(path):
     """
@@ -168,9 +170,9 @@ def get_file_list_match(file_list, match_string):
 
 def get_filebase(path, pattern):
     """
-    Get the end of *path* of same length as *pattern*.
-    :param path:
-    :param pattern:
+    Get the end of *path* of same length as *pattern*
+    :param path: str
+    :param pattern: str
     :return:
     """
     # A pattern can include directories
@@ -217,6 +219,25 @@ def get_object_path(obj):
     :return:
     """
     return obj.__module__ + "." + obj.__name__
+
+
+def match_filenames(filenames, pattern):
+    """
+    Get the filenames matching *pattern*
+    :param filenames: list
+    :param pattern: str
+    :return:
+    """
+    matching = []
+    for filename in filenames:
+        if type(pattern) == list:
+            for p in pattern:
+                if fnmatch(get_filebase(filename, p), globify(p)):
+                    matching.append(filename)
+        else:
+            if fnmatch(get_filebase(filename, pattern), globify(pattern)):
+                matching.append(filename)
+    return matching
 
 
 def is_sequence(arg):

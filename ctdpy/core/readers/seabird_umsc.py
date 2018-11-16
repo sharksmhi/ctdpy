@@ -14,6 +14,7 @@ sys.path.append("..")
 import config
 from core.data_handlers import DataFrameHandler
 from core.data_handlers import SeriesHandler
+from core.data_handlers import BaseReader
 from core.readers.cnv_reader import CNVreader
 from core import ctd_profile
 
@@ -23,7 +24,7 @@ from core import ctd_profile
 """
 
 
-class CNVSeaBirdUMSC(CNVreader, SeriesHandler):
+class SeaBirdUMSC(BaseReader, CNVreader, SeriesHandler):
     """
     """
 

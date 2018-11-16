@@ -8,7 +8,7 @@ reader:
 
 file_types:
     rawctd:
-        file_reader: !!python/name:core.readers.cnv_seabird.CNVSeaBirdUMSC ''
+        file_reader: !!python/name:core.readers.seabird_umsc.SeaBirdUMSC ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
         file_names: []
         

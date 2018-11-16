@@ -291,8 +291,8 @@ class BaseReader(object):
     """
     Base structure for data readers
     """
-    def __init__(self):
-        pass
+    def __init__(self, settings):
+        super().__init__(settings)
 
     def get_data(self, filenames=None, add_low_resolution_data=False):
         """

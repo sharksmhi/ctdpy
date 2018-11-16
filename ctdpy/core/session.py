@@ -7,66 +7,16 @@ Created on Mon Sep 17 10:50:49 2018
 """
 import os
 import sys
-sys.path.append("..")
 import config
+import core
 from fnmatch import fnmatch
-from trollsift.parser import globify, parse
 from pprint import pprint
 from core.writers.profile_plot import ProfilePlot
 from core.archive_handler import Archive
 from core.utils import get_file_list_based_on_suffix
+from core import utils
 import time
-
-# def load_reader(reader_configs, **reader_kwargs):
-#     """
-#     Import and setup the reader from *reader_info*
-#     :param reader_configs:
-#     :param reader_kwargs:
-#     :return:
-#     """
-#     reader_info = read_reader_config(reader_configs)
-#     reader_instance = reader_info['reader'](config_files=reader_configs,
-#                                             **reader_kwargs)
-#     return reader_instance
-
-
-# def get_file_types(datasets):
-#     file_types = set([])
-#     for dset in datasets.items():
-#         file_types.add(dset['file_type'])
-#     return file_types
-
-
-def get_filebase(path, pattern):
-    """
-    Get the end of *path* of same length as *pattern*
-    :param path: str
-    :param pattern: str
-    :return:
-    """
-    # A pattern can include directories
-    tail_len = len(pattern.split(os.path.sep))
-    return os.path.join(*path.split(os.path.sep)[-tail_len:])
-
-
-def match_filenames(filenames, pattern):
-    """
-    Get the filenames matching *pattern*
-    :param filenames: list
-    :param pattern: str
-    :return:
-    """
-    matching = []
-    for filename in filenames:
-        if type(pattern) == list:
-            for p in pattern:
-                if fnmatch(get_filebase(filename, p), globify(p)):
-                    matching.append(filename)
-        else:
-            if fnmatch(get_filebase(filename, pattern), globify(pattern)):
-                matching.append(filename)
-    return matching
-
+sys.path.append("..")
 
 class Session(object):
     """
@@ -111,8 +61,7 @@ class Session(object):
         #TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
-            filenames = self.readers[dataset]['file_names']
-            data = self.readers[dataset]['reader'].get_data(filenames=filenames,
+            data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
             #TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefor do this elsewhere
@@ -132,7 +81,7 @@ class Session(object):
         :return: list of matched filenames
         """
         if 'file_patterns' in file_type:
-            filenames_matched = match_filenames(filenames, file_type['file_patterns'])
+            filenames_matched = utils.match_filenames(filenames, file_type['file_patterns'])
         elif 'file_suffix' in file_type:
             filenames_matched = get_file_list_based_on_suffix(filenames, file_type['file_suffix'])
         else:
@@ -167,7 +116,6 @@ class Session(object):
         """
         template_handler = self.load_template_handler(template)
         for fid in data:
-            print(data[fid].keys())
             template_handler.append_to_template(data[fid][resolution])
 
         template_handler.convert_formats()
