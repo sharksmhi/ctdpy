@@ -1,0 +1,7 @@
+writer:
+    name: zip
+    description: Zipfile Writer
+    writer: !!python/name:core.writers.zip_writer.ZipWriter ''
+    filename: 'standard_file_name.zip'
+    compress: DEFLATE
+    zlevel: 6

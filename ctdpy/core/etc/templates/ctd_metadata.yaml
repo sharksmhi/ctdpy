@@ -1,0 +1,14 @@
+template:
+    description: Excel template for CTD metadata (SMHI Datahost settings)
+    name: ctd_metadata
+    explanation_sheetname: 'Förklaring'
+    metadata_sheetname: Metadata
+    sensorinfo_sheetname: Sensorinfo
+    information_sheetname: Information
+    header_row: 2
+    suffix: '*.xlsx'
+    file_path: /templates/Leveransmall CTD.xlsx
+    reader: !!python/name:core.readers.xlsx_reader.load_excel ''
+
+template_handler: 
+    !!python/name:core.templates.xlsx_phyche.PhyCheTemplateHandler ''

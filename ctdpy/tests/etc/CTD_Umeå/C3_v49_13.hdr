@@ -1,0 +1,288 @@
+* Sea-Bird SBE 9 Data File:
+* FileName = C:\CTD\CTD 2013\v49\C3_v49_13.hex
+* Software Version Seasave V 7.20c
+* Temperature SN = 031560
+* Conductivity SN = 3667
+* Number of Bytes Per Scan = 34
+* Number of Voltage Words = 5
+* Number of Scans Averaged by the Deck Unit = 1
+* System UpLoad Time = Dec 03 2013 12:34:41
+* NMEA Latitude = 62 39.17 N
+* NMEA Longitude = 018 57.25 E
+* NMEA UTC (Time) = Dec 03 2013  11:23:52
+* Store Lat/Lon Data = Append to Every Scan
+** Ship: Swedish Coast Guard, KBV 005
+** Cruise 28: Year 2013: week 49
+** Station:  C3
+** Johanna Crona
+** Katarina Konradsson
+** Anna Palmbo Bergman
+# nquan = 13
+# nvalues = 192                         
+# units = specified
+# name 0 = prDM: Pressure, Digiquartz [db]
+# name 1 = c0S/m: Conductivity [S/m]
+# name 2 = t090C: Temperature [ITS-90, deg C]
+# name 3 = haardtC: Fluorescence, Dr. Haardt Chlorophyll a
+# name 4 = haardtY: Fluorescence, Dr. Haardt Yellow Sub
+# name 5 = par: PAR/Irradiance, Biospherical/Licor
+# name 6 = spar: SPAR/Surface Irradiance
+# name 7 = dz/dtM: Descent Rate [m/s]
+# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+# name 9 = density00: Density [density, Kg/m^3]
+# name 10 = sal00: Salinity, Practical [PSU]
+# name 11 = depFM: Depth [fresh water, m], lat = 62.6528
+# name 12 = nbin: number of scans per bin
+# span 0 =      3.000,    194.000       
+# span 1 =   0.563764,   0.651405       
+# span 2 =     2.0601,     3.9234       
+# span 3 =     0.2692,     0.6152       
+# span 4 =     1.4841,     1.6361       
+# span 5 = 9.5871e-02, 6.3409e+01       
+# span 6 = 2.3158e+02, 2.4602e+02       
+# span 7 =      0.089,      1.457       
+# span 8 =    4.33226,    8.29354      
+# span 9 =  1004.1952,  1005.9352      
+# span 10 =     5.2554,     6.2516      
+# span 11 =      3.059,    197.825      
+# span 12 =         14,         74      
+# interval = decibars: 1                
+# start_time = Dec 03 2013 11:23:52 [NMEA time, header]
+# bad_flag = -9.990e-29
+# <Sensors count="13" >
+#   <sensor Channel="1" >
+#     <!-- Frequency 0, Temperature -->
+#     <TemperatureSensor SensorID="55" >
+#       <SerialNumber>031560</SerialNumber>
+#       <CalibrationDate>28 03 2012</CalibrationDate>
+#       <UseG_J>1</UseG_J>
+#       <A>3.68014586e-003</A>
+#       <B>5.99698500e-004</B>
+#       <C>1.48884338e-005</C>
+#       <D>2.21092752e-006</D>
+#       <F0_Old>6154.270</F0_Old>
+#       <G>4.83053936e-003</G>
+#       <H>6.74170874e-004</H>
+#       <I>2.63774994e-005</I>
+#       <J>2.13665017e-006</J>
+#       <F0>1000.000</F0>
+#       <Slope>1.00000000</Slope>
+#       <Offset>0.0000</Offset>
+#     </TemperatureSensor>
+#   </sensor>
+#   <sensor Channel="2" >
+#     <!-- Frequency 1, Conductivity -->
+#     <ConductivitySensor SensorID="3" >
+#       <SerialNumber>3667</SerialNumber>
+#       <CalibrationDate>5 mars 2013</CalibrationDate>
+#       <UseG_J>1</UseG_J>
+#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+#       <SeriesR>0.0000</SeriesR>
+#       <CellConst>2000.0000</CellConst>
+#       <ConductivityType>0</ConductivityType>
+#       <Coefficients equation="0" >
+#         <A>1.09493628e-005</A>
+#         <B>4.02375818e-001</B>
+#         <C>-4.04299137e+000</C>
+#         <D>-1.75063211e-004</D>
+#         <M>4.2</M>
+#         <CPcor>0.00000000e+000</CPcor>
+#       </Coefficients>
+#       <Coefficients equation="1" >
+#         <G>-1.02950725e+001</G>
+#         <H>1.43621737e+000</H>
+#         <I>-2.72660518e-003</I>
+#         <J>2.87645566e-004</J>
+#         <CPcor>-9.57000000e-008</CPcor>
+#         <CTcor>3.2500e-006</CTcor>
+#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+#         <WBOTC>0.00000000e+000</WBOTC>
+#       </Coefficients>
+#       <Slope>1.00000000</Slope>
+#       <Offset>0.00000</Offset>
+#     </ConductivitySensor>
+#   </sensor>
+#   <sensor Channel="3" >
+#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+#     <PressureSensor SensorID="45" >
+#       <SerialNumber>0338</SerialNumber>
+#       <CalibrationDate>30 mars 2012</CalibrationDate>
+#       <C1>-2.338299e+004</C1>
+#       <C2>3.925573e-001</C2>
+#       <C3>7.187320e-003</C3>
+#       <D1>3.548500e-002</D1>
+#       <D2>0.000000e+000</D2>
+#       <T1>3.006219e+001</T1>
+#       <T2>5.806762e-005</T2>
+#       <T3>4.060490e-006</T3>
+#       <T4>1.129620e-009</T4>
+#       <Slope>0.99989000</Slope>
+#       <Offset>-0.06730</Offset>
+#       <T5>0.000000e+000</T5>
+#       <AD590M>1.133000e-002</AD590M>
+#       <AD590B>-8.294640e+000</AD590B>
+#     </PressureSensor>
+#   </sensor>
+#   <sensor Channel="4" >
+#     <!-- A/D voltage 0, Fluorometer, Dr. Haardt Chlorophyll a -->
+#     <FluoroDrHaardtChloroSensor SensorID="8" >
+#       <SerialNumber>6040</SerialNumber>
+#       <CalibrationDate>Not available</CalibrationDate>
+#       <A0>0.00000000</A0>
+#       <A1>4.00000000</A1>
+#       <B0>-100.00000000</B0>
+#       <B1>40.00000000</B1>
+#       <!-- Gain range: -->
+#       <!--    0 = Output Voltage Level -->
+#       <!--    1 = Modulo Bit -->
+#       <!--    2 = None -->
+#       <GainRange>2</GainRange>
+#       <!-- Modulo bit to use: -->
+#       <!--     0 means 8 -->
+#       <!--     1 means 9 -->
+#       <!--     2 means 10 -->
+#       <!--     3 means 11 -->
+#       <!--     4 means None -->
+#       <ModuloBit>4</ModuloBit>
+#     </FluoroDrHaardtChloroSensor>
+#   </sensor>
+#   <sensor Channel="5" >
+#     <!-- A/D voltage 1, Fluorometer, Dr. Haardt Yellow Sub. -->
+#     <FluoroDrHaardtYellowSensor SensorID="10" >
+#       <SerialNumber>6040</SerialNumber>
+#       <CalibrationDate>Not available</CalibrationDate>
+#       <A0>0.00000000</A0>
+#       <A1>4.00000000</A1>
+#       <B0>-100.00000000</B0>
+#       <B1>40.00000000</B1>
+#       <!-- Gain range: -->
+#       <!--    0 = Output Voltage Level -->
+#       <!--    1 = Modulo Bit -->
+#       <!--    2 = None -->
+#       <GainRange>0</GainRange>
+#       <!-- Modulo bit to use: -->
+#       <!--     0 means 8 -->
+#       <!--     1 means 9 -->
+#       <!--     2 means 10 -->
+#       <!--     3 means 11 -->
+#       <!--     4 means None -->
+#       <ModuloBit>4</ModuloBit>
+#     </FluoroDrHaardtYellowSensor>
+#   </sensor>
+#   <sensor Channel="6" >
+#     <!-- A/D voltage 2, PAR/Irradiance, Biospherical/Licor -->
+#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+#       <SerialNumber>70306</SerialNumber>
+#       <CalibrationDate>13/09/2010</CalibrationDate>
+#       <M>1.00000000</M>
+#       <B>0.00000000</B>
+#       <CalibrationConstant>10548523207.00000000</CalibrationConstant>
+#       <Multiplier>1.00000000</Multiplier>
+#       <Offset>0.00000000</Offset>
+#     </PAR_BiosphericalLicorChelseaSensor>
+#   </sensor>
+#   <sensor Channel="7" >
+#     <!-- A/D voltage 3, Free -->
+#   </sensor>
+#   <sensor Channel="8" >
+#     <!-- A/D voltage 4, Altimeter -->
+#     <AltimeterSensor SensorID="0" >
+#       <SerialNumber>Bentos</SerialNumber>
+#       <CalibrationDate> 031105</CalibrationDate>
+#       <ScaleFactor>15.000</ScaleFactor>
+#       <Offset>0.000</Offset>
+#     </AltimeterSensor>
+#   </sensor>
+#   <sensor Channel="9" >
+#     <!-- A/D voltage 5, User Polynomial -->
+#     <UserPolynomialSensor SensorID="61" >
+#       <SerialNumber>409</SerialNumber>
+#       <CalibrationDate>2011-05-26</CalibrationDate>
+#       <SensorName>Aanderaa</SensorName>
+#       <A0>0.00000000</A0>
+#       <A1>100.00000000</A1>
+#       <A2>0.00000000</A2>
+#       <A3>0.00000000</A3>
+#     </UserPolynomialSensor>
+#   </sensor>
+#   <sensor Channel="10" >
+#     <!-- A/D voltage 6, Oxygen, SBE 43 -->
+#     <OxygenSensor SensorID="38" >
+#       <SerialNumber>2235</SerialNumber>
+#       <CalibrationDate>31/1 2012</CalibrationDate>
+#       <Use2007Equation>1</Use2007Equation>
+#       <CalibrationCoefficients equation="0" >
+#         <!-- Coefficients for Owens-Millard equation. -->
+#         <Boc>0.0000</Boc>
+#         <Soc>0.0000e+000</Soc>
+#         <offset>0.0000</offset>
+#         <Pcor>0.00e+000</Pcor>
+#         <Tcor>0.0000</Tcor>
+#         <Tau>0.0</Tau>
+#       </CalibrationCoefficients>
+#       <CalibrationCoefficients equation="1" >
+#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+#         <Soc>4.7580e-001</Soc>
+#         <offset>-0.4904</offset>
+#         <A>-2.9590e-003</A>
+#         <B> 1.0767e-004</B>
+#         <C>-1.8768e-006</C>
+#         <D0> 2.5826e+000</D0>
+#         <D1> 1.92630e-004</D1>
+#         <D2>-4.64800e-002</D2>
+#         <E> 3.6000e-002</E>
+#         <Tau20> 1.8500</Tau20>
+#         <H1>-3.3000e-002</H1>
+#         <H2> 5.0000e+003</H2>
+#         <H3> 1.4500e+003</H3>
+#       </CalibrationCoefficients>
+#     </OxygenSensor>
+#   </sensor>
+#   <sensor Channel="11" >
+#     <!-- A/D voltage 7, Free -->
+#   </sensor>
+#   <sensor Channel="12" >
+#     <!-- SPAR voltage, Unavailable -->
+#   </sensor>
+#   <sensor Channel="13" >
+#     <!-- SPAR voltage, SPAR/Surface Irradiance -->
+#     <SPAR_Sensor SensorID="51" >
+#       <SerialNumber></SerialNumber>
+#       <CalibrationDate></CalibrationDate>
+#       <ConversionFactor>1707.56000000</ConversionFactor>
+#       <RatioMultiplier>1.00000000</RatioMultiplier>
+#     </SPAR_Sensor>
+#   </sensor>
+# </Sensors>
+# datcnv_date = Dec 10 2013 09:37:46, 7.22.2 [datcnv_vars = 11]
+# datcnv_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.hex C:\CTD\Setup\UMF_SBE911_130305.con
+# datcnv_skipover = 0
+# datcnv_ox_hysteresis_correction = no
+# datcnv_ox_tau_correction = yes
+# filter_date = Dec 10 2013 09:37:50, 7.22.2
+# filter_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.cnv
+# filter_low_pass_tc_A = 0.030
+# filter_low_pass_tc_B = 0.150
+# filter_low_pass_A_vars = c0S/m spar sbeox0ML/L
+# filter_low_pass_B_vars = prDM dz/dtM
+# celltm_date = Dec 10 2013 09:37:51, 7.22.2
+# celltm_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.cnv
+# celltm_alpha = 0.0300, 0.0000
+# celltm_tau = 7.0000, 0.0000
+# celltm_temp_sensor_use_for_cond = primary, 
+# loopedit_date = Dec 10 2013 09:37:53, 7.22.2
+# loopedit_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.cnv
+# loopedit_minVelocity = 0.100                                                                                            
+# loopedit_surfaceSoak: do not remove                                                                                     
+# loopedit_excl_bad_scans = yes
+# Derive_date = Dec 10 2013 09:37:54, 7.22.2 [derive_vars = 3]
+# Derive_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.cnv C:\CTD\Setup\UMF_SBE911_130305.con
+# binavg_date = Dec 10 2013 09:37:55, 7.22.2
+# binavg_in = C:\CTD\SBE_911plus\Temp\c3_v49_13.cnv
+# binavg_bintype = decibars
+# binavg_binsize = 1
+# binavg_excl_bad_scans = yes
+# binavg_skipover = 0
+# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+# file_type = ascii
+*END*

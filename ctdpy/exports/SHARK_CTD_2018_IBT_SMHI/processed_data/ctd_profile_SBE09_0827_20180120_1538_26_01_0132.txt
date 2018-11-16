@@ -1,0 +1,890 @@
+//FORMAT=CTD
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-01-20
+//METADATA;STIME;15:38:33
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;26DA
+//METADATA;CRUISE_NO;2
+//METADATA;SERNO;0132
+//METADATA;STATN;36N Hanstholm
+//METADATA;LATIT;5745.85
+//METADATA;LONGI;00843.68
+//METADATA;POSYS;GPS
+//METADATA;WADEP;50
+//METADATA;COMNT_VISIT;TEST_SERIE
+//METADATA;ADD_SMP;PHYCHE
+//METADATA;SMTYP;CTD
+//METADATA;INSTRUMENT_ID;SBE1044
+//METADATA;REFSK_SMP;HC-C-C2
+//METADATA;REV_DATE;2017-12-07
+//METADATA;FILE_NAME;SBE09_0827_20180120_1538_26_01_0132.cnv
+//METADATA;WINDIR;5
+//METADATA;WINSP;9.3
+//METADATA;AIRTEMP;7.6
+//METADATA;AIRPRES;1013
+//METADATA;WEATH;1
+//METADATA;CLOUD;2
+//METADATA;WAVES;3
+//METADATA;ICEOB;0
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;RANA;UNCERT;FREQ
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0-XXXm;0.01% Typical Accuracy;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;mS/m;;Seabird;SBE 4C;3941;2014-07-17;0.0 to 7.0 S/m;± 0.0003 S/m;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;mS/m;;Seabird;SBE 4C;3943;2014-07-17;0.0 to 7.0 S/m;± 0.0003 S/m;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C;;Seabird;SBE 3plus;5351;2014-07-16;-5.0 to +35 °C;± 0.001 °C;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C;;Seabird;SBE 3plus;5355;2014-07-16;-5.0 to +35 °C;± 0.001 °C;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;Seabird;SBE 43;0732;2016-11-12;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;Seabird;SBE 43;1243;2016-10-28;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 ·sec);;Biospherical;QSP-2000;70374;2014-09-25;1.4x10-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;WET Labs;ECO FLNTURTD;2288;2014-08-19*;0-50 µg/I;0.025 µg/I;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;WET Labs;ECO FLNTURTD;2288;2014-08-19*;0-25 NTU;0.013 NTU;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;WET Labs;ECO FL(RT)D eller FL(RT)?;2290;2011-06-24*;0-230 ppb;0.03 ppb;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;Teledyne;PSA-916;53447;2014-09-10;1-100 m;2.5 cm;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;;;;;;
+//INFORMATION;Information om instrumenthantering, datahantering; processering, beskrivning, kvalitetskontroll etc, kommentarer på datakvalité m.m.
+//INFORMATION;(förslagsvis på engelska för att att nå ut till fler användare av data)
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing the data is plotted and visually quality controled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = D:\CTD_SBE911\DAT\26DA.2018.1.32.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.21d
+//INSTRUMENT_METADATA;* Temperature SN = 034757
+//INSTRUMENT_METADATA;* Conductivity SN = 041844
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 48
+//INSTRUMENT_METADATA;* Number of Voltage Words = 5
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* Append System Time to Every Scan
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 20 2018 15:38:36
+//INSTRUMENT_METADATA;* NMEA Latitude = 57 45.85 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 008 43.68 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 20 2018  15:38:39
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1g
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* surface PAR voltage added to scan
+//INSTRUMENT_METADATA;* A/D offset = 4
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Ship: DANA
+//INSTRUMENT_METADATA;** Average sound velocity: 1482.37 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Wed, 24 Jan 2018 11:40:06 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20182601-0132
+//INSTRUMENT_METADATA;** 36N Hanstholm
+//INSTRUMENT_METADATA;** Operator:Ronny Sørensen
+//INSTRUMENT_METADATA;** Cruise: 01/2018
+//INSTRUMENT_METADATA;* System UTC = Jan 20 2018 15:38:36
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 445                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = chloroflTC0: Chlorophyll, Turner Cyclops [ug/l]
+//INSTRUMENT_METADATA;# name 12 = cpar: CPAR/Corrected Irradiance [%]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Licor
+//INSTRUMENT_METADATA;# name 14 = spar: SPAR/Surface Irradiance
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 57.7642
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 57.7642
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =         83,      16843       
+//INSTRUMENT_METADATA;# span 1 =      1.500,    223.500       
+//INSTRUMENT_METADATA;# span 2 =     5.5632,     8.8911       
+//INSTRUMENT_METADATA;# span 3 =     5.5627,     8.8875       
+//INSTRUMENT_METADATA;# span 4 =    -0.2796,     0.0773       
+//INSTRUMENT_METADATA;# span 5 =   3.214142,   3.696503       
+//INSTRUMENT_METADATA;# span 6 =   3.214349,   3.696015       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =     4.9923,     6.3817       
+//INSTRUMENT_METADATA;# span 9 =     5.0772,     6.5240       
+//INSTRUMENT_METADATA;# span 10 =       2.72,      10.30      
+//INSTRUMENT_METADATA;# span 11 =     0.0146,     0.0290      
+//INSTRUMENT_METADATA;# span 12 = 2.4610e-11, 4.0679e-08      
+//INSTRUMENT_METADATA;# span 13 = 1.0000e-12, 1.0000e-12      
+//INSTRUMENT_METADATA;# span 14 = 2.0258e+00, 4.0625e+00      
+//INSTRUMENT_METADATA;# span 15 =    32.9182,    35.1262      
+//INSTRUMENT_METADATA;# span 16 =    32.9214,    35.1332      
+//INSTRUMENT_METADATA;# span 17 =    -0.4255,     0.1045      
+//INSTRUMENT_METADATA;# span 18 =    25.9604,    27.3510      
+//INSTRUMENT_METADATA;# span 19 =    25.9629,    27.3531      
+//INSTRUMENT_METADATA;# span 20 =      1.486,    221.313      
+//INSTRUMENT_METADATA;# span 21 =      1.489,    221.637      
+//INSTRUMENT_METADATA;# span 22 =     -0.001,      1.010      
+//INSTRUMENT_METADATA;# span 23 =    1470.39,    1487.54      
+//INSTRUMENT_METADATA;# span 24 =    1470.39,    1487.55      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 20 2018 15:38:39 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="15" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034757</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>15-oct-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.36480332e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40708330e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.13153474e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.76030244e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>041844</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-mar-2015</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-4.07049452e+000</G>
+//INSTRUMENT_METADATA;#         <H>4.91457184e-001</H>
+//INSTRUMENT_METADATA;#         <I>-7.13894846e-004</I>
+//INSTRUMENT_METADATA;#         <J>5.95731493e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>99642</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24 mar 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-3.996472e+004</C1>
+//INSTRUMENT_METADATA;#       <C2>-3.075628e-001</C2>
+//INSTRUMENT_METADATA;#       <C3>1.368070e-002</C3>
+//INSTRUMENT_METADATA;#       <D1>3.340900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.021249e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-3.901627e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>4.421500e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.935030e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00005000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>1.20190</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.288420e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.036910e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034605</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>18-jul-2012</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.40794731e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.44967661e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.20659403e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.83741481e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>043188</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>26-sep-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.04719478e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.56695139e+000</H>
+//INSTRUMENT_METADATA;#         <I>5.23671563e-005</I>
+//INSTRUMENT_METADATA;#         <J>7.04749166e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430381</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>140117</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.3990e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5192</offset>
+//INSTRUMENT_METADATA;#         <A>-3.5409e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.2884e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.0351e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430682</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16 april 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.2370e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5263</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3823e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.0967e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.5348e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.0900</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Fluorometer, Turner Cyclops -->
+//INSTRUMENT_METADATA;#     <Fluorometer SensorID="68" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2101854</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000e+000</Offset>
+//INSTRUMENT_METADATA;#       <!-- 1 = C, Chlorophyll -->
+//INSTRUMENT_METADATA;#       <!-- 2 = R, Rhodamine -->
+//INSTRUMENT_METADATA;#       <!-- 3 = F, Fluorescein -->
+//INSTRUMENT_METADATA;#       <!-- 4 = P, Phycocyanin -->
+//INSTRUMENT_METADATA;#       <!-- 5 = E, Phycoerythrin -->
+//INSTRUMENT_METADATA;#       <!-- 6 = U, CDOM -->
+//INSTRUMENT_METADATA;#       <!-- 7 = O, CrudeOil -->
+//INSTRUMENT_METADATA;#       <!-- 8 = B, OpticalBrightness -->
+//INSTRUMENT_METADATA;#       <!-- 9 = T, Turbidity -->
+//INSTRUMENT_METADATA;#       <!-- 10 = G, Refined Fuels -->
+//INSTRUMENT_METADATA;#       <MeasuredParameter>1</MeasuredParameter>
+//INSTRUMENT_METADATA;#     </Fluorometer>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4755</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10072014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>5102040816.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.29326200</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber></SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>150.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="14" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, Unavailable -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="15" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, SPAR/Surface Irradiance -->
+//INSTRUMENT_METADATA;#     <SPAR_Sensor SensorID="51" >
+//INSTRUMENT_METADATA;#       <SerialNumber>20482</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>07012014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ConversionFactor>1663.25486182</ConversionFactor>
+//INSTRUMENT_METADATA;#       <RatioMultiplier>1.00000000</RatioMultiplier>
+//INSTRUMENT_METADATA;#     </SPAR_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Jan 24 2018 12:39:47, 7.26.6.28 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.hex C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Jan 24 2018 12:39:50, 7.26.6.28
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L chloroflTC0 cpar par spar
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Jan 24 2018 12:39:53, 7.26.6.28
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = c0S/m 0.073, c1S/m 0.073, sbeox1ML/L 3.000, sbeox0ML/L 3.000                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Jan 24 2018 12:39:55, 7.26.6.28
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Jan 24 2018 12:39:57, 7.26.6.28
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: do not remove                                                                                     
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Jan 24 2018 12:39:59, 7.26.6.28 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Jan 24 2018 12:40:01, 7.26.6.28
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Jan 24 2018 12:40:04, 7.26.6.28
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_0827_20180120_1538_26_01_0132.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [mS/m]	Q_CNDC_CTD	CNDC2_CTD [mS/m]	Q_CNDC2_CTD	SALT_CTD [psu]	Q_SALT_CTD	SALT2_CTD [psu]	Q_SALT2_CTD	TEMP_CTD [°C]	Q_TEMP_CTD	TEMP2_CTD [°C]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 ·sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	1.489		1.500		3.21414		3.21435		32.9188		32.9216		5.5632		5.5627		6.4968		6.2927		1.000e-12								5.83		0.212		83		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	1.986		2.000		3.21418		3.21436		32.9187		32.9215		5.5635		5.5627		6.5076		6.2628		1.000e-12								10.30		0.366		259		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	2.482		2.500		3.21423		3.21444		32.9185		32.9214		5.5640		5.5634		6.5126		6.2529		1.000e-12								9.96		0.445		399		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	2.978		3.000		3.21449		3.21464		32.9203		32.9224		5.5649		5.5645		6.5240		6.2217		1.000e-12								9.96		0.728		463		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	3.475		3.500		3.21449		3.21477		32.9199		32.9237		5.5651		5.5644		6.4972		6.1012		1.000e-12								9.96		0.788		477		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	3.971		4.000		3.21437		3.21469		32.9188		32.9231		5.5646		5.5639		6.4887		6.2039		1.000e-12								9.96		0.635		493		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	4.467		4.500		3.21427		3.21454		32.9182		32.9218		5.5638		5.5632		6.5173		6.3641		1.000e-12								9.96		0.271		561		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	4.964		5.000		3.21443		3.21465		32.9195		32.9219		5.5641		5.5640		6.5142		6.3451		1.000e-12								9.96		0.251		640		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	5.460		5.500		3.21461		3.21489		32.9206		32.9241		5.5648		5.5644		6.5165		6.3103		1.000e-12								9.96		0.299		682		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	5.957		6.000		3.21442		3.21464		32.9189		32.9223		5.5639		5.5632		6.5144		6.3292		1.000e-12								9.96		0.324		719		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	6.453		6.500		3.21454		3.21474		32.9198		32.9223		5.5642		5.5640		6.5125		6.3806		1.000e-12								9.96		0.244		775		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	6.949		7.000		3.21518		3.21498		32.9235		32.9234		5.5676		5.5654		6.5106		6.3274		1.000e-12								9.96		0.497		824		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	7.446		7.500		3.21564		3.21527		32.9251		32.9256		5.5709		5.5662		6.5087		6.3142		1.000e-12								9.96		0.594		843		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	7.942		8.000		3.21555		3.21548		32.9244		32.9257		5.5704		5.5683		6.5097		6.3297		1.000e-12								9.96		0.420		868		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	8.438		8.500		3.21522		3.21547		32.9230		32.9261		5.5678		5.5675		6.5100		6.3783		1.000e-12								9.96		0.631		995		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	8.935		9.000		3.21580		3.21571		32.9260		32.9257		5.5711		5.5705		6.5073		6.3817		1.000e-12								9.96		0.640		1012		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	9.431		9.500		3.21655		3.21616		32.9294		32.9286		5.5762		5.5725		6.5161		6.3738		1.000e-12								9.96		0.482		1033		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	9.928		10.000		3.21705		3.21688		32.9318		32.9318		5.5792		5.5773		6.5136		6.3542		1.000e-12								9.96		0.444		1122		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	10.424		10.500		3.21882		3.21775		32.9390		32.9303		5.5921		5.5886		6.5110		6.3623		1.000e-12								9.96		0.722		1162		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	10.920		11.000		3.21930		3.21891		32.9442		32.9396		5.5921		5.5923		6.5131		6.3662		1.000e-12								9.96		0.663		1177		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	11.417		11.500		3.22736		3.22226		32.9739		32.9480		5.6547		5.6223		6.4946		6.3669		1.000e-12								9.96		0.389		1235		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	11.913		12.000		3.24473		3.22984		33.0625		32.9770		5.7645		5.6800		6.4320		6.3086		1.000e-12								9.96		0.289		1327		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	12.409		12.500		3.27300		3.24307		33.2165		32.9924		5.9318		5.8165		6.4390		6.2412		1.000e-12								9.96		0.438		1383		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	12.906		13.000		3.33349		3.27935		33.5062		33.1103		6.3255		6.1127		6.3820		6.3058		1.000e-12								9.96		0.699		1400		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	13.402		13.500		3.38171		3.32625		33.6958		33.2703		6.6769		6.4841		6.3329		6.2890		1.000e-12								9.96		0.674		1415		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	13.898		14.000		3.38216		3.35961		33.7261		33.5450		6.6511		6.5812		6.3077		6.2336		1.000e-12								9.96		0.397		1464		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	14.394		14.500		3.38254		3.37873		33.7427		33.7039		6.6382		6.6347		6.3020		6.1709		1.000e-12								9.96		0.336		1554		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	14.890		15.000		3.38375		3.38078		33.7610		33.7334		6.6330		6.6277		6.2990		6.1848		1.000e-12								9.96		0.312		1629		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	15.386		15.500		3.38931		3.38329		33.8032		33.7512		6.6524		6.6375		6.2963		6.1886		1.000e-12								9.96		0.513		1664		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	15.882		16.000		3.39433		3.38763		33.8349		33.7812		6.6763		6.6556		6.2894		6.1799		1.000e-12								9.96		0.421		1687		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	16.379		16.500		3.39866		3.39532		33.8644		33.8360		6.6946		6.6860		6.2695		6.1668		1.000e-12								9.96		0.317		1757		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	16.875		17.000		3.40976		3.39883		33.9510		33.8598		6.7309		6.7009		6.2863		6.1510		1.000e-12								9.96		0.578		1792		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	17.371		17.500		3.42277		3.40714		34.0244		33.9101		6.8015		6.7427		6.2952		6.1667		1.000e-12								9.96		0.532		1811		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	17.867		18.000		3.44035		3.42107		34.1136		33.9792		6.9067		6.8279		6.2338		6.1564		1.000e-12								9.96		0.498		1891		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	18.363		18.500		3.46107		3.44032		34.1912		34.0444		7.0577		6.9759		6.2229		6.1278		1.000e-12								9.96		0.658		1954		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	18.859		19.000		3.46165		3.45334		34.2197		34.1462		7.0352		7.0173		6.2271		6.1307		1.000e-12								9.96		0.352		1987		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	19.355		19.500		3.46383		3.46271		34.2414		34.2294		7.0371		7.0369		6.1941		6.1056		1.000e-12								9.96		0.495		2049		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	19.851		20.000		3.45762		3.45976		34.2334		34.2398		6.9764		6.9936		6.2174		6.0902		1.000e-12								9.96		0.611		2065		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	20.347		20.500		3.45510		3.45585		34.2455		34.2381		6.9362		6.9519		6.2326		6.1137		1.000e-12								9.96		0.420		2105		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	20.843		21.000		3.45975		3.45523		34.2581		34.2306		6.9746		6.9523		6.2113		6.1591		1.000e-12								9.96		0.591		2194		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	21.339		21.500		3.44810		3.45502		34.2569		34.2616		6.8470		6.9186		6.2459		6.1074		1.000e-12								9.96		0.423		2233		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	21.834		22.000		3.45116		3.44664		34.3007		34.2691		6.8366		6.8183		6.2531		6.1077		1.000e-12								9.96		0.750		2314		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	22.330		22.500		3.49045		3.45780		34.4282		34.2119		7.1413		6.9988		6.2051		6.1332		1.000e-12								9.96		0.790		2327		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	22.826		23.000		3.50700		3.48327		34.4473		34.3223		7.3035		7.1685		6.1563		6.1320		1.000e-12								9.96		0.622		2343		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	23.322		23.500		3.50908		3.50359		34.4609		34.4244		7.3124		7.2888		6.1322		6.0551		1.000e-12								9.96		0.297		2435		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	23.818		24.000		3.50823		3.50821		34.4667		34.4582		7.2970		7.3054		6.1294		6.0292		1.000e-12								9.96		0.345		2502		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	24.314		24.500		3.50794		3.50750		34.4756		34.4646		7.2846		7.2909		6.1542		6.0298		1.000e-12								9.96		0.309		2537		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	24.810		25.000		3.50942		3.50775		34.4862		34.4730		7.2900		7.2850		6.1389		6.0445		1.000e-12								9.96		0.225		2587		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	25.306		25.500		3.50970		3.50878		34.4878		34.4810		7.2912		7.2880		6.1192		6.0411		1.000e-12								9.96		0.342		2633		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	25.802		26.000		3.51555		3.51056		34.5182		34.4898		7.3245		7.2984		6.0956		5.9938		1.000e-12								9.96		0.326		2666		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	26.298		26.500		3.54343		3.51861		34.5841		34.4969		7.5623		7.3791		6.0701		5.9521		1.000e-12								9.96		0.271		2708		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	26.793		27.000		3.59505		3.55531		34.6868		34.5357		8.0195		7.7400		5.9572		5.9491		1.000e-12								9.96		0.241		2764		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	27.289		27.500		3.63938		3.62934		34.7828		34.6589		8.4008		8.4182		5.7984		5.7741		1.000e-12								9.96		0.412		2856		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	27.785		28.000		3.64881		3.64162		34.7913		34.7302		8.4933		8.4778		5.7733		5.7306		1.000e-12								9.96		0.523		2875		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	28.281		28.500		3.65420		3.64530		34.8047		34.7525		8.5373		8.4945		5.7506		5.6800		1.000e-12								9.96		0.350		2900		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	28.777		29.000		3.65894		3.65205		34.8116		34.7722		8.5810		8.5470		5.7459		5.6686		1.000e-12								9.96		0.308		2976		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	29.273		29.500		3.67280		3.66350		34.8378		34.7758		8.7029		8.6661		5.7065		5.6588		1.000e-12								9.96		0.414		3008		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	29.769		30.000		3.68137		3.67215		34.8593		34.8165		8.7726		8.7173		5.6672		5.6269		1.000e-12								9.96		0.255		3042		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	30.264		30.500		3.68786		3.68539		34.8709		34.8493		8.8302		8.8256		5.6478		5.5675		1.000e-12								9.96		0.324		3135		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	30.760		31.000		3.69045		3.68815		34.8767		34.8551		8.8516		8.8490		5.6392		5.5618		1.000e-12								9.96		0.409		3161		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	31.256		31.500		3.69135		3.68959		34.8776		34.8634		8.8602		8.8557		5.6330		5.5569		1.000e-12								9.96		0.240		3210		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	31.752		32.000		3.69203		3.69087		34.8779		34.8675		8.8668		8.8650		5.6400		5.5677		1.000e-12								9.96		0.323		3268		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	32.248		32.500		3.69223		3.69122		34.8785		34.8703		8.8682		8.8657		5.6257		5.5372		1.000e-12								9.96		0.353		3302		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	32.744		33.000		3.69226		3.69139		34.8800		34.8734		8.8667		8.8642		5.6275		5.5425		1.000e-12								9.96		0.361		3335		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	33.240		33.500		3.69238		3.69170		34.8854		34.8797		8.8623		8.8607		5.6259		5.5185		1.000e-12								9.96		0.298		3406		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	33.735		34.000		3.69243		3.69208		34.8861		34.8825		8.8618		8.8617		5.6277		5.5128		1.000e-12								9.96		0.533		3467		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	34.231		34.500		3.69268		3.69240		34.8882		34.8831		8.8621		8.8643		5.6281		5.5222		1.000e-12								9.96		0.485		3489		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	34.727		35.000		3.69449		3.69376		34.8937		34.8875		8.8757		8.8741		5.6321		5.5458		1.000e-12								9.96		0.248		3528		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	35.223		35.500		3.69587		3.69557		34.8966		34.8953		8.8873		8.8853		5.6251		5.5377		1.000e-12								9.96		0.261		3598		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	35.719		36.000		3.69650		3.69602		34.8991		34.8976		8.8911		8.8875		5.6291		5.5602		1.000e-12								9.96		0.234		3653		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	36.215		36.500		3.69453		3.69581		34.8953		34.9057		8.8737		8.8768		5.6233		5.5369		1.000e-12								9.96		0.435		3697		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	36.711		37.000		3.69102		3.69134		34.8957		34.8997		8.8355		8.8349		5.6278		5.5311		1.000e-12								9.96		0.389		3722		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	37.206		37.500		3.69101		3.69068		34.9017		34.9005		8.8291		8.8269		5.6288		5.5376		1.000e-12								9.96		0.343		3806		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	37.702		38.000		3.69397		3.69358		34.9105		34.9071		8.8515		8.8508		5.6318		5.5365		1.000e-12								9.96		0.453		3838		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	38.198		38.500		3.68829		3.68985		34.8994		34.9065		8.8019		8.8114		5.6546		5.5619		1.000e-12								9.95		0.270		3881		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	38.694		39.000		3.67805		3.68423		34.8762		34.9196		8.7156		8.7378		5.6772		5.5855		1.000e-12								9.96		0.431		3925		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	39.190		39.500		3.66011		3.66636		34.8529		34.8911		8.5467		8.5750		5.7398		5.6025		1.000e-12								9.96		0.377		3970		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	39.686		40.000		3.64750		3.65346		34.8300		34.8871		8.4341		8.4405		5.7979		5.6576		1.000e-12								9.96		0.602		4052		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	40.181		40.500		3.62880		3.63671		34.7926		34.8970		8.2705		8.2504		5.8354		5.6841		1.000e-12								9.96		0.532		4070		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	40.677		41.000		3.60323		3.61121		34.7643		34.8063		8.0229		8.0668		5.9092		5.7814		1.000e-12								9.96		0.249		4121		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	41.173		41.500		3.59299		3.60131		34.7561		34.7878		7.9204		7.9783		5.9549		5.8359		1.000e-12								9.96		0.254		4185		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	41.669		42.000		3.58352		3.59552		34.7385		34.7907		7.8353		7.9127		5.9647		5.8355		1.000e-12								9.95		0.356		4227		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	42.165		42.500		3.57578		3.58449		34.7298		34.7708		7.7599		7.8132		5.9773		5.8357		1.000e-12								9.96		0.315		4258		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	42.661		43.000		3.57003		3.57395		34.7236		34.7450		7.7036		7.7246		5.9942		5.9245		1.000e-12								9.96		0.304		4339		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	43.156		43.500		3.56799		3.57147		34.7223		34.7436		7.6825		7.6989		6.0029		5.9055		1.000e-12								9.96		0.334		4373		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	43.652		44.000		3.56802		3.56997		34.7203		34.7383		7.6845		7.6877		6.0181		5.9366		1.000e-12								9.96		0.288		4435		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	44.148		44.500		3.55680		3.56458		34.7043		34.7529		7.5786		7.6145		6.0278		5.9241		1.000e-12								9.95		0.522		4473		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	44.644		45.000		3.55254		3.55974		34.6960		34.7303		7.5403		7.5843		6.0381		5.9289		1.000e-12								9.95		0.440		4494		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	45.140		45.500		3.53798		3.54720		34.6681		34.7318		7.4096		7.4463		6.0991		6.0044		1.000e-12								9.96		0.461		4585		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	45.636		46.000		3.52658		3.53549		34.6651		34.7134		7.2883		7.3371		6.1263		5.9975		1.000e-12								9.96		0.605		4615		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	46.131		46.500		3.52158		3.53137		34.6526		34.7015		7.2459		7.3039		6.1552		6.0033		1.000e-12								9.96		0.400		4638		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	46.627		47.000		3.50951		3.51229		34.6482		34.6656		7.1184		7.1315		6.1990		6.0869		1.000e-12								9.95		0.310		4755		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	47.123		47.500		3.51200		3.51203		34.6551		34.6650		7.1384		7.1289		6.1839		6.0826		1.000e-12								9.95		0.474		4779		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	47.619		48.000		3.51295		3.51274		34.6555		34.6633		7.1482		7.1381		6.1860		6.1028		1.000e-12								9.95		0.476		4804		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	48.115		48.500		3.51358		3.51412		34.6579		34.6666		7.1524		7.1496		6.1842		6.1156		1.000e-12								9.96		0.368		4831		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	48.611		49.000		3.51462		3.51534		34.6606		34.6691		7.1608		7.1602		6.1808		6.1103		1.000e-12								9.95		0.351		4921		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	49.106		49.500		3.51469		3.51548		34.6604		34.6690		7.1614		7.1616		6.1825		6.1084		1.000e-12								9.95		0.596		4956		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	49.602		50.000		3.51474		3.51564		34.6606		34.6692		7.1616		7.1629		6.1793		6.1046		1.000e-12								9.95		0.508		4976		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	50.098		50.500		3.51484		3.51554		34.6610		34.6687		7.1620		7.1621		6.1813		6.0831		1.000e-12								9.96		0.275		5056		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	50.594		51.000		3.51519		3.51555		34.6616		34.6675		7.1651		7.1630		6.1853		6.0759		1.000e-12								9.96		0.369		5112		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	51.090		51.500		3.51514		3.51578		34.6617		34.6678		7.1642		7.1650		6.1780		6.0825		1.000e-12								9.95		0.339		5145		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	51.585		52.000		3.51471		3.51579		34.6610		34.6684		7.1600		7.1644		6.1813		6.0826		1.000e-12								9.95		0.320		5182		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	52.081		52.500		3.51452		3.51547		34.6611		34.6677		7.1575		7.1612		6.1832		6.0946		1.000e-12								9.96		0.322		5219		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	52.577		53.000		3.51453		3.51516		34.6612		34.6669		7.1573		7.1584		6.1804		6.0551		1.000e-12								9.96		0.227		5283		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	53.073		53.500		3.51363		3.51432		34.6596		34.6684		7.1488		7.1475		6.1761		6.0531		1.000e-12								9.95		0.405		5359		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	53.569		54.000		3.51318		3.51373		34.6607		34.6669		7.1425		7.1424		6.1871		6.0923		1.000e-12								9.95		0.392		5384		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	54.065		54.500		3.51339		3.51392		34.6609		34.6654		7.1443		7.1456		6.1894		6.0812		1.000e-12								9.96		0.204		5434		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	54.560		55.000		3.51373		3.51399		34.6621		34.6667		7.1466		7.1449		6.1894		6.0813		1.000e-12								9.96		0.270		5497		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	55.056		55.500		3.51401		3.51439		34.6626		34.6674		7.1489		7.1482		6.1904		6.0915		1.000e-12								9.95		0.397		5531		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	55.552		56.000		3.51432		3.51450		34.6636		34.6671		7.1510		7.1496		6.1887		6.0775		1.000e-12								9.95		0.308		5562		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	56.048		56.500		3.51529		3.51566		34.6660		34.6667		7.1589		7.1623		6.1913		6.0645		1.000e-12								9.95		0.249		5634		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	56.544		57.000		3.51788		3.51837		34.6711		34.6730		7.1819		7.1854		6.1600		6.0845		1.000e-12								9.95		0.225		5687		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	57.039		57.500		3.52077		3.52077		34.6775		34.6766		7.2068		7.2078		6.1535		6.0349		1.000e-12								9.95		0.324		5748		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	57.535		58.000		3.52187		3.52190		34.6793		34.6809		7.2168		7.2156		6.1551		6.0656		1.000e-12								9.95		0.279		5783		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	58.031		58.500		3.52249		3.52355		34.6815		34.6823		7.2211		7.2319		6.1545		6.0572		1.000e-12								9.95		0.267		5835		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	58.527		59.000		3.52429		3.52454		34.6845		34.6869		7.2375		7.2378		6.1513		6.0190		1.000e-12								9.95		0.405		5869		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	59.023		59.500		3.52444		3.52456		34.6854		34.6877		7.2380		7.2370		6.1487		6.0531		1.000e-12								9.95		0.277		5910		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	59.519		60.000		3.52437		3.52469		34.6853		34.6880		7.2370		7.2378		6.1389		6.0472		1.000e-12								9.95		0.351		6004		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	60.014		60.500		3.52469		3.52484		34.6861		34.6887		7.2395		7.2386		6.1372		6.0157		1.000e-12								9.95		0.403		6029		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	60.510		61.000		3.52470		3.52486		34.6860		34.6888		7.2395		7.2384		6.1415		6.0532		1.000e-12								9.95		0.232		6071		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	61.006		61.500		3.52475		3.52495		34.6860		34.6890		7.2398		7.2390		6.1454		6.0284		1.000e-12								9.95		0.295		6128		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	61.502		62.000		3.52481		3.52499		34.6860		34.6891		7.2401		7.2390		6.1468		6.0438		1.000e-12								9.95		0.243		6167		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	61.998		62.500		3.52494		3.52508		34.6867		34.6892		7.2406		7.2397		6.1410		6.0240		1.000e-12								9.95		0.308		6234		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	62.493		63.000		3.52506		3.52521		34.6871		34.6897		7.2413		7.2404		6.1398		6.0491		1.000e-12								9.95		0.521		6261		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	62.989		63.500		3.52519		3.52533		34.6877		34.6901		7.2419		7.2410		6.1415		6.0058		1.000e-12								9.95		0.437		6283		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	63.485		64.000		3.52523		3.52536		34.6879		34.6902		7.2419		7.2410		6.1355		6.0201		1.000e-12								9.95		0.437		6391		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	63.981		64.500		3.52536		3.52551		34.6885		34.6909		7.2424		7.2417		6.1350		6.0117		1.000e-12								9.95		0.636		6425		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	64.477		65.000		3.52543		3.52561		34.6888		34.6915		7.2427		7.2419		6.1363		5.9790		1.000e-12								9.95		0.567		6444		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	64.972		65.500		3.52548		3.52564		34.6888		34.6916		7.2429		7.2419		6.1345		6.0130		1.000e-12								9.95		0.282		6498		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	65.468		66.000		3.52553		3.52569		34.6890		34.6918		7.2431		7.2420		6.1403		6.0398		1.000e-12								9.95		0.271		6577		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	65.964		66.500		3.52555		3.52574		34.6889		34.6920		7.2431		7.2420		6.1399		6.0388		1.000e-12								9.95		0.367		6616		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	66.460		67.000		3.52526		3.52571		34.6895		34.6925		7.2392		7.2411		6.1414		6.0244		1.000e-12								9.95		0.436		6644		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	66.956		67.500		3.52521		3.52569		34.6895		34.6925		7.2383		7.2406		6.1435		6.0578		1.000e-12								9.95		0.319		6673		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	67.452		68.000		3.52528		3.52556		34.6897		34.6930		7.2386		7.2385		6.1404		6.0289		1.000e-12								9.95		0.284		6764		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	67.947		68.500		3.52528		3.52557		34.6897		34.6929		7.2385		7.2383		6.1364		6.0375		1.000e-12								9.95		0.343		6800		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	68.443		69.000		3.52518		3.52559		34.6901		34.6929		7.2367		7.2383		6.1397		6.0490		1.000e-12								9.95		0.309		6837		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	68.939		69.500		3.52506		3.52558		34.6909		34.6931		7.2343		7.2378		6.1332		6.0398		1.000e-12								9.95		0.222		6878		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	69.435		70.000		3.52515		3.52546		34.6907		34.6938		7.2352		7.2355		6.1301		6.0309		1.000e-12								9.95		0.275		6954		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	69.931		70.500		3.52582		3.52542		34.6922		34.6939		7.2408		7.2348		6.1397		6.0428		1.000e-12								9.95		0.323		6989		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	70.426		71.000		3.52611		3.52548		34.6925		34.6939		7.2435		7.2352		6.1313		6.0148		1.000e-12								9.95		0.267		7032		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	70.922		71.500		3.52629		3.52570		34.6928		34.6939		7.2449		7.2373		6.1284		6.0236		1.000e-12								9.95		0.335		7072		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	71.418		72.000		3.52641		3.52595		34.6930		34.6946		7.2458		7.2391		6.1345		6.0130		1.000e-12								9.96		0.256		7110		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	71.914		72.500		3.52582		3.52646		34.6913		34.6952		7.2407		7.2438		6.1397		6.0101		1.000e-12								9.95		0.300		7203		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	72.410		73.000		3.52548		3.52651		34.6914		34.6961		7.2366		7.2433		6.1394		6.0627		1.000e-12								9.95		0.494		7236		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	72.905		73.500		3.52593		3.52624		34.6920		34.6958		7.2407		7.2404		6.1418		5.9962		1.000e-12								9.95		0.528		7259		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	73.401		74.000		3.52593		3.52615		34.6920		34.6950		7.2405		7.2398		6.1386		6.0216		1.000e-12								9.95		0.357		7291		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	73.897		74.500		3.52544		3.52604		34.6910		34.6956		7.2359		7.2378		6.1326		6.0353		1.000e-12								9.95		0.406		7398		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	74.393		75.000		3.52548		3.52576		34.6911		34.6947		7.2360		7.2354		6.1320		5.9972		1.000e-12								9.95		0.514		7417		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	74.889		75.500		3.52615		3.52578		34.6924		34.6945		7.2417		7.2356		6.1338		5.9983		1.000e-12								9.95		0.372		7443		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	75.385		76.000		3.52573		3.52574		34.6918		34.6945		7.2376		7.2350		6.1485		6.0502		1.000e-12								9.95		0.215		7503		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	75.880		76.500		3.52557		3.52574		34.6917		34.6942		7.2356		7.2349		6.1468		6.0280		1.000e-12								9.95		0.207		7566		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	76.376		77.000		3.52542		3.52579		34.6923		34.6946		7.2332		7.2349		6.1426		6.0365		1.000e-12								9.95		0.383		7614		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	76.872		77.500		3.52498		3.52572		34.6916		34.6958		7.2288		7.2326		6.1500		6.0003		1.000e-12								9.95		0.514		7639		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	77.368		78.000		3.52443		3.52543		34.6915		34.6954		7.2226		7.2296		6.1529		6.0273		1.000e-12								9.95		0.379		7671		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	77.864		78.500		3.52403		3.52461		34.6906		34.6971		7.2190		7.2187		6.1418		6.0093		1.000e-12								9.95		0.642		7772		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	78.359		79.000		3.52381		3.52433		34.6906		34.6953		7.2164		7.2173		6.1442		5.9835		1.000e-12								9.95		0.716		7786		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	78.855		79.500		3.52385		3.52419		34.6908		34.6945		7.2163		7.2163		6.1458		6.0130		1.000e-12								9.95		0.554		7803		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	79.351		80.000		3.52391		3.52430		34.6908		34.6945		7.2167		7.2172		6.1559		6.0687		1.000e-12								9.95		0.308		7891		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	79.847		80.500		3.52398		3.52421		34.6909		34.6943		7.2170		7.2163		6.1555		6.0140		1.000e-12								9.95		0.356		7935		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	80.343		81.000		3.52414		3.52431		34.6912		34.6942		7.2183		7.2171		6.1407		6.0146		1.000e-12								9.95		0.249		7995		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	80.838		81.500		3.52421		3.52436		34.6913		34.6942		7.2187		7.2174		6.1416		6.0226		1.000e-12								9.95		0.402		8043		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	81.334		82.000		3.52450		3.52449		34.6919		34.6943		7.2210		7.2185		6.1503		6.0724		1.000e-12								9.95		0.461		8069		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	81.830		82.500		3.52465		3.52464		34.6923		34.6948		7.2220		7.2195		6.1472		6.0494		1.000e-12								9.95		0.328		8102		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	82.326		83.000		3.52473		3.52482		34.6925		34.6950		7.2224		7.2210		6.1388		5.9716		1.000e-12								9.95		0.436		8210		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	82.822		83.500		3.52484		3.52497		34.6929		34.6956		7.2229		7.2218		6.1384		6.0362		1.000e-12								9.95		0.508		8228		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	83.317		84.000		3.52501		3.52508		34.6931		34.6959		7.2245		7.2224		6.1387		6.0299		1.000e-12								9.95		0.308		8256		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	83.813		84.500		3.52513		3.52515		34.6936		34.6957		7.2249		7.2231		6.1359		6.0116		1.000e-12								9.95		0.238		8326		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	84.309		85.000		3.52537		3.52528		34.6941		34.6963		7.2269		7.2237		6.1448		6.0370		1.000e-12								9.95		0.264		8373		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	84.805		85.500		3.52610		3.52537		34.6958		34.6961		7.2329		7.2246		6.1437		6.0076		1.000e-12								9.95		0.299		8417		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	85.301		86.000		3.52660		3.52595		34.6972		34.6969		7.2366		7.2298		6.1453		6.0675		1.000e-12								9.95		0.364		8453		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	85.797		86.500		3.52679		3.52641		34.6975		34.6985		7.2382		7.2331		6.1402		6.0150		1.000e-12								9.95		0.282		8497		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	86.292		87.000		3.52688		3.52668		34.6976		34.6986		7.2388		7.2357		6.1260		6.0213		1.000e-12								9.95		0.464		8601		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	86.788		87.500		3.52717		3.52704		34.6988		34.6994		7.2405		7.2385		6.1287		6.0216		1.000e-12								9.95		0.626		8615		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	87.284		88.000		3.52787		3.52756		34.7004		34.7007		7.2463		7.2426		6.1317		5.9800		1.000e-12								9.95		0.512		8635		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	87.780		88.500		3.52831		3.52759		34.7012		34.7003		7.2501		7.2432		6.1307		6.0280		1.000e-12								9.95		0.249		8699		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	88.276		89.000		3.52881		3.52856		34.7024		34.7040		7.2540		7.2498		6.1160		6.0011		1.000e-12								9.95		0.347		8758		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	88.771		89.500		3.52897		3.52887		34.7027		34.7050		7.2553		7.2519		6.1186		5.9829		1.000e-12								9.95		0.390		8789		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	89.267		90.000		3.52914		3.52888		34.7032		34.7047		7.2564		7.2521		6.1262		5.9863		1.000e-12								9.95		0.302		8833		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	89.763		90.500		3.52930		3.52897		34.7036		34.7035		7.2575		7.2539		6.1148		6.0305		1.000e-12								9.95		0.507		8933		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	90.259		91.000		3.52963		3.52950		34.7044		34.7049		7.2600		7.2581		6.1185		5.9476		1.000e-12								9.95		0.679		8947		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	90.755		91.500		3.52987		3.52982		34.7048		34.7058		7.2620		7.2605		6.1174		5.9692		1.000e-12								9.95		0.640		8964		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	91.250		92.000		3.52991		3.52995		34.7046		34.7065		7.2625		7.2610		6.1201		6.0176		1.000e-12								9.95		0.387		9020		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	91.746		92.500		3.52991		3.53009		34.7045		34.7070		7.2623		7.2617		6.1207		5.9983		1.000e-12								9.95		0.502		9116		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	92.242		93.000		3.52996		3.53014		34.7048		34.7074		7.2623		7.2617		6.1203		5.9195		1.000e-12								9.95		0.629		9136		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	92.738		93.500		3.53005		3.53018		34.7049		34.7070		7.2629		7.2622		6.1180		5.9793		1.000e-12								9.95		0.619		9153		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	93.234		94.000		3.53008		3.53020		34.7048		34.7071		7.2630		7.2621		6.1197		6.0416		1.000e-12								9.95		0.434		9196		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	93.729		94.500		3.53010		3.53022		34.7050		34.7070		7.2628		7.2621		6.1227		6.0404		1.000e-12								9.95		0.809		9296		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	94.225		95.000		3.53025		3.53034		34.7053		34.7071		7.2639		7.2632		6.1170		5.9889		1.000e-12								9.95		0.755		9308		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	94.721		95.500		3.53029		3.53042		34.7051		34.7074		7.2643		7.2634		6.1186		5.9558		1.000e-12								9.95		0.447		9346		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	95.217		96.000		3.53044		3.53048		34.7054		34.7076		7.2654		7.2637		6.1282		5.9379		1.000e-12								9.95		0.449		9438		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	95.713		96.500		3.53053		3.53057		34.7054		34.7081		7.2661		7.2639		6.1219		5.9862		1.000e-12								9.95		0.282		9473		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	96.208		97.000		3.53058		3.53059		34.7056		34.7078		7.2663		7.2641		6.1239		6.0160		1.000e-12								9.95		0.264		9522		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	96.704		97.500		3.53062		3.53072		34.7055		34.7083		7.2664		7.2649		6.1106		5.9387		1.000e-12								9.95		0.199		9571		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	97.200		98.000		3.53066		3.53079		34.7056		34.7082		7.2666		7.2654		6.1233		5.9909		1.000e-12								9.95		0.288		9642		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	97.696		98.500		3.53098		3.53089		34.7063		34.7082		7.2692		7.2663		6.1252		5.9480		1.000e-12								9.95		0.386		9674		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	98.192		99.000		3.53136		3.53106		34.7070		34.7087		7.2724		7.2674		6.1244		6.0175		1.000e-12								9.95		0.356		9706		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	98.688		99.500		3.53062		3.53115		34.7063		34.7086		7.2648		7.2682		6.1219		5.9318		1.000e-12								9.95		0.231		9744		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	99.183		100.000		3.53061		3.53103		34.7063		34.7097		7.2644		7.2655		6.1029		5.9782		1.000e-12								9.95		0.322		9818		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	99.679		100.500		3.53051		3.53084		34.7067		34.7097		7.2627		7.2633		6.1070		5.8951		1.000e-12								9.95		0.506		9843		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	100.175		101.000		3.53031		3.53069		34.7069		34.7103		7.2600		7.2608		6.1199		5.9688		1.000e-12								9.95		0.468		9866		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	100.671		101.500		3.53037		3.53067		34.7071		34.7096		7.2602		7.2610		6.1204		6.0033		1.000e-12								9.82		0.245		9901		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	101.167		102.000		3.53049		3.53078		34.7074		34.7103		7.2610		7.2612		6.1275		5.9993		1.000e-12								9.82		0.282		9965		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	101.662		102.500		3.53053		3.53075		34.7076		34.7106		7.2610		7.2604		6.1313		5.9227		1.000e-12								9.96		0.499		9996		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	102.158		103.000		3.53038		3.53076		34.7081		34.7115		7.2587		7.2594		6.1214		5.9951		1.000e-12								9.95		0.652		10017		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	102.654		103.500		3.52842		3.53014		34.7049		34.7163		7.2402		7.2476		6.1226		5.9697		1.000e-12								9.95		0.725		10033		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	103.150		104.000		3.52562		3.52848		34.7039		34.7176		7.2104		7.2279		6.1282		5.9246		1.000e-12								9.95		0.691		10049		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	103.646		104.500		3.52444		3.52641		34.7056		34.7131		7.1957		7.2096		6.1367		5.9989		1.000e-12								9.95		0.481		10069		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	104.141		105.000		3.52431		3.52755		34.7053		34.7158		7.1942		7.2191		6.1447		5.9345		1.000e-12								9.95		0.391		10162		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	104.637		105.500		3.52555		3.52553		34.7122		34.7121		7.2007		7.2005		6.1440		5.9968		1.000e-12								9.95		0.751		10183		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	105.133		106.000		3.52980		3.52725		34.7227		34.7047		7.2362		7.2264		6.1367		5.9499		1.000e-12								9.95		0.873		10197		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	105.629		106.500		3.53096		3.52969		34.7233		34.7151		7.2480		7.2424		6.1273		5.9480		1.000e-12								9.95		0.870		10210		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	106.125		107.000		3.53144		3.53074		34.7242		34.7213		7.2521		7.2474		6.1155		6.0128		1.000e-12								9.95		0.725		10224		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	106.620		107.500		3.53172		3.53095		34.7241		34.7240		7.2550		7.2467		6.1089		6.0154		1.000e-12								9.95		0.376		10259		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	107.116		108.000		3.53206		3.53071		34.7256		34.7196		7.2569		7.2483		6.0988		5.9120		1.000e-12								9.95		0.575		10326		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	107.612		108.500		3.53303		3.53216		34.7281		34.7235		7.2648		7.2600		6.1016		5.9787		1.000e-12								9.95		0.827		10338		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	108.108		109.000		3.53375		3.53295		34.7296		34.7247		7.2710		7.2671		6.1012		6.0363		1.000e-12								9.95		0.888		10351		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	108.604		109.500		3.53429		3.53369		34.7307		34.7271		7.2754		7.2724		6.1014		6.0016		1.000e-12								9.95		0.787		10365		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	109.099		110.000		3.53463		3.53418		34.7302		34.7315		7.2794		7.2732		6.1040		5.9404		1.000e-12								9.95		0.454		10385		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	109.595		110.500		3.53507		3.53317		34.7324		34.7267		7.2818		7.2668		6.1052		5.9538		1.000e-12								9.95		0.381		10433		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	110.091		111.000		3.53562		3.53507		34.7344		34.7308		7.2855		7.2831		6.1096		5.8867		1.000e-12								9.95		0.700		10455		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	110.587		111.500		3.53613		3.53566		34.7354		34.7332		7.2898		7.2869		6.1104		5.9745		1.000e-12								9.95		0.749		10470		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	111.083		112.000		3.53617		3.53594		34.7363		34.7362		7.2890		7.2867		6.1062		6.0212		1.000e-12								9.95		0.507		10488		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	111.578		112.500		3.53663		3.53535		34.7379		34.7325		7.2922		7.2837		6.0932		5.8994		1.000e-12								9.95		0.511		10565		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	112.074		113.000		3.53513		3.53645		34.7321		34.7403		7.2815		7.2877		6.0891		5.8741		1.000e-12								9.95		0.905		10578		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	112.570		113.500		3.52881		3.53479		34.7205		34.7555		7.2240		7.2543		6.0947		5.9107		1.000e-12								9.95		1.010		10590		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	113.066		114.000		3.52553		3.53097		34.7228		34.7544		7.1856		7.2136		6.1064		5.9689		1.000e-12								9.95		0.974		10601		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	113.562		114.500		3.52506		3.52790		34.7237		34.7429		7.1795		7.1913		6.1272		6.0161		1.000e-12								9.95		0.769		10614		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	114.057		115.000		3.52520		3.52871		34.7249		34.7321		7.1795		7.2107		6.1407		6.0141		1.000e-12								9.95		0.341		10659		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	114.553		115.500		3.52516		3.52716		34.7237		34.7367		7.1801		7.1888		6.1419		6.0207		1.000e-12								9.95		0.476		10714		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	115.049		116.000		3.52528		3.52625		34.7245		34.7301		7.1804		7.1853		6.1445		5.9372		1.000e-12								9.95		0.603		10735		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	115.545		116.500		3.52535		3.52607		34.7247		34.7303		7.1806		7.1829		6.1390		5.9949		1.000e-12								9.95		0.647		10753		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	116.041		117.000		3.52554		3.52608		34.7253		34.7300		7.1818		7.1830		6.1353		6.0244		1.000e-12								9.95		0.659		10772		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	116.536		117.500		3.52567		3.52611		34.7253		34.7297		7.1830		7.1835		6.1336		5.9996		1.000e-12								9.95		0.661		10790		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	117.032		118.000		3.52574		3.52615		34.7257		34.7300		7.1832		7.1833		6.1271		6.0515		1.000e-12								9.95		0.631		10808		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	117.528		118.500		3.52589		3.52617		34.7259		34.7298		7.1842		7.1835		6.1273		6.0171		1.000e-12								9.95		0.534		10828		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	118.024		119.000		3.52617		3.52626		34.7262		34.7296		7.1869		7.1845		6.1368		6.0193		1.000e-12								9.95		0.338		10857		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	118.520		119.500		3.52634		3.52638		34.7266		34.7293		7.1880		7.1857		6.1381		5.9935		1.000e-12								9.95		0.305		10902		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	119.015		120.000		3.52658		3.52685		34.7275		34.7299		7.1894		7.1900		6.1232		6.0374		1.000e-12								9.95		0.483		10932		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	119.511		120.500		3.52740		3.52722		34.7290		34.7308		7.1967		7.1930		6.1211		5.9970		1.000e-12								9.95		0.537		10954		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	120.007		121.000		3.52788		3.52754		34.7301		34.7314		7.2006		7.1956		6.1200		5.9689		1.000e-12								9.95		0.524		10977		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	120.503		121.500		3.52817		3.52761		34.7307		34.7315		7.2030		7.1960		6.1220		6.0443		1.000e-12								9.95		0.506		11000		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	120.998		122.000		3.52845		3.52802		34.7313		34.7321		7.2052		7.1996		6.1249		5.9891		1.000e-12								9.95		0.504		11024		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	121.494		122.500		3.52911		3.52817		34.7330		34.7326		7.2105		7.2006		6.1169		5.9855		1.000e-12								9.95		0.483		11048		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	121.990		123.000		3.52940		3.52851		34.7337		34.7331		7.2126		7.2035		6.1126		6.0422		1.000e-12								9.95		0.424		11074		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	122.486		123.500		3.52969		3.52890		34.7345		34.7344		7.2146		7.2062		6.1195		5.9618		1.000e-12								9.95		0.399		11105		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	122.982		124.000		3.52993		3.52922		34.7351		34.7345		7.2165		7.2093		6.1264		5.9842		1.000e-12								9.95		0.490		11133		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	123.477		124.500		3.52996		3.52966		34.7351		34.7356		7.2165		7.2127		6.1213		6.0397		1.000e-12								9.95		0.627		11155		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	123.973		125.000		3.52999		3.52995		34.7352		34.7366		7.2166		7.2148		6.1133		5.9935		1.000e-12								9.95		0.708		11172		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	124.469		125.500		3.53003		3.53008		34.7352		34.7371		7.2167		7.2154		6.1130		5.9250		1.000e-12								9.95		0.698		11188		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	124.965		126.000		3.53004		3.53016		34.7351		34.7375		7.2167		7.2156		6.1171		5.9330		1.000e-12								9.95		0.563		11207		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	125.461		126.500		3.53012		3.53017		34.7351		34.7375		7.2173		7.2154		6.1216		6.0217		1.000e-12								9.95		0.270		11240		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	125.956		127.000		3.53030		3.53038		34.7359		34.7377		7.2182		7.2173		6.1111		5.9214		1.000e-12								9.95		0.421		11302		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	126.452		127.500		3.53161		3.53071		34.7398		34.7372		7.2284		7.2211		6.1055		5.9939		1.000e-12								9.95		0.652		11322		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	126.948		128.000		3.53310		3.53205		34.7425		34.7364		7.2416		7.2362		6.0982		5.9860		1.000e-12								9.95		0.712		11338		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	127.444		128.500		3.53361		3.53291		34.7433		34.7426		7.2462		7.2393		6.0992		5.9646		1.000e-12								9.95		0.643		11355		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	127.940		129.000		3.53459		3.53285		34.7447		34.7435		7.2552		7.2374		6.0967		6.0072		1.000e-12								9.95		0.460		11377		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	128.435		129.500		3.53504		3.53335		34.7459		34.7422		7.2586		7.2439		6.0918		6.0031		1.000e-12								9.95		0.418		11409		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	128.931		130.000		3.53550		3.53426		34.7469		34.7435		7.2623		7.2523		6.0900		5.9251		1.000e-12								9.95		0.604		11433		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	129.427		130.500		3.53837		3.53539		34.7563		34.7426		7.2841		7.2653		6.0801		6.0076		1.000e-12								9.95		0.665		11450		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	129.923		131.000		3.54189		3.53702		34.7603		34.7498		7.3181		7.2757		6.0702		5.9502		1.000e-12								9.95		0.559		11469		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	130.419		131.500		3.54324		3.53798		34.7632		34.7503		7.3295		7.2852		6.0635		5.9491		1.000e-12								9.95		0.320		11500		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	130.914		132.000		3.54591		3.54215		34.7679		34.7535		7.3536		7.3272		6.0519		5.9197		1.000e-12								9.95		0.480		11538		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	131.410		132.500		3.54643		3.54408		34.7691		34.7599		7.3579		7.3414		6.0408		5.9749		1.000e-12								9.95		0.634		11557		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	131.906		133.000		3.54651		3.54505		34.7688		34.7638		7.3588		7.3479		6.0348		5.9014		1.000e-12								9.95		0.557		11575		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	132.402		133.500		3.54667		3.54536		34.7692		34.7662		7.3599		7.3487		6.0389		5.9234		1.000e-12								9.95		0.290		11613		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	132.897		134.000		3.54714		3.54648		34.7704		34.7683		7.3636		7.3585		6.0480		5.9360		1.000e-12								9.95		0.470		11662		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	133.393		134.500		3.54818		3.54680		34.7728		34.7686		7.3723		7.3614		6.0400		5.8693		1.000e-12								9.95		0.643		11681		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	133.889		135.000		3.54877		3.54754		34.7741		34.7694		7.3771		7.3684		6.0280		5.9427		1.000e-12								9.95		0.706		11698		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	134.385		135.500		3.54976		3.54807		34.7764		34.7711		7.3853		7.3723		6.0284		5.9039		1.000e-12								9.95		0.716		11715		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	134.881		136.000		3.55049		3.54864		34.7776		34.7714		7.3918		7.3779		6.0276		5.8979		1.000e-12								9.95		0.718		11732		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	135.376		136.500		3.55134		3.54955		34.7796		34.7729		7.3988		7.3860		6.0209		5.9467		1.000e-12								9.95		0.679		11749		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	135.872		137.000		3.55335		3.55001		34.7837		34.7767		7.4164		7.3870		6.0127		5.8767		1.000e-12								9.95		0.504		11768		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	136.368		137.500		3.55573		3.55163		34.7889		34.7761		7.4367		7.4049		5.9894		5.9136		1.000e-12								9.95		0.313		11824		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	136.864		138.000		3.55759		3.55542		34.7937		34.7807		7.4518		7.4413		5.9760		5.8632		1.000e-12								9.95		0.669		11861		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	137.360		138.500		3.55852		3.55692		34.7975		34.7873		7.4580		7.4507		5.9774		5.8336		1.000e-12								9.95		0.815		11875		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	137.855		139.000		3.55997		3.55824		34.7994		34.7880		7.4716		7.4641		5.9785		5.8962		1.000e-12								9.95		0.788		11889		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	138.351		139.500		3.56112		3.55856		34.8024		34.7953		7.4808		7.4600		5.9711		5.8560		1.000e-12								9.95		0.556		11906		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	138.847		140.000		3.56760		3.56047		34.8174		34.7922		7.5357		7.4837		5.9397		5.8227		1.000e-12								9.95		0.326		11957		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	139.343		140.500		3.57342		3.56592		34.8329		34.8003		7.5831		7.5344		5.9059		5.8825		1.000e-12								9.95		0.621		11995		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	139.839		141.000		3.57729		3.57152		34.8417		34.8065		7.6160		7.5887		5.8964		5.7912		1.000e-12								9.95		0.736		12010		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	140.334		141.500		3.57767		3.57437		34.8420		34.8263		7.6196		7.5994		5.8847		5.7816		1.000e-12								9.95		0.684		12026		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	140.830		142.000		3.58281		3.57544		34.8547		34.8322		7.6622		7.6049		5.8638		5.7906		1.000e-12								9.95		0.508		12047		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	141.326		142.500		3.58695		3.57699		34.8648		34.8337		7.6966		7.6199		5.8407		5.7486		1.000e-12								9.95		0.424		12076		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	141.822		143.000		3.58808		3.57958		34.8667		34.8362		7.7067		7.6452		5.8300		5.7585		1.000e-12								9.95		0.582		12101		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	142.317		143.500		3.58943		3.58364		34.8707		34.8442		7.7171		7.6809		5.8191		5.6798		1.000e-12								9.95		0.654		12119		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	142.813		144.000		3.59175		3.58581		34.8754		34.8571		7.7371		7.6913		5.8130		5.7451		1.000e-12								9.95		0.555		12138		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	143.309		144.500		3.59237		3.58713		34.8763		34.8590		7.7427		7.7034		5.7999		5.7056		1.000e-12								9.95		0.282		12172		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	143.805		145.000		3.59268		3.59083		34.8767		34.8677		7.7454		7.7344		5.7999		5.6518		1.000e-12								9.95		0.416		12218		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	144.301		145.500		3.59856		3.59254		34.8913		34.8681		7.7941		7.7522		5.7901		5.7209		1.000e-12								9.95		0.535		12240		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	144.796		146.000		3.59911		3.59516		34.8908		34.8747		7.8003		7.7736		5.7857		5.6492		1.000e-12								9.95		0.455		12263		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	145.292		146.500		3.60044		3.59604		34.8944		34.8830		7.8108		7.7746		5.7754		5.6767		1.000e-12								9.95		0.405		12293		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	145.788		147.000		3.60167		3.59676		34.8960		34.8810		7.8221		7.7842		5.7562		5.6052		1.000e-12								9.95		0.555		12320		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	146.284		147.500		3.60275		3.59867		34.8981		34.8838		7.8314		7.8018		5.7436		5.6638		1.000e-12								9.95		0.659		12339		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	146.779		148.000		3.60309		3.60014		34.8988		34.8881		7.8342		7.8131		5.7410		5.6328		1.000e-12								9.95		0.653		12356		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	147.275		148.500		3.60326		3.60098		34.8989		34.8908		7.8356		7.8191		5.7388		5.6022		1.000e-12								9.95		0.527		12376		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	147.771		149.000		3.60435		3.60168		34.9022		34.8938		7.8438		7.8234		5.7402		5.6309		1.000e-12								9.95		0.319		12408		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	148.267		149.500		3.60547		3.60338		34.9047		34.8952		7.8532		7.8402		5.7405		5.6631		1.000e-12								9.95		0.407		12447		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	148.762		150.000		3.60594		3.60475		34.9056		34.9006		7.8571		7.8493		5.7360		5.6023		1.000e-12								9.95		0.591		12470		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	149.258		150.500		3.60650		3.60511		34.9073		34.9016		7.8612		7.8520		5.7313		5.6509		1.000e-12								9.95		0.635		12489		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	149.754		151.000		3.60739		3.60561		34.9093		34.9035		7.8686		7.8552		5.7260		5.6215		1.000e-12								9.95		0.526		12509		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	150.250		151.500		3.60734		3.60600		34.9094		34.9046		7.8677		7.8580		5.7215		5.6083		1.000e-12								9.95		0.292		12542		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	150.746		152.000		3.60711		3.60685		34.9084		34.9075		7.8659		7.8640		5.7257		5.6185		1.000e-12								9.95		0.360		12587		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	151.241		152.500		3.60670		3.60681		34.9075		34.9089		7.8622		7.8620		5.7341		5.5702		1.000e-12								9.95		0.544		12613		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	151.737		153.000		3.60728		3.60672		34.9082		34.9080		7.8676		7.8616		5.7325		5.6034		1.000e-12								9.95		0.588		12633		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	152.233		153.500		3.61233		3.60712		34.9213		34.9083		7.9086		7.8654		5.7128		5.5746		1.000e-12								9.95		0.529		12654		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	152.729		154.000		3.61563		3.60841		34.9275		34.9073		7.9377		7.8801		5.6906		5.5979		1.000e-12								9.95		0.489		12679		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	153.224		154.500		3.61554		3.61086		34.9257		34.9112		7.9383		7.9024		5.6873		5.5705		1.000e-12								9.95		0.599		12702		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	153.720		155.000		3.61511		3.61225		34.9257		34.9148		7.9334		7.9134		5.6839		5.5656		1.000e-12								9.95		0.699		12720		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	154.216		155.500		3.61592		3.61381		34.9280		34.9188		7.9396		7.9261		5.6816		5.6043		1.000e-12								9.95		0.656		12736		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	154.712		156.000		3.61617		3.61452		34.9278		34.9235		7.9421		7.9287		5.6831		5.5397		1.000e-12								9.95		0.380		12761		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	155.208		156.500		3.61591		3.61586		34.9273		34.9275		7.9397		7.9389		5.6779		5.5744		1.000e-12								9.95		0.470		12830		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	155.703		157.000		3.61615		3.61590		34.9274		34.9267		7.9418		7.9399		5.6771		5.5233		1.000e-12								9.95		0.775		12843		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	156.199		157.500		3.61696		3.61622		34.9300		34.9266		7.9478		7.9432		5.6770		5.5390		1.000e-12								9.95		0.828		12857		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	156.695		158.000		3.61727		3.61646		34.9308		34.9280		7.9501		7.9441		5.6781		5.5686		1.000e-12								9.95		0.703		12872		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	157.191		158.500		3.61913		3.61706		34.9333		34.9283		7.9674		7.9500		5.6758		5.5281		1.000e-12								9.95		0.349		12894		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	157.686		159.000		3.62088		3.61830		34.9379		34.9307		7.9813		7.9608		5.6384		5.5625		1.000e-12								9.95		0.367		12962		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	158.182		159.500		3.62260		3.61935		34.9417		34.9309		7.9958		7.9716		5.6377		5.5147		1.000e-12								9.95		0.670		12982		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	158.678		160.000		3.62804		3.62135		34.9524		34.9299		8.0434		7.9939		5.6226		5.5571		1.000e-12								9.95		0.780		12998		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	159.174		160.500		3.63334		3.62373		34.9667		34.9360		8.0857		8.0132		5.6074		5.5132		1.000e-12								9.95		0.781		13013		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	159.669		161.000		3.63357		3.62600		34.9659		34.9395		8.0887		8.0338		5.5955		5.5136		1.000e-12								9.95		0.662		13029		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	160.165		161.500		3.63422		3.62828		34.9708		34.9478		8.0905		8.0499		5.5762		5.5071		1.000e-12								9.95		0.360		13053		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	160.661		162.000		3.63773		3.63238		34.9816		34.9598		8.1172		8.0817		5.5630		5.4509		1.000e-12								9.95		0.384		13110		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	161.157		162.500		3.64090		3.63688		34.9892		34.9664		8.1434		8.1230		5.5499		5.4663		1.000e-12								9.95		0.658		13132		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	161.652		163.000		3.64246		3.63913		34.9950		34.9775		8.1540		8.1359		5.5353		5.4180		1.000e-12								9.95		0.717		13148		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	162.148		163.500		3.64374		3.64041		34.9984		34.9833		8.1642		8.1435		5.5302		5.4479		1.000e-12								9.95		0.611		13165		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	162.644		164.000		3.64491		3.64121		35.0029		34.9884		8.1719		8.1467		5.5239		5.4172		1.000e-12								9.95		0.354		13193		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	163.140		164.500		3.64574		3.64327		35.0053		34.9933		8.1782		8.1637		5.5138		5.4043		1.000e-12								9.95		0.367		13234		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	163.636		165.000		3.64596		3.64523		35.0058		35.0016		8.1798		8.1761		5.5163		5.4078		1.000e-12								9.95		0.555		13258		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	164.131		165.500		3.64683		3.64546		35.0108		35.0028		8.1839		8.1773		5.5060		5.3622		1.000e-12								9.95		0.563		13279		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	164.627		166.000		3.64723		3.64609		35.0207		35.0065		8.1781		8.1800		5.4801		5.3777		1.000e-12								9.95		0.421		13303		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	165.123		166.500		3.64713		3.64664		35.0247		35.0157		8.1727		8.1764		5.4529		5.3607		1.000e-12								9.95		0.312		13340		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	165.619		167.000		3.64726		3.64695		35.0251		35.0239		8.1734		8.1713		5.4491		5.3391		1.000e-12								9.95		0.519		13372		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	166.114		167.500		3.64754		3.64709		35.0256		35.0243		8.1756		8.1722		5.4544		5.3477		1.000e-12								9.95		0.655		13391		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	166.610		168.000		3.64794		3.64729		35.0266		35.0247		8.1787		8.1736		5.4601		5.3134		1.000e-12								9.95		0.641		13408		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	167.106		168.500		3.64871		3.64779		35.0282		35.0252		8.1852		8.1782		5.4591		5.3501		1.000e-12								9.95		0.464		13430		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	167.602		169.000		3.64881		3.64840		35.0284		35.0278		8.1857		8.1820		5.4631		5.3465		1.000e-12								9.95		0.273		13470		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	168.097		169.500		3.64884		3.64845		35.0285		35.0287		8.1857		8.1813		5.4625		5.3253		1.000e-12								9.95		0.560		13503		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	168.593		170.000		3.64925		3.64867		35.0290		35.0279		8.1894		8.1843		5.4562		5.3413		1.000e-12								9.95		0.677		13521		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	169.089		170.500		3.64956		3.64880		35.0293		35.0288		8.1922		8.1846		5.4482		5.2968		1.000e-12								9.95		0.633		13538		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	169.585		171.000		3.64909		3.64920		35.0282		35.0292		8.1879		8.1881		5.4525		5.3309		1.000e-12								9.95		0.382		13563		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	170.080		171.500		3.64823		3.64881		35.0264		35.0298		8.1803		8.1832		5.4595		5.3243		1.000e-12								9.95		0.298		13615		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	170.576		172.000		3.64807		3.64833		35.0257		35.0289		8.1791		8.1786		5.4617		5.3556		1.000e-12								9.95		0.564		13645		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	171.072		172.500		3.64801		3.64820		35.0255		35.0281		8.1784		8.1778		5.4568		5.3096		1.000e-12								9.95		0.683		13663		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	171.568		173.000		3.64843		3.64818		35.0265		35.0274		8.1816		8.1781		5.4560		5.3368		1.000e-12								9.95		0.678		13680		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	172.063		173.500		3.64907		3.64845		35.0284		35.0276		8.1863		8.1805		5.4591		5.3418		1.000e-12								9.95		0.538		13699		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	172.559		174.000		3.64948		3.64885		35.0290		35.0288		8.1898		8.1833		5.4538		5.3330		1.000e-12								9.95		0.283		13735		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	173.055		174.500		3.65105		3.65028		35.0346		35.0293		8.2008		8.1980		5.4434		5.3223		1.000e-12								9.95		0.405		13779		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	173.551		175.000		3.65377		3.65220		35.0394		35.0329		8.2249		8.2146		5.4331		5.2700		1.000e-12								9.95		0.584		13802		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	174.046		175.500		3.65370		3.65310		35.0387		35.0360		8.2246		8.2209		5.4293		5.3095		1.000e-12								9.95		0.627		13821		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	174.542		176.000		3.65350		3.65351		35.0387		35.0390		8.2223		8.2221		5.4228		5.2598		1.000e-12								9.95		0.558		13840		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	175.038		176.500		3.65328		3.65349		35.0385		35.0400		8.2198		8.2206		5.4193		5.2989		1.000e-12								9.95		0.404		13866		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	175.534		177.000		3.65391		3.65339		35.0402		35.0398		8.2248		8.2195		5.4212		5.2982		1.000e-12								9.95		0.362		13901		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	176.029		177.500		3.65447		3.65384		35.0415		35.0399		8.2292		8.2240		5.4176		5.2756		1.000e-12								9.95		0.477		13929		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	176.525		178.000		3.65521		3.65450		35.0437		35.0417		8.2346		8.2291		5.4148		5.3171		1.000e-12								9.95		0.471		13953		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	177.021		178.500		3.65534		3.65508		35.0437		35.0437		8.2358		8.2330		5.4082		5.2963		1.000e-12								9.95		0.353		13983		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	177.517		179.000		3.65496		3.65528		35.0431		35.0451		8.2320		8.2335		5.4059		5.2770		1.000e-12								9.95		0.405		14019		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	178.012		179.500		3.65547		3.65528		35.0446		35.0450		8.2358		8.2333		5.3967		5.3212		1.000e-12								9.95		0.572		14042		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	178.508		180.000		3.65559		3.65542		35.0439		35.0453		8.2375		8.2343		5.3994		5.2755		1.000e-12								9.95		0.595		14062		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	179.004		180.500		3.65517		3.65558		35.0432		35.0457		8.2335		8.2353		5.4007		5.3072		1.000e-12								9.95		0.469		14084		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	179.500		181.000		3.65491		3.65532		35.0432		35.0459		8.2304		8.2321		5.4014		5.2825		1.000e-12								9.95		0.320		14118		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	179.995		181.500		3.65513		3.65510		35.0435		35.0453		8.2323		8.2301		5.4006		5.2696		1.000e-12								9.95		0.471		14152		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	180.491		182.000		3.65555		3.65536		35.0441		35.0451		8.2359		8.2328		5.4001		5.3012		1.000e-12								9.95		0.581		14173		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	180.987		182.500		3.65592		3.65564		35.0449		35.0456		8.2388		8.2352		5.3972		5.2836		1.000e-12								9.95		0.550		14193		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	181.483		183.000		3.65608		3.65595		35.0456		35.0465		8.2396		8.2373		5.3995		5.2804		1.000e-12								9.95		0.440		14218		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	181.978		183.500		3.65641		3.65615		35.0460		35.0468		8.2425		8.2389		5.4062		5.2470		1.000e-12								9.95		0.374		14249		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	182.474		184.000		3.65656		3.65643		35.0463		35.0474		8.2435		8.2411		5.4053		5.2859		1.000e-12								9.95		0.342		14282		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	182.970		184.500		3.65715		3.65674		35.0479		35.0479		8.2481		8.2437		5.3935		5.2907		1.000e-12								9.95		0.294		14323		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	183.466		185.000		3.65745		3.65718		35.0487		35.0491		8.2502		8.2469		5.3869		5.2874		1.000e-12								9.95		0.556		14355		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	183.961		185.500		3.65827		3.65754		35.0507		35.0488		8.2567		8.2508		5.3834		5.2622		1.000e-12								9.95		0.750		14373		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	184.457		186.000		3.65747		3.65804		35.0485		35.0520		8.2501		8.2527		5.3815		5.2350		1.000e-12								9.95		0.810		14387		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	184.953		186.500		3.65714		3.65734		35.0511		35.0543		8.2437		8.2426		5.3792		5.2908		1.000e-12								9.95		0.721		14402		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	185.449		187.000		3.65929		3.65732		35.0551		35.0507		8.2625		8.2459		5.3817		5.2556		1.000e-12								9.95		0.396		14423		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	185.944		187.500		3.66012		3.66027		35.0559		35.0578		8.2703		8.2701		5.3834		5.2695		1.000e-12								9.95		0.389		14494		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	186.440		188.000		3.65958		3.66006		35.0550		35.0581		8.2652		8.2673		5.3837		5.2355		1.000e-12								9.95		0.659		14511		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	186.936		188.500		3.65903		3.65982		35.0539		35.0582		8.2602		8.2644		5.3865		5.2414		1.000e-12								9.95		0.654		14528		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	187.431		189.000		3.65849		3.65936		35.0532		35.0581		8.2549		8.2593		5.3874		5.2603		1.000e-12								9.95		0.454		14549		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	187.927		189.500		3.65602		3.65842		35.0482		35.0578		8.2332		8.2493		5.3729		5.2555		1.000e-12								9.95		0.299		14588		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	188.423		190.000		3.65245		3.65573		35.0435		35.0593		8.1995		8.2187		5.3874		5.2330		1.000e-12								9.95		0.540		14618		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	188.919		190.500		3.65629		3.65393		35.0598		35.0512		8.2240		8.2073		5.3646		5.2809		1.000e-12								9.95		0.571		14638		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	189.414		191.000		3.66436		3.65722		35.0743		35.0489		8.2955		8.2447		5.3231		5.2361		1.000e-12								9.95		0.417		14662		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	189.910		191.500		3.66623		3.66397		35.0778		35.0689		8.3118		8.2966		5.2908		5.2099		1.000e-12								9.95		0.296		14702		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	190.406		192.000		3.66738		3.66609		35.0799		35.0749		8.3218		8.3130		5.2807		5.2159		1.000e-12								9.95		0.514		14733		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	190.902		192.500		3.66775		3.66720		35.0808		35.0783		8.3246		8.3212		5.2881		5.1502		1.000e-12								9.95		0.605		14754		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	191.397		193.000		3.66794		3.66757		35.0811		35.0801		8.3261		8.3231		5.2882		5.1937		1.000e-12								9.95		0.585		14773		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	191.893		193.500		3.66799		3.66782		35.0811		35.0811		8.3264		8.3245		5.2817		5.1430		1.000e-12								9.95		0.481		14795		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	192.389		194.000		3.66805		3.66798		35.0812		35.0818		8.3266		8.3253		5.2852		5.1747		1.000e-12								9.95		0.316		14827		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	192.885		194.500		3.66816		3.66811		35.0814		35.0823		8.3273		8.3260		5.2819		5.1572		1.000e-12								9.95		0.316		14871		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	193.380		195.000		3.66839		3.66823		35.0819		35.0826		8.3291		8.3267		5.2687		5.1388		1.000e-12								9.95		0.505		14900		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	193.876		195.500		3.66848		3.66840		35.0820		35.0829		8.3297		8.3279		5.2603		5.1828		1.000e-12								9.95		0.565		14921		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	194.372		196.000		3.66863		3.66854		35.0824		35.0834		8.3306		8.3287		5.2666		5.1654		1.000e-12								9.95		0.485		14943		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	194.868		196.500		3.66919		3.66868		35.0842		35.0836		8.3346		8.3298		5.2627		5.1914		1.000e-12								9.95		0.380		14973		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	195.363		197.000		3.66985		3.66914		35.0861		35.0845		8.3395		8.3336		5.2529		5.1335		1.000e-12								9.95		0.427		15004		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	195.859		197.500		3.67029		3.66972		35.0875		35.0861		8.3426		8.3379		5.2447		5.1760		1.000e-12								9.95		0.508		15029		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	196.355		198.000		3.67203		3.67034		35.0930		35.0871		8.3555		8.3433		5.2242		5.1272		1.000e-12								9.95		0.476		15052		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	196.851		198.500		3.67282		3.67192		35.0951		35.0916		8.3616		8.3554		5.2069		5.1487		1.000e-12								9.95		0.366		15082		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	197.346		199.000		3.67299		3.67259		35.0951		35.0946		8.3631		8.3593		5.2067		5.1155		1.000e-12								9.95		0.450		15114		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	197.842		199.500		3.67310		3.67293		35.0957		35.0960		8.3634		8.3613		5.2118		5.1390		1.000e-12								9.95		0.562		15137		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	198.338		200.000		3.67316		3.67305		35.0959		35.0968		8.3636		8.3615		5.2159		5.0807		1.000e-12								9.95		0.557		15158		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	198.834		200.500		3.67317		3.67314		35.0959		35.0971		8.3635		8.3620		5.2104		5.1135		1.000e-12								9.95		0.407		15183		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	199.329		201.000		3.67375		3.67329		35.0979		35.0973		8.3675		8.3631		5.1958		5.0756		1.000e-12								9.95		0.287		15222		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	199.825		201.500		3.67431		3.67370		35.0991		35.0979		8.3720		8.3666		5.1802		5.0746		1.000e-12								9.95		0.441		15257		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	200.321		202.000		3.67482		3.67423		35.1012		35.0996		8.3750		8.3703		5.1746		5.0883		1.000e-12								9.95		0.482		15281		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	200.816		202.500		3.67552		3.67481		35.1030		35.1014		8.3804		8.3746		5.1646		5.0875		1.000e-12								9.95		0.375		15309		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	201.312		203.000		3.67691		3.67561		35.1070		35.1030		8.3910		8.3813		5.1490		5.0987		1.000e-12								9.95		0.355		15346		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	201.808		203.500		3.67742		3.67666		35.1080		35.1056		8.3952		8.3897		5.1415		5.0580		1.000e-12								9.95		0.534		15374		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	202.304		204.000		3.67810		3.67740		35.1101		35.1081		8.4002		8.3947		5.1317		5.0765		1.000e-12								9.95		0.631		15393		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	202.799		204.500		3.67857		3.67786		35.1114		35.1095		8.4037		8.3979		5.1241		5.0393		1.000e-12								9.95		0.619		15412		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	203.295		205.000		3.67896		3.67834		35.1126		35.1108		8.4064		8.4016		5.1106		5.0495		1.000e-12								9.95		0.523		15433		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	203.791		205.500		3.67944		3.67893		35.1149		35.1129		8.4090		8.4055		5.0998		5.0379		1.000e-12								9.95		0.418		15459		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	204.287		206.000		3.67945		3.67937		35.1161		35.1156		8.4077		8.4073		5.0931		5.0482		1.000e-12								9.95		0.362		15490		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	204.782		206.500		3.67946		3.67952		35.1169		35.1175		8.4067		8.4066		5.0924		5.0135		1.000e-12								9.95		0.353		15525		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	205.278		207.000		3.67934		3.67956		35.1179		35.1188		8.4041		8.4055		5.0842		4.9923		1.000e-12								9.95		0.429		15556		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	205.774		207.500		3.67722		3.67900		35.1151		35.1219		8.3841		8.3962		5.0931		5.0080		1.000e-12								9.95		0.429		15582		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	206.270		208.000		3.67511		3.67691		35.1152		35.1213		8.3612		8.3743		5.1026		4.9975		1.000e-12								9.95		0.261		15623		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	206.765		208.500		3.67488		3.67534		35.1190		35.1207		8.3547		8.3578		5.0967		5.0310		1.000e-12								9.95		0.479		15670		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	207.261		209.000		3.67508		3.67532		35.1197		35.1223		8.3558		8.3559		5.0817		5.0196		1.000e-12								9.95		0.729		15688		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	207.757		209.500		3.67514		3.67543		35.1208		35.1236		8.3551		8.3554		5.0772		5.0109		1.000e-12								9.95		0.839		15703		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	208.252		210.000		3.67313		3.67523		35.1182		35.1312		8.3361		8.3455		5.0832		5.0315		1.000e-12								9.95		0.828		15717		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	208.748		210.500		3.67074		3.67342		35.1175		35.1289		8.3110		8.3282		5.0986		5.0228		1.000e-12								9.95		0.651		15732		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	209.244		211.000		3.66986		3.67131		35.1218		35.1236		8.2971		8.3107		5.1036		5.0168		1.000e-12								9.95		0.329		15781		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	209.740		211.500		3.67198		3.67136		35.1262		35.1249		8.3150		8.3098		5.0970		5.0142		1.000e-12								9.95		0.630		15827		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	210.235		212.000		3.66997		3.67184		35.1256		35.1326		8.2940		8.3069		5.1005		5.0096		1.000e-12								9.95		0.720		15842		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	210.731		212.500		3.66917		3.67089		35.1261		35.1332		8.2847		8.2959		5.1104		5.0104		1.000e-12								9.95		0.596		15859		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	211.227		213.000		3.66647		3.66857		35.1226		35.1314		8.2591		8.2727		5.1145		5.0090		1.000e-12								9.95		0.270		15899		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	211.723		213.500		3.66531		3.66580		35.1213		35.1273		8.2477		8.2470		5.1113		5.0528		1.000e-12								9.95		0.437		15956		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	212.218		214.000		3.66516		3.66583		35.1218		35.1274		8.2454		8.2470		5.1074		5.0338		1.000e-12								9.95		0.603		15977		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	212.714		214.500		3.66464		3.66574		35.1222		35.1283		8.2392		8.2449		5.1107		5.0463		1.000e-12								9.95		0.643		15996		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	213.210		215.000		3.66412		3.66539		35.1226		35.1293		8.2329		8.2398		5.1147		5.0295		1.000e-12								9.95		0.632		16014		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	213.705		215.500		3.66301		3.66484		35.1209		35.1295		8.2225		8.2335		5.1241		5.0357		1.000e-12								9.95		0.601		16034		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	214.201		216.000		3.66169		3.66391		35.1219		35.1306		8.2072		8.2222		5.1251		5.0239		1.000e-12								9.76		0.506		16055		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	214.697		216.500		3.66155		3.66262		35.1224		35.1293		8.2050		8.2095		5.1248		5.0415		1.000e-12								9.27		0.280		16086		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	215.193		217.000		3.66115		3.66194		35.1225		35.1281		8.2004		8.2033		5.1260		5.0311		1.000e-12								8.84		0.335		16143		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	215.688		217.500		3.66110		3.66173		35.1225		35.1278		8.1996		8.2010		5.1109		5.0406		1.000e-12								8.43		0.616		16165		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	216.184		218.000		3.66113		3.66168		35.1221		35.1276		8.2001		8.2004		5.1035		5.0396		1.000e-12								7.95		0.699		16183		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	216.680		218.500		3.66097		3.66158		35.1232		35.1276		8.1969		8.1992		5.1133		5.0473		1.000e-12								7.45		0.635		16200		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	217.175		219.000		3.66005		3.66134		35.1226		35.1288		8.1876		8.1951		5.1282		5.0397		1.000e-12								6.94		0.382		16224		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	217.671		219.500		3.65960		3.66043		35.1229		35.1282		8.1822		8.1857		5.1282		5.0251		1.000e-12								6.42		0.333		16270		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	218.167		220.000		3.65915		3.66012		35.1225		35.1287		8.1775		8.1818		5.1223		5.0329		1.000e-12								5.97		0.638		16296		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	218.663		220.500		3.65796		3.65963		35.1224		35.1309		8.1648		8.1741		5.1190		5.0361		1.000e-12								5.49		0.760		16312		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	219.158		221.000		3.65761		3.65895		35.1230		35.1310		8.1601		8.1664		5.1200		5.0382		1.000e-12								4.99		0.753		16326		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	219.654		221.500		3.65697		3.65835		35.1220		35.1301		8.1541		8.1606		5.1252		5.0403		1.000e-12								4.48		0.540		16344		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	220.150		222.000		3.65647		3.65692		35.1226		35.1274		8.1478		8.1478		5.1285		5.0469		1.000e-12								4.00		0.289		16474		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	220.645		222.500		3.65583		3.65632		35.1223		35.1273		8.1410		8.1413		5.1305		5.0389		1.000e-12								3.57		0.439		16595		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	221.141		223.000		3.65582		3.65633		35.1220		35.1261		8.1410		8.1423		5.1292		5.0461		1.000e-12								3.12		0.353		16739		1	
+2018	01	20	15	38	33	2018_26DA_2	36N HANSTHOLM	5745.85	00843.68	221.637		223.500		3.65499		3.65568		35.1233		35.1267		8.1305		8.1345		5.1286		5.0502		1.000e-12								2.72		-0.001		16843		1	

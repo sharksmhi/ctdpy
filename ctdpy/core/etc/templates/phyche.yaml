@@ -1,0 +1,14 @@
+template:
+    description: Excel template for Physical and Chemical data (SMHI settings)
+    name: phyche
+    data_sheetname: Kolumner
+    analyseinfo_sheetname: Analysinfo
+    samplinginfo_sheetname: Provtagningsinfo
+    parameters: [CNDC_CTD, DEPH, DOXY_CTD, FLUO_CTD, PRES_CTD, SALT_CTD, TEMP_CTD]
+    header_row: 2
+    suffix: '*.xlsx'
+    file_path: /templates/Format Physical and chemical.xlsx
+    reader: !!python/name:core.readers.xlsx_reader.load_excel ''
+
+template_handler: 
+    !!python/name:core.templates.xlsx_phyche.PhyCheTemplateHandler ''

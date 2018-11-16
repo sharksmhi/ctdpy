@@ -1,0 +1,28 @@
+reader:
+    description: CNV Reader for SeaBird data (UMSC settings)
+    name: cnv_seabird_umsc
+    sensors: [prDM, t090C, c0S/m, sbeox0ML/L, altM, flECO-AFL, par, turbWETntu0, svCM]
+    default_channels: []
+    suffix: '*.cnv'
+    reader: !!python/name:core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    rawctd:
+        file_reader: !!python/name:core.readers.cnv_seabird.CNVSeaBirdUMSC ''
+        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
+        file_names: []
+        
+datasets:
+    cnv:
+        name: cnv
+        file_type: rawctd
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', Ship, Station]
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
