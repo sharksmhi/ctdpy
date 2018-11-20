@@ -8,6 +8,7 @@ Created on Fri Oct 19 17:06:23 2018
 from core.data_handlers import DataFrameHandler
 from .template import Template
 
+
 class PhyCheTemplateHandler(DataFrameHandler):
     """
     Uses DataFrameHandler as Base

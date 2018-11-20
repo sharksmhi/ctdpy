@@ -8,6 +8,8 @@ Created on Thu Jul 19 13:35:11 2018
 #==============================================================================
 #==============================================================================
 """
+
+
 class StyleSheet(object):
     """
     Uses style object from pandas DataFrame and CSS formats to style an excel
@@ -209,19 +211,10 @@ class StyleSheet(object):
         :return: False or True
         """
         return num & 0x1
-        
-#    def color_negative_red(self, val):
-#        """
-#        Takes a scalar and returns a string with
-#        the css property `'color: red'` for negative
-#        strings, black otherwise.
-#        """
-#        color = 'red' if val < 0 else 'black'
-#        return 'color: %s' % color
-#    
-#    def highlight_max(self, s):
-#        '''
-#        highlight the maximum in a Series yellow.
-#        '''
-#        is_max = s == s.max()
-#        return ['background-color: #82FA58' if v else '' for v in is_max]
+
+
+class WithStyle(StyleSheet):
+    """
+
+    """
+    def __init__(self):

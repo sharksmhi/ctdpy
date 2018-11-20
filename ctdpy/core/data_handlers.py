@@ -143,7 +143,6 @@ class SeriesHandler(BaseFileHandler):
 
     def update_datetime_object(self, date_string, time_string):
         """
-        # FIXME at the wrong place?.. readability
         :param date_string: str, YYYY-MM-DD
         :param time_string: str, HH:MM:SS
         :return: Using property.setter
@@ -158,7 +157,6 @@ class SeriesHandler(BaseFileHandler):
 
     def update_position(self, lat, lon):
         """
-        # FIXME at the wrong place?
         :param lat: str, Latitude DDMM.mmm
         :param lon: str, Longitude DDMM.mmm
         :return: Using property.setter
@@ -168,7 +166,6 @@ class SeriesHandler(BaseFileHandler):
 
     def update_cruise(self, shipc, cruise_no):
         """
-        # FIXME at the wrong place?
         myear_shipc_cruise_no, where myear is taken from property
         :param shipc: ship code
         :param cruise_no: Specific cruise number, YYYY_SHIP_NNNN
@@ -178,7 +175,6 @@ class SeriesHandler(BaseFileHandler):
 
     def update_station_name(self, statn):
         """
-        # FIXME at the wrong place?
         :param statn: Station name at visit
         :return: Using property.setter
         """

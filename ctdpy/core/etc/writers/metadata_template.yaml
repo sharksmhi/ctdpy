@@ -1,18 +1,9 @@
 writer:
-    description: Converts datasets into standard output for CTD data (Text Writer)
-    writer: !!python/name:core.writers.standard_formats.StandardCTDWriter ''
-    extension_filename: .txt
-    filename: ctd_profile_
+    description: Converts datasets into standard output for CTD metadata (Xlsx Writer)
+    writer: !!python/name:core.writers.metadata.MetadataWriter ''
+    extension_filename: .xlsx
+    filename: ctd_metadata
     identifier_instrument_metadata_end: '*END*'
-    name: ctd_standard_template
-    prefix_data_delimiter: //DATA_DELIMITER
-    prefix_format: //FORMAT
-    prefix_info: //INFORMATION
-    prefix_instrument_metadata: //INSTRUMENT_METADATA
-    prefix_metadata: //METADATA
-    prefix_metadata_delimiter: //METADATA_DELIMITER
-    prefix_sensorinfo: //SENSORINFO
-    separator_data: "\t"
-    separator_metadata: ;
+    name: metadata_template
     standard_data_header: [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CRUISE, STATION,
         LATITUDE_DD, LONGITUDE_DD]
