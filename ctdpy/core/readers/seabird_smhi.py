@@ -126,14 +126,13 @@ class SeaBirdSMHI(BaseReader, CNVreader, SeriesHandler):
 
 
 class MetadataSMHI(BaseReader, DataFrameHandler):
-    #FIXME come on.. new name!
     """
     """
     def __init__(self, settings):
         super().__init__(settings)
         self.data = {}
 
-    def get_data(self, filenames=None):
+    def get_data(self, filenames=None, add_low_resolution_data=False):
         """
         :param filenames: list of file paths
         :return: Dictionary with DataFrames
@@ -146,6 +145,14 @@ class MetadataSMHI(BaseReader, DataFrameHandler):
             self._read(file_path, file_specs, reader, self.data[fid])
 
         return self.data
+
+    def merge_data(self, data, resolution=None):
+        """
+        :param data: data
+        :param resolution: None
+        :return: pass
+        """
+        pass
 
     @staticmethod
     def _read(file_path, file_specs, reader, data):

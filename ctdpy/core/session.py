@@ -7,6 +7,7 @@ Created on Mon Sep 17 10:50:49 2018
 """
 import os
 import sys
+sys.path.append("..")
 import config
 import core
 from fnmatch import fnmatch
@@ -16,7 +17,7 @@ from core.archive_handler import Archive
 from core.utils import get_file_list_based_on_suffix
 from core import utils
 import time
-sys.path.append("..")
+
 
 class Session(object):
     """
@@ -47,7 +48,9 @@ class Session(object):
         :param add_low_resolution_data: Include extra pd.DataFrame for low resolution data
         :return: list, datasets
         """
-        return self._read_datasets(add_merged_data, add_low_resolution_data)
+        datasets = self._read_datasets(add_merged_data, add_low_resolution_data)
+        return datasets
+
 
     def _read_datasets(self, add_merged_data, add_low_resolution_data):
         """
@@ -61,12 +64,14 @@ class Session(object):
         #TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
+            print(dataset)
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
-            #TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefor do this elsewhere
+            # #TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefor do this elsewhere
             if add_merged_data and add_low_resolution_data:
-                data = self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
+                # data = self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
+                self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
 
             datasets.append(data)
 
@@ -206,7 +211,7 @@ if __name__ == '__main__':
 
     #-------------------------------------------------------------------------------------------------------------------
     print("Session--%.3f sec" % (time.time() - start_time))
-    pprint(s.settings.templates['ctd_metadata'])
+    # pprint(s.settings.templates['ctd_metadata'])
     # pprint(s.settings.settings_paths)
 
     #-------------------------------------------------------------------------------------------------------------------
@@ -221,9 +226,14 @@ if __name__ == '__main__':
     print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
+    start_time = time.time()
     s.create_archive(data_path=data_path)
-    #-------------------------------------------------------------------------------------------------------------------
+    print("Archive created--%.3f sec" % (time.time() - start_time))
 
+    #-------------------------------------------------------------------------------------------------------------------
+    start_time = time.time()
+    s.save_data(datasets, writer='metadata_template')
+    print("Metadata file created--%.3f sec" % (time.time() - start_time))
 
     # pprint(s.settings.templates)
     # pprint(s.settings.writers['ctd_standard_template']['writer'])
@@ -238,11 +248,10 @@ if __name__ == '__main__':
     # for dset in datasets:
     #     print(dset.keys())
     #FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
-    template_data = s.get_data_in_template(datasets[0], template='phyche')
-    s.save_data(template_data)
+    # template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
+    # s.save_data(template_data)
 
     # s.save_data(datasets, writer='ctd_standard_template')
-    print('hej')
 
 
 

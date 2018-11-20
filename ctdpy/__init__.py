@@ -9,6 +9,7 @@ Created on Thu Jul 05 11:38:08 2018
 """
 from . import core
 from . import tests
+import config
 from .config import Settings
 import sys
 import os

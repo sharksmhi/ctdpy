@@ -205,6 +205,7 @@ def get_index_where_df_equals_x(df, x):
     """
     return np.where(df == x)
 
+
 def get_method_dictionary(obj):
     """
     :param obj: Object
