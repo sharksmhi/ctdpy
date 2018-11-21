@@ -42,30 +42,33 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
                 data_df = self._get_data_columns(item['hires_data'], metadata_df)
                 data_series = self._get_data_serie(data_df, separator=self.writer['separator_data'])
+                data_series = self._append_information(self.template_format,
+                                                       self.delimiters['meta'],
+                                                       self.delimiters['data'],
+                                                       metadata,
+                                                       self.sensorinfo,
+                                                       self.information,
+                                                       instrument_metadata,
+                                                       data_series)
 
-                self._write(fid, instrument_metadata, metadata, data_series)
+                self._write(fid, data_series)
 
-    def _write(self, fid, instrument_metadata, metadata, data_series):
+    def _append_information(self, *args):
         """
-        :param fid: Original file name
-        :param instrument_metadata: pd.Series, CTD-cast specific data
-        :param metadata: pd.Series, CTD-cast specific data
-        :param data_series: pd.Series, CTD-cast specific data
-        :return: CTD-cast text file according to standard format
+        :param args: list of pd.Series to be appended as one
+        :return: complete pd.Serie
         """
         out_serie = pd.Series([])
-        out_serie = out_serie.append([self.template_format,
-                                      self.delimiters['meta'],
-                                      self.delimiters['data'],
-                                      metadata,
-                                      self.sensorinfo,
-                                      self.information,
-                                      instrument_metadata,
-                                      data_series])
+        out_serie = out_serie.append([serie for serie in args])
+        return out_serie
 
+    def _write(self, fid, data_series):
+        """
+        :param fid: Original file name
+        :return: CTD-cast text file according to standard format
+        """
         save_path = self._get_save_path(fid)
-
-        self.txt_writer.write_with_numpy(data=out_serie, save_path=save_path)
+        self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
 
     def setup_metadata_information(self, meta):
         """
@@ -143,13 +146,15 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return: pd.Series, Lists according to template standards
         """
         meta = self.extract_metadata_dataframe(filename)
+
         self.reset_index(meta)
         meta = meta.iloc[0]
-        serie = pd.Series(self.df_metadata.columns)
 
+        serie = pd.Series(self.df_metadata.columns)
         # FutureWarning if not join is set to 'left' instead of None
-        serie = serie.str.cat(meta, sep=separator, join='left')
+        serie = serie.str.cat(meta, sep=separator, join=None)
         serie = serie.radd(self.writer['prefix_metadata'] + separator)
+        # print(serie)
         return serie
 
     def extract_metadata_dataframe(self, filename):

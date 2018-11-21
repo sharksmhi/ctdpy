@@ -213,8 +213,8 @@ class StyleSheet(object):
         return num & 0x1
 
 
-class WithStyle(StyleSheet):
-    """
-
-    """
-    def __init__(self):
+# class WithStyle(StyleSheet):
+#     """
+#
+#     """
+#     def __init__(self):

@@ -48,12 +48,12 @@ class XlsxWriter(object):
                     encoding=encoding)
 
 
-writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
-
-# Write each dataframe to a different worksheet.
-df1.to_excel(writer, sheet_name='Sheet1')
-df2.to_excel(writer, sheet_name='Sheet2')
-df3.to_excel(writer, sheet_name='Sheet3')
+# writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
+#
+# # Write each dataframe to a different worksheet.
+# df1.to_excel(writer, sheet_name='Sheet1')
+# df2.to_excel(writer, sheet_name='Sheet2')
+# df3.to_excel(writer, sheet_name='Sheet3')
 
 
 

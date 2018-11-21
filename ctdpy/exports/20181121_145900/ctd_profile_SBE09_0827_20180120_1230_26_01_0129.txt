@@ -1,0 +1,619 @@
+//FORMAT=CTD
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;RANA;UNCERT;FREQ
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0-XXXm;0.01% Typical Accuracy;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;mS/m;;Seabird;SBE 4C;3941;2014-07-17;0.0 to 7.0 S/m;± 0.0003 S/m;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;mS/m;;Seabird;SBE 4C;3943;2014-07-17;0.0 to 7.0 S/m;± 0.0003 S/m;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C;;Seabird;SBE 3plus;5351;2014-07-16;-5.0 to +35 °C;± 0.001 °C;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C;;Seabird;SBE 3plus;5355;2014-07-16;-5.0 to +35 °C;± 0.001 °C;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;Seabird;SBE 43;0732;2016-11-12;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;Seabird;SBE 43;1243;2016-10-28;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 ·sec);;Biospherical;QSP-2000;70374;2014-09-25;1.4x10-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;WET Labs;ECO FLNTURTD;2288;2014-08-19*;0-50 µg/I;0.025 µg/I;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;WET Labs;ECO FLNTURTD;2288;2014-08-19*;0-25 NTU;0.013 NTU;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;WET Labs;ECO FL(RT)D eller FL(RT)?;2290;2011-06-24*;0-230 ppb;0.03 ppb;8?
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;Teledyne;PSA-916;53447;2014-09-10;1-100 m;2.5 cm;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2017-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;;;;;;
+//INFORMATION;Information om instrumenthantering, datahantering; processering, beskrivning, kvalitetskontroll etc, kommentarer på datakvalité m.m.
+//INFORMATION;(förslagsvis på engelska för att att nå ut till fler användare av data)
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing the data is plotted and visually quality controled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = D:\CTD_SBE911\DAT\26DA.2018.1.29.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.21d
+//INSTRUMENT_METADATA;* Temperature SN = 034757
+//INSTRUMENT_METADATA;* Conductivity SN = 041844
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 48
+//INSTRUMENT_METADATA;* Number of Voltage Words = 5
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* Append System Time to Every Scan
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 20 2018 12:30:45
+//INSTRUMENT_METADATA;* NMEA Latitude = 57 39.28 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 008 50.84 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 20 2018  12:30:47
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1g
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* surface PAR voltage added to scan
+//INSTRUMENT_METADATA;* A/D offset = 4
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Ship: DANA
+//INSTRUMENT_METADATA;** Average sound velocity: 1478.63 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Wed, 24 Jan 2018 11:38:50 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20182601-0129
+//INSTRUMENT_METADATA;** 31N Hanstholm
+//INSTRUMENT_METADATA;** Operator: RSor
+//INSTRUMENT_METADATA;** Cruise: 01/2018
+//INSTRUMENT_METADATA;* System UTC = Jan 20 2018 12:30:45
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 174                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = chloroflTC0: Chlorophyll, Turner Cyclops [ug/l]
+//INSTRUMENT_METADATA;# name 12 = cpar: CPAR/Corrected Irradiance [%]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Licor
+//INSTRUMENT_METADATA;# name 14 = spar: SPAR/Surface Irradiance
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 57.6547
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 57.6547
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =        -46,       6144       
+//INSTRUMENT_METADATA;# span 1 =      1.500,     88.000       
+//INSTRUMENT_METADATA;# span 2 =     6.8721,     6.9649       
+//INSTRUMENT_METADATA;# span 3 =     6.8714,     6.9644       
+//INSTRUMENT_METADATA;# span 4 =    -0.0030,     0.0090       
+//INSTRUMENT_METADATA;# span 5 =   3.475082,   3.495569       
+//INSTRUMENT_METADATA;# span 6 =   3.475321,   3.495827       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =     5.9069,     6.1794       
+//INSTRUMENT_METADATA;# span 9 =     6.2110,     6.2638       
+//INSTRUMENT_METADATA;# span 10 =       1.18,       9.97      
+//INSTRUMENT_METADATA;# span 11 =     0.0293,     0.0427      
+//INSTRUMENT_METADATA;# span 12 = 1.0257e-12, 9.1105e+00      
+//INSTRUMENT_METADATA;# span 13 = 9.8916e-13, 8.3971e+00      
+//INSTRUMENT_METADATA;# span 14 = 8.5295e+01, 9.7498e+01      
+//INSTRUMENT_METADATA;# span 15 =    34.5369,    34.6301      
+//INSTRUMENT_METADATA;# span 16 =    34.5400,    34.6335      
+//INSTRUMENT_METADATA;# span 17 =    -0.0040,     0.0056      
+//INSTRUMENT_METADATA;# span 18 =    27.0706,    27.1323      
+//INSTRUMENT_METADATA;# span 19 =    27.0736,    27.1350      
+//INSTRUMENT_METADATA;# span 20 =      1.486,     87.168      
+//INSTRUMENT_METADATA;# span 21 =      1.488,     87.266      
+//INSTRUMENT_METADATA;# span 22 =     -0.012,      0.812      
+//INSTRUMENT_METADATA;# span 23 =    1477.64,    1479.50      
+//INSTRUMENT_METADATA;# span 24 =    1477.64,    1479.50      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 20 2018 12:30:47 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="15" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034757</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>15-oct-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.36480332e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40708330e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.13153474e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.76030244e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>041844</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-mar-2015</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-4.07049452e+000</G>
+//INSTRUMENT_METADATA;#         <H>4.91457184e-001</H>
+//INSTRUMENT_METADATA;#         <I>-7.13894846e-004</I>
+//INSTRUMENT_METADATA;#         <J>5.95731493e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>99642</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24 mar 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-3.996472e+004</C1>
+//INSTRUMENT_METADATA;#       <C2>-3.075628e-001</C2>
+//INSTRUMENT_METADATA;#       <C3>1.368070e-002</C3>
+//INSTRUMENT_METADATA;#       <D1>3.340900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.021249e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-3.901627e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>4.421500e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.935030e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00005000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>1.20190</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.288420e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.036910e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034605</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>18-jul-2012</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.40794731e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.44967661e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.20659403e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.83741481e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>043188</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>26-sep-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.04719478e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.56695139e+000</H>
+//INSTRUMENT_METADATA;#         <I>5.23671563e-005</I>
+//INSTRUMENT_METADATA;#         <J>7.04749166e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430381</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>140117</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.3990e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5192</offset>
+//INSTRUMENT_METADATA;#         <A>-3.5409e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.2884e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.0351e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430682</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16 april 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.2370e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5263</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3823e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.0967e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.5348e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.0900</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Fluorometer, Turner Cyclops -->
+//INSTRUMENT_METADATA;#     <Fluorometer SensorID="68" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2101854</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000e+000</Offset>
+//INSTRUMENT_METADATA;#       <!-- 1 = C, Chlorophyll -->
+//INSTRUMENT_METADATA;#       <!-- 2 = R, Rhodamine -->
+//INSTRUMENT_METADATA;#       <!-- 3 = F, Fluorescein -->
+//INSTRUMENT_METADATA;#       <!-- 4 = P, Phycocyanin -->
+//INSTRUMENT_METADATA;#       <!-- 5 = E, Phycoerythrin -->
+//INSTRUMENT_METADATA;#       <!-- 6 = U, CDOM -->
+//INSTRUMENT_METADATA;#       <!-- 7 = O, CrudeOil -->
+//INSTRUMENT_METADATA;#       <!-- 8 = B, OpticalBrightness -->
+//INSTRUMENT_METADATA;#       <!-- 9 = T, Turbidity -->
+//INSTRUMENT_METADATA;#       <!-- 10 = G, Refined Fuels -->
+//INSTRUMENT_METADATA;#       <MeasuredParameter>1</MeasuredParameter>
+//INSTRUMENT_METADATA;#     </Fluorometer>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4755</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10072014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>5102040816.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.29326200</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber></SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>150.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="14" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, Unavailable -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="15" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, SPAR/Surface Irradiance -->
+//INSTRUMENT_METADATA;#     <SPAR_Sensor SensorID="51" >
+//INSTRUMENT_METADATA;#       <SerialNumber>20482</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>07012014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ConversionFactor>1663.25486182</ConversionFactor>
+//INSTRUMENT_METADATA;#       <RatioMultiplier>1.00000000</RatioMultiplier>
+//INSTRUMENT_METADATA;#     </SPAR_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Jan 24 2018 12:38:45, 7.26.6.28 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.hex C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Jan 24 2018 12:38:46, 7.26.6.28
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L chloroflTC0 cpar par spar
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Jan 24 2018 12:38:47, 7.26.6.28
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = c0S/m 0.073, c1S/m 0.073, sbeox1ML/L 3.000, sbeox0ML/L 3.000                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Jan 24 2018 12:38:47, 7.26.6.28
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Jan 24 2018 12:38:47, 7.26.6.28
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: do not remove                                                                                     
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Jan 24 2018 12:38:48, 7.26.6.28 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Jan 24 2018 12:38:48, 7.26.6.28
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Jan 24 2018 12:38:49, 7.26.6.28
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_0827_20180120_1230_26_01_0129.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [mS/m]	Q_CNDC_CTD	CNDC2_CTD [mS/m]	Q_CNDC2_CTD	SALT_CTD [psu]	Q_SALT_CTD	SALT2_CTD [psu]	Q_SALT2_CTD	TEMP_CTD [°C]	Q_TEMP_CTD	TEMP2_CTD [°C]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 ·sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	1.488		1.500		3.47600		3.47628		34.5377		34.5418		6.8841		6.8831		6.2421		6.0723		8.397e+00								9.97		-0.012		-46		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	1.983		2.000		3.47546		3.47571		34.5372		34.5416		6.8784		6.8767		6.2497		6.0160		7.599e+00								9.97		0.264		352		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	2.479		2.500		3.47522		3.47555		34.5370		34.5414		6.8757		6.8749		6.2486		5.9948		6.956e+00								9.97		0.397		467		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	2.975		3.000		3.47529		3.47560		34.5371		34.5412		6.8760		6.8754		6.2428		5.9069		5.866e+00								9.96		0.462		551		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	3.471		3.500		3.47527		3.47558		34.5369		34.5421		6.8759		6.8740		6.2414		6.0207		4.962e+00								9.96		0.538		589		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	3.967		4.000		3.47521		3.47546		34.5371		34.5413		6.8746		6.8733		6.2577		6.0529		4.446e+00								9.96		0.371		629		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	4.463		4.500		3.47508		3.47542		34.5370		34.5418		6.8731		6.8721		6.2546		6.0180		3.922e+00								9.96		0.786		730		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	4.958		5.000		3.47527		3.47545		34.5372		34.5405		6.8748		6.8735		6.2567		6.0289		3.323e+00								9.96		0.695		746		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	5.454		5.500		3.47538		3.47545		34.5373		34.5411		6.8756		6.8726		6.2483		6.0490		2.841e+00								9.96		0.376		825		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	5.950		6.000		3.47519		3.47532		34.5372		34.5407		6.8734		6.8714		6.2471		6.0544		2.481e+00								9.96		0.452		901		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	6.446		6.500		3.47513		3.47541		34.5373		34.5413		6.8725		6.8715		6.2579		6.0757		2.124e+00								9.96		0.317		933		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	6.942		7.000		3.47512		3.47544		34.5372		34.5406		6.8721		6.8722		6.2553		6.0869		1.869e+00								9.95		0.305		1021		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	7.438		7.500		3.47526		3.47568		34.5373		34.5400		6.8733		6.8753		6.2478		6.0981		1.530e+00								9.95		0.303		1053		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	7.934		8.000		3.47564		3.47607		34.5374		34.5407		6.8772		6.8786		6.2524		6.0789		1.305e+00								9.95		0.185		1113		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	8.429		8.500		3.47590		3.47619		34.5374		34.5409		6.8797		6.8795		6.2618		6.1109		1.145e+00								9.95		0.229		1176		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	8.925		9.000		3.47614		3.47648		34.5377		34.5414		6.8819		6.8819		6.2514		6.1048		9.638e-01								9.95		0.323		1256		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	9.421		9.500		3.47606		3.47630		34.5375		34.5423		6.8810		6.8788		6.2600		6.1154		8.117e-01								9.95		0.438		1286		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	9.917		10.000		3.47593		3.47604		34.5374		34.5413		6.8793		6.8767		6.2517		6.1204		6.489e-01								9.95		0.286		1316		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	10.413		10.500		3.47585		3.47614		34.5376		34.5412		6.8780		6.8776		6.2508		6.1096		5.750e-01								9.95		0.276		1406		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	10.909		11.000		3.47613		3.47648		34.5379		34.5411		6.8805		6.8811		6.2523		6.1115		4.467e-01								9.95		0.357		1440		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	11.404		11.500		3.47626		3.47654		34.5379		34.5412		6.8816		6.8815		6.2557		6.1135		3.440e-01								9.95		0.288		1477		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	11.900		12.000		3.47630		3.47666		34.5380		34.5416		6.8819		6.8822		6.2638		6.1083		3.080e-01								9.95		0.235		1525		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	12.396		12.500		3.47643		3.47671		34.5382		34.5416		6.8828		6.8824		6.2511		6.1169		2.477e-01								9.95		0.317		1572		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	12.892		13.000		3.47650		3.47675		34.5385		34.5417		6.8830		6.8825		6.2489		6.0729		1.805e-01								9.95		0.483		1602		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	13.388		13.500		3.47676		3.47706		34.5401		34.5425		6.8841		6.8850		6.2486		6.0650		1.311e-01								9.96		0.585		1624		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	13.884		14.000		3.47717		3.47746		34.5419		34.5443		6.8865		6.8873		6.2432		6.0815		8.464e-02								9.95		0.601		1644		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	14.380		14.500		3.47741		3.47774		34.5429		34.5458		6.8879		6.8886		6.2386		6.1036		4.085e-02								9.96		0.559		1664		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	14.875		15.000		3.47759		3.47789		34.5437		34.5473		6.8888		6.8885		6.2338		6.1137		6.854e-03								9.96		0.474		1687		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	15.371		15.500		3.47766		3.47803		34.5440		34.5479		6.8890		6.8891		6.2447		6.1233		1.192e-04								9.96		0.354		1717		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	15.867		16.000		3.47774		3.47812		34.5443		34.5484		6.8893		6.8894		6.2540		6.1082		9.892e-13								9.96		0.351		1754		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	16.363		16.500		3.47787		3.47817		34.5450		34.5487		6.8898		6.8894		6.2575		6.0785		1.000e-12								9.95		0.461		1784		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	16.859		17.000		3.47792		3.47821		34.5453		34.5489		6.8899		6.8894		6.2528		6.0938		1.000e-12								9.96		0.515		1808		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	17.355		17.500		3.47796		3.47822		34.5454		34.5492		6.8899		6.8889		6.2491		6.1205		1.000e-12								9.95		0.513		1831		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	17.850		18.000		3.47796		3.47819		34.5455		34.5492		6.8896		6.8884		6.2484		6.0865		1.000e-12								9.95		0.500		1855		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	18.346		18.500		3.47795		3.47822		34.5453		34.5491		6.8894		6.8886		6.2449		6.0879		1.000e-12								9.95		0.480		1879		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	18.842		19.000		3.47797		3.47824		34.5455		34.5500		6.8891		6.8876		6.2501		6.1270		1.000e-12								9.95		0.476		1905		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	19.338		19.500		3.47799		3.47829		34.5459		34.5506		6.8887		6.8874		6.2526		6.1549		1.000e-12								9.95		0.522		1929		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	19.834		20.000		3.47803		3.47831		34.5464		34.5507		6.8884		6.8873		6.2528		6.1542		1.000e-12								9.95		0.554		1951		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	20.330		20.500		3.47806		3.47838		34.5467		34.5510		6.8882		6.8875		6.2432		6.1363		1.000e-12								9.96		0.502		1973		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	20.825		21.000		3.47812		3.47842		34.5471		34.5511		6.8882		6.8875		6.2406		6.1345		1.000e-12								9.95		0.417		2000		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	21.321		21.500		3.47821		3.47850		34.5478		34.5515		6.8882		6.8878		6.2481		6.1299		1.000e-12								9.96		0.459		2029		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	21.817		22.000		3.47854		3.47880		34.5503		34.5535		6.8891		6.8889		6.2466		6.1299		1.000e-12								9.95		0.570		2052		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	22.313		22.500		3.47871		3.47901		34.5512		34.5545		6.8899		6.8899		6.2482		6.1473		1.000e-12								9.95		0.562		2072		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	22.809		23.000		3.47877		3.47919		34.5515		34.5554		6.8900		6.8907		6.2505		6.1433		1.000e-12								9.95		0.414		2096		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	23.305		23.500		3.47895		3.47956		34.5522		34.5572		6.8910		6.8928		6.2387		6.1223		1.000e-12								9.95		0.301		2134		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	23.801		24.000		3.47952		3.47982		34.5553		34.5587		6.8939		6.8939		6.2281		6.0758		1.000e-12								9.95		0.497		2168		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	24.296		24.500		3.47978		3.47996		34.5563		34.5584		6.8955		6.8954		6.2353		6.0883		1.000e-12								9.95		0.656		2188		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	24.792		25.000		3.47996		3.48025		34.5566		34.5599		6.8969		6.8968		6.2407		6.1135		1.000e-12								9.95		0.697		2205		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	25.288		25.500		3.48054		3.48046		34.5595		34.5604		6.9002		6.8985		6.2492		6.1338		1.000e-12								9.95		0.621		2223		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	25.784		26.000		3.48114		3.48165		34.5615		34.5639		6.9045		6.9077		6.2589		6.1558		1.000e-12								9.95		0.444		2246		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	26.280		26.500		3.48155		3.48269		34.5635		34.5683		6.9068		6.9145		6.2552		6.1318		1.000e-12								9.95		0.364		2279		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	26.776		27.000		3.48255		3.48306		34.5672		34.5702		6.9139		6.9164		6.2535		6.1156		1.000e-12								9.95		0.478		2309		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	27.271		27.500		3.48288		3.48327		34.5682		34.5707		6.9163		6.9181		6.2529		6.1326		1.000e-12								9.95		0.568		2331		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	27.767		28.000		3.48309		3.48340		34.5684		34.5710		6.9181		6.9189		6.2492		6.1405		1.000e-12								9.95		0.568		2351		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	28.263		28.500		3.48318		3.48344		34.5686		34.5714		6.9187		6.9186		6.2423		6.1511		1.000e-12								9.95		0.486		2374		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	28.759		29.000		3.48321		3.48339		34.5686		34.5715		6.9187		6.9178		6.2378		6.1605		1.000e-12								9.95		0.383		2402		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	29.255		29.500		3.48334		3.48353		34.5688		34.5702		6.9197		6.9204		6.2393		6.1255		1.000e-12								9.95		0.401		2435		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	29.751		30.000		3.48412		3.48455		34.5716		34.5722		6.9251		6.9294		6.2379		6.1336		1.000e-12								9.95		0.474		2462		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	30.246		30.500		3.48456		3.48513		34.5724		34.5743		6.9290		6.9334		6.2404		6.1547		1.000e-12								9.95		0.512		2486		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	30.742		31.000		3.48507		3.48615		34.5745		34.5773		6.9321		6.9413		6.2422		6.1653		1.000e-12								9.95		0.498		2509		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	31.238		31.500		3.48583		3.48579		34.5765		34.5777		6.9384		6.9367		6.2451		6.1495		1.000e-12								9.95		0.489		2534		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	31.734		32.000		3.48589		3.48608		34.5756		34.5786		6.9395		6.9387		6.2457		6.1227		1.000e-12								9.95		0.516		2558		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	32.230		32.500		3.48630		3.48617		34.5777		34.5774		6.9418		6.9407		6.2373		6.1254		1.000e-12								9.95		0.518		2581		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	32.726		33.000		3.48701		3.48714		34.5800		34.5797		6.9470		6.9488		6.2319		6.1438		1.000e-12								9.95		0.509		2604		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	33.221		33.500		3.48741		3.48769		34.5806		34.5826		6.9505		6.9517		6.2365		6.1325		1.000e-12								9.95		0.508		2628		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	33.717		34.000		3.48754		3.48771		34.5807		34.5831		6.9516		6.9511		6.2514		6.1348		1.000e-12								9.95		0.530		2651		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	34.213		34.500		3.48760		3.48778		34.5808		34.5832		6.9520		6.9515		6.2544		6.1510		1.000e-12								9.95		0.469		2674		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	34.709		35.000		3.48765		3.48783		34.5809		34.5838		6.9521		6.9512		6.2437		6.1605		1.000e-12								9.95		0.317		2707		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	35.205		35.500		3.48753		3.48780		34.5797		34.5836		6.9518		6.9509		6.2373		6.1370		1.000e-12								9.95		0.459		2744		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	35.701		36.000		3.48760		3.48780		34.5798		34.5831		6.9522		6.9512		6.2393		6.1466		1.000e-12								9.95		0.633		2765		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	36.196		36.500		3.48767		3.48786		34.5799		34.5826		6.9526		6.9520		6.2417		6.1532		1.000e-12								9.95		0.649		2782		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	36.692		37.000		3.48762		3.48780		34.5800		34.5829		6.9516		6.9507		6.2401		6.1509		1.000e-12								9.95		0.517		2802		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	37.188		37.500		3.48773		3.48788		34.5805		34.5832		6.9521		6.9512		6.2386		6.1303		1.000e-12								9.95		0.304		2836		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	37.684		38.000		3.48773		3.48791		34.5801		34.5830		6.9522		6.9514		6.2261		6.1032		1.000e-12								9.95		0.508		2874		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	38.180		38.500		3.48781		3.48798		34.5802		34.5829		6.9529		6.9520		6.2224		6.1091		1.000e-12								9.95		0.741		2892		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	38.676		39.000		3.48806		3.48815		34.5809		34.5829		6.9546		6.9536		6.2245		6.1282		1.000e-12								9.95		0.808		2906		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	39.171		39.500		3.48809		3.48825		34.5806		34.5831		6.9550		6.9542		6.2294		6.1388		1.000e-12								9.95		0.737		2921		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	39.667		40.000		3.48806		3.48832		34.5805		34.5837		6.9545		6.9541		6.2320		6.1411		1.000e-12								9.95		0.461		2941		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	40.163		40.500		3.48808		3.48826		34.5807		34.5835		6.9543		6.9535		6.2484		6.1332		1.000e-12								9.95		0.338		2994		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	40.659		41.000		3.48811		3.48830		34.5810		34.5838		6.9541		6.9534		6.2484		6.1233		1.000e-12								9.95		0.622		3023		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	41.155		41.500		3.48820		3.48839		34.5811		34.5840		6.9547		6.9539		6.2419		6.1379		1.000e-12								9.95		0.747		3039		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	41.651		42.000		3.48829		3.48832		34.5817		34.5835		6.9549		6.9534		6.2358		6.1537		1.000e-12								9.95		0.723		3054		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	42.146		42.500		3.48846		3.48845		34.5826		34.5840		6.9555		6.9541		6.2320		6.1493		1.000e-12								9.95		0.551		3073		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	42.642		43.000		3.48860		3.48859		34.5833		34.5850		6.9562		6.9544		6.2388		6.1455		1.000e-12								9.95		0.279		3108		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	43.138		43.500		3.48867		3.48895		34.5822		34.5858		6.9577		6.9572		6.2370		6.1699		1.000e-12								9.95		0.453		3150		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	43.634		44.000		3.48876		3.48897		34.5834		34.5864		6.9574		6.9566		6.2319		6.1573		1.000e-12								9.95		0.645		3170		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	44.130		44.500		3.48880		3.48898		34.5835		34.5864		6.9574		6.9566		6.2327		6.1536		1.000e-12								9.95		0.699		3187		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	44.626		45.000		3.48887		3.48908		34.5837		34.5867		6.9577		6.9571		6.2329		6.1579		1.000e-12								9.95		0.656		3204		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	45.121		45.500		3.48901		3.48920		34.5844		34.5873		6.9583		6.9576		6.2284		6.1571		1.000e-12								9.95		0.538		3224		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	45.617		46.000		3.48908		3.48924		34.5848		34.5875		6.9585		6.9575		6.2354		6.1464		1.000e-12								9.95		0.407		3251		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	46.113		46.500		3.48921		3.48929		34.5854		34.5876		6.9590		6.9578		6.2405		6.1508		1.000e-12								9.95		0.409		3282		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	46.609		47.000		3.48925		3.48944		34.5854		34.5885		6.9592		6.9582		6.2389		6.1561		1.000e-12								9.95		0.483		3309		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	47.105		47.500		3.48931		3.48949		34.5856		34.5885		6.9594		6.9584		6.2352		6.1664		1.000e-12								9.95		0.434		3334		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	47.601		48.000		3.48938		3.48957		34.5859		34.5889		6.9597		6.9588		6.2361		6.1794		1.000e-12								9.95		0.349		3367		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	48.096		48.500		3.48953		3.48965		34.5866		34.5892		6.9604		6.9591		6.2360		6.1637		1.000e-12								9.95		0.520		3398		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	48.592		49.000		3.48957		3.48979		34.5867		34.5898		6.9604		6.9597		6.2399		6.1562		1.000e-12								9.95		0.696		3417		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	49.088		49.500		3.48980		3.49001		34.5884		34.5916		6.9611		6.9602		6.2443		6.1567		1.000e-12								9.95		0.736		3432		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	49.584		50.000		3.49003		3.49010		34.5906		34.5921		6.9611		6.9603		6.2469		6.1574		1.000e-12								9.95		0.643		3449		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	50.080		50.500		3.49012		3.49023		34.5916		34.5933		6.9608		6.9603		6.2466		6.1603		1.000e-12								9.95		0.389		3474		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	50.576		51.000		3.49017		3.49035		34.5918		34.5944		6.9609		6.9603		6.2335		6.1775		1.000e-12								9.95		0.288		3517		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	51.071		51.500		3.49028		3.49046		34.5927		34.5954		6.9610		6.9603		6.2202		6.1783		1.000e-12								9.95		0.506		3548		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	51.567		52.000		3.49017		3.49046		34.5914		34.5955		6.9608		6.9600		6.2213		6.1622		1.000e-12								9.95		0.584		3569		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	52.063		52.500		3.48989		3.49023		34.5884		34.5930		6.9604		6.9596		6.2291		6.1365		1.000e-12								9.95		0.595		3589		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	52.559		53.000		3.49033		3.49024		34.5921		34.5925		6.9614		6.9600		6.2362		6.1440		1.000e-12								9.95		0.596		3609		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	53.055		53.500		3.49070		3.49069		34.5952		34.5963		6.9622		6.9609		6.2454		6.1650		1.000e-12								9.95		0.542		3630		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	53.551		54.000		3.49117		3.49084		34.6015		34.5975		6.9608		6.9611		6.2462		6.1759		1.000e-12								9.95		0.392		3656		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	54.046		54.500		3.49165		3.49141		34.6079		34.6048		6.9593		6.9598		6.2369		6.1699		1.000e-12								9.95		0.363		3692		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	54.542		55.000		3.49165		3.49173		34.6074		34.6087		6.9596		6.9592		6.2402		6.1493		1.000e-12								9.95		0.495		3719		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	55.038		55.500		3.49166		3.49181		34.6074		34.6096		6.9596		6.9590		6.2421		6.1439		1.000e-12								9.95		0.456		3743		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	55.534		56.000		3.49181		3.49196		34.6089		34.6111		6.9594		6.9589		6.2361		6.1590		1.000e-12								9.95		0.376		3774		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	56.030		56.500		3.49189		3.49206		34.6094		34.6120		6.9595		6.9588		6.2343		6.1539		1.000e-12								9.95		0.551		3803		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	56.526		57.000		3.49205		3.49218		34.6105		34.6129		6.9600		6.9590		6.2324		6.1288		1.000e-12								9.95		0.743		3821		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	57.021		57.500		3.49213		3.49225		34.6109		34.6133		6.9602		6.9591		6.2308		6.1269		1.000e-12								9.95		0.810		3835		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	57.517		58.000		3.49222		3.49238		34.6116		34.6143		6.9602		6.9593		6.2326		6.1405		1.000e-12								9.95		0.737		3850		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	58.013		58.500		3.49223		3.49247		34.6118		34.6150		6.9599		6.9593		6.2363		6.1521		1.000e-12								9.95		0.441		3870		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	58.509		59.000		3.49230		3.49252		34.6120		34.6153		6.9602		6.9594		6.2368		6.1561		1.000e-12								9.95		0.385		3932		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	59.005		59.500		3.49243		3.49261		34.6125		34.6157		6.9609		6.9597		6.2328		6.1368		1.000e-12								9.95		0.659		3954		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	59.500		60.000		3.49226		3.49260		34.6105		34.6152		6.9608		6.9599		6.2268		6.1374		1.000e-12								9.95		0.704		3970		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	59.996		60.500		3.49258		3.49275		34.6136		34.6163		6.9609		6.9601		6.2191		6.1509		1.000e-12								9.95		0.599		3988		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	60.492		61.000		3.49282		3.49282		34.6159		34.6169		6.9610		6.9601		6.2197		6.1611		1.000e-12								9.95		0.399		4014		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	60.988		61.500		3.49295		3.49301		34.6168		34.6184		6.9613		6.9604		6.2299		6.1672		1.000e-12								9.95		0.405		4048		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	61.484		62.000		3.49321		3.49323		34.6190		34.6204		6.9617		6.9606		6.2334		6.1770		1.000e-12								9.95		0.540		4072		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	61.980		62.500		3.49326		3.49345		34.6193		34.6223		6.9617		6.9609		6.2181		6.1664		1.000e-12								9.95		0.547		4093		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	62.475		63.000		3.49332		3.49355		34.6198		34.6230		6.9617		6.9610		6.2165		6.1567		1.000e-12								9.95		0.470		4117		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	62.971		63.500		3.49335		3.49360		34.6198		34.6233		6.9617		6.9610		6.2159		6.1569		1.000e-12								9.95		0.490		4144		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	63.467		64.000		3.49338		3.49363		34.6197		34.6233		6.9620		6.9611		6.2255		6.1443		1.000e-12								9.95		0.615		4165		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	63.963		64.500		3.49347		3.49367		34.6201		34.6233		6.9622		6.9613		6.2346		6.1379		1.000e-12								9.95		0.650		4183		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	64.459		65.000		3.49350		3.49376		34.6202		34.6239		6.9622		6.9614		6.2416		6.1383		1.000e-12								9.95		0.540		4203		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	64.954		65.500		3.49356		3.49379		34.6207		34.6239		6.9621		6.9615		6.2430		6.1415		1.000e-12								9.95		0.304		4235		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	65.450		66.000		3.49376		3.49387		34.6219		34.6243		6.9629		6.9617		6.2387		6.1510		1.000e-12								9.95		0.395		4276		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	65.946		66.500		3.49383		3.49401		34.6221		34.6253		6.9632		6.9621		6.2369		6.1555		1.000e-12								9.95		0.541		4300		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	66.442		67.000		3.49376		3.49405		34.6215		34.6254		6.9628		6.9621		6.2359		6.1484		1.000e-12								9.95		0.559		4321		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	66.938		67.500		3.49393		3.49413		34.6226		34.6258		6.9632		6.9623		6.2242		6.1383		1.000e-12								9.95		0.537		4343		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	67.434		68.000		3.49396		3.49421		34.6226		34.6263		6.9634		6.9624		6.2125		6.1474		1.000e-12								9.95		0.543		4366		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	67.929		68.500		3.49400		3.49424		34.6227		34.6263		6.9635		6.9625		6.2196		6.1565		1.000e-12								9.95		0.521		4388		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	68.425		69.000		3.49401		3.49429		34.6227		34.6264		6.9633		6.9627		6.2199		6.1448		1.000e-12								9.95		0.406		4413		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	68.921		69.500		3.49405		3.49431		34.6228		34.6262		6.9634		6.9628		6.2167		6.1349		1.000e-12								9.95		0.362		4449		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	69.417		70.000		3.49413		3.49435		34.6232		34.6265		6.9637		6.9628		6.2110		6.1370		1.000e-12								9.95		0.600		4476		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	69.913		70.500		3.49421		3.49444		34.6236		34.6271		6.9639		6.9629		6.2157		6.1253		1.000e-12								9.95		0.766		4492		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	70.408		71.000		3.49422		3.49449		34.6235		34.6273		6.9639		6.9631		6.2281		6.1294		1.000e-12								9.95		0.812		4507		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	70.904		71.500		3.49426		3.49450		34.6236		34.6271		6.9639		6.9631		6.2340		6.1511		1.000e-12								9.95		0.728		4522		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	71.400		72.000		3.49428		3.49454		34.6238		34.6273		6.9637		6.9630		6.2304		6.1714		1.000e-12								9.95		0.438		4542		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	71.896		72.500		3.49435		3.49458		34.6244		34.6276		6.9637		6.9630		6.2330		6.1328		1.000e-12								9.95		0.403		4608		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	72.392		73.000		3.49440		3.49462		34.6243		34.6278		6.9641		6.9630		6.2312		6.1169		1.000e-12								9.95		0.716		4628		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	72.888		73.500		3.49449		3.49468		34.6249		34.6278		6.9642		6.9633		6.2253		6.1311		1.000e-12								9.95		0.796		4643		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	73.383		74.000		3.49451		3.49474		34.6250		34.6283		6.9641		6.9633		6.2207		6.1519		1.000e-12								9.95		0.728		4658		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	73.879		74.500		3.49453		3.49477		34.6251		34.6283		6.9640		6.9634		6.2229		6.1660		1.000e-12								9.95		0.513		4677		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	74.375		75.000		3.49459		3.49482		34.6255		34.6285		6.9639		6.9634		6.2248		6.1736		1.000e-12								9.95		0.294		4713		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	74.871		75.500		3.49458		3.49483		34.6249		34.6284		6.9642		6.9634		6.2217		6.1500		1.000e-12								9.95		0.457		4749		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	75.367		76.000		3.49460		3.49487		34.6247		34.6285		6.9643		6.9635		6.2160		6.1253		1.000e-12								9.95		0.609		4770		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	75.862		76.500		3.49464		3.49491		34.6249		34.6286		6.9644		6.9636		6.2156		6.1178		1.000e-12								9.95		0.678		4789		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	76.358		77.000		3.49467		3.49494		34.6248		34.6286		6.9645		6.9637		6.2206		6.1362		1.000e-12								9.95		0.670		4806		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	76.854		77.500		3.49465		3.49494		34.6245		34.6283		6.9644		6.9637		6.2259		6.1517		1.000e-12								9.94		0.566		4825		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	77.350		78.000		3.49468		3.49497		34.6246		34.6283		6.9643		6.9638		6.2252		6.1280		1.000e-12								9.84		0.339		4853		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	77.846		78.500		3.49469		3.49498		34.6245		34.6282		6.9643		6.9637		6.2217		6.1381		1.000e-12								9.96		0.317		4899		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	78.342		79.000		3.49471		3.49499		34.6242		34.6280		6.9646		6.9638		6.2296		6.1377		1.000e-12								9.95		0.567		4926		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	78.837		79.500		3.49473		3.49500		34.6240		34.6278		6.9647		6.9639		6.2332		6.1336		1.000e-12								9.64		0.691		4944		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	79.333		80.000		3.49476		3.49496		34.6240		34.6270		6.9648		6.9640		6.2277		6.1345		1.000e-12								9.15		0.691		4961		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	79.829		80.500		3.49474		3.49501		34.6238		34.6274		6.9646		6.9640		6.2200		6.1424		1.000e-12								8.63		0.389		5001		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	80.325		81.000		3.49478		3.49508		34.6238		34.6279		6.9647		6.9639		6.2135		6.1274		1.000e-12								8.17		0.510		5067		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	80.821		81.500		3.49486		3.49511		34.6242		34.6278		6.9649		6.9641		6.2156		6.1263		1.000e-12								7.69		0.760		5083		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	81.316		82.000		3.49495		3.49515		34.6250		34.6280		6.9649		6.9641		6.2196		6.1373		1.000e-12								7.20		0.810		5097		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	81.812		82.500		3.49504		3.49527		34.6258		34.6291		6.9648		6.9641		6.2255		6.1510		1.000e-12								6.69		0.712		5112		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	82.308		83.000		3.49505		3.49530		34.6258		34.6292		6.9647		6.9641		6.2275		6.1645		1.000e-12								6.17		0.467		5133		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	82.804		83.500		3.49528		3.49531		34.6283		34.6290		6.9644		6.9641		6.2224		6.1510		1.000e-12								5.66		0.253		5175		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	83.300		84.000		3.49514		3.49558		34.6263		34.6319		6.9647		6.9639		6.2193		6.1392		1.000e-12								5.19		0.446		5214		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	83.796		84.500		3.49509		3.49541		34.6253		34.6296		6.9649		6.9641		6.2256		6.1318		1.000e-12								4.70		0.577		5236		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	84.291		85.000		3.49529		3.49554		34.6272		34.6307		6.9649		6.9641		6.2222		6.1122		1.000e-12								4.21		0.612		5256		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	84.787		85.500		3.49551		3.49558		34.6295		34.6310		6.9648		6.9641		6.2213		6.1174		1.000e-12								3.70		0.553		5276		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	85.283		86.000		3.49557		3.49583		34.6301		34.6335		6.9646		6.9640		6.2241		6.1477		1.000e-12								3.21		0.325		5310		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	85.779		86.500		3.49544		3.49571		34.6283		34.6319		6.9647		6.9641		6.2248		6.1495		1.000e-12								2.70		0.268		5464		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	86.275		87.000		3.49552		3.49577		34.6289		34.6322		6.9647		6.9642		6.2205		6.1514		1.000e-12								2.20		0.262		5617		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	86.770		87.500		3.49549		3.49576		34.6282		34.6318		6.9649		6.9643		6.2245		6.1587		1.000e-12								1.71		0.340		5748		1	
+2018	01	20	12	30	22	2018_26DA_2	31N HANSTHOLM	57.65467	8.84733	87.266		88.000		3.49553		3.49575		34.6284		34.6313		6.9649		6.9644		6.2345		6.1561		1.000e-12								1.18		0.097		6144		1	

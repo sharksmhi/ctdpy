@@ -64,7 +64,6 @@ class Session(object):
         #TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
-            print(dataset)
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
@@ -231,9 +230,9 @@ if __name__ == '__main__':
     print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
-    start_time = time.time()
-    s.save_data(datasets, writer='metadata_template')
-    print("Metadata file created--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # s.save_data(datasets, writer='metadata_template')
+    # print("Metadata file created--%.3f sec" % (time.time() - start_time))
 
     # pprint(s.settings.templates)
     # pprint(s.settings.writers['ctd_standard_template']['writer'])
