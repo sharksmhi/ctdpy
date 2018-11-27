@@ -17,7 +17,7 @@ from core.archive_handler import Archive
 from core.utils import get_file_list_based_on_suffix
 from core import utils
 import time
-
+import json
 
 class Session(object):
     """
@@ -43,7 +43,6 @@ class Session(object):
 
     def read(self, add_merged_data=False, add_low_resolution_data=False):
         """
-
         :param add_merged_data: False or True
         :param add_low_resolution_data: Include extra pd.DataFrame for low resolution data
         :return: list, datasets
@@ -191,6 +190,17 @@ class Session(object):
         """
         archive = Archive(self.settings)
         archive.write_archive_package(data_path)
+        recieved_data = self._get_loaded_filenames()
+        archive.import_received_data(recieved_data)
+
+    def _get_loaded_filenames(self):
+        """
+        :return: List of filenames that have been loaded in Session
+        """
+        recieved_data = []
+        for dset in self.readers:
+            recieved_data.extend(self.readers[dset]['file_names'])
+        return recieved_data
 
     def update_settings_attributes(self, **dictionary):
         """
@@ -199,6 +209,7 @@ class Session(object):
         :return: self.settings with specified reader kwargs at a higher level within the settings dictionary tree
         """
         self.settings.set_attributes(self.settings, **dictionary)
+
 
 if __name__ == '__main__':
     base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data'
@@ -230,9 +241,19 @@ if __name__ == '__main__':
     print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
+    # res_head = 'hires_data'
+    res_head = 'lores_data_all'
+    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['metadata'].keys())
+    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv'][res_head].keys())
+    pprint(datasets[0].keys())
+    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['metadata']['FILENAME'])
+    #-------------------------------------------------------------------------------------------------------------------
     # start_time = time.time()
     # s.save_data(datasets, writer='metadata_template')
     # print("Metadata file created--%.3f sec" % (time.time() - start_time))
+
+
+
 
     # pprint(s.settings.templates)
     # pprint(s.settings.writers['ctd_standard_template']['writer'])
@@ -248,9 +269,9 @@ if __name__ == '__main__':
     #     print(dset.keys())
     #FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
     # template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
+    # pprint(template_data)
     # s.save_data(template_data)
 
-    # s.save_data(datasets, writer='ctd_standard_template')
 
 
 

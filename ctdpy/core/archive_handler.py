@@ -39,6 +39,12 @@ class Archive(object):
         """
         return ''.join([self.archive_path, '/processed_data/'])
 
+    def _get_received_data_path_in_archive(self):
+        """
+        :return:
+        """
+        return ''.join([self.archive_path, '/received_data/'])
+
     def _copy_standard_archive_structure(self):
         """
         :return:
@@ -68,6 +74,15 @@ class Archive(object):
         :return: archive_structure_path
         """
         return self.settings.settings_paths.get('archive_structure_path')
+
+    def import_received_data(self, file_paths):
+        """
+        :param file_paths:
+        :return:
+        """
+        target_path = self._get_received_data_path_in_archive()
+        for fid in file_paths:
+            utils.copyfile(fid, target_path)
 
     def _load_zipwriter_instance(self):
         """

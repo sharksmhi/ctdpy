@@ -5,6 +5,7 @@ Created on Thu Jul 19 13:38:35 2018
 @author: a002028
 """
 
+import pandas as pd
 # from core.writers.with_style import with_style
 
 
@@ -13,6 +14,16 @@ class XlsxWriter(object):
     def __init__(self, with_style=False, in_template=None):
         self.with_style = with_style
         self.in_template = in_template
+        self._load_xlsx_writer()
+
+    def _load_xlsx_writer(self, save_path, engine='openpyxl'):
+        """
+        Create a Pandas Excel writer using engine.
+        :param save_path: str, path to file
+        :param engine: Engine for the writer
+        :return: Pandas Excel writer using engine.
+        """
+        self.xlsx_writer = pd.ExcelWriter(save_path, engine=engine)
 
     def write(self, df, save_path, sheet_name='Data', na_rep='', index=False,  encoding='cp1252'):
         """
@@ -46,6 +57,13 @@ class XlsxWriter(object):
                     sheet_name=sheet_name,
                     index=index,
                     encoding=encoding)
+
+    def close_writer(self):
+        """
+        Close the Pandas Excel writer and save the Excel file.
+        :return:
+        """
+        self.xlsx_writer.save()
 
 
 # writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')

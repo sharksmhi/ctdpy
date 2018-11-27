@@ -21,6 +21,15 @@ def check_path(path):
         os.makedirs(path)
 
 
+def copyfile(src, dst):
+    """
+    :param src: Source path
+    :param dst: Destination path
+    :return: File copied
+    """
+    shutil.copy2(src, dst)
+
+
 def copytree(src, dst, symlinks=False, ignore=None):
     """
     Source: https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth

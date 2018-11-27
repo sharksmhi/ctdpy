@@ -8,6 +8,7 @@ import pandas as pd
 from core.data_handlers import DataFrameHandler
 from core.data_handlers import SeriesHandler
 from core.writers.txt_writer import TxtWriter
+
 import utils
 
 
@@ -50,8 +51,46 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                                                        self.information,
                                                        instrument_metadata,
                                                        data_series)
-
                 self._write(fid, data_series)
+
+        self._write_delivery_note()
+        self._write_sensorinfo()
+        self._write_information()
+
+    def _write_delivery_note(self):
+        """
+        :return: Text file with "delivery_note"
+        """
+        serie = pd.Series(self.writer['standard_delivery_note_header'])
+        info = pd.Series([self.delivery_note[self.writer['mapper_delivery_note'][key]]
+                          for key in serie])
+
+        serie = serie.str.cat(info, join=None,
+                              sep=self.writer['separator_delivery_note'])
+        self._write('delivery_note', serie)
+
+    def _write_sensorinfo(self):
+        """
+        :return: Text file with "sensorinfo"
+        """
+        save_path = self._get_save_path('sensorinfo')
+        self.txt_writer.write_with_pandas(data=self.df_sensorinfo,
+                                          header=True, save_path=save_path)
+
+    def _write_information(self):
+        """
+        :return: Text file with "information"
+        """
+        exclude_str = self.writer['prefix_info'] + self.writer['separator_metadata']
+        self._write('information', self.information.str.replace(exclude_str, ''))
+
+    def _write(self, fid, data_series):
+        """
+        :param fid: Original file name
+        :return: CTD-cast text file according to standard format
+        """
+        save_path = self._get_save_path(fid)
+        self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
 
     def _append_information(self, *args):
         """
@@ -62,14 +101,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         out_serie = out_serie.append([serie for serie in args])
         return out_serie
 
-    def _write(self, fid, data_series):
-        """
-        :param fid: Original file name
-        :return: CTD-cast text file according to standard format
-        """
-        save_path = self._get_save_path(fid)
-        self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
-
     def setup_metadata_information(self, meta):
         """
         Olala, here we go..
@@ -78,21 +109,22 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                      in excel spreadsheets [Metadata, Sensorinfo, Information]
         """
         # TODO sould be able to handle multiple metadatasets? (.xlsx delivery files)
-        self.template_format = self._get_template_format(meta[0])
         self.delimiters = self._get_delimiters()
         self.df_metadata = self._get_reduced_dataframe(meta[0]['Metadata'])
         self.delivery_note = self._get_delivery_note(meta[0]['Förklaring'])
+        self.template_format = self._get_template_format()
         self.df_sensorinfo = self._get_reduced_dataframe(meta[0]['Sensorinfo'])
         self.sensorinfo = self._get_sensorinfo_serie(separator=self.writer['separator_metadata'])
         self.information = self._get_information_serie(meta[0]['Information'],
                                                        separator=self.writer['separator_metadata'])
 
-    def _get_template_format(self, meta):
+    def _get_template_format(self):
         """
         # TODO adjust reader, get format from tamplate ('Förklaring').. ö..
         :return: Standard format of template output
         """
-        return pd.Series([self.writer['prefix_format']+'=CTD'])
+        return pd.Series([''.join([self.writer['prefix_format'], '=', self.delivery_note['DTYPE']])])
+        # return pd.Series([self.writer['prefix_format']+'=CTD'])
 
     def _get_delimiters(self):
         """
@@ -100,13 +132,11 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         # FIXME self.writer['separator_data']])}
         :return: dictionary
         """
-
         return {'meta': pd.Series([''.join([self.writer['prefix_metadata_delimiter'], '=', self.writer['separator_metadata']])]),
                 'data': pd.Series([''.join([self.writer['prefix_data_delimiter'], '=', '\ t'.replace(' ', '')])])}
 
     def _get_delivery_note(self, delivery_info):
         """
-
         :param delivery_info: pd.DataFrame ("Förklarings-flik")
         :return:
         """
@@ -151,7 +181,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         meta = meta.iloc[0]
 
         serie = pd.Series(self.df_metadata.columns)
-        # FutureWarning if not join is set to 'left' instead of None
+        # FutureWarning if not join is set to 'left' instead of None but then this func doesnt work.. mhmmm...
         serie = serie.str.cat(meta, sep=separator, join=None)
         serie = serie.radd(self.writer['prefix_metadata'] + separator)
         # print(serie)
@@ -199,6 +229,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param separator: str, separator to separate row values
         :return: Lists according to template standards
         """
+        # TODO is it ok that the information sheet is assumed to be a single column?
         out_info = [pd.Series(info.columns).str.cat(sep=separator)]
         for index, row in info.iterrows():
             out_info.append(row.str.cat(sep=separator))
@@ -335,8 +366,13 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             self._set_data_path()
             utils.check_path(self.data_path)
 
+        if 'delivery_note' in fid or 'information' in fid or 'sensorinfo' in fid:
+            file_prefix = ''
+        else:
+            file_prefix = self.writer.get('filename')
+
         file_path = ''.join([self.data_path,
-                             self.writer.get('filename'),
+                             file_prefix,
                              fid.split('.')[0],
                              self.writer.get('extension_filename')])
         return file_path
