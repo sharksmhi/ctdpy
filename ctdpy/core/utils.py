@@ -10,6 +10,7 @@ from fnmatch import fnmatch
 from datetime import datetime
 import shutil
 from trollsift.parser import globify, parse
+import inspect
 
 
 def check_path(path):
@@ -213,6 +214,18 @@ def get_index_where_df_equals_x(df, x):
     :return: Boolean
     """
     return np.where(df == x)
+
+
+def get_kwargs(func, info):
+    """
+    Creates a key word dictionary to use as input to "func"
+    :param func: Function
+    :param info: Dictionary with info to include in kwargs
+    :return: kwargs
+    """
+    funcargs = inspect.getfullargspec(func)
+    kwargs = {key: info.get(key) for key in funcargs.args}
+    return kwargs
 
 
 def get_method_dictionary(obj):

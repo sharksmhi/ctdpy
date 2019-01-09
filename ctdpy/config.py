@@ -41,7 +41,8 @@ class Settings(object):
         etc_path = '/'.join([self.dir_path, 'core', 'etc', ''])
         self._load_settings(etc_path)
         self._check_local_paths()
-        self._setup_parameter_mapping()
+        self._setup_mapping_parameter()
+        self._setup_mapping_ship()
 
     def __setattr__(self, name, value):
         """
@@ -123,15 +124,31 @@ class Settings(object):
         setattr(self, attr, value)
 
     # @classmethod
-    def _setup_parameter_mapping(self):
+    def _setup_mapping_parameter(self):
         """
-        #FIXME god damn it! where does self.parameter_mapping come from???..
+        #FIXME god damn it! where does self.mapping_parameter come from???..
         Creates parameter mapping object within self
         :return:
         """
         self.pmap = core.mapping.ParameterMapping()
-        self.pmap.add_entries(**self.parameter_mapping)
+        self.pmap.add_entries(**self.mapping_parameter)
 
+    def _setup_mapping_ship(self):
+        """
+        cntry_head = u'land'
+        ship_head = u'SMHI-kod'
+        name_head = u'namn'
+        to_key = u'kodlista'
+        Creates ship mapping object within self
+        :return:
+        """
+
+        self.smap = core.mapping.ShipMapping()
+        # self.smap.load_mapping_settings()
+        self.smap.add_entries_from_keylist(self.mapping_ship,
+                                           from_combo_keys=[u'land', u'SMHI-kod'],
+                                           from_synonyms=[u'namn'],
+                                           to_key=u'kodlista')
     @staticmethod
     def set_attributes(obj, **kwargs):
         """

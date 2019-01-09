@@ -39,7 +39,7 @@ class CNVreader(BaseFileHandler):
             filenames.extend(matching)
         return filenames
 
-    def get_file_list_match(self, file_directory): 
+    def get_file_list_match(self, file_directory):
         """
 
         :param file_directory: str, path to directory

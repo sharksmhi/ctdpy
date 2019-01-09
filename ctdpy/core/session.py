@@ -50,7 +50,6 @@ class Session(object):
         datasets = self._read_datasets(add_merged_data, add_low_resolution_data)
         return datasets
 
-
     def _read_datasets(self, add_merged_data, add_low_resolution_data):
         """
         Different "datasets" for one type of data (e.g. seabird_smhi).
@@ -212,46 +211,60 @@ class Session(object):
 
 
 if __name__ == '__main__':
-    base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data'
+    # base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data'
+    base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
+    # base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_örjan'
     files = os.listdir(base_dir)
     start_time = time.time()
     s = Session(filenames=files,
                 base_dir=base_dir,
                 reader='seabird_smhi')
 
-    #-------------------------------------------------------------------------------------------------------------------
     print("Session--%.3f sec" % (time.time() - start_time))
+    #-------------------------------------------------------------------------------------------------------------------
+    ###################        TEST PRINTS        ###################
+    # print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
+    # print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
+    # print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
     # pprint(s.settings.templates['ctd_metadata'])
     # pprint(s.settings.settings_paths)
 
     #-------------------------------------------------------------------------------------------------------------------
+    ###################        READ DELIVERY DATA, CNV, XLSX        ###################
     start_time = time.time()
     # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
     datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
     print("Datasets loaded--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
+    ###################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
     start_time = time.time()
     data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
     print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
+    ###################        CREATE ARCHIVE        ###################
     start_time = time.time()
     s.create_archive(data_path=data_path)
     print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #-------------------------------------------------------------------------------------------------------------------
+    ###################        TEST PRINTS        ###################
     # res_head = 'hires_data'
-    res_head = 'lores_data_all'
-    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['metadata'].keys())
-    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv'][res_head].keys())
-    pprint(datasets[0].keys())
-    print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['metadata']['FILENAME'])
+    # res_head = 'lores_data_all'
+    # print(datasets[0].keys())
+    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'].keys())
+    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata'].keys())
+    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'][res_head].keys())
+    # pprint(datasets[0].keys())
+    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['FILENAME'])
     #-------------------------------------------------------------------------------------------------------------------
-    # start_time = time.time()
-    # s.save_data(datasets, writer='metadata_template')
-    # print("Metadata file created--%.3f sec" % (time.time() - start_time))
+    ###################        WRITE METADATA TO TEMPLATE        ###################
+    start_time = time.time()
+    s.save_data(datasets[0], writer='metadata_template')
+    print("Metadata file created--%.3f sec" % (time.time() - start_time))
 
+    #-------------------------------------------------------------------------------------------------------------------
 
 
 

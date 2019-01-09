@@ -16,14 +16,14 @@ class PhyCheTemplateHandler(DataFrameHandler):
     def __init__(self, settings):
         super().__init__(settings)
         # self.settings = settings
-        self.load_template()
+        self.template = self.load_template()
 
     def append_to_template(self, data):
         """
         :param data: pd.DataFrame
         :return: appends data to template
         """
-        data = self.template._check_data(data)
+        data = self.template.check_data(data)
         self.template = self.template.append(data, ignore_index=True, sort=False)
 
     def convert_formats(self):
@@ -44,7 +44,7 @@ class PhyCheTemplateHandler(DataFrameHandler):
                                 sheet_name=self.settings.templates['phyche']['template'].get('data_sheetname'),
                                 header_row=self.settings.templates['phyche']['template'].get('header_row'))
 
-        self.template = Template(empty_template)
+        return Template(empty_template)
 
     def get_template_columns(self):
         """

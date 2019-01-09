@@ -5,113 +5,390 @@ Created on Sun Oct 21 13:19:50 2018
 @author: a002028
 """
 
-"""
-https://groups.google.com/a/continuum.io/forum/#!topic/bokeh/Ts2P24YR0VU
-
-Until 0.11 this was actually the default mode of operation, but folks asked for CDN loading to be the default, so that change was made. But you can still use INLINE resources explicitly you can create self-contained standalone documents. This is available in bokeh.resources: 
-
-        from bokeh.resources import INLINE 
-
-And can be passed to many of the output functions, e.g., file_html: 
-
-        with open(filename, "w") as f: 
-                f.write(file_html(doc, INLINE, "Demonstration of inline resources")) 
-
-This creates a standalone HTML document with all data, JS and CSS embedded inside the one file. 
-
-It is also possible to spell this intention another way, by simply passing mode="inline" to output_file (if you are using output_file): 
-
-        output_file(file_path, mode='inline') 
-
-Finally, you could also serve the Bokeh JS and CSS resources yourself on your own server on your internal network, and create documents that load the resources from there. This is a little bit more involved (and I'd have to refresh my memory in some cases) so unless you are interested specifically in this scenario I won't expand further here. 
-
-"""
+import time
 import numpy as np
 import pandas as pd
-from pprint import pprint
-from bokeh.models import ColumnDataSource, LabelSet
+import zipfile
+# from pprint import pprint
+from bokeh.models import ColumnDataSource, CustomJS, WidgetBox, LinearAxis, Spacer  # , LabelSet, Slider
+from bokeh.layouts import row, column, layout  # , layout, widgetbox
+from bokeh.models.widgets import Select, RangeSlider, DataTable, TableColumn  # , Panel, Tabs
 from bokeh.plotting import figure, show, output_file
-from bokeh.sampledata.periodic_table import elements
-from bokeh.plotting import figure, show, output_file
-from bokeh.resources import INLINE
+from bokeh.embed import components, file_html
+from bokeh.resources import CDN
 
-class ProfilePlot(object):
+# from bokeh.sampledata.periodic_table import elements
+# from bokeh.resources import INLINE
+
+
+class ReadZipFile(object):
     """
     """
-    def __init__(self, settings):
-        super(ProfilePlot, self).__init__()
-        self.settings = settings
+    def __init__(self, zipfile_path, filename):
+        self.archive = zipfile.ZipFile(zipfile_path, 'r')
+        try:
+            file_path = self.get_filepath(self.archive.namelist(), filename)
+            row_list = self.open_file(file_path)
+            self.set_dataframe(row_list)
+        except IOError:
+            raise IOError("{} not found in {}".format(filename, zipfile_path))
 
-    def plot(self, df, x=None, y=None, z=None, name=''):
-        """ """
-        TITLE = "Test Profile Plot"
-        TOOLS = "hover,pan,wheel_zoom,box_zoom,reset,save"
+    def set_dataframe(self, row_list, sep='\t'):
+        """
+        Creates pd.Series with row_list as input
+        :param row_list: list of rows
+        :param sep: str, splits each row
+        :return: pd.DataFrame
+        """
+        serie = pd.Series(data=row_list)
+        columns = serie.iloc[0].split(sep)
+        bool_array = serie.index > 0
+        self._df = pd.DataFrame(serie.iloc[bool_array].str.split(sep).tolist(),
+                                columns=columns).replace('', np.nan)
 
-        p = figure(tools=TOOLS, toolbar_location="above", logo="grey", plot_width=1200, title=TITLE)
-        p.background_fill_color = "#dddddd"
-        p.xaxis.axis_label = x
-        p.yaxis.axis_label = y
-        p.grid.grid_line_color = "white"
+    def get_dataframe(self):
+        """
+        :return: pd.DataFrame
+        """
+        return self._df
 
-        source = ColumnDataSource(df)
+    def get_data(self, parameters, astype=np.float, as_dictionary=False):
+        """
+        :param parameters: list, all parameters to include in return
+        :param astype: set data as this type eg. float, int, str
+        :param as_dictionary: True or False, return as dictionary
+        :return: dict or pd.DataFrame
+        """
+        if as_dictionary:
+            return self._df.loc[:, parameters].astype(astype).to_dict()
+        else:
+            return self._df.loc[:, parameters].astype(astype)
 
-        p.circle(x, y, size=12, source=source,
-                 line_color="black", fill_alpha=0.8)
-        # p.line(x, y, source=source, color='#A6CEE3')
+    def open_file(self, file_path, comment='//'):
+        """
+        :param file_path: str, path to file
+        :param comment: str, exclude rows that starts with this comment
+        :return: list, selected rows
+        """
+        file = self.archive.open(file_path)
+        row_list = [l.decode('cp1252') for l in file if not l.decode('cp1252').startswith(comment)]
 
-        labels = LabelSet(x=x, y=y,
-                          text=z,
-                          y_offset=8,
-                          text_font_size="8pt", text_color="#555555",
-                          source=source, text_align='center')
-        p.add_layout(labels)
+        return row_list
 
+    @staticmethod
+    def get_filepath(path_list, pattern):
+        """
+        :param path_list:
+        :param pattern:
+        :return:
+        """
+        for path in path_list:
+            if pattern in path:
+                return path
+
+class BaseAxes(object):
+    """
+    """
+    def __init__(self):
+        self._xaxis = None
+        self._yaxis = None
+
+    def _convert_yaxis_values(self, y):
+        """
+        Requires derived classes to override this method
+        """
+        raise NotImplementedError
+
+    @property
+    def xaxis(self):
+        """
+        :return: xaxis
+        """
+        return self._xaxis
+
+    @xaxis.setter
+    def xaxis(self, xlabel):
+        """
+        Setter of xaxis
+        :param xlabel: str
+        """
+        self._xaxis = LinearAxis(axis_label=xlabel)
+
+    @property
+    def yaxis(self):
+        """
+        :return: yaxis
+        """
+        return self._yaxis
+
+    @yaxis.setter
+    def yaxis(self, ylabel):
+        """
+        Setter of yaxis.
+        If ylabel equals depth or pressure (as defined below): execute self._convert_yaxis_values(ylabel)
+        :param ylabel: str
+        """
+        self._yaxis = LinearAxis(axis_label=ylabel)
+
+        if 'PRES' in ylabel or 'DEP' in ylabel:
+            self._convert_yaxis_values(ylabel)
+
+
+class ProfilePlot(BaseAxes):
+    """
+    Utilizes interactive plotting tools of Bokeh
+    https://bokeh.pydata.org/en/latest/
+    """
+    def __init__(self, dataframe, tabs=None):
+        self.df = dataframe
+        self.tabs = tabs
+
+        self.TOOLS = "reset,hover,pan,wheel_zoom,box_zoom,lasso_select,save"
+
+        self.TOOLTIPS = [("index", "$index"),
+                         ("x-value", "$x"),
+                         ("y-value", "$y")]
+
+    def _set_output_file(self, name):
+        """
+        Sets plot title and creates html output file
+        :param name: str, name of profile
+        :return: HTML, output file
+        """
+        self.TITLE = "Profile Plot - " + name
         if name == '':
-            name = "profile_plot.html"
+            name = "profile_plot_yay.html"
         elif not name.endswith('.html'):
             name = name+'.html'
-        output_file(name, mode='inline', title=name)
-        show(p)
+
+        # online, faster
+        output_file(name)
+
+        # offline, slower
+        # output_file(name, mode='inline')
+
+    def _convert_yaxis_values(self, ylabel):
+        """
+        Is activated when y-axis label equals pressure or depth.
+        Why? Because we want value 0 (m or dbar) to start on top of the
+             plot with an increase downwards instead of upwards.
+
+        Turning all y-axis values negative and than override axis labels,
+        hence values are negative while labels are positive
+
+        :param ylabel: str, y label and dataframe key
+        """
+        self._turn_values_negative(ylabel)
+        y_labels = {v: str(abs(v)) for v in range(0, int(min(self.df[ylabel])) * 2, -1)}
+        self.yaxis.major_label_overrides = y_labels
+    
+    def _turn_values_negative(self, ylabel):
+        """
+        Is activated when y-axis label equals pressure or depth.
+        Turning all y-axis values negative
+        :param ylabel: str, y label and dataframe key
+        """
+        if 'PRES' in ylabel or 'DEP' in ylabel:
+            if not any(self.df[ylabel] < 0):
+                self.df[ylabel] = -self.df[ylabel]
+        
+    def circle_plot(self, x=None, y=None, source=None):
+        """
+        https://bokeh.pydata.org/en/latest/docs/reference/plotting.html#bokeh.plotting.figure.Figure.circle
+
+        Plot profile using bokeh circle plot
+
+        :param x: str, dataframe key
+        :param y: str, dataframe key
+        :param source: bokeh.models.sources.ColumnDataSource
+        :return: bokeh.plotting.figure.Figure
+        """
+        plot = figure(# plot_width=800,
+                      # x_axis_location="above",
+                      # y_axis_location="right",
+                      tools=self.TOOLS,
+                      tooltips=self.TOOLTIPS,
+                      title=self.TITLE)
+
+        plot.background_fill_color = "#dddddd"
+        plot.grid.grid_line_color = "white"
+
+        plot.outline_line_width = 1
+        plot.outline_line_color = "black"
+        plot.axis.visible = False
+
+        plot.circle('x', 'y',
+                    source=source,
+                    size=12,
+                    line_color="lightblue",
+                    alpha=0.6)
+
+        # For setting definitions see @xaxis.setter class BaseAxis
+        self.xaxis = x
+
+        # For setting definitions see @yaxis.setter class BaseAxis
+        self.yaxis = y
+
+        plot.add_layout(self.xaxis, 'below')
+        plot.add_layout(self.yaxis, 'left')
+
+        return plot
+
+#        p.line(x, y, source=source, color='#A6CEE3')
+
+#        labels = LabelSet(x=x, y=y,
+#                          text=z,
+#                          y_offset=8,
+#                          text_font_size="8pt", text_color="#555555",
+#                          source=source, text_align='center')
+#        p.add_layout(labels)
+
+    def line_plot(self, x=None, y=None, source=None):
+        """
+        https://bokeh.pydata.org/en/latest/docs/reference/plotting.html#bokeh.plotting.figure.Figure.line
+
+        Plot profile using bokeh line plot
+
+        :param x: str, dataframe key
+        :param y: str, dataframe key
+        :param source: bokeh.models.sources.ColumnDataSource
+        :return: bokeh.plotting.figure.Figure
+        """
+        plot = figure(logo="grey",
+                      plot_width=800,
+                      x_axis_location="above",
+                      tools=self.TOOLS,
+                      title=self.TITLE)
+        plot.background_fill_color = "#dddddd"
+        plot.xaxis.axis_label = x
+        plot.yaxis.axis_label = y
+        plot.grid.grid_line_color = "white"
+        
+        plot.line('x', 'y', source=source, color='black')
+               
+        plot.yaxis.major_label_overrides = self.y_labels
+        
+        return plot
+
+    def plot(self, x=None, y=None, z=None, name='', parameters=None):
+        """
+        :param x: str, dataframe key
+        :param y: str, dataframe key
+        :param z: str, dataframe key
+        :param parameters: list, parameters for plotting
+        :param name: str, name of plot
+        :return: Interactive HTML plot
+        """
+        self._set_output_file(name)
+
+        self._turn_values_negative(y)
+
+        self.df['x'] = self.df[x]
+        self.df['y'] = self.df[y]
+
+        source = ColumnDataSource(self.df)
+
+        circle_plot = self.circle_plot(x=x, y=y, source=source)
+        # line_plot = self.line_plot(x=x, y=y, source=source)
+
+        callback_slider = CustomJS(args={'plot': circle_plot}, code="""
+            var a = cb_obj.value;
+            plot.x_range.start = a[0];
+            plot.x_range.end = a[1];
+        """)
+        
+        callback = CustomJS(args={'source': source,
+                                  'xaxis': self.xaxis,
+                                  'yaxis': self.yaxis}, code="""
+                //console.log(' changed selected option', cb_obj.value);
+        
+                var data = source.data;
+                
+                data['x'] = data[x_param.value];
+                data['y'] = data[y_param.value];
+
+                xaxis.attributes.axis_label = x_param.value;
+                yaxis.attributes.axis_label = y_param.value;
+                
+                xaxis.change.emit();
+                yaxis.change.emit();
+                source.change.emit();
+        """)
+
+        xrange_slider = RangeSlider(start=0, end=50, value=(self.df['x'].min(), self.df['x'].max()), step=1, title="x-axis range slider", width=200)
+        xrange_slider.js_on_change('value', callback_slider)
+
+        xaxis_selecter = Select(title="x-axis parameter", value=x, options=parameters, callback=callback, width=200)
+        callback.args["x_param"] = xaxis_selecter
+
+        yaxis_selecter = Select(title="y-axis parameter", value=y, options=parameters, callback=callback, width=200)
+        callback.args["y_param"] = yaxis_selecter
+
+        # tab2 = Panel(child=line_plot, title="line")
+        # tab1 = Panel(child=circle_plot, title="circle")
+        # tabs = Tabs(tabs=[tab1, tab2])
+        # show(tabs)
+
+        columns = [TableColumn(field="y", title="y-axis data"),
+                   TableColumn(field="x", title="x-axis data"),
+                   ]
+        data_table = DataTable(source=source, columns=columns, width=200)
+
+        # show(widgetbox(data_table))
+
+        spacer = Spacer(width=100, height=100)
+
+        widgets = WidgetBox(yaxis_selecter, xaxis_selecter, xrange_slider, data_table)
+
+        col_1 = row(widgets, sizing_mode='scale_width')
+        col_2 = row(circle_plot, sizing_mode='scale_width')
+
+        # row_3 = column(spacer, sizing_mode='scale_both')
+        show(row([col_2, col_1], sizing_mode='scale_width'))
+        # show(layout(row([col_1, col_2])))
+        # script, div = components((col_1, col_2))
+        # show(components([col_1, col_2]))
+        # show(row(circle_plot, widgets)) #, sizing_mode='stretch_both'))
+
 
 if __name__ == '__main__':
-    pass
-    #profile = ProfilePlot(s.settings)
-    #for fid in datasets[0]:
-    #    name = fid.split('/')[-1].replace('.cnv','')
-    #    profile.plot(datasets[0][fid]['hires_data'], x='TEMP_CTD', y='PRES_CTD', z='SALT_CTD', name=name)
+    # path_zipfile = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\exports\\SHARK_CTD_2018_IBT_SMHI.zip'
+    path_zipfile = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\exports\\SHARK_CTD_2018_BAS_SMHI.zip'
+
+    # profile_name = 'ctd_profile_SBE09_0827_20180120_0910_26_01_0126'
+    profile_name = 'ctd_profile_SBE09_1044_20181205_1536_34_01_0154'
 
 
-# file_path = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\exports\\data.xlsx'
-# df = pd.read_excel(file_path, sheet_name='Data', header_row=0)
-# df['PRES_CTD'] = df['PRES_CTD'].apply(lambda x: x*(-1))
-# one_profile = df.loc[0:10, :]
-# pprint(one_profile['PRES_CTD'])
-# # pprint(elements)
-# # print(elements.keys())
-#
-# TITLE = "Test Profile Plot"
-# TOOLS = "hover,pan,wheel_zoom,box_zoom,reset,save"
-#
-# p = figure(tools=TOOLS, toolbar_location="above", logo="grey", plot_width=1200, title=TITLE)
-# p.background_fill_color = "#dddddd"
-# p.xaxis.axis_label = "TEMP_CTD"
-# p.yaxis.axis_label = "PRES_CTD"
-# p.grid.grid_line_color = "white"
-#
-#
-# source = ColumnDataSource(one_profile)
-#
-# p.circle("TEMP_CTD", "SALT_CTD", size=12, source=source,
-#          line_color="black", fill_alpha=0.8)
-# # p.line("TEMP_CTD", "PRES_CTD", source=source, color='#A6CEE3')
-#
-# labels = LabelSet(x="TEMP_CTD", y="SALT_CTD",
-#                   text="PRES_CTD",
-#                   y_offset=8,
-#                   text_font_size="8pt", text_color="#555555",
-#                   source=source, text_align='center')
-# p.add_layout(labels)
-#
-# output_file("profile_plot.html", mode='inline', title="profile_plot.py example")
-#
-# show(p)
+    start_time = time.time()
+    rzip = ReadZipFile(path_zipfile, profile_name)
+    print("Zipfile loaded--%.3f sec" % (time.time() - start_time))
+    # print(rzip._df)
+
+    parameter_list = ['PRES_CTD [dbar]','CNDC_CTD [S/m]','CNDC2_CTD [S/m]','SALT_CTD [psu (PSS-78)]','SALT2_CTD [psu (PSS-78)]',
+                          'TEMP_CTD [°C (ITS-90)]','TEMP2_CTD [°C (ITS-90)]','DOXY_CTD [ml/l]','DOXY2_CTD [ml/l]',
+                          'PAR_CTD [µE/(cm2 ·sec)]','CHLFLUO_CTD [mg/m3]','TURB_CTD [NTU]','PHYC_CTD [ppb]']
+    # parameter_list = ['PRES_CTD [dbar]','CNDC_CTD [mS/m]','CNDC2_CTD [mS/m]','SALT_CTD [psu]','SALT2_CTD [psu]',
+    #                       'TEMP_CTD [°C]','TEMP2_CTD [°C]','DOXY_CTD [ml/l]','DOXY2_CTD [ml/l]',
+    #                       'PAR_CTD [µE/(cm2 ·sec)]','CHLFLUO_CTD [mg/m3]','TURB_CTD [NTU]','PHYC_CTD [ppb]']
+
+    start_time = time.time()
+    data = rzip.get_data(parameter_list, as_dictionary=False)
+
+    print("Data retrieved--%.3f sec" % (time.time() - start_time))
+    #    data = rzip.get_dataframe()
+    # print(data)
+
+
+
+    start_time = time.time()
+    profile = ProfilePlot(data)
+    profile.plot(x='TEMP_CTD [°C (ITS-90)]', y='PRES_CTD [dbar]', z='SALT_CTD [psu (PSS-78)]',
+                 name=profile_name,
+                 parameters=parameter_list)
+    print("Data ploted--%.3f sec" % (time.time() - start_time))
+
+
+
+
+
+

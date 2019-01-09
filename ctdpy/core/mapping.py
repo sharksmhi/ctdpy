@@ -49,6 +49,25 @@ class AttributeDict(dict):
                 if not pd.isnull(value):
                     setattr(self, value.lower(), key)
 
+    def add_entries_from_keylist(self, data, from_combo_keys=[], from_synonyms=[], to_key=u''):
+        """
+        Main application: create mapping attributes for ShipMapping()
+        :param data: dict
+        :param from_combo_keys: list of keys
+        :param from_synonyms: list of keys
+        :param to_key: str
+        :return: mapping attributes
+        """
+        for i, value in enumerate(data[to_key]):
+            setattr(self, value, value)
+            if any(from_combo_keys):
+                setattr(self, u''.join([data[key][i].zfill(2) for key in from_combo_keys]), value)
+            if any(from_synonyms):
+                for key in from_synonyms:
+                    setattr(self, data[key][i], value)
+                    setattr(self, data[key][i].upper(), value)
+
+
     def keys(self):
         """
         :return: list of keys from self attributes
@@ -148,25 +167,35 @@ class ShipMapping(AttributeDict):
     def __init__(self):
         super().__init__()
 
-    def load_mapping_settings(self, cntry_head=u'land', ship_head=u'SMHI-kod', to_key=u'kodlista',
-                              file_path=u'D:/Utveckling/w_sharktoolbox/SharkToolbox/data/mapping_ship.txt',
-                              sep='\t',encoding='cp1252'):
+    def load_mapping_settings(self, cntry_head=u'land', ship_head=u'SMHI-kod', name_head=u'namn', to_key=u'kodlista',
+                              file_path=u'',
+                              sep='\t', encoding='cp1252'):
         """
         #TODO fix path to ship mapping file.. There are many files to choose from..
+        #not used, we're loading yaml file in Settings() and then .add_entries_from_keylist(..)
         Reading csv/txt files
         :param cntry_head: str
         :param ship_head: str
+        :param name_head: str
         :param to_key: str
         :param file_path: str
         :param sep: str
         :param encoding: str
         :return:
         """
-        mapping_file = readers.YAMLreader().load_yaml(file_path, return_config=True)
+        if file_path.endswith('.yaml'):
+            mapping_file = readers.YAMLreader().load_yaml(file_path, return_config=True)
+        elif file_path.endswith('.txt'):
+            mapping_file = readers.load_txt(file_path=file_path,
+                                            fill_nan='',
+                                            as_dict=True,
+                                            as_dtype=str,
+                                            loading_info='ShipMapping')
                                 
-        self.set_attr_from_keylist(mapping_file, 
-                                   from_keys=[cntry_head, ship_head], 
-                                   to_key=to_key)
+        self.add_entries_from_keylist(mapping_file,
+                                      from_combo_keys=[cntry_head, ship_head],
+                                      from_synonyms=[name_head],
+                                      to_key=to_key)
 
     def map_cntry_and_shipc(self, cntry=None, shipc=None):
         """

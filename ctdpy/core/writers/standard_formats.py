@@ -54,6 +54,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                 self._write(fid, data_series)
 
         self._write_delivery_note()
+        self._write_metadata()
         self._write_sensorinfo()
         self._write_information()
 
@@ -68,6 +69,14 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         serie = serie.str.cat(info, join=None,
                               sep=self.writer['separator_delivery_note'])
         self._write('delivery_note', serie)
+
+    def _write_metadata(self):
+        """
+        :return: Text file with "metadata"
+        """
+        save_path = self._get_save_path('metadata')
+        self.txt_writer.write_with_pandas(data=self.df_metadata,
+                                          header=True, save_path=save_path)
 
     def _write_sensorinfo(self):
         """
@@ -366,7 +375,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             self._set_data_path()
             utils.check_path(self.data_path)
 
-        if 'delivery_note' in fid or 'information' in fid or 'sensorinfo' in fid:
+        if 'delivery_note' in fid or 'information' in fid or 'sensorinfo' in fid or 'metadata' in fid:
             file_prefix = ''
         else:
             file_prefix = self.writer.get('filename')

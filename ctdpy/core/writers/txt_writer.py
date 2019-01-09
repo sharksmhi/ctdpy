@@ -15,7 +15,12 @@ class TxtWriter(object):
         self.in_template = in_template
 
     @staticmethod
-    def write_with_pandas(data=None, save_path=None, header=False, sep='\t', encoding='utf-8'):
+    def write_with_pandas(data=None,
+                          save_path=None,
+                          header=False,
+                          sep='\t',
+                          # encoding='utf-8'):
+                          encoding='cp1252'):
         """
         Writes dataframe or series
         :param data: pd.DataFrame, pd.Series
@@ -25,6 +30,7 @@ class TxtWriter(object):
         :param encoding: Encoding of out file
         :return: Text file
         """
+        # print('pandas', save_path)
         data.to_csv(save_path, sep=sep, encoding=encoding, index=False, header=header)
 
     @staticmethod
@@ -36,6 +42,7 @@ class TxtWriter(object):
         :param fmt: format of file e.g. s:str, f:float
         :return: Text file
         """
+        # print('numpy', save_path)
         np.savetxt(save_path, data, fmt=fmt)
 
     @staticmethod

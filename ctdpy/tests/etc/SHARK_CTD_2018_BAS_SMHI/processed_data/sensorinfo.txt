@@ -1,0 +1,23 @@
+INSTRUMENT_ID	INSTRUMENT_PROD	INSTRUMENT_MOD	INSTRUMENT_SERIE	VALIDFR	VALIDTO	PARAM_REPORTED	PARAM_SIMPLE	PARAM	MUNIT	CALCULATED	CALCULATE_REF	SENSOR_PROD	SENSOR_MOD	SENSOR_ID	CALIB_DATE	LMQNT	RANA	UNCERT	FREQ	MET_COMNT
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	depFM: Depth [true depth, m], lat 	Djup	DEPH	m	ja	Calculated from true density profile									calculated from density and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	prDM: Pressure, Digiquartz [db]	Tryck	PRES_CTD	dbar			Paroscientific	Digiquartz 8000-series	1044	2016-12-14	0	0-1400 m	0.01% Typical Accuracy	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	c0S/m: Conductivity [S/m]	Konduktivitet	CNDC_CTD	S/m			Seabird	SBE 4C	3941	2014-07-17	0	0.0-7.0 S/m	± 0.0003 S/m	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	c1S/m: Conductivity, 2 [S/m]	Konduktivitet2	CNDC2_CTD	S/m			Seabird	SBE 4C	3943	2014-07-17	0	0.0-7.0 S/m	± 0.0003 S/m	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sal00: Salinity, Practical [PSU]	Salthalt	SALT_CTD	psu (PSS-78)	ja	UNESCO 1983 (EOS 80)					2				calculated from conductivity, temperature and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sal11: Salinity, Practical, 2 [PSU]	Salthalt2	SALT2_CTD	psu (PSS-78)	ja	UNESCO 1983 (EOS 80)					2				calculated from conductivity, temperature and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	t090C: Temperature [ITS-90, deg C]	Temperatur	TEMP_CTD	°C (ITS-90)			Seabird	SBE 3plus	5351	2014-07-16	-5.0	-5.0 - +35 °C	± 0.001 °C	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	t190C: Temperature, 2 [ITS-90, deg C]	Temperatur2	TEMP2_CTD	°C (ITS-90)			Seabird	SBE 3plus	5355	2014-07-16	-5.0	-5.0 - +35 °C	± 0.001 °C	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sbeox0ML/L: Oxygen, SBE 43 [ml/l]	Syrgashalt	DOXY_CTD	ml/l			Seabird	SBE 43	0732	2016-11-12	0.1	120% of surface saturation in all natural waters, fresh and salt	± 2% of saturation	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]	Syrgashalt2	DOXY2_CTD	ml/l			Seabird	SBE 43	1243	2016-10-28	0.1	120% of surface saturation in all natural waters, fresh and salt	± 2% of saturation	24	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	par: PAR/Irradiance, Biospherical/Licor	PAR	PAR_CTD	µE/(cm2 ·sec)			Biospherical	QSP-2000	70374	2014-09-25	1.4x10e-5	1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec)			
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]	Klorofyllfluorescens	CHLFLUO_CTD	mg/m3			WET Labs	ECO-FLNTU-RTD	2288	2014-08-19*	0	0-50 µg/I	0.025 µg/I	8	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	turbWETntu0: Turbidity, WET Labs ECO [NTU]	Turbiditet	TURB_CTD	NTU			WET Labs	ECO-FLNTU-RTD	2288	2014-08-19*	0	0-25 NTU	0.013 NTU	8	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]	Phycocyaninfluorescens	PHYC_CTD	ppb			WET Labs	ECO-FLPC-RTD	2290	2011-06-24*	0	0-230 ppb	0.03 ppb	8	
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	altM: Altimeter [m]	Altimeter	ALTM_CTD	m			Teledyne	PSA-916	53447	2014-09-10	1	1-100 m	2.5 cm		
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	dz/dtM: Descent Rate [m/s], WS 	fallhastighet	DESC_RATE_CTD	m/s	ja	derivative of pressure with respect to time									calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	scan: Scan Count	scan nummer	SCAN_CTD												
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	pumps: Pump Status	pump status	PUMP_CTD				Seabird	SBE 5T							
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sigma-t00: Density [sigma-t, Kg/m^3 ]	Densitet	DENS_CTD		ja	UNESCO 1983 (EOS 80)									calculated from salinity, temperature and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]	Densitet2	DENS2_CTD		ja	UNESCO 1983 (EOS 80)									calculated from salinity, temperature and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	svCM: Sound Velocity [Chen-Millero, m/s]	Ljudhastighet	SVEL_CTD		ja	UNESCO 1983 (EOS 80) Chen-Millero									calculated from salinity, temperature and pressure
+SBE1044	Seabird	911plus	1044	2017-11-01	2017-12-31	svCM1: Sound Velocity, 2 [Chen-Millero, m/s]	Ljudhastighet2	SVEL2_CTD		ja	UNESCO 1983 (EOS 80) Chen-Millero									calculated from salinity, temperature and pressure

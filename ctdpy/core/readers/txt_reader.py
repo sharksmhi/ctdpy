@@ -10,7 +10,10 @@ import pandas as pd
 
 def load_txt(file_path='',
              seperator='\t',
-             encoding='ISO-8859-1',
+             encoding='cp1252',
+             # encoding='utf-8',
+             # encoding='ISO-8859-1',
+             encoding_list=['cp1252','utf-8','ISO-8859-1'],
              fill_nan='',
              header_row=0,
              as_dtype=None,
@@ -31,12 +34,13 @@ def load_txt(file_path='',
     if as_dtype:
         with open(file_path, 'r') as f:
             # is .strip('\r') necessary?
-            header = f.readline().strip('\n').strip('\r').split(seperator) 
-            
+            header = f.readline().strip('\n').strip('\r').split(seperator)
+
         df = pd.read_csv(file_path,
                          sep=seperator,
                          encoding=encoding,
-                         dtype={key: str for key in header}).fillna('')
+                         dtype={key: str for key in header},
+                         engine='python').fillna('')
     else:
         df = pd.read_csv(file_path, 
                          sep=seperator,

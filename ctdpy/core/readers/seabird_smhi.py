@@ -164,7 +164,7 @@ class MetadataSMHI(BaseReader, DataFrameHandler):
         :return: Updates data
         """
         for sheet_name, header_row in zip(file_specs['sheet_names'], file_specs['header_rows']):
-            df = reader(f_name=file_path,
+            df = reader(file_path=file_path,
                         sheet_name=sheet_name,
                         header_row=header_row)
             data[sheet_name] = df.fillna('')
