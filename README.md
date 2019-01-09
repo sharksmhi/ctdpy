@@ -1,9 +1,3 @@
-# Releasing CTDpy
+# CTDpy
 
-TEST version!
-
-prerequisites: numpy, pandas, trollsift, etc..
-
-
-#"ctdpy" 
-"# ctdpy" 
+Python tool to handle CTD-data according to SMHI standards.

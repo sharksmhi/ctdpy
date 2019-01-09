@@ -18,10 +18,10 @@ def long_description():
 
 setuptools.setup(
     name="ctdpy",
-    version="0.0.31",
+    version="0.0.32",
     author="Johannes Johansson",
     author_email="johannes.johansson@smhi.se",
-    description="TEST version 0.0.31 Package to handle CTD data",
+    description="TEST version 0.0.32 Package to handle CTD data",
     long_description=long_description(),
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
