@@ -86,8 +86,10 @@ class AttributeDict(dict):
             try:
                 return getattr(self, key.lower())
             except:
-                return key
                 print('No mapping found for key: ' + key)
+                # raise Warning('MappingError')
+                return key
+
 #        finally:
 #            print('No mapping found for key: ' + key)
 

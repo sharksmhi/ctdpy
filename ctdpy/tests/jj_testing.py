@@ -209,7 +209,70 @@ print("--%.3f sec" % (time.time() - start_time))
 
 
 
+########################################################################################################################
+################################################       L O G     #######################################################
+########################################################################################################################
+import logging
+# LOG = logging.getLogger(__name__)
 
 
+# create the logging instance for logging to file only
+# logger = logging.getLogger('SmartfileTest')
 
+# create the handler for the main logger
+# file_logger = logging.FileHandler(__name__)
+# NEW_FORMAT = '[%(asctime)s] - [%(levelname)s] - %(message)s'
+# file_logger_format = logging.Formatter(NEW_FORMAT)
+#
+# # tell the handler to use the above format
+# file_logger.setFormatter(file_logger_format)
+#
+# # finally, add the handler to the base logger
+# LOG.addHandler(file_logger)
+#
+# # remember that by default, logging will start at 'warning' unless
+# # we set it manually
+# LOG.setLevel(logging.DEBUG)
 
+# log some stuff!
+# LOG.debug("This is a debug message!")
+# LOG.info("This is an info message!")
+# LOG.warning("This is a warning message!")
+
+# log_formatter = logging.Formatter('%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s',
+#                                   datefmt='%d/%m/%Y %H:%M:%S')
+#
+# #File to log to
+# logFile = 'log.txt'
+#
+# #Setup File handler
+# file_handler = logging.FileHandler(logFile)
+# file_handler.setFormatter(log_formatter)
+# file_handler.setLevel(logging.INFO)
+#
+# #Setup Stream Handler (i.e. console)
+# stream_handler = logging.StreamHandler()
+# stream_handler.setFormatter(log_formatter)
+# stream_handler.setLevel(logging.INFO)
+#
+# #Get our logger
+# LOG = logging.getLogger('root')
+# LOG.setLevel(logging.INFO)
+#
+# #Add both Handlers
+# LOG.addHandler(file_handler)
+# LOG.addHandler(stream_handler)
+#
+# # stop propagting to root logger
+# LOG.propagate = False
+#
+# #Write some Data
+# LOG.debug("This is a debug message!")
+# LOG.info("This is an info message!")
+# LOG.warning("This is a warning message!")
+#
+# # missing_str = ", ".join(str(x) for x in missing)
+# LOG.warning(
+#     "The following datasets "
+#     "were not created: {}".format('4,5'))
+########################################################################################################################
