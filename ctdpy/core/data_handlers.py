@@ -36,8 +36,8 @@ class DataFrameHandler(BaseFileHandler):
     @staticmethod
     def _rename_columns_of_dataframe(df, mapping_dict):
         """
-        Rename dataframe columns
         :param df: pd.DataFrame
+        Rename dataframe columns
         :param mapping_dict: Dictionary with old names as keys and new names as values
         :return: pd.DataFrame
         """

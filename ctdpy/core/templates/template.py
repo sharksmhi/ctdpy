@@ -31,7 +31,6 @@ class TemplateBase(dict):
         """
         raise NotImplementedError
 
-    # def
 
 class TemplateFrame(pd.DataFrame):
     """
@@ -112,7 +111,6 @@ class TemplateFrame(pd.DataFrame):
         self = self.append(meta, ignore_index=True)
 
 
-
 class Template(pd.DataFrame):
     """
     Uses pandas DataFrame as subclass
@@ -190,4 +188,3 @@ class Template(pd.DataFrame):
             function')
 
         self = self.append(meta, ignore_index=True)
-

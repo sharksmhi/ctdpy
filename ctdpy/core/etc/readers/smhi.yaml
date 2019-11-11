@@ -8,11 +8,11 @@ reader:
 
 file_types:
     rawctd:
-        file_reader: !!python/name:core.readers.seabird_smhi.SeaBirdSMHI ''
+        file_reader: !!python/name:core.readers.smhi.SeaBirdSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
         file_suffix: '.cnv'
     xlsxmeta:
-        file_reader: !!python/name:core.readers.seabird_smhi.MetadataSMHI ''
+        file_reader: !!python/name:core.readers.smhi.MetadataSMHI ''
         file_suffix: '.xlsx'
         
 datasets:

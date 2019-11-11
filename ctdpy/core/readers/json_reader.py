@@ -13,10 +13,8 @@ import config
 # import importlib
 # importlib.reload(sys)
 # sys.setdefaultencoding('cp1252')
-"""
-#==============================================================================
-#==============================================================================
-"""    
+
+
 class JSONreader(object):
     """
     - Import json
@@ -31,7 +29,6 @@ class JSONreader(object):
         
         self.config = {}
         
-    #==========================================================================
     def _export_json(self, data_dict={}, out_source='', indent=4):
         """ """
         if isinstance(data_dict, pd.DataFrame):
@@ -40,18 +37,15 @@ class JSONreader(object):
         with open(out_source, "w") as outfile:
             json.dump(data_dict, outfile, indent=indent)
             
-    #==========================================================================
     def _initiate_attributes(self):
         """ """
         pass
         
-    #==========================================================================
     def _initiate_outfile(self):
         """ json files can save multiple dictionaries stored in a list
         """
         self.out_file = []
     
-    #==========================================================================
     def _get_dictionary_reference(self, dictionary={}, dict_path=[]):
         """ """
         for key in dict_path:
@@ -60,7 +54,6 @@ class JSONreader(object):
             dictionary = dictionary[key]
         return dictionary
             
-    #==========================================================================
     def add_element(self, main_key='', label='', value='', dict_path=None, add_dict={}):
         """ main_key: 
             label: 
@@ -74,7 +67,6 @@ class JSONreader(object):
             ref = self._get_dictionary_reference(dictionary=self.config,
                                                  dict_path=dict_path)
         
-    #==========================================================================
     def append_dict_to_outfile(self, dictionary=None):
         """ Append dict to out_file (list)
             Not necessary if we only want to save 
@@ -85,7 +77,6 @@ class JSONreader(object):
             
         self.out_file.append(dictionary)
         
-    #==========================================================================
     def export(self, out_source='', out_file=None):
         """ """
         
@@ -104,7 +95,6 @@ class JSONreader(object):
         else:
             raise UserWarning('No outfile specified for export to .json')
 
-    #==========================================================================
     def get_dict(self, key=None):
         """ Find a dictionary based on a specific key within the target dictionary
             config could potentially be a list with dictionaries within 
@@ -123,7 +113,6 @@ class JSONreader(object):
             raise UserWarning('The intended use of a json file has an unrecognizable format', 
                               type(self.config))
 
-    #==========================================================================
     def find_key(self, key, dictionary):
         """ Generator to find an element of a specific key.
             Note that a key can occur multiple times in a nested dictionary.
@@ -149,12 +138,11 @@ class JSONreader(object):
                         for result in self.find_key(key, d):
                             yield result
                             
-    #==========================================================================
     def load_json(self, config_files=[], return_config=False):
         """ array will be either a list of dictionaries or one single dictionary 
             depending on what the json file includes
         """
-        if not isinstance( config_files, (list, np.ndarray) ):
+        if not isinstance(config_files, (list, np.ndarray)):
             config_files = [config_files]
             
         for config_file in config_files:
@@ -164,14 +152,11 @@ class JSONreader(object):
         if return_config:
             return self.config
     
-    #==========================================================================
     def setup_dict(self, keys=[]):
         """ """
         return {key:True for key in keys}
                     
-    #==========================================================================
     def update_element(self, main_key='', label='', value=''):
         """ """
         pass
 
-    #==========================================================================

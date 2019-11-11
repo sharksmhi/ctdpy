@@ -214,12 +214,12 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         """
         self._second = datetime_obj.strftime('%S')
 
-    @property
-    def sensor_names(self):
-        """
-        :return:
-        """
-        raise NotImplementedError
+    # @property
+    # def sensor_names(self):
+    #     """
+    #     :return:
+    #     """
+    #     raise NotImplementedError
 
 
 """

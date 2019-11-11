@@ -76,7 +76,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         save_path = self._get_save_path('metadata')
         self.txt_writer.write_with_pandas(data=self.df_metadata,
-                                          header=True, save_path=save_path)
+                                          header=True,
+                                          save_path=save_path)
 
     def _write_sensorinfo(self):
         """
@@ -101,6 +102,18 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         save_path = self._get_save_path(fid)
         self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
 
+    def _add_new_information_to_metadata(self):
+        """
+        Add information to metadata (originally loaded from excel-template (delivery))
+        """
+        prefix = self.writer.get('filename')
+        suffix = self.writer.get('extension_filename')
+
+        new_column = self.df_metadata[['SDATE', 'SHIPC', 'SERNO']].apply(lambda x: prefix + '_'.join(x) + suffix, axis=1)
+        new_column = new_column.str.replace('-', '')
+        self.df_metadata.insert(self.df_metadata.columns.get_loc('FILE_NAME') + 1,
+                                'FILE_NAME_DATABASE', new_column)
+
     def _append_information(self, *args):
         """
         :param args: list of pd.Series to be appended as one
@@ -117,7 +130,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param meta: Contains pd.DataFrame(s) of metadata delivered to datahost
                      in excel spreadsheets [Metadata, Sensorinfo, Information]
         """
-        # TODO sould be able to handle multiple metadatasets? (.xlsx delivery files)
+        # TODO should be able to handle multiple metadatasets? (.xlsx delivery files)
         self.delimiters = self._get_delimiters()
         self.df_metadata = self._get_reduced_dataframe(meta[0]['Metadata'])
         self.delivery_note = self._get_delivery_note(meta[0]['Förklaring'])
@@ -126,6 +139,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         self.sensorinfo = self._get_sensorinfo_serie(separator=self.writer['separator_metadata'])
         self.information = self._get_information_serie(meta[0]['Information'],
                                                        separator=self.writer['separator_metadata'])
+
+        self._add_new_information_to_metadata()
 
     def _get_template_format(self):
         """
@@ -376,15 +391,26 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             utils.check_path(self.data_path)
 
         if 'delivery_note' in fid or 'information' in fid or 'sensorinfo' in fid or 'metadata' in fid:
-            file_prefix = ''
+            # file_prefix = ''
+            pass
         else:
-            file_prefix = self.writer.get('filename')
+            # file_prefix = self.writer.get('filename')
+            # file_prefix = ''
+            fid = self._replace_data_file_name(fid)
 
         file_path = ''.join([self.data_path,
-                             file_prefix,
+                             # file_prefix,
                              fid.split('.')[0],
                              self.writer.get('extension_filename')])
         return file_path
+
+    def _replace_data_file_name(self, fid):
+        """
+        :param fid:
+        :return:
+        """
+        boolean = self.df_metadata['FILE_NAME'] == fid
+        return self.df_metadata.loc[boolean, 'FILE_NAME_DATABASE'].values[0]
 
     def _set_data_path(self):
         """

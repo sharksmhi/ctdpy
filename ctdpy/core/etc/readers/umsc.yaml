@@ -8,9 +8,11 @@ reader:
 
 file_types:
     rawctd:
-        file_reader: !!python/name:core.readers.seabird_umsc.SeaBirdUMSC ''
-        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
-        file_names: []
+        file_reader: !!python/name:core.readers.umsc.SeaBirdUMSC ''
+        file_suffix: '.cnv'
+    xlsxmeta:
+        file_reader: !!python/name:core.readers.umsc.MetadataUMSC ''
+        file_suffix: '.xlsx'
         
 datasets:
     cnv:
@@ -20,9 +22,14 @@ datasets:
         identifier_header: '# name'
         identifier_metadata: '* '
         identifier_metadata_2: '**'
-        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', Ship, Station]
+        keys_metadata: [FileName]
         keys_data: [DEPH]
         separator_data: None
         separator_header: '='
         separator_metadata: '='
         separator_metadata_2: ':'
+    xlsx:
+        name: xlsx
+        file_type: xlsxmeta
+        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        header_rows: [null, 2, 2, 0]

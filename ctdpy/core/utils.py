@@ -99,6 +99,10 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
     # if len(pos.split('.')[0]) > 2:
     #     return pos
     pos = float(pos)
+    if pos < 99:
+        # Allready in decdeg
+        return pos
+
     output = np.floor(pos/100.) + (pos % 100)/60.
     output = "%.5f" % output
     if string_type:
@@ -156,7 +160,10 @@ def get_file_list_based_on_suffix(file_list, suffix):
     match_list = []
 
     for fid in file_list:
-        if fid.endswith(suffix):
+        if '~$' in fid:
+            # memory prefix when a file is open
+            continue
+        elif fid.endswith(suffix):
             match_list.append(fid)
 
     return match_list
@@ -253,6 +260,9 @@ def match_filenames(filenames, pattern):
     """
     matching = []
     for filename in filenames:
+        if '~$' in filename:
+            # memory prefix when a file is open
+            continue
         if type(pattern) == list:
             for p in pattern:
                 if fnmatch(get_filebase(filename, p), globify(p)):
@@ -284,4 +294,27 @@ def set_export_path(export_dir=None):
 
     if not os.path.isdir(export_dir):
         os.makedirs(export_dir)
+
+# class A(object):
+#     def __init__(self):
+#         super().__init__()
+#
+#     def _print(self):
+#         p = self.A_print()
+#         print(p)
+#
+#     def A_print(self):
+#         return 'A_print'
+#
+# class B(A):
+#     def __init__(self):
+#         super().__init__()
+#
+#     def A_print(self):
+#         return 'BBBB'
+#
+#
+# if __name__ == '__main__':
+#     b = B()
+#     b._print()
 

@@ -126,7 +126,7 @@ class Settings(object):
     # @classmethod
     def _setup_mapping_parameter(self):
         """
-        #FIXME god damn it! where does self.mapping_parameter come from???..
+        #FIXME god damn it! where does self.mapping_parameter come from???.. in .set_attributes()
         Creates parameter mapping object within self
         :return:
         """

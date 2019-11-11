@@ -6,10 +6,6 @@ Created on Tue Jul 10 14:41:47 2018
 """
 
 import numpy as np
-"""
-#=========================================================================
-#=========================================================================
-"""
 
 
 class CtdProfile(object):
@@ -59,22 +55,3 @@ class CtdProfile(object):
         if maxdep_idx not in idx:
             idx.append(maxdep_idx)
         return idx
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        

@@ -19,6 +19,42 @@ from core import utils
 import time
 import json
 
+# import logging
+# logging.basicConfig(level=logging.DEBUG,
+#                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+#                     datefmt='%m-%d %H:%M',
+#                     filename='log.txt',
+#                     filemode='w')
+# # define a Handler which writes INFO messages or higher to the sys.stderr
+# console = logging.StreamHandler()
+# console.setLevel(logging.INFO)
+# # set a format which is simpler for console use
+# formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+# # tell the handler to use this format
+# console.setFormatter(formatter)
+# # add the handler to the root logger
+# logging.getLogger('').addHandler(console)
+#
+# # Now, we can log to the root logger, or any other logger. First the root...
+# logging.info('Jackdaws love my big sphinx of quartz.')
+#
+# # Now, define a couple of other loggers which might represent areas in your
+# # application:
+#
+# logger1 = logging.getLogger('myapp.area1')
+# logger2 = logging.getLogger('myapp.area2')
+#
+# logger1.debug('Quick zephyrs blow, vexing daft Jim.')
+# logger1.info('How quickly daft jumping zebras vex.')
+# logger2.warning('Jail zesty vixen who grabbed pay from quack.')
+# logger2.error('The five boxing wizards jump quickly.')
+#
+# # missing_str = ", ".join(str(x) for x in missing)
+# LOG.warning(
+#     "The following datasets "
+#     "were not created: {}".format('4,5'))
+
+
 class Session(object):
     """
     """
@@ -65,7 +101,7 @@ class Session(object):
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
-            # #TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefor do this elsewhere
+            # TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefore do this elsewhere
             if add_merged_data and add_low_resolution_data:
                 # data = self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
                 self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
@@ -77,7 +113,6 @@ class Session(object):
     @staticmethod
     def _get_filenames_matched(filenames, file_type):
         """
-
         :param filenames: list of strings
         :param file_type: from reader **kwargs
         :return: list of matched filenames
@@ -211,62 +246,74 @@ class Session(object):
 
 
 if __name__ == '__main__':
-    # base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data'
-    base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
-    # base_dir = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_örjan'
+    # base_dir = 'C:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
+    base_dir = 'C:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
+
     files = os.listdir(base_dir)
     start_time = time.time()
     s = Session(filenames=files,
                 base_dir=base_dir,
-                reader='seabird_smhi')
+                # reader='smhi',
+                reader='umsc',
+                )
 
     print("Session--%.3f sec" % (time.time() - start_time))
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        TEST PRINTS        ###################
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        TEST PRINTS        ###################
     # print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
     # print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
     # print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
     # pprint(s.settings.templates['ctd_metadata'])
     # pprint(s.settings.settings_paths)
 
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        READ DELIVERY DATA, CNV, XLSX        ###################
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        READ DELIVERY DATA, CNV, XLSX        ###################
     start_time = time.time()
     # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
     datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
     print("Datasets loaded--%.3f sec" % (time.time() - start_time))
 
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
     start_time = time.time()
     data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
     print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        CREATE ARCHIVE        ###################
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        CREATE ARCHIVE        ###################
     start_time = time.time()
     s.create_archive(data_path=data_path)
     print("Archive created--%.3f sec" % (time.time() - start_time))
 
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        TEST PRINTS        ###################
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        TEST PRINTS        ###################
+    # from calculator import Calculator
+    # import numpy as np
+    # attr_dict = {'latitude': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['LATIT'],
+    #              'pressure': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
+    #              'gravity': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
+    #              'density': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['DENS_CTD'].astype(np.float)}
+    # calc_obj = Calculator()
+    # td = calc_obj.get_true_depth(attribute_dictionary=attr_dict)
     # res_head = 'hires_data'
     # res_head = 'lores_data_all'
     # print(datasets[0].keys())
+    # print(datasets[1].keys())
+    # print(datasets[1]['CTD Profile ifylld.xlsx']['Metadata'].keys())
     # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'].keys())
     # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata'].keys())
     # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'][res_head].keys())
     # pprint(datasets[0].keys())
     # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['FILENAME'])
-    #-------------------------------------------------------------------------------------------------------------------
-    ###################        WRITE METADATA TO TEMPLATE        ###################
-    start_time = time.time()
-    s.save_data(datasets[0], writer='metadata_template')
-    print("Metadata file created--%.3f sec" % (time.time() - start_time))
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        WRITE METADATA TO TEMPLATE        ###################
+    # start_time = time.time()
+    # s.save_data(datasets[0], writer='metadata_template')
+    # print("Metadata file created--%.3f sec" % (time.time() - start_time))
 
-    #-------------------------------------------------------------------------------------------------------------------
-
-
+    #  -----------------------------------------------------------------------------------------------------------------
+    # TODO läsare med alt. för fler flagfält
+    # TODO skrivare med alt. för fler Q-flags-fält per parameter
 
     # pprint(s.settings.templates)
     # pprint(s.settings.writers['ctd_standard_template']['writer'])
@@ -284,13 +331,3 @@ if __name__ == '__main__':
     # template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
     # pprint(template_data)
     # s.save_data(template_data)
-
-
-
-
-
-
-
-
-
-

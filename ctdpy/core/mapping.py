@@ -67,7 +67,6 @@ class AttributeDict(dict):
                     setattr(self, data[key][i], value)
                     setattr(self, data[key][i].upper(), value)
 
-
     def keys(self):
         """
         :return: list of keys from self attributes
@@ -133,7 +132,11 @@ class ParameterMapping(AttributeDict):
         :param mapping_key: str
         :return: Updates attributes of self
         """
-        mapping_file = readers.YAMLreader().load_yaml(file_path, return_config=True)
+        if file_path.endswith('.yaml'):
+            mapping_file = readers.YAMLreader().load_yaml(file_path, return_config=True)
+        elif file_path.endswith('.json'):
+            mapping_file = readers.JSONreader().load_json(file_path, return_config=True)
+
         if mapping_key:
             mapping_file = mapping_file[mapping_key]
         
@@ -193,7 +196,7 @@ class ShipMapping(AttributeDict):
                                             as_dict=True,
                                             as_dtype=str,
                                             loading_info='ShipMapping')
-                                
+
         self.add_entries_from_keylist(mapping_file,
                                       from_combo_keys=[cntry_head, ship_head],
                                       from_synonyms=[name_head],

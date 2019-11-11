@@ -11,6 +11,7 @@ from . import readers
 from . import writers
 from . import ctd_profile
 from . import data_handlers
+from . import calculator
 from . import mapping
 from . import session
 

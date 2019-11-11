@@ -349,7 +349,7 @@ class ProfilePlot(BaseAxes):
 
         self.df['x'] = self.df[x]
         self.df['y'] = self.df[y]
-
+        
         source = ColumnDataSource(self.df)
 
         circle_plot = self.circle_plot(x=x, y=y, source=source)

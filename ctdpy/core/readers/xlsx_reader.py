@@ -16,6 +16,7 @@ def load_excel(file_path='', sheet_name=None, header_row=None):
     :param header_row: int, list
     :return: pd.DataFrame / dict with pd.DataFrames
     """
+    # print(file_path, sheet_name, header_row)
     def read_sheet(sheet, h_row, ncols):
         return pd.read_excel(xlxs, sheet_name=sheet, header=h_row,
                              converters={i: str for i in range(ncols)})
