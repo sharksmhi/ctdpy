@@ -11,8 +11,6 @@ import core
 #from six.moves import configparser
 
 
-
-
 def recursive_dict_update(d, u):
     """ Recursive dictionary update using
     Copied from:
@@ -22,15 +20,14 @@ def recursive_dict_update(d, u):
     for k, v in u.items():
         if isinstance(v, Mapping):
             r = recursive_dict_update(d.get(k, {}), v)
-            d[k] = r
+            d.setdefault(k, r)
         else:
-            d[k] = u[k]
+            d.setdefault(k, u[k])
     return d
-
-"""
-#==============================================================================
-#==============================================================================
-"""
+    #         d[k] = r
+    #     else:
+    #         d[k] = u[k]
+    # return d
 
 
 class Settings(object):

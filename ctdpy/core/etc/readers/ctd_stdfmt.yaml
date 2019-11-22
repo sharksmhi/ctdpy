@@ -1,0 +1,24 @@
+reader:
+    description: TXT Reader for standard CTD-format (SMHI settings)
+    name: txt_ctd_stdfmt
+    default_channels: []
+    suffix: '.txt'
+    reader: !!python/name:core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    stdfmt:
+        file_reader: !!python/name:core.readers.stdfmt.StandardFormatCTD ''
+        file_patterns: ['{instrument_type:11s}_{visit_date:%Y%m%d}_{shipc:4s}_{serno:4d}.txt']
+        file_suffix: '.txt'
+        
+datasets:
+    txt:
+        name: txt
+        file_type: stdfmt
+        identifier_meta: '//'
+        identifier_data: '~//'
+        identifier_header: '~//'
+        keys_metadata: [FORMAT, METADATA_DELIMITER, DATA_DELIMITER, METADATA, SENSORINFO, INFORMATION, INSTRUMENT_METADATA]
+        separator_data: "\t"
+        separator_header: "\t"
+        separator_metadata: ';'

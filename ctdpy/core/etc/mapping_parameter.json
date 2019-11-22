@@ -64,6 +64,9 @@
         "SHIPC": [
             "Ship"
         ], 
+        "SERNO": [
+            "LIMS Job"
+        ], 
         "PRES_CTD": [
             "Tryck", 
             "prDM: Pressure, Digiquartz [db]",
@@ -71,7 +74,9 @@
             "prdM: Pressure, Strain Gauge [db]"
         ], 
         "SDATE": [
-            "NMEA UTC"
+            "NMEA UTC",
+            "System UTC",
+            "start_time"
         ], 
         "DENS_CTD": [
             "Densitet", 
@@ -87,16 +92,18 @@
             "depFM: Depth [true depth, m], lat",
             "depFM: Depth [fresh water, m], lat"
         ], 
-        "FILENAME": [
+        "FILE_NAME": [
             "FileName"
         ], 
         "PAR_CTD": [
             "PAR", 
             "par: PAR/Irradiance, Biospherical/Licor", 
+            "par: PAR/Irradiance, Biospherical/Lico [µE/(cm^2*s)]",
             "par: PAR/Irradiance, Biospherical/Lico [\u00b5E/(cm^2*s)]"
         ], 
         "LONGI": [
-            "NMEA Longitude"
+            "NMEA Longitude",
+            "Longitude [GG MM.mm E]"
         ], 
         "TEMP2_CTD": [
             "Temperatur2", 
@@ -132,7 +139,8 @@
             "spar: SPAR/Surface Irradiance"
         ], 
         "LATIT": [
-            "NMEA Latitude"
+            "NMEA Latitude",
+            "Latitude [GG MM.mm N]"
         ], 
         "SALT_CTD": [
             "Salthalt", 

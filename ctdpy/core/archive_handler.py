@@ -37,13 +37,13 @@ class Archive(object):
         """
         :return:
         """
-        return ''.join([self.archive_path, '/processed_data/'])
+        return '/'.join([self.archive_path, 'processed_data', ''])
 
     def _get_received_data_path_in_archive(self):
         """
         :return:
         """
-        return ''.join([self.archive_path, '/received_data/'])
+        return '/'.join([self.archive_path, 'received_data', ''])
 
     def _copy_standard_archive_structure(self):
         """

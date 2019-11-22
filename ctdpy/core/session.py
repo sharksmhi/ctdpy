@@ -58,16 +58,13 @@ import json
 class Session(object):
     """
     """
-    def __init__(self, filenames=None, reader=None, base_dir=None):
+    def __init__(self, filepaths=None, reader=None):
 
         self.settings = config.Settings()
         self.update_settings_attributes(**self.settings.readers[reader])
-        self.base_dir = base_dir
 
-        if filenames is None and base_dir is not None:
-            filenames = os.listdir(base_dir)
-
-        self.readers = self.create_reader_instances(filenames=filenames,
+        filepaths = list(filepaths)
+        self.readers = self.create_reader_instances(filepaths=filepaths,
                                                     reader=reader)
 
     def _set_file_reader(self):
@@ -125,7 +122,7 @@ class Session(object):
             raise ImportWarning('No file_pattern nor suffix is readable in reader.file_types')
         return filenames_matched
 
-    def create_reader_instances(self, filenames=None, reader=None):
+    def create_reader_instances(self, filepaths=None, reader=None):
         """
         Find readers and return their instances
         :param filenames: list of strings
@@ -134,12 +131,13 @@ class Session(object):
         """
         #TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
+        pprint(self.settings.readers[reader]['datasets'])
         for dataset, dictionary in self.settings.readers[reader]['datasets'].items():
             file_type = self.settings.readers[reader]['file_types'][dictionary['file_type']]
-            filenames_matched = self._get_filenames_matched(filenames, file_type)
+            filenames_matched = self._get_filenames_matched(filepaths, file_type)
             if any(filenames_matched):
                 reader_instances[dataset] = {}
-                reader_instances[dataset]['file_names'] = ['/'.join([self.base_dir, f]) for f in filenames_matched]
+                reader_instances[dataset]['file_names'] = filenames_matched
                 reader_instances[dataset]['reader'] = self.load_reader(file_type)
         return reader_instances
 
@@ -246,44 +244,55 @@ class Session(object):
 
 
 if __name__ == '__main__':
-    # base_dir = 'C:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
-    base_dir = 'C:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
+    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
+    # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
+    base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
+    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
+    # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 
-    files = os.listdir(base_dir)
+    # files = os.listdir(base_dir)
+    files = utils.generate_filepaths(base_dir,
+                                     pattern_list=['.cnv', '.xlsx'],
+                                     # endswith='.cnv',
+                                     # endswith='.txt',
+                                     only_from_dir=True)
+
     start_time = time.time()
-    s = Session(filenames=files,
-                base_dir=base_dir,
-                # reader='smhi',
-                reader='umsc',
+    s = Session(filepaths=files,
+                # base_dir=base_dir,
+                reader='smhi',
+                # reader='umsc',
+                # reader='ctd_stdfmt',
                 )
-
     print("Session--%.3f sec" % (time.time() - start_time))
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        TEST PRINTS        ###################
     # print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
     # print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
     # print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
+    # print('SHIPmapping test', s.settings.smap.map_shipc('ARANDA'))
     # pprint(s.settings.templates['ctd_metadata'])
     # pprint(s.settings.settings_paths)
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        READ DELIVERY DATA, CNV, XLSX        ###################
-    start_time = time.time()
-    # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
-    datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
-    print("Datasets loaded--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
+    # datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
+    datasets = s.read()
+    # print("Datasets loaded--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
-    start_time = time.time()
-    data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
-    print("Datasets saved--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
+    # print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        CREATE ARCHIVE        ###################
-    start_time = time.time()
-    s.create_archive(data_path=data_path)
-    print("Archive created--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # s.create_archive(data_path=data_path)
+    # print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        TEST PRINTS        ###################

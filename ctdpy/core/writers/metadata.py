@@ -11,6 +11,7 @@ from core.data_handlers import DataFrameHandler
 from core.data_handlers import SeriesHandler
 from core.writers.xlsx_writer import XlsxWriter
 
+
 class MetadataWriter(SeriesHandler, DataFrameHandler):
     """
 
@@ -41,18 +42,19 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         """
         :return:
         """
-        self.template_handler.template['Metadata'].convert_formats()
+        self.template_handler.template['Metadata'].convert_formats(ship_map=self.settings.smap)
 
     def write(self, dataset):
         """
         :param dataset: list, datasets
         :return:
         """
-        # for dataset in data:
         for fid, item in dataset.items():
+            item['metadata']['FILE_NAME'] = fid
             self.append_to_template(item['metadata'])
 
         self.convert_formats()
+        self.template_handler.template['Metadata'].sort(sort_by_keys=['SHIPC', 'SDATE', 'STIME'])
         self._write()
 
     def _write(self):
@@ -98,19 +100,3 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         :return: Specialized writer settings
         """
         return self.settings.writers['metadata_template']['writer']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

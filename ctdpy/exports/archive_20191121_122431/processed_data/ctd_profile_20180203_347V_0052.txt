@@ -1,0 +1,579 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-02-03
+//METADATA;STIME;15:10
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;347V
+//METADATA;CRUISE_NO;SMHI-01-2018
+//METADATA;SERNO;0052
+//METADATA;STATN;Slägg
+//METADATA;LATIT;5815.59
+//METADATA;LONGI;01126.11
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20180203_1510_34_02_0052.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20180203_347V_0052.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\2018\ME18D052.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.6.26
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Feb 03 2018 15:10:24
+//INSTRUMENT_METADATA;* NMEA Latitude = 58 15.59 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 011 26.11 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Feb 03 2018  15:10:26
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  Slägg
+//INSTRUMENT_METADATA;** Operator:  SSip
+//INSTRUMENT_METADATA;** Ship: MERI
+//INSTRUMENT_METADATA;** Average sound velocity: 1469.65 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sat, 03 Feb 2018 18:57:24 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183402-0052
+//INSTRUMENT_METADATA;** Cruise: SMHI-01-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Feb 03 2018 15:10:24
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 140                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 58.2598
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 58.2598
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =       7842,      10920       
+//INSTRUMENT_METADATA;# span 1 =      2.000,     71.500       
+//INSTRUMENT_METADATA;# span 2 =     3.3465,     6.9058       
+//INSTRUMENT_METADATA;# span 3 =     3.3715,     6.9035       
+//INSTRUMENT_METADATA;# span 4 =    -0.0125,     0.0249       
+//INSTRUMENT_METADATA;# span 5 =   2.343458,   3.356188       
+//INSTRUMENT_METADATA;# span 6 =   2.349746,   3.356095       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    5.43995,    7.35425       
+//INSTRUMENT_METADATA;# span 9 =    5.44124,    7.35638       
+//INSTRUMENT_METADATA;# span 10 =       4.95,      98.59      
+//INSTRUMENT_METADATA;# span 11 =     0.2313,     0.7371      
+//INSTRUMENT_METADATA;# span 12 =     0.3133,     0.4736      
+//INSTRUMENT_METADATA;# span 13 = -2.811e-05, 5.3741e+00      
+//INSTRUMENT_METADATA;# span 14 =     1.4235,     3.0348      
+//INSTRUMENT_METADATA;# span 15 =    24.8601,    33.1643      
+//INSTRUMENT_METADATA;# span 16 =    24.9140,    33.1650      
+//INSTRUMENT_METADATA;# span 17 =    -0.0326,     0.0641      
+//INSTRUMENT_METADATA;# span 18 =    19.7781,    25.9856      
+//INSTRUMENT_METADATA;# span 19 =    19.8192,    25.9864      
+//INSTRUMENT_METADATA;# span 20 =      1.981,     70.824      
+//INSTRUMENT_METADATA;# span 21 =      1.998,     71.051      
+//INSTRUMENT_METADATA;# span 22 =     -0.003,      0.655      
+//INSTRUMENT_METADATA;# span 23 =    1450.81,    1477.15      
+//INSTRUMENT_METADATA;# span 24 =    1450.99,    1477.14      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Feb 03 2018 15:10:27 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>0732</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>12-Nov-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.1726e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4966</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3976e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.9128e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2963e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.6300</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1243</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>28-Oct-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.6887e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5000</offset>
+//INSTRUMENT_METADATA;#         <A>-4.1561e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.4526e-004</B>
+//INSTRUMENT_METADATA;#         <C>-4.4039e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Feb 03 2018 18:57:02, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.hex C:\ctd\temp\SBE09_1044_20180203_1510_34_02_0052.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Feb 03 2018 18:57:04, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Feb 03 2018 18:57:08, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Feb 03 2018 18:57:10, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Feb 03 2018 18:57:11, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Feb 03 2018 18:57:14, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Feb 03 2018 18:57:17, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Feb 03 2018 18:57:19, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20180203_1510_34_02_0052.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	1.998		2.000		2.34346		2.34975		24.8601		24.9140		3.3465		3.3715		7.3543		7.3564		5.374e+00		0.7371		1.5181000		0.4130		98.51		0.424		7842		1		19.7781		19.8192		1450.81		1450.99	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	2.497		2.500		2.37555		2.37324		25.1429		25.1231		3.4629		3.4537		7.3160		7.3159		3.845e+00		0.6800		1.5794000		0.3645		98.51		0.589		7862		1		19.9948		19.9797		1451.69		1451.62	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	2.996		3.000		2.38831		2.38742		25.2552		25.2474		3.5085		3.5052		7.2935		7.2906		2.632e+00		0.7000		1.6419000		0.3663		98.51		0.581		7883		1		20.0808		20.0749		1452.04		1452.02	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	3.495		3.500		2.39664		2.39620		25.3302		25.3262		3.5357		3.5344		7.2603		7.2536		1.843e+00		0.6972		1.6282000		0.3612		98.51		0.617		7903		1		20.1386		20.1355		1452.26		1452.25	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	3.995		4.000		2.41622		2.41414		25.5077		25.4898		3.5986		3.5907		7.1691		7.1603		1.320e+00		0.6758		1.5767000		0.3599		98.51		0.643		7922		1		20.2750		20.2614		1452.77		1452.71	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	4.494		4.500		2.43302		2.43374		25.6585		25.6658		3.6538		3.6552		7.1126		7.1061		9.278e-01		0.6868		1.6210000		0.4273		98.51		0.639		7941		1		20.3907		20.3964		1453.21		1453.23	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	4.993		5.000		2.45409		2.45518		25.8529		25.8638		3.7157		3.7179		6.9169		6.9397		6.436e-01		0.6787		1.6035000		0.3761		98.51		0.639		7960		1		20.5405		20.5490		1453.74		1453.76	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	5.492		5.500		2.49922		2.49893		26.2645		26.2635		3.8523		3.8496		6.8513		6.9077		4.487e-01		0.6667		1.6033000		0.3472		98.51		0.654		7978		1		20.8568		20.8562		1454.86		1454.84	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	5.990		6.000		2.59521		2.59524		27.1524		27.1567		4.1189		4.1142		6.9026		6.9888		3.030e-01		0.6510		1.6138000		0.3260		98.51		0.655		7996		1		21.5398		21.5436		1457.14		1457.13	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	6.489		6.500		2.68256		2.68823		27.9796		28.0364		4.3281		4.3376		6.8625		6.9836		1.986e-01		0.6170		1.5538000		0.3682		98.51		0.644		8015		1		22.1775		22.2217		1459.09		1459.21	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	6.987		7.000		2.93852		2.94390		30.3489		30.4130		4.9601		4.9580		6.7500		6.8418		1.251e-01		0.5796		1.5147000		0.3776		98.51		0.638		8034		1		23.9935		24.0446		1464.75		1464.83	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	7.484		7.500		3.03056		3.02792		31.1726		31.1510		5.2057		5.1966		6.6854		6.7276		6.915e-02		0.5292		1.4744000		0.3833		98.51		0.596		8053		1		24.6199		24.6038		1466.82		1466.76	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	7.981		8.000		3.03799		3.03799		31.2478		31.2501		5.2155		5.2130		6.6638		6.6795		2.896e-02		0.4410		1.4288000		0.3555		98.51		0.534		8074		1		24.6783		24.6805		1466.96		1466.96	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	8.478		8.500		3.05453		3.05128		31.4238		31.3913		5.2281		5.2235		6.6732		6.6707		5.386e-03		0.4192		1.4235000		0.4130		98.51		0.523		8097		1		24.8163		24.7911		1467.25		1467.19	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	8.975		9.000		3.06462		3.06430		31.5330		31.5312		5.2337		5.2319		6.6910		6.6775		-2.811e-05		0.4323		1.4345000		0.3939		98.51		0.503		8121		1		24.9021		24.9009		1467.42		1467.41	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	9.472		9.500		3.06566		3.06539		31.5449		31.5435		5.2335		5.2316		6.7093		6.6879		-7.882e-11		0.4205		1.4878000		0.3804		98.51		0.486		8145		1		24.9115		24.9107		1467.44		1467.43	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	9.968		10.000		3.06680		3.06658		31.5518		31.5507		5.2397		5.2381		6.7118		6.6943		1.000e-12		0.4297		1.4811000		0.3349		98.51		0.465		8170		1		24.9163		24.9156		1467.48		1467.47	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	10.465		10.500		3.06861		3.06861		31.5625		31.5645		5.2499		5.2478		6.7027		6.6873		1.000e-12		0.4647		1.5109000		0.3583		98.51		0.454		8197		1		24.9237		24.9255		1467.55		1467.54	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	10.962		11.000		3.07006		3.07001		31.5751		31.5752		5.2537		5.2529		6.6949		6.6886		1.000e-12		0.4679		1.6149000		0.3953		98.51		0.476		8223		1		24.9332		24.9334		1467.59		1467.58	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	11.459		11.500		3.06948		3.06938		31.5695		31.5688		5.2524		5.2519		6.6931		6.6759		1.000e-12		0.4333		1.5871000		0.3961		98.51		0.521		8247		1		24.9289		24.9285		1467.58		1467.58	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	11.956		12.000		3.06955		3.06976		31.5655		31.5666		5.2572		5.2586		6.6903		6.6699		1.000e-12		0.4215		1.6420000		0.4041		98.51		0.513		8270		1		24.9252		24.9259		1467.60		1467.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	12.453		12.500		3.07086		3.07087		31.5730		31.5745		5.2648		5.2633		6.6795		6.6749		1.000e-12		0.4110		1.6996000		0.4100		98.51		0.516		8293		1		24.9303		24.9317		1467.65		1467.65	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	12.950		13.000		3.07106		3.07120		31.5852		31.5872		5.2540		5.2535		6.6875		6.6825		1.000e-12		0.4062		1.6549000		0.3874		98.51		0.526		8316		1		24.9412		24.9428		1467.63		1467.63	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	13.447		13.500		3.07015		3.07052		31.5838		31.5860		5.2442		5.2465		6.7119		6.6937		1.000e-12		0.4051		1.6324000		0.3880		98.52		0.541		8339		1		24.9412		24.9426		1467.60		1467.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	13.943		14.000		3.07146		3.07118		31.6040		31.5999		5.2385		5.2394		6.7324		6.7052		1.000e-12		0.4079		1.6493000		0.3617		98.53		0.556		8360		1		24.9578		24.9544		1467.61		1467.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	14.440		14.500		3.07183		3.07166		31.6094		31.6069		5.2369		5.2375		6.7328		6.7061		1.000e-12		0.4085		1.6378000		0.3613		98.53		0.560		8382		1		24.9622		24.9602		1467.62		1467.62	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	14.937		15.000		3.07179		3.07123		31.6083		31.6002		5.2374		5.2392		6.7310		6.7071		1.000e-12		0.4085		1.5971000		0.3883		71.99		0.560		8403		1		24.9613		24.9547		1467.63		1467.62	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	15.434		15.500		3.07116		3.07091		31.6034		31.6018		5.2347		5.2333		6.7238		6.7095		1.000e-12		0.3999		1.6491000		0.4023		98.24		0.556		8425		1		24.9577		24.9566		1467.62		1467.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	15.931		16.000		3.07067		3.07079		31.6002		31.6011		5.2319		5.2324		6.7233		6.7083		1.000e-12		0.4230		1.6152000		0.3922		98.53		0.544		8447		1		24.9555		24.9562		1467.61		1467.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	16.428		16.500		3.07129		3.07128		31.6059		31.6062		5.2331		5.2327		6.7362		6.7106		1.000e-12		0.4248		1.6034000		0.3627		98.53		0.533		8469		1		24.9599		24.9601		1467.63		1467.63	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	16.925		17.000		3.07369		3.07377		31.6314		31.6309		5.2348		5.2362		6.7264		6.6958		1.000e-12		0.4196		1.6110000		0.3774		98.53		0.531		8492		1		24.9799		24.9793		1467.68		1467.68	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	17.422		17.500		3.08112		3.08067		31.6918		31.6875		5.2599		5.2591		6.7160		6.6835		1.000e-12		0.4231		1.6538000		0.3734		98.53		0.548		8514		1		25.0249		25.0216		1467.87		1467.86	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	17.918		18.000		3.08495		3.08460		31.7574		31.7520		5.2366		5.2381		6.7177		6.6891		1.000e-12		0.4320		1.7173000		0.3645		98.53		0.566		8535		1		25.0794		25.0749		1467.86		1467.86	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	18.415		18.500		3.09073		3.09044		31.8037		31.8028		5.2567		5.2543		6.7072		6.6865		1.000e-12		0.4312		1.7175000		0.3862		98.54		0.568		8556		1		25.1138		25.1134		1468.01		1468.00	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	18.912		19.000		3.09354		3.09358		31.8253		31.8260		5.2675		5.2672		6.6884		6.6780		1.000e-12		0.4214		1.8374000		0.4131		98.54		0.558		8578		1		25.1296		25.1303		1468.09		1468.09	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	19.409		19.500		3.09422		3.09427		31.8314		31.8322		5.2689		5.2687		6.6846		6.6725		1.000e-12		0.4285		1.9329000		0.3860		98.55		0.545		8600		1		25.1344		25.1350		1468.11		1468.11	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	19.905		20.000		3.09530		3.09538		31.8433		31.8441		5.2691		5.2691		6.6908		6.6753		1.000e-12		0.4318		1.9502000		0.3324		98.55		0.546		8622		1		25.1438		25.1444		1468.14		1468.14	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	20.402		20.500		3.09552		3.09559		31.8568		31.8570		5.2573		5.2580		6.7060		6.6869		1.000e-12		0.4318		1.9267000		0.3683		98.55		0.552		8644		1		25.1557		25.1558		1468.11		1468.12	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	20.899		21.000		3.09647		3.09655		31.8788		31.8797		5.2453		5.2452		6.7167		6.7034		1.000e-12		0.4389		1.9346000		0.3845		98.56		0.552		8665		1		25.1745		25.1753		1468.10		1468.10	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	21.396		21.500		3.09661		3.09671		31.8810		31.8825		5.2443		5.2440		6.7252		6.7174		1.000e-12		0.4556		2.0018000		0.3759		98.55		0.548		8687		1		25.1764		25.1776		1468.11		1468.11	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	21.893		22.000		3.09665		3.09677		31.8815		31.8834		5.2440		5.2435		6.7312		6.7205		1.000e-12		0.4556		1.8814000		0.3697		98.56		0.542		8709		1		25.1768		25.1784		1468.12		1468.12	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	22.389		22.500		3.09667		3.09677		31.8827		31.8841		5.2427		5.2425		6.7319		6.7068		1.000e-12		0.4325		1.8177000		0.3937		98.56		0.537		8731		1		25.1779		25.1791		1468.12		1468.12	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	22.886		23.000		3.09666		3.09676		31.8834		31.8846		5.2417		5.2415		6.7300		6.6984		1.000e-12		0.4506		1.8521000		0.3133		80.08		0.530		8754		1		25.1786		25.1795		1468.12		1468.13	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	23.383		23.500		3.09673		3.09680		31.8845		31.8851		5.2412		5.2413		6.7353		6.7051		1.000e-12		0.4640		1.8876000		0.3721		53.10		0.520		8777		1		25.1795		25.1800		1468.13		1468.13	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	23.880		24.000		3.09685		3.09691		31.8869		31.8870		5.2399		5.2404		6.7346		6.7017		1.000e-12		0.4679		1.8902000		0.3869		92.83		0.521		8800		1		25.1815		25.1815		1468.14		1468.14	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	24.376		24.500		3.09721		3.09726		31.8931		31.8936		5.2372		5.2374		6.7253		6.7024		1.000e-12		0.4685		1.8563000		0.3715		98.59		0.536		8823		1		25.1868		25.1871		1468.14		1468.14	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	24.873		25.000		3.09746		3.09756		31.8975		31.8987		5.2354		5.2353		6.7205		6.7226		1.000e-12		0.4679		1.8627000		0.3860		98.56		0.559		8845		1		25.1904		25.1913		1468.15		1468.15	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	25.370		25.500		3.09853		3.09858		31.9116		31.9122		5.2331		5.2332		6.7292		6.7308		1.000e-12		0.4662		1.9381000		0.4082		98.57		0.567		8866		1		25.2018		25.2023		1468.17		1468.17	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	25.867		26.000		3.10003		3.10001		31.9306		31.9307		5.2309		5.2306		6.7368		6.7361		1.000e-12		0.4441		1.8387000		0.3771		98.56		0.563		8887		1		25.2171		25.2172		1468.19		1468.19	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	26.363		26.500		3.10238		3.10241		31.9560		31.9563		5.2321		5.2321		6.7441		6.7381		1.000e-12		0.4544		1.8608000		0.4019		98.56		0.559		8908		1		25.2371		25.2373		1468.24		1468.24	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	26.860		27.000		3.10327		3.10343		31.9647		31.9663		5.2334		5.2335		6.7530		6.7237		1.000e-12		0.4643		1.8538000		0.3841		82.43		0.554		8930		1		25.2438		25.2451		1468.26		1468.26	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	27.357		27.500		3.10368		3.10376		31.9673		31.9685		5.2352		5.2349		6.7497		6.7158		1.000e-12		0.4617		1.8641000		0.3756		77.62		0.552		8952		1		25.2457		25.2467		1468.28		1468.28	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	27.854		28.000		3.10430		3.10435		31.9718		31.9726		5.2376		5.2374		6.7370		6.7182		1.000e-12		0.4606		1.9150000		0.3900		98.35		0.555		8973		1		25.2490		25.2496		1468.30		1468.30	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	28.350		28.500		3.10496		3.10505		31.9779		31.9786		5.2390		5.2392		6.7246		6.7174		1.000e-12		0.4644		1.9852000		0.3994		98.58		0.557		8995		1		25.2536		25.2542		1468.32		1468.33	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	28.847		29.000		3.10556		3.10566		31.9859		31.9871		5.2374		5.2374		6.7255		6.7246		1.000e-12		0.4434		1.9554000		0.3764		98.59		0.547		9016		1		25.2602		25.2611		1468.33		1468.34	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	29.344		29.500		3.10764		3.10779		32.0095		32.0116		5.2372		5.2369		6.7393		6.7279		1.000e-12		0.4555		2.0130000		0.4033		63.18		0.534		9039		1		25.2789		25.2805		1468.37		1468.37	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	29.840		30.000		3.11046		3.11056		32.0355		32.0371		5.2434		5.2430		6.7369		6.7275		1.000e-12		0.4773		2.0456000		0.3418		98.09		0.525		9061		1		25.2988		25.3001		1468.44		1468.44	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	30.337		30.500		3.11188		3.11199		32.0462		32.0479		5.2488		5.2484		6.7330		6.7304		1.000e-12		0.4623		2.1344000		0.3195		56.74		0.520		9084		1		25.3066		25.3080		1468.48		1468.48	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	30.834		31.000		3.11257		3.11278		32.0518		32.0540		5.2509		5.2512		6.7418		6.7294		1.000e-12		0.4641		2.0999000		0.3574		73.98		0.518		9108		1		25.3109		25.3125		1468.51		1468.51	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	31.330		31.500		3.11321		3.11339		32.0571		32.0590		5.2528		5.2530		6.7335		6.7291		1.000e-12		0.4747		2.0840000		0.3978		46.44		0.523		9131		1		25.3148		25.3163		1468.53		1468.53	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	31.827		32.000		3.11354		3.11354		32.0597		32.0597		5.2538		5.2537		6.7219		6.7256		1.000e-12		0.4695		2.0587000		0.3887		73.37		0.532		9153		1		25.3168		25.3168		1468.54		1468.54	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	32.324		32.500		3.11407		3.11435		32.0639		32.0667		5.2554		5.2559		6.7141		6.7254		1.000e-12		0.4554		2.0284000		0.3335		43.37		0.537		9176		1		25.3199		25.3221		1468.57		1468.57	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	32.821		33.000		3.11452		3.11467		32.0675		32.0693		5.2568		5.2567		6.7154		6.7266		1.000e-12		0.4556		2.0974000		0.4065		43.21		0.539		9198		1		25.3226		25.3240		1468.58		1468.58	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	33.317		33.500		3.11461		3.11470		32.0683		32.0694		5.2567		5.2567		6.7144		6.7203		1.000e-12		0.4556		2.0616000		0.4736		42.70		0.545		9220		1		25.3232		25.3241		1468.59		1468.59	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	33.814		34.000		3.11467		3.11472		32.0688		32.0694		5.2567		5.2567		6.7203		6.7232		1.000e-12		0.4798		2.0775000		0.4376		42.74		0.553		9242		1		25.3236		25.3241		1468.60		1468.60	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	34.311		34.500		3.11482		3.11489		32.0712		32.0716		5.2557		5.2561		6.7292		6.7289		1.000e-12		0.4519		2.0692000		0.4127		41.85		0.560		9264		1		25.3257		25.3259		1468.61		1468.61	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	34.807		35.000		3.11511		3.11515		32.0752		32.0753		5.2547		5.2550		6.7361		6.7268		1.000e-12		0.4580		2.0951000		0.3903		68.07		0.565		9285		1		25.3289		25.3290		1468.62		1468.62	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	35.304		35.500		3.11552		3.11545		32.0795		32.0788		5.2548		5.2548		6.7408		6.7223		1.000e-12		0.4644		2.1126000		0.3468		47.95		0.569		9306		1		25.3323		25.3318		1468.63		1468.63	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	35.801		36.000		3.11579		3.11599		32.0825		32.0855		5.2546		5.2539		6.7317		6.7218		1.000e-12		0.4579		2.1133000		0.3908		40.21		0.568		9327		1		25.3347		25.3371		1468.64		1468.64	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	36.297		36.500		3.11612		3.11627		32.0896		32.0914		5.2510		5.2509		6.7173		6.7070		1.000e-12		0.4684		2.1233000		0.3430		73.24		0.562		9348		1		25.3408		25.3421		1468.64		1468.65	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	36.794		37.000		3.11686		3.11678		32.1033		32.1024		5.2453		5.2452		6.7218		6.7035		1.000e-12		0.4440		2.1704000		0.3189		39.10		0.553		9370		1		25.3522		25.3515		1468.65		1468.65	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	37.291		37.500		3.11849		3.11846		32.1199		32.1199		5.2470		5.2466		6.7358		6.7159		1.000e-12		0.4440		2.1351000		0.3384		38.65		0.552		9392		1		25.3651		25.3652		1468.68		1468.68	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	37.787		38.000		3.12511		3.12539		32.1752		32.1783		5.2677		5.2677		6.7180		6.7067		1.000e-12		0.4523		2.1943000		0.3656		38.49		0.558		9413		1		25.4066		25.4091		1468.85		1468.85	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	38.284		38.500		3.13750		3.13705		32.2536		32.2532		5.3326		5.3276		6.6821		6.6939		1.000e-12		0.4458		2.2877000		0.3156		37.82		0.558		9435		1		25.4613		25.4616		1469.22		1469.20	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	38.781		39.000		3.14190		3.14139		32.2763		32.2750		5.3607		5.3560		6.6453		6.6662		1.000e-12		0.4351		2.3816000		0.3580		37.45		0.554		9456		1		25.4761		25.4756		1469.37		1469.35	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	39.277		39.500		3.14436		3.14474		32.2875		32.2900		5.3778		5.3797		6.6303		6.6414		1.000e-12		0.4422		2.4596000		0.4151		36.78		0.546		9478		1		25.4830		25.4848		1469.46		1469.47	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	39.774		40.000		3.14638		3.14594		32.2958		32.2951		5.3929		5.3884		6.6227		6.6315		1.000e-12		0.4313		2.4976000		0.3912		36.37		0.545		9500		1		25.4878		25.4878		1469.54		1469.52	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	40.271		40.500		3.14804		3.14753		32.3015		32.3011		5.4062		5.4006		6.5996		6.6148		1.000e-12		0.4312		2.4086000		0.3582		35.95		0.544		9522		1		25.4908		25.4912		1469.61		1469.59	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	40.767		41.000		3.14815		3.14817		32.3006		32.3019		5.4082		5.4070		6.5807		6.5989		1.000e-12		0.4218		2.5090000		0.3584		35.23		0.544		9545		1		25.4899		25.4910		1469.63		1469.62	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	41.264		41.500		3.14806		3.14884		32.3001		32.3036		5.4073		5.4129		6.5885		6.5997		1.000e-12		0.4423		2.5230000		0.3601		34.48		0.551		9566		1		25.4896		25.4917		1469.63		1469.66	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	41.760		42.000		3.15121		3.14947		32.3143		32.3067		5.4295		5.4169		6.5810		6.5915		1.000e-12		0.4446		2.5747000		0.3608		34.11		0.550		9588		1		25.4983		25.4937		1469.74		1469.68	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	42.257		42.500		3.16005		3.15988		32.3589		32.3599		5.4870		5.4840		6.5429		6.5682		1.000e-12		0.4278		2.6516000		0.3485		33.70		0.533		9610		1		25.5270		25.5281		1470.04		1470.03	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	42.754		43.000		3.16469		3.16606		32.3848		32.3938		5.5145		5.5212		6.5053		6.5314		1.000e-12		0.4200		2.6872000		0.3906		33.35		0.522		9633		1		25.5442		25.5506		1470.19		1470.23	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	43.250		43.500		3.16967		3.16978		32.4115		32.4129		5.5451		5.5449		6.4755		6.5083		1.000e-12		0.4179		2.7603000		0.3911		32.62		0.522		9656		1		25.5618		25.5630		1470.36		1470.36	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	43.747		44.000		3.17092		3.17110		32.4224		32.4232		5.5482		5.5493		6.4730		6.5023		1.000e-12		0.3999		2.4682000		0.3709		32.17		0.532		9679		1		25.5700		25.5706		1470.40		1470.40	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	44.243		44.500		3.17139		3.17158		32.4305		32.4338		5.5450		5.5438		6.4836		6.5066		1.000e-12		0.3985		2.4924000		0.3912		31.73		0.534		9701		1		25.5769		25.5796		1470.40		1470.40	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	44.740		45.000		3.17149		3.17159		32.4359		32.4366		5.5404		5.5408		6.4934		6.5097		1.000e-12		0.4052		2.4519000		0.3920		31.10		0.531		9724		1		25.5817		25.5822		1470.40		1470.40	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	45.236		45.500		3.17155		3.17169		32.4372		32.4390		5.5395		5.5392		6.5016		6.5128		1.000e-12		0.4157		2.4987000		0.4354		30.54		0.528		9747		1		25.5828		25.5843		1470.40		1470.40	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	45.733		46.000		3.17172		3.17179		32.4388		32.4390		5.5396		5.5401		6.5036		6.5043		1.000e-12		0.4083		2.5054000		0.4221		30.07		0.522		9769		1		25.5840		25.5841		1470.41		1470.42	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	46.229		46.500		3.17177		3.17186		32.4396		32.4405		5.5390		5.5391		6.5280		6.5139		1.000e-12		0.4037		2.4904000		0.4203		29.79		0.513		9793		1		25.5847		25.5854		1470.42		1470.42	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	46.726		47.000		3.17390		3.17352		32.4577		32.4558		5.5450		5.5425		6.5282		6.5043		1.000e-12		0.4121		2.5383000		0.3621		29.26		0.514		9816		1		25.5984		25.5971		1470.48		1470.46	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	47.223		47.500		3.18290		3.18235		32.5201		32.5179		5.5856		5.5815		6.5080		6.4874		1.000e-12		0.4148		2.6148000		0.3387		28.68		0.523		9839		1		25.6430		25.6417		1470.73		1470.71	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	47.719		48.000		3.18536		3.18532		32.5348		32.5354		5.5990		5.5979		6.4769		6.4735		1.000e-12		0.3967		2.6156000		0.3614		28.23		0.525		9862		1		25.6530		25.6536		1470.81		1470.80	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	48.216		48.500		3.18966		3.18900		32.5579		32.5557		5.6250		5.6197		6.4367		6.4506		1.000e-12		0.3983		2.7226000		0.3963		27.67		0.516		9885		1		25.6683		25.6671		1470.95		1470.93	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	48.712		49.000		3.19202		3.19163		32.5691		32.5680		5.6408		5.6374		6.4300		6.4422		1.000e-12		0.3972		2.7923000		0.3980		27.18		0.529		9908		1		25.6752		25.6747		1471.04		1471.02	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	49.209		49.500		3.19356		3.19338		32.5782		32.5778		5.6492		5.6474		6.4181		6.4379		1.000e-12		0.4079		2.9186000		0.3421		26.83		0.547		9931		1		25.6814		25.6814		1471.09		1471.08	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	49.705		50.000		3.19802		3.19766		32.5992		32.5982		5.6792		5.6760		6.4010		6.4217		1.000e-12		0.4085		2.8299000		0.3750		26.36		0.557		9952		1		25.6945		25.6941		1471.24		1471.23	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	50.202		50.500		3.19955		3.19956		32.6068		32.6076		5.6890		5.6882		6.3938		6.4027		1.000e-12		0.4085		2.9730000		0.3964		25.76		0.567		9974		1		25.6993		25.7001		1471.30		1471.30	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	50.698		51.000		3.19986		3.20015		32.6080		32.6100		5.6911		5.6924		6.3852		6.3954		1.000e-12		0.4037		3.0084000		0.3966		25.26		0.574		9995		1		25.7000		25.7014		1471.32		1471.33	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	51.195		51.500		3.19987		3.19991		32.6079		32.6088		5.6911		5.6905		6.3866		6.4029		1.000e-12		0.3980		2.8743000		0.3850		24.84		0.575		10015		1		25.6999		25.7007		1471.33		1471.33	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	51.691		52.000		3.19964		3.19932		32.6070		32.6064		5.6890		5.6860		6.3874		6.3977		1.000e-12		0.3845		2.9483000		0.4190		24.34		0.568		10036		1		25.6995		25.6994		1471.33		1471.32	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	52.188		52.500		3.20119		3.20070		32.6133		32.6121		5.7004		5.6959		6.3700		6.3628		1.000e-12		0.3846		2.9419000		0.3917		23.83		0.562		10058		1		25.7031		25.7027		1471.39		1471.37	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	52.684		53.000		3.20154		3.20142		32.6147		32.6149		5.7028		5.7011		6.3502		6.3457		1.000e-12		0.3952		2.9219000		0.3695		23.26		0.561		10079		1		25.7039		25.7043		1471.41		1471.40	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	53.181		53.500		3.20414		3.20435		32.6214		32.6227		5.7259		5.7269		6.3669		6.3747		1.000e-12		0.4099		3.0198000		0.3533		22.78		0.566		10100		1		25.7065		25.7074		1471.52		1471.52	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	53.677		54.000		3.21082		3.21294		32.6417		32.6476		5.7825		5.8010		6.2734		6.3403		1.000e-12		0.4055		3.0348000		0.3396		22.32		0.569		10121		1		25.7158		25.7182		1471.78		1471.86	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	54.174		54.500		3.23748		3.24006		32.7189		32.7276		6.0121		6.0330		6.0991		6.1893		1.000e-12		0.3712		2.8427000		0.3136		21.79		0.573		10142		1		25.7489		25.7533		1472.80		1472.90	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	54.670		55.000		3.24789		3.24753		32.7514		32.7516		6.0987		6.0944		6.0015		6.0844		1.000e-12		0.3406		2.5920000		0.3896		21.33		0.574		10163		1		25.7639		25.7646		1473.20		1473.18	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	55.167		55.500		3.25333		3.25407		32.7718		32.7753		6.1403		6.1454		5.9665		6.0483		1.000e-12		0.3402		2.5262000		0.3812		20.77		0.566		10184		1		25.7749		25.7770		1473.40		1473.42	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	55.663		56.000		3.26944		3.26986		32.8357		32.8379		6.2598		6.2624		5.8494		5.9500		1.000e-12		0.3388		2.4997000		0.3675		20.38		0.558		10206		1		25.8104		25.8117		1473.96		1473.97	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	56.160		56.500		3.29902		3.29871		32.9525		32.9513		6.4790		6.4767		5.7198		5.8225		1.000e-12		0.3330		2.4590000		0.3626		19.91		0.559		10227		1		25.8746		25.8739		1474.98		1474.97	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	56.656		57.000		3.30507		3.30578		32.9764		32.9801		6.5234		6.5276		5.6463		5.7341		1.000e-12		0.3192		2.3544000		0.3641		19.41		0.567		10249		1		25.8878		25.8901		1475.19		1475.22	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	57.152		57.500		3.31467		3.31482		33.0149		33.0166		6.5932		6.5931		5.5917		5.6785		1.000e-12		0.2938		2.2305000		0.3908		18.91		0.570		10270		1		25.9090		25.9104		1475.53		1475.53	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	57.649		58.000		3.32287		3.32428		33.0462		33.0526		6.6542		6.6637		5.5663		5.6556		1.000e-12		0.2836		2.3826000		0.3384		18.41		0.569		10291		1		25.9258		25.9296		1475.81		1475.86	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	58.145		58.500		3.32874		3.32940		33.0682		33.0733		6.6984		6.7006		5.5366		5.6192		1.000e-12		0.2737		2.3685000		0.3579		17.94		0.567		10312		1		25.9373		25.9411		1476.02		1476.04	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	58.642		59.000		3.34239		3.34222		33.1209		33.1223		6.7990		6.7958		5.4829		5.5642		1.000e-12		0.2632		2.5047000		0.3550		17.50		0.564		10333		1		25.9656		25.9671		1476.49		1476.48	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	59.138		59.500		3.34734		3.34723		33.1389		33.1398		6.8364		6.8343		5.4561		5.5151		1.000e-12		0.2592		2.4624000		0.3275		16.99		0.558		10354		1		25.9748		25.9758		1476.67		1476.66	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	59.634		60.000		3.34899		3.34837		33.1451		33.1436		6.8486		6.8431		5.4561		5.4884		1.000e-12		0.2591		2.3942000		0.3907		16.50		0.555		10376		1		25.9781		25.9776		1476.73		1476.71	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	60.131		60.500		3.34927		3.34942		33.1452		33.1466		6.8515		6.8518		5.4601		5.4858		1.000e-12		0.2598		2.4555000		0.3203		15.98		0.559		10398		1		25.9777		25.9788		1476.75		1476.75	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	60.627		61.000		3.34964		3.35005		33.1461		33.1482		6.8544		6.8569		5.4676		5.4893		1.000e-12		0.2586		2.3246000		0.3688		15.50		0.564		10419		1		25.9781		25.9794		1476.77		1476.78	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	61.124		61.500		3.35044		3.35028		33.1485		33.1488		6.8609		6.8587		5.4711		5.4924		1.000e-12		0.2592		2.5005000		0.3614		15.03		0.558		10440		1		25.9792		25.9796		1476.81		1476.80	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	61.620		62.000		3.35094		3.35097		33.1497		33.1509		6.8651		6.8641		5.4693		5.4983		1.000e-12		0.2603		2.4071000		0.3375		14.53		0.555		10462		1		25.9795		25.9805		1476.83		1476.83	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	62.116		62.500		3.35102		3.35097		33.1498		33.1505		6.8656		6.8644		5.4711		5.4903		1.000e-12		0.2653		2.3822000		0.3616		14.06		0.558		10484		1		25.9795		25.9802		1476.84		1476.84	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	62.613		63.000		3.35204		3.35171		33.1531		33.1525		6.8736		6.8704		5.4777		5.4821		1.000e-12		0.2661		2.3999000		0.3622		13.57		0.556		10505		1		25.9810		25.9810		1476.89		1476.87	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	63.109		63.500		3.35305		3.35204		33.1561		33.1536		6.8816		6.8728		5.4750		5.4788		1.000e-12		0.2552		2.4340000		0.3607		13.08		0.556		10527		1		25.9824		25.9815		1476.93		1476.89	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	63.605		64.000		3.35373		3.35354		33.1584		33.1588		6.8868		6.8843		5.4686		5.4795		1.000e-12		0.2358		2.5103000		0.3480		12.62		0.556		10548		1		25.9834		25.9841		1476.96		1476.95	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	64.102		64.500		3.35382		3.35385		33.1583		33.1594		6.8876		6.8868		5.4626		5.4816		1.000e-12		0.2477		2.3626000		0.3591		12.15		0.554		10570		1		25.9833		25.9842		1476.97		1476.97	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	64.598		65.000		3.35427		3.35416		33.1599		33.1604		6.8908		6.8890		5.4625		5.4714		1.000e-12		0.2470		2.3925000		0.3762		11.66		0.547		10591		1		25.9841		25.9848		1477.00		1476.99	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	65.095		65.500		3.35398		3.35440		33.1587		33.1608		6.8886		6.8911		5.4538		5.4604		1.000e-12		0.2313		2.3976000		0.3781		11.12		0.537		10614		1		25.9834		25.9848		1476.99		1477.01	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	65.591		66.000		3.35450		3.35486		33.1600		33.1621		6.8929		6.8948		5.4535		5.4553		1.000e-12		0.2370		2.4846000		0.3744		10.67		0.538		10636		1		25.9839		25.9853		1477.02		1477.03	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	66.087		66.500		3.35467		3.35477		33.1604		33.1615		6.8941		6.8941		5.4559		5.4566		1.000e-12		0.2480		2.5349000		0.3775		10.19		0.545		10658		1		25.9841		25.9849		1477.03		1477.03	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	66.584		67.000		3.35431		3.35452		33.1590		33.1605		6.8912		6.8921		5.4541		5.4535		1.000e-12		0.2481		2.4900000		0.3334		9.66		0.542		10680		1		25.9833		25.9844		1477.03		1477.03	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	67.080		67.500		3.35441		3.35442		33.1591		33.1601		6.8921		6.8911		5.4526		5.4551		1.000e-12		0.2487		2.4571000		0.3423		9.17		0.533		10703		1		25.9833		25.9842		1477.04		1477.04	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	67.576		68.000		3.35501		3.35555		33.1609		33.1638		6.8967		6.8999		5.4549		5.4664		1.000e-12		0.2604		2.4019000		0.3776		8.68		0.530		10725		1		25.9841		25.9860		1477.07		1477.08	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	68.073		68.500		3.35462		3.35515		33.1593		33.1620		6.8937		6.8969		5.4567		5.4722		1.000e-12		0.2597		2.4475000		0.4026		8.20		0.535		10748		1		25.9832		25.9849		1477.06		1477.08	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	68.569		69.000		3.35554		3.35528		33.1622		33.1623		6.9009		6.8978		5.4490		5.4646		1.000e-12		0.2688		2.5552000		0.3768		7.72		0.542		10770		1		25.9846		25.9851		1477.10		1477.09	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	69.065		69.500		3.35619		3.35586		33.1643		33.1646		6.9058		6.9018		5.4426		5.4524		1.000e-12		0.2638		2.4784000		0.3313		7.21		0.549		10792		1		25.9856		25.9863		1477.13		1477.12	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	69.562		70.000		3.35590		3.35590		33.1636		33.1645		6.9031		6.9021		5.4399		5.4524		1.000e-12		0.2597		2.4882000		0.3166		6.72		0.547		10814		1		25.9853		25.9862		1477.13		1477.13	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	70.058		70.500		3.35589		3.35609		33.1633		33.1650		6.9030		6.9035		5.4438		5.4570		1.000e-12		0.2555		2.5411000		0.3733		6.24		0.536		10836		1		25.9851		25.9864		1477.14		1477.14	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	70.555		71.000		3.35614		3.35588		33.1640		33.1644		6.9048		6.9015		5.4402		5.4412		1.000e-12		0.2482		2.5627000		0.3635		5.75		0.498		10859		1		25.9855		25.9862		1477.15		1477.14	
+2018	02	03	15	10	00	2018_347V_SMHI-01-2018	SLÄGG	58.25983	11.43517	71.051		71.500		3.35582		3.35546		33.1630		33.1629		6.9019		6.8980		5.4532		5.4503		1.000e-12		0.2625		2.3963000		0.3352		4.95		-0.003		10920		1		25.9851		25.9855		1477.15		1477.13	

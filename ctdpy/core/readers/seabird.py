@@ -40,11 +40,11 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         for fid in filenames:
             file_data = self.load(fid)
             fid = get_filename(fid)
-            self._setup_dictionary(fid, data)
+            self.setup_dictionary(fid, data)
 
             serie = self.get_series_object(file_data)
-            metadata = self.get_metadata(serie)
-            hires_data = self._setup_dataframe(serie, metadata)
+            metadata = self.get_metadata(serie, filename=fid)
+            hires_data = self.setup_dataframe(serie, metadata)
 
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
@@ -58,7 +58,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
 
         return data
 
-    def get_metadata(self, serie, map_keys=True):
+    def get_metadata(self, serie, map_keys=True, filename=None):
         """
         :param serie: pd.Series
         :param map_keys: False or True
@@ -92,7 +92,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
                                                             len_col=len(data[fid][resolution].index))
             data[fid][resolution + '_all'] = in_data
 
-    def _setup_dataframe(self, serie, metadata):
+    def setup_dataframe(self, serie, metadata):
         """
         :param serie:
         :param metadata: used if needed for parameter calculations
@@ -104,7 +104,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def _setup_dictionary(self, fid, data):
+    def setup_dictionary(self, fid, data):
         """
         :param fid: str, file name identifier
         :return: standard dictionary structure

@@ -1,0 +1,985 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2016
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2016-01-19
+//METADATA;STIME;05:23
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;26DA
+//METADATA;CRUISE_NO;11/2015 Togt 01 2016
+//METADATA;SERNO;0103
+//METADATA;STATN;
+//METADATA;LATIT;5802.95
+//METADATA;LONGI;00944.13
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_0827_20160119_0521_26_01_0103.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20160119_26DA_0103.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = D:\CTD_SBE911\DAT\26DA.2016.1.3.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.21d
+//INSTRUMENT_METADATA;* Temperature SN = 034757
+//INSTRUMENT_METADATA;* Conductivity SN = 043188
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 48
+//INSTRUMENT_METADATA;* Number of Voltage Words = 5
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* Append System Time to Every Scan
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 19 2016 05:21:41
+//INSTRUMENT_METADATA;* NMEA Latitude = 58 02.95 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 009 44.13 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 19 2016  05:23:14
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1g
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* surface PAR voltage added to scan
+//INSTRUMENT_METADATA;* A/D offset = 4
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Ship: DANA
+//INSTRUMENT_METADATA;** Average sound velocity: 1483.90 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Wed, 24 May 2017 05:50:43 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20162601-0103
+//INSTRUMENT_METADATA;**  30N Hirtshals
+//INSTRUMENT_METADATA;** Operator:  Christian
+//INSTRUMENT_METADATA;** Cruise: 11/2015 Togt 01 2016
+//INSTRUMENT_METADATA;* System UTC = Jan 19 2016 05:21:41
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 520                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = chloroflTC0: Chlorophyll, Turner Cyclops [ug/l]
+//INSTRUMENT_METADATA;# name 12 = cpar: CPAR/Corrected Irradiance [%]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Licor
+//INSTRUMENT_METADATA;# name 14 = spar: SPAR/Surface Irradiance
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 58.0492
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 58.0492
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =        106,      18408       
+//INSTRUMENT_METADATA;# span 1 =      1.500,    261.000       
+//INSTRUMENT_METADATA;# span 2 =     3.6680,     8.9868       
+//INSTRUMENT_METADATA;# span 3 =     3.6666,     8.9902       
+//INSTRUMENT_METADATA;# span 4 =    -0.5300,     0.2509       
+//INSTRUMENT_METADATA;# span 5 =   2.923216,   3.733296       
+//INSTRUMENT_METADATA;# span 6 =   2.922136,   3.733029       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =     5.2327,     7.0166       
+//INSTRUMENT_METADATA;# span 9 =     5.2738,     7.0262       
+//INSTRUMENT_METADATA;# span 10 =       1.73,       9.92      
+//INSTRUMENT_METADATA;# span 11 =     0.0231,     0.0824      
+//INSTRUMENT_METADATA;# span 12 = 9.9999e+04, 9.9999e+04      
+//INSTRUMENT_METADATA;# span 13 = 2.7956e+01, 8.8767e+01      
+//INSTRUMENT_METADATA;# span 14 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# span 15 =    31.3849,    35.2089      
+//INSTRUMENT_METADATA;# span 16 =    31.3719,    35.2081      
+//INSTRUMENT_METADATA;# span 17 =    -0.6225,     0.0386      
+//INSTRUMENT_METADATA;# span 18 =    24.9420,    27.4071      
+//INSTRUMENT_METADATA;# span 19 =    24.9317,    27.4049      
+//INSTRUMENT_METADATA;# span 20 =      1.486,    258.417      
+//INSTRUMENT_METADATA;# span 21 =      1.491,    258.834      
+//INSTRUMENT_METADATA;# span 22 =     -0.296,      1.069      
+//INSTRUMENT_METADATA;# span 23 =    1460.61,    1488.13      
+//INSTRUMENT_METADATA;# span 24 =    1460.60,    1488.12      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 19 2016 05:23:15 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="15" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034757</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>15-oct-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.36480332e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40708330e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.13153474e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.76030244e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>043188</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>26-sep-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.04719478e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.56695139e+000</H>
+//INSTRUMENT_METADATA;#         <I>5.23671563e-005</I>
+//INSTRUMENT_METADATA;#         <J>7.04749166e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>99675</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-jul-2005</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-4.234133e+004</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.016404e-001</C2>
+//INSTRUMENT_METADATA;#       <C3>1.251380e-002</C3>
+//INSTRUMENT_METADATA;#       <D1>3.485100e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000648e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-4.113727e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>4.228530e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>1.868920e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>0.99984000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.10630</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.288930e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.327380e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034605</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>18-jul-2012</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.40794731e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.44967661e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.20659403e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.83741481e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>043062</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>12-decl-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.82314314e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.21823582e+000</H>
+//INSTRUMENT_METADATA;#         <I>1.01471407e-004</I>
+//INSTRUMENT_METADATA;#         <J>5.17767995e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430276</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>09 apr 2015</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.6930e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4658</offset>
+//INSTRUMENT_METADATA;#         <A>-3.9689e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.7658e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.0622e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.4000</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>431010</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>09 apr 2015</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.1030e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5046</offset>
+//INSTRUMENT_METADATA;#         <A>-3.0454e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.0966e-004</B>
+//INSTRUMENT_METADATA;#         <C>-9.5189e-007</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 2.4500</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Fluorometer, Turner Cyclops -->
+//INSTRUMENT_METADATA;#     <Fluorometer SensorID="68" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2101854</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000e+000</Offset>
+//INSTRUMENT_METADATA;#       <!-- 1 = C, Chlorophyll -->
+//INSTRUMENT_METADATA;#       <!-- 2 = R, Rhodamine -->
+//INSTRUMENT_METADATA;#       <!-- 3 = F, Fluorescein -->
+//INSTRUMENT_METADATA;#       <!-- 4 = P, Phycocyanin -->
+//INSTRUMENT_METADATA;#       <!-- 5 = E, Phycoerythrin -->
+//INSTRUMENT_METADATA;#       <!-- 6 = U, CDOM -->
+//INSTRUMENT_METADATA;#       <!-- 7 = O, CrudeOil -->
+//INSTRUMENT_METADATA;#       <!-- 8 = B, OpticalBrightness -->
+//INSTRUMENT_METADATA;#       <!-- 9 = T, Turbidity -->
+//INSTRUMENT_METADATA;#       <!-- 10 = G, Refined Fuels -->
+//INSTRUMENT_METADATA;#       <MeasuredParameter>1</MeasuredParameter>
+//INSTRUMENT_METADATA;#     </Fluorometer>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4755</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10072014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>51020408.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.29326200</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber></SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>150.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, Fluorometer, Turner Cyclops, 2 -->
+//INSTRUMENT_METADATA;#     <Fluorometer SensorID="68" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2103569</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000e+000</Offset>
+//INSTRUMENT_METADATA;#       <!-- 1 = C, Chlorophyll -->
+//INSTRUMENT_METADATA;#       <!-- 2 = R, Rhodamine -->
+//INSTRUMENT_METADATA;#       <!-- 3 = F, Fluorescein -->
+//INSTRUMENT_METADATA;#       <!-- 4 = P, Phycocyanin -->
+//INSTRUMENT_METADATA;#       <!-- 5 = E, Phycoerythrin -->
+//INSTRUMENT_METADATA;#       <!-- 6 = U, CDOM -->
+//INSTRUMENT_METADATA;#       <!-- 7 = O, CrudeOil -->
+//INSTRUMENT_METADATA;#       <!-- 8 = B, OpticalBrightness -->
+//INSTRUMENT_METADATA;#       <!-- 9 = T, Turbidity -->
+//INSTRUMENT_METADATA;#       <!-- 10 = G, Refined Fuels -->
+//INSTRUMENT_METADATA;#       <MeasuredParameter>9</MeasuredParameter>
+//INSTRUMENT_METADATA;#     </Fluorometer>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="14" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, Unavailable -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="15" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, SPAR/Surface Irradiance -->
+//INSTRUMENT_METADATA;#     <SPAR_Sensor SensorID="51" >
+//INSTRUMENT_METADATA;#       <SerialNumber>20456</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>12-06-13</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ConversionFactor>1594.15470000</ConversionFactor>
+//INSTRUMENT_METADATA;#       <RatioMultiplier>1.00000000</RatioMultiplier>
+//INSTRUMENT_METADATA;#     </SPAR_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = May 24 2017 07:50:32, 7.26.2.14 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.hex C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = May 24 2017 07:50:34, 7.26.2.14
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L chloroflTC0 cpar par spar
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = May 24 2017 07:50:36, 7.26.2.14
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = c0S/m 0.073, c1S/m 0.073, sbeox1ML/L 3.000, sbeox0ML/L 3.000                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = May 24 2017 07:50:37, 7.26.2.14
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = May 24 2017 07:50:38, 7.26.2.14
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 1.0, maxDepth = 5, useDeckPress = 0                                                    
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = May 24 2017 07:50:39, 7.26.2.14 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = May 24 2017 07:50:41, 7.26.2.14
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = May 24 2017 07:50:42, 7.26.2.14
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_0827_20160119_0521_26_01_0103.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	1.491		1.500		2.92337		2.92235		31.3864		31.3752		3.6716		3.6707		6.9969		6.9747		8.767e+01		0.0814						2.85		-0.296		106		1		24.9432		24.9343		1460.61		1460.60	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	1.988		2.000		2.92334		2.92214		31.3859		31.3719		3.6714		3.6711		7.0253		6.9814		8.877e+01		0.0773						3.39		0.581		129		1		24.9428		24.9317		1460.62		1460.60	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	2.484		2.500		2.92326		2.92221		31.3849		31.3729		3.6713		3.6708		7.0254		6.9791		7.865e+01		0.0777						2.57		0.758		143		1		24.9420		24.9325		1460.62		1460.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	2.981		3.000		2.92333		2.92240		31.3854		31.3755		3.6712		3.6702		7.0262		6.9686		7.172e+01		0.0811						2.78		0.511		169		1		24.9425		24.9346		1460.63		1460.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	3.478		3.500		2.92385		2.92305		31.3910		31.3821		3.6715		3.6710		7.0135		6.9579		6.587e+01		0.0770						4.36		0.906		401		1		24.9469		24.9398		1460.65		1460.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	3.975		4.000		2.92381		2.92290		31.3905		31.3810		3.6714		3.6701		7.0170		6.9539		6.045e+01		0.0785						3.74		0.751		424		1		24.9465		24.9390		1460.66		1460.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	4.472		4.500		2.92322		2.92239		31.3859		31.3770		3.6686		3.6677		7.0191		6.9741		5.307e+01		0.0792						3.07		0.324		507		1		24.9431		24.9360		1460.65		1460.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	4.969		5.000		2.92329		2.92265		31.3863		31.3785		3.6689		3.6691		7.0083		6.9950		4.655e+01		0.0798						4.24		0.254		584		1		24.9433		24.9371		1460.66		1460.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	5.466		5.500		2.92346		2.92271		31.3870		31.3788		3.6698		3.6692		7.0048		7.0166		4.354e+01		0.0809						3.72		0.322		645		1		24.9438		24.9373		1460.67		1460.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	5.962		6.000		2.92348		2.92268		31.3870		31.3782		3.6699		3.6693		7.0243		6.9960		4.203e+01		0.0787						2.59		0.572		669		1		24.9438		24.9369		1460.68		1460.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	6.459		6.500		2.92354		2.92279		31.3871		31.3784		3.6703		3.6701		7.0193		6.9749		3.971e+01		0.0774						4.63		0.518		689		1		24.9439		24.9370		1460.69		1460.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	6.956		7.000		2.92340		2.92268		31.3875		31.3788		3.6680		3.6681		7.0090		6.9916		3.736e+01		0.0775						3.65		0.318		764		1		24.9444		24.9374		1460.69		1460.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	7.453		7.500		2.92394		2.92251		31.3925		31.3779		3.6691		3.6666		6.9932		6.9952		3.487e+01		0.0764						5.57		0.386		833		1		24.9482		24.9369		1460.71		1460.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	7.950		8.000		2.92433		2.92300		31.3948		31.3813		3.6712		3.6688		6.9984		6.9862		3.369e+01		0.0776						9.92		0.288		873		1		24.9499		24.9394		1460.73		1460.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	8.447		8.500		2.92463		2.92397		31.3970		31.3892		3.6723		3.6724		7.0128		6.9540		3.306e+01		0.0773						9.90		0.427		909		1		24.9516		24.9453		1460.74		1460.73	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	8.944		9.000		2.92430		2.92355		31.3936		31.3856		3.6717		3.6706		7.0195		6.9854		3.234e+01		0.0806						9.90		0.402		935		1		24.9489		24.9426		1460.74		1460.73	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	9.441		9.500		2.92703		2.92616		31.4205		31.4111		3.6770		3.6761		7.0020		6.9797		3.160e+01		0.0824						9.90		0.240		1030		1		24.9698		24.9624		1460.81		1460.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	9.937		10.000		2.92702		2.92624		31.4199		31.4115		3.6772		3.6764		6.9878		6.9819		3.120e+01		0.0808						9.90		0.278		1079		1		24.9693		24.9627		1460.82		1460.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	10.434		10.500		2.92767		2.92646		31.4259		31.4130		3.6787		3.6771		6.9963		6.9560		3.077e+01		0.0817						9.90		0.377		1122		1		24.9739		24.9639		1460.84		1460.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	10.931		11.000		2.92663		2.92622		31.4158		31.4110		3.6760		3.6760		7.0087		6.9508		3.063e+01		0.0782						9.90		0.585		1146		1		24.9662		24.9624		1460.82		1460.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	11.428		11.500		2.92739		2.92595		31.4240		31.4082		3.6766		3.6754		7.0130		6.9740		3.052e+01		0.0755						9.90		0.532		1165		1		24.9727		24.9602		1460.84		1460.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	11.925		12.000		2.93033		2.92703		31.4538		31.4183		3.6817		3.6778		6.9983		6.9840		2.997e+01		0.0769						9.90		0.381		1266		1		24.9959		24.9680		1460.91		1460.85	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	12.422		12.500		2.93295		2.92916		31.4826		31.4409		3.6837		3.6804		6.9869		6.9712		2.955e+01		0.0753						9.90		0.489		1333		1		25.0186		24.9858		1460.97		1460.90	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	12.919		13.000		2.93650		2.93250		31.5196		31.4750		3.6886		3.6857		6.9850		6.9554		2.943e+01		0.0782						9.90		0.524		1358		1		25.0477		25.0124		1461.04		1460.97	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	13.415		13.500		2.93743		2.93477		31.5300		31.4997		3.6890		3.6878		6.9950		6.9463		2.942e+01		0.0777						9.90		0.596		1380		1		25.0559		25.0319		1461.07		1461.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	13.912		14.000		2.93969		2.93773		31.5549		31.5323		3.6907		3.6902		7.0023		6.9525		2.939e+01		0.0779						9.90		0.591		1399		1		25.0755		25.0576		1461.11		1461.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	14.409		14.500		2.94221		2.93899		31.5832		31.5475		3.6921		3.6897		7.0061		6.9816		2.920e+01		0.0767						9.90		0.424		1443		1		25.0979		25.0697		1461.16		1461.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	14.906		15.000		2.94569		2.94063		31.6243		31.5657		3.6920		3.6906		6.9867		7.0100		2.894e+01		0.0740						9.90		0.765		1588		1		25.1306		25.0841		1461.22		1461.14	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	15.403		15.500		2.94921		2.94157		31.6657		31.5763		3.6922		3.6909		6.9908		7.0023		2.888e+01		0.0742						9.90		0.805		1602		1		25.1635		25.0926		1461.29		1461.17	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	15.899		16.000		2.95367		2.94328		31.7182		31.5960		3.6923		3.6913		6.9972		6.9909		2.880e+01		0.0755						9.90		0.793		1616		1		25.2053		25.1082		1461.36		1461.20	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	16.396		16.500		2.95574		2.94567		31.7418		31.6239		3.6929		3.6914		6.9930		6.9838		2.872e+01		0.0748						9.90		0.668		1632		1		25.2241		25.1303		1461.40		1461.25	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	16.893		17.000		2.95850		2.94993		31.7726		31.6735		3.6947		3.6921		6.9853		6.9747		2.864e+01		0.0738						9.90		0.426		1688		1		25.2484		25.1697		1461.46		1461.32	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	17.390		17.500		2.96046		2.95751		31.7922		31.7607		3.6981		3.6946		6.9757		6.9522		2.858e+01		0.0758						9.90		0.764		1824		1		25.2636		25.2389		1461.51		1461.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	17.886		18.000		2.96533		2.95922		31.8408		31.7766		3.7072		3.6988		6.9801		6.9531		2.853e+01		0.0745						9.90		0.799		1836		1		25.3015		25.2511		1461.62		1461.50	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	18.383		18.500		2.96769		2.96253		31.8627		31.8088		3.7132		3.7058		6.9812		6.9657		2.848e+01		0.0767						9.90		0.702		1851		1		25.3183		25.2761		1461.68		1461.58	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	18.880		19.000		2.96975		2.96632		31.8810		31.8456		3.7192		3.7139		6.9822		6.9755		2.843e+01		0.0768						9.90		0.410		1887		1		25.3324		25.3046		1461.74		1461.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	19.376		19.500		2.97228		2.97011		31.9009		31.8793		3.7294		3.7252		6.9568		6.9241		2.839e+01		0.0767						9.90		0.385		2010		1		25.3472		25.3304		1461.81		1461.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	19.873		20.000		2.97675		2.97319		31.9388		31.9035		3.7445		3.7375		6.9483		6.9212		2.836e+01		0.0796						9.90		0.385		2045		1		25.3760		25.3485		1461.93		1461.86	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	20.370		20.500		2.98666		2.97890		32.0197		31.9459		3.7814		3.7629		6.9539		6.9591		2.834e+01		0.0791						9.90		0.444		2073		1		25.4368		25.3799		1462.20		1462.03	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	20.866		21.000		3.00170		2.99159		32.1055		32.0244		3.8750		3.8358		6.9580		6.9647		2.833e+01		0.0793						9.90		0.309		2107		1		25.4962		25.4355		1462.71		1462.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	21.363		21.500		3.01921		3.00951		32.1988		32.1262		3.9901		3.9476		6.8897		6.9107		2.827e+01		0.0775						9.90		0.302		2219		1		25.5593		25.5057		1463.33		1463.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	21.859		22.000		3.03818		3.02610		32.2921		32.1996		4.1219		4.0715		6.8027		6.8644		2.828e+01		0.0790						9.90		0.325		2250		1		25.6205		25.5521		1464.01		1463.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	22.356		22.500		3.06520		3.04648		32.4359		32.2901		4.2974		4.2228		6.7101		6.8082		2.827e+01		0.0782						9.90		0.437		2286		1		25.7171		25.6089		1464.93		1464.43	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	22.852		23.000		3.10707		3.07051		32.6510		32.3882		4.5741		4.4086		6.7697		6.7387		2.828e+01		0.0759						9.90		0.612		2308		1		25.8593		25.6679		1466.36		1465.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	23.349		23.500		3.14685		3.09799		32.8527		32.5053		4.8361		4.6147		6.7894		6.6858		2.827e+01		0.0768						9.90		0.603		2326		1		25.9911		25.7394		1467.71		1466.35	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	23.845		24.000		3.24546		3.14528		33.3603		32.7377		5.4639		4.9324		6.6468		6.7323		2.826e+01		0.0797						9.90		0.364		2360		1		26.3214		25.8889		1470.91		1467.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	24.341		24.500		3.29295		3.28706		33.5727		33.5068		5.7934		5.7941		6.4705		6.5037		2.826e+01		0.0686						9.90		0.298		2496		1		26.4504		26.3987		1472.52		1472.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	24.837		25.000		3.29491		3.28515		33.6071		33.5101		5.7807		5.7672		6.4465		6.5058		2.826e+01		0.0635						9.90		0.489		2518		1		26.4791		26.4040		1472.52		1472.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	25.334		25.500		3.29910		3.28797		33.6964		33.5521		5.7386		5.7569		6.4756		6.4774		2.824e+01		0.0688						9.90		0.582		2540		1		26.5548		26.4385		1472.47		1472.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	25.830		26.000		3.31095		3.29135		33.7681		33.6004		5.8006		5.7464		6.5111		6.4601		2.824e+01		0.0706						9.90		0.587		2559		1		26.6039		26.4780		1472.82		1472.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	26.326		26.500		3.33089		3.29629		33.8337		33.6422		5.9597		5.7604		6.5003		6.4769		2.825e+01		0.0714						9.90		0.501		2581		1		26.6360		26.5093		1473.54		1472.51	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	26.822		27.000		3.35606		3.31322		33.8921		33.7019		6.1842		5.8918		6.4250		6.4831		2.821e+01		0.0684						9.90		0.341		2635		1		26.6539		26.5402		1474.52		1473.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	27.318		27.500		3.36695		3.35811		33.9231		33.8344		6.2751		6.2648		6.3566		6.3102		2.822e+01		0.0651						9.90		0.628		2776		1		26.6667		26.5980		1474.92		1474.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	27.814		28.000		3.38131		3.36750		33.9622		33.8308		6.3963		6.3737		6.4085		6.3283		2.823e+01		0.0647						9.90		0.766		2792		1		26.6819		26.5811		1475.46		1475.21	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	28.310		28.500		3.39163		3.37872		33.9774		33.8665		6.4962		6.4633		6.4663		6.4329		2.821e+01		0.0635						9.90		0.813		2806		1		26.6808		26.5976		1475.88		1475.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	28.806		29.000		3.42474		3.39362		34.0944		33.8029		6.7469		6.6943		6.4401		6.5482		2.821e+01		0.0612						9.90		0.766		2821		1		26.7395		26.5169		1477.01		1476.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	29.302		29.500		3.45519		3.43553		34.1166		33.9559		7.0623		7.0066		6.3109		6.5171		2.821e+01		0.0586						9.90		0.610		2838		1		26.7142		26.5954		1478.28		1477.86	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	29.798		30.000		3.44414		3.43582		34.1056		34.0052		6.9503		6.9591		6.3019		6.3260		2.820e+01		0.0552						9.90		0.475		2919		1		26.7207		26.6404		1477.83		1477.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	30.294		30.500		3.44674		3.41923		34.1834		33.8679		6.9008		6.9137		6.3913		6.3735		2.820e+01		0.0492						9.90		0.891		3038		1		26.7889		26.5387		1477.75		1477.41	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	30.790		31.000		3.46062		3.44590		34.1889		34.0243		7.0488		7.0519		6.3707		6.3805		2.819e+01		0.0478						9.90		0.938		3048		1		26.7731		26.6430		1478.34		1478.15	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	31.286		31.500		3.47044		3.45501		34.2423		34.0746		7.1033		7.1018		6.2853		6.3705		2.819e+01		0.0476						9.90		0.894		3060		1		26.8076		26.6758		1478.62		1478.41	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	31.782		32.000		3.47967		3.46751		34.2395		34.1225		7.2078		7.1915		6.2226		6.3407		2.819e+01		0.0481						9.90		0.698		3075		1		26.7908		26.7010		1479.03		1478.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	32.278		32.500		3.47496		3.46771		34.2297		34.1442		7.1652		7.1715		6.2440		6.2845		2.819e+01		0.0467						9.90		0.448		3175		1		26.7891		26.7208		1478.87		1478.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	32.774		33.000		3.48317		3.47277		34.2543		34.1296		7.2308		7.2420		6.2491		6.2861		2.819e+01		0.0483						9.90		0.682		3276		1		26.7993		26.6995		1479.16		1479.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	33.270		33.500		3.49075		3.48552		34.2668		34.1899		7.3014		7.3215		6.2391		6.2811		2.819e+01		0.0467						9.90		0.681		3291		1		26.7992		26.7358		1479.45		1479.43	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	33.766		34.000		3.49902		3.49389		34.2994		34.2198		7.3592		7.3833		6.2440		6.2678		2.819e+01		0.0454						9.90		0.575		3310		1		26.8166		26.7506		1479.72		1479.72	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	34.262		34.500		3.50800		3.50729		34.3271		34.2868		7.4297		7.4626		6.2113		6.2250		2.819e+01		0.0455						9.90		0.345		3337		1		26.8284		26.7920		1480.04		1480.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	34.758		35.000		3.50309		3.50697		34.3165		34.3112		7.3862		7.4342		6.2204		6.2002		2.819e+01		0.0433						9.90		0.477		3485		1		26.8263		26.8153		1479.87		1480.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	35.254		35.500		3.50948		3.51039		34.3469		34.3235		7.4255		7.4592		6.2160		6.2155		2.819e+01		0.0464						9.90		0.506		3510		1		26.8446		26.8214		1480.06		1480.16	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	35.750		36.000		3.51456		3.51419		34.3615		34.3327		7.4662		7.4912		6.2216		6.2333		2.819e+01		0.0475						9.90		0.515		3534		1		26.8503		26.8241		1480.24		1480.30	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	36.246		36.500		3.51916		3.52007		34.3812		34.3492		7.4965		7.5389		6.2157		6.2155		2.819e+01		0.0452						9.90		0.450		3558		1		26.8614		26.8302		1480.39		1480.51	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	36.741		37.000		3.52187		3.52356		34.3883		34.3698		7.5189		7.5560		6.1931		6.2092		2.819e+01		0.0444						9.90		0.238		3628		1		26.8638		26.8439		1480.50		1480.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	37.237		37.500		3.52560		3.52553		34.3971		34.3809		7.5505		7.5661		6.1909		6.2023		2.819e+01		0.0428						9.90		0.293		3730		1		26.8662		26.8512		1480.64		1480.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	37.733		38.000		3.52712		3.52637		34.4019		34.3843		7.5621		7.5717		6.1846		6.1841		2.820e+01		0.0433						9.90		0.368		3764		1		26.8683		26.8530		1480.69		1480.71	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	38.229		38.500		3.52808		3.52708		34.4057		34.3866		7.5685		7.5769		6.1846		6.1445		2.819e+01		0.0403						9.90		0.469		3794		1		26.8703		26.8541		1480.73		1480.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	38.725		39.000		3.52915		3.52805		34.4096		34.3899		7.5760		7.5838		6.1870		6.1672		2.819e+01		0.0407						9.90		0.546		3817		1		26.8723		26.8558		1480.77		1480.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	39.221		39.500		3.53012		3.52990		34.4136		34.3956		7.5823		7.5982		6.1863		6.1899		2.819e+01		0.0411						9.90		0.444		3839		1		26.8746		26.8581		1480.81		1480.85	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	39.717		40.000		3.53329		3.53337		34.4251		34.4090		7.6051		7.6224		6.1779		6.1419		2.819e+01		0.0406						9.90		0.431		3963		1		26.8803		26.8651		1480.92		1480.97	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	40.213		40.500		3.53594		3.53493		34.4320		34.4147		7.6269		7.6333		6.1758		6.1185		2.820e+01		0.0447						9.90		0.700		4019		1		26.8826		26.8680		1481.02		1481.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	40.709		41.000		3.53812		3.53619		34.4386		34.4108		7.6439		7.6508		6.1786		6.1424		2.819e+01		0.0445						9.90		0.783		4035		1		26.8853		26.8625		1481.10		1481.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	41.205		41.500		3.54142		3.53977		34.4428		34.4140		7.6754		7.6865		6.1625		6.1540		2.819e+01		0.0414						9.90		0.783		4049		1		26.8840		26.8598		1481.23		1481.24	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	41.701		42.000		3.54355		3.54294		34.4512		34.4230		7.6900		7.7118		6.1498		6.1541		2.819e+01		0.0413						9.90		0.648		4065		1		26.8885		26.8632		1481.31		1481.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	42.197		42.500		3.54708		3.54633		34.4638		34.4387		7.7154		7.7326		6.1523		6.1370		2.819e+01		0.0397						9.90		0.480		4143		1		26.8947		26.8725		1481.43		1481.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	42.693		43.000		3.55170		3.55056		34.4679		34.4455		7.7614		7.7718		6.1374		6.1404		2.818e+01		0.0403						9.90		0.711		4242		1		26.8912		26.8721		1481.62		1481.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	43.189		43.500		3.55805		3.55867		34.5026		34.4423		7.7954		7.8631		6.1308		6.1592		2.819e+01		0.0407						9.90		0.598		4260		1		26.9135		26.8561		1481.80		1481.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	43.685		44.000		3.56317		3.57011		34.5091		34.4913		7.8443		7.9379		6.1053		6.1337		2.818e+01		0.0427						9.90		0.345		4287		1		26.9114		26.8836		1482.00		1482.33	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	44.181		44.500		3.56817		3.57097		34.5252		34.5160		7.8823		7.9221		6.0971		6.1009		2.818e+01		0.0384						9.90		0.280		4389		1		26.9184		26.9053		1482.17		1482.31	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	44.676		45.000		3.57051		3.56944		34.5306		34.5295		7.9020		7.8916		6.0986		6.0769		2.818e+01		0.0392						9.90		0.433		4433		1		26.9198		26.9204		1482.26		1482.22	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	45.172		45.500		3.56923		3.56695		34.5307		34.5258		7.8878		7.8679		6.1023		6.0948		2.818e+01		0.0387						9.90		0.325		4461		1		26.9219		26.9210		1482.22		1482.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	45.668		46.000		3.56721		3.56611		34.5319		34.5228		7.8643		7.8615		6.1057		6.1175		2.819e+01		0.0374						9.90		0.301		4534		1		26.9263		26.9196		1482.14		1482.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	46.164		46.500		3.56696		3.56604		34.5326		34.5251		7.8607		7.8583		6.1165		6.0925		2.819e+01		0.0388						9.90		0.400		4564		1		26.9274		26.9219		1482.13		1482.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	46.660		47.000		3.56482		3.56417		34.5295		34.5272		7.8402		7.8356		6.1097		6.0992		2.818e+01		0.0387						9.90		0.368		4638		1		26.9280		26.9269		1482.06		1482.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	47.156		47.500		3.56350		3.56263		34.5311		34.5239		7.8241		7.8218		6.1070		6.0758		2.817e+01		0.0390						9.90		0.693		4676		1		26.9316		26.9264		1482.01		1481.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	47.652		48.000		3.56235		3.56212		34.5292		34.5322		7.8132		7.8076		6.1089		6.0898		2.818e+01		0.0386						9.90		0.662		4691		1		26.9317		26.9349		1481.97		1481.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	48.148		48.500		3.56036		3.55855		34.5274		34.5272		7.7931		7.7736		6.1140		6.1218		2.818e+01		0.0408						9.90		0.366		4748		1		26.9333		26.9360		1481.90		1481.83	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	48.644		49.000		3.55812		3.55754		34.5294		34.5248		7.7664		7.7648		6.1114		6.0917		2.818e+01		0.0396						9.90		0.279		4850		1		26.9388		26.9354		1481.81		1481.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	49.140		49.500		3.56186		3.56029		34.5457		34.5217		7.7906		7.7975		6.0983		6.0320		2.819e+01		0.0381						9.90		0.612		4900		1		26.9480		26.9282		1481.93		1481.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	49.636		50.000		3.56766		3.56555		34.5552		34.5221		7.8437		7.8542		6.1056		6.0782		2.817e+01		0.0387						9.90		0.779		4915		1		26.9477		26.9201		1482.15		1482.15	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	50.131		50.500		3.56830		3.56752		34.5553		34.5428		7.8503		7.8545		6.0904		6.0886		2.816e+01		0.0390						9.90		0.768		4930		1		26.9468		26.9364		1482.19		1482.19	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	50.627		51.000		3.57404		3.57687		34.5743		34.5122		7.8934		7.9869		6.0563		6.0906		2.817e+01		0.0387						9.90		0.531		4947		1		26.9554		26.8926		1482.38		1482.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	51.123		51.500		3.61248		3.61765		34.6587		34.6324		8.2243		8.3069		5.9933		5.9957		2.816e+01		0.0364						9.90		0.227		5084		1		26.9719		26.9387		1483.74		1484.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	51.619		52.000		3.62229		3.62016		34.6686		34.6455		8.3202		8.3204		5.9735		5.9810		2.818e+01		0.0359						9.90		0.405		5137		1		26.9651		26.9470		1484.12		1484.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	52.115		52.500		3.62241		3.62153		34.6679		34.6467		8.3218		8.3339		5.9710		5.9823		2.816e+01		0.0357						9.90		0.547		5161		1		26.9643		26.9458		1484.14		1484.16	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	52.611		53.000		3.61312		3.61148		34.6394		34.6780		8.2501		8.1933		6.0037		5.9690		2.818e+01		0.0348						9.90		0.541		5182		1		26.9529		26.9918		1483.84		1483.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	53.107		53.500		3.60636		3.59470		34.6366		34.6511		8.1796		8.0387		5.9906		5.9812		2.817e+01		0.0345						9.90		0.364		5208		1		26.9614		26.9940		1483.58		1483.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	53.603		54.000		3.57702		3.57333		34.6044		34.6044		7.8936		7.8536		6.0400		6.0509		2.818e+01		0.0378						9.90		0.253		5321		1		26.9788		26.9848		1482.47		1482.32	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	54.099		54.500		3.56925		3.56946		34.6011		34.5978		7.8125		7.8182		6.0475		6.0606		2.816e+01		0.0366						9.90		0.413		5384		1		26.9884		26.9849		1482.17		1482.18	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	54.595		55.000		3.56720		3.56530		34.5928		34.6139		7.7984		7.7564		6.0400		6.0416		2.818e+01		0.0370						9.90		0.481		5409		1		26.9839		27.0067		1482.11		1481.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	55.090		55.500		3.56110		3.55737		34.5846		34.5993		7.7400		7.6847		6.0566		6.0322		2.817e+01		0.0374						9.90		0.430		5435		1		26.9860		27.0057		1481.89		1481.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	55.586		56.000		3.55760		3.55613		34.5862		34.5914		7.7002		7.6790		6.0529		6.0542		2.818e+01		0.0381						9.90		0.338		5466		1		26.9931		27.0003		1481.74		1481.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	56.082		56.500		3.55663		3.55633		34.5882		34.5891		7.6872		7.6831		6.0600		6.0734		2.818e+01		0.0400						9.90		0.195		5541		1		26.9966		26.9979		1481.71		1481.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	56.578		57.000		3.55722		3.55749		34.5915		34.5901		7.6901		7.6946		6.0678		6.0753		2.818e+01		0.0433						9.90		0.223		5618		1		26.9988		26.9970		1481.73		1481.75	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	57.074		57.500		3.55827		3.55824		34.5962		34.5995		7.6965		7.6930		6.0559		6.0482		2.817e+01		0.0432						9.90		0.368		5663		1		27.0016		27.0047		1481.77		1481.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	57.570		58.000		3.55751		3.55581		34.5969		34.6057		7.6874		7.6600		6.0474		6.0495		2.819e+01		0.0410						9.90		0.474		5690		1		27.0034		27.0144		1481.74		1481.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	58.066		58.500		3.55522		3.55420		34.5960		34.5976		7.6631		7.6504		6.0479		6.0663		2.817e+01		0.0398						9.90		0.438		5715		1		27.0063		27.0093		1481.66		1481.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	58.562		59.000		3.55524		3.55542		34.6008		34.6011		7.6583		7.6599		6.0530		6.0680		2.817e+01		0.0422						9.90		0.258		5749		1		27.0107		27.0108		1481.65		1481.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	59.057		59.500		3.55759		3.55781		34.6104		34.6049		7.6740		7.6818		6.0457		6.0526		2.815e+01		0.0408						9.90		0.322		5876		1		27.0160		27.0106		1481.73		1481.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	59.553		60.000		3.55875		3.55885		34.6118		34.6074		7.6850		7.6905		6.0449		6.0283		2.816e+01		0.0406						9.90		0.503		5901		1		27.0155		27.0112		1481.78		1481.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	60.049		60.500		3.55944		3.55939		34.6134		34.6090		7.6906		7.6944		6.0416		6.0149		2.818e+01		0.0390						9.90		0.536		5923		1		27.0159		27.0119		1481.82		1481.83	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	60.545		61.000		3.56005		3.56043		34.6158		34.6117		7.6945		7.7028		6.0334		6.0273		2.817e+01		0.0411						9.90		0.486		5946		1		27.0173		27.0128		1481.84		1481.87	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	61.041		61.500		3.56128		3.56398		34.6201		34.6186		7.7032		7.7342		6.0358		6.0344		2.817e+01		0.0442						9.90		0.343		5975		1		27.0194		27.0136		1481.89		1482.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	61.537		62.000		3.56858		3.56893		34.6477		34.6256		7.7547		7.7806		6.0201		5.9560		2.817e+01		0.0387						9.90		0.478		6093		1		27.0335		27.0123		1482.13		1482.20	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	62.033		62.500		3.57541		3.57373		34.6677		34.6329		7.8085		7.8252		6.0156		5.9486		2.814e+01		0.0412						9.90		0.737		6139		1		27.0413		27.0115		1482.37		1482.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	62.529		63.000		3.59556		3.58504		34.7393		34.6013		7.9544		7.9796		5.9703		5.9913		2.816e+01		0.0395						9.90		0.714		6154		1		27.0758		26.9637		1483.02		1482.94	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	63.024		63.500		3.61239		3.61929		34.7811		34.6887		8.0939		8.2616		5.9388		5.9937		2.812e+01		0.0380						9.90		0.600		6172		1		27.0878		26.9898		1483.60		1484.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	63.520		64.000		3.62036		3.64130		34.7867		34.7618		8.1740		8.4248		5.8881		5.8926		2.816e+01		0.0386						9.90		0.373		6197		1		27.0801		27.0221		1483.92		1484.83	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	64.016		64.500		3.68657		3.67380		34.9479		34.7963		8.7217		8.7388		5.7221		5.7915		2.815e+01		0.0372						9.90		0.738		6343		1		27.1217		27.0002		1486.17		1486.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	64.512		65.000		3.69643		3.68820		34.9697		34.8651		8.8047		8.8230		5.6822		5.7807		2.814e+01		0.0379						9.90		0.872		6359		1		27.1257		27.0408		1486.51		1486.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	65.008		65.500		3.69943		3.69505		34.9762		34.9046		8.8299		8.8557		5.6457		5.7032		2.815e+01		0.0360						9.90		0.838		6372		1		27.1268		27.0666		1486.62		1486.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	65.503		66.000		3.70215		3.69911		34.9843		34.9333		8.8504		8.8697		5.6105		5.6634		2.816e+01		0.0346						9.90		0.659		6388		1		27.1298		27.0869		1486.71		1486.72	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	65.999		66.500		3.70040		3.70122		34.9829		34.9534		8.8330		8.8717		5.6411		5.6175		2.816e+01		0.0334						9.90		0.372		6477		1		27.1315		27.1022		1486.66		1486.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	66.495		67.000		3.70301		3.70493		34.9946		34.9704		8.8487		8.8938		5.6417		5.6088		2.814e+01		0.0326						9.90		0.496		6561		1		27.1382		27.1120		1486.74		1486.87	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	66.991		67.500		3.70597		3.70588		35.0000		34.9758		8.8745		8.8981		5.6270		5.6159		2.813e+01		0.0306						9.90		0.490		6582		1		27.1384		27.1156		1486.85		1486.90	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	67.487		68.000		3.70635		3.70659		35.0010		34.9798		8.8774		8.9014		5.6215		5.6363		2.815e+01		0.0294						9.90		0.355		6611		1		27.1386		27.1182		1486.87		1486.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	67.983		68.500		3.70671		3.70754		35.0010		34.9835		8.8810		8.9076		5.6246		5.6354		2.815e+01		0.0272						9.90		0.241		6654		1		27.1380		27.1201		1486.89		1486.97	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	68.478		69.000		3.70218		3.70846		34.9906		34.9930		8.8429		8.9074		5.6496		5.6214		2.814e+01		0.0302						9.90		0.351		6776		1		27.1360		27.1276		1486.74		1486.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	68.974		69.500		3.70880		3.70901		35.0100		34.9958		8.8937		8.9102		5.6193		5.6156		2.814e+01		0.0273						9.90		0.523		6795		1		27.1431		27.1294		1486.96		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	69.470		70.000		3.70916		3.70894		35.0109		35.0001		8.8963		8.9050		5.6029		5.6181		2.815e+01		0.0281						9.90		0.504		6818		1		27.1434		27.1335		1486.98		1487.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	69.966		70.500		3.70887		3.70776		35.0109		34.9997		8.8930		8.8925		5.6060		5.6178		2.815e+01		0.0282						9.90		0.353		6845		1		27.1439		27.1352		1486.98		1486.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	70.462		71.000		3.70816		3.70744		35.0102		34.9996		8.8859		8.8890		5.6070		5.6026		2.814e+01		0.0298						9.90		0.286		6943		1		27.1445		27.1357		1486.96		1486.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	70.957		71.500		3.70876		3.70884		35.0143		35.0036		8.8879		8.8996		5.6057		5.5999		2.814e+01		0.0268						9.90		0.439		6980		1		27.1474		27.1371		1486.98		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	71.453		72.000		3.71004		3.71209		35.0205		35.0169		8.8950		8.9205		5.6001		5.5916		2.812e+01		0.0266						9.90		0.391		7008		1		27.1511		27.1442		1487.02		1487.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	71.949		72.500		3.71164		3.71312		35.0265		35.0268		8.9058		8.9211		5.5905		5.5948		2.812e+01		0.0287						9.90		0.334		7042		1		27.1541		27.1519		1487.08		1487.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	72.445		73.000		3.71349		3.71320		35.0360		35.0348		8.9156		8.9137		5.5803		5.5743		2.812e+01		0.0279						9.90		0.243		7081		1		27.1600		27.1593		1487.13		1487.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	72.941		73.500		3.71322		3.71236		35.0454		35.0403		8.9029		8.8989		5.5626		5.5806		2.813e+01		0.0284						9.90		0.305		7186		1		27.1694		27.1660		1487.11		1487.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	73.436		74.000		3.71298		3.71211		35.0487		35.0418		8.8969		8.8945		5.5679		5.5612		2.812e+01		0.0260						9.90		0.474		7214		1		27.1729		27.1679		1487.10		1487.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	73.932		74.500		3.71289		3.71170		35.0492		35.0449		8.8950		8.8868		5.5706		5.5616		2.813e+01		0.0263						9.90		0.447		7239		1		27.1736		27.1716		1487.10		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	74.428		75.000		3.71233		3.71018		35.0495		35.0455		8.8886		8.8697		5.5686		5.5896		2.813e+01		0.0244						9.90		0.356		7269		1		27.1749		27.1747		1487.08		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	74.924		75.500		3.71137		3.70982		35.0499		35.0436		8.8778		8.8675		5.5746		5.5975		2.813e+01		0.0275						9.90		0.247		7336		1		27.1769		27.1736		1487.05		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	75.420		76.000		3.71053		3.71005		35.0504		35.0440		8.8680		8.8693		5.5731		5.5898		2.812e+01		0.0250						9.90		0.401		7430		1		27.1788		27.1736		1487.03		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	75.915		76.500		3.71049		3.70993		35.0505		35.0441		8.8672		8.8678		5.5846		5.5664		2.811e+01		0.0261						9.90		0.578		7451		1		27.1790		27.1740		1487.03		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	76.411		77.000		3.71066		3.71023		35.0509		35.0432		8.8684		8.8717		5.5868		5.5576		2.813e+01		0.0269						9.90		0.652		7470		1		27.1791		27.1726		1487.04		1487.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	76.907		77.500		3.71048		3.71033		35.0497		35.0450		8.8674		8.8706		5.5936		5.5757		2.812e+01		0.0258						9.90		0.593		7488		1		27.1784		27.1742		1487.04		1487.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	77.403		78.000		3.71008		3.70932		35.0502		35.0474		8.8625		8.8572		5.5931		5.5975		2.813e+01		0.0273						9.90		0.339		7552		1		27.1796		27.1782		1487.04		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	77.899		78.500		3.70981		3.70937		35.0541		35.0497		8.8554		8.8552		5.6085		5.5949		2.812e+01		0.0267						9.90		0.409		7651		1		27.1838		27.1803		1487.02		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	78.394		79.000		3.71002		3.70951		35.0571		35.0566		8.8544		8.8494		5.6238		5.5972		2.813e+01		0.0257						9.90		0.484		7674		1		27.1863		27.1867		1487.03		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	78.890		79.500		3.70981		3.70895		35.0591		35.0592		8.8498		8.8406		5.6330		5.6482		2.812e+01		0.0267						9.90		0.441		7699		1		27.1886		27.1901		1487.03		1486.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	79.386		80.000		3.70964		3.70874		35.0610		35.0596		8.8458		8.8378		5.6506		5.6951		2.812e+01		0.0283						9.90		0.313		7731		1		27.1907		27.1909		1487.02		1486.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	79.882		80.500		3.70927		3.70858		35.0636		35.0605		8.8391		8.8348		5.6737		5.7134		2.813e+01		0.0292						9.90		0.170		7791		1		27.1938		27.1921		1487.01		1486.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	80.378		81.000		3.70928		3.70883		35.0666		35.0616		8.8360		8.8362		5.7033		5.6996		2.812e+01		0.0271						9.90		0.283		7869		1		27.1966		27.1927		1487.01		1487.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	80.873		81.500		3.70951		3.70918		35.0675		35.0627		8.8372		8.8385		5.6979		5.6944		2.812e+01		0.0261						9.90		0.370		7903		1		27.1971		27.1932		1487.02		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	81.369		82.000		3.70982		3.70951		35.0686		35.0644		8.8391		8.8401		5.6993		5.7070		2.812e+01		0.0309						9.90		0.348		7935		1		27.1978		27.1943		1487.04		1487.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	81.865		82.500		3.71001		3.70959		35.0697		35.0650		8.8399		8.8401		5.6975		5.6985		2.811e+01		0.0281						9.90		0.224		7986		1		27.1984		27.1947		1487.05		1487.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	82.361		83.000		3.71007		3.70959		35.0701		35.0651		8.8397		8.8398		5.6931		5.6764		2.812e+01		0.0287						9.90		0.366		8037		1		27.1988		27.1948		1487.06		1487.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	82.856		83.500		3.71012		3.70962		35.0702		35.0653		8.8400		8.8396		5.6917		5.6862		2.812e+01		0.0291						9.90		0.326		8067		1		27.1988		27.1951		1487.07		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	83.352		84.000		3.70987		3.70942		35.0708		35.0664		8.8364		8.8361		5.6929		5.6777		2.813e+01		0.0291						9.90		0.281		8153		1		27.1999		27.1965		1487.06		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	83.848		84.500		3.70982		3.70926		35.0713		35.0672		8.8353		8.8335		5.6929		5.6924		2.812e+01		0.0293						9.90		0.406		8187		1		27.2004		27.1975		1487.07		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	84.344		85.000		3.70972		3.70915		35.0714		35.0676		8.8338		8.8316		5.6928		5.6931		2.812e+01		0.0288						9.90		0.335		8219		1		27.2008		27.1981		1487.07		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	84.840		85.500		3.70941		3.70857		35.0719		35.0696		8.8298		8.8232		5.7063		5.7327		2.811e+01		0.0261						9.90		0.292		8260		1		27.2018		27.2010		1487.07		1487.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	85.335		86.000		3.70863		3.70778		35.0723		35.0702		8.8208		8.8139		5.7442		5.7770		2.812e+01		0.0287						9.90		0.301		8298		1		27.2036		27.2030		1487.04		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	85.831		86.500		3.70837		3.70783		35.0757		35.0724		8.8143		8.8120		5.7950		5.8065		2.812e+01		0.0283						9.90		0.253		8372		1		27.2072		27.2050		1487.03		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	86.327		87.000		3.70853		3.70858		35.0781		35.0724		8.8135		8.8197		5.8037		5.7948		2.812e+01		0.0275						9.90		0.481		8422		1		27.2092		27.2038		1487.04		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	86.823		87.500		3.70944		3.70952		35.0808		35.0754		8.8200		8.8264		5.8079		5.8007		2.811e+01		0.0271						9.90		0.510		8443		1		27.2104		27.2051		1487.07		1487.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	87.318		88.000		3.70996		3.70988		35.0814		35.0760		8.8248		8.8293		5.8021		5.7963		2.811e+01		0.0292						9.90		0.312		8473		1		27.2100		27.2051		1487.10		1487.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	87.814		88.500		3.71065		3.71012		35.0823		35.0773		8.8310		8.8304		5.7959		5.7909		2.812e+01		0.0286						9.90		0.135		8531		1		27.2097		27.2059		1487.13		1487.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	88.310		89.000		3.71274		3.71299		35.0905		35.0773		8.8447		8.8607		5.7805		5.7696		2.811e+01		0.0281						9.90		0.341		8620		1		27.2140		27.2011		1487.20		1487.24	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	88.806		89.500		3.71576		3.71617		35.0961		35.0849		8.8710		8.8866		5.7722		5.7422		2.811e+01		0.0278						9.90		0.567		8642		1		27.2142		27.2029		1487.31		1487.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	89.302		90.000		3.71795		3.71801		35.1003		35.0852		8.8898		8.9057		5.7584		5.7462		2.811e+01		0.0280						9.90		0.578		8662		1		27.2145		27.2001		1487.40		1487.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	89.797		90.500		3.71906		3.71941		35.1011		35.0920		8.9004		8.9134		5.7433		5.7484		2.811e+01		0.0286						9.90		0.450		8685		1		27.2134		27.2042		1487.45		1487.48	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	90.293		91.000		3.72090		3.72186		35.1046		35.0970		8.9163		8.9342		5.7252		5.7103		2.812e+01		0.0282						9.90		0.267		8761		1		27.2135		27.2047		1487.52		1487.57	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	90.789		91.500		3.72377		3.72333		35.1103		35.1032		8.9407		8.9433		5.6898		5.6777		2.811e+01		0.0283						9.90		0.461		8858		1		27.2142		27.2081		1487.62		1487.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	91.285		92.000		3.72387		3.72337		35.1109		35.1037		8.9410		8.9429		5.6816		5.6691		2.811e+01		0.0271						9.90		0.596		8878		1		27.2145		27.2086		1487.63		1487.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	91.780		92.500		3.72429		3.72364		35.1119		35.1035		8.9442		8.9457		5.6740		5.6661		2.811e+01		0.0271						9.90		0.643		8897		1		27.2148		27.2080		1487.65		1487.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	92.276		93.000		3.72456		3.72394		35.1124		35.1043		8.9462		8.9479		5.6694		5.6650		2.811e+01		0.0269						9.90		0.585		8916		1		27.2149		27.2082		1487.67		1487.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	92.772		93.500		3.72476		3.72446		35.1127		35.1062		8.9478		8.9513		5.6628		5.6555		2.811e+01		0.0279						9.90		0.347		8955		1		27.2149		27.2092		1487.68		1487.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	93.268		94.000		3.72572		3.72528		35.1162		35.1077		8.9543		8.9583		5.6189		5.6108		2.811e+01		0.0262						9.90		0.380		9110		1		27.2166		27.2093		1487.72		1487.72	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	93.764		94.500		3.72684		3.72623		35.1190		35.1094		8.9632		8.9663		5.5765		5.5786		2.811e+01		0.0278						9.90		0.630		9122		1		27.2173		27.2094		1487.76		1487.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	94.259		95.000		3.72711		3.72651		35.1199		35.1133		8.9649		8.9652		5.5438		5.5510		2.811e+01		0.0272						9.90		0.714		9139		1		27.2177		27.2125		1487.78		1487.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	94.755		95.500		3.72714		3.72651		35.1203		35.1141		8.9645		8.9640		5.5219		5.5343		2.811e+01		0.0284						9.90		0.698		9155		1		27.2182		27.2134		1487.79		1487.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	95.251		96.000		3.72727		3.72662		35.1214		35.1148		8.9645		8.9643		5.5241		5.5228		2.811e+01		0.0272						9.90		0.570		9173		1		27.2190		27.2139		1487.80		1487.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	95.747		96.500		3.72727		3.72679		35.1216		35.1159		8.9641		8.9648		5.5441		5.5096		2.811e+01		0.0255						9.90		0.416		9241		1		27.2192		27.2146		1487.80		1487.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	96.242		97.000		3.72729		3.72687		35.1220		35.1163		8.9638		8.9649		5.5390		5.4812		2.811e+01		0.0264						9.90		0.812		9356		1		27.2196		27.2149		1487.81		1487.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	96.738		97.500		3.72744		3.72690		35.1224		35.1167		8.9646		8.9647		5.5320		5.4839		2.811e+01		0.0261						9.90		0.883		9368		1		27.2198		27.2153		1487.82		1487.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	97.234		98.000		3.72716		3.72683		35.1221		35.1183		8.9616		8.9620		5.5261		5.4894		2.811e+01		0.0261						9.90		0.881		9381		1		27.2201		27.2170		1487.82		1487.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	97.730		98.500		3.72690		3.72638		35.1220		35.1192		8.9588		8.9562		5.5219		5.4975		2.811e+01		0.0271						9.90		0.775		9394		1		27.2204		27.2186		1487.82		1487.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	98.226		99.000		3.72644		3.72576		35.1242		35.1206		8.9515		8.9478		5.5107		5.4898		2.811e+01		0.0265						9.90		0.494		9431		1		27.2233		27.2211		1487.80		1487.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	98.721		99.500		3.72623		3.72590		35.1248		35.1228		8.9485		8.9469		5.4648		5.4538		2.811e+01		0.0247						9.90		0.880		9582		1		27.2242		27.2229		1487.80		1487.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	99.217		100.000		3.72584		3.72560		35.1245		35.1268		8.9443		8.9394		5.4898		5.4395		2.811e+01		0.0259						9.90		0.978		9593		1		27.2247		27.2272		1487.79		1487.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	99.713		100.500		3.72450		3.72457		35.1249		35.1303		8.9294		8.9247		5.5128		5.4454		2.811e+01		0.0264						9.90		1.001		9605		1		27.2274		27.2324		1487.74		1487.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	100.209		101.000		3.72585		3.72447		35.1322		35.1204		8.9361		8.9334		5.5278		5.4606		2.811e+01		0.0274						9.90		0.916		9617		1		27.2320		27.2232		1487.79		1487.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	100.704		101.500		3.72691		3.72608		35.1351		35.1269		8.9442		8.9437		5.5150		5.4666		2.811e+01		0.0265						9.90		0.622		9632		1		27.2330		27.2266		1487.83		1487.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	101.200		102.000		3.72680		3.72602		35.1354		35.1274		8.9425		8.9422		5.4887		5.4388		2.811e+01		0.0276						9.90		0.709		9763		1		27.2335		27.2273		1487.83		1487.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	101.696		102.500		3.72671		3.72618		35.1354		35.1335		8.9413		8.9376		5.4905		5.4256		2.811e+01		0.0272						9.90		0.955		9804		1		27.2337		27.2328		1487.83		1487.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	102.192		103.000		3.72626		3.72572		35.1366		35.1344		8.9350		8.9315		5.4910		5.4203		2.811e+01		0.0247						9.90		1.018		9816		1		27.2356		27.2345		1487.82		1487.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	102.687		103.500		3.72836		3.72622		35.1456		35.1232		8.9480		8.9480		5.4907		5.4143		2.811e+01		0.0251						9.90		1.044		9828		1		27.2406		27.2230		1487.89		1487.86	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	103.183		104.000		3.72965		3.72837		35.1478		35.1308		8.9593		8.9629		5.4812		5.4173		2.811e+01		0.0268						9.90		1.034		9839		1		27.2405		27.2266		1487.94		1487.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	103.679		104.500		3.73182		3.73015		35.1533		35.1314		8.9764		8.9809		5.4863		5.4300		2.811e+01		0.0255						9.90		0.976		9851		1		27.2421		27.2242		1488.02		1488.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	104.175		105.000		3.73282		3.73177		35.1549		35.1413		8.9852		8.9879		5.4834		5.4570		2.811e+01		0.0261						9.90		0.840		9864		1		27.2419		27.2308		1488.06		1488.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	104.671		105.500		3.73305		3.73264		35.1555		35.1478		8.9868		8.9902		5.4830		5.4715		2.811e+01		0.0256						9.90		0.505		9885		1		27.2421		27.2356		1488.08		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	105.166		106.000		3.73208		3.73260		35.1534		35.1494		8.9785		8.9879		5.4724		5.4324		2.811e+01		0.0249						9.90		0.556		9994		1		27.2418		27.2372		1488.05		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	105.662		106.500		3.73324		3.73303		35.1585		35.1553		8.9853		8.9863		5.4730		5.4104		2.811e+01		0.0245						9.90		0.639		10013		1		27.2448		27.2421		1488.09		1488.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	106.158		107.000		3.73306		3.73265		35.1611		35.1589		8.9806		8.9785		5.4485		5.4046		2.811e+01		0.0247						9.90		0.676		10032		1		27.2475		27.2461		1488.09		1488.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	106.654		107.500		3.73307		3.73250		35.1635		35.1593		8.9780		8.9761		5.4237		5.3925		2.811e+01		0.0237						9.90		0.745		10049		1		27.2499		27.2469		1488.09		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	107.149		108.000		3.73311		3.73256		35.1645		35.1598		8.9771		8.9760		5.4065		5.3924		2.810e+01		0.0231						9.90		0.824		10064		1		27.2508		27.2473		1488.09		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	107.645		108.500		3.73316		3.73264		35.1657		35.1610		8.9763		8.9755		5.4006		5.3901		2.811e+01		0.0244						9.90		0.854		10078		1		27.2518		27.2482		1488.10		1488.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	108.141		109.000		3.73326		3.73271		35.1675		35.1626		8.9753		8.9744		5.4053		5.3824		2.811e+01		0.0241						9.90		0.791		10092		1		27.2534		27.2496		1488.11		1488.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	108.637		109.500		3.73330		3.73283		35.1681		35.1640		8.9748		8.9740		5.4145		5.3802		2.811e+01		0.0242						9.90		0.579		10109		1		27.2539		27.2508		1488.12		1488.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	109.132		110.000		3.73315		3.73280		35.1666		35.1646		8.9745		8.9729		5.4173		5.3881		2.811e+01		0.0248						9.90		0.273		10152		1		27.2528		27.2515		1488.12		1488.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	109.628		110.500		3.73316		3.73278		35.1673		35.1654		8.9736		8.9716		5.4130		5.3689		2.811e+01		0.0247						9.90		0.382		10199		1		27.2535		27.2523		1488.13		1488.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	110.124		111.000		3.73318		3.73267		35.1685		35.1662		8.9723		8.9694		5.3944		5.3674		2.811e+01		0.0256						9.90		0.417		10228		1		27.2547		27.2533		1488.13		1488.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	110.620		111.500		3.73310		3.73232		35.1696		35.1682		8.9702		8.9634		5.3912		5.3694		2.811e+01		0.0259						9.90		0.475		10256		1		27.2558		27.2558		1488.13		1488.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	111.115		112.000		3.73275		3.73201		35.1702		35.1685		8.9657		8.9595		5.4041		5.3710		2.810e+01		0.0232						9.90		0.599		10278		1		27.2570		27.2567		1488.13		1488.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	111.611		112.500		3.73232		3.73152		35.1703		35.1700		8.9608		8.9526		5.3960		5.3704		2.811e+01		0.0245						9.90		0.679		10296		1		27.2579		27.2590		1488.12		1488.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	112.107		113.000		3.73193		3.73110		35.1701		35.1689		8.9566		8.9491		5.4022		5.3736		2.810e+01		0.0267						9.90		0.692		10313		1		27.2584		27.2587		1488.11		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	112.603		113.500		3.73166		3.73089		35.1704		35.1690		8.9532		8.9465		5.4160		5.3912		2.811e+01		0.0271						9.90		0.633		10331		1		27.2592		27.2592		1488.10		1488.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	113.098		114.000		3.73094		3.73011		35.1690		35.1695		8.9467		8.9375		5.4221		5.4143		2.810e+01		0.0270						9.90		0.528		10352		1		27.2592		27.2610		1488.09		1488.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	113.594		114.500		3.73035		3.72853		35.1694		35.1671		8.9398		8.9228		5.4356		5.4304		2.811e+01		0.0274						9.90		0.446		10378		1		27.2606		27.2615		1488.07		1488.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	114.090		115.000		3.72964		3.72825		35.1685		35.1664		8.9330		8.9204		5.4507		5.4595		2.810e+01		0.0258						9.90		0.481		10405		1		27.2609		27.2613		1488.05		1488.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	114.586		115.500		3.72897		3.72758		35.1677		35.1658		8.9263		8.9135		5.4686		5.4643		2.811e+01		0.0261						9.90		0.517		10428		1		27.2615		27.2620		1488.04		1487.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	115.081		116.000		3.72825		3.72745		35.1673		35.1644		8.9189		8.9134		5.4784		5.4666		2.811e+01		0.0282						9.90		0.432		10452		1		27.2623		27.2609		1488.01		1487.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	115.577		116.500		3.72791		3.72724		35.1670		35.1642		8.9154		8.9111		5.4849		5.4806		2.810e+01		0.0282						9.90		0.335		10486		1		27.2626		27.2611		1488.01		1487.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	116.073		117.000		3.72774		3.72678		35.1666		35.1642		8.9137		8.9060		5.4918		5.4767		2.810e+01		0.0248						9.90		0.491		10518		1		27.2626		27.2619		1488.01		1487.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	116.569		117.500		3.72710		3.72618		35.1644		35.1656		8.9089		8.8979		5.4988		5.4801		2.811e+01		0.0255						9.90		0.624		10539		1		27.2616		27.2643		1488.00		1487.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	117.064		118.000		3.72637		3.72535		35.1638		35.1623		8.9015		8.8923		5.5083		5.4927		2.809e+01		0.0255						9.90		0.642		10557		1		27.2623		27.2626		1487.98		1487.94	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	117.560		118.500		3.72605		3.72539		35.1632		35.1629		8.8985		8.8918		5.5190		5.5103		2.809e+01		0.0272						9.90		0.574		10576		1		27.2624		27.2632		1487.97		1487.95	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	118.056		119.000		3.72562		3.72454		35.1629		35.1617		8.8940		8.8837		5.5298		5.5268		2.810e+01		0.0259						9.90		0.500		10599		1		27.2628		27.2636		1487.97		1487.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	118.552		119.500		3.72521		3.72337		35.1625		35.1620		8.8898		8.8708		5.5409		5.5389		2.809e+01		0.0259						9.90		0.491		10624		1		27.2632		27.2659		1487.96		1487.89	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	119.047		120.000		3.72373		3.72049		35.1596		35.1604		8.8768		8.8415		5.5646		5.5668		2.808e+01		0.0263						9.90		0.513		10648		1		27.2630		27.2693		1487.92		1487.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	119.543		120.500		3.72136		3.71944		35.1549		35.1558		8.8561		8.8348		5.5989		5.6066		2.808e+01		0.0256						9.90		0.528		10671		1		27.2626		27.2667		1487.84		1487.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	120.039		121.000		3.72032		3.71843		35.1550		35.1563		8.8448		8.8233		5.6320		5.6419		2.809e+01		0.0272						9.90		0.502		10694		1		27.2645		27.2690		1487.81		1487.73	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	120.535		121.500		3.71890		3.71730		35.1532		35.1544		8.8311		8.8130		5.6572		5.6522		2.810e+01		0.0284						9.90		0.482		10719		1		27.2653		27.2691		1487.76		1487.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	121.030		122.000		3.71752		3.71624		35.1511		35.1525		8.8183		8.8034		5.6769		5.6700		2.811e+01		0.0280						9.90		0.514		10743		1		27.2657		27.2692		1487.72		1487.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	121.526		122.500		3.71634		3.71532		35.1500		35.1512		8.8068		8.7946		5.6971		5.7004		2.810e+01		0.0288						9.90		0.536		10766		1		27.2667		27.2695		1487.69		1487.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	122.022		123.000		3.71557		3.71516		35.1498		35.1496		8.7985		8.7943		5.7142		5.6984		2.809e+01		0.0293						9.90		0.467		10789		1		27.2679		27.2683		1487.66		1487.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	122.518		123.500		3.71533		3.71483		35.1499		35.1494		8.7956		8.7908		5.7152		5.7029		2.810e+01		0.0286						9.90		0.346		10820		1		27.2684		27.2688		1487.66		1487.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	123.013		124.000		3.71538		3.71494		35.1502		35.1485		8.7955		8.7926		5.7099		5.6901		2.809e+01		0.0276						9.90		0.454		10854		1		27.2686		27.2678		1487.67		1487.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	123.509		124.500		3.71542		3.71521		35.1509		35.1498		8.7951		8.7939		5.7072		5.6598		2.810e+01		0.0278						9.90		0.636		10875		1		27.2692		27.2686		1487.68		1487.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	124.005		125.000		3.71537		3.71503		35.1510		35.1511		8.7941		8.7905		5.7134		5.6636		2.811e+01		0.0281						9.90		0.696		10892		1		27.2695		27.2701		1487.68		1487.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	124.501		125.500		3.71501		3.71387		35.1496		35.1539		8.7916		8.7750		5.7167		5.6901		2.809e+01		0.0268						9.90		0.630		10910		1		27.2688		27.2748		1487.68		1487.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	124.996		126.000		3.71421		3.71211		35.1489		35.1496		8.7836		8.7605		5.7226		5.7007		2.811e+01		0.0265						9.90		0.445		10933		1		27.2695		27.2737		1487.66		1487.57	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	125.492		126.500		3.71229		3.71048		35.1464		35.1478		8.7654		8.7446		5.7266		5.6941		2.810e+01		0.0276						9.90		0.366		10966		1		27.2704		27.2749		1487.59		1487.52	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	125.988		127.000		3.71025		3.70902		35.1447		35.1478		8.7452		8.7289		5.7211		5.6852		2.809e+01		0.0282						9.90		0.499		10994		1		27.2724		27.2773		1487.53		1487.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	126.484		127.500		3.70900		3.70862		35.1447		35.1472		8.7317		8.7251		5.7165		5.6821		2.809e+01		0.0283						9.90		0.517		11017		1		27.2744		27.2774		1487.49		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	126.979		128.000		3.70888		3.70852		35.1473		35.1503		8.7275		8.7207		5.7098		5.6733		2.811e+01		0.0289						9.90		0.443		11042		1		27.2772		27.2805		1487.48		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	127.475		128.500		3.70857		3.70813		35.1495		35.1503		8.7217		8.7163		5.6724		5.6193		2.808e+01		0.0296						9.90		0.439		11071		1		27.2798		27.2813		1487.47		1487.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	127.971		129.000		3.70825		3.70780		35.1503		35.1509		8.7173		8.7119		5.6547		5.5814		2.810e+01		0.0286						9.90		0.554		11095		1		27.2811		27.2824		1487.46		1487.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	128.467		129.500		3.70798		3.70767		35.1508		35.1515		8.7137		8.7096		5.6277		5.5751		2.809e+01		0.0281						9.90		0.623		11115		1		27.2821		27.2833		1487.46		1487.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	128.962		130.000		3.70782		3.70755		35.1513		35.1518		8.7112		8.7078		5.6204		5.5714		2.809e+01		0.0307						9.90		0.595		11134		1		27.2829		27.2838		1487.46		1487.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	129.458		130.500		3.70775		3.70751		35.1520		35.1519		8.7095		8.7071		5.6076		5.5693		2.811e+01		0.0294						9.90		0.480		11156		1		27.2837		27.2840		1487.46		1487.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	129.954		131.000		3.70778		3.70756		35.1532		35.1519		8.7084		8.7073		5.6186		5.5691		2.811e+01		0.0271						9.90		0.362		11186		1		27.2848		27.2840		1487.47		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	130.450		131.500		3.70785		3.70760		35.1536		35.1519		8.7086		8.7076		5.6279		5.5725		2.810e+01		0.0269						9.90		0.430		11219		1		27.2851		27.2839		1487.48		1487.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	130.945		132.000		3.70785		3.70756		35.1541		35.1532		8.7078		8.7055		5.6246		5.5775		2.811e+01		0.0280						9.90		0.537		11243		1		27.2856		27.2853		1487.48		1487.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	131.441		132.500		3.70768		3.70729		35.1545		35.1546		8.7053		8.7010		5.6129		5.5847		2.811e+01		0.0292						9.90		0.555		11265		1		27.2863		27.2871		1487.48		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	131.937		133.000		3.70742		3.70708		35.1552		35.1544		8.7016		8.6987		5.6037		5.5744		2.810e+01		0.0286						9.90		0.519		11287		1		27.2874		27.2873		1487.48		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	132.433		133.500		3.70721		3.70665		35.1555		35.1575		8.6987		8.6908		5.5970		5.5605		2.809e+01		0.0276						9.90		0.483		11311		1		27.2882		27.2910		1487.48		1487.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	132.928		134.000		3.70636		3.70574		35.1568		35.1578		8.6882		8.6805		5.5883		5.5448		2.810e+01		0.0290						9.90		0.517		11336		1		27.2909		27.2928		1487.44		1487.42	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	133.424		134.500		3.70582		3.70533		35.1574		35.1579		8.6816		8.6760		5.5822		5.5259		2.809e+01		0.0291						9.90		0.589		11358		1		27.2924		27.2936		1487.43		1487.41	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	133.920		135.000		3.70547		3.70487		35.1575		35.1596		8.6775		8.6691		5.5720		5.5169		2.810e+01		0.0282						9.90		0.602		11377		1		27.2931		27.2960		1487.42		1487.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	134.416		135.500		3.70464		3.70398		35.1575		35.1608		8.6685		8.6581		5.5629		5.5207		2.811e+01		0.0278						9.90		0.509		11398		1		27.2945		27.2987		1487.40		1487.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	134.911		136.000		3.70355		3.70296		35.1594		35.1610		8.6547		8.6469		5.5670		5.5203		2.811e+01		0.0274						9.90		0.287		11430		1		27.2981		27.3006		1487.36		1487.33	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	135.407		136.500		3.70270		3.70218		35.1604		35.1606		8.6445		8.6387		5.5714		5.5101		2.809e+01		0.0274						9.90		0.348		11482		1		27.3006		27.3016		1487.33		1487.31	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	135.903		137.000		3.70194		3.70151		35.1614		35.1635		8.6351		8.6284		5.5510		5.5063		2.811e+01		0.0268						9.90		0.661		11504		1		27.3028		27.3055		1487.30		1487.28	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	136.399		137.500		3.70144		3.70113		35.1624		35.1641		8.6286		8.6236		5.5505		5.4734		2.811e+01		0.0403						9.90		0.784		11520		1		27.3046		27.3067		1487.29		1487.27	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	136.894		138.000		3.70124		3.70085		35.1624		35.1653		8.6261		8.6191		5.5518		5.4746		2.811e+01		0.0445						9.90		0.807		11535		1		27.3050		27.3084		1487.29		1487.26	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	137.390		138.500		3.70090		3.70031		35.1622		35.1664		8.6226		8.6121		5.5579		5.5095		2.811e+01		0.0342						9.90		0.741		11550		1		27.3054		27.3103		1487.28		1487.25	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	137.886		139.000		3.70061		3.69949		35.1630		35.1680		8.6184		8.6015		5.5568		5.5454		2.809e+01		0.0300						9.90		0.572		11568		1		27.3066		27.3132		1487.28		1487.22	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	138.381		139.500		3.69935		3.69809		35.1642		35.1690		8.6035		8.5854		5.5691		5.5474		2.810e+01		0.0272						9.90		0.325		11598		1		27.3100		27.3166		1487.23		1487.17	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	138.877		140.000		3.69730		3.69674		35.1670		35.1691		8.5787		8.5706		5.5444		5.5146		2.810e+01		0.0278						9.90		0.361		11641		1		27.3161		27.3190		1487.15		1487.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	139.373		140.500		3.69649		3.69609		35.1685		35.1709		8.5683		8.5616		5.5454		5.5066		2.809e+01		0.0265						9.90		0.562		11665		1		27.3189		27.3218		1487.12		1487.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	139.869		141.000		3.69608		3.69568		35.1693		35.1717		8.5628		8.5563		5.5455		5.5070		2.808e+01		0.0263						9.90		0.572		11685		1		27.3204		27.3232		1487.11		1487.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	140.364		141.500		3.69553		3.69518		35.1703		35.1718		8.5558		8.5505		5.5323		5.5103		2.808e+01		0.0285						9.90		0.406		11709		1		27.3222		27.3243		1487.09		1487.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	140.860		142.000		3.69510		3.69481		35.1713		35.1716		8.5500		8.5466		5.5269		5.5135		2.810e+01		0.0267						9.90		0.370		11747		1		27.3239		27.3247		1487.08		1487.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	141.356		142.500		3.69494		3.69467		35.1719		35.1727		8.5473		8.5438		5.5194		5.4881		2.806e+01		0.0265						9.90		0.669		11771		1		27.3248		27.3260		1487.08		1487.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	141.852		143.000		3.69465		3.69443		35.1721		35.1755		8.5438		8.5382		5.5177		5.4720		2.810e+01		0.0291						9.90		0.821		11786		1		27.3255		27.3291		1487.08		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	142.347		143.500		3.69415		3.69377		35.1722		35.1798		8.5382		8.5265		5.5106		5.4702		2.810e+01		0.0276						9.90		0.847		11800		1		27.3265		27.3343		1487.06		1487.03	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	142.843		144.000		3.69375		3.69312		35.1734		35.1788		8.5325		8.5204		5.5090		5.4714		2.807e+01		0.0266						9.90		0.749		11814		1		27.3283		27.3344		1487.05		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	143.339		144.500		3.69342		3.69279		35.1746		35.1778		8.5275		8.5176		5.5072		5.4765		2.807e+01		0.0278						9.90		0.502		11834		1		27.3301		27.3341		1487.04		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	143.834		145.000		3.69270		3.69236		35.1766		35.1766		8.5176		8.5140		5.5095		5.4836		2.805e+01		0.0264						9.90		0.267		11873		1		27.3332		27.3337		1487.02		1487.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	144.330		145.500		3.69260		3.69238		35.1771		35.1764		8.5158		8.5142		5.5077		5.4678		2.805e+01		0.0258						9.90		0.517		11908		1		27.3339		27.3335		1487.02		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	144.826		146.000		3.69259		3.69232		35.1772		35.1768		8.5153		8.5129		5.5046		5.4595		2.805e+01		0.0271						9.90		0.647		11927		1		27.3340		27.3341		1487.03		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	145.322		146.500		3.69244		3.69215		35.1773		35.1777		8.5134		8.5100		5.5074		5.4525		2.806e+01		0.0276						9.90		0.672		11945		1		27.3344		27.3352		1487.03		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	145.817		147.000		3.69235		3.69197		35.1776		35.1784		8.5120		8.5071		5.5042		5.4463		2.806e+01		0.0276						9.90		0.661		11963		1		27.3348		27.3362		1487.03		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	146.313		147.500		3.69157		3.68993		35.1770		35.1906		8.5040		8.4729		5.4854		5.4396		2.807e+01		0.0288						9.90		0.649		11981		1		27.3356		27.3511		1487.01		1486.91	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	146.809		148.000		3.68967		3.68825		35.1803		35.1910		8.4802		8.4544		5.4492		5.4069		2.807e+01		0.0306						9.90		0.630		12000		1		27.3419		27.3543		1486.93		1486.85	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	147.304		148.500		3.68877		3.68712		35.1822		35.1896		8.4685		8.4435		5.4043		5.3386		2.806e+01		0.0307						9.90		0.614		12019		1		27.3452		27.3549		1486.90		1486.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	147.800		149.000		3.68721		3.68679		35.1849		35.1887		8.4489		8.4407		5.3631		5.2857		2.806e+01		0.0283						9.90		0.614		12039		1		27.3504		27.3546		1486.84		1486.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	148.296		149.500		3.68697		3.68665		35.1867		35.1896		8.4443		8.4380		5.3387		5.2724		2.805e+01		0.0272						9.90		0.563		12058		1		27.3525		27.3558		1486.83		1486.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	148.792		150.000		3.68615		3.68569		35.1870		35.1900		8.4350		8.4271		5.3229		5.2864		2.806e+01		0.0287						9.90		0.361		12085		1		27.3542		27.3578		1486.80		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	149.287		150.500		3.68549		3.68538		35.1885		35.1880		8.4263		8.4255		5.3216		5.2795		2.807e+01		0.0294						9.90		0.353		12128		1		27.3567		27.3565		1486.78		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	149.783		151.000		3.68551		3.68532		35.1886		35.1884		8.4261		8.4243		5.3288		5.2406		2.806e+01		0.0271						9.90		0.706		12151		1		27.3568		27.3569		1486.79		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	150.279		151.500		3.68550		3.68533		35.1887		35.1888		8.4257		8.4238		5.3114		5.2327		2.805e+01		0.0272						9.90		0.887		12166		1		27.3570		27.3573		1486.80		1486.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	150.774		152.000		3.68531		3.68517		35.1883		35.1913		8.4238		8.4194		5.3121		5.2419		2.805e+01		0.0270						9.90		0.948		12178		1		27.3570		27.3600		1486.80		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	151.270		152.500		3.68509		3.68486		35.1885		35.1908		8.4211		8.4162		5.3142		5.2563		2.806e+01		0.0269						9.90		0.906		12190		1		27.3575		27.3601		1486.80		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	151.766		153.000		3.68502		3.68467		35.1889		35.1900		8.4197		8.4149		5.3098		5.2629		2.806e+01		0.0272						9.90		0.758		12204		1		27.3581		27.3597		1486.80		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	152.262		153.500		3.68489		3.68449		35.1890		35.1894		8.4179		8.4133		5.3082		5.2603		2.805e+01		0.0268						9.90		0.523		12224		1		27.3584		27.3594		1486.80		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	152.757		154.000		3.68452		3.68397		35.1891		35.1892		8.4136		8.4077		5.2893		5.2520		2.807e+01		0.0285						9.90		0.441		12253		1		27.3592		27.3601		1486.79		1486.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	153.253		154.500		3.68411		3.68358		35.1887		35.1901		8.4095		8.4024		5.2788		5.2491		2.805e+01		0.0286						9.90		0.584		12276		1		27.3595		27.3617		1486.79		1486.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	153.749		155.000		3.68339		3.68257		35.1886		35.1946		8.4017		8.3868		5.2738		5.2465		2.804e+01		0.0276						9.90		0.601		12295		1		27.3606		27.3677		1486.76		1486.71	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	154.244		155.500		3.68218		3.68145		35.1899		35.1936		8.3872		8.3757		5.2837		5.2511		2.805e+01		0.0266						9.90		0.438		12318		1		27.3639		27.3686		1486.72		1486.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	154.740		156.000		3.68140		3.68107		35.1916		35.1916		8.3769		8.3735		5.2924		5.2575		2.805e+01		0.0278						9.90		0.338		12355		1		27.3668		27.3673		1486.69		1486.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	155.236		156.500		3.68125		3.68104		35.1918		35.1913		8.3749		8.3731		5.2963		5.2471		2.804e+01		0.0258						9.90		0.601		12382		1		27.3673		27.3672		1486.69		1486.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	155.731		157.000		3.68124		3.68107		35.1920		35.1921		8.3743		8.3724		5.3014		5.2542		2.804e+01		0.0252						9.90		0.740		12399		1		27.3675		27.3679		1486.70		1486.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	156.227		157.500		3.68115		3.68088		35.1919		35.1922		8.3732		8.3701		5.2962		5.2596		2.805e+01		0.0280						9.90		0.752		12414		1		27.3676		27.3683		1486.70		1486.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	156.723		158.000		3.68111		3.68076		35.1919		35.1916		8.3726		8.3691		5.2930		5.2592		2.806e+01		0.0283						9.90		0.671		12431		1		27.3677		27.3680		1486.71		1486.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	157.219		158.500		3.68109		3.68064		35.1920		35.1916		8.3721		8.3675		5.2903		5.2626		2.804e+01		0.0284						9.90		0.575		12451		1		27.3679		27.3683		1486.72		1486.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	157.714		159.000		3.68087		3.68049		35.1920		35.1911		8.3694		8.3662		5.2939		5.2625		2.805e+01		0.0286						9.90		0.555		12473		1		27.3683		27.3681		1486.71		1486.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	158.210		159.500		3.68075		3.68039		35.1920		35.1914		8.3678		8.3647		5.2865		5.2557		2.803e+01		0.0282						9.90		0.568		12494		1		27.3686		27.3685		1486.72		1486.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	158.706		160.000		3.68051		3.68007		35.1921		35.1932		8.3650		8.3592		5.2799		5.2494		2.804e+01		0.0271						9.90		0.563		12515		1		27.3690		27.3708		1486.71		1486.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	159.201		160.500		3.68005		3.67924		35.1924		35.1947		8.3595		8.3486		5.2765		5.2502		2.804e+01		0.0278						9.90		0.539		12537		1		27.3701		27.3737		1486.70		1486.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	159.697		161.000		3.67954		3.67914		35.1937		35.1940		8.3525		8.3480		5.2819		5.2420		2.804e+01		0.0293						9.90		0.533		12559		1		27.3722		27.3732		1486.68		1486.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	160.193		161.500		3.67921		3.67859		35.1950		35.1994		8.3475		8.3366		5.2804		5.2517		2.805e+01		0.0274						9.90		0.529		12582		1		27.3740		27.3792		1486.68		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	160.688		162.000		3.67863		3.67827		35.1991		35.2012		8.3369		8.3310		5.2993		5.2781		2.808e+01		0.0273						9.90		0.436		12606		1		27.3789		27.3815		1486.65		1486.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	161.184		162.500		3.67856		3.67824		35.2020		35.2016		8.3331		8.3301		5.3416		5.3156		2.805e+01		0.0282						9.90		0.344		12640		1		27.3817		27.3819		1486.65		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	161.680		163.000		3.67855		3.67820		35.2027		35.2023		8.3320		8.3288		5.3599		5.3147		2.803e+01		0.0291						9.90		0.560		12670		1		27.3825		27.3826		1486.65		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	162.176		163.500		3.67840		3.67801		35.2029		35.2038		8.3300		8.3249		5.4077		5.3372		2.803e+01		0.0290						9.90		0.749		12687		1		27.3830		27.3845		1486.65		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	162.671		164.000		3.67805		3.67766		35.2028		35.2049		8.3261		8.3199		5.4345		5.3742		2.803e+01		0.0280						9.90		0.819		12702		1		27.3834		27.3860		1486.65		1486.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	163.167		164.500		3.67776		3.67724		35.2030		35.2058		8.3226		8.3142		5.4615		5.4252		2.804e+01		0.0293						9.90		0.785		12716		1		27.3842		27.3877		1486.64		1486.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	163.663		165.000		3.67750		3.67679		35.2034		35.2054		8.3192		8.3096		5.4837		5.4929		2.804e+01		0.0293						9.90		0.657		12733		1		27.3850		27.3881		1486.64		1486.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	164.158		165.500		3.67723		3.67615		35.2038		35.2057		8.3157		8.3022		5.5320		5.5585		2.804e+01		0.0301						9.90		0.514		12754		1		27.3859		27.3895		1486.63		1486.59	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	164.654		166.000		3.67661		3.67539		35.2036		35.2051		8.3090		8.2945		5.5775		5.6014		2.804e+01		0.0294						9.90		0.496		12779		1		27.3867		27.3902		1486.62		1486.57	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	165.150		166.500		3.67588		3.67481		35.2041		35.2060		8.3005		8.2872		5.6298		5.6290		2.804e+01		0.0296						9.90		0.518		12803		1		27.3885		27.3919		1486.59		1486.55	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	165.645		167.000		3.67486		3.67422		35.2042		35.2050		8.2892		8.2817		5.6939		5.7073		2.804e+01		0.0293						9.90		0.430		12827		1		27.3903		27.3921		1486.56		1486.53	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	166.141		167.500		3.67421		3.67363		35.2045		35.2048		8.2819		8.2754		5.7492		5.7582		2.804e+01		0.0319						9.90		0.307		12863		1		27.3916		27.3928		1486.54		1486.52	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	166.637		168.000		3.67320		3.67252		35.2038		35.2050		8.2715		8.2631		5.7674		5.7452		2.807e+01		0.0316						9.90		0.532		12897		1		27.3927		27.3949		1486.51		1486.48	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	167.132		168.500		3.67270		3.67220		35.2038		35.2051		8.2659		8.2592		5.7763		5.7132		2.805e+01		0.0312						9.90		0.715		12915		1		27.3935		27.3956		1486.50		1486.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	167.628		169.000		3.67216		3.67179		35.2023		35.2069		8.2615		8.2529		5.7732		5.6982		2.805e+01		0.0317						9.90		0.801		12931		1		27.3930		27.3980		1486.49		1486.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	168.124		169.500		3.67127		3.67060		35.2007		35.2081		8.2533		8.2388		5.7575		5.6939		2.803e+01		0.0304						9.90		0.815		12945		1		27.3930		27.4010		1486.46		1486.42	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	168.620		170.000		3.67049		3.66973		35.2001		35.2064		8.2453		8.2309		5.7553		5.6894		2.804e+01		0.0311						9.90		0.769		12960		1		27.3938		27.4010		1486.44		1486.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	169.115		170.500		3.67005		3.66933		35.2011		35.2034		8.2394		8.2294		5.7484		5.6889		2.804e+01		0.0323						9.90		0.673		12976		1		27.3954		27.3988		1486.43		1486.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	169.611		171.000		3.66982		3.66923		35.2016		35.2021		8.2361		8.2294		5.7492		5.6994		2.804e+01		0.0328						9.90		0.553		12996		1		27.3964		27.3978		1486.42		1486.40	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	170.107		171.500		3.66965		3.66902		35.2018		35.2022		8.2340		8.2268		5.7392		5.7159		2.803e+01		0.0328						9.90		0.461		13021		1		27.3968		27.3983		1486.42		1486.40	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	170.602		172.000		3.66917		3.66835		35.2016		35.2031		8.2288		8.2185		5.7698		5.7168		2.803e+01		0.0327						9.90		0.368		13049		1		27.3975		27.4002		1486.41		1486.38	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	171.098		172.500		3.66808		3.66716		35.2009		35.2019		8.2177		8.2068		5.7326		5.6978		2.803e+01		0.0340						9.90		0.248		13093		1		27.3986		27.4011		1486.38		1486.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	171.594		173.000		3.66752		3.66695		35.2020		35.2014		8.2103		8.2047		5.7345		5.6525		2.804e+01		0.0330						9.90		0.499		13133		1		27.4006		27.4011		1486.36		1486.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	172.089		173.500		3.66723		3.66682		35.2023		35.2041		8.2066		8.2004		5.7142		5.6130		2.803e+01		0.0340						9.90		0.766		13152		1		27.4015		27.4038		1486.36		1486.33	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	172.585		174.000		3.66696		3.66671		35.2040		35.2042		8.2019		8.1989		5.7011		5.6002		2.803e+01		0.0341						9.90		0.931		13165		1		27.4035		27.4041		1486.35		1486.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	173.081		174.500		3.66695		3.66680		35.2052		35.2047		8.2002		8.1991		5.6925		5.6098		2.803e+01		0.0341						9.90		1.029		13177		1		27.4047		27.4045		1486.35		1486.35	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	173.576		175.000		3.66718		3.66690		35.2064		35.2045		8.2013		8.2002		5.6888		5.6241		2.804e+01		0.0332						9.90		1.069		13188		1		27.4055		27.4041		1486.37		1486.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	174.072		175.500		3.66727		3.66709		35.2068		35.2052		8.2016		8.2013		5.6843		5.6323		2.805e+01		0.0321						9.90		1.049		13199		1		27.4058		27.4045		1486.37		1486.37	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	174.568		176.000		3.66737		3.66721		35.2072		35.2057		8.2021		8.2019		5.6276		5.6341		2.804e+01		0.0319						9.90		0.968		13211		1		27.4059		27.4048		1486.39		1486.38	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	175.063		176.500		3.66743		3.66728		35.2072		35.2059		8.2025		8.2022		5.6788		5.6376		2.804e+01		0.0335						9.90		0.808		13224		1		27.4059		27.4049		1486.40		1486.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	175.559		177.000		3.66749		3.66729		35.2071		35.2056		8.2029		8.2022		5.7356		5.6465		2.805e+01		0.0347						9.90		0.513		13243		1		27.4058		27.4047		1486.41		1486.40	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	176.055		177.500		3.66757		3.66726		35.2067		35.2050		8.2039		8.2023		5.7144		5.6528		2.804e+01		0.0331						9.90		0.249		13298		1		27.4053		27.4042		1486.42		1486.41	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	176.551		178.000		3.66759		3.66728		35.2072		35.2050		8.2035		8.2022		5.7120		5.6450		2.804e+01		0.0333						9.90		0.371		13346		1		27.4057		27.4042		1486.42		1486.42	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	177.046		178.500		3.66761		3.66730		35.2075		35.2049		8.2031		8.2023		5.7056		5.6150		2.804e+01		0.0345						9.90		0.489		13374		1		27.4060		27.4042		1486.43		1486.42	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	177.542		179.000		3.66763		3.66736		35.2075		35.2051		8.2030		8.2025		5.7026		5.5935		2.803e+01		0.0353						9.90		0.658		13396		1		27.4060		27.4043		1486.44		1486.43	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	178.038		179.500		3.66765		3.66740		35.2075		35.2051		8.2031		8.2028		5.7132		5.5894		2.804e+01		0.0332						9.90		0.821		13412		1		27.4061		27.4042		1486.45		1486.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	178.533		180.000		3.66768		3.66742		35.2076		35.2050		8.2030		8.2027		5.7158		5.5883		2.805e+01		0.0323						9.90		0.947		13425		1		27.4062		27.4042		1486.46		1486.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	179.029		180.500		3.66770		3.66742		35.2076		35.2052		8.2029		8.2024		5.7075		5.5901		2.803e+01		0.0296						9.90		1.023		13437		1		27.4062		27.4043		1486.46		1486.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	179.525		181.000		3.66771		3.66742		35.2075		35.2048		8.2029		8.2026		5.7080		5.6039		2.803e+01		0.0298						9.90		1.037		13448		1		27.4061		27.4040		1486.47		1486.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	180.020		181.500		3.66777		3.66746		35.2076		35.2048		8.2033		8.2026		5.7015		5.6206		2.803e+01		0.0314						9.90		0.986		13460		1		27.4061		27.4040		1486.48		1486.48	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	180.516		182.000		3.66781		3.66748		35.2075		35.2044		8.2035		8.2030		5.7111		5.6394		2.804e+01		0.0315						9.90		0.855		13473		1		27.4060		27.4037		1486.49		1486.48	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	181.012		182.500		3.66786		3.66753		35.2075		35.2044		8.2038		8.2034		5.7112		5.6489		2.807e+01		0.0313						9.90		0.595		13489		1		27.4060		27.4036		1486.50		1486.49	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	181.507		183.000		3.66791		3.66756		35.2074		35.2043		8.2042		8.2035		5.7109		5.6403		2.805e+01		0.0310						9.90		0.283		13545		1		27.4059		27.4035		1486.51		1486.50	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	182.003		183.500		3.66799		3.66761		35.2078		35.2043		8.2045		8.2038		5.7022		5.6363		2.804e+01		0.0304						9.90		0.481		13595		1		27.4061		27.4035		1486.52		1486.51	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	182.499		184.000		3.66805		3.66771		35.2080		35.2046		8.2046		8.2043		5.6949		5.6216		2.803e+01		0.0312						9.90		0.594		13615		1		27.4062		27.4036		1486.53		1486.52	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	182.994		184.500		3.66806		3.66771		35.2081		35.2051		8.2044		8.2037		5.6987		5.5996		2.803e+01		0.0323						9.90		0.622		13635		1		27.4063		27.4041		1486.53		1486.53	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	183.490		185.000		3.66806		3.66767		35.2080		35.2050		8.2042		8.2031		5.7059		5.6126		2.803e+01		0.0344						9.90		0.643		13654		1		27.4063		27.4041		1486.54		1486.53	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	183.986		185.500		3.66806		3.66770		35.2084		35.2050		8.2037		8.2031		5.7080		5.6191		2.803e+01		0.0343						9.90		0.732		13672		1		27.4066		27.4041		1486.55		1486.54	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	184.481		186.000		3.66809		3.66772		35.2085		35.2051		8.2035		8.2031		5.7071		5.6054		2.803e+01		0.0335						9.90		0.846		13687		1		27.4068		27.4042		1486.56		1486.55	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	184.977		186.500		3.66811		3.66776		35.2086		35.2052		8.2034		8.2031		5.7064		5.6007		2.804e+01		0.0334						9.90		0.901		13700		1		27.4069		27.4042		1486.56		1486.56	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	185.473		187.000		3.66813		3.66780		35.2086		35.2053		8.2034		8.2032		5.7058		5.6173		2.803e+01		0.0338						9.90		0.851		13713		1		27.4069		27.4043		1486.57		1486.57	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	185.969		187.500		3.66819		3.66783		35.2089		35.2052		8.2035		8.2033		5.7075		5.6428		2.803e+01		0.0329						9.90		0.662		13729		1		27.4071		27.4043		1486.58		1486.58	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	186.464		188.000		3.66822		3.66784		35.2086		35.2051		8.2039		8.2033		5.7088		5.6625		2.803e+01		0.0330						9.90		0.314		13760		1		27.4068		27.4041		1486.59		1486.58	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	186.960		188.500		3.66826		3.66786		35.2088		35.2050		8.2039		8.2034		5.7038		5.6277		2.803e+01		0.0320						9.90		0.428		13805		1		27.4069		27.4041		1486.60		1486.59	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	187.456		189.000		3.66828		3.66789		35.2089		35.2051		8.2038		8.2034		5.7031		5.6204		2.804e+01		0.0314						9.90		0.563		13826		1		27.4070		27.4041		1486.61		1486.60	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	187.951		189.500		3.66830		3.66790		35.2087		35.2050		8.2039		8.2034		5.6963		5.6349		2.804e+01		0.0331						9.90		0.524		13847		1		27.4069		27.4040		1486.62		1486.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	188.447		190.000		3.66833		3.66793		35.2087		35.2049		8.2040		8.2035		5.6970		5.6215		2.803e+01		0.0353						9.90		0.489		13872		1		27.4069		27.4040		1486.62		1486.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	188.943		190.500		3.66836		3.66797		35.2088		35.2050		8.2040		8.2036		5.7027		5.6197		2.803e+01		0.0338						9.90		0.602		13895		1		27.4069		27.4040		1486.63		1486.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	189.438		191.000		3.66838		3.66799		35.2087		35.2050		8.2040		8.2036		5.7052		5.6276		2.803e+01		0.0346						9.90		0.725		13913		1		27.4069		27.4040		1486.64		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	189.934		191.500		3.66843		3.66803		35.2089		35.2049		8.2042		8.2038		5.7074		5.6310		2.803e+01		0.0341						9.90		0.747		13929		1		27.4070		27.4039		1486.65		1486.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	190.430		192.000		3.66843		3.66803		35.2087		35.2048		8.2041		8.2037		5.7038		5.6363		2.803e+01		0.0339						9.90		0.635		13945		1		27.4069		27.4039		1486.66		1486.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	190.925		192.500		3.66846		3.66804		35.2087		35.2047		8.2042		8.2037		5.7048		5.6525		2.804e+01		0.0347						9.90		0.363		13972		1		27.4068		27.4038		1486.67		1486.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	191.421		193.000		3.66848		3.66808		35.2086		35.2049		8.2042		8.2037		5.7134		5.6552		2.805e+01		0.0340						9.90		0.391		14013		1		27.4068		27.4039		1486.67		1486.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	191.917		193.500		3.66853		3.66811		35.2087		35.2047		8.2044		8.2039		5.7099		5.6168		2.804e+01		0.0338						9.90		0.664		14036		1		27.4068		27.4038		1486.68		1486.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	192.412		194.000		3.66857		3.66816		35.2088		35.2049		8.2046		8.2041		5.7125		5.5988		2.804e+01		0.0329						9.90		0.772		14051		1		27.4068		27.4039		1486.69		1486.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	192.908		194.500		3.66863		3.66819		35.2089		35.2047		8.2048		8.2043		5.7078		5.6051		2.805e+01		0.0326						9.90		0.757		14066		1		27.4069		27.4037		1486.70		1486.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	193.404		195.000		3.66861		3.66821		35.2086		35.2049		8.2047		8.2041		5.7059		5.6219		2.804e+01		0.0337						9.90		0.614		14083		1		27.4067		27.4038		1486.71		1486.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	193.899		195.500		3.66863		3.66819		35.2086		35.2046		8.2046		8.2039		5.7055		5.6248		2.803e+01		0.0334						9.90		0.383		14110		1		27.4067		27.4037		1486.72		1486.71	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	194.395		196.000		3.66865		3.66822		35.2086		35.2046		8.2046		8.2041		5.7076		5.6121		2.804e+01		0.0343						9.90		0.417		14144		1		27.4067		27.4036		1486.73		1486.72	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	194.891		196.500		3.66868		3.66826		35.2086		35.2044		8.2046		8.2043		5.6985		5.6255		2.803e+01		0.0346						9.90		0.558		14168		1		27.4067		27.4035		1486.73		1486.73	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	195.387		197.000		3.66873		3.66832		35.2087		35.2046		8.2049		8.2045		5.6983		5.6218		2.803e+01		0.0342						9.90		0.630		14188		1		27.4067		27.4036		1486.74		1486.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	195.882		197.500		3.66876		3.66834		35.2087		35.2045		8.2049		8.2047		5.7071		5.6132		2.803e+01		0.0349						9.90		0.637		14207		1		27.4067		27.4035		1486.75		1486.75	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	196.378		198.000		3.66877		3.66836		35.2087		35.2045		8.2048		8.2046		5.7092		5.6194		2.803e+01		0.0342						9.90		0.597		14226		1		27.4068		27.4035		1486.76		1486.75	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	196.874		198.500		3.66878		3.66836		35.2086		35.2046		8.2048		8.2044		5.7090		5.6352		2.803e+01		0.0337						9.90		0.507		14247		1		27.4066		27.4035		1486.77		1486.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	197.369		199.000		3.66882		3.66837		35.2087		35.2043		8.2048		8.2045		5.7098		5.6428		2.803e+01		0.0337						9.90		0.428		14274		1		27.4067		27.4033		1486.78		1486.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	197.865		199.500		3.66885		3.66843		35.2086		35.2043		8.2050		8.2049		5.7055		5.6282		2.803e+01		0.0358						9.90		0.455		14302		1		27.4067		27.4033		1486.78		1486.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	198.361		200.000		3.66890		3.66847		35.2086		35.2043		8.2053		8.2050		5.7060		5.6104		2.803e+01		0.0354						9.90		0.563		14327		1		27.4066		27.4033		1486.79		1486.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	198.856		200.500		3.66891		3.66852		35.2088		35.2045		8.2051		8.2052		5.7042		5.6145		2.803e+01		0.0342						9.90		0.656		14346		1		27.4067		27.4034		1486.80		1486.80	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	199.352		201.000		3.66897		3.66856		35.2087		35.2045		8.2054		8.2053		5.7066		5.6207		2.803e+01		0.0342						9.90		0.667		14363		1		27.4066		27.4034		1486.81		1486.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	199.848		201.500		3.66899		3.66858		35.2087		35.2047		8.2054		8.2052		5.7113		5.6395		2.803e+01		0.0329						9.90		0.584		14382		1		27.4067		27.4035		1486.82		1486.81	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	200.343		202.000		3.66902		3.66859		35.2088		35.2046		8.2055		8.2050		5.7091		5.6455		2.803e+01		0.0328						9.90		0.461		14406		1		27.4067		27.4035		1486.83		1486.82	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	200.839		202.500		3.66905		3.66862		35.2087		35.2045		8.2057		8.2053		5.7053		5.6450		2.804e+01		0.0332						9.90		0.466		14433		1		27.4066		27.4033		1486.84		1486.83	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	201.335		203.000		3.66909		3.66867		35.2088		35.2045		8.2058		8.2055		5.7041		5.6352		2.802e+01		0.0329						9.90		0.512		14457		1		27.4067		27.4033		1486.85		1486.84	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	201.830		203.500		3.66914		3.66872		35.2088		35.2045		8.2060		8.2058		5.7058		5.6509		2.802e+01		0.0337						9.90		0.448		14481		1		27.4066		27.4033		1486.85		1486.85	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	202.326		204.000		3.66917		3.66876		35.2087		35.2045		8.2062		8.2060		5.7081		5.6446		2.803e+01		0.0339						9.90		0.315		14515		1		27.4066		27.4033		1486.86		1486.86	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	202.822		204.500		3.66921		3.66879		35.2087		35.2045		8.2064		8.2060		5.7064		5.6171		2.802e+01		0.0332						9.90		0.416		14553		1		27.4065		27.4033		1486.87		1486.87	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	203.317		205.000		3.66925		3.66882		35.2087		35.2045		8.2065		8.2062		5.7013		5.6042		2.800e+01		0.0325						9.90		0.628		14576		1		27.4065		27.4032		1486.88		1486.87	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	203.813		205.500		3.66928		3.66885		35.2087		35.2045		8.2065		8.2063		5.7118		5.6000		2.802e+01		0.0332						9.90		0.752		14592		1		27.4065		27.4032		1486.89		1486.88	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	204.309		206.000		3.66930		3.66888		35.2088		35.2045		8.2066		8.2063		5.7064		5.6013		2.801e+01		0.0320						9.90		0.813		14607		1		27.4065		27.4032		1486.90		1486.89	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	204.805		206.500		3.66934		3.66891		35.2089		35.2045		8.2067		8.2064		5.7257		5.6105		2.802e+01		0.0331						9.90		0.824		14622		1		27.4066		27.4032		1486.91		1486.90	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	205.300		207.000		3.66936		3.66894		35.2088		35.2046		8.2066		8.2064		5.7155		5.6240		2.802e+01		0.0335						9.90		0.793		14636		1		27.4065		27.4033		1486.91		1486.91	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	205.796		207.500		3.66939		3.66896		35.2089		35.2045		8.2067		8.2064		5.7174		5.6391		2.803e+01		0.0342						9.90		0.716		14652		1		27.4066		27.4032		1486.92		1486.92	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	206.292		208.000		3.66941		3.66899		35.2088		35.2045		8.2067		8.2064		5.7036		5.6623		2.803e+01		0.0333						9.90		0.563		14671		1		27.4065		27.4032		1486.93		1486.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	206.787		208.500		3.66942		3.66899		35.2087		35.2046		8.2068		8.2063		5.7052		5.6701		2.803e+01		0.0331						9.90		0.274		14700		1		27.4064		27.4033		1486.94		1486.93	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	207.283		209.000		3.66946		3.66903		35.2087		35.2044		8.2069		8.2065		5.7052		5.6022		2.803e+01		0.0340						9.90		0.330		14777		1		27.4064		27.4031		1486.95		1486.94	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	207.779		209.500		3.66948		3.66905		35.2088		35.2043		8.2068		8.2065		5.7057		5.5977		2.802e+01		0.0323						9.90		0.582		14801		1		27.4065		27.4031		1486.96		1486.95	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	208.274		210.000		3.66952		3.66908		35.2088		35.2043		8.2069		8.2067		5.7065		5.5992		2.802e+01		0.0337						9.90		0.740		14819		1		27.4065		27.4030		1486.97		1486.96	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	208.770		210.500		3.66956		3.66913		35.2088		35.2045		8.2070		8.2067		5.7056		5.5977		2.803e+01		0.0333						9.90		0.854		14834		1		27.4065		27.4032		1486.97		1486.97	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	209.266		211.000		3.66958		3.66915		35.2087		35.2044		8.2071		8.2068		5.6996		5.5848		2.803e+01		0.0331						9.90		0.924		14847		1		27.4064		27.4031		1486.98		1486.98	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	209.761		211.500		3.66963		3.66918		35.2089		35.2044		8.2072		8.2070		5.6916		5.5826		2.804e+01		0.0335						9.90		0.945		14860		1		27.4065		27.4031		1486.99		1486.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	210.257		212.000		3.66965		3.66922		35.2089		35.2046		8.2072		8.2069		5.7017		5.5963		2.803e+01		0.0334						9.90		0.911		14873		1		27.4065		27.4032		1487.00		1486.99	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	210.753		212.500		3.66967		3.66923		35.2089		35.2045		8.2072		8.2070		5.6979		5.6315		2.803e+01		0.0329						9.90		0.809		14886		1		27.4065		27.4031		1487.01		1487.00	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	211.248		213.000		3.66968		3.66925		35.2088		35.2045		8.2072		8.2069		5.7063		5.6576		2.803e+01		0.0326						9.90		0.597		14903		1		27.4064		27.4031		1487.02		1487.01	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	211.744		213.500		3.66971		3.66927		35.2087		35.2044		8.2074		8.2070		5.7079		5.6576		2.803e+01		0.0316						9.90		0.282		14951		1		27.4064		27.4030		1487.02		1487.02	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	212.240		214.000		3.66974		3.66931		35.2088		35.2045		8.2073		8.2070		5.7114		5.6289		2.803e+01		0.0315						9.90		0.412		15007		1		27.4064		27.4031		1487.03		1487.03	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	212.735		214.500		3.66975		3.66934		35.2087		35.2045		8.2073		8.2071		5.7011		5.6108		2.803e+01		0.0312						9.90		0.515		15031		1		27.4064		27.4031		1487.04		1487.03	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	213.231		215.000		3.66979		3.66937		35.2088		35.2046		8.2074		8.2071		5.7002		5.6077		2.803e+01		0.0315						9.90		0.617		15053		1		27.4064		27.4032		1487.05		1487.04	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	213.727		215.500		3.66982		3.66939		35.2087		35.2046		8.2075		8.2071		5.7035		5.6094		2.820e+01		0.0335						9.90		0.752		15071		1		27.4063		27.4032		1487.06		1487.05	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	214.222		216.000		3.66985		3.66940		35.2088		35.2044		8.2075		8.2071		5.7033		5.6115		2.808e+01		0.0334						9.90		0.851		15086		1		27.4064		27.4030		1487.07		1487.06	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	214.718		216.500		3.66986		3.66945		35.2087		35.2047		8.2074		8.2071		5.6955		5.6141		2.804e+01		0.0329						9.90		0.886		15099		1		27.4064		27.4032		1487.07		1487.07	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	215.214		217.000		3.66988		3.66946		35.2088		35.2046		8.2074		8.2071		5.6926		5.6245		2.803e+01		0.0329						9.90		0.829		15112		1		27.4064		27.4031		1487.08		1487.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	215.710		217.500		3.66990		3.66948		35.2088		35.2045		8.2074		8.2071		5.7012		5.6358		2.802e+01		0.0332						9.90		0.611		15128		1		27.4064		27.4031		1487.09		1487.08	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	216.205		218.000		3.66994		3.66951		35.2087		35.2044		8.2077		8.2073		5.6995		5.6357		2.802e+01		0.0342						9.90		0.322		15180		1		27.4063		27.4030		1487.10		1487.09	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	216.701		218.500		3.66997		3.66952		35.2088		35.2044		8.2076		8.2072		5.6869		5.6096		2.803e+01		0.0414						9.90		0.629		15222		1		27.4064		27.4030		1487.11		1487.10	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	217.197		219.000		3.66999		3.66956		35.2087		35.2044		8.2076		8.2073		5.6885		5.6076		2.803e+01		0.0382						9.90		0.791		15237		1		27.4064		27.4030		1487.11		1487.11	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	217.692		219.500		3.67002		3.66959		35.2088		35.2045		8.2077		8.2073		5.7074		5.6184		2.803e+01		0.0359						9.90		0.809		15252		1		27.4064		27.4031		1487.13		1487.12	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	218.188		220.000		3.67005		3.66959		35.2087		35.2044		8.2078		8.2073		5.7263		5.6181		2.803e+01		0.0343						9.90		0.708		15267		1		27.4063		27.4030		1487.13		1487.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	218.684		220.500		3.67005		3.66961		35.2087		35.2045		8.2077		8.2071		5.7188		5.6134		2.803e+01		0.0329						9.90		0.545		15287		1		27.4063		27.4031		1487.14		1487.13	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	219.179		221.000		3.67005		3.66961		35.2087		35.2044		8.2074		8.2069		5.7110		5.6305		2.803e+01		0.0329						9.90		0.463		15312		1		27.4063		27.4030		1487.15		1487.14	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	219.675		221.500		3.67007		3.66964		35.2086		35.2044		8.2074		8.2070		5.7194		5.6377		2.803e+01		0.0340						9.90		0.448		15338		1		27.4063		27.4030		1487.16		1487.15	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	220.171		222.000		3.67010		3.66967		35.2087		35.2043		8.2074		8.2071		5.7147		5.6297		2.803e+01		0.0352						9.90		0.412		15366		1		27.4063		27.4030		1487.16		1487.16	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	220.666		222.500		3.67012		3.66969		35.2087		35.2043		8.2074		8.2072		5.7106		5.6288		2.803e+01		0.0330						9.90		0.461		15395		1		27.4063		27.4029		1487.17		1487.17	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	221.162		223.000		3.67014		3.66972		35.2086		35.2044		8.2074		8.2071		5.7057		5.6303		2.803e+01		0.0325						9.90		0.561		15419		1		27.4062		27.4030		1487.18		1487.17	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	221.658		223.500		3.67018		3.66975		35.2086		35.2044		8.2076		8.2072		5.7100		5.6290		2.802e+01		0.0324						9.90		0.599		15439		1		27.4063		27.4030		1487.19		1487.18	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	222.153		224.000		3.67022		3.66978		35.2088		35.2044		8.2076		8.2073		5.7141		5.6273		2.802e+01		0.0337						9.90		0.587		15459		1		27.4064		27.4030		1487.20		1487.19	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	222.649		224.500		3.67023		3.66981		35.2086		35.2044		8.2077		8.2073		5.7187		5.6276		2.803e+01		0.0375						9.90		0.582		15480		1		27.4062		27.4030		1487.21		1487.20	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	223.145		225.000		3.67027		3.66984		35.2087		35.2045		8.2077		8.2074		5.7016		5.6202		2.800e+01		0.0398						9.90		0.584		15500		1		27.4063		27.4030		1487.21		1487.21	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	223.640		225.500		3.67029		3.66987		35.2087		35.2046		8.2078		8.2074		5.7023		5.6233		2.802e+01		0.0363						9.90		0.530		15521		1		27.4063		27.4031		1487.22		1487.22	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	224.136		226.000		3.67030		3.66988		35.2086		35.2044		8.2078		8.2075		5.7157		5.6412		2.802e+01		0.0348						9.90		0.328		15550		1		27.4062		27.4029		1487.23		1487.23	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	224.632		226.500		3.67033		3.66989		35.2086		35.2043		8.2078		8.2074		5.6983		5.6312		2.800e+01		0.0339						9.90		0.330		15597		1		27.4062		27.4029		1487.24		1487.23	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	225.128		227.000		3.67035		3.66993		35.2087		35.2044		8.2077		8.2074		5.6936		5.6106		2.802e+01		0.0343						9.90		0.658		15622		1		27.4063		27.4030		1487.25		1487.24	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	225.623		227.500		3.67040		3.66997		35.2087		35.2044		8.2079		8.2077		5.7016		5.5952		2.801e+01		0.0329						9.90		0.830		15637		1		27.4063		27.4029		1487.26		1487.25	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	226.119		228.000		3.67043		3.67000		35.2087		35.2044		8.2080		8.2077		5.7197		5.5919		2.800e+01		0.0330						9.90		0.877		15650		1		27.4063		27.4029		1487.27		1487.26	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	226.615		228.500		3.67045		3.67002		35.2087		35.2044		8.2080		8.2077		5.7508		5.6086		2.799e+01		0.0314						9.90		0.796		15664		1		27.4063		27.4029		1487.27		1487.27	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	227.110		229.000		3.67046		3.67004		35.2086		35.2044		8.2080		8.2077		5.7307		5.6364		2.799e+01		0.0323						9.90		0.556		15681		1		27.4062		27.4029		1487.28		1487.28	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	227.606		229.500		3.67049		3.67005		35.2085		35.2043		8.2081		8.2077		5.7025		5.6542		2.799e+01		0.0335						9.90		0.280		15724		1		27.4061		27.4028		1487.29		1487.28	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	228.102		230.000		3.67052		3.67008		35.2086		35.2043		8.2081		8.2077		5.7174		5.6329		2.798e+01		0.0332						9.90		0.503		15763		1		27.4062		27.4029		1487.30		1487.29	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	228.597		230.500		3.67055		3.67012		35.2087		35.2044		8.2081		8.2078		5.7034		5.6254		2.800e+01		0.0333						9.90		0.599		15783		1		27.4062		27.4029		1487.31		1487.30	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	229.093		231.000		3.67057		3.67014		35.2086		35.2044		8.2082		8.2078		5.7091		5.6156		2.798e+01		0.0327						9.90		0.617		15802		1		27.4062		27.4029		1487.32		1487.31	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	229.589		231.500		3.67059		3.67016		35.2087		35.2044		8.2081		8.2078		5.7119		5.5962		2.800e+01		0.0339						9.90		0.662		15821		1		27.4062		27.4029		1487.32		1487.32	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	230.084		232.000		3.67063		3.67019		35.2087		35.2043		8.2083		8.2080		5.7135		5.5850		2.800e+01		0.0340						9.90		0.741		15839		1		27.4062		27.4028		1487.33		1487.33	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	230.580		232.500		3.67066		3.67021		35.2087		35.2042		8.2083		8.2080		5.7118		5.5893		2.798e+01		0.0334						9.90		0.798		15854		1		27.4062		27.4027		1487.34		1487.33	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	231.076		233.000		3.67069		3.67024		35.2088		35.2044		8.2083		8.2079		5.7021		5.6030		2.799e+01		0.0340						9.90		0.784		15869		1		27.4063		27.4029		1487.35		1487.34	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	231.571		233.500		3.67070		3.67026		35.2086		35.2044		8.2083		8.2079		5.7151		5.6190		2.801e+01		0.0335						9.90		0.649		15884		1		27.4062		27.4029		1487.36		1487.35	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	232.067		234.000		3.67073		3.67029		35.2086		35.2044		8.2084		8.2080		5.7138		5.6331		2.799e+01		0.0332						9.90		0.326		15924		1		27.4061		27.4029		1487.37		1487.36	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	232.563		234.500		3.67076		3.67032		35.2087		35.2044		8.2084		8.2080		5.6899		5.5983		2.798e+01		0.0356						9.90		0.554		15985		1		27.4062		27.4029		1487.37		1487.37	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	233.058		235.000		3.67076		3.67035		35.2087		35.2044		8.2083		8.2081		5.7001		5.5831		2.799e+01		0.0336						9.90		0.822		16000		1		27.4062		27.4029		1487.38		1487.38	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	233.554		235.500		3.67078		3.67037		35.2087		35.2046		8.2082		8.2079		5.7062		5.5862		2.797e+01		0.0335						9.90		0.954		16013		1		27.4062		27.4030		1487.39		1487.38	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	234.050		236.000		3.67082		3.67036		35.2088		35.2045		8.2082		8.2077		5.6936		5.6013		2.797e+01		0.0327						9.90		0.987		16025		1		27.4063		27.4030		1487.40		1487.39	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	234.546		236.500		3.67080		3.67040		35.2086		35.2045		8.2080		8.2078		5.7060		5.6194		2.799e+01		0.0329						9.90		0.919		16037		1		27.4062		27.4030		1487.41		1487.40	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	235.041		237.000		3.67076		3.67034		35.2086		35.2047		8.2073		8.2067		5.7145		5.6338		2.797e+01		0.0336						9.90		0.737		16051		1		27.4063		27.4033		1487.41		1487.40	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	235.537		237.500		3.67079		3.67035		35.2085		35.2043		8.2075		8.2070		5.7204		5.6400		2.799e+01		0.0338						9.90		0.461		16073		1		27.4062		27.4029		1487.42		1487.41	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	236.033		238.000		3.67089		3.67044		35.2085		35.2043		8.2083		8.2076		5.7103		5.6272		2.799e+01		0.0337						9.90		0.381		16106		1		27.4060		27.4029		1487.43		1487.42	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	236.528		238.500		3.67087		3.67043		35.2085		35.2043		8.2078		8.2073		5.7082		5.6155		2.798e+01		0.0335						9.90		0.462		16134		1		27.4062		27.4029		1487.44		1487.43	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	237.024		239.000		3.67088		3.67041		35.2085		35.2045		8.2078		8.2068		5.6978		5.6266		2.799e+01		0.0341						9.90		0.435		16160		1		27.4061		27.4031		1487.45		1487.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	237.520		239.500		3.67087		3.67039		35.2085		35.2043		8.2073		8.2064		5.7042		5.6164		2.799e+01		0.0344						9.90		0.433		16189		1		27.4062		27.4030		1487.45		1487.44	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	238.015		240.000		3.67088		3.67043		35.2085		35.2042		8.2073		8.2068		5.6990		5.5952		2.798e+01		0.0354						9.90		0.533		16214		1		27.4062		27.4029		1487.46		1487.45	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	238.511		240.500		3.67090		3.67048		35.2084		35.2043		8.2073		8.2069		5.6989		5.6039		2.798e+01		0.0354						9.90		0.590		16235		1		27.4061		27.4029		1487.47		1487.46	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	239.007		241.000		3.67096		3.67055		35.2086		35.2043		8.2076		8.2075		5.7000		5.6194		2.799e+01		0.0360						9.90		0.538		16255		1		27.4062		27.4029		1487.48		1487.47	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	239.502		241.500		3.67096		3.67052		35.2086		35.2044		8.2073		8.2068		5.6934		5.6250		2.797e+01		0.0350						9.90		0.453		16281		1		27.4063		27.4030		1487.48		1487.48	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	239.998		242.000		3.67098		3.67053		35.2086		35.2042		8.2073		8.2069		5.7235		5.6145		2.798e+01		0.0329						9.90		0.519		16307		1		27.4062		27.4029		1487.49		1487.49	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	240.494		242.500		3.67100		3.67059		35.2085		35.2042		8.2073		8.2072		5.7180		5.5954		2.797e+01		0.0359						9.90		0.678		16328		1		27.4062		27.4029		1487.50		1487.49	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	240.989		243.000		3.67106		3.67060		35.2086		35.2043		8.2075		8.2070		5.6940		5.5897		2.800e+01		0.0350						9.90		0.789		16343		1		27.4063		27.4030		1487.51		1487.50	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	241.485		243.500		3.67116		3.67066		35.2085		35.2040		8.2085		8.2077		5.6949		5.5972		2.799e+01		0.0343						9.90		0.812		16358		1		27.4060		27.4026		1487.52		1487.51	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	241.981		244.000		3.67117		3.67072		35.2086		35.2042		8.2083		8.2079		5.7146		5.6119		2.800e+01		0.0342						9.90		0.717		16373		1		27.4061		27.4027		1487.53		1487.52	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	242.476		244.500		3.67118		3.67075		35.2085		35.2042		8.2082		8.2079		5.7153		5.6320		2.798e+01		0.0349						9.90		0.416		16394		1		27.4061		27.4027		1487.54		1487.53	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	242.972		245.000		3.67117		3.67074		35.2085		35.2041		8.2079		8.2077		5.6966		5.6197		2.799e+01		0.0332						9.90		0.401		16462		1		27.4061		27.4027		1487.54		1487.54	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	243.468		245.500		3.67125		3.67081		35.2086		35.2043		8.2085		8.2081		5.7209		5.5838		2.797e+01		0.0334						9.90		0.717		16481		1		27.4061		27.4028		1487.55		1487.55	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	243.964		246.000		3.67123		3.67081		35.2086		35.2045		8.2079		8.2076		5.7120		5.5843		2.802e+01		0.0337						9.90		0.790		16496		1		27.4062		27.4030		1487.56		1487.56	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	244.459		246.500		3.67130		3.67082		35.2087		35.2042		8.2084		8.2078		5.6897		5.6026		2.798e+01		0.0346						9.90		0.736		16511		1		27.4062		27.4027		1487.57		1487.56	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	244.955		247.000		3.67131		3.67090		35.2086		35.2043		8.2084		8.2082		5.7048		5.6207		2.799e+01		0.0336						9.90		0.600		16529		1		27.4061		27.4027		1487.58		1487.57	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	245.451		247.500		3.67136		3.67094		35.2086		35.2044		8.2087		8.2084		5.7022		5.6369		2.801e+01		0.0321						9.90		0.495		16553		1		27.4061		27.4028		1487.59		1487.58	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	245.946		248.000		3.67140		3.67100		35.2085		35.2043		8.2089		8.2089		5.7054		5.6410		2.800e+01		0.0326						9.90		0.576		16577		1		27.4059		27.4027		1487.60		1487.59	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	246.442		248.500		3.67140		3.67100		35.2084		35.2044		8.2087		8.2085		5.7110		5.6237		2.796e+01		0.0325						9.90		0.678		16595		1		27.4059		27.4028		1487.61		1487.60	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	246.938		249.000		3.67134		3.67102		35.2086		35.2046		8.2077		8.2083		5.7136		5.6195		2.797e+01		0.0336						9.90		0.606		16612		1		27.4062		27.4030		1487.61		1487.61	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	247.433		249.500		3.67141		3.67099		35.2085		35.2044		8.2084		8.2080		5.7313		5.6131		2.798e+01		0.0349						9.90		0.367		16705		1		27.4060		27.4028		1487.62		1487.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	247.929		250.000		3.67147		3.67105		35.2085		35.2043		8.2087		8.2085		5.7646		5.6086		2.799e+01		0.0356						9.90		0.587		16762		1		27.4060		27.4027		1487.63		1487.62	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	248.425		250.500		3.67151		3.67112		35.2085		35.2044		8.2088		8.2088		5.7009		5.6188		2.797e+01		0.0351						9.90		0.537		16783		1		27.4060		27.4028		1487.64		1487.63	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	248.920		251.000		3.67153		3.67108		35.2086		35.2043		8.2087		8.2083		5.6573		5.6138		2.797e+01		0.0348						9.90		0.451		16808		1		27.4061		27.4027		1487.65		1487.64	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	249.416		251.500		3.67153		3.67109		35.2085		35.2043		8.2086		8.2081		5.7009		5.6192		2.796e+01		0.0354						9.90		0.494		16835		1		27.4060		27.4028		1487.65		1487.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	249.912		252.000		3.67153		3.67108		35.2085		35.2043		8.2083		8.2078		5.6998		5.6128		2.798e+01		0.0363						9.90		0.653		16856		1		27.4061		27.4029		1487.66		1487.65	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	250.407		252.500		3.67155		3.67111		35.2085		35.2044		8.2083		8.2078		5.7042		5.6022		2.799e+01		0.0336						9.90		0.769		16873		1		27.4061		27.4029		1487.67		1487.66	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	250.903		253.000		3.67155		3.67112		35.2086		35.2045		8.2080		8.2075		5.7114		5.6017		2.798e+01		0.0340						9.69		0.798		16888		1		27.4062		27.4030		1487.68		1487.67	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	251.399		253.500		3.67154		3.67111		35.2085		35.2045		8.2078		8.2073		5.7107		5.6118		2.797e+01		0.0336						9.21		0.707		16903		1		27.4061		27.4031		1487.68		1487.68	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	251.894		254.000		3.67157		3.67116		35.2085		35.2043		8.2079		8.2077		5.6838		5.6261		2.799e+01		0.0345						8.71		0.413		16924		1		27.4061		27.4028		1487.69		1487.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	252.390		254.500		3.67159		3.67113		35.2084		35.2045		8.2079		8.2069		5.7176		5.5941		2.797e+01		0.0343						8.21		0.361		16991		1		27.4061		27.4031		1487.70		1487.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	252.886		255.000		3.67141		3.67100		35.2085		35.2046		8.2057		8.2052		5.7143		5.5833		2.796e+01		0.0340						7.76		0.652		17015		1		27.4064		27.4034		1487.70		1487.69	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	253.382		255.500		3.67143		3.67100		35.2085		35.2045		8.2056		8.2051		5.6898		5.5978		2.798e+01		0.0342						7.25		0.736		17031		1		27.4065		27.4034		1487.71		1487.70	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	253.877		256.000		3.67145		3.67103		35.2085		35.2044		8.2056		8.2052		5.6947		5.6058		2.796e+01		0.0364						6.76		0.714		17047		1		27.4064		27.4033		1487.72		1487.71	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	254.373		256.500		3.67146		3.67104		35.2084		35.2043		8.2056		8.2052		5.7014		5.6032		2.796e+01		0.0361						6.26		0.652		17065		1		27.4063		27.4032		1487.73		1487.72	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	254.869		257.000		3.67148		3.67106		35.2083		35.2042		8.2056		8.2053		5.6966		5.5943		2.800e+01		0.0361						5.79		0.617		17084		1		27.4063		27.4031		1487.73		1487.73	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	255.364		257.500		3.67152		3.67109		35.2084		35.2042		8.2056		8.2053		5.7005		5.6057		2.798e+01		0.0366						5.30		0.618		17103		1		27.4064		27.4031		1487.74		1487.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	255.860		258.000		3.67153		3.67112		35.2084		35.2043		8.2057		8.2053		5.6998		5.6308		2.797e+01		0.0363						4.80		0.605		17123		1		27.4064		27.4032		1487.75		1487.74	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	256.356		258.500		3.67155		3.67114		35.2084		35.2043		8.2057		8.2053		5.7032		5.6495		2.798e+01		0.0347						4.33		0.540		17143		1		27.4063		27.4032		1487.76		1487.75	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	256.851		259.000		3.67158		3.67117		35.2083		35.2043		8.2058		8.2053		5.7051		5.6462		2.797e+01		0.0351						3.81		0.346		17171		1		27.4063		27.4032		1487.77		1487.76	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	257.347		259.500		3.67164		3.67121		35.2085		35.2042		8.2060		8.2057		5.7033		5.6183		2.798e+01		0.0348						3.32		0.261		17232		1		27.4064		27.4031		1487.78		1487.77	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	257.843		260.000		3.67166		3.67123		35.2084		35.2041		8.2060		8.2057		5.6980		5.6308		2.798e+01		0.0362						3.14		0.225		17369		1		27.4063		27.4030		1487.78		1487.78	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	258.338		260.500		3.67167		3.67124		35.2083		35.2040		8.2060		8.2057		5.6920		5.6226		2.796e+01		0.0357						3.28		0.250		17730		1		27.4063		27.4029		1487.79		1487.79	
+2016	01	19	05	23	00	2016_26DA_11/2015 Togt 01 2016		58.04917	9.73550	258.834		261.000		3.67169		3.67126		35.2083		35.2041		8.2059		8.2056		5.7024		5.6212		2.798e+01		0.0363						1.73		-0.007		18408		1		27.4062		27.4030		1487.80		1487.79	

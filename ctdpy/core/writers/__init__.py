@@ -6,6 +6,7 @@ Created on Thu Jul 05 11:38:08 2018
 """
 
 from .standard_formats import StandardCTDWriter
+from .metadata import MetadataWriter
 from .txt_writer import TxtWriter
 from .with_style import StyleSheet
 from .yaml_writer import YAMLwriter

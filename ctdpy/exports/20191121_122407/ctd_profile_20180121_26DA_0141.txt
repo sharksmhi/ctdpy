@@ -1,0 +1,968 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-01-21
+//METADATA;STIME;06:08
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;26DA
+//METADATA;CRUISE_NO;01/2018
+//METADATA;SERNO;0141
+//METADATA;STATN;
+//METADATA;LATIT;5803.31
+//METADATA;LONGI;00945.01
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_0827_20180121_0608_26_01_0141.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20180121_26DA_0141.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = D:\CTD_SBE911\DAT\26DA.2018.1.41.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.21d
+//INSTRUMENT_METADATA;* Temperature SN = 034757
+//INSTRUMENT_METADATA;* Conductivity SN = 041844
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 48
+//INSTRUMENT_METADATA;* Number of Voltage Words = 5
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* Append System Time to Every Scan
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 21 2018 06:08:22
+//INSTRUMENT_METADATA;* NMEA Latitude = 58 03.31 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 009 45.01 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 21 2018  06:08:24
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1g
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* surface PAR voltage added to scan
+//INSTRUMENT_METADATA;* A/D offset = 4
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Ship: DANA
+//INSTRUMENT_METADATA;** Average sound velocity: 1484.92 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Thu, 28 Mar 2019 08:24:47 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20182601-0141
+//INSTRUMENT_METADATA;** 30N
+//INSTRUMENT_METADATA;** Operator: Ronny Sørensen
+//INSTRUMENT_METADATA;** Cruise: 01/2018
+//INSTRUMENT_METADATA;* System UTC = Jan 21 2018 06:08:22
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 517                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = chloroflTC0: Chlorophyll, Turner Cyclops [ug/l]
+//INSTRUMENT_METADATA;# name 12 = cpar: CPAR/Corrected Irradiance [%]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = spar: SPAR, Biospherical/Licor
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 58.0552
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 58.0552
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =        307,      17270       
+//INSTRUMENT_METADATA;# span 1 =      2.000,    260.000       
+//INSTRUMENT_METADATA;# span 2 =     5.2851,     8.8606       
+//INSTRUMENT_METADATA;# span 3 =     5.2900,     8.8618       
+//INSTRUMENT_METADATA;# span 4 =    -0.5084,     0.1502       
+//INSTRUMENT_METADATA;# span 5 =   3.161192,   3.710965       
+//INSTRUMENT_METADATA;# span 6 =   3.162578,   3.711258       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =     4.9921,     6.4621       
+//INSTRUMENT_METADATA;# span 9 =     5.0736,     6.5640       
+//INSTRUMENT_METADATA;# span 10 =       2.58,       9.99      
+//INSTRUMENT_METADATA;# span 11 =     0.0151,     0.0295      
+//INSTRUMENT_METADATA;# span 12 = 4.9241e-11, 4.9241e-11      
+//INSTRUMENT_METADATA;# span 13 = 1.0000e-12, 1.0000e-12      
+//INSTRUMENT_METADATA;# span 14 = 2.0308e+00, 2.0308e+00      
+//INSTRUMENT_METADATA;# span 15 =    32.5874,    35.1415      
+//INSTRUMENT_METADATA;# span 16 =    32.5983,    35.1578      
+//INSTRUMENT_METADATA;# span 17 =    -0.3948,     0.0630      
+//INSTRUMENT_METADATA;# span 18 =    25.7309,    27.4209      
+//INSTRUMENT_METADATA;# span 19 =    25.7390,    27.4313      
+//INSTRUMENT_METADATA;# span 20 =      1.981,    257.428      
+//INSTRUMENT_METADATA;# span 21 =      1.986,    257.834      
+//INSTRUMENT_METADATA;# span 22 =      0.104,      0.642      
+//INSTRUMENT_METADATA;# span 23 =    1468.86,    1488.00      
+//INSTRUMENT_METADATA;# span 24 =    1468.90,    1488.00      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 21 2018 06:08:25 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="15" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034757</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>15-oct-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.36480332e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40708330e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.13153474e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.76030244e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>041844</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-mar-2015</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-4.07049452e+000</G>
+//INSTRUMENT_METADATA;#         <H>4.91457184e-001</H>
+//INSTRUMENT_METADATA;#         <I>-7.13894846e-004</I>
+//INSTRUMENT_METADATA;#         <J>5.95731493e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>99642</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24 mar 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-3.996472e+004</C1>
+//INSTRUMENT_METADATA;#       <C2>-3.075628e-001</C2>
+//INSTRUMENT_METADATA;#       <C3>1.368070e-002</C3>
+//INSTRUMENT_METADATA;#       <D1>3.340900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.021249e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-3.901627e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>4.421500e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.935030e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00005000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>1.20190</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.288420e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.036910e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>034605</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>18-jul-2012</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.40794731e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.44967661e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.20659403e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.83741481e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>043188</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>26-sep-2013</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.04719478e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.56695139e+000</H>
+//INSTRUMENT_METADATA;#         <I>5.23671563e-005</I>
+//INSTRUMENT_METADATA;#         <J>7.04749166e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430381</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>140117</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.3990e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5192</offset>
+//INSTRUMENT_METADATA;#         <A>-3.5409e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.2884e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.0351e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>430682</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16 april 2016</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.2370e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5263</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3823e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.0967e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.5348e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.0900</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Fluorometer, Turner Cyclops -->
+//INSTRUMENT_METADATA;#     <Fluorometer SensorID="68" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2101854</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000e+000</Offset>
+//INSTRUMENT_METADATA;#       <!-- 1 = C, Chlorophyll -->
+//INSTRUMENT_METADATA;#       <!-- 2 = R, Rhodamine -->
+//INSTRUMENT_METADATA;#       <!-- 3 = F, Fluorescein -->
+//INSTRUMENT_METADATA;#       <!-- 4 = P, Phycocyanin -->
+//INSTRUMENT_METADATA;#       <!-- 5 = E, Phycoerythrin -->
+//INSTRUMENT_METADATA;#       <!-- 6 = U, CDOM -->
+//INSTRUMENT_METADATA;#       <!-- 7 = O, CrudeOil -->
+//INSTRUMENT_METADATA;#       <!-- 8 = B, OpticalBrightness -->
+//INSTRUMENT_METADATA;#       <!-- 9 = T, Turbidity -->
+//INSTRUMENT_METADATA;#       <!-- 10 = G, Refined Fuels -->
+//INSTRUMENT_METADATA;#       <MeasuredParameter>1</MeasuredParameter>
+//INSTRUMENT_METADATA;#     </Fluorometer>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4755</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10072014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>5102040816.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.29326200</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber></SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>150.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="14" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, Unavailable -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="15" >
+//INSTRUMENT_METADATA;#     <!-- SPAR voltage, SPAR, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <SPAR_Sensor SensorID="51" >
+//INSTRUMENT_METADATA;#       <SerialNumber>20482</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>07012014</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ConversionFactor>1.6633e+003</ConversionFactor>
+//INSTRUMENT_METADATA;#       <RatioMultiplier>1.00000000</RatioMultiplier>
+//INSTRUMENT_METADATA;#     </SPAR_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Mar 28 2019 09:24:30, 7.26.7.129 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.hex C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Mar 28 2019 09:24:32, 7.26.7.129
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L chloroflTC0 cpar par spar
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Mar 28 2019 09:24:35, 7.26.7.129
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = c0S/m 0.073, c1S/m 0.073, sbeox1ML/L 3.000, sbeox0ML/L 3.000                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Mar 28 2019 09:24:36, 7.26.7.129
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Mar 28 2019 09:24:38, 7.26.7.129
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: do not remove                                                                                     
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Mar 28 2019 09:24:40, 7.26.7.129 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Mar 28 2019 09:24:42, 7.26.7.129
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_omit = 0
+//INSTRUMENT_METADATA;# binavg_min_scans_bin = 1
+//INSTRUMENT_METADATA;# binavg_max_scans_bin = 2147483647
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Mar 28 2019 09:24:44, 7.26.7.129
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_0827_20180121_0608_26_01_0141.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	1.986		2.000		3.16355		3.16937		32.5972		32.6602		5.3030		5.3065		6.5640		6.4621		1.000e-12		0.0157						9.96		0.187		307		1		25.7366		25.7861		1468.94		1469.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	2.482		2.500		3.16119		3.16322		32.5874		32.6001		5.2851		5.2959		6.5500		6.4522		1.000e-12		0.0151						9.96		0.322		344		1		25.7309		25.7398		1468.86		1468.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	2.979		3.000		3.16316		3.16258		32.5995		32.5983		5.2955		5.2900		6.5598		6.4616		1.000e-12		0.0157						9.96		0.211		392		1		25.7394		25.7390		1468.93		1468.90	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	3.475		3.500		3.16672		3.16724		32.6179		32.6228		5.3180		5.3192		6.5415		6.4246		1.000e-12		0.0155						9.96		0.233		449		1		25.7513		25.7550		1469.05		1469.06	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	3.972		4.000		3.16422		3.16406		32.6049		32.6060		5.3019		5.2988		6.5363		6.4136		1.000e-12		0.0157						9.96		0.248		501		1		25.7429		25.7441		1468.98		1468.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	4.468		4.500		3.16579		3.17035		32.6157		32.6408		5.3089		5.3364		6.5494		6.4613		1.000e-12		0.0155						9.96		0.238		546		1		25.7506		25.7674		1469.03		1469.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	4.965		5.000		3.16913		3.16963		32.6332		32.6383		5.3297		5.3304		6.5601		6.4621		1.000e-12		0.0158						9.96		0.237		613		1		25.7621		25.7660		1469.14		1469.15	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	5.461		5.500		3.16833		3.17085		32.6279		32.6445		5.3257		5.3381		6.5465		6.4413		1.000e-12		0.0159						9.96		0.293		655		1		25.7583		25.7700		1469.13		1469.20	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	5.958		6.000		3.16878		3.17015		32.6314		32.6423		5.3271		5.3319		6.5506		6.4357		1.000e-12		0.0159						9.96		0.240		710		1		25.7609		25.7690		1469.14		1469.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	6.454		6.500		3.16969		3.16962		32.6361		32.6372		5.3326		5.3307		6.5325		6.4106		1.000e-12		0.0159						9.96		0.335		752		1		25.7641		25.7651		1469.18		1469.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	6.951		7.000		3.17513		3.17052		32.6771		32.6444		5.3537		5.3335		6.5161		6.4596		1.000e-12		0.0167						9.96		0.215		806		1		25.7940		25.7705		1469.33		1469.20	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	7.447		7.500		3.22432		3.20418		32.9383		32.8082		5.6578		5.5574		6.4821		6.4466		1.000e-12		0.0162						9.96		0.250		865		1		25.9651		25.8740		1470.89		1470.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	7.944		8.000		3.24373		3.22606		33.0495		32.9436		5.7683		5.6724		6.4624		6.3829		1.000e-12		0.0166						9.96		0.219		920		1		26.0398		25.9675		1471.49		1470.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	8.440		8.500		3.25167		3.24558		33.0931		33.0613		5.8149		5.7771		6.4527		6.3501		1.000e-12		0.0164						9.96		0.241		971		1		26.0686		26.0481		1471.74		1471.55	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	8.936		9.000		3.25539		3.25164		33.1138		33.0930		5.8363		5.8145		6.4406		6.3681		1.000e-12		0.0161						9.96		0.236		1022		1		26.0823		26.0686		1471.86		1471.74	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	9.433		9.500		3.25712		3.25490		33.1218		33.1103		5.8478		5.8341		6.4472		6.3140		1.000e-12		0.0173						9.96		0.244		1072		1		26.0873		26.0799		1471.92		1471.85	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	9.929		10.000		3.25711		3.25605		33.1223		33.1181		5.8468		5.8389		6.4500		6.3690		1.000e-12		0.0172						9.96		0.209		1123		1		26.0878		26.0855		1471.93		1471.89	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	10.425		10.500		3.25760		3.25669		33.1243		33.1204		5.8503		5.8438		6.4357		6.3568		1.000e-12		0.0176						9.96		0.225		1183		1		26.0890		26.0867		1471.95		1471.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	10.922		11.000		3.25836		3.25743		33.1272		33.1232		5.8558		5.8491		6.4342		6.3475		1.000e-12		0.0176						9.96		0.227		1243		1		26.0906		26.0883		1471.98		1471.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	11.418		11.500		3.25930		3.25861		33.1295		33.1272		5.8640		5.8584		6.4320		6.3583		1.000e-12		0.0178						9.96		0.314		1286		1		26.0914		26.0903		1472.03		1472.00	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	11.914		12.000		3.25946		3.25872		33.1304		33.1285		5.8647		5.8580		6.4411		6.3294		1.000e-12		0.0171						9.96		0.211		1338		1		26.0920		26.0914		1472.04		1472.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	12.410		12.500		3.25967		3.25917		33.1310		33.1303		5.8662		5.8610		6.4184		6.3192		1.000e-12		0.0177						9.96		0.243		1392		1		26.0923		26.0925		1472.05		1472.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	12.907		13.000		3.26384		3.25940		33.1480		33.1308		5.8965		5.8630		6.4191		6.3654		1.000e-12		0.0178						9.96		0.246		1442		1		26.1020		26.0925		1472.21		1472.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	13.403		13.500		3.29680		3.26061		33.2723		33.1336		6.1467		5.8738		6.3502		6.3226		1.000e-12		0.0176						9.96		0.225		1490		1		26.1692		26.0934		1473.37		1472.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	13.899		14.000		3.34480		3.27901		33.5083		33.1871		6.4510		6.0299		6.3024		6.2950		1.000e-12		0.0179						9.96		0.220		1554		1		26.3165		26.1164		1474.87		1472.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	14.396		14.500		3.37502		3.29817		33.6649		33.2701		6.6327		6.1640		6.2819		6.2902		1.000e-12		0.0180						9.96		0.299		1601		1		26.4164		26.1653		1475.79		1473.45	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	14.892		15.000		3.38712		3.31131		33.7227		33.3293		6.7095		6.2532		6.2608		6.2493		1.000e-12		0.0181						9.96		0.303		1638		1		26.4518		26.2008		1476.18		1473.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	15.388		15.500		3.39411		3.33582		33.7533		33.4523		6.7567		6.4056		6.2478		6.2209		1.000e-12		0.0196						9.96		0.178		1690		1		26.4696		26.2782		1476.41		1474.65	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	15.884		16.000		3.39711		3.38400		33.7656		33.6940		6.7776		6.7035		6.2362		6.1987		1.000e-12		0.0208						9.96		0.294		1764		1		26.4765		26.4299		1476.51		1476.13	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	16.380		16.500		3.40460		3.39163		33.7962		33.7211		6.8301		6.7610		6.2327		6.1979		1.000e-12		0.0206						9.96		0.298		1798		1		26.4936		26.4436		1476.76		1476.40	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	16.876		17.000		3.41903		3.39489		33.8577		33.7494		6.9287		6.7687		6.2238		6.1466		1.000e-12		0.0206						9.96		0.206		1853		1		26.5286		26.4649		1477.23		1476.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	17.372		17.500		3.42680		3.41399		33.8904		33.8173		6.9819		6.9132		6.2080		6.1535		1.000e-12		0.0208						9.96		0.212		1908		1		26.5472		26.4989		1477.49		1477.13	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	17.868		18.000		3.43167		3.41352		33.9177		33.8279		7.0082		6.8969		6.2028		6.1343		1.000e-12		0.0208						9.96		0.263		1965		1		26.5651		26.5095		1477.63		1477.09	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	18.364		18.500		3.43479		3.42473		33.9315		33.8721		7.0287		6.9769		6.1995		6.1332		1.000e-12		0.0208						9.96		0.328		2003		1		26.5731		26.5335		1477.74		1477.46	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	18.861		19.000		3.43756		3.43056		33.9432		33.9102		7.0473		7.0030		6.1936		6.1201		1.000e-12		0.0210						9.96		0.197		2045		1		26.5798		26.5598		1477.83		1477.62	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	19.357		19.500		3.44557		3.43239		33.9802		33.9142		7.0987		7.0190		6.1780		6.1241		1.000e-12		0.0214						9.96		0.270		2130		1		26.6018		26.5608		1478.08		1477.69	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	19.853		20.000		3.46172		3.44081		34.0482		33.9428		7.2086		7.0835		6.1522		6.1147		1.000e-12		0.0218						9.96		0.336		2165		1		26.6401		26.5745		1478.60		1477.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	20.349		20.500		3.46936		3.44861		34.0833		33.9935		7.2573		7.1184		6.1337		6.0961		1.000e-12		0.0214						9.96		0.219		2207		1		26.6609		26.6096		1478.84		1478.19	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	20.845		21.000		3.47230		3.45448		34.0960		34.0114		7.2768		7.1652		6.1225		6.1007		1.000e-12		0.0218						9.96		0.216		2277		1		26.6683		26.6172		1478.94		1478.40	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	21.341		21.500		3.47619		3.45877		34.1097		34.0315		7.3056		7.1922		6.1202		6.0978		1.000e-12		0.0213						9.96		0.274		2325		1		26.6749		26.6293		1479.08		1478.54	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	21.837		22.000		3.48152		3.46195		34.1339		34.0448		7.3398		7.2136		6.1137		6.0827		1.000e-12		0.0217						9.96		0.262		2369		1		26.6891		26.6367		1479.25		1478.65	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	22.333		22.500		3.48460		3.46910		34.1462		34.0778		7.3611		7.2591		6.1112		6.0611		1.000e-12		0.0213						9.96		0.184		2424		1		26.6958		26.6564		1479.35		1478.87	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	22.829		23.000		3.48636		3.47831		34.1543		34.1131		7.3720		7.3249		6.1068		6.0132		1.000e-12		0.0208						9.96		0.268		2490		1		26.7006		26.6749		1479.41		1479.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	23.325		23.500		3.49002		3.48346		34.1685		34.1372		7.3977		7.3571		6.0941		6.0389		1.000e-12		0.0208						9.96		0.268		2530		1		26.7082		26.6893		1479.54		1479.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	23.821		24.000		3.49512		3.48532		34.1882		34.1476		7.4337		7.3668		6.0895		6.0459		1.000e-12		0.0204						9.96		0.228		2581		1		26.7186		26.6962		1479.71		1479.40	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	24.317		24.500		3.50435		3.48781		34.2223		34.1576		7.5005		7.3840		6.0656		6.0078		1.000e-12		0.0207						9.96		0.211		2638		1		26.7359		26.7016		1480.01		1479.49	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	24.813		25.000		3.52439		3.49602		34.2975		34.1806		7.6441		7.4509		6.0368		5.9903		1.000e-12		0.0208						9.96		0.362		2684		1		26.7743		26.7102		1480.66		1479.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	25.309		25.500		3.54442		3.51040		34.3609		34.2162		7.7990		7.5728		5.9910		5.9834		1.000e-12		0.0208						9.96		0.370		2714		1		26.8016		26.7207		1481.34		1480.30	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	25.805		26.000		3.55894		3.51981		34.4060		34.2638		7.9116		7.6277		5.9479		5.9502		1.000e-12		0.0201						9.96		0.225		2757		1		26.8204		26.7502		1481.83		1480.57	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	26.301		26.500		3.56266		3.54246		34.4183		34.3347		7.9394		7.8036		5.9474		5.9122		1.000e-12		0.0202						9.96		0.275		2810		1		26.8260		26.7804		1481.96		1481.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	26.797		27.000		3.56451		3.55294		34.4253		34.3754		7.9523		7.8766		5.9477		5.9076		1.000e-12		0.0200						9.96		0.275		2851		1		26.8295		26.8016		1482.03		1481.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	27.293		27.500		3.56831		3.55141		34.4377		34.3735		7.9809		7.8617		5.9337		5.8906		1.000e-12		0.0205						9.96		0.302		2895		1		26.8350		26.8023		1482.16		1481.63	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	27.789		28.000		3.57374		3.56065		34.4581		34.4015		8.0190		7.9338		5.9310		5.8798		1.000e-12		0.0201						9.96		0.332		2931		1		26.8454		26.8136		1482.33		1481.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	28.285		28.500		3.58315		3.56327		34.4872		34.4188		8.0916		7.9446		5.9202		5.8563		1.000e-12		0.0205						9.96		0.217		2976		1		26.8574		26.8256		1482.65		1482.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	28.781		29.000		3.59120		3.57212		34.5097		34.4390		8.1559		8.0203		5.8917		5.8742		1.000e-12		0.0198						9.96		0.305		3034		1		26.8654		26.8302		1482.93		1482.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	29.277		29.500		3.59786		3.58426		34.5269		34.4670		8.2105		8.1237		5.8827		5.8677		1.000e-12		0.0210						9.96		0.319		3069		1		26.8706		26.8367		1483.17		1482.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	29.773		30.000		3.61136		3.58701		34.5646		34.4909		8.3183		8.1290		5.8615		5.8313		1.000e-12		0.0204						9.96		0.271		3110		1		26.8838		26.8547		1483.63		1482.82	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	30.268		30.500		3.61575		3.59056		34.5749		34.4903		8.3551		8.1680		5.8631		5.8309		1.000e-12		0.0200						9.96		0.269		3155		1		26.8863		26.8483		1483.78		1482.98	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	30.764		31.000		3.61484		3.59605		34.5812		34.5184		8.3386		8.1988		5.8852		5.8122		1.000e-12		0.0206						9.96		0.307		3198		1		26.8937		26.8657		1483.74		1483.14	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	31.260		31.500		3.61520		3.59926		34.5889		34.5247		8.3344		8.2269		5.8828		5.8129		1.000e-12		0.0208						9.96		0.286		3236		1		26.9004		26.8664		1483.74		1483.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	31.756		32.000		3.61600		3.60311		34.5918		34.5476		8.3399		8.2452		5.8731		5.8031		1.000e-12		0.0208						9.96		0.253		3283		1		26.9018		26.8816		1483.77		1483.36	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	32.252		32.500		3.61345		3.60803		34.5901		34.5565		8.3137		8.2892		5.8948		5.8046		1.000e-12		0.0209						9.96		0.291		3326		1		26.9045		26.8819		1483.68		1483.55	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	32.748		33.000		3.61777		3.61082		34.6158		34.5691		8.3341		8.3064		5.8857		5.8185		1.000e-12		0.0208						9.96		0.269		3369		1		26.9215		26.8892		1483.80		1483.63	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	33.244		33.500		3.62263		3.61224		34.6337		34.5808		8.3682		8.3096		5.8542		5.7941		1.000e-12		0.0212						9.96		0.290		3413		1		26.9304		26.8979		1483.96		1483.67	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	33.740		34.000		3.62358		3.61529		34.6366		34.5975		8.3753		8.3254		5.8381		5.7973		1.000e-12		0.0208						9.96		0.285		3454		1		26.9316		26.9085		1483.99		1483.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	34.236		34.500		3.62682		3.61736		34.6487		34.6100		8.3977		8.3348		5.8230		5.7937		1.000e-12		0.0209						9.96		0.281		3498		1		26.9376		26.9169		1484.10		1483.82	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	34.732		35.000		3.63195		3.62072		34.6654		34.6215		8.4359		8.3592		5.8095		5.7687		1.000e-12		0.0218						9.96		0.318		3537		1		26.9448		26.9222		1484.27		1483.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	35.228		35.500		3.63612		3.62570		34.6778		34.6413		8.4681		8.3927		5.8042		5.7558		1.000e-12		0.0209						9.96		0.280		3577		1		26.9496		26.9326		1484.42		1484.09	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	35.724		36.000		3.63885		3.62905		34.6837		34.6517		8.4913		8.4181		5.8116		5.7378		1.000e-12		0.0209						9.96		0.258		3621		1		26.9506		26.9368		1484.52		1484.21	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	36.219		36.500		3.63985		3.63478		34.6891		34.6661		8.4964		8.4650		5.8106		5.7507		1.000e-12		0.0208						9.96		0.251		3670		1		26.9541		26.9409		1484.55		1484.41	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	36.715		37.000		3.64074		3.63964		34.6938		34.6866		8.5009		8.4963		5.7937		5.7195		1.000e-12		0.0208						9.96		0.292		3714		1		26.9571		26.9521		1484.58		1484.56	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	37.211		37.500		3.63988		3.63979		34.6937		34.6957		8.4915		8.4884		5.7905		5.7126		1.000e-12		0.0208						9.96		0.279		3755		1		26.9584		26.9605		1484.56		1484.55	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	37.707		38.000		3.63792		3.63746		34.6922		34.6978		8.4716		8.4609		5.8002		5.7359		1.000e-12		0.0208						9.96		0.298		3798		1		26.9603		26.9664		1484.49		1484.45	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	38.203		38.500		3.63756		3.63827		34.6943		34.6973		8.4655		8.4699		5.7922		5.7248		1.000e-12		0.0210						9.96		0.278		3838		1		26.9629		26.9646		1484.48		1484.50	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	38.699		39.000		3.63846		3.64054		34.6988		34.7019		8.4703		8.4896		5.7906		5.7129		1.000e-12		0.0224						9.96		0.265		3885		1		26.9657		26.9651		1484.51		1484.58	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	39.195		39.500		3.64036		3.64312		34.7034		34.7070		8.4858		8.5119		5.7900		5.6973		1.000e-12		0.0213						9.96		0.316		3925		1		26.9669		26.9657		1484.58		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	39.691		40.000		3.64259		3.64501		34.7093		34.7116		8.5036		8.5275		5.7836		5.7081		1.000e-12		0.0209						9.96		0.236		3969		1		26.9688		26.9669		1484.66		1484.75	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	40.187		40.500		3.64556		3.64669		34.7161		34.7178		8.5285		8.5389		5.7782		5.7047		1.000e-12		0.0208						9.96		0.262		4022		1		26.9702		26.9700		1484.77		1484.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	40.683		41.000		3.64672		3.64739		34.7206		34.7243		8.5361		8.5397		5.7755		5.7041		1.000e-12		0.0211						9.96		0.307		4061		1		26.9726		26.9749		1484.81		1484.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	41.178		41.500		3.64728		3.64769		34.7242		34.7272		8.5382		8.5397		5.7843		5.6883		1.000e-12		0.0211						9.96		0.291		4103		1		26.9751		26.9772		1484.83		1484.84	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	41.674		42.000		3.64736		3.64760		34.7259		34.7311		8.5371		8.5345		5.7887		5.6896		1.000e-12		0.0208						9.96		0.344		4140		1		26.9766		26.9811		1484.84		1484.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	42.170		42.500		3.64680		3.64608		34.7276		34.7321		8.5291		8.5169		5.7876		5.6913		1.000e-12		0.0211						9.96		0.246		4180		1		26.9792		26.9846		1484.82		1484.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	42.666		43.000		3.64620		3.64656		34.7304		34.7339		8.5196		8.5199		5.7786		5.7076		1.000e-12		0.0211						9.96		0.231		4236		1		26.9829		26.9856		1484.80		1484.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	43.162		43.500		3.64641		3.64674		34.7323		34.7355		8.5197		8.5200		5.7815		5.7088		1.000e-12		0.0208						9.96		0.309		4280		1		26.9844		26.9868		1484.81		1484.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	43.658		44.000		3.64637		3.64661		34.7329		34.7364		8.5185		8.5174		5.7813		5.7170		1.000e-12		0.0216						9.96		0.291		4319		1		26.9850		26.9879		1484.81		1484.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	44.154		44.500		3.64623		3.64622		34.7334		34.7363		8.5162		8.5131		5.7832		5.7105		1.000e-12		0.0214						9.96		0.286		4362		1		26.9857		26.9885		1484.81		1484.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	44.650		45.000		3.64610		3.64679		34.7337		34.7366		8.5143		8.5187		5.7859		5.7120		1.000e-12		0.0214						9.96		0.284		4403		1		26.9862		26.9879		1484.81		1484.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	45.146		45.500		3.64682		3.64778		34.7357		34.7402		8.5196		8.5255		5.7812		5.7026		1.000e-12		0.0218						9.96		0.250		4449		1		26.9870		26.9896		1484.84		1484.87	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	45.641		46.000		3.64737		3.64775		34.7380		34.7448		8.5231		8.5203		5.7783		5.6935		1.000e-12		0.0213						9.96		0.296		4493		1		26.9883		26.9940		1484.87		1484.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	46.137		46.500		3.64740		3.64777		34.7416		34.7463		8.5195		8.5187		5.7764		5.7089		1.000e-12		0.0208						9.96		0.254		4537		1		26.9917		26.9954		1484.87		1484.87	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	46.633		47.000		3.64779		3.64888		34.7450		34.7523		8.5200		8.5243		5.7789		5.6983		1.000e-12		0.0211						9.96		0.303		4581		1		26.9943		26.9993		1484.88		1484.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	47.129		47.500		3.64883		3.64952		34.7513		34.7566		8.5245		8.5266		5.7768		5.7028		1.000e-12		0.0208						9.96		0.250		4623		1		26.9985		27.0023		1484.91		1484.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	47.625		48.000		3.64944		3.65099		34.7548		34.7571		8.5273		8.5416		5.7753		5.6968		1.000e-12		0.0208						9.96		0.291		4672		1		27.0008		27.0004		1484.94		1484.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	48.121		48.500		3.65210		3.65598		34.7627		34.7691		8.5476		8.5829		5.7590		5.6952		1.000e-12		0.0212						9.96		0.326		4708		1		27.0039		27.0033		1485.03		1485.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	48.617		49.000		3.65567		3.65841		34.7718		34.7774		8.5765		8.6003		5.7512		5.6856		1.000e-12		0.0208						9.96		0.244		4751		1		27.0065		27.0072		1485.16		1485.25	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	49.113		49.500		3.65779		3.65946		34.7771		34.7810		8.5937		8.6077		5.7483		5.6771		1.000e-12		0.0208						9.96		0.310		4797		1		27.0079		27.0088		1485.24		1485.29	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	49.608		50.000		3.65913		3.66061		34.7810		34.7850		8.6039		8.6157		5.7453		5.6860		1.000e-12		0.0206						9.96		0.280		4835		1		27.0094		27.0107		1485.29		1485.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	50.104		50.500		3.66002		3.66060		34.7844		34.7914		8.6098		8.6089		5.7416		5.6809		1.000e-12		0.0208						9.96		0.246		4891		1		27.0111		27.0167		1485.32		1485.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	50.600		51.000		3.65950		3.65809		34.7867		34.7930		8.6016		8.5800		5.7455		5.6700		1.000e-12		0.0213						9.96		0.329		4930		1		27.0142		27.0226		1485.30		1485.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	51.096		51.500		3.65780		3.65754		34.7862		34.7899		8.5836		8.5770		5.7474		5.6869		1.000e-12		0.0209						9.96		0.253		4973		1		27.0166		27.0206		1485.24		1485.22	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	51.592		52.000		3.65798		3.66052		34.7891		34.7932		8.5824		8.6055		5.7529		5.6873		1.000e-12		0.0208						9.95		0.330		5016		1		27.0191		27.0187		1485.25		1485.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	52.088		52.500		3.66042		3.66295		34.7958		34.8017		8.6014		8.6226		5.7424		5.6734		1.000e-12		0.0208						9.96		0.305		5051		1		27.0214		27.0227		1485.34		1485.42	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	52.584		53.000		3.66260		3.66458		34.8020		34.8078		8.6185		8.6337		5.7412		5.6508		1.000e-12		0.0207						9.96		0.231		5100		1		27.0236		27.0258		1485.42		1485.48	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	53.080		53.500		3.66386		3.66363		34.8061		34.8118		8.6275		8.6192		5.7447		5.6550		1.000e-12		0.0213						9.96		0.240		5150		1		27.0254		27.0312		1485.46		1485.44	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	53.575		54.000		3.66310		3.66237		34.8067		34.8135		8.6185		8.6038		5.7537		5.6570		1.000e-12		0.0207						9.96		0.318		5197		1		27.0273		27.0349		1485.44		1485.39	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	54.071		54.500		3.66187		3.66049		34.8058		34.8107		8.6060		8.5861		5.7479		5.6748		1.000e-12		0.0208						9.96		0.317		5231		1		27.0285		27.0355		1485.40		1485.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	54.567		55.000		3.66065		3.65976		34.8048		34.8116		8.5937		8.5772		5.7455		5.6901		1.000e-12		0.0206						9.96		0.237		5278		1		27.0296		27.0376		1485.36		1485.31	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	55.063		55.500		3.65894		3.65606		34.8029		34.8086		8.5769		8.5403		5.7416		5.6934		1.000e-12		0.0205						9.96		0.330		5321		1		27.0308		27.0410		1485.30		1485.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	55.559		56.000		3.65695		3.65496		34.8001		34.8040		8.5582		8.5328		5.7543		5.6920		1.000e-12		0.0208						9.96		0.278		5359		1		27.0315		27.0386		1485.24		1485.15	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	56.055		56.500		3.65516		3.65469		34.7983		34.8029		8.5405		8.5308		5.7566		5.6866		1.000e-12		0.0208						9.96		0.237		5408		1		27.0328		27.0380		1485.18		1485.15	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	56.551		57.000		3.65471		3.65665		34.7986		34.8045		8.5352		8.5500		5.7661		5.6853		1.000e-12		0.0208						9.96		0.291		5454		1		27.0339		27.0362		1485.17		1485.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	57.047		57.500		3.65612		3.65938		34.8037		34.8173		8.5449		8.5660		5.7619		5.6778		1.000e-12		0.0208						9.96		0.284		5495		1		27.0365		27.0438		1485.22		1485.31	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	57.542		58.000		3.65780		3.65839		34.8095		34.8194		8.5569		8.5531		5.7555		5.6678		1.000e-12		0.0227						9.96		0.262		5539		1		27.0391		27.0474		1485.28		1485.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	58.038		58.500		3.65792		3.65762		34.8118		34.8179		8.5554		8.5461		5.7541		5.6753		1.000e-12		0.0210						9.96		0.287		5584		1		27.0411		27.0474		1485.28		1485.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	58.534		59.000		3.65760		3.65775		34.8129		34.8181		8.5507		8.5471		5.7508		5.6894		1.000e-12		0.0208						9.96		0.311		5624		1		27.0427		27.0474		1485.28		1485.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	59.030		59.500		3.65751		3.65774		34.8134		34.8184		8.5489		8.5464		5.7544		5.6979		1.000e-12		0.0207						9.96		0.311		5661		1		27.0434		27.0477		1485.28		1485.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	59.526		60.000		3.65741		3.65771		34.8137		34.8187		8.5473		8.5456		5.7689		5.6814		1.000e-12		0.0217						9.96		0.220		5709		1		27.0439		27.0481		1485.28		1485.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	60.022		60.500		3.65726		3.65758		34.8144		34.8189		8.5448		8.5437		5.7620		5.6642		1.000e-12		0.0209						9.96		0.301		5758		1		27.0448		27.0486		1485.28		1485.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	60.518		61.000		3.65724		3.65744		34.8144		34.8192		8.5444		8.5416		5.7563		5.6872		1.000e-12		0.0208						9.96		0.272		5799		1		27.0449		27.0491		1485.29		1485.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	61.013		61.500		3.65695		3.65699		34.8138		34.8199		8.5416		8.5359		5.7501		5.6700		1.000e-12		0.0208						9.96		0.331		5841		1		27.0449		27.0505		1485.29		1485.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	61.509		62.000		3.65622		3.65654		34.8143		34.8177		8.5331		8.5329		5.7514		5.6792		1.000e-12		0.0208						9.96		0.332		5874		1		27.0466		27.0493		1485.26		1485.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	62.005		62.500		3.65789		3.65969		34.8197		34.8254		8.5452		8.5588		5.7516		5.6883		1.000e-12		0.0208						9.96		0.226		5929		1		27.0489		27.0512		1485.32		1485.38	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	62.501		63.000		3.65916		3.65966		34.8235		34.8316		8.5548		8.5519		5.7437		5.6637		1.000e-12		0.0208						9.96		0.370		5977		1		27.0504		27.0572		1485.37		1485.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	62.997		63.500		3.65567		3.65571		34.8178		34.8299		8.5228		8.5110		5.7531		5.6523		1.000e-12		0.0208						9.96		0.382		6006		1		27.0509		27.0622		1485.25		1485.22	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	63.493		64.000		3.65545		3.65627		34.8205		34.8249		8.5174		8.5219		5.7578		5.6901		1.000e-12		0.0208						9.96		0.255		6045		1		27.0539		27.0566		1485.24		1485.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	63.989		64.500		3.65622		3.65687		34.8228		34.8351		8.5231		8.5177		5.7466		5.6702		1.000e-12		0.0208						9.95		0.234		6099		1		27.0548		27.0652		1485.28		1485.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	64.484		65.000		3.65460		3.65393		34.8213		34.8275		8.5070		8.4936		5.7397		5.6431		1.000e-12		0.0208						9.96		0.286		6145		1		27.0561		27.0630		1485.22		1485.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	64.980		65.500		3.65446		3.65488		34.8233		34.8278		8.5033		8.5033		5.7489		5.6861		1.000e-12		0.0208						9.95		0.284		6186		1		27.0582		27.0617		1485.22		1485.22	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	65.476		66.000		3.65678		3.65784		34.8314		34.8273		8.5198		8.5352		5.7526		5.6945		1.000e-12		0.0214						9.96		0.309		6228		1		27.0621		27.0564		1485.30		1485.35	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	65.972		66.500		3.66007		3.66139		34.8344		34.8393		8.5519		8.5611		5.7347		5.6669		1.000e-12		0.0208						9.95		0.318		6264		1		27.0594		27.0618		1485.43		1485.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	66.468		67.000		3.65973		3.66057		34.8354		34.8399		8.5470		8.5513		5.7307		5.6746		1.000e-12		0.0209						9.96		0.227		6313		1		27.0609		27.0638		1485.42		1485.44	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	66.964		67.500		3.65852		3.65863		34.8317		34.8412		8.5375		8.5289		5.7477		5.6605		1.000e-12		0.0209						9.96		0.316		6360		1		27.0595		27.0683		1485.39		1485.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	67.459		68.000		3.65483		3.65370		34.8254		34.8349		8.5039		8.4822		5.7431		5.6681		1.000e-12		0.0208						9.96		0.277		6399		1		27.0598		27.0706		1485.27		1485.20	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	67.955		68.500		3.65324		3.65287		34.8252		34.8313		8.4868		8.4766		5.7510		5.7023		1.000e-12		0.0210						9.95		0.258		6446		1		27.0623		27.0687		1485.21		1485.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	68.451		69.000		3.65258		3.65265		34.8263		34.8313		8.4784		8.4740		5.7605		5.6994		1.000e-12		0.0209						9.95		0.278		6490		1		27.0644		27.0691		1485.19		1485.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	68.947		69.500		3.65226		3.65248		34.8270		34.8327		8.4739		8.4706		5.7709		5.6936		1.000e-12		0.0233						9.96		0.292		6532		1		27.0658		27.0707		1485.18		1485.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	69.443		70.000		3.65022		3.65046		34.8242		34.8332		8.4546		8.4481		5.7746		5.6995		1.000e-12		0.0217						9.96		0.278		6574		1		27.0665		27.0746		1485.11		1485.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	69.939		70.500		3.64875		3.64900		34.8234		34.8303		8.4394		8.4351		5.7738		5.6866		1.000e-12		0.0215						9.96		0.316		6615		1		27.0682		27.0743		1485.06		1485.06	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	70.435		71.000		3.64773		3.64795		34.8235		34.8280		8.4281		8.4260		5.7816		5.6903		1.000e-12		0.0211						9.95		0.277		6654		1		27.0701		27.0739		1485.03		1485.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	70.930		71.500		3.64798		3.64788		34.8213		34.8286		8.4328		8.4244		5.7762		5.7109		1.000e-12		0.0215						9.96		0.209		6707		1		27.0676		27.0746		1485.05		1485.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	71.426		72.000		3.64689		3.64704		34.8207		34.8270		8.4214		8.4167		5.7745		5.7074		1.000e-12		0.0221						9.95		0.330		6756		1		27.0689		27.0746		1485.02		1485.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	71.922		72.500		3.64642		3.64683		34.8212		34.8270		8.4155		8.4142		5.7729		5.7178		1.000e-12		0.0220						9.95		0.378		6787		1		27.0702		27.0750		1485.00		1485.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	72.418		73.000		3.64636		3.64655		34.8209		34.8266		8.4150		8.4113		5.7695		5.6918		1.000e-12		0.0215						9.95		0.253		6826		1		27.0701		27.0751		1485.01		1485.00	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	72.914		73.500		3.64600		3.64595		34.8198		34.8256		8.4120		8.4056		5.7762		5.6906		1.000e-12		0.0216						9.95		0.255		6878		1		27.0697		27.0752		1485.01		1484.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	73.410		74.000		3.64500		3.64520		34.8187		34.8247		8.4021		8.3982		5.7800		5.7116		1.000e-12		0.0215						9.96		0.301		6919		1		27.0703		27.0756		1484.98		1484.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	73.905		74.500		3.64504		3.64471		34.8187		34.8236		8.4023		8.3938		5.7879		5.7070		1.000e-12		0.0214						9.95		0.273		6962		1		27.0703		27.0754		1484.98		1484.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	74.401		75.000		3.64453		3.64454		34.8181		34.8234		8.3973		8.3919		5.7909		5.7015		1.000e-12		0.0218						9.96		0.292		7004		1		27.0706		27.0756		1484.97		1484.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	74.897		75.500		3.64432		3.64410		34.8179		34.8225		8.3949		8.3878		5.7836		5.7149		1.000e-12		0.0215						9.96		0.244		7048		1		27.0708		27.0755		1484.97		1484.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	75.393		76.000		3.64394		3.64367		34.8170		34.8224		8.3915		8.3831		5.7808		5.7182		1.000e-12		0.0219						9.95		0.269		7099		1		27.0706		27.0762		1484.97		1484.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	75.889		76.500		3.64355		3.64380		34.8173		34.8222		8.3868		8.3846		5.7868		5.7023		1.000e-12		0.0220						9.96		0.354		7136		1		27.0716		27.0757		1484.96		1484.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	76.385		77.000		3.64340		3.64281		34.8170		34.8212		8.3851		8.3746		5.7849		5.7192		1.000e-12		0.0219						9.95		0.299		7172		1		27.0716		27.0765		1484.96		1484.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	76.881		77.500		3.64269		3.64123		34.8144		34.8183		8.3800		8.3603		5.7888		5.7424		1.000e-12		0.0220						9.96		0.252		7218		1		27.0703		27.0764		1484.94		1484.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	77.376		78.000		3.64149		3.63864		34.8121		34.8163		8.3691		8.3342		5.7938		5.7376		1.000e-12		0.0218						9.96		0.280		7263		1		27.0702		27.0789		1484.91		1484.79	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	77.872		78.500		3.63974		3.63588		34.8113		34.8135		8.3508		8.3071		5.8064		5.7671		1.000e-12		0.0218						9.96		0.287		7305		1		27.0724		27.0808		1484.85		1484.69	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	78.368		79.000		3.63577		3.61842		34.7932		34.8066		8.3262		8.1256		5.8288		5.8070		1.000e-12		0.0228						9.96		0.248		7350		1		27.0620		27.1030		1484.74		1484.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	78.864		79.500		3.62681		3.59527		34.7808		34.7756		8.2420		7.9067		5.8620		5.8802		1.000e-12		0.0223						9.96		0.300		7396		1		27.0651		27.1115		1484.42		1483.15	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	79.360		80.000		3.61000		3.56283		34.7646		34.7621		8.0767		7.5686		5.8979		5.8779		1.000e-12		0.0230						9.95		0.341		7432		1		27.0774		27.1504		1483.79		1481.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	79.856		80.500		3.58310		3.53374		34.7102		34.6733		7.8401		7.3410		5.9737		5.9828		1.000e-12		0.0235						9.96		0.238		7473		1		27.0699		27.1135		1482.83		1480.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	80.351		81.000		3.55529		3.53069		34.6655		34.6568		7.5830		7.3240		6.0377		6.0278		1.000e-12		0.0252						9.95		0.273		7529		1		27.0725		27.1030		1481.81		1480.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	80.847		81.500		3.53747		3.52923		34.6445		34.6511		7.4100		7.3135		6.0787		6.0129		1.000e-12		0.0254						9.95		0.347		7565		1		27.0810		27.0999		1481.13		1480.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	81.343		82.000		3.53140		3.52988		34.6320		34.6500		7.3560		7.3214		6.1052		6.0242		1.000e-12		0.0262						9.95		0.254		7605		1		27.0789		27.0979		1480.91		1480.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	81.839		82.500		3.52948		3.52994		34.6286		34.6503		7.3382		7.3215		6.1051		6.0309		1.000e-12		0.0261						9.95		0.309		7652		1		27.0788		27.0982		1480.85		1480.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	82.335		83.000		3.52816		3.52589		34.6267		34.6440		7.3255		7.2835		6.1083		6.0203		1.000e-12		0.0261						9.95		0.303		7688		1		27.0790		27.0986		1480.81		1480.67	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	82.831		83.500		3.52492		3.52343		34.6210		34.6391		7.2956		7.2612		6.1129		6.0358		1.000e-12		0.0267						9.95		0.241		7742		1		27.0788		27.0979		1480.69		1480.58	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	83.327		84.000		3.52149		3.51829		34.6167		34.6385		7.2622		7.2055		6.1317		6.0503		1.000e-12		0.0271						9.96		0.376		7782		1		27.0801		27.1053		1480.57		1480.38	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	83.822		84.500		3.51656		3.51115		34.6101		34.6239		7.2147		7.1418		6.1520		6.0834		1.000e-12		0.0261						9.95		0.256		7819		1		27.0816		27.1028		1480.38		1480.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	84.318		85.000		3.51061		3.51002		34.6032		34.6176		7.1564		7.1356		6.1537		6.0748		1.000e-12		0.0269						9.95		0.307		7872		1		27.0844		27.0986		1480.16		1480.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	84.814		85.500		3.50911		3.50905		34.6004		34.6139		7.1425		7.1284		6.1432		6.0762		1.000e-12		0.0269						9.95		0.326		7905		1		27.0841		27.0967		1480.11		1480.07	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	85.310		86.000		3.50796		3.50894		34.5986		34.6123		7.1315		7.1286		6.1478		6.1011		1.000e-12		0.0269						9.95		0.246		7950		1		27.0843		27.0954		1480.07		1480.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	85.806		86.500		3.50855		3.50941		34.6006		34.6119		7.1356		7.1338		6.1547		6.0835		1.000e-12		0.0272						9.95		0.300		7993		1		27.0853		27.0944		1480.10		1480.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	86.302		87.000		3.50889		3.50995		34.6015		34.6118		7.1383		7.1396		6.1495		6.0745		1.000e-12		0.0280						9.95		0.244		8038		1		27.0856		27.0935		1480.12		1480.14	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	86.797		87.500		3.51009		3.51053		34.6039		34.6112		7.1487		7.1463		6.1551		6.0868		1.000e-12		0.0276						9.95		0.303		8084		1		27.0861		27.0921		1480.17		1480.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	87.293		88.000		3.51137		3.51213		34.6064		34.6127		7.1599		7.1620		6.1633		6.1021		1.000e-12		0.0271						9.95		0.259		8125		1		27.0864		27.0911		1480.23		1480.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	87.789		88.500		3.51219		3.51293		34.6080		34.6144		7.1671		7.1688		6.1524		6.0751		1.000e-12		0.0284						9.95		0.285		8172		1		27.0867		27.0915		1480.26		1480.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	88.285		89.000		3.51272		3.51383		34.6088		34.6155		7.1718		7.1773		6.1439		6.0552		1.000e-12		0.0281						9.95		0.337		8210		1		27.0866		27.0911		1480.29		1480.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	88.781		89.500		3.51340		3.51436		34.6101		34.6160		7.1776		7.1823		6.1454		6.0740		1.000e-12		0.0282						9.95		0.266		8249		1		27.0869		27.0908		1480.32		1480.35	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	89.277		90.000		3.51465		3.51597		34.6127		34.6176		7.1885		7.1981		6.1465		6.0587		1.000e-12		0.0286						9.96		0.244		8300		1		27.0874		27.0899		1480.38		1480.42	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	89.772		90.500		3.51726		3.51976		34.6181		34.6191		7.2114		7.2377		6.1381		6.0604		1.000e-12		0.0292						9.95		0.284		8343		1		27.0884		27.0855		1480.48		1480.58	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	90.268		91.000		3.52193		3.52392		34.6265		34.6285		7.2538		7.2734		6.1222		6.0407		1.000e-12		0.0295						9.95		0.239		8390		1		27.0890		27.0879		1480.66		1480.74	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	90.764		91.500		3.52419		3.52604		34.6292		34.6228		7.2755		7.3021		6.1149		6.0325		1.000e-12		0.0291						9.95		0.313		8436		1		27.0881		27.0792		1480.76		1480.85	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	91.260		92.000		3.52758		3.53959		34.6375		34.6451		7.3038		7.4272		6.0969		6.0309		1.000e-12		0.0287						9.95		0.314		8472		1		27.0906		27.0790		1480.89		1481.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	91.756		92.500		3.53861		3.54497		34.6579		34.6591		7.4034		7.4716		6.0693		5.9682		1.000e-12		0.0282						9.95		0.262		8515		1		27.0925		27.0836		1481.30		1481.56	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	92.252		93.000		3.55100		3.55636		34.6868		34.6598		7.5091		7.5944		6.0448		5.9638		1.000e-12		0.0282						9.95		0.294		8559		1		27.1000		27.0664		1481.75		1482.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	92.747		93.500		3.56491		3.56805		34.7068		34.6985		7.6400		7.6823		5.9961		5.9323		1.000e-12		0.0281						9.95		0.250		8601		1		27.0968		27.0841		1482.28		1482.43	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	93.243		94.000		3.56873		3.57061		34.7138		34.7083		7.6741		7.7001		5.9743		5.8965		1.000e-12		0.0279						9.95		0.234		8656		1		27.0973		27.0892		1482.43		1482.52	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	93.739		94.500		3.57187		3.57283		34.7178		34.7116		7.7040		7.7206		5.9699		5.9123		1.000e-12		0.0278						9.95		0.305		8700		1		27.0961		27.0887		1482.56		1482.61	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	94.235		95.000		3.57331		3.57361		34.7189		34.7148		7.7183		7.7256		5.9686		5.9035		1.000e-12		0.0286						9.95		0.285		8740		1		27.0948		27.0905		1482.62		1482.64	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	94.731		95.500		3.57382		3.57435		34.7196		34.7180		7.7228		7.7302		5.9686		5.8611		1.000e-12		0.0275						9.95		0.313		8781		1		27.0947		27.0924		1482.65		1482.67	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	95.227		96.000		3.57480		3.57614		34.7209		34.7165		7.7320		7.7509		5.9699		5.8851		1.000e-12		0.0276						9.95		0.271		8820		1		27.0944		27.0882		1482.69		1482.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	95.722		96.500		3.57769		3.57883		34.7264		34.7208		7.7575		7.7754		5.9551		5.8613		1.000e-12		0.0277						9.95		0.285		8867		1		27.0949		27.0880		1482.80		1482.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	96.218		97.000		3.58074		3.58842		34.7326		34.7186		7.7841		7.8814		5.9422		5.8686		1.000e-12		0.0270						9.95		0.293		8905		1		27.0959		27.0705		1482.92		1483.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	96.714		97.500		3.60296		3.61021		34.7802		34.7704		7.9763		8.0646		5.8764		5.8256		1.000e-12		0.0255						9.95		0.211		8956		1		27.1048		27.0838		1483.72		1484.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	97.210		98.000		3.61397		3.61552		34.7970		34.7909		8.0781		8.1009		5.8328		5.7594		1.000e-12		0.0244						9.95		0.278		9009		1		27.1027		27.0945		1484.13		1484.21	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	97.706		98.500		3.61496		3.61445		34.7967		34.7881		8.0889		8.0920		5.8164		5.7473		1.000e-12		0.0244						9.95		0.351		9046		1		27.1008		27.0936		1484.18		1484.18	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	98.202		99.000		3.61520		3.62392		34.7985		34.7790		8.0894		8.2031		5.8314		5.7667		1.000e-12		0.0244						9.95		0.404		9078		1		27.1022		27.0696		1484.19		1484.59	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	98.697		99.500		3.62556		3.63689		34.8209		34.8230		8.1782		8.2981		5.8107		5.7448		1.000e-12		0.0240						9.95		0.432		9106		1		27.1063		27.0897		1484.56		1485.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	99.193		100.000		3.63375		3.63649		34.8321		34.8302		8.2549		8.2864		5.7881		5.7192		1.000e-12		0.0233						9.95		0.358		9136		1		27.1034		27.0971		1484.87		1484.98	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	99.689		100.500		3.63510		3.63290		34.8348		34.8316		8.2665		8.2460		5.7702		5.7020		1.000e-12		0.0240						9.95		0.290		9176		1		27.1038		27.1044		1484.92		1484.84	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	100.185		101.000		3.63136		3.63011		34.8278		34.8233		8.2330		8.2241		5.7787		5.7201		1.000e-12		0.0240						9.95		0.404		9212		1		27.1034		27.1013		1484.80		1484.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	100.681		101.500		3.63022		3.62934		34.8267		34.8253		8.2216		8.2136		5.7892		5.7301		1.000e-12		0.0244						9.95		0.463		9239		1		27.1043		27.1044		1484.76		1484.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	101.177		102.000		3.62955		3.62790		34.8249		34.8214		8.2160		8.2018		5.7983		5.7195		1.000e-12		0.0241						9.95		0.482		9264		1		27.1037		27.1031		1484.75		1484.69	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	101.672		102.500		3.62865		3.62760		34.8238		34.8216		8.2071		8.1981		5.8072		5.7139		1.000e-12		0.0244						9.95		0.505		9288		1		27.1042		27.1038		1484.72		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	102.168		103.000		3.62801		3.62739		34.8228		34.8208		8.2010		8.1964		5.8065		5.7293		1.000e-12		0.0244						9.95		0.487		9312		1		27.1044		27.1035		1484.70		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	102.664		103.500		3.62762		3.62696		34.8217		34.8202		8.1976		8.1922		5.8002		5.7333		1.000e-12		0.0241						9.95		0.403		9339		1		27.1040		27.1036		1484.70		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	103.160		104.000		3.62715		3.62702		34.8209		34.8208		8.1932		8.1919		5.7999		5.7240		1.000e-12		0.0245						9.95		0.406		9371		1		27.1041		27.1041		1484.69		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	103.656		104.500		3.62694		3.62671		34.8207		34.8203		8.1909		8.1888		5.7984		5.7227		1.000e-12		0.0244						9.95		0.514		9397		1		27.1042		27.1042		1484.69		1484.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	104.152		105.000		3.62653		3.62502		34.8194		34.8267		8.1876		8.1639		5.8049		5.7247		1.000e-12		0.0244						9.95		0.577		9418		1		27.1037		27.1131		1484.68		1484.60	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	104.647		105.500		3.62463		3.62141		34.8149		34.8210		8.1713		8.1305		5.8113		5.7375		1.000e-12		0.0244						9.95		0.553		9439		1		27.1027		27.1136		1484.62		1484.48	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	105.143		106.000		3.62199		3.61948		34.8115		34.8119		8.1461		8.1187		5.8146		5.7398		1.000e-12		0.0244						9.95		0.451		9463		1		27.1038		27.1082		1484.53		1484.43	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	105.639		106.500		3.62018		3.61985		34.8085		34.8110		8.1294		8.1233		5.8147		5.7207		1.000e-12		0.0245						9.95		0.373		9493		1		27.1040		27.1069		1484.47		1484.45	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	106.135		107.000		3.62012		3.62319		34.8096		34.8042		8.1274		8.1659		5.8183		5.7121		1.000e-12		0.0253						9.95		0.403		9526		1		27.1051		27.0951		1484.48		1484.62	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	106.631		107.500		3.62653		3.63891		34.8260		34.8093		8.1796		8.3297		5.8044		5.6945		1.000e-12		0.0254						9.95		0.463		9553		1		27.1101		27.0741		1484.70		1485.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	107.127		108.000		3.64097		3.65308		34.8564		34.8505		8.3041		8.4403		5.7654		5.6627		1.000e-12		0.0244						9.95		0.511		9578		1		27.1150		27.0893		1485.21		1485.72	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	107.622		108.500		3.65162		3.66082		34.8800		34.8611		8.3946		8.5124		5.7256		5.6408		1.000e-12		0.0236						9.95		0.537		9600		1		27.1195		27.0865		1485.59		1486.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	108.118		109.000		3.66075		3.66817		34.8959		34.8901		8.4762		8.5617		5.6920		5.6223		1.000e-12		0.0232						9.95		0.523		9623		1		27.1194		27.1015		1485.92		1486.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	108.614		109.500		3.66664		3.66968		34.9054		34.8998		8.5295		8.5678		5.6596		5.5938		1.000e-12		0.0225						9.95		0.482		9646		1		27.1186		27.1082		1486.14		1486.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	109.110		110.000		3.66947		3.67013		34.9106		34.9032		8.5543		8.5689		5.6441		5.5767		1.000e-12		0.0220						9.95		0.441		9673		1		27.1188		27.1107		1486.25		1486.29	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	109.606		110.500		3.67087		3.67321		34.9134		34.8974		8.5663		8.6076		5.6490		5.5906		1.000e-12		0.0228						9.95		0.434		9700		1		27.1191		27.1001		1486.31		1486.44	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	110.101		111.000		3.67735		3.68126		34.9297		34.9220		8.6190		8.6686		5.6447		5.5879		1.000e-12		0.0226						9.95		0.454		9728		1		27.1237		27.1098		1486.53		1486.70	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	110.597		111.500		3.68135		3.68217		34.9353		34.9276		8.6558		8.6724		5.6374		5.5776		1.000e-12		0.0219						9.95		0.497		9753		1		27.1223		27.1136		1486.68		1486.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	111.093		112.000		3.68252		3.68251		34.9379		34.9302		8.6655		8.6732		5.6277		5.5510		1.000e-12		0.0215						9.95		0.493		9777		1		27.1228		27.1155		1486.73		1486.75	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	111.589		112.500		3.68288		3.68249		34.9377		34.9318		8.6692		8.6711		5.6268		5.5326		1.000e-12		0.0215						9.95		0.441		9802		1		27.1220		27.1171		1486.75		1486.75	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	112.085		113.000		3.68283		3.68251		34.9375		34.9322		8.6687		8.6707		5.6287		5.5554		1.000e-12		0.0208						9.95		0.415		9831		1		27.1220		27.1174		1486.76		1486.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	112.581		113.500		3.68294		3.68280		34.9379		34.9334		8.6692		8.6723		5.6314		5.5732		1.000e-12		0.0213						9.95		0.446		9859		1		27.1222		27.1182		1486.77		1486.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	113.076		114.000		3.68299		3.68269		34.9376		34.9344		8.6698		8.6699		5.6280		5.5583		1.000e-12		0.0214						9.95		0.476		9885		1		27.1219		27.1194		1486.78		1486.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	113.572		114.500		3.68290		3.68253		34.9375		34.9342		8.6687		8.6680		5.6261		5.5494		1.000e-12		0.0208						9.95		0.508		9910		1		27.1220		27.1195		1486.78		1486.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	114.068		115.000		3.68278		3.68227		34.9372		34.9348		8.6675		8.6646		5.6266		5.5412		1.000e-12		0.0209						9.95		0.514		9933		1		27.1219		27.1204		1486.78		1486.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	114.564		115.500		3.68245		3.68179		34.9364		34.9348		8.6646		8.6591		5.6239		5.5413		1.000e-12		0.0210						9.95		0.477		9957		1		27.1217		27.1213		1486.78		1486.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	115.060		116.000		3.68204		3.68206		34.9363		34.9336		8.6600		8.6630		5.6189		5.5461		1.000e-12		0.0214						9.95		0.440		9983		1		27.1224		27.1198		1486.77		1486.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	115.556		116.500		3.68380		3.68702		34.9434		34.9382		8.6715		8.7111		5.6103		5.5526		1.000e-12		0.0219						9.95		0.466		10010		1		27.1261		27.1159		1486.83		1486.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	116.051		117.000		3.68803		3.69044		34.9529		34.9532		8.7068		8.7323		5.5953		5.5379		1.000e-12		0.0223						9.95		0.482		10035		1		27.1280		27.1242		1486.98		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	116.547		117.500		3.69037		3.69090		34.9589		34.9570		8.7255		8.7331		5.5912		5.5114		1.000e-12		0.0220						9.95		0.483		10060		1		27.1298		27.1271		1487.07		1487.09	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	117.043		118.000		3.69089		3.69092		34.9597		34.9583		8.7299		8.7317		5.5896		5.4891		1.000e-12		0.0214						9.95		0.472		10085		1		27.1297		27.1283		1487.09		1487.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	117.539		118.500		3.69101		3.69102		34.9601		34.9584		8.7307		8.7325		5.5886		5.4828		1.000e-12		0.0214						9.95		0.433		10111		1		27.1299		27.1283		1487.10		1487.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	118.035		119.000		3.69105		3.69114		34.9601		34.9590		8.7309		8.7329		5.5916		5.5077		1.000e-12		0.0212						9.95		0.408		10141		1		27.1298		27.1287		1487.11		1487.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	118.530		119.500		3.69083		3.69114		34.9595		34.9596		8.7289		8.7321		5.5881		5.4976		1.000e-12		0.0217						9.95		0.468		10169		1		27.1297		27.1293		1487.11		1487.13	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	119.026		120.000		3.69082		3.69068		34.9594		34.9602		8.7287		8.7263		5.5778		5.4869		1.000e-12		0.0218						9.95		0.519		10193		1		27.1296		27.1307		1487.12		1487.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	119.522		120.500		3.69065		3.69046		34.9591		34.9588		8.7269		8.7252		5.5632		5.4876		1.000e-12		0.0222						9.95		0.533		10215		1		27.1297		27.1297		1487.12		1487.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	120.018		121.000		3.69057		3.69134		34.9594		34.9542		8.7255		8.7389		5.5671		5.4934		1.000e-12		0.0220						9.95		0.513		10238		1		27.1301		27.1240		1487.12		1487.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	120.514		121.500		3.69294		3.69919		34.9667		34.9675		8.7431		8.8090		5.5729		5.4977		1.000e-12		0.0217						9.95		0.463		10262		1		27.1331		27.1233		1487.21		1487.45	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	121.010		122.000		3.69842		3.70127		34.9792		34.9802		8.7888		8.8182		5.5717		5.4913		1.000e-12		0.0210						9.95		0.439		10290		1		27.1357		27.1318		1487.40		1487.51	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	121.505		122.500		3.70110		3.70170		34.9839		34.9825		8.8123		8.8201		5.5686		5.4811		1.000e-12		0.0208						9.95		0.468		10316		1		27.1356		27.1333		1487.50		1487.53	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	122.001		123.000		3.70207		3.70236		34.9858		34.9836		8.8204		8.8259		5.5707		5.4889		1.000e-12		0.0214						9.95		0.443		10342		1		27.1358		27.1332		1487.54		1487.56	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	122.497		123.500		3.70270		3.70313		34.9874		34.9858		8.8254		8.8316		5.5663		5.4908		1.000e-12		0.0219						9.95		0.397		10371		1		27.1363		27.1341		1487.57		1487.59	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	122.993		124.000		3.70363		3.70430		34.9895		34.9875		8.8330		8.8421		5.5561		5.4850		1.000e-12		0.0216						7.73		0.486		10400		1		27.1367		27.1337		1487.61		1487.64	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	123.489		124.500		3.70460		3.70525		34.9917		34.9891		8.8408		8.8503		5.5509		5.4620		1.000e-12		0.0208						9.99		0.581		10422		1		27.1372		27.1337		1487.65		1487.68	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	123.984		125.000		3.70555		3.70668		34.9942		34.9947		8.8481		8.8596		5.5525		5.4599		1.000e-12		0.0208						9.95		0.564		10442		1		27.1380		27.1366		1487.69		1487.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	124.480		125.500		3.70612		3.70419		34.9959		35.0006		8.8522		8.8269		5.5504		5.4713		1.000e-12		0.0208						9.95		0.406		10467		1		27.1387		27.1464		1487.71		1487.63	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	124.976		126.000		3.70328		3.70218		34.9936		34.9969		8.8240		8.8091		5.5556		5.4793		1.000e-12		0.0208						9.95		0.345		10503		1		27.1413		27.1463		1487.62		1487.56	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	125.472		126.500		3.70059		3.70002		34.9912		34.9963		8.7975		8.7863		5.5683		5.4838		1.000e-12		0.0213						9.95		0.526		10531		1		27.1437		27.1495		1487.52		1487.49	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	125.968		127.000		3.70007		3.70062		34.9919		34.9917		8.7910		8.7972		5.5746		5.4936		1.000e-12		0.0220						9.95		0.609		10552		1		27.1453		27.1441		1487.51		1487.53	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	126.463		127.500		3.70088		3.70210		34.9939		34.9914		8.7974		8.8130		5.5751		5.4934		1.000e-12		0.0209						9.95		0.586		10571		1		27.1459		27.1414		1487.54		1487.60	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	126.959		128.000		3.70231		3.70587		34.9968		35.0004		8.8096		8.8439		5.5644		5.4884		1.000e-12		0.0208						9.95		0.491		10593		1		27.1461		27.1435		1487.60		1487.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	127.455		128.500		3.70450		3.70690		35.0022		35.0064		8.8272		8.8486		5.5444		5.4669		1.000e-12		0.0210						9.95		0.418		10621		1		27.1476		27.1474		1487.68		1487.76	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	127.951		129.000		3.70611		3.70633		35.0053		35.0099		8.8409		8.8386		5.5324		5.4599		1.000e-12		0.0210						9.95		0.409		10650		1		27.1479		27.1518		1487.74		1487.74	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	128.447		129.500		3.70502		3.70476		35.0040		35.0053		8.8305		8.8263		5.5271		5.4703		1.000e-12		0.0208						9.95		0.415		10679		1		27.1484		27.1502		1487.71		1487.70	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	128.942		130.000		3.70484		3.70372		35.0058		35.0145		8.8265		8.8057		5.5176		5.4593		1.000e-12		0.0208						9.95		0.438		10708		1		27.1505		27.1606		1487.71		1487.64	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	129.438		130.500		3.70219		3.69889		35.0012		35.0083		8.8025		8.7602		5.5222		5.4419		1.000e-12		0.0205						9.95		0.465		10734		1		27.1507		27.1630		1487.62		1487.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	129.934		131.000		3.69832		3.69740		34.9978		35.0028		8.7644		8.7496		5.5272		5.4383		1.000e-12		0.0208						9.95		0.510		10759		1		27.1541		27.1604		1487.48		1487.43	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	130.430		131.500		3.69669		3.69458		34.9946		35.0071		8.7501		8.7149		5.5247		5.4425		1.000e-12		0.0208						9.95		0.541		10781		1		27.1539		27.1692		1487.43		1487.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	130.926		132.000		3.69435		3.69123		34.9901		34.9986		8.7294		8.6875		5.5278		5.4327		1.000e-12		0.0208						9.95		0.538		10803		1		27.1536		27.1669		1487.36		1487.21	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	131.422		132.500		3.69217		3.69140		34.9881		34.9920		8.7079		8.6958		5.5241		5.4291		1.000e-12		0.0208						9.95		0.487		10827		1		27.1555		27.1604		1487.29		1487.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	131.917		133.000		3.69277		3.69721		34.9941		34.9979		8.7080		8.7516		5.5155		5.4390		1.000e-12		0.0208						9.95		0.420		10853		1		27.1601		27.1562		1487.30		1487.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	132.413		133.500		3.69926		3.70269		35.0092		35.0107		8.7618		8.7969		5.5011		5.4063		1.000e-12		0.0208						9.95		0.431		10883		1		27.1635		27.1591		1487.53		1487.66	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	132.909		134.000		3.70388		3.70533		35.0193		35.0197		8.8006		8.8157		5.4858		5.3870		1.000e-12		0.0208						9.95		0.491		10909		1		27.1652		27.1631		1487.69		1487.75	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	133.405		134.500		3.70506		3.70606		35.0208		35.0192		8.8113		8.8237		5.4763		5.3803		1.000e-12		0.0208						9.95		0.504		10932		1		27.1647		27.1615		1487.74		1487.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	133.901		135.000		3.70652		3.71019		35.0250		35.0275		8.8225		8.8591		5.4623		5.3902		1.000e-12		0.0211						9.95		0.471		10957		1		27.1662		27.1623		1487.80		1487.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	134.396		135.500		3.70945		3.71097		35.0309		35.0328		8.8474		8.8618		5.4471		5.3881		1.000e-12		0.0219						9.95		0.411		10984		1		27.1669		27.1661		1487.90		1487.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	134.892		136.000		3.71096		3.71126		35.0337		35.0356		8.8606		8.8617		5.4390		5.3714		1.000e-12		0.0208						9.95		0.419		11014		1		27.1669		27.1683		1487.96		1487.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	135.388		136.500		3.71070		3.71073		35.0339		35.0359		8.8573		8.8555		5.4368		5.3563		1.000e-12		0.0207						9.95		0.480		11041		1		27.1676		27.1695		1487.96		1487.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	135.884		137.000		3.71056		3.71038		35.0343		35.0369		8.8551		8.8506		5.4397		5.3523		1.000e-12		0.0208						9.95		0.506		11065		1		27.1683		27.1711		1487.96		1487.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	136.380		137.500		3.71028		3.71007		35.0343		35.0368		8.8518		8.8471		5.4430		5.3671		1.000e-12		0.0208						9.95		0.472		11089		1		27.1688		27.1716		1487.96		1487.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	136.875		138.000		3.70997		3.70992		35.0343		35.0373		8.8484		8.8448		5.4407		5.3784		1.000e-12		0.0205						9.95		0.457		11115		1		27.1694		27.1722		1487.95		1487.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	137.371		138.500		3.70957		3.70906		35.0342		35.0394		8.8439		8.8333		5.4349		5.3750		1.000e-12		0.0210						9.95		0.488		11141		1		27.1700		27.1758		1487.94		1487.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	137.867		139.000		3.70841		3.70676		35.0324		35.0386		8.8332		8.8093		5.4404		5.3741		1.000e-12		0.0210						9.95		0.520		11165		1		27.1703		27.1790		1487.91		1487.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	138.363		139.500		3.70673		3.70550		35.0305		35.0347		8.8169		8.7996		5.4485		5.3776		1.000e-12		0.0208						9.95		0.514		11187		1		27.1714		27.1774		1487.86		1487.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	138.859		140.000		3.70561		3.70582		35.0294		35.0328		8.8059		8.8047		5.4547		5.3746		1.000e-12		0.0208						9.95		0.456		11212		1		27.1723		27.1752		1487.82		1487.82	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	139.354		140.500		3.70551		3.70590		35.0300		35.0349		8.8039		8.8031		5.4479		5.3733		1.000e-12		0.0205						9.95		0.420		11240		1		27.1731		27.1770		1487.82		1487.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	139.850		141.000		3.70500		3.70459		35.0290		35.0351		8.7994		8.7888		5.4414		5.3746		1.000e-12		0.0204						9.95		0.457		11268		1		27.1730		27.1795		1487.81		1487.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	140.346		141.500		3.70386		3.70329		35.0274		35.0363		8.7886		8.7735		5.4448		5.3729		1.000e-12		0.0208						9.95		0.480		11293		1		27.1735		27.1829		1487.78		1487.74	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	140.842		142.000		3.70183		3.69746		35.0241		35.0359		8.7700		8.7115		5.4530		5.3772		1.000e-12		0.0208						9.95		0.462		11319		1		27.1738		27.1923		1487.72		1487.51	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	141.337		142.500		3.69772		3.69539		35.0193		35.0264		8.7307		8.6987		5.4686		5.3837		1.000e-12		0.0208						9.95		0.457		11345		1		27.1763		27.1869		1487.57		1487.46	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	141.833		143.000		3.69514		3.69464		35.0166		35.0254		8.7057		8.6915		5.4788		5.4069		1.000e-12		0.0208						9.95		0.461		11371		1		27.1782		27.1872		1487.48		1487.44	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	142.329		143.500		3.69426		3.69387		35.0174		35.0283		8.6952		8.6801		5.4760		5.4083		1.000e-12		0.0208						9.95		0.453		11397		1		27.1804		27.1913		1487.46		1487.41	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	142.825		144.000		3.69289		3.68995		35.0161		35.0321		8.6817		8.6342		5.4759		5.3547		1.000e-12		0.0206						9.95		0.464		11424		1		27.1815		27.2016		1487.41		1487.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	143.321		144.500		3.68827		3.68418		35.0108		35.0300		8.6376		8.5744		5.4802		5.3787		1.000e-12		0.0208						9.95		0.521		11448		1		27.1843		27.2093		1487.25		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	143.816		145.000		3.68332		3.67936		35.0049		35.0191		8.5904		8.5337		5.4876		5.4278		1.000e-12		0.0208						9.95		0.537		11470		1		27.1871		27.2071		1487.07		1486.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	144.312		145.500		3.67925		3.67756		34.9998		35.0124		8.5518		8.5209		5.5051		5.4651		1.000e-12		0.0215						9.95		0.481		11493		1		27.1891		27.2038		1486.93		1486.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	144.808		146.000		3.67709		3.67615		34.9973		35.0086		8.5308		8.5094		5.5193		5.4691		1.000e-12		0.0211						9.95		0.379		11522		1		27.1905		27.2027		1486.86		1486.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	145.304		146.500		3.67459		3.67432		34.9938		35.0067		8.5075		8.4916		5.5365		5.4749		1.000e-12		0.0209						9.95		0.419		11555		1		27.1913		27.2040		1486.78		1486.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	145.800		147.000		3.67215		3.67171		34.9905		35.0054		8.4845		8.4648		5.5477		5.4796		1.000e-12		0.0209						9.95		0.548		11580		1		27.1923		27.2071		1486.70		1486.64	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	146.295		147.500		3.67024		3.66884		34.9870		35.0042		8.4673		8.4350		5.5569		5.4884		1.000e-12		0.0224						9.95		0.580		11600		1		27.1923		27.2107		1486.64		1486.54	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	146.791		148.000		3.66789		3.66546		34.9840		34.9980		8.4448		8.4048		5.5704		5.5056		1.000e-12		0.0210						9.95		0.489		11622		1		27.1934		27.2106		1486.56		1486.42	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	147.287		148.500		3.66484		3.66342		34.9789		34.9903		8.4172		8.3904		5.5918		5.5053		1.000e-12		0.0206						9.95		0.384		11651		1		27.1937		27.2068		1486.45		1486.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	147.783		149.000		3.66239		3.66253		34.9766		34.9886		8.3930		8.3824		5.6002		5.5258		1.000e-12		0.0210						9.95		0.418		11682		1		27.1956		27.2066		1486.37		1486.35	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	148.279		149.500		3.66132		3.66170		34.9759		34.9872		8.3820		8.3746		5.5970		5.5277		1.000e-12		0.0217						9.95		0.468		11709		1		27.1968		27.2068		1486.34		1486.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	148.774		150.000		3.66092		3.66149		34.9762		34.9856		8.3772		8.3738		5.6034		5.5238		1.000e-12		0.0216						9.95		0.472		11734		1		27.1977		27.2057		1486.33		1486.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	149.270		150.500		3.66127		3.66307		34.9780		34.9862		8.3789		8.3899		5.5988		5.5093		1.000e-12		0.0208						9.95		0.480		11759		1		27.1989		27.2036		1486.34		1486.40	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	149.766		151.000		3.66296		3.66514		34.9840		34.9925		8.3907		8.4055		5.5833		5.4864		1.000e-12		0.0211						9.95		0.522		11784		1		27.2018		27.2062		1486.40		1486.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	150.262		151.500		3.66473		3.66704		34.9898		34.9978		8.4035		8.4203		5.5640		5.4659		1.000e-12		0.0208						9.95		0.561		11805		1		27.2044		27.2080		1486.47		1486.54	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	150.757		152.000		3.66626		3.66800		34.9937		34.9997		8.4158		8.4284		5.5502		5.4619		1.000e-12		0.0208						9.95		0.512		11827		1		27.2055		27.2082		1486.53		1486.58	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	151.253		152.500		3.66815		3.67135		34.9997		35.0045		8.4297		8.4591		5.5357		5.4634		1.000e-12		0.0216						9.95		0.362		11855		1		27.2081		27.2072		1486.59		1486.71	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	151.749		153.000		3.67452		3.67818		35.0190		35.0207		8.4781		8.5156		5.4745		5.3992		1.000e-12		0.0211						9.95		0.340		11893		1		27.2157		27.2112		1486.81		1486.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	152.245		153.500		3.68147		3.68295		35.0359		35.0319		8.5352		8.5551		5.4120		5.3302		1.000e-12		0.0206						9.95		0.474		11923		1		27.2200		27.2138		1487.05		1487.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	152.741		154.000		3.68640		3.68995		35.0491		35.0376		8.5743		8.6238		5.3668		5.2920		1.000e-12		0.0208						9.95		0.558		11946		1		27.2243		27.2075		1487.22		1487.39	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	153.236		154.500		3.69203		3.69559		35.0611		35.0565		8.6220		8.6647		5.3266		5.2626		1.000e-12		0.0208						9.95		0.602		11966		1		27.2262		27.2159		1487.42		1487.57	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	153.732		155.000		3.69569		3.70009		35.0697		35.0671		8.6521		8.7017		5.2950		5.2382		1.000e-12		0.0202						9.95		0.585		11986		1		27.2282		27.2184		1487.55		1487.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	154.228		155.500		3.69920		3.70210		35.0784		35.0785		8.6806		8.7115		5.2677		5.2154		1.000e-12		0.0202						9.95		0.486		12008		1		27.2305		27.2257		1487.67		1487.79	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	154.724		156.000		3.70226		3.70460		35.0876		35.0904		8.7036		8.7258		5.2351		5.1757		1.000e-12		0.0202						9.95		0.341		12039		1		27.2342		27.2328		1487.78		1487.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	155.219		156.500		3.70599		3.70653		35.1008		35.1003		8.7298		8.7361		5.2059		5.1249		1.000e-12		0.0214						9.95		0.411		12074		1		27.2403		27.2390		1487.90		1487.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	155.715		157.000		3.70649		3.70655		35.1029		35.1017		8.7328		8.7346		5.1937		5.1043		1.000e-12		0.0208						9.95		0.525		12099		1		27.2415		27.2403		1487.92		1487.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	156.211		157.500		3.70668		3.70676		35.1036		35.1032		8.7339		8.7352		5.1953		5.1045		1.000e-12		0.0207						9.95		0.541		12121		1		27.2419		27.2414		1487.94		1487.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	156.707		158.000		3.70685		3.70707		35.1045		35.1051		8.7345		8.7362		5.1912		5.1132		1.000e-12		0.0209						9.95		0.509		12144		1		27.2425		27.2427		1487.95		1487.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	157.202		158.500		3.70709		3.70755		35.1059		35.1057		8.7354		8.7405		5.1840		5.1206		1.000e-12		0.0208						9.95		0.474		12168		1		27.2435		27.2425		1487.96		1487.98	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	157.698		159.000		3.70764		3.70804		35.1075		35.1080		8.7394		8.7432		5.1834		5.1196		1.000e-12		0.0213						9.95		0.425		12195		1		27.2441		27.2439		1487.99		1488.00	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	158.194		159.500		3.70780		3.70770		35.1079		35.1093		8.7405		8.7381		5.1850		5.1013		1.000e-12		0.0207						9.95		0.402		12225		1		27.2442		27.2457		1488.00		1487.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	158.690		160.000		3.70718		3.70709		35.1071		35.1095		8.7345		8.7311		5.1800		5.1051		1.000e-12		0.0203						9.95		0.448		12253		1		27.2445		27.2470		1487.98		1487.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	159.186		160.500		3.70688		3.70699		35.1078		35.1124		8.7303		8.7268		5.1763		5.1252		1.000e-12		0.0208						9.95		0.501		12279		1		27.2457		27.2499		1487.98		1487.97	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	159.681		161.000		3.70665		3.70625		35.1099		35.1173		8.7255		8.7138		5.1758		5.1179		1.000e-12		0.0208						9.95		0.523		12302		1		27.2482		27.2559		1487.97		1487.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	160.177		161.500		3.70594		3.70457		35.1124		35.1235		8.7151		8.6894		5.1695		5.0973		1.000e-12		0.0206						9.95		0.498		12325		1		27.2518		27.2645		1487.94		1487.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	160.673		162.000		3.70361		3.69902		35.1090		35.1191		8.6935		8.6346		5.1692		5.1161		1.000e-12		0.0208						9.95		0.423		12351		1		27.2525		27.2697		1487.87		1487.66	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	161.169		162.500		3.69814		3.69712		35.1047		35.1147		8.6394		8.6185		5.1879		5.1511		1.000e-12		0.0209						9.95		0.380		12382		1		27.2577		27.2688		1487.67		1487.60	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	161.664		163.000		3.69228		3.69129		35.0953		35.1173		8.5862		8.5535		5.2077		5.1367		1.000e-12		0.0211						9.95		0.425		12412		1		27.2587		27.2810		1487.47		1487.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	162.160		163.500		3.68337		3.67961		35.0811		35.1195		8.5052		8.4264		5.2227		5.1252		1.000e-12		0.0219						9.95		0.508		12438		1		27.2602		27.3026		1487.16		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	162.656		164.000		3.67543		3.67319		35.0758		35.0947		8.4254		8.3824		5.2385		5.1402		1.000e-12		0.0222						9.95		0.547		12460		1		27.2685		27.2899		1486.86		1486.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	163.152		164.500		3.67277		3.67220		35.0751		35.0889		8.3975		8.3776		5.2499		5.1640		1.000e-12		0.0232						9.95		0.514		12482		1		27.2722		27.2862		1486.76		1486.71	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	163.647		165.000		3.67190		3.67176		35.0742		35.0855		8.3889		8.3760		5.2501		5.1793		1.000e-12		0.0243						9.95		0.468		12507		1		27.2728		27.2837		1486.74		1486.70	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	164.143		165.500		3.67134		3.67198		35.0742		35.0853		8.3826		8.3783		5.2481		5.1736		1.000e-12		0.0244						9.95		0.490		12533		1		27.2738		27.2832		1486.72		1486.72	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	164.639		166.000		3.67146		3.67284		35.0761		35.0840		8.3817		8.3886		5.2475		5.1830		1.000e-12		0.0244						9.95		0.489		12557		1		27.2755		27.2805		1486.73		1486.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	165.135		166.500		3.67267		3.67391		35.0791		35.0875		8.3915		8.3962		5.2459		5.1822		1.000e-12		0.0244						9.95		0.360		12585		1		27.2762		27.2822		1486.78		1486.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	165.630		167.000		3.67389		3.67477		35.0823		35.0909		8.4010		8.4018		5.2415		5.1658		1.000e-12		0.0244						9.95		0.367		12623		1		27.2773		27.2839		1486.83		1486.84	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	166.126		167.500		3.67302		3.67347		35.0812		35.0918		8.3927		8.3867		5.2477		5.1554		1.000e-12		0.0244						9.95		0.545		12649		1		27.2777		27.2870		1486.80		1486.79	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	166.622		168.000		3.67248		3.67282		35.0810		35.0884		8.3868		8.3830		5.2567		5.1602		1.000e-12		0.0243						9.95		0.626		12669		1		27.2785		27.2849		1486.79		1486.78	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	167.118		168.500		3.67244		3.67305		35.0812		35.0884		8.3859		8.3852		5.2633		5.1720		1.000e-12		0.0244						9.95		0.590		12688		1		27.2788		27.2846		1486.79		1486.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	167.613		169.000		3.67257		3.67298		35.0819		35.0887		8.3864		8.3838		5.2593		5.1722		1.000e-12		0.0244						9.95		0.440		12711		1		27.2792		27.2850		1486.81		1486.80	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	168.109		169.500		3.67261		3.67291		35.0821		35.0878		8.3864		8.3838		5.2452		5.1539		1.000e-12		0.0244						9.95		0.369		12744		1		27.2794		27.2843		1486.81		1486.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	168.605		170.000		3.67258		3.67283		35.0819		35.0880		8.3860		8.3826		5.2397		5.1587		1.000e-12		0.0244						9.95		0.511		12772		1		27.2794		27.2846		1486.82		1486.82	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	169.101		170.500		3.67237		3.67280		35.0817		35.0874		8.3837		8.3826		5.2422		5.1645		1.000e-12		0.0244						9.95		0.582		12793		1		27.2795		27.2842		1486.82		1486.82	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	169.596		171.000		3.67242		3.67294		35.0819		35.0876		8.3838		8.3835		5.2427		5.1784		1.000e-12		0.0244						9.95		0.563		12814		1		27.2797		27.2842		1486.83		1486.83	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	170.092		171.500		3.67252		3.67305		35.0822		35.0879		8.3843		8.3843		5.2423		5.1942		1.000e-12		0.0244						9.95		0.488		12837		1		27.2798		27.2843		1486.84		1486.85	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	170.588		172.000		3.67264		3.67308		35.0825		35.0877		8.3850		8.3845		5.2446		5.2030		1.000e-12		0.0244						9.95		0.444		12863		1		27.2800		27.2841		1486.85		1486.85	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	171.083		172.500		3.67274		3.67318		35.0829		35.0878		8.3856		8.3852		5.2507		5.2030		1.000e-12		0.0245						9.95		0.464		12890		1		27.2801		27.2841		1486.86		1486.87	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	171.579		173.000		3.67285		3.67322		35.0831		35.0878		8.3862		8.3855		5.2549		5.1938		1.000e-12		0.0240						9.95		0.470		12915		1		27.2802		27.2841		1486.87		1486.87	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	172.075		173.500		3.67290		3.67326		35.0831		35.0878		8.3864		8.3857		5.2544		5.1609		1.000e-12		0.0240						9.95		0.446		12941		1		27.2802		27.2840		1486.88		1486.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	172.571		174.000		3.67300		3.67336		35.0836		35.0880		8.3869		8.3862		5.2495		5.1480		1.000e-12		0.0244						9.95		0.446		12969		1		27.2805		27.2841		1486.89		1486.89	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	173.066		174.500		3.67311		3.67349		35.0840		35.0883		8.3874		8.3871		5.2389		5.1608		1.000e-12		0.0244						9.95		0.531		12994		1		27.2807		27.2842		1486.90		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	173.562		175.000		3.67320		3.67361		35.0843		35.0887		8.3878		8.3878		5.2372		5.1630		1.000e-12		0.0244						9.95		0.622		13015		1		27.2809		27.2844		1486.91		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	174.058		175.500		3.67331		3.67369		35.0847		35.0894		8.3882		8.3876		5.2434		5.1611		1.000e-12		0.0239						9.95		0.642		13033		1		27.2812		27.2850		1486.92		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	174.554		176.000		3.67334		3.67371		35.0849		35.0892		8.3882		8.3878		5.2451		5.1593		1.000e-12		0.0240						9.95		0.575		13052		1		27.2813		27.2848		1486.93		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	175.049		176.500		3.67352		3.67424		35.0858		35.0903		8.3889		8.3921		5.2406		5.1583		1.000e-12		0.0240						9.95		0.466		13076		1		27.2820		27.2850		1486.94		1486.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	175.545		177.000		3.67413		3.67494		35.0880		35.0926		8.3930		8.3970		5.2300		5.1539		1.000e-12		0.0244						9.95		0.430		13104		1		27.2830		27.2861		1486.97		1486.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	176.041		177.500		3.67482		3.67514		35.0913		35.0963		8.3969		8.3953		5.2118		5.1346		1.000e-12		0.0244						9.95		0.494		13131		1		27.2850		27.2892		1487.00		1487.00	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	176.537		178.000		3.67473		3.67498		35.0921		35.0968		8.3949		8.3928		5.2040		5.1301		1.000e-12		0.0249						9.95		0.534		13153		1		27.2859		27.2900		1487.00		1487.00	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	177.032		178.500		3.67461		3.67473		35.0920		35.0958		8.3935		8.3909		5.2074		5.1442		1.000e-12		0.0246						9.95		0.538		13176		1		27.2861		27.2895		1487.00		1486.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	177.528		179.000		3.67451		3.67485		35.0920		35.0959		8.3921		8.3918		5.2073		5.1592		1.000e-12		0.0244						9.95		0.531		13198		1		27.2863		27.2894		1487.00		1487.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	178.024		179.500		3.67477		3.67555		35.0933		35.0977		8.3933		8.3973		5.2072		5.1549		1.000e-12		0.0244						9.95		0.510		13221		1		27.2871		27.2899		1487.02		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	178.520		180.000		3.67534		3.67593		35.0952		35.0991		8.3973		8.3996		5.2080		5.1459		1.000e-12		0.0244						9.95		0.482		13245		1		27.2880		27.2907		1487.04		1487.06	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	179.015		180.500		3.67577		3.67614		35.0965		35.1000		8.4003		8.4008		5.2009		5.1426		1.000e-12		0.0244						9.95		0.468		13271		1		27.2886		27.2912		1487.07		1487.07	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	179.511		181.000		3.67592		3.67627		35.0969		35.1004		8.4012		8.4016		5.2050		5.1361		1.000e-12		0.0248						9.95		0.509		13296		1		27.2888		27.2914		1487.08		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	180.007		181.500		3.67630		3.67674		35.0988		35.1022		8.4032		8.4045		5.2067		5.1251		1.000e-12		0.0244						9.95		0.548		13318		1		27.2899		27.2924		1487.09		1487.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	180.503		182.000		3.67656		3.67698		35.0998		35.1032		8.4048		8.4058		5.1998		5.1224		1.000e-12		0.0243						9.95		0.553		13340		1		27.2905		27.2929		1487.11		1487.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	180.998		182.500		3.67682		3.67724		35.1007		35.1043		8.4063		8.4071		5.1900		5.1323		1.000e-12		0.0244						9.95		0.538		13362		1		27.2910		27.2937		1487.13		1487.13	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	181.494		183.000		3.67701		3.67739		35.1015		35.1051		8.4073		8.4077		5.1881		5.1389		1.000e-12		0.0242						9.95		0.546		13384		1		27.2914		27.2942		1487.14		1487.14	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	181.990		183.500		3.67723		3.67792		35.1026		35.1069		8.4083		8.4114		5.1819		5.1272		1.000e-12		0.0242						9.95		0.564		13406		1		27.2921		27.2950		1487.15		1487.17	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	182.486		184.000		3.67772		3.67836		35.1048		35.1092		8.4111		8.4135		5.1750		5.1101		1.000e-12		0.0239						9.95		0.547		13427		1		27.2934		27.2965		1487.17		1487.19	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	182.981		184.500		3.67805		3.67849		35.1063		35.1102		8.4128		8.4136		5.1748		5.0982		1.000e-12		0.0232						9.95		0.502		13450		1		27.2943		27.2972		1487.19		1487.20	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	183.477		185.000		3.67826		3.67860		35.1073		35.1109		8.4139		8.4138		5.1684		5.0896		1.000e-12		0.0232						9.95		0.466		13475		1		27.2950		27.2978		1487.20		1487.21	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	183.973		185.500		3.67841		3.67869		35.1082		35.1116		8.4143		8.4139		5.1615		5.0873		1.000e-12		0.0233						9.95		0.487		13501		1		27.2956		27.2983		1487.21		1487.22	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	184.469		186.000		3.67850		3.67878		35.1089		35.1122		8.4143		8.4140		5.1571		5.0842		1.000e-12		0.0234						9.95		0.542		13524		1		27.2961		27.2988		1487.22		1487.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	184.964		186.500		3.67857		3.67886		35.1093		35.1130		8.4144		8.4138		5.1611		5.0875		1.000e-12		0.0232						9.95		0.559		13546		1		27.2964		27.2994		1487.23		1487.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	185.460		187.000		3.67863		3.67892		35.1099		35.1139		8.4143		8.4134		5.1644		5.1013		1.000e-12		0.0233						9.95		0.506		13568		1		27.2969		27.3002		1487.24		1487.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	185.956		187.500		3.67867		3.67891		35.1106		35.1142		8.4137		8.4127		5.1588		5.1004		1.000e-12		0.0232						9.95		0.443		13594		1		27.2976		27.3005		1487.25		1487.25	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	186.451		188.000		3.67865		3.67890		35.1108		35.1143		8.4132		8.4123		5.1568		5.0906		1.000e-12		0.0233						9.95		0.506		13620		1		27.2978		27.3006		1487.25		1487.25	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	186.947		188.500		3.67867		3.67894		35.1111		35.1147		8.4128		8.4120		5.1563		5.0951		1.000e-12		0.0232						9.95		0.598		13642		1		27.2981		27.3010		1487.26		1487.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	187.443		189.000		3.67870		3.67896		35.1114		35.1154		8.4126		8.4112		5.1552		5.0898		1.000e-12		0.0233						9.95		0.620		13661		1		27.2983		27.3017		1487.27		1487.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	187.939		189.500		3.67871		3.67896		35.1117		35.1157		8.4122		8.4107		5.1522		5.0819		1.000e-12		0.0232						9.95		0.569		13681		1		27.2986		27.3020		1487.28		1487.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	188.434		190.000		3.67873		3.67900		35.1124		35.1177		8.4114		8.4089		5.1459		5.0815		1.000e-12		0.0237						9.95		0.494		13704		1		27.2993		27.3038		1487.28		1487.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	188.930		190.500		3.67877		3.67909		35.1138		35.1192		8.4102		8.4082		5.1405		5.0688		1.000e-12		0.0233						9.95		0.471		13729		1		27.3006		27.3051		1487.29		1487.29	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	189.426		191.000		3.67885		3.67915		35.1153		35.1203		8.4092		8.4075		5.1308		5.0660		1.000e-12		0.0239						9.95		0.493		13754		1		27.3019		27.3061		1487.29		1487.29	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	189.922		191.500		3.67890		3.67918		35.1166		35.1205		8.4083		8.4073		5.1265		5.0783		1.000e-12		0.0237						9.95		0.496		13778		1		27.3031		27.3063		1487.30		1487.30	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	190.417		192.000		3.67894		3.67919		35.1170		35.1205		8.4080		8.4071		5.1300		5.0757		1.000e-12		0.0234						9.95		0.499		13803		1		27.3035		27.3064		1487.31		1487.31	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	190.913		192.500		3.67895		3.67917		35.1172		35.1218		8.4076		8.4054		5.1315		5.0638		1.000e-12		0.0234						9.95		0.534		13826		1		27.3037		27.3077		1487.31		1487.31	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	191.409		193.000		3.67892		3.67918		35.1180		35.1219		8.4063		8.4051		5.1331		5.0436		1.000e-12		0.0232						9.95		0.537		13848		1		27.3045		27.3078		1487.32		1487.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	191.905		193.500		3.67893		3.67914		35.1183		35.1231		8.4058		8.4033		5.1273		5.0298		1.000e-12		0.0231						9.95		0.510		13871		1		27.3048		27.3090		1487.33		1487.32	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	192.400		194.000		3.67891		3.67909		35.1190		35.1238		8.4048		8.4019		5.1175		5.0431		1.000e-12		0.0232						9.95		0.489		13895		1		27.3055		27.3097		1487.33		1487.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	192.896		194.500		3.67887		3.67907		35.1197		35.1241		8.4033		8.4011		5.1149		5.0499		1.000e-12		0.0232						9.95		0.483		13920		1		27.3063		27.3101		1487.33		1487.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	193.392		195.000		3.67883		3.67904		35.1203		35.1249		8.4020		8.3997		5.1114		5.0388		1.000e-12		0.0238						9.95		0.504		13944		1		27.3070		27.3110		1487.34		1487.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	193.887		195.500		3.67880		3.67894		35.1209		35.1252		8.4010		8.3981		5.1118		5.0335		1.000e-12		0.0238						9.95		0.546		13967		1		27.3076		27.3115		1487.34		1487.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	194.383		196.000		3.67872		3.67879		35.1212		35.1254		8.3996		8.3960		5.1128		5.0297		1.000e-12		0.0232						9.95		0.563		13989		1		27.3080		27.3119		1487.35		1487.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	194.879		196.500		3.67858		3.67883		35.1213		35.1250		8.3977		8.3966		5.1061		5.0261		1.000e-12		0.0232						9.95		0.526		14010		1		27.3084		27.3115		1487.35		1487.35	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	195.375		197.000		3.67858		3.67874		35.1215		35.1254		8.3973		8.3950		5.1044		5.0405		1.000e-12		0.0232						9.95		0.466		14035		1		27.3086		27.3121		1487.36		1487.35	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	195.870		197.500		3.67854		3.67870		35.1216		35.1249		8.3965		8.3949		5.1141		5.0490		1.000e-12		0.0232						9.95		0.454		14061		1		27.3089		27.3117		1487.36		1487.36	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	196.366		198.000		3.67853		3.67884		35.1217		35.1258		8.3960		8.3952		5.1216		5.0343		1.000e-12		0.0233						9.95		0.475		14087		1		27.3091		27.3124		1487.37		1487.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	196.862		198.500		3.67851		3.67841		35.1219		35.1262		8.3954		8.3900		5.1228		5.0305		1.000e-12		0.0234						9.95		0.478		14112		1		27.3093		27.3135		1487.37		1487.36	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	197.358		199.000		3.67824		3.67827		35.1217		35.1258		8.3924		8.3887		5.1142		5.0315		1.000e-12		0.0233						9.95		0.482		14137		1		27.3096		27.3133		1487.37		1487.36	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	197.853		199.500		3.67807		3.67824		35.1218		35.1257		8.3903		8.3882		5.1067		5.0436		1.000e-12		0.0231						9.95		0.513		14162		1		27.3100		27.3133		1487.37		1487.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	198.349		200.000		3.67797		3.67812		35.1218		35.1258		8.3890		8.3866		5.1026		5.0521		1.000e-12		0.0237						9.95		0.564		14184		1		27.3102		27.3137		1487.37		1487.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	198.845		200.500		3.67775		3.67782		35.1215		35.1262		8.3867		8.3827		5.1026		5.0520		1.000e-12		0.0235						9.95		0.573		14205		1		27.3103		27.3146		1487.37		1487.36	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	199.340		201.000		3.67747		3.67716		35.1209		35.1278		8.3841		8.3739		5.1031		5.0482		1.000e-12		0.0229						9.95		0.523		14226		1		27.3102		27.3172		1487.37		1487.34	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	199.836		201.500		3.67701		3.67655		35.1219		35.1271		8.3779		8.3679		5.1026		5.0366		1.000e-12		0.0240						9.95		0.457		14251		1		27.3120		27.3176		1487.36		1487.33	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	200.332		202.000		3.67664		3.67629		35.1215		35.1306		8.3741		8.3613		5.0996		5.0213		1.000e-12		0.0232						9.95		0.448		14279		1		27.3123		27.3213		1487.35		1487.31	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	200.828		202.500		3.67592		3.67543		35.1235		35.1322		8.3642		8.3502		5.0901		5.0038		1.000e-12		0.0228						9.95		0.482		14304		1		27.3154		27.3243		1487.33		1487.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	201.323		203.000		3.67531		3.67527		35.1253		35.1319		8.3556		8.3486		5.0818		5.0092		1.000e-12		0.0231						9.95		0.488		14329		1		27.3181		27.3243		1487.30		1487.29	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	201.819		203.500		3.67491		3.67485		35.1259		35.1327		8.3505		8.3431		5.0807		5.0284		1.000e-12		0.0232						9.95		0.462		14354		1		27.3193		27.3258		1487.29		1487.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	202.315		204.000		3.67437		3.67423		35.1270		35.1340		8.3434		8.3349		5.0827		5.0206		1.000e-12		0.0222						9.95		0.461		14381		1		27.3213		27.3281		1487.28		1487.25	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	202.811		204.500		3.67387		3.67401		35.1278		35.1339		8.3370		8.3324		5.0767		5.0205		1.000e-12		0.0230						9.95		0.515		14405		1		27.3229		27.3284		1487.26		1487.25	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	203.306		205.000		3.67372		3.67400		35.1286		35.1339		8.3344		8.3321		5.0774		5.0278		1.000e-12		0.0231						9.95		0.557		14428		1		27.3239		27.3285		1487.26		1487.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	203.802		205.500		3.67366		3.67399		35.1290		35.1342		8.3330		8.3314		5.0800		5.0322		1.000e-12		0.0231						9.95		0.537		14449		1		27.3245		27.3288		1487.26		1487.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	204.298		206.000		3.67330		3.67343		35.1288		35.1367		8.3292		8.3227		5.0760		5.0171		1.000e-12		0.0231						9.95		0.460		14473		1		27.3249		27.3321		1487.26		1487.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	204.793		206.500		3.67265		3.67274		35.1288		35.1354		8.3220		8.3164		5.0762		4.9921		1.000e-12		0.0222						9.95		0.444		14501		1		27.3260		27.3320		1487.24		1487.23	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	205.289		207.000		3.67257		3.67293		35.1304		35.1350		8.3194		8.3186		5.0813		5.0024		1.000e-12		0.0230						9.95		0.490		14526		1		27.3276		27.3314		1487.24		1487.24	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	205.785		207.500		3.67299		3.67319		35.1320		35.1354		8.3219		8.3207		5.0817		5.0181		1.000e-12		0.0221						9.95		0.518		14550		1		27.3285		27.3314		1487.26		1487.26	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	206.281		208.000		3.67317		3.67349		35.1326		35.1364		8.3230		8.3226		5.0738		5.0203		1.000e-12		0.0228						9.95		0.529		14573		1		27.3288		27.3319		1487.27		1487.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	206.776		208.500		3.67306		3.67352		35.1338		35.1387		8.3204		8.3204		5.0736		5.0236		1.000e-12		0.0231						9.95		0.524		14595		1		27.3302		27.3340		1487.27		1487.28	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	207.272		209.000		3.67275		3.67311		35.1346		35.1401		8.3160		8.3144		5.0867		5.0302		1.000e-12		0.0226						9.95		0.471		14619		1		27.3315		27.3361		1487.27		1487.27	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	207.768		209.500		3.67178		3.67205		35.1352		35.1443		8.3049		8.2987		5.0863		5.0280		1.000e-12		0.0219						9.95		0.392		14648		1		27.3336		27.3418		1487.23		1487.22	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	208.264		210.000		3.66991		3.67047		35.1353		35.1449		8.2845		8.2810		5.0830		5.0117		1.000e-12		0.0212						9.95		0.434		14678		1		27.3369		27.3449		1487.17		1487.16	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	208.759		210.500		3.66840		3.66923		35.1383		35.1472		8.2652		8.2651		5.0745		5.0112		1.000e-12		0.0220						9.95		0.514		14703		1		27.3422		27.3492		1487.10		1487.12	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	209.255		211.000		3.66834		3.66883		35.1386		35.1452		8.2639		8.2627		5.0789		5.0183		1.000e-12		0.0229						9.95		0.527		14726		1		27.3427		27.3480		1487.11		1487.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	209.751		211.500		3.66787		3.66856		35.1390		35.1460		8.2584		8.2588		5.0854		5.0168		1.000e-12		0.0230						9.95		0.503		14749		1		27.3438		27.3492		1487.10		1487.11	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	210.246		212.000		3.66765		3.66807		35.1393		35.1450		8.2555		8.2542		5.0959		5.0078		1.000e-12		0.0221						9.95		0.505		14773		1		27.3445		27.3492		1487.09		1487.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	210.742		212.500		3.66745		3.66794		35.1391		35.1452		8.2533		8.2524		5.0949		5.0035		1.000e-12		0.0219						9.95		0.527		14796		1		27.3446		27.3496		1487.10		1487.10	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	211.238		213.000		3.66678		3.66746		35.1397		35.1461		8.2453		8.2462		5.0878		4.9966		1.000e-12		0.0214						9.95		0.520		14819		1		27.3463		27.3512		1487.07		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	211.734		213.500		3.66656		3.66697		35.1397		35.1450		8.2426		8.2417		5.0870		5.0021		1.000e-12		0.0220						9.95		0.478		14843		1		27.3468		27.3511		1487.07		1487.07	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	212.229		214.000		3.66635		3.66681		35.1397		35.1447		8.2402		8.2401		5.0877		5.0241		1.000e-12		0.0228						9.95		0.436		14870		1		27.3471		27.3511		1487.07		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	212.725		214.500		3.66630		3.66669		35.1397		35.1445		8.2395		8.2388		5.0883		5.0320		1.000e-12		0.0256						9.95		0.426		14898		1		27.3472		27.3511		1487.08		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	213.221		215.000		3.66620		3.66660		35.1395		35.1442		8.2383		8.2378		5.0887		5.0271		1.000e-12		0.0221						9.95		0.462		14925		1		27.3473		27.3511		1487.08		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	213.716		215.500		3.66619		3.66658		35.1394		35.1443		8.2380		8.2374		5.0899		5.0102		1.000e-12		0.0230						9.95		0.504		14950		1		27.3472		27.3512		1487.09		1487.09	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	214.212		216.000		3.66581		3.66635		35.1393		35.1453		8.2338		8.2336		5.0914		4.9996		1.000e-12		0.0231						9.95		0.521		14973		1		27.3478		27.3526		1487.08		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	214.708		216.500		3.66549		3.66588		35.1393		35.1451		8.2302		8.2285		5.0921		5.0143		1.000e-12		0.0221						9.95		0.496		14996		1		27.3484		27.3532		1487.07		1487.08	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	215.204		217.000		3.66424		3.66481		35.1403		35.1470		8.2156		8.2150		5.0916		5.0311		1.000e-12		0.0220						9.95		0.440		15022		1		27.3514		27.3567		1487.03		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	215.699		217.500		3.66389		3.66406		35.1405		35.1456		8.2114		8.2082		5.0979		5.0281		1.000e-12		0.0221						9.95		0.457		15050		1		27.3522		27.3566		1487.02		1487.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	216.195		218.000		3.66356		3.66395		35.1403		35.1451		8.2079		8.2072		5.0996		5.0080		1.000e-12		0.0236						9.95		0.540		15074		1		27.3525		27.3565		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	216.691		218.500		3.66347		3.66391		35.1402		35.1450		8.2068		8.2067		5.0986		4.9971		1.000e-12		0.0237						9.95		0.580		15095		1		27.3526		27.3564		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	217.186		219.000		3.66324		3.66373		35.1398		35.1461		8.2045		8.2033		5.0959		5.0113		1.000e-12		0.0234						9.95		0.543		15116		1		27.3527		27.3578		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	217.682		219.500		3.66292		3.66334		35.1404		35.1452		8.2002		8.1998		5.0913		5.0269		1.000e-12		0.0232						9.95		0.459		15140		1		27.3538		27.3577		1487.01		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	218.178		220.000		3.66281		3.66320		35.1403		35.1449		8.1989		8.1985		5.0892		5.0311		1.000e-12		0.0235						9.95		0.405		15169		1		27.3539		27.3576		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	218.673		220.500		3.66278		3.66316		35.1401		35.1447		8.1985		8.1980		5.0925		5.0326		1.000e-12		0.0242						9.95		0.422		15198		1		27.3539		27.3575		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	219.169		221.000		3.66281		3.66318		35.1400		35.1445		8.1987		8.1982		5.1003		5.0291		1.000e-12		0.0232						9.95		0.475		15225		1		27.3537		27.3574		1487.03		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	219.665		221.500		3.66284		3.66322		35.1401		35.1445		8.1987		8.1983		5.1048		5.0245		1.000e-12		0.0232						9.95		0.521		15249		1		27.3538		27.3574		1487.04		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	220.161		222.000		3.66283		3.66319		35.1401		35.1446		8.1983		8.1977		5.1017		5.0349		1.000e-12		0.0247						9.95		0.520		15272		1		27.3539		27.3575		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	220.656		222.500		3.66278		3.66313		35.1401		35.1447		8.1975		8.1966		5.0985		5.0311		1.000e-12		0.0248						9.95		0.504		15295		1		27.3540		27.3578		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	221.152		223.000		3.66254		3.66290		35.1407		35.1450		8.1941		8.1937		5.0947		5.0333		1.000e-12		0.0248						9.95		0.494		15319		1		27.3550		27.3584		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	221.648		223.500		3.66243		3.66272		35.1407		35.1448		8.1927		8.1918		5.0923		5.0333		1.000e-12		0.0256						9.95		0.473		15344		1		27.3552		27.3585		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	222.143		224.000		3.66241		3.66275		35.1405		35.1446		8.1924		8.1920		5.0884		5.0231		1.000e-12		0.0242						9.95		0.462		15370		1		27.3551		27.3583		1487.06		1487.06	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	222.639		224.500		3.66199		3.66243		35.1402		35.1456		8.1880		8.1874		5.0872		5.0310		1.000e-12		0.0239						9.95		0.497		15396		1		27.3555		27.3598		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	223.135		225.000		3.66181		3.66217		35.1407		35.1450		8.1854		8.1849		5.0965		5.0406		1.000e-12		0.0244						9.95		0.539		15419		1		27.3563		27.3598		1487.05		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	223.631		225.500		3.66156		3.66201		35.1407		35.1452		8.1825		8.1827		5.1009		5.0427		1.000e-12		0.0243						9.95		0.532		15440		1		27.3567		27.3603		1487.04		1487.05	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	224.126		226.000		3.66129		3.66161		35.1408		35.1461		8.1792		8.1774		5.0940		5.0315		1.000e-12		0.0248						9.95		0.476		15464		1		27.3574		27.3618		1487.04		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	224.622		226.500		3.66067		3.66102		35.1408		35.1453		8.1724		8.1716		5.0925		5.0199		1.000e-12		0.0254						9.95		0.410		15492		1		27.3583		27.3620		1487.02		1487.02	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	225.118		227.000		3.66053		3.66081		35.1402		35.1448		8.1712		8.1696		5.0948		5.0213		1.000e-12		0.0256						9.95		0.393		15522		1		27.3581		27.3619		1487.03		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	225.613		227.500		3.66037		3.66068		35.1403		35.1448		8.1691		8.1679		5.0928		5.0158		1.000e-12		0.0247						9.95		0.467		15551		1		27.3585		27.3622		1487.03		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	226.109		228.000		3.66017		3.66062		35.1403		35.1453		8.1668		8.1665		5.0945		5.0080		1.000e-12		0.0273						9.95		0.537		15575		1		27.3589		27.3628		1487.02		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	226.605		228.500		3.66001		3.66037		35.1407		35.1450		8.1645		8.1640		5.0956		5.0187		1.000e-12		0.0268						9.95		0.568		15596		1		27.3595		27.3629		1487.03		1487.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	227.101		229.000		3.66000		3.66038		35.1404		35.1446		8.1643		8.1642		5.0968		5.0272		1.000e-12		0.0269						9.95		0.571		15617		1		27.3593		27.3626		1487.03		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	227.596		229.500		3.65987		3.66031		35.1400		35.1459		8.1632		8.1619		5.0984		5.0305		1.000e-12		0.0281						9.95		0.546		15638		1		27.3591		27.3640		1487.04		1487.04	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	228.092		230.000		3.65913		3.65941		35.1411		35.1460		8.1539		8.1519		5.0950		5.0288		1.000e-12		0.0262						9.95		0.482		15661		1		27.3614		27.3656		1487.01		1487.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	228.588		230.500		3.65885		3.65913		35.1405		35.1448		8.1512		8.1500		5.0937		5.0378		1.000e-12		0.0262						9.95		0.429		15689		1		27.3614		27.3649		1487.01		1487.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	229.083		231.000		3.65875		3.65901		35.1403		35.1454		8.1502		8.1479		5.0943		5.0416		1.000e-12		0.0262						9.95		0.464		15716		1		27.3613		27.3657		1487.01		1487.01	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	229.579		231.500		3.65799		3.65832		35.1399		35.1466		8.1422		8.1390		5.1046		5.0459		1.000e-12		0.0264						9.95		0.487		15741		1		27.3623		27.3681		1486.99		1486.99	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	230.075		232.000		3.65718		3.65738		35.1408		35.1462		8.1325		8.1291		5.1121		5.0454		1.000e-12		0.0259						9.95		0.440		15766		1		27.3644		27.3692		1486.96		1486.96	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	230.570		232.500		3.65671		3.65682		35.1395		35.1458		8.1284		8.1233		5.1087		5.0400		1.000e-12		0.0268						9.95		0.438		15795		1		27.3640		27.3698		1486.96		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	231.066		233.000		3.65594		3.65614		35.1392		35.1461		8.1202		8.1155		5.1122		5.0323		1.000e-12		0.0262						9.95		0.511		15820		1		27.3651		27.3712		1486.93		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	231.562		233.500		3.65570		3.65608		35.1400		35.1453		8.1166		8.1154		5.1193		5.0320		1.000e-12		0.0269						9.95		0.551		15842		1		27.3663		27.3706		1486.93		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	232.058		234.000		3.65566		3.65604		35.1403		35.1449		8.1157		8.1152		5.1202		5.0450		1.000e-12		0.0267						9.95		0.519		15864		1		27.3666		27.3703		1486.93		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	232.553		234.500		3.65569		3.65591		35.1402		35.1452		8.1159		8.1132		5.1135		5.0574		1.000e-12		0.0257						9.95		0.440		15890		1		27.3665		27.3709		1486.94		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	233.049		235.000		3.65534		3.65546		35.1395		35.1458		8.1125		8.1076		5.1081		5.0428		1.000e-12		0.0265						9.95		0.436		15918		1		27.3665		27.3721		1486.94		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	233.545		235.500		3.65476		3.65503		35.1401		35.1451		8.1054		8.1035		5.1141		5.0256		1.000e-12		0.0268						9.95		0.534		15944		1		27.3680		27.3722		1486.92		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	234.040		236.000		3.65449		3.65507		35.1399		35.1461		8.1027		8.1026		5.1153		5.0170		1.000e-12		0.0269						9.95		0.603		15964		1		27.3683		27.3731		1486.92		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	234.536		236.500		3.65423		3.65459		35.1409		35.1459		8.0985		8.0974		5.1112		5.0379		1.000e-12		0.0285						9.95		0.579		15984		1		27.3697		27.3738		1486.91		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	235.032		237.000		3.65412		3.65440		35.1404		35.1459		8.0977		8.0951		5.1076		5.0503		1.000e-12		0.0266						9.95		0.481		16006		1		27.3694		27.3741		1486.91		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	235.527		237.500		3.65396		3.65402		35.1397		35.1453		8.0964		8.0914		5.1110		5.0443		1.000e-12		0.0257						9.95		0.419		16034		1		27.3691		27.3743		1486.92		1486.90	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	236.023		238.000		3.65373		3.65388		35.1401		35.1451		8.0933		8.0899		5.1103		5.0422		1.000e-12		0.0258						9.95		0.440		16063		1		27.3698		27.3743		1486.91		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	236.519		238.500		3.65364		3.65383		35.1402		35.1451		8.0920		8.0892		5.1030		5.0370		1.000e-12		0.0265						9.95		0.462		16089		1		27.3701		27.3744		1486.92		1486.91	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	237.015		239.000		3.65361		3.65382		35.1405		35.1448		8.0911		8.0891		5.1105		5.0471		1.000e-12		0.0271						9.95		0.449		16115		1		27.3705		27.3742		1486.92		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	237.510		239.500		3.65362		3.65383		35.1406		35.1449		8.0909		8.0888		5.1093		5.0534		1.000e-12		0.0268						9.95		0.448		16142		1		27.3706		27.3743		1486.93		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	238.006		240.000		3.65358		3.65379		35.1405		35.1447		8.0902		8.0884		5.1127		5.0550		1.000e-12		0.0272						9.95		0.492		16168		1		27.3707		27.3742		1486.94		1486.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	238.502		240.500		3.65348		3.65371		35.1405		35.1453		8.0890		8.0867		5.1135		5.0481		1.000e-12		0.0259						9.95		0.535		16191		1		27.3708		27.3750		1486.94		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	238.997		241.000		3.65337		3.65360		35.1406		35.1452		8.0875		8.0853		5.1145		5.0382		1.000e-12		0.0263						9.95		0.573		16213		1		27.3711		27.3751		1486.94		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	239.493		241.500		3.65318		3.65349		35.1406		35.1454		8.0852		8.0837		5.1195		5.0390		1.000e-12		0.0286						9.95		0.599		16233		1		27.3714		27.3755		1486.94		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	239.989		242.000		3.65296		3.65322		35.1407		35.1458		8.0824		8.0803		5.1197		5.0487		1.000e-12		0.0269						9.95		0.568		16253		1		27.3720		27.3763		1486.94		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	240.484		242.500		3.65294		3.65314		35.1407		35.1450		8.0820		8.0799		5.1178		5.0514		1.000e-12		0.0262						9.95		0.448		16277		1		27.3721		27.3757		1486.95		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	240.980		243.000		3.65292		3.65309		35.1409		35.1453		8.0813		8.0788		5.1230		5.0572		1.000e-12		0.0260						9.95		0.344		16310		1		27.3723		27.3761		1486.95		1486.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	241.476		243.500		3.65270		3.65278		35.1408		35.1455		8.0789		8.0750		5.1267		5.0485		1.000e-12		0.0275						9.95		0.450		16342		1		27.3726		27.3769		1486.95		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	241.972		244.000		3.65245		3.65267		35.1408		35.1453		8.0760		8.0739		5.1239		5.0492		1.000e-12		0.0264						9.95		0.539		16365		1		27.3730		27.3769		1486.95		1486.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	242.467		244.500		3.65233		3.65254		35.1409		35.1459		8.0743		8.0716		5.1239		5.0566		1.000e-12		0.0264						9.95		0.553		16387		1		27.3734		27.3777		1486.95		1486.95	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	242.963		245.000		3.65205		3.65226		35.1407		35.1462		8.0713		8.0681		5.1257		5.0569		1.000e-12		0.0267						9.95		0.524		16409		1		27.3737		27.3784		1486.95		1486.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	243.459		245.500		3.65175		3.65163		35.1407		35.1468		8.0678		8.0605		5.1169		5.0652		1.000e-12		0.0256						9.95		0.489		16433		1		27.3742		27.3801		1486.94		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	243.954		246.000		3.65155		3.65140		35.1408		35.1463		8.0654		8.0583		5.1190		5.0744		1.000e-12		0.0253						9.95		0.463		16458		1		27.3746		27.3801		1486.94		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	244.450		246.500		3.65138		3.65119		35.1413		35.1461		8.0629		8.0560		5.1317		5.0666		1.000e-12		0.0268						9.95		0.437		16485		1		27.3754		27.3802		1486.94		1486.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	244.946		247.000		3.65104		3.65025		35.1410		35.1483		8.0593		8.0435		5.1349		5.0542		1.000e-12		0.0263						9.95		0.439		16513		1		27.3757		27.3838		1486.93		1486.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	245.441		247.500		3.65032		3.64940		35.1408		35.1475		8.0515		8.0350		5.1260		5.0460		1.000e-12		0.0265						9.95		0.499		16539		1		27.3768		27.3845		1486.91		1486.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	245.937		248.000		3.64937		3.64913		35.1400		35.1470		8.0419		8.0323		5.1174		5.0454		1.000e-12		0.0263						9.95		0.575		16561		1		27.3776		27.3845		1486.88		1486.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	246.433		248.500		3.64884		3.64898		35.1411		35.1469		8.0349		8.0305		5.1187		5.0525		1.000e-12		0.0266						9.95		0.622		16581		1		27.3795		27.3847		1486.87		1486.86	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	246.929		249.000		3.64886		3.64917		35.1415		35.1452		8.0344		8.0340		5.1241		5.0531		1.000e-12		0.0256						9.95		0.599		16600		1		27.3798		27.3828		1486.88		1486.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	247.424		249.500		3.64887		3.64911		35.1415		35.1465		8.0343		8.0318		5.1287		5.0574		1.000e-12		0.0256						9.95		0.482		16622		1		27.3799		27.3842		1486.88		1486.88	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	247.920		250.000		3.64875		3.64801		35.1415		35.1490		8.0329		8.0174		5.1374		5.0836		1.000e-12		0.0270						9.95		0.357		16652		1		27.3801		27.3883		1486.89		1486.84	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	248.416		250.500		3.64793		3.64717		35.1413		35.1478		8.0240		8.0093		5.1369		5.0840		1.000e-12		0.0267						9.95		0.387		16686		1		27.3813		27.3886		1486.86		1486.81	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	248.911		251.000		3.64678		3.64616		35.1402		35.1497		8.0125		7.9964		5.1275		5.0700		1.000e-12		0.0273						9.95		0.448		16715		1		27.3822		27.3921		1486.82		1486.77	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	249.407		251.500		3.64562		3.64515		35.1401		35.1484		7.9999		7.9866		5.1216		5.0601		1.000e-12		0.0269						9.95		0.513		16740		1		27.3840		27.3925		1486.78		1486.74	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	249.903		252.000		3.64442		3.64471		35.1391		35.1488		7.9878		7.9813		5.1281		5.0607		1.000e-12		0.0265						9.95		0.584		16762		1		27.3850		27.3936		1486.74		1486.73	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	250.398		252.500		3.64322		3.64395		35.1403		35.1504		7.9736		7.9713		5.1443		5.0696		1.000e-12		0.0268						9.88		0.610		16781		1		27.3881		27.3964		1486.70		1486.70	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	250.894		253.000		3.64197		3.64251		35.1403		35.1511		7.9599		7.9549		5.1512		5.0803		1.000e-12		0.0255						9.46		0.558		16801		1		27.3902		27.3994		1486.66		1486.65	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	251.390		253.500		3.64121		3.64081		35.1397		35.1519		7.9522		7.9358		5.1461		5.0867		1.000e-12		0.0254						8.98		0.460		16825		1		27.3908		27.4028		1486.64		1486.59	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	251.886		254.000		3.63970		3.63796		35.1374		35.1543		7.9380		7.9025		5.1404		5.0917		1.000e-12		0.0261						8.48		0.405		16854		1		27.3912		27.4098		1486.59		1486.47	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	252.381		254.500		3.63641		3.63505		35.1360		35.1528		7.9040		7.8726		5.1470		5.0941		1.000e-12		0.0255						8.00		0.432		16883		1		27.3951		27.4131		1486.47		1486.37	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	252.877		255.000		3.63291		3.63318		35.1332		35.1530		7.8690		7.8522		5.1628		5.0964		1.000e-12		0.0247						7.51		0.485		16909		1		27.3982		27.4163		1486.34		1486.30	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	253.373		255.500		3.63032		3.63103		35.1343		35.1548		7.8399		7.8271		5.1692		5.1022		1.000e-12		0.0244						7.02		0.512		16933		1		27.4034		27.4214		1486.24		1486.21	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	253.868		256.000		3.62596		3.62658		35.1344		35.1578		7.7928		7.7762		5.1767		5.0983		1.000e-12		0.0235						6.53		0.514		16956		1		27.4105		27.4313		1486.07		1486.03	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	254.364		256.500		3.62384		3.62474		35.1357		35.1533		7.7684		7.7607		5.1845		5.1085		1.000e-12		0.0232						6.04		0.513		16980		1		27.4151		27.4301		1485.98		1485.98	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	254.860		257.000		3.62237		3.62303		35.1352		35.1496		7.7529		7.7458		5.1837		5.1202		1.000e-12		0.0229						5.55		0.461		17004		1		27.4170		27.4294		1485.93		1485.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	255.355		257.500		3.62187		3.62256		35.1363		35.1466		7.7463		7.7435		5.1818		5.1322		1.000e-12		0.0229						5.02		0.291		17037		1		27.4189		27.4273		1485.92		1485.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	255.851		258.000		3.62139		3.62235		35.1369		35.1450		7.7403		7.7425		5.1766		5.1327		1.000e-12		0.0237						4.53		0.277		17086		1		27.4202		27.4263		1485.90		1485.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	256.347		258.500		3.62140		3.62208		35.1369		35.1448		7.7401		7.7395		5.1796		5.1371		1.000e-12		0.0237						4.07		0.335		17122		1		27.4202		27.4266		1485.91		1485.92	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	256.842		259.000		3.62148		3.62211		35.1374		35.1438		7.7403		7.7406		5.1851		5.1420		1.000e-12		0.0223						3.55		0.241		17164		1		27.4206		27.4256		1485.92		1485.93	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	257.338		259.500		3.62153		3.62209		35.1375		35.1434		7.7404		7.7406		5.1817		5.1205		1.000e-12		0.0232						3.07		0.218		17220		1		27.4207		27.4253		1485.93		1485.94	
+2018	01	21	06	08	00	2018_26DA_01/2018		58.05517	9.75017	257.834		260.000		3.62142		3.62199		35.1375		35.1429		7.7390		7.7398		5.1803		5.1442		1.000e-12		0.0251						2.58		0.104		17270		1		27.4209		27.4250		1485.93		1485.94	

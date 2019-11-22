@@ -1,0 +1,534 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-03-18
+//METADATA;STIME;22:23
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;347V
+//METADATA;CRUISE_NO;SMHI-02-2018
+//METADATA;SERNO;0066
+//METADATA;STATN;W Landskrona
+//METADATA;LATIT;5551.99
+//METADATA;LONGI;01244.88
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20180318_2223_34_02_0066.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20180318_347V_0066.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\2018\ME18D066.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.6.26
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Mar 18 2018 22:23:47
+//INSTRUMENT_METADATA;* NMEA Latitude = 55 51.99 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 012 44.88 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Mar 18 2018  22:23:47
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  W Landskrona
+//INSTRUMENT_METADATA;** Operator:  SSip
+//INSTRUMENT_METADATA;** Ship: MERI
+//INSTRUMENT_METADATA;** Average sound velocity: 1461.23 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sun, 18 Mar 2018 22:57:15 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183402-0066
+//INSTRUMENT_METADATA;** Cruise: SMHI-02-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Mar 18 2018 22:23:47
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 95                          
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 55.8665
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 55.8665
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =       1562,       3990       
+//INSTRUMENT_METADATA;# span 1 =      0.500,     47.500       
+//INSTRUMENT_METADATA;# span 2 =     0.8273,     6.1648       
+//INSTRUMENT_METADATA;# span 3 =     0.8308,     6.1649       
+//INSTRUMENT_METADATA;# span 4 =    -0.0240,     0.0793       
+//INSTRUMENT_METADATA;# span 5 =   0.874039,   3.303089       
+//INSTRUMENT_METADATA;# span 6 =   0.874152,   3.303148       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    5.88951,    9.19161       
+//INSTRUMENT_METADATA;# span 9 =    5.85697,    9.21137       
+//INSTRUMENT_METADATA;# span 10 =       3.23,      49.12      
+//INSTRUMENT_METADATA;# span 11 =     0.3212,     1.4069      
+//INSTRUMENT_METADATA;# span 12 =     0.2215,     0.3744      
+//INSTRUMENT_METADATA;# span 13 = -5.723e-06, 3.1511e-01      
+//INSTRUMENT_METADATA;# span 14 =     0.4210,     6.0884      
+//INSTRUMENT_METADATA;# span 15 =     9.1957,    33.3093      
+//INSTRUMENT_METADATA;# span 16 =     9.1951,    33.3097      
+//INSTRUMENT_METADATA;# span 17 =    -0.0592,     0.5649      
+//INSTRUMENT_METADATA;# span 18 =     7.3301,    26.1964      
+//INSTRUMENT_METADATA;# span 19 =     7.3297,    26.1966      
+//INSTRUMENT_METADATA;# span 20 =      0.495,     47.063      
+//INSTRUMENT_METADATA;# span 21 =      0.506,     47.353      
+//INSTRUMENT_METADATA;# span 22 =     -0.031,      0.543      
+//INSTRUMENT_METADATA;# span 23 =    1419.59,    1474.04      
+//INSTRUMENT_METADATA;# span 24 =    1419.62,    1474.04      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Mar 18 2018 22:23:48 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2126</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Apr-17</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.9378e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5109</offset>
+//INSTRUMENT_METADATA;#         <A>-3.0341e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4453e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.6131e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.3200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2127</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>22-Apr-17</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.6210e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5213</offset>
+//INSTRUMENT_METADATA;#         <A>-3.8815e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.7027e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.4168e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.0400</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Mar 18 2018 22:56:56, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.hex C:\ctd\temp\SBE09_1044_20180318_2223_34_02_0066.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Mar 18 2018 22:56:59, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Mar 18 2018 22:57:01, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Mar 18 2018 22:57:03, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Mar 18 2018 22:57:04, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 11, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Mar 18 2018 22:57:06, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Mar 18 2018 22:57:08, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Mar 18 2018 22:57:10, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20180318_2223_34_02_0066.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	0.506		0.500		0.88408		0.88609		9.3000		9.3156		1.0135		1.0371		9.1623		9.1907		2.785e-01		0.8017		0.4210000		0.2380		49.12		0.139		1562		1		7.4145		7.4274		1419.85		1419.98	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	1.011		1.000		0.88252		0.88203		9.2753		9.2627		1.0366		1.0602		9.1724		9.1925		3.151e-01		0.7905		0.4792000		0.2690		48.83		0.296		1604		1		7.3950		7.3853		1419.93		1420.03	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	1.517		1.500		0.88059		0.87933		9.2527		9.2315		1.0390		1.0619		9.1747		9.2055		1.456e-01		0.8244		0.5065000		0.2732		48.67		0.376		1639		1		7.3769		7.3602		1419.92		1420.00	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	2.022		2.000		0.87570		0.87609		9.1978		9.1978		1.0376		1.0522		9.1601		9.1970		5.875e-02		0.7926		0.5200000		0.2904		48.15		0.387		1670		1		7.3327		7.3330		1419.85		1419.92	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	2.528		2.500		0.87462		0.87544		9.1961		9.1958		1.0015		1.0339		9.1598		9.1926		1.334e-02		0.7780		0.5103000		0.2474		47.60		0.371		1702		1		7.3308		7.3311		1419.68		1419.84	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	3.033		3.000		0.87404		0.87417		9.1957		9.1951		0.9808		0.9876		9.1641		9.1919		8.741e-03		0.7625		0.5485000		0.2955		47.05		0.379		1734		1		7.3301		7.3297		1419.59		1419.62	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	3.539		3.500		0.87426		0.87415		9.1964		9.1957		0.9864		0.9848		9.1661		9.1825		5.196e-03		0.8036		0.5226000		0.2908		46.53		0.377		1765		1		7.3308		7.3302		1419.62		1419.62	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	4.044		4.000		0.87657		0.87603		9.2113		9.2078		1.0235		1.0152		9.1916		9.1989		9.771e-03		0.7748		0.5233000		0.2855		46.00		0.358		1798		1		7.3434		7.3404		1419.83		1419.79	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	4.550		4.500		0.88802		0.88794		9.3207		9.3202		1.0902		1.0886		9.1835		9.1859		5.443e-04		0.7692		0.5488000		0.2784		45.49		0.351		1832		1		7.4323		7.4319		1420.30		1420.30	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	5.055		5.000		0.89949		0.90001		9.4611		9.4670		1.0548		1.0547		9.1041		9.1340		3.611e-03		0.8226		0.5809000		0.2682		44.93		0.338		1867		1		7.5446		7.5493		1420.33		1420.33	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	5.561		5.500		0.91693		0.91640		9.7183		9.7073		0.8639		0.8795		9.1272		9.1808		-5.723e-06		0.9091		0.5764000		0.3349		44.46		0.368		1902		1		7.7483		7.7397		1419.76		1419.82	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	6.066		6.000		0.91973		0.91974		9.7617		9.7606		0.8273		0.8308		9.1647		9.2114		1.000e-12		0.9607		0.5348000		0.2881		44.00		0.395		1933		1		7.7825		7.7817		1419.65		1419.66	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	6.571		6.500		0.92052		0.92053		9.7653		9.7651		0.8440		0.8448		9.1447		9.1727		1.000e-12		1.0074		0.5514000		0.2388		43.49		0.417		1962		1		7.7857		7.7856		1419.74		1419.74	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	7.077		7.000		0.92112		0.92068		9.7687		9.7661		0.8547		0.8470		9.1635		9.1816		1.000e-12		1.0173		0.5204000		0.2871		43.04		0.432		1991		1		7.7886		7.7864		1419.80		1419.76	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	7.582		7.500		0.92456		0.92518		9.7905		9.7954		0.9092		0.9162		9.1771		9.1735		1.000e-12		1.0164		0.5385000		0.2861		42.46		0.441		2018		1		7.8071		7.8111		1420.10		1420.14	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	8.087		8.000		0.94521		0.94532		9.9887		9.9910		1.0249		1.0214		9.0264		9.0314		1.000e-12		0.9848		0.5491000		0.2990		42.11		0.448		2045		1		7.9680		7.9699		1420.93		1420.91	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	8.593		8.500		0.97151		0.97257		10.3000		10.3126		0.9894		0.9877		9.0016		9.0299		1.000e-12		0.9661		0.5291000		0.3176		41.56		0.455		2072		1		8.2177		8.2278		1421.17		1421.19	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	9.098		9.000		1.00776		1.00970		10.7332		10.7531		0.9348		0.9414		9.0410		9.0286		1.000e-12		1.0519		0.5989000		0.3043		40.84		0.466		2098		1		8.5650		8.5811		1421.49		1421.55	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	9.602		9.500		1.07327		1.07509		11.3967		11.4166		1.1797		1.1821		7.8065		7.7689		1.000e-12		1.1170		0.5865000		0.3027		40.37		0.474		2123		1		9.0999		9.1159		1423.54		1423.58	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	10.107		10.000		1.11346		1.11525		11.7982		11.8177		1.3364		1.3388		7.9344		7.8946		1.000e-12		1.1362		0.5149000		0.3351		39.74		0.478		2148		1		9.4227		9.4383		1424.83		1424.86	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	10.611		10.500		1.24132		1.29438		13.1036		13.6686		1.7032		1.7834		8.1870		7.8609		1.000e-12		1.2385		0.5406000		0.3493		39.16		0.482		2173		1		10.4639		10.9123		1428.26		1429.35	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	11.113		11.000		2.48193		2.49750		25.5953		25.7728		4.4312		4.4344		7.3571		6.9022		1.000e-12		1.4069		0.7506000		0.3744		38.82		0.488		2198		1		20.2760		20.4173		1456.54		1456.79	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	11.612		11.500		2.76255		2.76055		28.2363		28.2320		5.0956		5.0740		6.4481		6.1218		1.000e-12		1.0048		0.9803000		0.3115		38.44		0.487		2222		1		22.3081		22.3068		1462.71		1462.61	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	12.110		12.000		2.85670		2.85588		29.0968		29.0964		5.3271		5.3169		6.0019		5.8570		1.000e-12		0.8348		1.1413000		0.2911		37.90		0.484		2247		1		22.9650		22.9658		1464.76		1464.72	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	12.607		12.500		2.89013		2.89009		29.4026		29.4065		5.4064		5.4015		5.9232		5.8891		1.000e-12		0.7870		1.2744000		0.3340		37.51		0.480		2272		1		23.1984		23.2019		1465.48		1465.46	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	13.105		13.000		2.99202		2.98480		30.3651		30.3058		5.6082		5.5843		5.9317		5.9313		1.000e-12		0.7164		1.2421000		0.3312		37.00		0.486		2297		1		23.9368		23.8926		1467.53		1467.35	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	13.602		13.500		3.07230		3.06697		31.1073		31.0660		5.7808		5.7609		5.9239		5.9334		1.000e-12		0.5572		1.6612000		0.2439		36.60		0.502		2321		1		24.5036		24.4733		1469.17		1469.04	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	14.099		14.000		3.09984		3.09449		31.3564		31.3147		5.8445		5.8250		5.9028		5.9157		1.000e-12		0.4702		1.9316000		0.2970		36.11		0.510		2345		1		24.6930		24.6623		1469.75		1469.62	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	14.596		14.500		3.11305		3.11279		31.4736		31.4756		5.8772		5.8719		5.9019		5.9124		1.000e-12		0.4597		2.1842000		0.2706		35.61		0.516		2368		1		24.7816		24.7839		1470.04		1470.02	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	15.093		15.000		3.12800		3.13234		31.6104		31.6554		5.9094		5.9133		5.8944		5.9055		1.000e-12		0.4380		2.3200000		0.2708		35.09		0.522		2392		1		24.8859		24.9209		1470.35		1470.42	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	15.590		15.500		3.16090		3.16193		31.9147		31.9290		5.9768		5.9740		5.8895		5.9107		1.000e-12		0.4218		2.5397000		0.2372		34.57		0.524		2414		1		25.1182		25.1297		1471.01		1471.02	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	16.087		16.000		3.18351		3.18383		32.1620		32.1675		5.9824		5.9804		5.8944		5.9286		1.000e-12		0.3968		2.7223000		0.2383		34.07		0.522		2437		1		25.3128		25.3173		1471.35		1471.35	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	16.583		16.500		3.19770		3.19741		32.3189		32.3184		5.9842		5.9813		5.9332		5.9585		1.000e-12		0.3590		2.6424000		0.2830		33.54		0.526		2460		1		25.4364		25.4364		1471.57		1471.55	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	17.080		17.000		3.20006		3.20044		32.3411		32.3469		5.9883		5.9868		5.9525		5.9680		1.000e-12		0.3357		2.4194000		0.2651		33.17		0.536		2483		1		25.4534		25.4582		1471.62		1471.62	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	17.576		17.500		3.23311		3.22835		32.6479		32.6067		6.0537		6.0412		5.9400		5.9514		1.000e-12		0.3451		2.5641000		0.2217		32.98		0.536		2505		1		25.6878		25.6567		1472.27		1472.17	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	18.073		18.000		3.25440		3.25426		32.8409		32.8431		6.1003		6.0964		5.9376		5.9417		1.000e-12		0.3216		3.1552000		0.2652		32.48		0.532		2528		1		25.8344		25.8366		1472.71		1472.70	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	18.569		18.500		3.27621		3.27817		33.0601		33.0828		6.1255		6.1246		5.9410		5.9518		1.000e-12		0.3323		3.7592000		0.2328		31.97		0.533		2550		1		26.0043		26.0224		1473.10		1473.12	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	19.066		19.000		3.29670		3.29589		33.2677		33.2610		6.1474		6.1450		5.9399		5.9630		1.000e-12		0.3240		4.2358000		0.2318		31.44		0.536		2573		1		26.1655		26.1605		1473.45		1473.44	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	19.562		19.500		3.29745		3.29742		33.2745		33.2749		6.1488		6.1480		5.9414		5.9559		1.000e-12		0.3437		4.7755000		0.2710		29.94		0.539		2595		1		26.1707		26.1711		1473.48		1473.47	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	20.058		20.000		3.29844		3.29870		33.2836		33.2864		6.1505		6.1508		5.9482		5.9480		1.000e-12		0.3633		5.0840000		0.3153		29.38		0.541		2617		1		26.1777		26.1798		1473.50		1473.51	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	20.554		20.500		3.29861		3.29844		33.2850		33.2838		6.1509		6.1501		5.9461		5.9591		1.000e-12		0.3574		5.2403000		0.3126		29.17		0.541		2639		1		26.1787		26.1779		1473.51		1473.51	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	21.051		21.000		3.29808		3.29818		33.2796		33.2809		6.1500		6.1499		5.9466		5.9675		1.000e-12		0.3372		5.3673000		0.2420		28.86		0.542		2662		1		26.1746		26.1756		1473.51		1473.51	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	21.547		21.500		3.29834		3.29836		33.2817		33.2819		6.1506		6.1506		5.9521		5.9695		1.000e-12		0.3577		5.0764000		0.2406		28.44		0.543		2684		1		26.1762		26.1763		1473.52		1473.53	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	22.043		22.000		3.29810		3.29824		33.2792		33.2804		6.1502		6.1506		5.9523		5.9693		1.000e-12		0.3336		5.5376000		0.2288		27.65		0.541		2706		1		26.1742		26.1751		1473.53		1473.53	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	22.540		22.500		3.29970		3.29935		33.2932		33.2898		6.1538		6.1533		5.9544		5.9691		1.000e-12		0.3220		5.2031000		0.2547		27.52		0.539		2728		1		26.1849		26.1822		1473.57		1473.56	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	23.036		23.000		3.30051		3.30060		33.3005		33.3007		6.1554		6.1562		5.9532		5.9676		1.000e-12		0.3302		5.3099000		0.2633		27.20		0.537		2750		1		26.1904		26.1904		1473.59		1473.60	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	23.532		23.500		3.30046		3.30036		33.2998		33.2987		6.1554		6.1553		5.9484		5.9628		1.000e-12		0.3404		5.5452000		0.2426		26.90		0.534		2773		1		26.1898		26.1890		1473.60		1473.60	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	24.028		24.000		3.30050		3.30034		33.2999		33.2986		6.1554		6.1550		5.9476		5.9615		1.000e-12		0.3391		5.6209000		0.2851		26.34		0.532		2795		1		26.1899		26.1889		1473.61		1473.60	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	24.525		24.500		3.30066		3.30056		33.3011		33.3003		6.1557		6.1554		5.9522		5.9633		1.000e-12		0.3372		5.4935000		0.2871		11.73		0.534		2818		1		26.1908		26.1902		1473.62		1473.62	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	25.021		25.000		3.30083		3.30085		33.3022		33.3026		6.1563		6.1562		5.9599		5.9645		1.000e-12		0.3457		5.4108000		0.2657		25.49		0.537		2840		1		26.1916		26.1919		1473.63		1473.63	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	25.517		25.500		3.30094		3.30094		33.3030		33.3030		6.1565		6.1565		5.9589		5.9649		1.000e-12		0.3458		5.6287000		0.3000		25.29		0.534		2863		1		26.1922		26.1922		1473.64		1473.64	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	26.014		26.000		3.30094		3.30097		33.3027		33.3032		6.1565		6.1564		5.9510		5.9649		1.000e-12		0.3576		5.5083000		0.2682		24.85		0.532		2885		1		26.1920		26.1924		1473.65		1473.65	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	26.510		26.500		3.30100		3.30105		33.3031		33.3036		6.1566		6.1567		5.9493		5.9653		1.000e-12		0.3795		5.6500000		0.2461		24.36		0.534		2908		1		26.1923		26.1927		1473.66		1473.66	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	27.006		27.000		3.30099		3.30103		33.3029		33.3032		6.1564		6.1565		5.9564		5.9656		1.000e-12		0.3725		5.5406000		0.2713		23.92		0.536		2930		1		26.1922		26.1924		1473.66		1473.66	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	27.502		27.500		3.30093		3.30099		33.3022		33.3026		6.1562		6.1564		5.9496		5.9660		1.000e-12		0.3541		5.9102000		0.2661		23.39		0.532		2953		1		26.1916		26.1920		1473.67		1473.67	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	27.999		28.000		3.30110		3.30112		33.3032		33.3033		6.1568		6.1569		5.9489		5.9661		1.000e-12		0.3448		5.8658000		0.3196		22.86		0.532		2975		1		26.1923		26.1924		1473.68		1473.68	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	28.495		28.500		3.30131		3.30131		33.3033		33.3037		6.1590		6.1586		5.9607		5.9651		1.000e-12		0.3486		5.6690000		0.2776		22.44		0.536		2998		1		26.1921		26.1925		1473.70		1473.70	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	28.991		29.000		3.30133		3.30134		33.3040		33.3041		6.1582		6.1582		5.9619		5.9600		1.000e-12		0.3522		5.7584000		0.2804		21.89		0.537		3020		1		26.1928		26.1929		1473.71		1473.71	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	29.487		29.500		3.30140		3.30146		33.3047		33.3050		6.1581		6.1583		5.9581		5.9637		1.000e-12		0.3357		5.6887000		0.2625		21.40		0.532		3043		1		26.1933		26.1936		1473.71		1473.72	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	29.984		30.000		3.30143		3.30148		33.3045		33.3053		6.1583		6.1581		5.9568		5.9671		1.000e-12		0.3704		5.2753000		0.2457		20.91		0.533		3065		1		26.1932		26.1938		1473.72		1473.72	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	30.480		30.500		3.30142		3.30145		33.3033		33.3039		6.1591		6.1589		5.9520		5.9664		1.000e-12		0.3702		5.3279000		0.2399		20.46		0.534		3088		1		26.1921		26.1926		1473.73		1473.73	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	30.976		31.000		3.30151		3.30157		33.3019		33.3026		6.1614		6.1613		5.9437		5.9620		1.000e-12		0.3397		5.4615000		0.2416		19.99		0.534		3110		1		26.1907		26.1913		1473.75		1473.75	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	31.472		31.500		3.30158		3.30164		33.3018		33.3024		6.1620		6.1620		5.9478		5.9627		1.000e-12		0.3419		5.1419000		0.2722		19.49		0.533		3133		1		26.1906		26.1910		1473.76		1473.76	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	31.969		32.000		3.30155		3.30164		33.3015		33.3022		6.1617		6.1620		5.9571		5.9595		1.000e-12		0.3383		5.1326000		0.2612		18.98		0.534		3155		1		26.1904		26.1909		1473.77		1473.77	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	32.465		32.500		3.30167		3.30173		33.3024		33.3029		6.1619		6.1621		5.9565		5.9592		1.000e-12		0.3491		5.2731000		0.3010		18.49		0.534		3178		1		26.1911		26.1914		1473.78		1473.78	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	32.961		33.000		3.30172		3.30176		33.3026		33.3030		6.1620		6.1621		5.9558		5.9617		1.000e-12		0.3553		5.2544000		0.2918		18.02		0.532		3200		1		26.1913		26.1915		1473.78		1473.79	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	33.458		33.500		3.30155		3.30161		33.3010		33.3015		6.1615		6.1616		5.9574		5.9627		1.000e-12		0.3239		5.1750000		0.2653		17.48		0.529		3223		1		26.1900		26.1904		1473.79		1473.79	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	33.954		34.000		3.30168		3.30172		33.3016		33.3020		6.1621		6.1621		5.9506		5.9656		1.000e-12		0.3329		5.4261000		0.2805		16.82		0.527		3245		1		26.1904		26.1907		1473.80		1473.80	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	34.450		34.500		3.30159		3.30165		33.3010		33.3015		6.1614		6.1616		5.9446		5.9704		1.000e-12		0.3212		5.1819000		0.3207		15.63		0.531		3268		1		26.1900		26.1904		1473.80		1473.81	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	34.946		35.000		3.30182		3.30187		33.3023		33.3027		6.1624		6.1626		5.9502		5.9674		1.000e-12		0.3549		5.1709000		0.2282		14.84		0.531		3291		1		26.1910		26.1913		1473.82		1473.82	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	35.443		35.500		3.30212		3.30217		33.3043		33.3049		6.1636		6.1636		5.9521		5.9600		1.000e-12		0.3386		5.0994000		0.2258		14.35		0.529		3313		1		26.1924		26.1928		1473.84		1473.84	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	35.939		36.000		3.30211		3.30224		33.3042		33.3053		6.1633		6.1636		5.9448		5.9591		1.000e-12		0.3574		5.2173000		0.2264		13.82		0.532		3336		1		26.1923		26.1931		1473.84		1473.84	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	36.435		36.500		3.30213		3.30220		33.3042		33.3049		6.1633		6.1634		5.9481		5.9633		1.000e-12		0.3502		5.2376000		0.2751		13.28		0.530		3359		1		26.1923		26.1928		1473.85		1473.85	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	36.931		37.000		3.30219		3.30224		33.3045		33.3054		6.1634		6.1631		5.9545		5.9654		1.000e-12		0.3435		5.2176000		0.2670		12.77		0.524		3381		1		26.1925		26.1933		1473.86		1473.86	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	37.428		37.500		3.30243		3.30244		33.3060		33.3060		6.1644		6.1644		5.9486		5.9652		1.000e-12		0.3512		5.1802000		0.2215		12.31		0.525		3404		1		26.1936		26.1936		1473.87		1473.87	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	37.924		38.000		3.30250		3.30254		33.3062		33.3067		6.1647		6.1647		5.9533		5.9641		1.000e-12		0.3356		5.0482000		0.2226		12.09		0.531		3427		1		26.1938		26.1941		1473.88		1473.88	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	38.420		38.500		3.30253		3.30258		33.3067		33.3071		6.1642		6.1645		5.9573		5.9607		1.000e-12		0.3436		5.2591000		0.2878		12.25		0.529		3450		1		26.1942		26.1945		1473.89		1473.89	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	38.917		39.000		3.30254		3.30262		33.3064		33.3070		6.1644		6.1647		5.9486		5.9485		1.000e-12		0.3335		5.2335000		0.2993		11.96		0.521		3472		1		26.1939		26.1944		1473.90		1473.90	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	39.413		39.500		3.30259		3.30265		33.3065		33.3071		6.1646		6.1647		5.9475		5.9504		1.000e-12		0.3679		5.5025000		0.3143		11.49		0.521		3496		1		26.1940		26.1944		1473.91		1473.91	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	39.909		40.000		3.30261		3.30267		33.3067		33.3071		6.1645		6.1648		5.9540		5.9597		1.000e-12		0.3702		5.3995000		0.2825		10.98		0.525		3519		1		26.1941		26.1944		1473.91		1473.92	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	40.405		40.500		3.30264		3.30269		33.3065		33.3070		6.1648		6.1649		5.9490		5.9557		1.000e-12		0.3616		5.3162000		0.2666		10.39		0.527		3541		1		26.1939		26.1943		1473.92		1473.92	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	40.902		41.000		3.30268		3.30273		33.3067		33.3072		6.1647		6.1648		5.9438		5.9550		1.000e-12		0.3580		5.3812000		0.2706		9.49		0.529		3564		1		26.1942		26.1945		1473.93		1473.93	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	41.398		41.500		3.30271		3.30276		33.3074		33.3078		6.1641		6.1643		5.9405		5.9639		1.000e-12		0.3632		5.3588000		0.2793		8.95		0.529		3587		1		26.1947		26.1950		1473.94		1473.94	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	41.894		42.000		3.30274		3.30279		33.3075		33.3079		6.1641		6.1642		5.9488		5.9625		1.000e-12		0.3702		5.3972000		0.2758		8.61		0.530		3609		1		26.1948		26.1951		1473.95		1473.95	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	42.390		42.500		3.30278		3.30283		33.3074		33.3079		6.1644		6.1645		5.9538		5.9629		1.000e-12		0.3702		5.5837000		0.2995		8.31		0.519		3632		1		26.1947		26.1951		1473.96		1473.96	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	42.887		43.000		3.30279		3.30285		33.3074		33.3078		6.1643		6.1645		5.9517		5.9628		1.000e-12		0.3673		5.3894000		0.2301		7.81		0.497		3656		1		26.1947		26.1950		1473.96		1473.97	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	43.383		43.500		3.30282		3.30289		33.3074		33.3079		6.1643		6.1646		5.9496		5.9604		1.000e-12		0.3596		5.3853000		0.2709		7.36		0.497		3680		1		26.1948		26.1950		1473.97		1473.97	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	43.879		44.000		3.30285		3.30290		33.3074		33.3079		6.1644		6.1645		5.9500		5.9648		1.000e-12		0.3701		5.6197000		0.2967		6.91		0.496		3704		1		26.1947		26.1951		1473.98		1473.98	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	44.375		44.500		3.30288		3.30293		33.3076		33.3080		6.1644		6.1645		5.9498		5.9671		1.000e-12		0.3803		5.4878000		0.2550		6.41		0.488		3729		1		26.1949		26.1952		1473.99		1473.99	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	44.872		45.000		3.30293		3.30300		33.3078		33.3083		6.1644		6.1647		5.9511		5.9643		1.000e-12		0.3568		5.4363000		0.2409		6.00		0.491		3753		1		26.1951		26.1954		1474.00		1474.00	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	45.368		45.500		3.30295		3.30300		33.3080		33.3083		6.1642		6.1645		5.9522		5.9632		1.000e-12		0.3923		5.6566000		0.2543		5.45		0.476		3778		1		26.1952		26.1954		1474.00		1474.01	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	45.864		46.000		3.30298		3.30302		33.3082		33.3085		6.1641		6.1643		5.9489		5.9656		1.000e-12		0.3653		5.6495000		0.2983		5.00		0.334		3806		1		26.1954		26.1956		1474.01		1474.01	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	46.361		46.500		3.30300		3.30307		33.3085		33.3089		6.1637		6.1642		5.9364		5.9643		1.000e-12		0.4108		5.6938000		0.2751		4.39		0.317		3889		1		26.1956		26.1959		1474.02		1474.02	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	46.857		47.000		3.30309		3.30315		33.3089		33.3092		6.1641		6.1645		5.9387		5.9653		1.000e-12		0.4093		5.7735000		0.2506		3.96		0.424		3925		1		26.1959		26.1961		1474.03		1474.03	
+2018	03	18	22	23	00	2018_347V_SMHI-02-2018	W LANDSKRONA	55.86650	12.74800	47.353		47.500		3.30308		3.30314		33.3093		33.3097		6.1633		6.1636		5.9433		5.9641		1.000e-12		0.4261		6.0884000		0.3020		3.23		-0.031		3990		1		26.1964		26.1966		1474.04		1474.04	

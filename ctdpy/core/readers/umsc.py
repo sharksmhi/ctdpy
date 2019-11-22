@@ -11,6 +11,7 @@ Created on Mon Oct 22 11:01:38 2018
 import sys
 sys.path.append("..")
 import config
+import utils
 import numpy as np
 from core.data_handlers import DataFrameHandler
 from core.readers.seabird import SeaBird
@@ -36,7 +37,35 @@ class SeaBirdUMSC(SeaBird):
                                                                'gravity': df['PRES_CTD'].astype(np.float),
                                                                'density': df['DENS_CTD'].astype(np.float)})
 
-    def get_metadata(self, serie, map_keys=True):
+    def _get_datetime(self, date_string):
+        """
+        Expecting date_string with format e.g. "Feb 21 2018 16:08:54 [Instrument's time stamp, header]"
+        :param date_string: str
+        :return:
+        """
+        if not date_string:
+            return ''
+        return utils.convert_string_to_datetime_obj(date_string.split('[')[0].strip(),
+                                                    '%b %d %Y %H:%M:%S')
+
+    def _convert_formats(self, meta_dict, filename):
+        """
+        :param meta_dict:
+        :return:
+        """
+        timestamp = self._get_datetime(meta_dict['SDATE'])
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
+        # meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
+        # meta_dict.setdefault('PROJ', 'BAS')
+        # meta_dict.setdefault('ORDERER', 'HAV, SMHI')
+        meta_dict.setdefault('SLABO', 'UMSC')
+        meta_dict.setdefault('ALABO', 'UMSC')
+        meta_dict.setdefault('POSYS', 'GPS')
+        if filename:
+            meta_dict['FILE_NAME'] = filename
+
+    def get_metadata(self, serie, map_keys=True, filename=None):
         """
         :param serie: pd.Series
         :param map_keys: False or True
@@ -53,7 +82,14 @@ class SeaBirdUMSC(SeaBird):
             meta_dict = config.recursive_dict_update(meta_dict, data)
 
         if map_keys:
-            meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
+            # meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
+            new_dict = {}
+            for key in meta_dict:
+                if meta_dict[key]:
+                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+            meta_dict = new_dict
+
+        self._convert_formats(meta_dict, filename)
 
         return meta_dict
 
@@ -67,7 +103,7 @@ class SeaBirdUMSC(SeaBird):
         df = self.get_data_in_frame(serie, header, dataset='cnv')
         df = self.df_handler.map_column_names_of_dataframe(df)
 
-        self.add_calculated_parameters(df, latit=62.) # metadata['LATIT'])
+        self.add_calculated_parameters(df, latit=62.)  # metadata['LATIT'])
 
         return df
 

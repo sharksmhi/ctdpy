@@ -10,6 +10,7 @@ from core.data_handlers import DataFrameHandler
 from .template import Template
 import utils
 
+
 class CTDTemplateHandler(DataFrameHandler):
     """
     Uses DataFrameHandler as Base

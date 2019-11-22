@@ -40,33 +40,13 @@ def load_txt(file_path='',
                          sep=seperator,
                          encoding=encoding,
                          dtype={key: str for key in header},
-                         engine='python').fillna('')
+                         engine='python').fillna(fill_nan)
     else:
         df = pd.read_csv(file_path, 
                          sep=seperator,
-                         header=header_row).fillna('')
+                         header=header_row).fillna(fill_nan)
     if as_dict:
         df = df.fillna(fill_nan)
         return {key: df[key].values for key in df.keys()}
     else:
         return df
-        
-
-"""
-#==============================================================================
-#==============================================================================
-"""
-
-
-#class TXTreader(object):
-#    """ """
-#    def __init__(self):
-#        
-#        super(TXTreader, self).__init__()
-#        
-#    #==========================================================================
-#    def load_txt(self, as_dataframe=True, as_dict=False):
-#        """ """
-        
-        
-    #==========================================================================

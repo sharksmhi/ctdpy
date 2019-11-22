@@ -1,0 +1,614 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-12-07
+//METADATA;STIME;19:50
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;34AR
+//METADATA;CRUISE_NO;SMHI-7-2018
+//METADATA;SERNO;0164
+//METADATA;STATN;P2
+//METADATA;LATIT;
+//METADATA;LONGI;
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20181207_1950_34_01_0164.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20181207_34AR_0164.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\ar18d164.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.7.107
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 30
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Dec 07 2018 19:50:32
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1d
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  P2
+//INSTRUMENT_METADATA;** Operator:  JKro
+//INSTRUMENT_METADATA;** Ship: ARANDA
+//INSTRUMENT_METADATA;** Average sound velocity: 1481.98 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sun, 09 Dec 2018 17:50:05 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183401-0164
+//INSTRUMENT_METADATA;** Cruise: SMHI-7-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N]: 57 52.003
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E] 11 17.515
+//INSTRUMENT_METADATA;* System UTC = Dec 07 2018 19:50:32
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 180                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 0
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 0
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      19144,      24855       
+//INSTRUMENT_METADATA;# span 1 =      1.000,     90.500       
+//INSTRUMENT_METADATA;# span 2 =     7.3816,     8.4794       
+//INSTRUMENT_METADATA;# span 3 =     7.3828,     8.4806       
+//INSTRUMENT_METADATA;# span 4 =    -0.0055,     0.0094       
+//INSTRUMENT_METADATA;# span 5 =   3.390470,   3.615949       
+//INSTRUMENT_METADATA;# span 6 =   3.390538,   3.616032       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    6.22323,    6.60004       
+//INSTRUMENT_METADATA;# span 9 =    6.19773,    6.60726       
+//INSTRUMENT_METADATA;# span 10 =       2.73,      97.56      
+//INSTRUMENT_METADATA;# span 11 =     0.2411,     0.9052      
+//INSTRUMENT_METADATA;# span 12 =     0.1491,     0.3295      
+//INSTRUMENT_METADATA;# span 13 = 1.0000e-12, 2.7003e-03      
+//INSTRUMENT_METADATA;# span 14 =     0.6480,     1.4885      
+//INSTRUMENT_METADATA;# span 15 =    33.1129,    34.6886      
+//INSTRUMENT_METADATA;# span 16 =    33.1127,    34.6885      
+//INSTRUMENT_METADATA;# span 17 =    -0.0064,     0.0074      
+//INSTRUMENT_METADATA;# span 18 =    25.8801,    27.0198      
+//INSTRUMENT_METADATA;# span 19 =    25.8798,    27.0195      
+//INSTRUMENT_METADATA;# span 20 =      0.995,     89.983      
+//INSTRUMENT_METADATA;# span 21 =      0.993,     89.799      
+//INSTRUMENT_METADATA;# span 22 =     -0.051,      0.759      
+//INSTRUMENT_METADATA;# span 23 =    1477.80,    1484.69      
+//INSTRUMENT_METADATA;# span 24 =    1477.80,    1484.70      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Dec 07 2018 19:50:32 [System UTC, header]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2126</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Apr-17</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.2543e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5109</offset>
+//INSTRUMENT_METADATA;#         <A>-3.0341e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4453e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.6131e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.3200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1823</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>02-Jun-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.9416e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5067</offset>
+//INSTRUMENT_METADATA;#         <A>-3.7380e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.5803e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.6444e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.2500</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Dec 09 2018 17:49:38, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.hex C:\ctd\temp\SBE09_1044_20181207_1950_34_01_0164.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Dec 09 2018 17:49:42, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Dec 09 2018 17:49:46, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Dec 09 2018 17:49:48, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Dec 09 2018 17:49:50, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Dec 09 2018 17:49:53, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Dec 09 2018 17:49:56, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Dec 09 2018 17:49:59, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20181207_1950_34_01_0164.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			0.993		1.000		3.39061		3.39070		33.1141		33.1139		7.3830		7.3842		6.5925		6.5971		2.700e-03		0.8924		0.6682000		0.2644		97.53		0.381		19144		1		25.8809		25.8806		1477.80		1477.80	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			1.489		1.500		3.39063		3.39066		33.1142		33.1135		7.3829		7.3839		6.5912		6.5968		3.469e-05		0.8105		0.6985000		0.2769		97.54		0.759		19160		1		25.8809		25.8803		1477.80		1477.81	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			1.986		2.000		3.39058		3.39064		33.1139		33.1136		7.3823		7.3833		6.5916		6.5992		4.723e-07		0.7940		0.7312000		0.3196		97.56		0.661		19174		1		25.8808		25.8804		1477.81		1477.81	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			2.482		2.500		3.39047		3.39054		33.1130		33.1127		7.3818		7.3829		6.5962		6.6004		1.937e-08		0.7977		0.7094000		0.2885		97.32		0.414		19243		1		25.8802		25.8798		1477.82		1477.82	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			2.979		3.000		3.39047		3.39056		33.1129		33.1128		7.3817		7.3828		6.6000		6.5979		9.194e-10		0.8699		0.7646000		0.2948		93.42		0.450		19282		1		25.8801		25.8799		1477.82		1477.83	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			3.475		3.500		3.39052		3.39060		33.1132		33.1129		7.3816		7.3829		6.5974		6.5953		1.000e-12		0.9052		0.7549000		0.3231		65.89		0.308		19319		1		25.8804		25.8799		1477.83		1477.83	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			3.971		4.000		3.39060		3.39069		33.1135		33.1132		7.3820		7.3833		6.5920		6.5889		1.000e-12		0.8349		0.6920000		0.2850		53.72		0.416		19351		1		25.8805		25.8801		1477.84		1477.85	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			4.468		4.500		3.39064		3.39073		33.1134		33.1133		7.3823		7.3834		6.5904		6.5890		1.000e-12		0.8651		0.7268000		0.2787		75.77		0.301		19386		1		25.8805		25.8801		1477.85		1477.85	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			4.964		5.000		3.39068		3.39079		33.1134		33.1136		7.3825		7.3836		6.5962		6.5984		1.000e-12		0.8459		0.6973000		0.2113		62.30		0.509		19423		1		25.8804		25.8803		1477.86		1477.86	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			5.461		5.500		3.39078		3.39086		33.1138		33.1138		7.3829		7.3840		6.5993		6.6073		1.000e-12		0.8956		0.7453000		0.2347		34.94		0.654		19441		1		25.8806		25.8805		1477.87		1477.87	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			5.957		6.000		3.39081		3.39089		33.1138		33.1137		7.3831		7.3840		6.5972		6.6024		1.000e-12		0.8982		0.7812000		0.2725		71.00		0.587		19459		1		25.8806		25.8805		1477.88		1477.88	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			6.453		6.500		3.39086		3.39095		33.1142		33.1140		7.3830		7.3842		6.5973		6.5911		1.000e-12		0.8748		0.7900000		0.2870		94.43		0.322		19486		1		25.8809		25.8806		1477.89		1477.89	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			6.950		7.000		3.39134		3.39148		33.1182		33.1184		7.3839		7.3853		6.5933		6.5898		1.000e-12		0.7839		0.6955000		0.3158		77.57		0.339		19543		1		25.8840		25.8840		1477.90		1477.91	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			7.446		7.500		3.39125		3.39141		33.1170		33.1175		7.3839		7.3853		6.5914		6.5949		1.000e-12		0.8247		0.7153000		0.2628		90.05		0.614		19567		1		25.8830		25.8832		1477.91		1477.92	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			7.943		8.000		3.39157		3.39185		33.1198		33.1217		7.3844		7.3857		6.5953		6.6008		1.000e-12		0.8445		0.7655000		0.2817		84.65		0.662		19584		1		25.8851		25.8865		1477.92		1477.93	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			8.439		8.500		3.39236		3.39249		33.1274		33.1276		7.3851		7.3864		6.5980		6.5933		1.000e-12		0.8581		0.8263000		0.2991		96.96		0.506		19604		1		25.8911		25.8910		1477.94		1477.95	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			8.936		9.000		3.39255		3.39261		33.1290		33.1285		7.3854		7.3866		6.5988		6.5848		1.000e-12		0.8229		0.7555000		0.3046		59.95		0.288		19645		1		25.8922		25.8917		1477.96		1477.96	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			9.432		9.500		3.39200		3.39237		33.1238		33.1262		7.3844		7.3860		6.5938		6.5934		1.000e-12		0.7722		0.6909000		0.2923		84.13		0.580		19679		1		25.8883		25.8900		1477.95		1477.96	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			9.928		10.000		3.39152		3.39148		33.1187		33.1175		7.3840		7.3847		6.5930		6.5934		1.000e-12		0.8827		0.7762000		0.3058		83.07		0.679		19696		1		25.8843		25.8833		1477.95		1477.95	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			10.425		10.500		3.39222		3.39262		33.1255		33.1284		7.3846		7.3861		6.5928		6.5859		1.000e-12		0.8621		0.7944000		0.3070		82.83		0.577		19714		1		25.8896		25.8917		1477.97		1477.98	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			10.921		11.000		3.39456		3.39504		33.1476		33.1512		7.3877		7.3894		6.5899		6.5801		1.000e-12		0.8179		0.7629000		0.3109		87.82		0.293		19748		1		25.9066		25.9092		1478.02		1478.03	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			11.418		11.500		3.39681		3.39729		33.1693		33.1734		7.3902		7.3914		6.5775		6.5691		1.000e-12		0.7580		0.7081000		0.3295		80.67		0.434		19794		1		25.9233		25.9264		1478.07		1478.07	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			11.914		12.000		3.40171		3.40221		33.2190		33.2236		7.3936		7.3945		6.5636		6.5507		1.000e-12		0.7788		0.7977000		0.3183		80.91		0.573		19815		1		25.9619		25.9653		1478.15		1478.16	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			12.410		12.500		3.40695		3.40768		33.2758		33.2824		7.3934		7.3948		6.5429		6.5312		1.000e-12		0.7685		0.8979000		0.2747		87.95		0.523		19836		1		26.0066		26.0116		1478.23		1478.24	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			12.907		13.000		3.41154		3.41198		33.3216		33.3248		7.3972		7.3989		6.5142		6.5038		1.000e-12		0.7243		0.9590000		0.2779		42.98		0.415		19862		1		26.0421		26.0443		1478.31		1478.32	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			13.403		13.500		3.42536		3.42633		33.4338		33.4412		7.4359		7.4393		6.5223		6.4996		1.000e-12		0.7202		0.9974000		0.2903		80.08		0.449		19891		1		26.1249		26.1302		1478.60		1478.62	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			13.899		14.000		3.45077		3.45008		33.5812		33.5792		7.5677		7.5621		6.4995		6.4643		1.000e-12		0.6696		1.0849000		0.2328		78.70		0.436		19917		1		26.2221		26.2213		1479.30		1479.28	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			14.396		14.500		3.48913		3.48906		33.7445		33.7442		7.8261		7.8257		6.4455		6.4163		1.000e-12		0.6536		1.1410000		0.2694		78.27		0.342		19949		1		26.3133		26.3131		1480.50		1480.49	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			14.892		15.000		3.50421		3.50453		33.8137		33.8168		7.9217		7.9221		6.4302		6.4143		1.000e-12		0.5407		1.0814000		0.2466		77.88		0.402		19984		1		26.3537		26.3560		1480.95		1480.96	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			15.388		15.500		3.51500		3.51476		33.8561		33.8556		7.9970		7.9949		6.4190		6.4108		1.000e-12		0.5193		1.0662000		0.2334		81.75		0.540		20009		1		26.3759		26.3758		1481.30		1481.29	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			15.884		16.000		3.51659		3.51634		33.8610		33.8595		8.0092		8.0081		6.4198		6.4152		1.000e-12		0.4167		1.0952000		0.2543		85.69		0.557		20030		1		26.3780		26.3769		1481.36		1481.35	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			16.380		16.500		3.51676		3.51674		33.8614		33.8609		8.0105		8.0108		6.4214		6.4137		1.000e-12		0.4345		1.0677000		0.2531		81.75		0.413		20054		1		26.3781		26.3776		1481.37		1481.38	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			16.877		17.000		3.51658		3.51660		33.8601		33.8596		8.0096		8.0104		6.4212		6.4100		1.000e-12		0.4981		1.0049000		0.2323		83.28		0.240		20098		1		26.3772		26.3767		1481.38		1481.38	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			17.373		17.500		3.51788		3.51786		33.8638		33.8634		8.0200		8.0202		6.4301		6.4115		1.000e-12		0.5244		0.9725000		0.2954		74.91		0.532		20137		1		26.3786		26.3782		1481.43		1481.43	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			17.869		18.000		3.52031		3.52030		33.8700		33.8692		8.0402		8.0409		6.4292		6.4087		1.000e-12		0.4643		1.0271000		0.2904		74.96		0.696		20155		1		26.3804		26.3797		1481.52		1481.52	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			18.365		18.500		3.52088		3.52087		33.8720		33.8712		8.0441		8.0449		6.4284		6.4143		1.000e-12		0.4344		1.0246000		0.2224		74.65		0.692		20171		1		26.3815		26.3806		1481.55		1481.55	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			18.861		19.000		3.52107		3.52111		33.8744		33.8741		8.0434		8.0443		6.4281		6.4229		1.000e-12		0.3976		1.0145000		0.2411		60.11		0.531		20190		1		26.3834		26.3830		1481.56		1481.56	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			19.357		19.500		3.52080		3.52103		33.8733		33.8739		8.0414		8.0433		6.4301		6.4271		1.000e-12		0.4482		0.9885000		0.2042		54.71		0.264		20230		1		26.3829		26.3830		1481.55		1481.56	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			19.854		20.000		3.52098		3.52112		33.8737		33.8737		8.0427		8.0443		6.4288		6.4154		1.000e-12		0.6077		0.9375000		0.2372		82.82		0.452		20283		1		26.3829		26.3827		1481.57		1481.58	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			20.350		20.500		3.52115		3.52114		33.8737		33.8727		8.0444		8.0453		6.4309		6.4065		1.000e-12		0.5019		0.9484000		0.2909		77.84		0.656		20302		1		26.3827		26.3818		1481.58		1481.58	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			20.846		21.000		3.52122		3.52129		33.8736		33.8734		8.0449		8.0459		6.4302		6.4138		1.000e-12		0.4233		0.9657000		0.2038		71.50		0.691		20319		1		26.3826		26.3823		1481.59		1481.60	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			21.342		21.500		3.52122		3.52132		33.8735		33.8734		8.0449		8.0459		6.4269		6.4235		1.000e-12		0.4069		1.0077000		0.2151		71.16		0.578		20337		1		26.3825		26.3823		1481.60		1481.61	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			21.838		22.000		3.52129		3.52135		33.8737		33.8735		8.0451		8.0460		6.4304		6.4284		1.000e-12		0.4448		0.9927000		0.2744		52.13		0.303		20368		1		26.3826		26.3823		1481.61		1481.61	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			22.334		22.500		3.52130		3.52135		33.8735		33.8731		8.0452		8.0462		6.4327		6.4220		1.000e-12		0.4448		0.8291000		0.2662		72.00		0.368		20419		1		26.3824		26.3820		1481.62		1481.62	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			22.831		23.000		3.52138		3.52147		33.8734		33.8734		8.0459		8.0469		6.4273		6.4264		1.000e-12		0.4388		0.9519000		0.2445		69.95		0.602		20442		1		26.3823		26.3821		1481.63		1481.63	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			23.327		23.500		3.52140		3.52150		33.8733		33.8733		8.0460		8.0472		6.4318		6.4246		1.000e-12		0.5015		0.9906000		0.3063		58.76		0.626		20460		1		26.3821		26.3820		1481.64		1481.64	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			23.823		24.000		3.52142		3.52149		33.8735		33.8733		8.0459		8.0467		6.4341		6.4243		1.000e-12		0.4654		0.9906000		0.2538		47.90		0.486		20481		1		26.3823		26.3821		1481.65		1481.65	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			24.319		24.500		3.52142		3.52149		33.8736		33.8732		8.0455		8.0467		6.4300		6.4125		1.000e-12		0.4802		0.9358000		0.2572		81.65		0.276		20517		1		26.3824		26.3820		1481.65		1481.66	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			24.815		25.000		3.52133		3.52139		33.8741		33.8737		8.0437		8.0448		6.4299		6.4127		1.000e-12		0.4385		0.8335000		0.2673		66.95		0.384		20560		1		26.3831		26.3827		1481.65		1481.66	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			25.312		25.500		3.52391		3.52396		33.8842		33.8840		8.0615		8.0623		6.4148		6.4083		1.000e-12		0.4194		0.9338000		0.2774		67.34		0.516		20585		1		26.3884		26.3882		1481.74		1481.75	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			25.808		26.000		3.52422		3.52430		33.8847		33.8846		8.0642		8.0652		6.4128		6.4112		1.000e-12		0.4034		0.9239000		0.2552		66.72		0.501		20607		1		26.3884		26.3882		1481.76		1481.77	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			26.304		26.500		3.52460		3.52472		33.8860		33.8860		8.0667		8.0682		6.4178		6.4082		1.000e-12		0.4071		0.8604000		0.2479		66.36		0.408		20634		1		26.3891		26.3888		1481.78		1481.79	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			26.800		27.000		3.52525		3.52527		33.8876		33.8873		8.0722		8.0726		6.4219		6.4124		1.000e-12		0.4093		0.8369000		0.2703		65.88		0.406		20665		1		26.3895		26.3892		1481.81		1481.81	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			27.296		27.500		3.52544		3.52544		33.8888		33.8879		8.0727		8.0735		6.4225		6.4085		1.000e-12		0.4471		0.8219000		0.3040		82.69		0.473		20692		1		26.3904		26.3895		1481.82		1481.83	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			27.792		28.000		3.52461		3.52471		33.8894		33.8892		8.0626		8.0639		6.4160		6.3956		1.000e-12		0.5606		0.8667000		0.2525		65.32		0.460		20717		1		26.3924		26.3920		1481.80		1481.80	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			28.289		28.500		3.52411		3.52406		33.8892		33.8888		8.0571		8.0570		6.4150		6.4052		1.000e-12		0.4482		0.8276000		0.2592		47.15		0.411		20745		1		26.3930		26.3927		1481.78		1481.78	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			28.785		29.000		3.52368		3.52381		33.8888		33.8887		8.0525		8.0541		6.4155		6.4094		1.000e-12		0.4234		0.8223000		0.2296		63.50		0.416		20775		1		26.3934		26.3930		1481.77		1481.78	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			29.281		29.500		3.52348		3.52354		33.8885		33.8884		8.0504		8.0511		6.4159		6.4105		1.000e-12		0.4020		0.8089000		0.2080		63.17		0.399		20803		1		26.3935		26.3933		1481.77		1481.77	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			29.777		30.000		3.52478		3.52507		33.8931		33.8937		8.0597		8.0624		6.4212		6.4173		1.000e-12		0.4289		0.8450000		0.2964		62.68		0.380		20835		1		26.3957		26.3957		1481.82		1481.83	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			30.273		30.500		3.52682		3.52665		33.8994		33.8989		8.0755		8.0741		6.4291		6.4214		1.000e-12		0.5259		0.8264000		0.2777		62.32		0.411		20866		1		26.3983		26.3981		1481.90		1481.89	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			30.769		31.000		3.52734		3.52741		33.9012		33.9011		8.0791		8.0800		6.4319		6.4251		1.000e-12		0.5377		0.7642000		0.2505		61.87		0.455		20893		1		26.3991		26.3989		1481.92		1481.92	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			31.266		31.500		3.52745		3.52758		33.9012		33.9016		8.0801		8.0810		6.4322		6.4176		1.000e-12		0.4239		0.7614000		0.2421		61.36		0.525		20918		1		26.3990		26.3992		1481.93		1481.94	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			31.762		32.000		3.52755		3.52766		33.9015		33.9017		8.0807		8.0816		6.4295		6.4207		1.000e-12		0.4848		0.7719000		0.2317		60.81		0.549		20940		1		26.3991		26.3992		1481.94		1481.95	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			32.258		32.500		3.52770		3.52777		33.9023		33.9022		8.0812		8.0822		6.4309		6.4236		1.000e-12		0.5689		0.8228000		0.2082		60.22		0.436		20963		1		26.3997		26.3994		1481.96		1481.96	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			32.754		33.000		3.52780		3.52790		33.9029		33.9027		8.0815		8.0828		6.4269		6.4159		1.000e-12		0.6024		0.7825000		0.2124		59.56		0.257		21006		1		26.4001		26.3998		1481.96		1481.97	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			33.250		33.500		3.52786		3.52795		33.9029		33.9028		8.0819		8.0829		6.4256		6.4125		1.000e-12		0.4406		0.7240000		0.2111		59.25		0.541		21043		1		26.4000		26.3999		1481.97		1481.98	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			33.746		34.000		3.52798		3.52805		33.9030		33.9031		8.0828		8.0836		6.4234		6.4109		1.000e-12		0.4457		0.7661000		0.2218		59.07		0.679		21061		1		26.4000		26.3999		1481.99		1481.99	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			34.243		34.500		3.52812		3.52818		33.9035		33.9033		8.0836		8.0844		6.4223		6.4099		1.000e-12		0.4391		0.8663000		0.2562		58.61		0.627		21079		1		26.4003		26.4000		1482.00		1482.00	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			34.739		35.000		3.52824		3.52830		33.9040		33.9037		8.0841		8.0851		6.4242		6.4079		1.000e-12		0.3817		0.8262000		0.2090		58.08		0.366		21103		1		26.4006		26.4002		1482.01		1482.01	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			35.235		35.500		3.52836		3.52845		33.9045		33.9044		8.0848		8.0858		6.4308		6.4207		1.000e-12		0.5121		0.7578000		0.2199		57.39		0.337		21153		1		26.4009		26.4007		1482.02		1482.02	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			35.731		36.000		3.52847		3.52853		33.9046		33.9045		8.0856		8.0864		6.4277		6.4155		1.000e-12		0.8566		0.7832000		0.2321		57.03		0.575		21178		1		26.4009		26.4007		1482.03		1482.03	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			36.227		36.500		3.52855		3.52861		33.9048		33.9045		8.0861		8.0869		6.4263		6.4102		1.000e-12		0.5243		0.8002000		0.2633		56.50		0.577		21197		1		26.4009		26.4006		1482.04		1482.04	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			36.723		37.000		3.52864		3.52871		33.9052		33.9051		8.0865		8.0873		6.4282		6.4021		1.000e-12		0.4272		0.8401000		0.2037		55.96		0.440		21221		1		26.4012		26.4010		1482.05		1482.05	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			37.220		37.500		3.52878		3.52886		33.9058		33.9056		8.0871		8.0882		6.4261		6.4064		1.000e-12		0.5619		0.8315000		0.1958		24.19		0.353		21253		1		26.4016		26.4013		1482.06		1482.07	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			37.716		38.000		3.52915		3.52922		33.9071		33.9069		8.0896		8.0905		6.4255		6.4151		1.000e-12		0.5093		0.8685000		0.2365		36.98		0.396		21286		1		26.4022		26.4019		1482.08		1482.09	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			38.212		38.500		3.52923		3.52930		33.9073		33.9071		8.0900		8.0910		6.4280		6.4155		1.000e-12		0.4957		0.8355000		0.2696		54.42		0.430		21315		1		26.4023		26.4020		1482.09		1482.10	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			38.708		39.000		3.52933		3.52938		33.9076		33.9071		8.0905		8.0916		6.4252		6.4116		1.000e-12		0.4712		0.7867000		0.2128		54.07		0.437		21342		1		26.4025		26.4020		1482.10		1482.11	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			39.204		39.500		3.52962		3.52970		33.9085		33.9083		8.0926		8.0936		6.4224		6.4041		1.000e-12		0.4846		0.8011000		0.2254		53.58		0.369		21371		1		26.4029		26.4026		1482.12		1482.12	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			39.701		40.000		3.52973		3.52981		33.9087		33.9085		8.0933		8.0944		6.4134		6.4147		1.000e-12		0.4695		0.7820000		0.2182		53.10		0.397		21406		1		26.4029		26.4026		1482.13		1482.14	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			40.197		40.500		3.52997		3.53005		33.9094		33.9093		8.0950		8.0959		6.4117		6.4094		1.000e-12		0.5047		1.3060000		0.2124		52.66		0.542		21431		1		26.4032		26.4030		1482.15		1482.15	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			40.693		41.000		3.53013		3.53022		33.9097		33.9098		8.0962		8.0971		6.4173		6.4101		1.000e-12		0.4549		0.9995000		0.2644		52.22		0.579		21451		1		26.4033		26.4032		1482.16		1482.16	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			41.189		41.500		3.53014		3.53023		33.9097		33.9099		8.0960		8.0969		6.4241		6.4122		1.000e-12		0.4194		0.8084000		0.2651		51.70		0.467		21473		1		26.4033		26.4033		1482.17		1482.17	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			41.685		42.000		3.53016		3.53030		33.9099		33.9100		8.0959		8.0973		6.4291		6.4189		1.000e-12		0.4571		0.8389000		0.2221		51.02		0.284		21510		1		26.4035		26.4033		1482.17		1482.18	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			42.181		42.500		3.53032		3.53043		33.9102		33.9104		8.0970		8.0980		6.4254		6.4149		1.000e-12		0.4219		0.7579000		0.2100		50.64		0.432		21548		1		26.4036		26.4035		1482.19		1482.19	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			42.678		43.000		3.53038		3.53048		33.9105		33.9105		8.0971		8.0982		6.4162		6.4119		1.000e-12		0.4794		0.7437000		0.2625		50.24		0.500		21572		1		26.4038		26.4036		1482.20		1482.20	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			43.174		43.500		3.53044		3.53052		33.9108		33.9106		8.0973		8.0983		6.4163		6.4043		1.000e-12		0.5822		0.7709000		0.2591		49.75		0.422		21598		1		26.4040		26.4037		1482.21		1482.21	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			43.670		44.000		3.53046		3.53055		33.9107		33.9105		8.0973		8.0985		6.4225		6.4039		1.000e-12		0.4661		0.7586000		0.2419		49.11		0.382		21630		1		26.4039		26.4036		1482.21		1482.22	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			44.166		44.500		3.53052		3.53059		33.9109		33.9107		8.0976		8.0986		6.4226		6.4167		1.000e-12		0.5061		0.7450000		0.2440		48.64		0.483		21658		1		26.4040		26.4037		1482.22		1482.23	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			44.662		45.000		3.53065		3.53072		33.9113		33.9112		8.0983		8.0992		6.4220		6.4194		1.000e-12		0.4623		0.7889000		0.2689		48.16		0.517		21681		1		26.4042		26.4040		1482.24		1482.24	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			45.158		45.500		3.53077		3.53084		33.9118		33.9116		8.0989		8.0998		6.4200		6.4084		1.000e-12		0.5640		0.8094000		0.2297		47.69		0.461		21705		1		26.4045		26.4042		1482.25		1482.25	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			45.655		46.000		3.53087		3.53098		33.9122		33.9121		8.0993		8.1007		6.4239		6.4035		1.000e-12		0.5512		0.9034000		0.2254		47.13		0.373		21734		1		26.4047		26.4045		1482.26		1482.26	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			46.151		46.500		3.53172		3.53189		33.9146		33.9145		8.1060		8.1080		6.4180		6.4060		1.000e-12		0.4232		0.8162000		0.2447		46.56		0.313		21771		1		26.4057		26.4053		1482.29		1482.30	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			46.647		47.000		3.53245		3.53249		33.9162		33.9159		8.1121		8.1130		6.4087		6.4111		1.000e-12		0.4715		0.7456000		0.2771		46.08		0.425		21806		1		26.4060		26.4056		1482.33		1482.33	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			47.143		47.500		3.53246		3.53255		33.9161		33.9162		8.1121		8.1130		6.4079		6.4126		1.000e-12		0.4513		0.7503000		0.2766		45.69		0.524		21830		1		26.4059		26.4058		1482.34		1482.34	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			47.639		48.000		3.53251		3.53262		33.9167		33.9169		8.1118		8.1128		6.4132		6.4067		1.000e-12		0.4714		0.7968000		0.2626		45.19		0.485		21853		1		26.4065		26.4064		1482.34		1482.35	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			48.135		48.500		3.53228		3.53236		33.9177		33.9175		8.1080		8.1091		6.4138		6.4005		1.000e-12		0.4871		0.7995000		0.2217		44.64		0.400		21881		1		26.4078		26.4074		1482.34		1482.34	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			48.632		49.000		3.53230		3.53238		33.9189		33.9187		8.1068		8.1078		6.4130		6.4048		1.000e-12		0.4559		0.7729000		0.1991		44.17		0.460		21911		1		26.4089		26.4086		1482.34		1482.35	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			49.128		49.500		3.53282		3.53290		33.9210		33.9210		8.1100		8.1109		6.4148		6.4095		1.000e-12		0.4622		1.0059000		0.2393		43.70		0.511		21934		1		26.4101		26.4100		1482.36		1482.37	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			49.624		50.000		3.53338		3.53346		33.9231		33.9230		8.1138		8.1148		6.4223		6.4130		1.000e-12		0.4431		0.9784000		0.2737		43.12		0.391		21960		1		26.4112		26.4110		1482.39		1482.39	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			50.120		50.500		3.53381		3.53386		33.9248		33.9245		8.1165		8.1174		6.4163		6.4126		1.000e-12		0.4249		0.7538000		0.2439		42.44		0.299		22001		1		26.4121		26.4117		1482.41		1482.41	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			50.616		51.000		3.53408		3.53417		33.9255		33.9255		8.1185		8.1195		6.4063		6.4033		1.000e-12		0.4643		0.8111000		0.2467		42.05		0.561		22031		1		26.4123		26.4123		1482.43		1482.43	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			51.112		51.500		3.53340		3.53353		33.9250		33.9249		8.1114		8.1128		6.4118		6.4002		1.000e-12		0.5003		0.7652000		0.2326		41.73		0.650		22049		1		26.4130		26.4127		1482.41		1482.41	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			51.609		52.000		3.53123		3.53155		33.9228		33.9229		8.0894		8.0928		6.4171		6.4094		1.000e-12		0.4500		0.8114000		0.2318		41.29		0.526		22068		1		26.4146		26.4142		1482.33		1482.34	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			52.105		52.500		3.52896		3.52935		33.9194		33.9199		8.0677		8.0715		6.4165		6.4086		1.000e-12		0.5412		0.8897000		0.2614		40.64		0.272		22107		1		26.4151		26.4149		1482.25		1482.27	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			52.601		53.000		3.52555		3.52557		33.9148		33.9142		8.0345		8.0354		6.4107		6.3957		1.000e-12		0.4743		0.8064000		0.2943		40.19		0.496		22147		1		26.4165		26.4159		1482.13		1482.13	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			53.097		53.500		3.52238		3.52250		33.9146		33.9147		7.9994		8.0007		6.4123		6.4058		1.000e-12		0.4589		0.8337000		0.2592		39.81		0.633		22167		1		26.4215		26.4213		1482.01		1482.01	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			53.593		54.000		3.52282		3.52297		33.9206		33.9203		7.9978		7.9999		6.4134		6.4110		1.000e-12		0.4481		0.8966000		0.2423		39.33		0.618		22185		1		26.4264		26.4259		1482.01		1482.02	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			54.089		54.500		3.52236		3.52254		33.9245		33.9235		7.9885		7.9915		6.4189		6.4211		1.000e-12		0.4369		0.9841000		0.2252		38.81		0.478		22207		1		26.4309		26.4297		1481.99		1482.00	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			54.585		55.000		3.52171		3.52184		33.9280		33.9278		7.9775		7.9792		6.4212		6.4180		1.000e-12		0.5194		0.9495000		0.2331		38.16		0.276		22242		1		26.4352		26.4348		1481.96		1481.97	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			55.082		55.500		3.52038		3.52040		33.9290		33.9287		7.9616		7.9620		6.4209		6.4071		1.000e-12		0.5426		0.8727000		0.2572		37.71		0.394		22286		1		26.4384		26.4381		1481.91		1481.91	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			55.578		56.000		3.51746		3.51762		33.9287		33.9286		7.9294		7.9313		6.4281		6.4042		1.000e-12		0.4628		0.9238000		0.2263		37.27		0.572		22309		1		26.4429		26.4426		1481.80		1481.81	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			56.074		56.500		3.51871		3.51884		33.9363		33.9364		7.9351		7.9365		6.4243		6.4058		1.000e-12		0.4541		1.0847000		0.2361		36.81		0.582		22329		1		26.4480		26.4479		1481.84		1481.84	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			56.570		57.000		3.51666		3.51683		33.9368		33.9362		7.9118		7.9142		6.4230		6.4165		1.000e-12		0.4324		1.0285000		0.2308		36.29		0.449		22352		1		26.4518		26.4510		1481.76		1481.77	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			57.066		57.500		3.51348		3.51356		33.9490		33.9501		7.8637		7.8635		6.4243		6.4208		1.000e-12		0.5143		1.2430000		0.2215		35.67		0.311		22387		1		26.4685		26.4694		1481.60		1481.60	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			57.562		58.000		3.51084		3.51092		33.9612		33.9611		7.8218		7.8228		6.4196		6.4172		1.000e-12		0.4963		1.0755000		0.1844		35.19		0.428		22422		1		26.4842		26.4840		1481.46		1481.47	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			58.058		58.500		3.51019		3.51025		33.9746		33.9739		7.8007		7.8021		6.4394		6.4420		1.000e-12		0.4733		1.0173000		0.2646		34.77		0.514		22447		1		26.4978		26.4971		1481.41		1481.41	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			58.555		59.000		3.51778		3.51765		34.0126		34.0120		7.8452		7.8444		6.4438		6.4439		1.000e-12		0.4375		1.0251000		0.2472		34.26		0.486		22470		1		26.5211		26.5208		1481.63		1481.63	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			59.051		59.500		3.52682		3.52696		34.0457		34.0460		7.9107		7.9118		6.4344		6.4264		1.000e-12		0.5862		0.9843000		0.2321		33.72		0.380		22498		1		26.5375		26.5376		1481.93		1481.94	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			59.547		60.000		3.53155		3.53216		34.0597		34.0602		7.9481		7.9542		6.4359		6.4090		1.000e-12		0.5888		0.9032000		0.2345		33.19		0.362		22533		1		26.5430		26.5425		1482.10		1482.12	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			60.043		60.500		3.54401		3.54378		34.1000		34.1007		8.0435		8.0402		6.4036		6.3951		1.000e-12		0.4767		0.7729000		0.2653		32.80		0.497		22561		1		26.5605		26.5615		1482.52		1482.51	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			60.539		61.000		3.55782		3.55768		34.1526		34.1529		8.1407		8.1389		6.3723		6.3586		1.000e-12		0.3924		0.8562000		0.2644		32.30		0.518		22583		1		26.5874		26.5878		1482.96		1482.95	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			61.035		61.500		3.57033		3.57146		34.1893		34.1922		8.2397		8.2491		6.3057		6.2827		1.000e-12		0.3747		0.7743000		0.2572		31.74		0.351		22611		1		26.6012		26.6021		1483.38		1483.42	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			61.531		62.000		3.58373		3.58436		34.2274		34.2297		8.3468		8.3514		6.2352		6.2128		1.000e-12		0.4129		0.7280000		0.2328		31.11		0.320		22655		1		26.6149		26.6160		1483.84		1483.86	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			62.027		62.500		3.59011		3.59006		34.2610		34.2620		8.3817		8.3800		6.2340		6.2028		1.000e-12		0.4172		0.7519000		0.1923		30.80		0.577		22682		1		26.6359		26.6370		1484.02		1484.02	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			62.523		63.000		3.60309		3.60303		34.3372		34.3364		8.4445		8.4447		6.2289		6.1977		1.000e-12		0.4104		0.7793000		0.2045		30.38		0.656		22700		1		26.6861		26.6854		1484.36		1484.36	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			63.019		63.500		3.60987		3.60987		34.3961		34.3956		8.4577		8.4581		6.2266		6.2088		1.000e-12		0.3954		0.7875000		0.1912		29.90		0.585		22718		1		26.7302		26.7298		1484.49		1484.49	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			63.515		64.000		3.61009		3.61007		34.3981		34.3975		8.4577		8.4582		6.2232		6.2142		1.000e-12		0.3705		0.7564000		0.2096		29.30		0.335		22745		1		26.7318		26.7312		1484.50		1484.50	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			64.011		64.500		3.60999		3.61022		34.3979		34.3986		8.4566		8.4584		6.2316		6.2238		1.000e-12		0.3720		0.6867000		0.1936		28.64		0.316		22800		1		26.7318		26.7320		1484.50		1484.51	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			64.507		65.000		3.61036		3.61030		34.3995		34.3988		8.4588		8.4588		6.2353		6.2194		1.000e-12		0.3626		0.7019000		0.1637		28.31		0.597		22825		1		26.7327		26.7322		1484.52		1484.52	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			65.003		65.500		3.61068		3.61079		34.4015		34.4015		8.4600		8.4611		6.2381		6.2214		1.000e-12		0.3208		0.7283000		0.1491		27.96		0.676		22843		1		26.7341		26.7340		1484.54		1484.54	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			65.499		66.000		3.61102		3.61111		34.4074		34.4073		8.4573		8.4585		6.2441		6.2310		1.000e-12		0.3094		0.7400000		0.2416		27.57		0.614		22861		1		26.7391		26.7389		1484.54		1484.55	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			65.995		66.500		3.61130		3.61134		34.4150		34.4145		8.4523		8.4533		6.2443		6.2275		1.000e-12		0.3785		0.7677000		0.2360		26.92		0.384		22885		1		26.7459		26.7453		1484.54		1484.54	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			66.491		67.000		3.61103		3.61136		34.4178		34.4189		8.4463		8.4488		6.2692		6.2551		1.000e-12		0.3451		0.6753000		0.2425		26.19		0.297		22935		1		26.7490		26.7495		1484.53		1484.54	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			66.987		67.500		3.61489		3.61479		34.4287		34.4285		8.4769		8.4760		6.2622		6.2513		1.000e-12		0.3458		0.8081000		0.2079		25.87		0.574		22965		1		26.7529		26.7528		1484.67		1484.66	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			67.483		68.000		3.61595		3.61603		34.4372		34.4369		8.4794		8.4806		6.2704		6.2634		1.000e-12		0.3544		0.7413000		0.2146		25.50		0.647		22983		1		26.7591		26.7587		1484.69		1484.70	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			67.979		68.500		3.61023		3.61056		34.4419		34.4396		8.4123		8.4182		6.3020		6.3017		1.000e-12		0.3530		0.7068000		0.2230		25.04		0.539		23002		1		26.7731		26.7704		1484.46		1484.48	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			68.475		69.000		3.60685		3.60705		34.4484		34.4494		8.3687		8.3699		6.3311		6.3334		1.000e-12		0.3701		0.7023000		0.2273		24.35		0.289		23036		1		26.7849		26.7855		1484.31		1484.32	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			68.971		69.500		3.60939		3.60981		34.4623		34.4631		8.3817		8.3856		6.3547		6.3479		1.000e-12		0.4158		0.6480000		0.2749		23.80		0.378		23081		1		26.7938		26.7938		1484.39		1484.40	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			69.467		70.000		3.61057		3.61055		34.4712		34.4715		8.3854		8.3848		6.3359		6.3295		1.000e-12		0.4043		0.7084000		0.2067		23.44		0.583		23105		1		26.8002		26.8006		1484.42		1484.42	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			69.963		70.500		3.60828		3.60840		34.4792		34.4794		8.3520		8.3532		6.3234		6.3181		1.000e-12		0.3470		0.7888000		0.2071		23.05		0.644		23123		1		26.8117		26.8116		1484.31		1484.32	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			70.459		71.000		3.59873		3.59921		34.4741		34.4741		8.2534		8.2585		6.3350		6.3330		1.000e-12		0.3458		0.7951000		0.2064		22.57		0.558		23142		1		26.8227		26.8218		1483.94		1483.96	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			70.955		71.500		3.58956		3.58961		34.4632		34.4635		8.1646		8.1647		6.3592		6.3621		1.000e-12		0.3427		0.8945000		0.2075		21.89		0.350		23171		1		26.8275		26.8278		1483.60		1483.61	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			71.451		72.000		3.58457		3.58421		34.4576		34.4562		8.1157		8.1133		6.3643		6.3527		1.000e-12		0.3649		1.0026000		0.2740		21.32		0.340		23211		1		26.8305		26.8298		1483.42		1483.41	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			71.947		72.500		3.57590		3.57626		34.4531		34.4521		8.0257		8.0307		6.3841		6.3661		1.000e-12		0.3494		0.9313000		0.2453		20.88		0.466		23240		1		26.8404		26.8389		1483.08		1483.10	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			72.443		73.000		3.59105		3.58999		34.5326		34.5261		8.1095		8.1045		6.3491		6.3328		1.000e-12		0.4037		0.9505000		0.2245		20.43		0.455		23264		1		26.8903		26.8860		1483.51		1483.48	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			72.939		73.500		3.59398		3.59401		34.5676		34.5666		8.1055		8.1070		6.3220		6.3043		1.000e-12		0.3131		0.9648000		0.2393		19.86		0.332		23296		1		26.9184		26.9174		1483.55		1483.55	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			73.435		74.000		3.59405		3.59415		34.5788		34.5787		8.0948		8.0960		6.3065		6.3002		1.000e-12		0.3091		0.9220000		0.2265		19.32		0.390		23334		1		26.9288		26.9285		1483.53		1483.53	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			73.931		74.500		3.59395		3.59405		34.5842		34.5842		8.0879		8.0891		6.2949		6.2971		1.000e-12		0.3052		0.8833000		0.2640		19.01		0.610		23358		1		26.9341		26.9339		1483.51		1483.52	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			74.427		75.000		3.59570		3.59575		34.6284		34.6277		8.0619		8.0632		6.2879		6.2886		1.000e-12		0.2971		0.9027000		0.2327		18.60		0.668		23376		1		26.9727		26.9719		1483.48		1483.48	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			74.923		75.500		3.59717		3.59724		34.6431		34.6427		8.0627		8.0638		6.2833		6.2741		1.000e-12		0.2661		1.0432000		0.2080		18.14		0.550		23394		1		26.9842		26.9837		1483.51		1483.51	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			75.418		76.000		3.59853		3.59884		34.6530		34.6548		8.0672		8.0687		6.2732		6.2546		1.000e-12		0.2699		1.0474000		0.2020		17.41		0.277		23432		1		26.9912		26.9924		1483.55		1483.55	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			75.914		76.500		3.60015		3.60038		34.6696		34.6710		8.0678		8.0688		6.2656		6.2493		1.000e-12		0.2658		0.8912000		0.2430		16.84		0.478		23485		1		27.0042		27.0051		1483.58		1483.58	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			76.410		77.000		3.60074		3.60083		34.6787		34.6785		8.0648		8.0659		6.2603		6.2441		1.000e-12		0.2979		1.0500000		0.2573		16.55		0.719		23502		1		27.0118		27.0115		1483.59		1483.59	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			76.906		77.500		3.60085		3.60094		34.6806		34.6802		8.0637		8.0650		6.2592		6.2435		1.000e-12		0.2582		1.0951000		0.1917		16.24		0.744		23517		1		27.0134		27.0130		1483.59		1483.60	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			77.402		78.000		3.60089		3.60098		34.6812		34.6811		8.0633		8.0644		6.2580		6.2478		1.000e-12		0.2411		1.1172000		0.2013		15.67		0.581		23534		1		27.0140		27.0137		1483.60		1483.60	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			77.898		78.500		3.60068		3.60093		34.6746		34.6795		8.0675		8.0651		6.2532		6.2505		1.000e-12		0.2655		0.9995000		0.2261		14.94		0.291		23578		1		27.0082		27.0124		1483.62		1483.61	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			78.394		79.000		3.60095		3.60094		34.6816		34.6797		8.0631		8.0648		6.2490		6.2256		1.000e-12		0.3064		0.9506000		0.2338		14.43		0.533		23626		1		27.0143		27.0126		1483.62		1483.62	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			78.890		79.500		3.60108		3.60119		34.6837		34.6837		8.0621		8.0633		6.2488		6.2157		1.000e-12		0.3286		1.0606000		0.2684		14.09		0.720		23643		1		27.0161		27.0159		1483.62		1483.63	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			79.385		80.000		3.60120		3.60131		34.6851		34.6850		8.0618		8.0630		6.2480		6.2241		1.000e-12		0.3456		1.1372000		0.2643		13.72		0.727		23658		1		27.0172		27.0170		1483.63		1483.64	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			79.881		80.500		3.60122		3.60132		34.6850		34.6850		8.0618		8.0630		6.2435		6.2340		1.000e-12		0.2701		1.1979000		0.2316		13.21		0.571		23676		1		27.0172		27.0170		1483.64		1483.64	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			80.377		81.000		3.60129		3.60141		34.6850		34.6853		8.0622		8.0633		6.2441		6.2392		1.000e-12		0.2760		1.1778000		0.2296		12.46		0.283		23715		1		27.0171		27.0172		1483.65		1483.65	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			80.873		81.500		3.60134		3.60141		34.6855		34.6852		8.0621		8.0631		6.2476		6.2342		1.000e-12		0.2957		1.0970000		0.2340		11.92		0.512		23767		1		27.0175		27.0172		1483.66		1483.66	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			81.369		82.000		3.60134		3.60143		34.6852		34.6850		8.0621		8.0633		6.2435		6.2309		1.000e-12		0.2846		1.2003000		0.2059		11.66		0.736		23783		1		27.0173		27.0170		1483.67		1483.67	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			81.865		82.500		3.60140		3.60150		34.6857		34.6855		8.0621		8.0633		6.2451		6.2330		1.000e-12		0.2531		1.1867000		0.2270		11.27		0.747		23798		1		27.0177		27.0174		1483.68		1483.68	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			82.361		83.000		3.60148		3.60158		34.6862		34.6860		8.0622		8.0634		6.2465		6.2358		1.000e-12		0.2412		1.1843000		0.2458		10.73		0.554		23815		1		27.0180		27.0178		1483.68		1483.69	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			82.857		83.500		3.60147		3.60161		34.6851		34.6859		8.0630		8.0637		6.2438		6.2283		1.000e-12		0.2708		1.0807000		0.2328		9.97		0.278		23867		1		27.0171		27.0176		1483.70		1483.70	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			83.352		84.000		3.60155		3.60163		34.6862		34.6859		8.0625		8.0637		6.2395		6.2316		1.000e-12		0.2892		1.1313000		0.2295		9.44		0.444		23916		1		27.0180		27.0176		1483.70		1483.71	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			83.848		84.500		3.60163		3.60177		34.6866		34.6870		8.0626		8.0637		6.2399		6.2345		1.000e-12		0.2658		1.4885000		0.2239		9.04		0.466		23940		1		27.0183		27.0185		1483.71		1483.72	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			84.344		85.000		3.60175		3.60181		34.6877		34.6870		8.0626		8.0639		6.2373		6.2308		1.000e-12		0.3009		1.1846000		0.2523		8.43		0.243		23983		1		27.0192		27.0185		1483.72		1483.72	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			84.840		85.500		3.60181		3.60182		34.6878		34.6866		8.0629		8.0642		6.2312		6.2329		1.000e-12		0.3534		1.0301000		0.2636		7.82		0.298		24087		1		27.0192		27.0181		1483.73		1483.73	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			85.336		86.000		3.60187		3.60196		34.6881		34.6879		8.0630		8.0642		6.2318		6.2283		1.000e-12		0.3125		1.1771000		0.2331		7.38		0.264		24136		1		27.0195		27.0191		1483.74		1483.74	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			85.832		86.500		3.60194		3.60200		34.6885		34.6880		8.0631		8.0643		6.2280		6.2284		1.000e-12		0.2929		1.0682000		0.2705		6.87		0.332		24221		1		27.0197		27.0192		1483.75		1483.75	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			86.328		87.000		3.60195		3.60204		34.6884		34.6882		8.0630		8.0642		6.2315		6.2298		1.000e-12		0.2816		1.2287000		0.2306		6.45		0.253		24256		1		27.0197		27.0194		1483.76		1483.76	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			86.823		87.500		3.60197		3.60206		34.6883		34.6882		8.0632		8.0643		6.2333		6.2321		1.000e-12		0.2689		1.1186000		0.2652		5.85		0.261		24344		1		27.0195		27.0193		1483.76		1483.77	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			87.319		88.000		3.60200		3.60210		34.6884		34.6882		8.0632		8.0644		6.2296		6.2248		1.000e-12		0.2670		1.2111000		0.2587		5.46		0.405		24384		1		27.0196		27.0193		1483.77		1483.78	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			87.815		88.500		3.60206		3.60213		34.6886		34.6883		8.0634		8.0644		6.2319		6.2202		1.000e-12		0.2638		1.2750000		0.2108		4.99		0.344		24413		1		27.0198		27.0193		1483.78		1483.79	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			88.311		89.000		3.60209		3.60217		34.6886		34.6883		8.0634		8.0645		6.2247		6.2291		1.000e-12		0.3091		1.0952000		0.2171		4.36		0.297		24506		1		27.0198		27.0194		1483.79		1483.79	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			88.807		89.500		3.60212		3.60219		34.6886		34.6883		8.0635		8.0646		6.2270		6.2213		1.000e-12		0.2776		1.2170000		0.2821		4.01		0.425		24536		1		27.0198		27.0193		1483.80		1483.80	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			89.303		90.000		3.60213		3.60223		34.6886		34.6885		8.0634		8.0646		6.2302		6.2171		1.000e-12		0.2635		1.3331000		0.2191		3.45		0.255		24572		1		27.0198		27.0195		1483.81		1483.81	
+2018	12	07	19	50	00	2018_34AR_SMHI-7-2018	P2			89.799		90.500		3.60214		3.60225		34.6878		34.6878		8.0640		8.0653		6.2289		6.2217		1.000e-12		0.3064		1.1912000		0.2612		2.73		-0.051		24855		1		27.0191		27.0188		1483.82		1483.82	

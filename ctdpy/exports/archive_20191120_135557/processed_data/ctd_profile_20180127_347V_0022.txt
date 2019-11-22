@@ -1,0 +1,608 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-01-27
+//METADATA;STIME;23:39
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;347V
+//METADATA;CRUISE_NO;SMHI-01-2018
+//METADATA;SERNO;0022
+//METADATA;STATN;BCS III-10
+//METADATA;LATIT;5533.33
+//METADATA;LONGI;01824.04
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20180127_2338_34_02_0022.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20180127_347V_0022.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\2018\ME18D022.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.6.26
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 27 2018 23:38:35
+//INSTRUMENT_METADATA;* NMEA Latitude = 55 33.33 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 018 24.04 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 27 2018  23:39:03
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  BCS III-10
+//INSTRUMENT_METADATA;** Operator:  SSip
+//INSTRUMENT_METADATA;** Ship: MERI
+//INSTRUMENT_METADATA;** Average sound velocity: 1437.36 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sun, 28 Jan 2018 00:24:51 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183402-0022
+//INSTRUMENT_METADATA;** Cruise: SMHI-01-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Jan 27 2018 23:38:35
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 169                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 55.5555
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 55.5555
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =       6518,      14228       
+//INSTRUMENT_METADATA;# span 1 =      2.000,     86.000       
+//INSTRUMENT_METADATA;# span 2 =     4.6201,     6.0018       
+//INSTRUMENT_METADATA;# span 3 =     4.6212,     6.0023       
+//INSTRUMENT_METADATA;# span 4 =    -0.0338,     0.0062       
+//INSTRUMENT_METADATA;# span 5 =   0.790339,   1.174522       
+//INSTRUMENT_METADATA;# span 6 =   0.790331,   1.174492       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    0.07033,    8.11161       
+//INSTRUMENT_METADATA;# span 9 =    0.12977,    8.10397       
+//INSTRUMENT_METADATA;# span 10 =       1.56,      98.77      
+//INSTRUMENT_METADATA;# span 11 =     0.2725,     0.5785      
+//INSTRUMENT_METADATA;# span 12 =     0.2265,     0.4019      
+//INSTRUMENT_METADATA;# span 13 = -8.969e-04, 5.9756e-02      
+//INSTRUMENT_METADATA;# span 14 =     0.1054,     0.2888      
+//INSTRUMENT_METADATA;# span 15 =     7.3641,    10.8133      
+//INSTRUMENT_METADATA;# span 16 =     7.3637,    10.8128      
+//INSTRUMENT_METADATA;# span 17 =    -0.0273,     0.0119      
+//INSTRUMENT_METADATA;# span 18 =     5.8347,     8.4935      
+//INSTRUMENT_METADATA;# span 19 =     5.8348,     8.4930      
+//INSTRUMENT_METADATA;# span 20 =      1.982,     85.203      
+//INSTRUMENT_METADATA;# span 21 =      2.025,     87.029      
+//INSTRUMENT_METADATA;# span 22 =     -0.053,      0.925      
+//INSTRUMENT_METADATA;# span 23 =    1434.05,    1445.71      
+//INSTRUMENT_METADATA;# span 24 =    1434.06,    1445.71      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 27 2018 23:39:03 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>0732</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>12-Nov-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.1726e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4966</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3976e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.9128e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2963e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.6300</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1243</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>28-Oct-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.6887e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5000</offset>
+//INSTRUMENT_METADATA;#         <A>-4.1561e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.4526e-004</B>
+//INSTRUMENT_METADATA;#         <C>-4.4039e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Jan 28 2018 00:24:26, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.hex C:\ctd\temp\SBE09_1044_20180127_2338_34_02_0022.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Jan 28 2018 00:24:29, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Jan 28 2018 00:24:33, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Jan 28 2018 00:24:35, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Jan 28 2018 00:24:37, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Jan 28 2018 00:24:40, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Jan 28 2018 00:24:43, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Jan 28 2018 00:24:46, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20180127_2338_34_02_0022.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	2.025		2.000		0.79158		0.79071		7.3655		7.3643		4.6725		4.6385		8.1088		8.1040		5.976e-02		0.5014		0.1224000		0.3315		98.65		0.289		6518		1		5.8355		5.8357		1434.24		1434.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	2.532		2.500		0.79239		0.79165		7.3660		7.3650		4.7065		4.6773		8.0985		8.0865		5.783e-02		0.5167		0.1362000		0.2961		98.64		0.430		6536		1		5.8347		5.8350		1434.40		1434.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	3.038		3.000		0.79177		0.79138		7.3650		7.3645		4.6823		4.6673		8.0968		8.0558		7.059e-03		0.5232		0.1343000		0.3242		98.64		0.466		6580		1		5.8347		5.8348		1434.30		1434.23	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	3.544		3.500		0.79145		0.79134		7.3647		7.3650		4.6691		4.6631		8.0978		8.0457		5.018e-03		0.5206		0.1293000		0.3440		98.64		0.549		6598		1		5.8350		5.8354		1434.25		1434.22	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	4.051		4.000		0.79043		0.79053		7.3641		7.3639		4.6259		4.6313		8.1048		8.0454		2.100e-02		0.5185		0.1240000		0.3278		98.64		0.488		6624		1		5.8359		5.8356		1434.06		1434.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	4.557		4.500		0.79034		0.79033		7.3641		7.3638		4.6215		4.6223		8.1098		8.0454		-8.969e-04		0.4912		0.1244000		0.3060		98.64		0.709		6646		1		5.8361		5.8359		1434.05		1434.06	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	5.063		5.000		0.79037		0.79038		7.3642		7.3641		4.6219		4.6230		8.1082		8.0537		2.261e-08		0.5156		0.1295000		0.3465		98.64		0.850		6660		1		5.8362		5.8360		1434.06		1434.07	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	5.569		5.500		0.79039		0.79043		7.3643		7.3642		4.6225		4.6246		8.0978		8.0607		1.000e-12		0.5175		0.1327000		0.3404		98.64		0.793		6673		1		5.8362		5.8361		1434.07		1434.08	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	6.076		6.000		0.79040		0.79041		7.3643		7.3641		4.6225		4.6239		8.0901		8.0678		1.000e-12		0.5291		0.1416000		0.3461		98.64		0.559		6691		1		5.8362		5.8360		1434.08		1434.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	6.582		6.500		0.79042		0.79038		7.3644		7.3640		4.6225		4.6229		8.0996		8.0612		1.000e-12		0.5271		0.1356000		0.3887		98.64		0.437		6719		1		5.8363		5.8360		1434.09		1434.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	7.088		7.000		0.79039		0.79036		7.3642		7.3639		4.6215		4.6222		8.1052		8.0625		1.000e-12		0.5048		0.1300000		0.3630		98.65		0.551		6744		1		5.8362		5.8359		1434.09		1434.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	7.595		7.500		0.79041		0.79040		7.3643		7.3640		4.6219		4.6228		8.1107		8.0622		1.000e-12		0.5277		0.1306000		0.3203		98.64		0.633		6764		1		5.8363		5.8360		1434.10		1434.11	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	8.101		8.000		0.79039		0.79039		7.3643		7.3639		4.6210		4.6222		8.1102		8.0581		1.000e-12		0.5161		0.1348000		0.3190		98.65		0.650		6782		1		5.8363		5.8359		1434.11		1434.11	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	8.607		8.500		0.79042		0.79040		7.3644		7.3640		4.6215		4.6222		8.0960		8.0535		1.000e-12		0.5066		0.1430000		0.3177		98.66		0.584		6801		1		5.8363		5.8360		1434.12		1434.12	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	9.114		9.000		0.79048		0.79047		7.3647		7.3642		4.6228		4.6239		8.0827		8.0621		1.000e-12		0.5161		0.1348000		0.3175		98.65		0.372		6827		1		5.8365		5.8361		1434.13		1434.13	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	9.620		9.500		0.79051		0.79048		7.3648		7.3643		4.6232		4.6238		8.0924		8.0504		1.000e-12		0.5247		0.1362000		0.3165		98.65		0.437		6864		1		5.8366		5.8362		1434.14		1434.14	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	10.126		10.000		0.79046		0.79041		7.3646		7.3640		4.6214		4.6219		8.1011		8.0570		1.000e-12		0.5220		0.1418000		0.3191		98.65		0.682		6885		1		5.8365		5.8360		1434.14		1434.14	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	10.633		10.500		0.79050		0.79046		7.3647		7.3642		4.6226		4.6231		8.1012		8.0654		1.000e-12		0.5167		0.1410000		0.3180		98.66		0.749		6900		1		5.8365		5.8361		1434.15		1434.15	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	11.139		11.000		0.79056		0.79052		7.3649		7.3644		4.6240		4.6246		8.0986		8.0644		1.000e-12		0.5064		0.1386000		0.3149		98.66		0.641		6917		1		5.8367		5.8362		1434.17		1434.17	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	11.645		11.500		0.79056		0.79052		7.3649		7.3644		4.6236		4.6243		8.0998		8.0590		1.000e-12		0.5139		0.1314000		0.3251		98.66		0.339		6945		1		5.8367		5.8363		1434.17		1434.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	12.152		12.000		0.79058		0.79054		7.3650		7.3644		4.6240		4.6246		8.0953		8.0532		1.000e-12		0.5169		0.1235000		0.3243		98.66		0.486		6988		1		5.8367		5.8363		1434.18		1434.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	12.658		12.500		0.79053		0.79048		7.3647		7.3641		4.6226		4.6228		8.0989		8.0537		1.000e-12		0.5167		0.1207000		0.3433		98.66		0.813		7005		1		5.8366		5.8361		1434.18		1434.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	13.164		13.000		0.79044		0.79043		7.3643		7.3639		4.6202		4.6212		8.0996		8.0526		1.000e-12		0.5167		0.1503000		0.3525		98.65		0.925		7018		1		5.8363		5.8360		1434.18		1434.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	13.670		13.500		0.79045		0.79044		7.3643		7.3639		4.6201		4.6214		8.1052		8.0530		1.000e-12		0.5167		0.1484000		0.3606		98.66		0.883		7030		1		5.8364		5.8360		1434.19		1434.19	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	14.177		14.000		0.79058		0.79055		7.3649		7.3644		4.6232		4.6239		8.1116		8.0539		1.000e-12		0.4933		0.1357000		0.3977		98.66		0.671		7045		1		5.8367		5.8363		1434.21		1434.21	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	14.683		14.500		0.79072		0.79073		7.3655		7.3652		4.6264		4.6281		8.1092		8.0613		1.000e-12		0.5256		0.1309000		0.3617		98.66		0.314		7077		1		5.8371		5.8368		1434.23		1434.24	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	15.189		15.000		0.79088		0.79085		7.3662		7.3657		4.6301		4.6308		8.1015		8.0562		1.000e-12		0.5605		0.1307000		0.2967		98.66		0.570		7115		1		5.8375		5.8371		1434.26		1434.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	15.696		15.500		0.79083		0.79076		7.3659		7.3652		4.6291		4.6287		8.1028		8.0563		1.000e-12		0.5785		0.1306000		0.3493		98.66		0.820		7130		1		5.8373		5.8368		1434.26		1434.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	16.202		16.000		0.79081		0.79081		7.3658		7.3655		4.6283		4.6295		8.1048		8.0562		1.000e-12		0.5462		0.1392000		0.3523		98.66		0.892		7143		1		5.8372		5.8369		1434.27		1434.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	16.708		16.500		0.79070		0.79075		7.3652		7.3651		4.6255		4.6283		8.1033		8.0473		1.000e-12		0.5412		0.1423000		0.3913		98.66		0.824		7156		1		5.8368		5.8367		1434.26		1434.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	17.215		17.000		0.79057		0.79055		7.3645		7.3641		4.6225		4.6236		8.1046		8.0564		1.000e-12		0.4844		0.1265000		0.3713		98.66		0.593		7173		1		5.8364		5.8361		1434.25		1434.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	17.721		17.500		0.79056		0.79053		7.3645		7.3640		4.6219		4.6225		8.1020		8.0557		1.000e-12		0.5284		0.1278000		0.3750		98.64		0.306		7207		1		5.8364		5.8360		1434.26		1434.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	18.227		18.000		0.79051		0.79048		7.3641		7.3637		4.6209		4.6216		8.0930		8.0574		1.000e-12		0.5213		0.1177000		0.3422		98.62		0.610		7240		1		5.8362		5.8358		1434.26		1434.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	18.734		18.500		0.79052		0.79049		7.3642		7.3637		4.6210		4.6218		8.0934		8.0704		1.000e-12		0.4933		0.1247000		0.3338		98.61		0.807		7255		1		5.8362		5.8358		1434.27		1434.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	19.240		19.000		0.79055		0.79051		7.3643		7.3638		4.6214		4.6220		8.0972		8.0653		1.000e-12		0.5101		0.1284000		0.3308		98.61		0.848		7269		1		5.8363		5.8358		1434.28		1434.28	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	19.746		19.500		0.79056		0.79053		7.3643		7.3638		4.6216		4.6223		8.1013		8.0651		1.000e-12		0.5173		0.1297000		0.3317		98.60		0.749		7283		1		5.8363		5.8358		1434.29		1434.29	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	20.253		20.000		0.79059		0.79056		7.3645		7.3640		4.6219		4.6229		8.1050		8.0545		1.000e-12		0.5398		0.1348000		0.3269		97.87		0.521		7303		1		5.8364		5.8360		1434.30		1434.30	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	20.759		20.500		0.79064		0.79061		7.3647		7.3642		4.6229		4.6236		8.0913		8.0642		1.000e-12		0.5603		0.1318000		0.3267		97.66		0.359		7335		1		5.8366		5.8361		1434.31		1434.31	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	21.265		21.000		0.79080		0.79071		7.3655		7.3647		4.6264		4.6256		8.0806		8.0541		1.000e-12		0.5686		0.1377000		0.3199		98.70		0.570		7364		1		5.8370		5.8364		1434.34		1434.33	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	21.771		21.500		0.79078		0.79076		7.3653		7.3649		4.6259		4.6266		8.0844		8.0577		1.000e-12		0.5410		0.1359000		0.3037		98.66		0.765		7381		1		5.8369		5.8366		1434.34		1434.35	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	22.278		22.000		0.79077		0.79075		7.3652		7.3648		4.6255		4.6264		8.0932		8.0585		1.000e-12		0.5335		0.1392000		0.2714		98.66		0.843		7395		1		5.8369		5.8365		1434.35		1434.35	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	22.784		22.500		0.79079		0.79075		7.3653		7.3647		4.6257		4.6264		8.0980		8.0600		1.000e-12		0.5289		0.1430000		0.2917		96.12		0.795		7409		1		5.8369		5.8365		1434.36		1434.36	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	23.290		23.000		0.79077		0.79074		7.3652		7.3647		4.6252		4.6259		8.0987		8.0627		1.000e-12		0.5084		0.1475000		0.3156		95.20		0.612		7426		1		5.8368		5.8365		1434.36		1434.37	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	23.797		23.500		0.79075		0.79072		7.3651		7.3646		4.6245		4.6252		8.0914		8.0629		1.000e-12		0.5326		0.1514000		0.3288		98.57		0.374		7454		1		5.8368		5.8364		1434.37		1434.37	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	24.303		24.000		0.79075		0.79071		7.3650		7.3645		4.6244		4.6249		8.0890		8.0612		1.000e-12		0.5405		0.1283000		0.3594		98.66		0.494		7487		1		5.8367		5.8363		1434.37		1434.37	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	24.809		24.500		0.79073		0.79073		7.3649		7.3645		4.6238		4.6254		8.0902		8.0614		1.000e-12		0.5286		0.1235000		0.3496		98.66		0.714		7506		1		5.8366		5.8363		1434.38		1434.39	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	25.316		25.000		0.79074		0.79074		7.3649		7.3646		4.6239		4.6254		8.0885		8.0613		1.000e-12		0.5354		0.1353000		0.3084		98.66		0.807		7521		1		5.8366		5.8364		1434.39		1434.39	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	25.822		25.500		0.79077		0.79075		7.3650		7.3646		4.6244		4.6254		8.0862		8.0627		1.000e-12		0.5410		0.1478000		0.3126		98.67		0.785		7535		1		5.8367		5.8363		1434.40		1434.40	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	26.328		26.000		0.79089		0.79083		7.3655		7.3650		4.6271		4.6272		8.0862		8.0633		1.000e-12		0.5317		0.1422000		0.3908		98.66		0.637		7552		1		5.8371		5.8366		1434.42		1434.42	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	26.835		26.500		0.79092		0.79085		7.3657		7.3651		4.6275		4.6273		8.0880		8.0549		1.000e-12		0.5212		0.1520000		0.3331		98.66		0.413		7577		1		5.8371		5.8367		1434.43		1434.43	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	27.341		27.000		0.79095		0.79095		7.3658		7.3655		4.6280		4.6294		8.0895		8.0405		1.000e-12		0.5716		0.1541000		0.4019		98.66		0.442		7609		1		5.8372		5.8369		1434.44		1434.44	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	27.847		27.500		0.79102		0.79099		7.3661		7.3655		4.6298		4.6307		8.0826		8.0507		1.000e-12		0.5550		0.1370000		0.3014		98.66		0.627		7631		1		5.8374		5.8369		1434.45		1434.46	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	28.354		28.000		0.79112		0.79110		7.3665		7.3660		4.6319		4.6330		8.0902		8.0573		1.000e-12		0.5472		0.1366000		0.3427		98.66		0.722		7649		1		5.8377		5.8372		1434.47		1434.48	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	28.860		28.500		0.79116		0.79110		7.3666		7.3660		4.6331		4.6332		8.0981		8.0533		1.000e-12		0.5411		0.1365000		0.3586		98.66		0.719		7664		1		5.8377		5.8372		1434.49		1434.49	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	29.366		29.000		0.79113		0.79106		7.3664		7.3658		4.6320		4.6319		8.1045		8.0595		1.000e-12		0.5190		0.1362000		0.3311		98.65		0.603		7682		1		5.8376		5.8371		1434.49		1434.49	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	29.873		29.500		0.79116		0.79110		7.3665		7.3660		4.6326		4.6328		8.1042		8.0704		1.000e-12		0.4898		0.1317000		0.3330		98.64		0.448		7707		1		5.8377		5.8372		1434.50		1434.50	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	30.379		30.000		0.79113		0.79110		7.3664		7.3659		4.6317		4.6326		8.0905		8.0645		1.000e-12		0.5447		0.1454000		0.3346		98.65		0.491		7735		1		5.8376		5.8372		1434.50		1434.51	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	30.885		30.500		0.79113		0.79110		7.3664		7.3659		4.6315		4.6324		8.0873		8.0518		1.000e-12		0.5437		0.1289000		0.3083		98.64		0.593		7756		1		5.8376		5.8371		1434.51		1434.51	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	31.391		31.000		0.79115		0.79111		7.3664		7.3659		4.6321		4.6325		8.0887		8.0507		1.000e-12		0.5411		0.1276000		0.3118		98.63		0.585		7775		1		5.8376		5.8371		1434.52		1434.52	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	31.898		31.500		0.79115		0.79111		7.3663		7.3658		4.6319		4.6325		8.0920		8.0449		1.000e-12		0.5370		0.1315000		0.3042		98.56		0.514		7798		1		5.8375		5.8371		1434.53		1434.53	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	32.404		32.000		0.79113		0.79112		7.3662		7.3658		4.6313		4.6325		8.0969		8.0446		1.000e-12		0.5225		0.1350000		0.2801		67.87		0.540		7822		1		5.8375		5.8371		1434.53		1434.54	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	32.910		32.500		0.79109		0.79103		7.3660		7.3654		4.6301		4.6304		8.0999		8.0531		1.000e-12		0.5041		0.1305000		0.3194		88.36		0.672		7842		1		5.8373		5.8368		1434.54		1434.54	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	33.417		33.000		0.79098		0.79102		7.3654		7.3653		4.6273		4.6300		8.0995		8.0511		1.000e-12		0.5157		0.1253000		0.3197		65.12		0.724		7858		1		5.8370		5.8368		1434.53		1434.54	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	33.923		33.500		0.79116		0.79118		7.3663		7.3660		4.6316		4.6335		8.0973		8.0497		1.000e-12		0.5251		0.1295000		0.3187		49.78		0.637		7875		1		5.8375		5.8372		1434.56		1434.57	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	34.429		34.000		0.79123		0.79119		7.3666		7.3661		4.6330		4.6334		8.0881		8.0588		1.000e-12		0.5399		0.1413000		0.3344		63.82		0.387		7900		1		5.8377		5.8373		1434.57		1434.57	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	34.936		34.500		0.79129		0.79132		7.3668		7.3666		4.6343		4.6369		8.0689		8.0506		1.000e-12		0.5310		0.1338000		0.3585		71.07		0.388		7941		1		5.8378		5.8375		1434.58		1434.60	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	35.442		35.000		0.79135		0.79125		7.3670		7.3662		4.6359		4.6351		8.0883		8.0412		1.000e-12		0.5515		0.1247000		0.3307		77.51		0.747		7961		1		5.8379		5.8373		1434.60		1434.60	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	35.948		35.500		0.79126		0.79124		7.3666		7.3661		4.6337		4.6344		8.0983		8.0462		1.000e-12		0.5487		0.1244000		0.3203		94.88		0.876		7975		1		5.8376		5.8373		1434.60		1434.60	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	36.455		36.000		0.79132		0.79126		7.3668		7.3662		4.6348		4.6349		8.0994		8.0573		1.000e-12		0.5178		0.1313000		0.3253		96.98		0.851		7988		1		5.8378		5.8373		1434.61		1434.61	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	36.961		36.500		0.79135		0.79132		7.3669		7.3664		4.6355		4.6365		8.0991		8.0615		1.000e-12		0.5215		0.1323000		0.3312		97.64		0.644		8003		1		5.8379		5.8374		1434.62		1434.63	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	37.467		37.000		0.79134		0.79129		7.3669		7.3663		4.6349		4.6351		8.0818		8.0545		1.000e-12		0.5349		0.1373000		0.3263		72.62		0.314		8039		1		5.8378		5.8374		1434.63		1434.63	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	37.974		37.500		0.79137		0.79135		7.3669		7.3665		4.6357		4.6370		8.0793		8.0542		1.000e-12		0.5395		0.1303000		0.3321		92.49		0.617		8077		1		5.8378		5.8375		1434.64		1434.65	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	38.480		38.000		0.79148		0.79144		7.3674		7.3668		4.6382		4.6391		8.0881		8.0564		1.000e-12		0.5290		0.1242000		0.3219		93.59		0.841		8092		1		5.8381		5.8377		1434.66		1434.66	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	38.986		38.500		0.79154		0.79158		7.3676		7.3674		4.6397		4.6421		8.0908		8.0567		1.000e-12		0.5372		0.1338000		0.3143		93.27		0.890		8105		1		5.8383		5.8380		1434.68		1434.69	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	39.492		39.000		0.79169		0.79161		7.3682		7.3675		4.6434		4.6430		8.0941		8.0540		1.000e-12		0.5529		0.1476000		0.3080		94.93		0.799		8118		1		5.8386		5.8381		1434.70		1434.70	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	39.999		39.500		0.79163		0.79161		7.3679		7.3674		4.6420		4.6429		8.1016		8.0552		1.000e-12		0.5371		0.1456000		0.3117		96.26		0.547		8136		1		5.8384		5.8380		1434.70		1434.70	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	40.505		40.000		0.79158		0.79149		7.3677		7.3669		4.6402		4.6396		8.0927		8.0592		1.000e-12		0.5410		0.1317000		0.3726		82.60		0.316		8172		1		5.8383		5.8377		1434.70		1434.70	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	41.011		40.500		0.79191		0.79179		7.3690		7.3681		4.6486		4.6472		8.0857		8.0604		1.000e-12		0.5523		0.1279000		0.3311		46.63		0.587		8202		1		5.8391		5.8384		1434.75		1434.74	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	41.518		41.000		0.79199		0.79190		7.3694		7.3686		4.6505		4.6497		8.0826		8.0552		1.000e-12		0.5411		0.1493000		0.3233		47.12		0.729		8219		1		5.8393		5.8387		1434.76		1434.76	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	42.024		41.500		0.79205		0.79201		7.3696		7.3691		4.6519		4.6521		8.0829		8.0540		1.000e-12		0.5411		0.1411000		0.3327		75.70		0.719		8235		1		5.8394		5.8390		1434.78		1434.78	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	42.530		42.000		0.79206		0.79203		7.3696		7.3691		4.6520		4.6527		8.0879		8.0478		1.000e-12		0.5411		0.1352000		0.3533		82.86		0.596		8253		1		5.8394		5.8390		1434.79		1434.79	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	43.037		42.500		0.79206		0.79204		7.3696		7.3691		4.6519		4.6527		8.0958		8.0332		1.000e-12		0.5389		0.1299000		0.3428		41.63		0.466		8277		1		5.8394		5.8390		1434.79		1434.80	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	43.543		43.000		0.79207		0.79204		7.3696		7.3691		4.6519		4.6526		8.0926		8.0309		1.000e-12		0.5286		0.1365000		0.3292		44.38		0.501		8303		1		5.8394		5.8390		1434.80		1434.81	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	44.049		43.500		0.79208		0.79206		7.3696		7.3692		4.6521		4.6528		8.0882		8.0430		1.000e-12		0.5289		0.1667000		0.3316		71.44		0.580		8325		1		5.8394		5.8391		1434.81		1434.81	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	44.556		44.000		0.79209		0.79206		7.3696		7.3692		4.6521		4.6526		8.0843		8.0561		1.000e-12		0.5399		0.1328000		0.3330		93.70		0.579		8345		1		5.8394		5.8391		1434.82		1434.82	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	45.062		44.500		0.79208		0.79206		7.3696		7.3691		4.6517		4.6527		8.0720		8.0501		1.000e-12		0.5411		0.1441000		0.3287		67.10		0.526		8367		1		5.8394		5.8390		1434.83		1434.83	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	45.568		45.000		0.79211		0.79209		7.3697		7.3693		4.6519		4.6527		8.0621		8.0320		1.000e-12		0.5411		0.1425000		0.3001		45.03		0.529		8390		1		5.8395		5.8392		1434.83		1434.84	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	46.075		45.500		0.79212		0.79210		7.3698		7.3693		4.6518		4.6527		8.0633		8.0166		1.000e-12		0.5411		0.1369000		0.3437		76.90		0.563		8412		1		5.8396		5.8392		1434.84		1434.85	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	46.581		46.000		0.79224		0.79223		7.3704		7.3701		4.6538		4.6548		8.0724		8.0232		1.000e-12		0.5301		0.1401000		0.3402		44.55		0.567		8433		1		5.8400		5.8397		1434.86		1434.86	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	47.087		46.500		0.79292		0.79291		7.3741		7.3738		4.6674		4.6685		8.0569		8.0142		1.000e-12		0.4922		0.1371000		0.3194		60.65		0.569		8454		1		5.8425		5.8422		1434.93		1434.94	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	47.593		47.000		0.79492		0.79487		7.3853		7.3847		4.7066		4.7072		8.0089		7.9734		1.000e-12		0.4677		0.1317000		0.2928		98.77		0.574		8475		1		5.8500		5.8495		1435.13		1435.13	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	48.100		47.500		0.79640		0.79635		7.3956		7.3949		4.7266		4.7273		7.9696		7.9415		1.000e-12		0.4580		0.1294000		0.2610		98.35		0.568		8496		1		5.8574		5.8569		1435.24		1435.24	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	48.606		48.000		0.79703		0.79700		7.4004		7.3998		4.7329		4.7340		7.9487		7.9347		1.000e-12		0.4493		0.1344000		0.3278		59.81		0.517		8518		1		5.8610		5.8605		1435.28		1435.29	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	49.112		48.500		0.79711		0.79707		7.4026		7.4022		4.7264		4.7264		7.9489		7.9294		1.000e-12		0.4727		0.1444000		0.3186		63.04		0.471		8543		1		5.8630		5.8627		1435.26		1435.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	49.619		49.000		0.79705		0.79702		7.4030		7.4026		4.7213		4.7224		7.9539		7.9185		1.000e-12		0.4792		0.1521000		0.3184		43.99		0.514		8568		1		5.8635		5.8631		1435.25		1435.25	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	50.125		49.500		0.79726		0.79722		7.4051		7.4045		4.7213		4.7220		7.9581		7.9137		1.000e-12		0.4734		0.1503000		0.3167		40.27		0.579		8590		1		5.8652		5.8647		1435.26		1435.26	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	50.631		50.000		0.79753		0.79757		7.4085		7.4080		4.7180		4.7218		7.9654		7.9238		1.000e-12		0.4740		0.1438000		0.3232		39.91		0.599		8610		1		5.8679		5.8674		1435.25		1435.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	51.138		50.500		0.79708		0.79703		7.4082		7.4076		4.6989		4.6989		7.9742		7.9359		1.000e-12		0.4212		0.1484000		0.3310		39.40		0.564		8630		1		5.8684		5.8679		1435.18		1435.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	51.644		51.000		0.79687		0.79700		7.4079		7.4078		4.6904		4.6967		7.9966		7.9598		1.000e-12		0.4319		0.1418000		0.3011		38.69		0.530		8652		1		5.8685		5.8681		1435.15		1435.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	52.150		51.500		0.79686		0.79683		7.4085		7.4081		4.6869		4.6871		7.9867		7.9507		1.000e-12		0.4904		0.1523000		0.3448		68.00		0.524		8675		1		5.8691		5.8687		1435.14		1435.14	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	52.656		52.000		0.79717		0.79716		7.4116		7.4115		4.6867		4.6869		7.9483		7.9158		1.000e-12		0.4958		0.1598000		0.3365		34.54		0.508		8698		1		5.8715		5.8714		1435.15		1435.15	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	53.163		52.500		0.79744		0.79746		7.4264		7.4269		4.6323		4.6313		7.9386		7.9180		1.000e-12		0.5314		0.1524000		0.3323		27.27		0.506		8722		1		5.8851		5.8855		1434.94		1434.93	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	53.669		53.000		0.79878		0.79881		7.4401		7.4403		4.6309		4.6312		7.8948		7.8964		1.000e-12		0.5201		0.1542000		0.3583		36.45		0.549		8745		1		5.8960		5.8962		1434.96		1434.96	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	54.175		53.500		0.80468		0.80473		7.4853		7.4855		4.6916		4.6928		7.7744		7.8038		1.000e-12		0.4854		0.1638000		0.3624		38.40		0.607		8766		1		5.9298		5.9299		1435.29		1435.30	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	54.682		54.000		0.80851		0.80856		7.5134		7.5136		4.7362		4.7377		7.6293		7.6850		1.000e-12		0.4678		0.1791000		0.3158		75.41		0.610		8785		1		5.9504		5.9505		1435.53		1435.54	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	55.188		54.500		0.81111		0.81105		7.5343		7.5337		4.7583		4.7584		7.5319		7.5792		1.000e-12		0.4561		0.1659000		0.3017		35.62		0.552		8806		1		5.9662		5.9657		1435.67		1435.67	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	55.694		55.000		0.81316		0.81320		7.5555		7.5557		4.7549		4.7560		7.4974		7.5375		1.000e-12		0.4659		0.1726000		0.3339		35.23		0.483		8829		1		5.9831		5.9832		1435.69		1435.69	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	56.200		55.500		0.81894		0.81883		7.5972		7.5969		4.8242		4.8211		7.3943		7.4561		1.000e-12		0.4782		0.1994000		0.3234		34.70		0.488		8855		1		6.0136		6.0135		1436.05		1436.04	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	56.706		56.000		0.82599		0.82598		7.6393		7.6391		4.9464		4.9473		7.2236		7.2957		1.000e-12		0.4702		0.1799000		0.3094		40.80		0.575		8878		1		6.0422		6.0420		1436.65		1436.66	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	57.213		56.500		0.83013		0.83019		7.6726		7.6739		4.9804		4.9773		7.0698		7.1473		1.000e-12		0.4440		0.1696000		0.3052		64.93		0.570		8898		1		6.0673		6.0684		1436.85		1436.84	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	57.719		57.000		0.83433		0.83437		7.7157		7.7161		4.9743		4.9745		6.8539		6.9543		1.000e-12		0.4252		0.1686000		0.3197		33.19		0.506		8920		1		6.1016		6.1019		1436.89		1436.89	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	58.225		57.500		0.84137		0.84147		7.7870		7.7878		4.9689		4.9693		6.5364		6.6794		1.000e-12		0.4227		0.1709000		0.3307		32.51		0.527		8945		1		6.1582		6.1589		1436.96		1436.97	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	58.731		58.000		0.84955		0.84964		7.8676		7.8682		4.9721		4.9732		6.1251		6.3438		1.000e-12		0.3986		0.1650000		0.3147		32.06		0.613		8966		1		6.2219		6.2223		1437.09		1437.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	59.237		58.500		0.86262		0.86280		7.9812		7.9825		5.0408		5.0430		5.6895		5.9833		1.000e-12		0.3749		0.1420000		0.2939		31.61		0.646		8984		1		6.3089		6.3099		1437.54		1437.55	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	59.743		59.000		0.87602		0.87636		8.0957		8.0988		5.1186		5.1198		5.1846		5.5551		1.000e-12		0.3774		0.1602000		0.3006		31.06		0.570		9003		1		6.3962		6.3986		1438.04		1438.05	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	60.249		59.500		0.90282		0.90407		8.3387		8.3506		5.2131		5.2154		4.3545		4.8331		1.000e-12		0.3740		0.1480000		0.3296		26.13		0.396		9029		1		6.5842		6.5935		1438.77		1438.79	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	60.755		60.000		0.92915		0.92978		8.5825		8.5882		5.2845		5.2868		3.4663		4.0073		1.000e-12		0.3450		0.1359000		0.3244		29.13		0.472		9062		1		6.7736		6.7780		1439.40		1439.41	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	61.261		60.500		0.94080		0.94092		8.6869		8.6878		5.3287		5.3297		3.1689		3.6789		1.000e-12		0.2926		0.1153000		0.2984		28.76		0.704		9082		1		6.8540		6.8547		1439.73		1439.73	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	61.767		61.000		0.94968		0.94961		8.7686		8.7678		5.3537		5.3543		3.0066		3.4836		1.000e-12		0.2945		0.1209000		0.2637		28.29		0.777		9097		1		6.9173		6.9166		1439.95		1439.95	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	62.273		61.500		0.95579		0.95580		8.8235		8.8235		5.3756		5.3763		2.8532		3.3015		1.000e-12		0.3329		0.1546000		0.2676		27.66		0.704		9112		1		6.9596		6.9596		1440.12		1440.12	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	62.778		62.000		0.96570		0.96567		8.9138		8.9134		5.4065		5.4071		2.7146		3.1206		1.000e-12		0.3159		0.1381000		0.2684		26.80		0.490		9133		1		7.0294		7.0291		1440.38		1440.38	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	63.284		62.500		0.97160		0.97165		8.9729		8.9732		5.4048		5.4054		2.5601		2.9019		1.000e-12		0.3118		0.1206000		0.2331		24.70		0.362		9166		1		7.0761		7.0764		1440.45		1440.46	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	63.790		63.000		0.98099		0.98126		9.0679		9.0703		5.3988		5.4000		2.1902		2.5518		1.000e-12		0.3268		0.1298000		0.2759		21.54		0.563		9193		1		7.1515		7.1533		1440.56		1440.57	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	64.295		63.500		0.99280		0.99282		9.1839		9.1839		5.4047		5.4055		1.7769		2.1595		1.000e-12		0.2962		0.1184000		0.2964		21.02		0.685		9212		1		7.2428		7.2427		1440.74		1440.74	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	64.801		64.000		1.00195		1.00194		9.2716		9.2713		5.4175		5.4181		1.4336		1.8295		1.000e-12		0.2855		0.1152000		0.2890		21.51		0.703		9228		1		7.3113		7.3111		1440.91		1440.91	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	65.306		64.500		1.00761		1.00753		9.3308		9.3298		5.4070		5.4080		1.1707		1.5829		1.000e-12		0.2727		0.1127000		0.2940		20.60		0.605		9246		1		7.3587		7.3578		1440.95		1440.95	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	65.812		65.000		1.01176		1.01171		9.3725		9.3719		5.4060		5.4065		1.0128		1.3907		1.000e-12		0.2725		0.1075000		0.3018		21.61		0.472		9270		1		7.3917		7.3911		1441.01		1441.01	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	66.318		65.500		1.02255		1.02246		9.4690		9.4680		5.4458		5.4460		0.9366		1.2588		1.000e-12		0.2833		0.1187000		0.2827		21.60		0.448		9297		1		7.4658		7.4650		1441.31		1441.31	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	66.823		66.000		1.03197		1.03189		9.5573		9.5563		5.4660		5.4666		0.8350		1.1091		1.000e-12		0.3219		0.1374000		0.2704		22.01		0.508		9323		1		7.5344		7.5336		1441.52		1441.52	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	67.328		66.500		1.03817		1.03806		9.6226		9.6213		5.4538		5.4546		0.7220		0.9749		1.000e-12		0.3042		0.1057000		0.2598		21.83		0.587		9345		1		7.5866		7.5856		1441.55		1441.55	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	67.834		67.000		1.04263		1.04256		9.6660		9.6652		5.4575		5.4580		0.6459		0.8844		1.000e-12		0.2968		0.1080000		0.2448		21.51		0.644		9364		1		7.6207		7.6200		1441.63		1441.63	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	68.339		67.500		1.04471		1.04463		9.6866		9.6857		5.4581		5.4585		0.5975		0.8172		1.000e-12		0.2962		0.1054000		0.3019		21.10		0.651		9382		1		7.6369		7.6362		1441.67		1441.67	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	68.845		68.000		1.05350		1.05331		9.7669		9.7651		5.4838		5.4839		0.5337		0.7390		1.000e-12		0.2946		0.1079000		0.3003		20.53		0.569		9401		1		7.6989		7.6975		1441.89		1441.89	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	69.350		68.500		1.06156		1.06140		9.8409		9.8393		5.5063		5.5064		0.4551		0.6454		1.000e-12		0.2877		0.1118000		0.2696		19.88		0.429		9426		1		7.7561		7.7549		1442.09		1442.09	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	69.855		69.000		1.06712		1.06696		9.8935		9.8919		5.5163		5.5166		0.3932		0.5604		1.000e-12		0.3020		0.1119000		0.2718		19.26		0.450		9456		1		7.7971		7.7958		1442.21		1442.21	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	70.361		69.500		1.07303		1.07292		9.9476		9.9465		5.5334		5.5334		0.3477		0.5002		1.000e-12		0.3093		0.1195000		0.3076		18.85		0.602		9479		1		7.8388		7.8380		1442.36		1442.35	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	70.866		70.000		1.07683		1.07677		9.9821		9.9813		5.5447		5.5452		0.3120		0.4582		1.000e-12		0.3091		0.1484000		0.3151		18.39		0.676		9497		1		7.8655		7.8648		1442.46		1442.46	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	71.371		70.500		1.08048		1.08045		10.0152		10.0148		5.5561		5.5564		0.2772		0.4134		1.000e-12		0.2902		0.1296000		0.2990		17.88		0.651		9514		1		7.8909		7.8906		1442.55		1442.56	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	71.877		71.000		1.08395		1.08389		10.0465		10.0458		5.5671		5.5674		0.2464		0.3756		1.000e-12		0.2910		0.1272000		0.3122		17.28		0.535		9535		1		7.9150		7.9145		1442.65		1442.65	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	72.382		71.500		1.08703		1.08696		10.0734		10.0726		5.5799		5.5800		0.2351		0.3486		1.000e-12		0.2969		0.1373000		0.3035		16.68		0.439		9561		1		7.9355		7.9349		1442.75		1442.75	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	72.887		72.000		1.08950		1.08944		10.0942		10.0935		5.5926		5.5927		0.2322		0.3307		1.000e-12		0.2904		0.1461000		0.3145		16.17		0.516		9587		1		7.9512		7.9507		1442.84		1442.84	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	73.392		72.500		1.09306		1.09302		10.1256		10.1251		5.6064		5.6065		0.2125		0.3055		1.000e-12		0.2896		0.1469000		0.3075		15.69		0.601		9608		1		7.9752		7.9748		1442.94		1442.94	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	73.898		73.000		1.09844		1.09838		10.1733		10.1726		5.6259		5.6264		0.1859		0.2766		1.000e-12		0.2980		0.1445000		0.3016		15.14		0.615		9628		1		8.0118		8.0112		1443.09		1443.10	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	74.403		73.500		1.10460		1.10455		10.2280		10.2274		5.6486		5.6490		0.1530		0.2434		1.000e-12		0.3329		0.1596000		0.3016		14.63		0.554		9648		1		8.0536		8.0531		1443.27		1443.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	74.908		74.000		1.10909		1.10903		10.2671		10.2664		5.6674		5.6678		0.1314		0.2167		1.000e-12		0.3231		0.1876000		0.3164		14.12		0.481		9672		1		8.0833		8.0827		1443.41		1443.41	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	75.413		74.500		1.11187		1.11181		10.2909		10.2902		5.6800		5.6804		0.1207		0.2016		1.000e-12		0.3321		0.2065000		0.2438		13.61		0.521		9697		1		8.1014		8.1008		1443.50		1443.50	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	75.918		75.000		1.11497		1.11492		10.3170		10.3164		5.6957		5.6960		0.1213		0.1937		1.000e-12		0.3335		0.2010000		0.2853		13.17		0.578		9718		1		8.1211		8.1206		1443.61		1443.61	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	76.423		75.500		1.11810		1.11805		10.3431		10.3425		5.7124		5.7128		0.1288		0.1965		1.000e-12		0.3275		0.2027000		0.2819		12.69		0.594		9738		1		8.1407		8.1401		1443.72		1443.72	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	76.929		76.000		1.12171		1.12160		10.3726		10.3716		5.7333		5.7331		0.1510		0.2099		1.000e-12		0.3180		0.2084000		0.2580		12.18		0.571		9759		1		8.1627		8.1619		1443.86		1443.85	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	77.434		76.500		1.12424		1.12414		10.3943		10.3933		5.7449		5.7449		0.1549		0.2102		1.000e-12		0.3082		0.2073000		0.2525		11.64		0.513		9781		1		8.1791		8.1783		1443.94		1443.94	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	77.939		77.000		1.12766		1.12743		10.4242		10.4222		5.7579		5.7573		0.1217		0.1832		1.000e-12		0.2968		0.2220000		0.3618		11.05		0.470		9806		1		8.2019		8.2004		1444.04		1444.04	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	78.444		77.500		1.13240		1.13228		10.4658		10.4646		5.7763		5.7761		0.0854		0.1455		1.000e-12		0.2969		0.2272000		0.3157		10.54		0.519		9831		1		8.2336		8.2327		1444.18		1444.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	78.949		78.000		1.13584		1.13580		10.4946		10.4941		5.7938		5.7942		0.0703		0.1298		1.000e-12		0.2975		0.2107000		0.2841		10.07		0.600		9852		1		8.2553		8.2548		1444.30		1444.30	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	79.454		78.500		1.14210		1.14199		10.5470		10.5459		5.8259		5.8259		0.0746		0.1352		1.000e-12		0.2969		0.2140000		0.2443		9.59		0.644		9871		1		8.2947		8.2938		1444.51		1444.51	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	79.959		79.000		1.14819		1.14822		10.5984		10.5986		5.8552		5.8558		0.0827		0.1406		1.000e-12		0.2923		0.2207000		0.2332		9.10		0.593		9890		1		8.3334		8.3335		1444.71		1444.71	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	80.464		79.500		1.15115		1.15104		10.6236		10.6226		5.8688		5.8686		0.0924		0.1446		1.000e-12		0.2853		0.2279000		0.2691		8.49		0.479		9913		1		8.3524		8.3516		1444.81		1444.81	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	80.969		80.000		1.15668		1.15645		10.6694		10.6675		5.8984		5.8969		0.1004		0.1460		1.000e-12		0.2800		0.2254000		0.3037		7.90		0.462		9940		1		8.3866		8.3852		1445.00		1444.99	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	81.474		80.500		1.16162		1.16137		10.7090		10.7069		5.9282		5.9273		0.1035		0.1489		1.000e-12		0.2795		0.2264000		0.3032		7.48		0.559		9964		1		8.4160		8.4144		1445.19		1445.18	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	81.979		81.000		1.16391		1.16380		10.7282		10.7271		5.9396		5.9397		0.1105		0.1523		1.000e-12		0.2972		0.2401000		0.2881		7.03		0.626		9983		1		8.4304		8.4295		1445.27		1445.27	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	82.484		81.500		1.16532		1.16524		10.7395		10.7387		5.9478		5.9480		0.1106		0.1509		1.000e-12		0.2969		0.2590000		0.3043		6.52		0.613		10002		1		8.4388		8.4381		1445.32		1445.32	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	82.989		82.000		1.16609		1.16603		10.7456		10.7449		5.9526		5.9529		0.1086		0.1501		1.000e-12		0.3059		0.2637000		0.3106		5.93		0.513		10023		1		8.4433		8.4427		1445.36		1445.36	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	83.494		82.500		1.16673		1.16665		10.7508		10.7499		5.9558		5.9561		0.1104		0.1521		1.000e-12		0.3009		0.2606000		0.2838		5.32		0.396		10050		1		8.4472		8.4465		1445.39		1445.39	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	83.999		83.000		1.16765		1.16756		10.7585		10.7575		5.9603		5.9605		0.1101		0.1481		1.000e-12		0.2892		0.2644000		0.2660		4.75		0.297		10711		1		8.4530		8.4522		1445.42		1445.42	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	84.504		83.500		1.17074		1.17061		10.7845		10.7833		5.9747		5.9747		0.1095		0.1443		1.000e-12		0.2981		0.2704000		0.2265		4.38		0.592		14095		1		8.4726		8.4716		1445.53		1445.52	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	85.009		84.000		1.17359		1.17347		10.8078		10.8066		5.9908		5.9904		0.1130		0.1517		1.000e-12		0.2983		0.2888000		0.2919		3.89		0.650		14110		1		8.4898		8.4890		1445.63		1445.63	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	85.514		84.500		1.17409		1.17397		10.8109		10.8100		5.9960		5.9954		0.1129		0.1482		1.000e-12		0.3063		0.2854000		0.3075		3.40		0.629		14129		1		8.4920		8.4913		1445.67		1445.66	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	86.019		85.000		1.17450		1.17445		10.8133		10.8127		6.0014		6.0015		0.1118		0.1439		1.000e-12		0.2972		0.2864000		0.2951		2.86		0.558		14149		1		8.4935		8.4930		1445.70		1445.70	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	86.524		85.500		1.17452		1.17449		10.8132		10.8128		6.0018		6.0023		0.1084		0.1462		1.000e-12		0.2953		0.2822000		0.2420		2.35		0.513		14172		1		8.4934		8.4930		1445.71		1445.71	
+2018	01	27	23	39	00	2018_347V_SMHI-01-2018	BCS III-10	55.55550	18.40067	87.029		86.000		1.17212		1.16892		10.7938		10.7665		5.9873		5.9730		0.1173		0.1450		1.000e-12		0.3048		0.2650000		0.2839		1.56		-0.053		14228		1		8.4791		8.4585		1445.63		1445.54	

@@ -1,0 +1,904 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-01-28
+//METADATA;STIME;18:03
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;347V
+//METADATA;CRUISE_NO;SMHI-01-2018
+//METADATA;SERNO;0026
+//METADATA;STATN;BY15
+//METADATA;LATIT;5718.74
+//METADATA;LONGI;02004.60
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20180128_1802_34_02_0026.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20180128_347V_0026.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\2018\ME18D026.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.6.26
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Jan 28 2018 18:02:57
+//INSTRUMENT_METADATA;* NMEA Latitude = 57 18.74 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 020 04.60 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Jan 28 2018  18:03:25
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  BY15
+//INSTRUMENT_METADATA;** Operator:  SSip
+//INSTRUMENT_METADATA;** Ship: MERI
+//INSTRUMENT_METADATA;** Average sound velocity: 1446.49 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sun, 28 Jan 2018 19:18:37 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183402-0026
+//INSTRUMENT_METADATA;** Cruise: SMHI-01-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Jan 28 2018 18:02:57
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 465                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 57.3123
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 57.3123
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =       8571,      18857       
+//INSTRUMENT_METADATA;# span 1 =      3.000,    235.000       
+//INSTRUMENT_METADATA;# span 2 =     4.7329,     6.9138       
+//INSTRUMENT_METADATA;# span 3 =     4.7335,     6.9144       
+//INSTRUMENT_METADATA;# span 4 =    -0.0249,     0.0269       
+//INSTRUMENT_METADATA;# span 5 =   0.792576,   1.460225       
+//INSTRUMENT_METADATA;# span 6 =   0.792560,   1.460202       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    0.00586,    8.06290       
+//INSTRUMENT_METADATA;# span 9 =    0.02434,    8.02762       
+//INSTRUMENT_METADATA;# span 10 =       3.86,      99.62      
+//INSTRUMENT_METADATA;# span 11 =     0.2472,     0.3881      
+//INSTRUMENT_METADATA;# span 12 =     0.2390,     0.3916      
+//INSTRUMENT_METADATA;# span 13 = -1.000e-05, 1.4396e-02      
+//INSTRUMENT_METADATA;# span 14 =     0.1002,     0.6997      
+//INSTRUMENT_METADATA;# span 15 =     7.3599,    13.2953      
+//INSTRUMENT_METADATA;# span 16 =     7.3595,    13.2948      
+//INSTRUMENT_METADATA;# span 17 =    -0.0611,     0.0498      
+//INSTRUMENT_METADATA;# span 18 =     5.8285,    10.3774      
+//INSTRUMENT_METADATA;# span 19 =     5.8281,    10.3770      
+//INSTRUMENT_METADATA;# span 20 =      2.972,    232.703      
+//INSTRUMENT_METADATA;# span 21 =      3.038,    237.340      
+//INSTRUMENT_METADATA;# span 22 =     -0.033,      1.522      
+//INSTRUMENT_METADATA;# span 23 =    1434.57,    1455.05      
+//INSTRUMENT_METADATA;# span 24 =    1434.57,    1455.05      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Jan 28 2018 18:03:26 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>0732</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>12-Nov-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.1726e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4966</offset>
+//INSTRUMENT_METADATA;#         <A>-4.3976e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.9128e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2963e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.6300</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1243</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>28-Oct-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.6887e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5000</offset>
+//INSTRUMENT_METADATA;#         <A>-4.1561e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.4526e-004</B>
+//INSTRUMENT_METADATA;#         <C>-4.4039e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Jan 28 2018 19:17:54, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.hex C:\ctd\temp\SBE09_1044_20180128_1802_34_02_0026.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Jan 28 2018 19:17:59, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Jan 28 2018 19:18:07, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Jan 28 2018 19:18:10, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Jan 28 2018 19:18:14, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Jan 28 2018 19:18:19, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Jan 28 2018 19:18:25, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Jan 28 2018 19:18:29, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20180128_1802_34_02_0026.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	3.038		3.000		0.79328		0.79322		7.3609		7.3604		4.7685		4.7680		8.0414		8.0276		1.264e-02		0.3734		0.1048000		0.3445		98.63		0.236		8571		1		5.8285		5.8281		1434.68		1434.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	3.544		3.500		0.79304		0.79304		7.3606		7.3602		4.7593		4.7609		8.0495		8.0058		1.440e-02		0.3659		0.1160000		0.3730		98.64		0.697		8670		1		5.8285		5.8282		1434.64		1434.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	4.051		4.000		0.79270		0.79291		7.3603		7.3601		4.7451		4.7552		8.0483		8.0003		2.241e-03		0.3275		0.1741000		0.3916		98.63		0.946		8679		1		5.8288		5.8283		1434.59		1434.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	4.557		4.500		0.79258		0.79257		7.3603		7.3599		4.7390		4.7403		8.0474		8.0091		-6.719e-06		0.3313		0.1693000		0.3131		98.64		0.995		8690		1		5.8290		5.8287		1434.57		1434.57	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	5.063		5.000		0.79258		0.79256		7.3603		7.3599		4.7391		4.7397		8.0507		8.0138		1.021e-12		0.3411		0.1129000		0.2856		98.63		0.882		8702		1		5.8290		5.8287		1434.58		1434.58	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	5.569		5.500		0.79261		0.79259		7.3603		7.3599		4.7396		4.7407		8.0463		8.0117		2.017e-08		0.3351		0.1268000		0.3085		98.64		0.551		8719		1		5.8290		5.8286		1434.59		1434.59	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	6.076		6.000		0.79273		0.79263		7.3604		7.3600		4.7445		4.7422		8.0448		7.9948		3.151e-04		0.3621		0.1192000		0.3334		98.64		0.331		8763		1		5.8289		5.8287		1434.62		1434.61	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	6.582		6.500		0.79261		0.79259		7.3604		7.3601		4.7390		4.7394		8.0475		8.0007		-1.000e-05		0.3616		0.1168000		0.3119		98.64		0.677		8789		1		5.8291		5.8288		1434.60		1434.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	7.088		7.000		0.79259		0.79257		7.3604		7.3600		4.7381		4.7384		8.0469		8.0066		1.000e-12		0.3645		0.1062000		0.3027		98.64		0.787		8804		1		5.8291		5.8288		1434.60		1434.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	7.595		7.500		0.79260		0.79258		7.3605		7.3602		4.7375		4.7379		8.0450		8.0086		1.001e-12		0.3540		0.1115000		0.3074		98.64		0.795		8819		1		5.8292		5.8290		1434.61		1434.61	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	8.101		8.000		0.79262		0.79259		7.3607		7.3603		4.7371		4.7377		8.0439		8.0073		9.954e-06		0.3413		0.1186000		0.3147		98.64		0.759		8834		1		5.8294		5.8291		1434.62		1434.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	8.607		8.500		0.79262		0.79259		7.3607		7.3602		4.7369		4.7378		8.0417		8.0028		2.768e-08		0.3427		0.1308000		0.3181		98.65		0.723		8851		1		5.8294		5.8290		1434.62		1434.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	9.114		9.000		0.79262		0.79260		7.3606		7.3602		4.7371		4.7378		8.0443		7.9962		-4.863e-10		0.3444		0.1359000		0.3112		98.64		0.710		8868		1		5.8293		5.8290		1434.63		1434.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	9.620		9.500		0.79264		0.79262		7.3607		7.3603		4.7372		4.7379		8.0497		7.9973		1.000e-12		0.3633		0.1370000		0.3009		98.64		0.710		8884		1		5.8294		5.8291		1434.64		1434.64	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	10.126		10.000		0.79265		0.79262		7.3607		7.3603		4.7372		4.7379		8.0533		7.9961		1.000e-12		0.3554		0.1292000		0.3254		98.64		0.665		8901		1		5.8294		5.8291		1434.65		1434.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	10.633		10.500		0.79266		0.79262		7.3608		7.3603		4.7371		4.7377		8.0583		7.9924		1.000e-12		0.3539		0.1205000		0.3258		98.64		0.581		8921		1		5.8295		5.8291		1434.65		1434.66	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	11.139		11.000		0.79266		0.79264		7.3607		7.3604		4.7369		4.7376		8.0597		7.9968		1.000e-12		0.3514		0.1115000		0.3219		98.64		0.496		8943		1		5.8295		5.8291		1434.66		1434.66	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	11.645		11.500		0.79268		0.79266		7.3610		7.3605		4.7365		4.7374		8.0467		7.9989		1.000e-12		0.3438		0.1135000		0.3261		98.64		0.407		8971		1		5.8297		5.8293		1434.67		1434.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	12.152		12.000		0.79269		0.79266		7.3610		7.3606		4.7366		4.7373		8.0353		7.9978		1.000e-12		0.3367		0.1238000		0.3055		98.64		0.480		9000		1		5.8297		5.8293		1434.68		1434.68	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	12.658		12.500		0.79270		0.79268		7.3610		7.3606		4.7367		4.7374		8.0380		7.9897		1.000e-12		0.3261		0.1241000		0.2832		98.64		0.628		9022		1		5.8297		5.8293		1434.68		1434.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	13.164		13.000		0.79269		0.79264		7.3609		7.3604		4.7365		4.7366		8.0378		7.9916		1.000e-12		0.3299		0.1242000		0.2838		98.65		0.719		9039		1		5.8296		5.8292		1434.69		1434.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	13.671		13.500		0.79266		0.79264		7.3607		7.3603		4.7358		4.7366		8.0396		7.9956		1.000e-12		0.3506		0.1077000		0.2860		98.64		0.739		9055		1		5.8295		5.8291		1434.70		1434.70	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	14.177		14.000		0.79271		0.79268		7.3609		7.3605		4.7365		4.7372		8.0465		7.9955		1.000e-12		0.3627		0.1102000		0.2884		98.64		0.678		9071		1		5.8296		5.8293		1434.71		1434.71	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	14.683		14.500		0.79271		0.79269		7.3609		7.3605		4.7367		4.7373		8.0575		7.9970		1.000e-12		0.3614		0.1529000		0.3304		98.63		0.556		9091		1		5.8296		5.8292		1434.72		1434.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	15.190		15.000		0.79270		0.79268		7.3607		7.3603		4.7366		4.7372		8.0561		7.9922		1.000e-12		0.3604		0.1156000		0.3303		98.62		0.408		9117		1		5.8294		5.8291		1434.72		1434.73	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	15.696		15.500		0.79271		0.79268		7.3608		7.3604		4.7363		4.7371		8.0488		7.9908		1.000e-12		0.3557		0.1177000		0.2769		98.60		0.372		9150		1		5.8295		5.8292		1434.73		1434.73	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	16.202		16.000		0.79273		0.79269		7.3608		7.3603		4.7366		4.7373		8.0353		7.9911		1.000e-12		0.3680		0.1202000		0.2961		98.60		0.514		9179		1		5.8295		5.8291		1434.74		1434.74	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	16.708		16.500		0.79274		0.79272		7.3608		7.3604		4.7369		4.7378		8.0414		7.9942		1.000e-12		0.3724		0.1227000		0.2412		98.61		0.682		9199		1		5.8295		5.8292		1434.75		1434.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	17.215		17.000		0.79275		0.79273		7.3608		7.3605		4.7372		4.7378		8.0516		7.9949		1.000e-12		0.3751		0.1070000		0.3032		98.61		0.768		9215		1		5.8295		5.8292		1434.76		1434.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	17.721		17.500		0.79276		0.79273		7.3608		7.3604		4.7371		4.7378		8.0606		7.9940		1.000e-12		0.3702		0.1115000		0.3250		98.62		0.759		9230		1		5.8295		5.8291		1434.77		1434.77	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	18.227		18.000		0.79277		0.79274		7.3608		7.3604		4.7372		4.7379		8.0629		7.9911		1.000e-12		0.3601		0.1175000		0.3801		98.63		0.637		9247		1		5.8295		5.8292		1434.77		1434.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	18.734		18.500		0.79277		0.79275		7.3608		7.3604		4.7373		4.7381		8.0494		7.9945		1.000e-12		0.3372		0.1192000		0.3327		98.63		0.422		9271		1		5.8295		5.8291		1434.78		1434.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	19.240		19.000		0.79276		0.79273		7.3607		7.3603		4.7369		4.7375		8.0516		7.9986		1.000e-12		0.3490		0.1215000		0.3137		98.62		0.358		9305		1		5.8294		5.8291		1434.79		1434.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	19.746		19.500		0.79270		0.79266		7.3604		7.3600		4.7351		4.7356		8.0584		7.9996		1.000e-12		0.3499		0.1114000		0.2979		98.62		0.442		9335		1		5.8292		5.8289		1434.79		1434.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	20.253		20.000		0.79266		0.79261		7.3602		7.3597		4.7340		4.7341		8.0440		7.9971		1.000e-12		0.3565		0.1134000		0.2960		98.63		0.502		9361		1		5.8292		5.8287		1434.79		1434.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	20.759		20.500		0.79262		0.79259		7.3600		7.3596		4.7330		4.7336		8.0445		7.9938		1.000e-12		0.3627		0.1269000		0.3313		98.64		0.581		9383		1		5.8290		5.8286		1434.79		1434.80	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	21.265		21.000		0.79263		0.79262		7.3600		7.3597		4.7329		4.7339		8.0432		7.9932		1.000e-12		0.3587		0.1336000		0.2463		98.65		0.649		9402		1		5.8290		5.8288		1434.80		1434.80	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	21.772		21.500		0.79265		0.79263		7.3601		7.3598		4.7332		4.7339		8.0419		7.9932		1.000e-12		0.3259		0.1238000		0.2822		98.65		0.622		9420		1		5.8291		5.8288		1434.81		1434.81	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	22.278		22.000		0.79267		0.79264		7.3602		7.3597		4.7333		4.7340		8.0465		7.9933		1.000e-12		0.3287		0.1245000		0.2992		98.66		0.487		9442		1		5.8291		5.8288		1434.82		1434.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	22.784		22.500		0.79268		0.79265		7.3602		7.3598		4.7334		4.7342		8.0516		7.9977		1.000e-12		0.3650		0.1190000		0.2858		98.66		0.407		9471		1		5.8291		5.8288		1434.83		1434.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	23.291		23.000		0.79267		0.79265		7.3601		7.3598		4.7332		4.7341		8.0477		7.9932		1.000e-12		0.3636		0.1078000		0.3083		98.66		0.457		9499		1		5.8291		5.8288		1434.83		1434.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	23.797		23.500		0.79268		0.79266		7.3601		7.3597		4.7331		4.7339		8.0487		7.9849		1.000e-12		0.3522		0.1126000		0.3009		98.66		0.445		9525		1		5.8291		5.8288		1434.84		1434.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	24.303		24.000		0.79270		0.79268		7.3602		7.3598		4.7334		4.7343		8.0291		7.9853		1.000e-12		0.3434		0.1127000		0.2854		98.65		0.479		9552		1		5.8292		5.8288		1434.85		1434.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	24.810		24.500		0.79271		0.79268		7.3602		7.3598		4.7337		4.7342		8.0310		7.9892		1.000e-12		0.3406		0.1184000		0.2905		98.64		0.668		9575		1		5.8292		5.8288		1434.86		1434.86	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	25.316		25.000		0.79271		0.79269		7.3602		7.3598		4.7336		4.7342		8.0316		7.9860		1.000e-12		0.3417		0.1224000		0.3019		98.64		0.804		9590		1		5.8291		5.8288		1434.87		1434.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	25.822		25.500		0.79270		0.79267		7.3602		7.3597		4.7330		4.7335		8.0295		7.9852		1.000e-12		0.3388		0.1243000		0.3082		98.64		0.835		9604		1		5.8291		5.8287		1434.87		1434.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	26.328		26.000		0.79272		0.79270		7.3602		7.3598		4.7333		4.7341		8.0337		7.9900		1.000e-12		0.3471		0.1131000		0.3166		98.63		0.771		9619		1		5.8292		5.8288		1434.88		1434.89	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	26.835		26.500		0.79272		0.79269		7.3601		7.3597		4.7333		4.7340		8.0352		7.9977		1.000e-12		0.3452		0.1132000		0.3451		98.63		0.629		9636		1		5.8291		5.8287		1434.89		1434.89	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	27.341		27.000		0.79271		0.79269		7.3600		7.3596		4.7330		4.7337		8.0369		8.0015		1.000e-12		0.3520		0.1219000		0.3177		98.64		0.405		9660		1		5.8290		5.8287		1434.90		1434.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	27.847		27.500		0.79273		0.79270		7.3601		7.3596		4.7332		4.7339		8.0473		7.9987		1.000e-12		0.3632		0.1143000		0.3057		98.64		0.229		9748		1		5.8291		5.8287		1434.91		1434.91	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	28.354		28.000		0.79272		0.79270		7.3600		7.3596		4.7331		4.7339		8.0501		8.0007		1.000e-12		0.3440		0.1166000		0.3193		98.65		0.220		9824		1		5.8290		5.8286		1434.91		1434.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	28.860		28.500		0.79272		0.79269		7.3599		7.3595		4.7332		4.7338		8.0418		7.9981		1.000e-12		0.3335		0.1088000		0.3006		98.65		0.380		9871		1		5.8289		5.8286		1434.92		1434.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	29.366		29.000		0.79273		0.79274		7.3599		7.3598		4.7331		4.7344		8.0415		7.9926		1.000e-12		0.3363		0.1153000		0.2977		98.65		0.345		9901		1		5.8289		5.8288		1434.93		1434.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	29.873		29.500		0.79276		0.79273		7.3601		7.3596		4.7334		4.7341		8.0474		7.9895		1.000e-12		0.3675		0.1231000		0.2880		98.65		0.376		9940		1		5.8291		5.8287		1434.94		1434.94	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	30.379		30.000		0.79280		0.79278		7.3603		7.3599		4.7342		4.7349		8.0522		7.9848		1.000e-12		0.3584		0.1072000		0.3228		98.65		0.699		9964		1		5.8292		5.8289		1434.95		1434.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	30.885		30.500		0.79279		0.79277		7.3602		7.3598		4.7338		4.7347		8.0477		7.9908		1.000e-12		0.3267		0.1119000		0.3342		98.66		0.922		9979		1		5.8292		5.8288		1434.96		1434.96	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	31.392		31.000		0.79279		0.79278		7.3602		7.3598		4.7338		4.7348		8.0445		7.9975		1.000e-12		0.3268		0.1096000		0.3306		98.65		1.046		9990		1		5.8291		5.8288		1434.96		1434.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	31.898		31.500		0.79280		0.79277		7.3601		7.3597		4.7338		4.7346		8.0494		7.9985		1.000e-12		0.3646		0.1114000		0.2733		98.66		1.095		10001		1		5.8291		5.8287		1434.97		1434.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	32.404		32.000		0.79281		0.79279		7.3602		7.3598		4.7339		4.7346		8.0529		8.0034		1.000e-12		0.3647		0.1127000		0.2711		98.65		1.083		10012		1		5.8291		5.8288		1434.98		1434.98	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	32.911		32.500		0.79283		0.79279		7.3603		7.3598		4.7341		4.7346		8.0519		8.0018		1.000e-12		0.3515		0.1096000		0.2908		98.65		1.017		10023		1		5.8292		5.8288		1434.99		1434.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	33.417		33.000		0.79283		0.79280		7.3602		7.3598		4.7341		4.7346		8.0451		8.0020		1.000e-12		0.3390		0.1072000		0.3020		98.65		0.886		10035		1		5.8292		5.8288		1435.00		1435.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	33.923		33.500		0.79284		0.79281		7.3602		7.3598		4.7340		4.7348		8.0406		8.0012		1.000e-12		0.3526		0.1208000		0.2799		98.66		0.667		10051		1		5.8292		5.8288		1435.00		1435.01	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	34.430		34.000		0.79284		0.79282		7.3602		7.3598		4.7339		4.7347		8.0425		7.9913		1.000e-12		0.3451		0.1191000		0.3036		98.66		0.332		10093		1		5.8291		5.8288		1435.01		1435.01	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	34.936		34.500		0.79286		0.79282		7.3603		7.3598		4.7342		4.7349		8.0293		7.9760		1.000e-12		0.3515		0.1065000		0.3288		98.66		0.635		10159		1		5.8292		5.8287		1435.02		1435.02	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	35.442		35.000		0.79287		0.79283		7.3603		7.3598		4.7344		4.7349		8.0318		7.9805		1.000e-12		0.3486		0.1139000		0.3000		98.66		0.969		10170		1		5.8292		5.8288		1435.03		1435.03	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	35.949		35.500		0.79288		0.79285		7.3603		7.3599		4.7344		4.7351		8.0354		7.9775		1.000e-12		0.3389		0.1369000		0.3150		98.66		1.167		10181		1		5.8292		5.8288		1435.04		1435.04	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	36.455		36.000		0.79290		0.79287		7.3604		7.3599		4.7347		4.7354		8.0378		7.9761		1.000e-12		0.3390		0.1374000		0.3153		98.66		1.282		10190		1		5.8292		5.8289		1435.05		1435.05	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	36.961		36.500		0.79293		0.79291		7.3605		7.3601		4.7350		4.7359		8.0423		7.9748		1.000e-12		0.3404		0.1270000		0.3201		98.65		1.324		10199		1		5.8293		5.8290		1435.06		1435.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	37.467		37.000		0.79292		0.79290		7.3604		7.3600		4.7348		4.7356		8.0404		7.9782		1.000e-12		0.3417		0.1171000		0.3203		98.65		1.293		10208		1		5.8293		5.8289		1435.06		1435.07	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	37.974		37.500		0.79294		0.79290		7.3605		7.3600		4.7348		4.7354		8.0402		7.9857		1.000e-12		0.3397		0.1177000		0.3124		98.66		1.183		10217		1		5.8294		5.8289		1435.07		1435.07	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	38.480		38.000		0.79300		0.79295		7.3609		7.3603		4.7354		4.7356		8.0406		7.9967		1.000e-12		0.3496		0.1122000		0.3189		98.65		0.972		10228		1		5.8297		5.8292		1435.08		1435.08	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	38.986		38.500		0.79300		0.79293		7.3609		7.3601		4.7353		4.7356		8.0460		8.0000		1.000e-12		0.3510		0.1123000		0.3160		98.65		0.581		10245		1		5.8297		5.8290		1435.09		1435.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	39.493		39.000		0.79295		0.79292		7.3605		7.3600		4.7349		4.7355		8.0501		7.9954		1.000e-12		0.3416		0.1111000		0.3119		98.66		0.391		10328		1		5.8293		5.8289		1435.09		1435.10	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	39.999		39.500		0.79300		0.79297		7.3608		7.3604		4.7352		4.7360		8.0454		7.9847		1.000e-12		0.3450		0.1122000		0.3350		98.66		0.822		10351		1		5.8296		5.8292		1435.10		1435.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	40.505		40.000		0.79309		0.79306		7.3614		7.3610		4.7358		4.7366		8.0417		7.9813		1.000e-12		0.3481		0.1038000		0.3266		98.65		1.044		10363		1		5.8300		5.8297		1435.11		1435.12	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	41.012		40.500		0.79315		0.79310		7.3619		7.3613		4.7368		4.7371		8.0396		7.9804		1.000e-12		0.3520		0.1077000		0.3179		98.65		1.169		10374		1		5.8303		5.8299		1435.13		1435.13	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	41.518		41.000		0.79318		0.79316		7.3619		7.3615		4.7372		4.7381		8.0339		7.9795		1.000e-12		0.3411		0.1181000		0.3165		98.65		1.212		10383		1		5.8304		5.8300		1435.14		1435.14	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	42.024		41.500		0.79321		0.79318		7.3621		7.3617		4.7376		4.7382		8.0273		7.9778		1.000e-12		0.3390		0.1178000		0.3318		98.66		1.178		10393		1		5.8305		5.8302		1435.15		1435.15	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	42.531		42.000		0.79316		0.79314		7.3618		7.3613		4.7367		4.7375		8.0248		7.9765		1.000e-12		0.3334		0.1213000		0.3313		98.65		1.054		10403		1		5.8303		5.8299		1435.15		1435.15	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	43.037		42.500		0.79318		0.79314		7.3618		7.3614		4.7368		4.7373		8.0274		7.9780		1.000e-12		0.3279		0.1250000		0.3286		98.65		0.814		10416		1		5.8303		5.8299		1435.16		1435.16	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	43.543		43.000		0.79316		0.79313		7.3617		7.3612		4.7363		4.7372		8.0320		7.9766		1.000e-12		0.3384		0.1108000		0.3028		98.64		0.390		10439		1		5.8302		5.8298		1435.17		1435.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	44.050		43.500		0.79319		0.79313		7.3618		7.3612		4.7368		4.7372		8.0335		7.9678		1.000e-12		0.3765		0.1120000		0.3182		98.64		0.339		10493		1		5.8303		5.8298		1435.18		1435.18	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	44.556		44.000		0.79326		0.79324		7.3621		7.3618		4.7381		4.7389		8.0348		7.9675		1.000e-12		0.3532		0.1183000		0.3227		98.64		0.586		10517		1		5.8305		5.8302		1435.19		1435.19	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	45.062		44.500		0.79332		0.79330		7.3624		7.3621		4.7390		4.7399		8.0386		7.9715		1.000e-12		0.3797		0.1231000		0.3305		98.64		0.677		10535		1		5.8307		5.8304		1435.20		1435.20	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	45.569		45.000		0.79337		0.79341		7.3627		7.3627		4.7399		4.7415		8.0345		7.9805		1.000e-12		0.3854		0.1225000		0.3144		98.64		0.716		10552		1		5.8309		5.8309		1435.21		1435.22	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	46.075		45.500		0.79354		0.79350		7.3637		7.3632		4.7427		4.7431		8.0288		7.9908		1.000e-12		0.3838		0.1117000		0.3185		98.64		0.734		10569		1		5.8316		5.8312		1435.24		1435.24	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	46.581		46.000		0.79359		0.79357		7.3639		7.3636		4.7437		4.7446		8.0254		7.9931		1.000e-12		0.3541		0.1160000		0.3188		98.64		0.757		10585		1		5.8317		5.8314		1435.25		1435.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	47.087		46.500		0.79374		0.79365		7.3648		7.3640		4.7460		4.7456		8.0228		7.9931		1.000e-12		0.3411		0.1178000		0.3422		98.64		0.795		10601		1		5.8324		5.8317		1435.27		1435.27	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	47.594		47.000		0.79378		0.79378		7.3649		7.3647		4.7472		4.7482		8.0149		7.9895		1.000e-12		0.3431		0.1181000		0.3470		35.88		0.808		10615		1		5.8324		5.8322		1435.28		1435.29	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	48.100		47.500		0.79384		0.79382		7.3652		7.3648		4.7483		4.7489		8.0112		7.9861		1.000e-12		0.3359		0.1154000		0.2691		55.98		0.767		10630		1		5.8326		5.8323		1435.29		1435.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	48.606		48.000		0.79389		0.79384		7.3655		7.3650		4.7492		4.7492		8.0157		7.9796		1.000e-12		0.3322		0.1122000		0.2988		97.67		0.670		10647		1		5.8328		5.8324		1435.31		1435.31	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	49.113		48.500		0.79388		0.79385		7.3654		7.3649		4.7490		4.7497		8.0223		7.9807		1.000e-12		0.3279		0.1169000		0.3501		98.64		0.471		10668		1		5.8327		5.8323		1435.31		1435.32	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	49.619		49.000		0.79375		0.79371		7.3646		7.3641		4.7462		4.7465		8.0294		7.9855		1.000e-12		0.3680		0.1191000		0.2638		98.64		0.309		10705		1		5.8322		5.8318		1435.31		1435.31	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	50.125		49.500		0.79376		0.79374		7.3646		7.3642		4.7463		4.7472		8.0246		7.9784		1.000e-12		0.3625		0.1132000		0.2791		98.64		0.571		10736		1		5.8322		5.8318		1435.32		1435.32	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	50.632		50.000		0.79377		0.79374		7.3646		7.3642		4.7465		4.7470		8.0239		7.9725		1.000e-12		0.3505		0.1125000		0.3163		98.64		0.760		10753		1		5.8322		5.8318		1435.33		1435.33	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	51.138		50.500		0.79384		0.79379		7.3650		7.3645		4.7474		4.7478		8.0319		7.9763		1.000e-12		0.3537		0.1183000		0.3469		98.64		0.843		10768		1		5.8325		5.8320		1435.34		1435.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	51.644		51.000		0.79384		0.79382		7.3649		7.3645		4.7474		4.7482		8.0420		7.9812		1.000e-12		0.3458		0.1158000		0.3387		98.64		0.857		10781		1		5.8324		5.8321		1435.35		1435.35	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	52.151		51.500		0.79388		0.79385		7.3651		7.3647		4.7480		4.7487		8.0441		7.9807		1.000e-12		0.3309		0.1062000		0.3340		98.64		0.827		10795		1		5.8325		5.8321		1435.36		1435.36	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	52.657		52.000		0.79388		0.79387		7.3650		7.3648		4.7481		4.7490		8.0366		7.9799		1.000e-12		0.3221		0.1139000		0.3226		98.64		0.764		10810		1		5.8325		5.8322		1435.36		1435.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	53.163		52.500		0.79394		0.79391		7.3654		7.3649		4.7491		4.7497		8.0214		7.9775		1.000e-12		0.3193		0.1242000		0.3099		98.64		0.665		10827		1		5.8327		5.8323		1435.38		1435.38	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	53.670		53.000		0.79398		0.79391		7.3655		7.3648		4.7498		4.7497		8.0192		7.9771		1.000e-12		0.3415		0.1089000		0.2866		98.64		0.532		10848		1		5.8328		5.8323		1435.39		1435.39	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	54.176		53.500		0.79438		0.79413		7.3679		7.3661		4.7571		4.7541		8.0277		7.9673		1.000e-12		0.3711		0.1175000		0.2912		98.64		0.449		10874		1		5.8344		5.8331		1435.43		1435.42	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	54.682		54.000		0.79457		0.79446		7.3688		7.3679		4.7607		4.7601		8.0271		7.9488		1.000e-12		0.3610		0.1126000		0.3329		98.64		0.536		10899		1		5.8350		5.8343		1435.46		1435.45	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	55.189		54.500		0.79456		0.79451		7.3688		7.3682		4.7603		4.7605		8.0197		7.9562		1.000e-12		0.3358		0.1261000		0.2753		98.64		0.615		10919		1		5.8350		5.8345		1435.46		1435.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	55.695		55.000		0.79461		0.79450		7.3690		7.3681		4.7611		4.7604		8.0046		7.9608		1.000e-12		0.3347		0.1251000		0.2956		98.65		0.592		10939		1		5.8352		5.8345		1435.48		1435.47	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	56.201		55.500		0.79504		0.79521		7.3715		7.3723		4.7687		4.7732		8.0022		7.9632		1.000e-12		0.3452		0.1189000		0.3211		98.65		0.552		10960		1		5.8369		5.8373		1435.52		1435.54	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	56.707		56.000		0.79585		0.79581		7.3765		7.3761		4.7825		4.7827		8.0023		7.9525		1.000e-12		0.3551		0.1240000		0.3095		98.65		0.563		10982		1		5.8403		5.8400		1435.59		1435.59	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	57.214		56.500		0.79756		0.79727		7.3861		7.3844		4.8156		4.8103		7.9946		7.9298		1.000e-12		0.3513		0.1175000		0.2686		98.65		0.609		11003		1		5.8467		5.8456		1435.76		1435.74	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	57.720		57.000		0.79789		0.79772		7.3879		7.3868		4.8220		4.8195		7.9832		7.9237		1.000e-12		0.3329		0.1226000		0.2849		98.65		0.667		11021		1		5.8479		5.8471		1435.80		1435.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	58.226		57.500		0.79778		0.79784		7.3872		7.3873		4.8198		4.8224		7.9843		7.9318		1.000e-12		0.3274		0.1225000		0.2785		98.66		0.724		11039		1		5.8474		5.8474		1435.80		1435.81	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	58.733		58.000		0.79760		0.79764		7.3862		7.3861		4.8165		4.8184		7.9882		7.9393		1.000e-12		0.3289		0.1246000		0.2599		98.65		0.764		11055		1		5.8467		5.8466		1435.79		1435.80	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	59.239		58.500		0.79795		0.79774		7.3878		7.3864		4.8239		4.8210		7.9899		7.9466		1.000e-12		0.3472		0.1291000		0.3477		98.65		0.771		11070		1		5.8478		5.8468		1435.83		1435.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	59.745		59.000		0.79827		0.79823		7.3894		7.3890		4.8308		4.8314		7.9848		7.9439		1.000e-12		0.3519		0.1311000		0.3901		98.66		0.731		11086		1		5.8488		5.8484		1435.87		1435.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	60.252		59.500		0.79837		0.79835		7.3908		7.3903		4.8290		4.8301		7.9795		7.9314		1.000e-12		0.3541		0.1373000		0.3193		98.66		0.645		11103		1		5.8499		5.8495		1435.87		1435.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	60.758		60.000		0.79829		0.79829		7.3921		7.3917		4.8193		4.8211		7.9754		7.9183		1.000e-12		0.3610		0.1318000		0.3371		98.66		0.531		11124		1		5.8513		5.8510		1435.84		1435.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	61.264		60.500		0.79815		0.79814		7.3922		7.3917		4.8123		4.8139		7.9617		7.9203		1.000e-12		0.3548		0.1480000		0.2900		58.16		0.374		11151		1		5.8516		5.8512		1435.82		1435.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	61.771		61.000		0.79811		0.79809		7.3921		7.3917		4.8108		4.8116		7.9566		7.9169		1.000e-12		0.3290		0.1241000		0.2907		95.22		0.342		11190		1		5.8516		5.8513		1435.82		1435.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	62.277		61.500		0.79813		0.79810		7.3925		7.3920		4.8093		4.8102		7.9623		7.9082		1.000e-12		0.3301		0.1185000		0.3163		98.80		0.640		11217		1		5.8520		5.8516		1435.82		1435.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	62.783		62.000		0.79819		0.79816		7.3930		7.3926		4.8095		4.8103		7.9610		7.9132		1.000e-12		0.3309		0.1051000		0.3163		98.65		0.877		11233		1		5.8524		5.8520		1435.83		1435.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	63.289		62.500		0.79822		0.79819		7.3932		7.3927		4.8099		4.8107		7.9614		7.9223		1.000e-12		0.3313		0.1163000		0.3177		98.65		1.024		11245		1		5.8525		5.8522		1435.84		1435.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	63.796		63.000		0.79823		0.79821		7.3932		7.3928		4.8100		4.8108		7.9697		7.9274		1.000e-12		0.3302		0.1249000		0.3277		98.66		1.087		11256		1		5.8525		5.8522		1435.85		1435.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	64.302		63.500		0.79824		0.79821		7.3932		7.3927		4.8101		4.8108		7.9752		7.9254		1.000e-12		0.3335		0.1227000		0.3305		98.66		1.071		11266		1		5.8526		5.8522		1435.86		1435.86	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	64.808		64.000		0.79827		0.79823		7.3933		7.3928		4.8103		4.8110		7.9793		7.9204		1.000e-12		0.3550		0.1258000		0.3200		98.66		0.970		11278		1		5.8526		5.8522		1435.87		1435.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	65.315		64.500		0.79837		0.79831		7.3938		7.3932		4.8125		4.8125		7.9722		7.9146		1.000e-12		0.3500		0.1210000		0.3129		98.66		0.791		11292		1		5.8529		5.8525		1435.88		1435.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	65.821		65.000		0.79862		0.79859		7.3951		7.3946		4.8176		4.8183		7.9600		7.9108		1.000e-12		0.3325		0.1076000		0.2433		98.66		0.556		11310		1		5.8538		5.8534		1435.92		1435.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	66.327		65.500		0.79866		0.79862		7.3952		7.3948		4.8186		4.8188		7.9539		7.9074		1.000e-12		0.3309		0.1159000		0.2879		98.66		0.387		11338		1		5.8538		5.8535		1435.93		1435.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	66.834		66.000		0.79869		0.79863		7.3953		7.3948		4.8190		4.8188		7.9548		7.9116		1.000e-12		0.3537		0.1208000		0.3163		98.66		0.384		11371		1		5.8539		5.8535		1435.94		1435.94	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	67.340		66.500		0.79926		0.79919		7.3990		7.3983		4.8282		4.8279		7.8919		7.8583		1.000e-12		0.3328		0.1147000		0.3128		98.66		0.413		11401		1		5.8564		5.8559		1435.99		1435.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	67.846		67.000		0.80039		0.80042		7.4057		7.4057		4.8475		4.8490		7.7251		7.7088		1.000e-12		0.3382		0.1180000		0.2928		98.66		0.567		11428		1		5.8611		5.8610		1436.09		1436.10	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	68.353		67.500		0.80154		0.80168		7.4129		7.4134		4.8668		4.8704		7.7188		7.7233		1.000e-12		0.3368		0.1225000		0.3330		56.56		0.803		11446		1		5.8660		5.8663		1436.19		1436.21	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	68.859		68.000		0.80268		0.80228		7.4217		7.4183		4.8774		4.8753		7.3720		7.4739		1.000e-12		0.3209		0.1307000		0.3140		51.43		0.983		11459		1		5.8726		5.8700		1436.26		1436.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	69.365		68.500		0.81514		0.81408		7.5317		7.5218		4.9382		4.9356		6.5442		6.8084		1.000e-12		0.3180		0.1301000		0.2886		98.14		1.073		11470		1		5.9573		5.9496		1436.68		1436.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	69.871		69.000		0.88017		0.87886		8.1275		8.1154		5.1511		5.1470		5.2898		5.8030		1.000e-12		0.3261		0.1298000		0.2857		98.66		1.071		11480		1		6.4199		6.4106		1438.38		1438.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	70.377		69.500		0.94851		0.94794		8.7295		8.7250		5.4538		5.4496		3.7910		4.5740		1.000e-12		0.3315		0.1310000		0.2448		34.31		0.959		11492		1		6.8815		6.8781		1440.47		1440.44	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	70.883		70.000		0.96244		0.96217		8.8472		8.8445		5.5312		5.5315		2.3278		3.3002		1.000e-12		0.2802		0.1144000		0.2593		26.36		0.701		11506		1		6.9705		6.9684		1440.96		1440.96	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	71.389		70.500		0.95812		0.95870		8.8083		8.8146		5.5156		5.5137		1.8390		2.7602		1.000e-12		0.2598		0.1149000		0.2999		91.59		0.307		11539		1		6.9406		6.9457		1440.85		1440.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	71.894		71.000		0.96961		0.97012		8.9134		8.9228		5.5486		5.5320		2.0567		2.6623		1.000e-12		0.2936		0.1162000		0.3179		93.42		0.519		11579		1		7.0218		7.0300		1441.14		1441.08	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	72.400		71.500		1.00482		1.00499		9.2434		9.2451		5.6191		5.6190		1.4579		2.0959		1.000e-12		0.2880		0.1160000		0.3139		24.49		0.768		11597		1		7.2786		7.2799		1441.87		1441.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	72.906		72.000		1.01390		1.01382		9.3373		9.3363		5.6053		5.6058		1.0723		1.6985		1.000e-12		0.2608		0.1104000		0.3123		69.97		0.887		11611		1		7.3534		7.3526		1441.93		1441.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	73.411		72.500		1.02343		1.02334		9.4357		9.4347		5.5912		5.5917		0.8179		1.4212		1.000e-12		0.2542		0.1063000		0.3187		98.68		0.909		11624		1		7.4318		7.4310		1442.01		1442.01	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	73.917		73.000		1.03084		1.03078		9.5136		9.5128		5.5765		5.5768		0.6495		1.2255		1.000e-12		0.2657		0.1124000		0.3111		98.66		0.820		11637		1		7.4940		7.4934		1442.05		1442.05	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	74.422		73.500		1.03555		1.03548		9.5649		9.5641		5.5605		5.5609		0.5647		1.0917		1.000e-12		0.2711		0.1097000		0.2632		98.33		0.564		11654		1		7.5354		7.5347		1442.05		1442.05	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	74.928		74.000		1.03701		1.03822		9.5818		9.5941		5.5519		5.5509		0.6620		1.0400		1.000e-12		0.2696		0.1019000		0.2530		98.56		0.290		11694		1		7.5492		7.5590		1442.04		1442.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	75.433		74.500		1.04523		1.04548		9.6661		9.6685		5.5433		5.5435		0.6844		0.9627		1.000e-12		0.2705		0.1100000		0.2558		68.15		0.661		11727		1		7.6162		7.6181		1442.12		1442.13	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	75.938		75.000		1.05366		1.05360		9.7504		9.7497		5.5424		5.5428		0.6026		0.8661		1.000e-12		0.2834		0.1124000		0.2710		18.49		0.894		11741		1		7.6827		7.6822		1442.24		1442.24	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	76.444		75.500		1.05794		1.05795		9.7973		9.7971		5.5280		5.5288		0.5397		0.7873		1.000e-12		0.2899		0.1075000		0.2875		85.89		0.985		11753		1		7.7205		7.7203		1442.24		1442.24	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	76.949		76.000		1.06634		1.06630		9.8623		9.8616		5.5922		5.5928		0.4896		0.7203		1.000e-12		0.3067		0.1002000		0.2861		98.37		0.970		11764		1		7.7683		7.7677		1442.61		1442.61	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	77.454		76.500		1.07145		1.07144		9.9068		9.9067		5.6141		5.6141		0.4404		0.6594		1.000e-12		0.3040		0.1047000		0.2974		70.70		0.850		11777		1		7.8022		7.8021		1442.76		1442.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	77.960		77.000		1.07527		1.07522		9.9500		9.9493		5.5966		5.5971		0.3795		0.5848		1.000e-12		0.2967		0.1058000		0.2860		80.76		0.607		11794		1		7.8372		7.8367		1442.75		1442.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	78.465		77.500		1.07813		1.07893		9.9812		9.9880		5.5870		5.5912		0.3116		0.4964		1.000e-12		0.2969		0.1073000		0.2498		98.45		0.291		11828		1		7.8624		7.8676		1442.76		1442.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	78.970		78.000		1.08434		1.08472		10.0334		10.0364		5.6201		5.6227		0.3239		0.4522		1.000e-12		0.3076		0.1210000		0.3038		98.66		0.552		11866		1		7.9017		7.9039		1442.97		1442.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	79.476		78.500		1.09085		1.09084		10.0968		10.0964		5.6252		5.6261		0.2908		0.4215		1.000e-12		0.2959		0.1297000		0.2813		98.66		0.810		11882		1		7.9515		7.9511		1443.08		1443.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	79.981		79.000		1.09663		1.09663		10.1451		10.1448		5.6562		5.6573		0.2592		0.3877		1.000e-12		0.2847		0.1350000		0.2723		98.66		0.935		11895		1		7.9878		7.9875		1443.29		1443.29	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	80.486		79.500		1.10275		1.10276		10.1988		10.1986		5.6804		5.6815		0.2334		0.3601		1.000e-12		0.3039		0.1334000		0.3058		43.01		0.948		11907		1		8.0288		8.0285		1443.46		1443.47	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	80.991		80.000		1.10970		1.10969		10.2609		10.2606		5.7041		5.7049		0.2097		0.3342		1.000e-12		0.3209		0.1309000		0.3178		55.62		0.839		11920		1		8.0763		8.0760		1443.65		1443.66	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	81.496		80.500		1.11408		1.11406		10.2986		10.2983		5.7238		5.7241		0.1888		0.3062		1.000e-12		0.3130		0.1789000		0.3258		85.34		0.562		11938		1		8.1049		8.1046		1443.79		1443.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	82.002		81.000		1.11335		1.11652		10.2919		10.3203		5.7217		5.7323		0.2018		0.2957		1.000e-12		0.2947		0.2117000		0.3062		57.60		0.277		11980		1		8.0997		8.1215		1443.78		1443.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	82.507		81.500		1.12171		1.12198		10.3649		10.3669		5.7552		5.7576		0.1936		0.2778		1.000e-12		0.2736		0.2051000		0.3041		68.47		0.584		12018		1		8.1553		8.1568		1444.03		1444.04	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	83.012		82.000		1.12531		1.12529		10.4025		10.4020		5.7498		5.7505		0.1286		0.2159		1.000e-12		0.2898		0.2005000		0.3174		97.54		0.862		12034		1		8.1853		8.1849		1444.06		1444.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	83.517		82.500		1.12924		1.12922		10.4358		10.4353		5.7687		5.7695		0.0851		0.1744		1.000e-12		0.3094		0.1965000		0.3315		98.67		1.049		12047		1		8.2104		8.2100		1444.19		1444.19	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	84.022		83.000		1.13152		1.13148		10.4560		10.4554		5.7763		5.7769		0.0628		0.1521		1.000e-12		0.3113		0.1993000		0.3336		62.07		1.151		12057		1		8.2259		8.2254		1444.26		1444.26	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	84.527		83.500		1.13298		1.13294		10.4690		10.4683		5.7813		5.7820		0.0465		0.1412		1.000e-12		0.3212		0.2082000		0.3180		12.35		1.181		12067		1		8.2358		8.2353		1444.30		1444.31	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	85.032		84.000		1.13519		1.13516		10.4878		10.4873		5.7914		5.7920		0.0412		0.1324		1.000e-12		0.3213		0.2087000		0.3177		11.61		1.130		12077		1		8.2501		8.2496		1444.38		1444.38	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	85.538		84.500		1.13719		1.13715		10.5048		10.5042		5.8008		5.8013		0.0415		0.1292		1.000e-12		0.3051		0.1912000		0.3256		11.20		0.986		12088		1		8.2629		8.2624		1444.45		1444.45	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	86.043		85.000		1.13952		1.13948		10.5245		10.5239		5.8118		5.8123		0.0488		0.1289		1.000e-12		0.2992		0.1858000		0.3323		10.62		0.665		12102		1		8.2778		8.2773		1444.53		1444.53	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	86.548		85.500		1.13208		1.13775		10.4585		10.5083		5.7852		5.8069		0.0842		0.1887		1.000e-12		0.3046		0.1919000		0.2745		80.21		0.486		12181		1		8.2273		8.2653		1444.34		1444.49	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	87.053		86.000		1.13749		1.13983		10.5064		10.5266		5.8042		5.8141		0.0830		0.1640		1.000e-12		0.3093		0.1910000		0.2587		99.56		0.883		12212		1		8.2639		8.2793		1444.49		1444.56	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	87.558		86.500		1.14885		1.14891		10.6052		10.6054		5.8504		5.8516		0.0742		0.1394		1.000e-12		0.3345		0.1853000		0.2645		98.66		1.051		12223		1		8.3390		8.3391		1444.82		1444.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	88.063		87.000		1.15333		1.15336		10.6443		10.6442		5.8680		5.8690		0.0657		0.1252		1.000e-12		0.3302		0.1850000		0.2594		98.66		1.135		12234		1		8.3688		8.3686		1444.95		1444.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	88.568		87.500		1.15689		1.15687		10.6753		10.6748		5.8819		5.8827		0.0566		0.1163		1.000e-12		0.2888		0.1755000		0.2765		98.66		1.151		12244		1		8.3923		8.3919		1445.06		1445.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	89.073		88.000		1.15988		1.15982		10.7006		10.6998		5.8957		5.8963		0.0539		0.1118		1.000e-12		0.2847		0.1732000		0.3016		98.66		1.110		12254		1		8.4114		8.4108		1445.15		1445.16	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	89.578		88.500		1.16191		1.16185		10.7178		10.7171		5.9050		5.9055		0.0548		0.1084		1.000e-12		0.3062		0.1654000		0.3045		98.66		1.011		12266		1		8.4244		8.4238		1445.23		1445.23	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	90.083		89.000		1.16424		1.16416		10.7375		10.7366		5.9159		5.9163		0.0569		0.1080		1.000e-12		0.3211		0.1617000		0.3306		98.66		0.863		12278		1		8.4392		8.4385		1445.30		1445.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	90.588		89.500		1.16633		1.16627		10.7556		10.7549		5.9244		5.9247		0.0568		0.1053		1.000e-12		0.3046		0.1524000		0.3277		98.66		0.666		12294		1		8.4529		8.4523		1445.37		1445.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	91.093		90.000		1.16792		1.16794		10.7691		10.7692		5.9312		5.9319		0.0582		0.1074		1.000e-12		0.3125		0.1344000		0.3128		98.66		0.399		12318		1		8.4632		8.4632		1445.43		1445.43	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	91.598		90.500		1.15297		1.15843		10.6395		10.6874		5.8698		5.8902		0.0676		0.1226		1.000e-12		0.3097		0.1488000		0.2788		98.66		0.389		12399		1		8.3648		8.4014		1445.01		1445.16	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	92.103		91.000		1.17013		1.17065		10.7881		10.7919		5.9402		5.9444		0.0593		0.1101		1.000e-12		0.3294		0.1441000		0.3063		98.66		0.874		12422		1		8.4776		8.4803		1445.50		1445.53	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	92.608		91.500		1.17307		1.17312		10.8128		10.8129		5.9544		5.9555		0.0556		0.1065		1.000e-12		0.3334		0.1402000		0.3362		98.66		1.123		12433		1		8.4961		8.4962		1445.60		1445.61	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	93.113		92.000		1.17543		1.17538		10.8330		10.8323		5.9645		5.9651		0.0541		0.1023		1.000e-12		0.3083		0.1535000		0.3346		98.66		1.272		12443		1		8.5113		8.5108		1445.68		1445.68	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	93.618		92.500		1.17825		1.17816		10.8569		10.8559		5.9773		5.9776		0.0557		0.0992		1.000e-12		0.2845		0.1608000		0.3309		98.66		1.339		12452		1		8.5294		8.5286		1445.77		1445.77	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	94.123		93.000		1.18229		1.18222		10.8912		10.8904		5.9951		5.9957		0.0622		0.1069		1.000e-12		0.2847		0.1608000		0.3028		98.66		1.325		12460		1		8.5553		8.5546		1445.90		1445.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	94.628		93.500		1.18515		1.18510		10.9154		10.9147		6.0083		6.0088		0.0711		0.1152		1.000e-12		0.3132		0.1606000		0.3020		98.66		1.228		12469		1		8.5735		8.5729		1445.99		1446.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	95.133		94.000		1.18700		1.18694		10.9311		10.9303		6.0168		6.0174		0.0884		0.1278		1.000e-12		0.3332		0.1619000		0.2929		98.67		1.020		12479		1		8.5853		8.5846		1446.06		1446.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	95.638		94.500		1.18813		1.18804		10.9397		10.9387		6.0245		6.0249		0.1023		0.1348		1.000e-12		0.3194		0.2051000		0.2885		98.66		0.613		12495		1		8.5916		8.5908		1446.11		1446.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	96.143		95.000		1.18000		1.18054		10.8711		10.8757		5.9861		5.9883		0.0789		0.1123		1.000e-12		0.2858		0.1787000		0.2918		78.06		0.339		12571		1		8.5400		8.5435		1445.87		1445.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	96.648		95.500		1.18344		1.18895		10.9000		10.9470		6.0022		6.0265		0.0680		0.1054		1.000e-12		0.2989		0.1741000		0.2561		99.62		0.733		12598		1		8.5618		8.5972		1445.98		1446.14	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	97.153		96.000		1.19768		1.19842		11.0214		11.0272		6.0646		6.0696		0.0654		0.1051		1.000e-12		0.3104		0.1732000		0.2948		98.66		0.938		12611		1		8.6533		8.6576		1446.41		1446.43	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	97.657		96.500		1.20138		1.20145		11.0525		11.0529		6.0819		6.0832		0.0718		0.1119		1.000e-12		0.3013		0.1605000		0.3209		98.67		1.058		12623		1		8.6767		8.6769		1446.53		1446.53	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	98.162		97.000		1.20327		1.20322		11.0685		11.0678		6.0904		6.0911		0.0841		0.1217		1.000e-12		0.2969		0.1545000		0.3070		98.66		1.099		12634		1		8.6887		8.6881		1446.59		1446.59	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	98.667		97.500		1.20479		1.20477		11.0808		11.0804		6.0987		6.0992		0.0909		0.1324		1.000e-12		0.2969		0.1537000		0.2415		98.66		1.047		12644		1		8.6979		8.6975		1446.65		1446.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	99.172		98.000		1.20663		1.20658		11.0965		11.0959		6.1063		6.1069		0.0814		0.1253		1.000e-12		0.2850		0.1492000		0.2449		98.67		0.870		12656		1		8.7097		8.7091		1446.71		1446.71	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	99.677		98.500		1.20771		1.20774		11.1057		11.1057		6.1109		6.1118		0.0591		0.1029		1.000e-12		0.3001		0.1756000		0.2672		98.67		0.494		12676		1		8.7166		8.7166		1446.75		1446.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	100.182		99.000		1.20291		1.20846		11.0652		11.1117		6.0882		6.1151		0.0456		0.1017		1.000e-12		0.3199		0.1854000		0.3171		94.58		0.292		12722		1		8.6863		8.7211		1446.61		1446.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	100.687		99.500		1.21071		1.21056		11.1310		11.1298		6.1239		6.1233		0.0929		0.1300		1.000e-12		0.2973		0.1643000		0.3047		26.58		0.584		12753		1		8.7357		8.7348		1446.85		1446.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	101.192		100.000		1.21338		1.21340		11.1547		11.1547		6.1325		6.1331		0.1952		0.2044		1.000e-12		0.2867		0.1589000		0.2839		79.14		0.754		12770		1		8.7538		8.7537		1446.93		1446.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	101.696		100.500		1.21588		1.21588		11.1763		11.1760		6.1419		6.1429		0.2837		0.2780		1.000e-12		0.2968		0.1742000		0.2703		98.52		0.840		12784		1		8.7702		8.7698		1447.00		1447.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	102.201		101.000		1.21854		1.21850		11.1987		11.1980		6.1540		6.1547		0.3224		0.3159		1.000e-12		0.2876		0.1759000		0.2963		98.67		0.854		12798		1		8.7869		8.7864		1447.09		1447.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	102.706		101.500		1.22118		1.22116		11.2215		11.2210		6.1641		6.1651		0.3175		0.3177		1.000e-12		0.2728		0.1778000		0.3036		98.66		0.803		12812		1		8.8042		8.8038		1447.17		1447.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	103.211		102.000		1.22325		1.22321		11.2390		11.2384		6.1730		6.1736		0.2950		0.3035		1.000e-12		0.2891		0.1919000		0.2636		98.66		0.681		12828		1		8.8174		8.8169		1447.23		1447.24	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	103.716		102.500		1.22506		1.22502		11.2545		11.2539		6.1804		6.1808		0.2827		0.2956		1.000e-12		0.2750		0.1881000		0.2876		98.67		0.508		12849		1		8.8291		8.8286		1447.29		1447.29	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	104.221		103.000		1.22668		1.22667		11.2684		11.2682		6.1867		6.1871		0.2816		0.2999		1.000e-12		0.2772		0.1862000		0.2800		98.67		0.391		12878		1		8.8396		8.8394		1447.35		1447.35	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	104.725		103.500		1.22821		1.22819		11.2816		11.2813		6.1925		6.1928		0.2876		0.3099		1.000e-12		0.2983		0.1822000		0.2456		98.67		0.452		12908		1		8.8496		8.8493		1447.40		1447.40	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	105.230		104.000		1.23035		1.23028		11.3000		11.2992		6.2009		6.2009		0.2799		0.3106		1.000e-12		0.2975		0.1746000		0.2434		98.67		0.577		12931		1		8.8635		8.8629		1447.46		1447.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	105.735		104.500		1.23276		1.23268		11.3192		11.3184		6.2146		6.2148		0.1834		0.2288		1.000e-12		0.2880		0.1724000		0.2661		98.66		0.650		12951		1		8.8777		8.8771		1447.55		1447.55	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	106.240		105.000		1.23389		1.23384		11.3284		11.3277		6.2206		6.2210		0.1149		0.1670		1.000e-12		0.2722		0.1743000		0.2880		98.66		0.687		12968		1		8.8845		8.8840		1447.60		1447.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	106.744		105.500		1.23475		1.23471		11.3361		11.3356		6.2227		6.2231		0.1869		0.2225		1.000e-12		0.3065		0.3919000		0.3192		98.67		0.689		12986		1		8.8905		8.8900		1447.62		1447.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	107.249		106.000		1.23650		1.23646		11.3516		11.3511		6.2281		6.2285		0.3165		0.3338		1.000e-12		0.2857		0.2857000		0.3036		98.67		0.674		13003		1		8.9022		8.9018		1447.67		1447.68	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	107.754		106.500		1.23911		1.23905		11.3746		11.3740		6.2364		6.2368		0.4171		0.4187		1.000e-12		0.2634		0.1560000		0.2901		14.57		0.663		13021		1		8.9198		8.9193		1447.75		1447.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	108.259		107.000		1.24274		1.24265		11.4066		11.4056		6.2484		6.2487		0.4683		0.4610		1.000e-12		0.2846		0.1498000		0.2854		65.50		0.645		13039		1		8.9441		8.9433		1447.84		1447.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	108.764		107.500		1.24547		1.24540		11.4308		11.4301		6.2567		6.2570		0.4811		0.4760		1.000e-12		0.2933		0.1534000		0.2957		97.78		0.600		13059		1		8.9626		8.9620		1447.92		1447.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	109.268		108.000		1.24831		1.24823		11.4558		11.4549		6.2659		6.2662		0.4835		0.4807		1.000e-12		0.2913		0.1409000		0.3091		97.70		0.544		13080		1		8.9817		8.9809		1448.00		1448.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	109.773		108.500		1.25182		1.25178		11.4867		11.4861		6.2776		6.2778		0.4773		0.4831		1.000e-12		0.2802		0.1323000		0.3167		97.70		0.474		13103		1		9.0051		9.0047		1448.09		1448.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	110.278		109.000		1.25338		1.25334		11.5004		11.4999		6.2823		6.2827		0.4689		0.4861		1.000e-12		0.2727		0.1487000		0.2971		97.73		0.374		13132		1		9.0156		9.0152		1448.14		1448.14	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	110.782		109.500		1.25541		1.25537		11.5182		11.5176		6.2892		6.2895		0.4599		0.4806		1.000e-12		0.2542		0.1463000		0.2497		47.72		0.469		13165		1		9.0291		9.0286		1448.20		1448.20	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	111.287		110.000		1.25727		1.25724		11.5348		11.5343		6.2944		6.2948		0.4568		0.4761		1.000e-12		0.2733		0.1424000		0.2749		80.66		0.735		13185		1		9.0418		9.0414		1448.25		1448.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	111.792		110.500		1.25806		1.25802		11.5412		11.5406		6.2984		6.2990		0.4778		0.4950		1.000e-12		0.2861		0.1424000		0.3204		98.58		0.907		13200		1		9.0465		9.0460		1448.28		1448.28	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	112.297		111.000		1.25980		1.25976		11.5556		11.5550		6.3065		6.3070		0.5132		0.5273		1.000e-12		0.2744		0.1483000		0.3173		98.02		0.980		13212		1		9.0573		9.0568		1448.34		1448.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	112.801		111.500		1.26240		1.26231		11.5776		11.5767		6.3171		6.3174		0.5545		0.5626		1.000e-12		0.2725		0.1473000		0.3206		98.20		0.947		13223		1		9.0739		9.0732		1448.42		1448.42	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	113.306		112.000		1.26517		1.26511		11.6016		11.6009		6.3273		6.3277		0.5904		0.5942		1.000e-12		0.2820		0.1403000		0.3066		98.45		0.789		13237		1		9.0920		9.0915		1448.50		1448.50	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	113.811		112.500		1.26636		1.26620		11.6119		11.6102		6.3313		6.3317		0.6104		0.6144		1.000e-12		0.2784		0.1308000		0.2846		98.61		0.454		13258		1		9.0999		9.0985		1448.54		1448.54	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	114.315		113.000		1.26773		1.26754		11.6239		11.6220		6.3360		6.3362		0.5981		0.6101		1.000e-12		0.2828		0.1279000		0.2500		75.11		0.313		13300		1		9.1089		9.1074		1448.58		1448.58	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	114.820		113.500		1.27043		1.27038		11.6472		11.6467		6.3455		6.3459		0.5922		0.6067		1.000e-12		0.2848		0.1245000		0.2619		74.79		0.651		13325		1		9.1266		9.1262		1448.66		1448.66	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	115.325		114.000		1.27291		1.27285		11.6695		11.6687		6.3525		6.3529		0.5854		0.6040		1.000e-12		0.2743		0.1243000		0.2754		98.56		0.793		13340		1		9.1436		9.1429		1448.73		1448.73	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	115.829		114.500		1.27469		1.27463		11.6848		11.6840		6.3591		6.3595		0.5892		0.6071		1.000e-12		0.2725		0.1261000		0.3035		98.66		0.811		13355		1		9.1552		9.1546		1448.78		1448.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	116.334		115.000		1.27592		1.27587		11.6951		11.6945		6.3640		6.3644		0.6001		0.6148		1.000e-12		0.2725		0.1305000		0.2628		98.67		0.703		13370		1		9.1630		9.1625		1448.82		1448.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	116.839		115.500		1.27740		1.27734		11.7082		11.7075		6.3685		6.3688		0.6001		0.6214		1.000e-12		0.2725		0.1306000		0.2576		98.67		0.469		13391		1		9.1729		9.1723		1448.87		1448.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	117.343		116.000		1.27949		1.27940		11.7270		11.7260		6.3738		6.3741		0.5908		0.6154		1.000e-12		0.2628		0.1302000		0.3040		98.67		0.376		13425		1		9.1874		9.1866		1448.92		1448.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	117.848		116.500		1.28109		1.28096		11.7407		11.7394		6.3797		6.3799		0.5843		0.6074		1.000e-12		0.2727		0.1182000		0.2634		68.71		0.599		13451		1		9.1977		9.1966		1448.97		1448.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	118.352		117.000		1.28412		1.28405		11.7674		11.7665		6.3893		6.3897		0.5878		0.6099		1.000e-12		0.2725		0.1294000		0.2536		92.18		0.785		13468		1		9.2180		9.2173		1449.05		1449.05	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	118.857		117.500		1.28597		1.28592		11.7832		11.7826		6.3963		6.3969		0.5994		0.6180		1.000e-12		0.2716		0.1314000		0.3469		98.48		0.891		13482		1		9.2299		9.2294		1449.11		1449.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	119.362		118.000		1.28917		1.28908		11.8115		11.8104		6.4063		6.4067		0.6140		0.6323		1.000e-12		0.2606		0.1366000		0.3446		98.65		0.889		13494		1		9.2514		9.2505		1449.19		1449.19	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	119.866		118.500		1.29592		1.29582		11.8704		11.8695		6.4287		6.4287		0.6319		0.6529		1.000e-12		0.2625		0.1351000		0.3075		98.66		0.742		13508		1		9.2961		9.2954		1449.37		1449.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	120.371		119.000		1.29896		1.29916		11.8971		11.8986		6.4385		6.4401		0.6627		0.6785		1.000e-12		0.2679		0.1377000		0.3412		98.67		0.382		13533		1		9.3164		9.3174		1449.45		1449.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	120.875		119.500		1.30121		1.30107		11.9168		11.9152		6.4457		6.4466		0.6513		0.6686		1.000e-12		0.2799		0.1321000		0.2793		98.67		0.379		13578		1		9.3314		9.3300		1449.52		1449.52	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	121.380		120.000		1.30416		1.30401		11.9421		11.9406		6.4570		6.4568		0.6188		0.6449		1.000e-12		0.2724		0.1121000		0.2630		98.67		0.688		13599		1		9.3504		9.3492		1449.60		1449.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	121.885		120.500		1.30678		1.30667		11.9652		11.9641		6.4646		6.4647		0.5955		0.6250		1.000e-12		0.2777		0.1235000		0.2693		98.65		0.825		13615		1		9.3681		9.3672		1449.67		1449.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	122.389		121.000		1.30880		1.30871		11.9835		11.9825		6.4692		6.4696		0.5681		0.6004		1.000e-12		0.2848		0.1364000		0.2762		98.66		0.871		13628		1		9.3821		9.3813		1449.72		1449.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	122.894		121.500		1.31117		1.31108		12.0048		12.0038		6.4753		6.4756		0.5493		0.5873		1.000e-12		0.2643		0.1370000		0.2859		98.66		0.843		13642		1		9.3984		9.3975		1449.78		1449.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	123.398		122.000		1.31451		1.31443		12.0335		12.0326		6.4875		6.4876		0.5613		0.5981		1.000e-12		0.2480		0.1350000		0.2950		98.67		0.745		13657		1		9.4201		9.4193		1449.88		1449.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	123.903		122.500		1.31606		1.31599		12.0467		12.0459		6.4934		6.4937		0.5985		0.6277		1.000e-12		0.2481		0.1303000		0.2993		98.67		0.548		13675		1		9.4300		9.4293		1449.93		1449.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	124.407		123.000		1.31694		1.31499		12.0543		12.0373		6.4963		6.4894		0.6158		0.6403		1.000e-12		0.2634		0.1300000		0.2686		98.67		0.273		13711		1		9.4357		9.4229		1449.96		1449.91	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	124.912		123.500		1.31870		1.31850		12.0694		12.0677		6.5027		6.5019		0.5818		0.6090		1.000e-12		0.2622		0.1249000		0.3042		98.66		0.529		13754		1		9.4471		9.4459		1450.01		1450.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	125.416		124.000		1.32154		1.32141		12.0942		12.0928		6.5121		6.5121		0.5599		0.5918		1.000e-12		0.2602		0.1249000		0.2855		98.65		0.834		13770		1		9.4659		9.4649		1450.09		1450.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	125.921		124.500		1.32556		1.32548		12.1290		12.1282		6.5256		6.5258		0.5456		0.5805		1.000e-12		0.2613		0.1248000		0.2890		98.65		0.979		13783		1		9.4923		9.4916		1450.20		1450.20	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	126.425		125.000		1.32841		1.32833		12.1539		12.1530		6.5348		6.5352		0.5312		0.5679		1.000e-12		0.2680		0.1243000		0.3181		98.66		1.005		13794		1		9.5111		9.5104		1450.27		1450.28	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	126.930		125.500		1.33145		1.33138		12.1805		12.1798		6.5444		6.5446		0.5108		0.5538		1.000e-12		0.2724		0.1263000		0.3171		98.67		0.907		13806		1		9.5313		9.5307		1450.35		1450.36	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	127.434		126.000		1.33363		1.33355		12.1988		12.1979		6.5535		6.5538		0.4950		0.5391		1.000e-12		0.2725		0.1133000		0.3031		98.67		0.611		13821		1		9.5450		9.5443		1450.42		1450.42	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	127.938		126.500		1.32815		1.32113		12.1514		12.0903		6.5338		6.5098		0.5524		0.5631		1.000e-12		0.2611		0.1218000		0.3109		98.66		0.424		13887		1		9.5093		9.4630		1450.29		1450.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	128.443		127.000		1.33602		1.33128		12.2200		12.1786		6.5600		6.5441		0.5601		0.5795		1.000e-12		0.2602		0.1172000		0.3019		98.65		0.929		13907		1		9.5611		9.5299		1450.49		1450.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	128.947		127.500		1.34088		1.34079		12.2611		12.2602		6.5791		6.5792		0.5679		0.5851		1.000e-12		0.2603		0.1175000		0.2882		98.64		1.119		13917		1		9.5921		9.5913		1450.63		1450.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	129.452		128.000		1.34339		1.34334		12.2829		12.2823		6.5875		6.5879		0.5616		0.5860		1.000e-12		0.2603		0.1085000		0.2709		98.64		1.190		13927		1		9.6085		9.6080		1450.70		1450.70	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	129.956		128.500		1.34535		1.34532		12.3000		12.2996		6.5934		6.5939		0.5383		0.5669		1.000e-12		0.2603		0.1067000		0.2746		98.64		1.152		13936		1		9.6216		9.6211		1450.76		1450.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	130.461		129.000		1.34761		1.34756		12.3192		12.3186		6.6022		6.6025		0.4878		0.5238		1.000e-12		0.2671		0.1138000		0.2708		98.65		0.985		13947		1		9.6360		9.6354		1450.83		1450.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	130.965		129.500		1.35276		1.35246		12.3610		12.3583		6.6275		6.6268		0.4279		0.4718		1.000e-12		0.2696		0.1175000		0.2754		98.66		0.589		13966		1		9.6668		9.6647		1450.99		1450.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	131.469		130.000		1.34799		1.34146		12.3211		12.2655		6.6070		6.5817		0.5181		0.5191		1.000e-12		0.2778		0.1145000		0.2758		98.67		0.748		14056		1		9.6370		9.5953		1450.86		1450.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	131.974		130.500		1.34951		1.35017		12.3349		12.3401		6.6103		6.6135		0.4592		0.4792		1.000e-12		0.2723		0.1047000		0.2874		98.66		1.030		14064		1		9.6476		9.6515		1450.90		1450.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	132.478		131.000		1.35917		1.35906		12.4171		12.4160		6.6470		6.6470		0.4176		0.4518		1.000e-12		0.2663		0.1111000		0.2649		98.66		1.146		14075		1		9.7094		9.7085		1451.17		1451.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	132.983		131.500		1.36014		1.36011		12.4248		12.4243		6.6519		6.6524		0.3882		0.4315		1.000e-12		0.2615		0.1120000		0.2436		98.68		1.155		14085		1		9.7151		9.7147		1451.21		1451.21	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	133.487		132.000		1.36144		1.36142		12.4355		12.4350		6.6578		6.6584		0.3711		0.4181		1.000e-12		0.2603		0.1111000		0.2426		98.68		1.072		14095		1		9.7230		9.7226		1451.25		1451.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	133.991		132.500		1.36289		1.36286		12.4479		12.4475		6.6626		6.6630		0.3642		0.4142		1.000e-12		0.2603		0.1072000		0.3104		98.68		0.904		14107		1		9.7324		9.7320		1451.30		1451.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	134.496		133.000		1.36413		1.36410		12.4579		12.4575		6.6685		6.6689		0.3501		0.4026		1.000e-12		0.2654		0.1061000		0.3158		98.68		0.665		14123		1		9.7398		9.7394		1451.34		1451.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	135.000		133.500		1.36467		1.36465		12.4624		12.4620		6.6707		6.6711		0.3183		0.3685		1.000e-12		0.2680		0.1064000		0.3026		98.68		0.435		14147		1		9.7432		9.7428		1451.36		1451.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	135.504		134.000		1.36515		1.36514		12.4664		12.4661		6.6726		6.6730		0.2946		0.3406		1.000e-12		0.2710		0.1037000		0.3204		98.67		0.274		14183		1		9.7461		9.7459		1451.38		1451.39	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	136.009		134.500		1.36594		1.36593		12.4730		12.4728		6.6756		6.6759		0.3372		0.3644		1.000e-12		0.2863		0.1039000		0.2805		98.67		0.312		14236		1		9.7511		9.7509		1451.41		1451.41	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	136.513		135.000		1.36741		1.36738		12.4849		12.4845		6.6826		6.6829		0.3492		0.3752		1.000e-12		0.2736		0.1235000		0.2632		98.67		0.705		14261		1		9.7599		9.7595		1451.46		1451.47	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	137.017		135.500		1.36967		1.36962		12.5038		12.5031		6.6919		6.6925		0.3380		0.3662		1.000e-12		0.2672		0.1230000		0.2905		98.66		0.963		14275		1		9.7740		9.7734		1451.54		1451.54	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	137.522		136.000		1.37227		1.37223		12.5257		12.5250		6.7022		6.7027		0.3268		0.3578		1.000e-12		0.2472		0.1239000		0.3316		98.65		1.131		14286		1		9.7904		9.7898		1451.61		1451.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	138.026		136.500		1.37415		1.37410		12.5414		12.5408		6.7096		6.7100		0.3177		0.3531		1.000e-12		0.2481		0.1229000		0.3665		98.66		1.213		14296		1		9.8022		9.8016		1451.67		1451.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	138.530		137.000		1.37551		1.37548		12.5524		12.5519		6.7162		6.7167		0.3164		0.3510		1.000e-12		0.2879		0.1204000		0.3641		98.66		1.220		14305		1		9.8103		9.8099		1451.72		1451.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	139.035		137.500		1.37680		1.37676		12.5627		12.5622		6.7225		6.7228		0.3108		0.3430		1.000e-12		0.3088		0.1166000		0.2852		98.68		1.143		14315		1		9.8179		9.8174		1451.77		1451.77	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	139.539		138.000		1.37759		1.37754		12.5691		12.5685		6.7260		6.7263		0.3009		0.3346		1.000e-12		0.2995		0.1136000		0.2706		98.68		0.963		14326		1		9.8226		9.8221		1451.80		1451.80	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	140.043		138.500		1.37861		1.37851		12.5783		12.5771		6.7284		6.7286		0.2889		0.3221		1.000e-12		0.2756		0.1099000		0.2927		98.68		0.567		14342		1		9.8296		9.8287		1451.83		1451.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	140.548		139.000		1.37800		1.37836		12.5731		12.5759		6.7255		6.7277		0.2566		0.3158		1.000e-12		0.2847		0.1154000		0.2942		98.68		0.744		14444		1		9.8258		9.8278		1451.82		1451.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	141.052		139.500		1.37822		1.37845		12.5749		12.5768		6.7263		6.7276		0.2310		0.2859		1.000e-12		0.2746		0.1091000		0.2910		98.66		1.055		14456		1		9.8272		9.8285		1451.83		1451.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	141.556		140.000		1.38059		1.38057		12.5953		12.5950		6.7343		6.7349		0.2070		0.2581		1.000e-12		0.2597		0.1062000		0.2806		98.66		1.226		14466		1		9.8425		9.8423		1451.90		1451.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	142.061		140.500		1.38213		1.38205		12.6087		12.6078		6.7391		6.7394		0.1904		0.2407		1.000e-12		0.2603		0.1072000		0.2702		98.66		1.319		14475		1		9.8527		9.8520		1451.94		1451.94	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	142.565		141.000		1.38272		1.38267		12.6136		12.6129		6.7415		6.7420		0.1789		0.2280		1.000e-12		0.2779		0.1411000		0.2683		98.66		1.332		14484		1		9.8563		9.8557		1451.97		1451.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	143.069		141.500		1.38323		1.38319		12.6179		12.6173		6.7433		6.7438		0.1750		0.2209		1.000e-12		0.2844		0.1546000		0.2878		98.67		1.258		14493		1		9.8595		9.8590		1451.99		1451.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	143.573		142.000		1.38554		1.38546		12.6378		12.6369		6.7507		6.7512		0.1770		0.2191		1.000e-12		0.2836		0.1535000		0.3171		98.67		1.074		14502		1		9.8746		9.8739		1452.05		1452.05	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	144.078		142.500		1.38835		1.38827		12.6618		12.6609		6.7607		6.7610		0.1809		0.2209		1.000e-12		0.2735		0.1433000		0.3151		98.66		0.710		14516		1		9.8927		9.8920		1452.13		1452.13	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	144.582		143.000		1.38773		1.38796		12.6565		12.6585		6.7584		6.7590		0.1902		0.2228		1.000e-12		0.2673		0.1179000		0.2497		98.35		0.301		14587		1		9.8887		9.8902		1452.12		1452.13	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	145.086		143.500		1.38812		1.38943		12.6601		12.6713		6.7588		6.7633		0.1496		0.1961		1.000e-12		0.2509		0.1136000		0.2421		98.00		0.597		14628		1		9.8915		9.8999		1452.14		1452.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	145.591		144.000		1.39198		1.39203		12.6936		12.6938		6.7710		6.7717		0.1271		0.1766		1.000e-12		0.2727		0.1429000		0.2652		97.61		0.766		14645		1		9.9168		9.9169		1452.24		1452.24	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	146.095		144.500		1.39369		1.39372		12.7080		12.7080		6.7776		6.7783		0.1239		0.1707		1.000e-12		0.2681		0.1502000		0.2738		97.19		0.875		14660		1		9.9276		9.9275		1452.29		1452.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	146.599		145.000		1.39415		1.39413		12.7116		12.7113		6.7796		6.7801		0.1297		0.1702		1.000e-12		0.2603		0.1599000		0.2707		96.81		0.946		14673		1		9.9303		9.9300		1452.31		1452.32	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	147.103		145.500		1.39491		1.39488		12.7180		12.7176		6.7824		6.7829		0.1347		0.1709		1.000e-12		0.2603		0.1568000		0.2743		96.35		0.976		14685		1		9.9351		9.9347		1452.34		1452.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	147.608		146.000		1.39561		1.39558		12.7243		12.7238		6.7839		6.7845		0.1373		0.1707		1.000e-12		0.2603		0.1543000		0.2719		95.86		0.961		14697		1		9.9399		9.9394		1452.36		1452.36	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	148.112		146.500		1.39625		1.39622		12.7300		12.7296		6.7853		6.7858		0.1419		0.1701		1.000e-12		0.2648		0.1500000		0.3004		95.34		0.881		14709		1		9.9442		9.9439		1452.38		1452.39	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	148.616		147.000		1.39691		1.39688		12.7358		12.7353		6.7870		6.7875		0.1436		0.1726		1.000e-12		0.2728		0.1432000		0.3009		94.82		0.695		14724		1		9.9487		9.9482		1452.41		1452.41	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	149.120		147.500		1.39755		1.39750		12.7413		12.7406		6.7890		6.7895		0.1435		0.1741		1.000e-12		0.2718		0.1522000		0.3042		95.67		0.363		14772		1		9.9528		9.9523		1452.43		1452.43	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	149.625		148.000		1.39815		1.39811		12.7461		12.7456		6.7918		6.7921		0.1426		0.1670		1.000e-12		0.2483		0.1416000		0.3094		93.30		0.668		14831		1		9.9564		9.9559		1452.45		1452.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	150.129		148.500		1.39889		1.39885		12.7526		12.7521		6.7936		6.7940		0.1330		0.1575		1.000e-12		0.2707		0.1373000		0.2603		93.08		0.917		14844		1		9.9613		9.9609		1452.48		1452.48	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	150.633		149.000		1.39996		1.39993		12.7622		12.7617		6.7960		6.7965		0.1120		0.1437		1.000e-12		0.2725		0.1356000		0.2652		92.67		1.042		14856		1		9.9687		9.9682		1452.51		1452.51	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	151.137		149.500		1.40060		1.40055		12.7679		12.7673		6.7972		6.7977		0.0891		0.1243		1.000e-12		0.2811		0.1402000		0.2886		92.28		1.082		14867		1		9.9731		9.9725		1452.53		1452.53	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	151.642		150.000		1.40167		1.40165		12.7777		12.7772		6.7994		6.7998		0.0647		0.1044		1.000e-12		0.2857		0.1433000		0.2885		92.12		1.044		14877		1		9.9805		9.9802		1452.56		1452.56	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	152.146		150.500		1.40259		1.40255		12.7857		12.7852		6.8018		6.8023		0.0483		0.0927		1.000e-12		0.2688		0.1705000		0.2523		91.44		0.926		14889		1		9.9866		9.9862		1452.59		1452.59	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	152.650		151.000		1.40343		1.40340		12.7931		12.7926		6.8041		6.8045		0.0464		0.0894		1.000e-12		0.2489		0.2018000		0.2469		90.78		0.712		14904		1		9.9923		9.9919		1452.61		1452.61	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	153.154		151.500		1.40383		1.40379		12.7966		12.7960		6.8051		6.8053		0.0570		0.0931		1.000e-12		0.2946		0.2158000		0.2998		90.25		0.361		14927		1		9.9949		9.9945		1452.63		1452.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	153.659		152.000		1.40410		1.40376		12.7989		12.7956		6.8056		6.8055		0.0724		0.1018		1.000e-12		0.2818		0.2080000		0.3006		89.08		0.322		14984		1		9.9967		9.9941		1452.64		1452.64	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	154.163		152.500		1.40468		1.40463		12.8038		12.8032		6.8076		6.8080		0.0771		0.1042		1.000e-12		0.2724		0.2460000		0.2631		88.80		0.653		15008		1		10.0004		9.9999		1452.67		1452.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	154.667		153.000		1.40544		1.40540		12.8105		12.8100		6.8095		6.8098		0.0765		0.1012		1.000e-12		0.2839		0.1726000		0.2875		88.54		0.791		15024		1		10.0055		10.0051		1452.69		1452.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	155.171		153.500		1.40588		1.40585		12.8143		12.8139		6.8107		6.8111		0.0702		0.0970		1.000e-12		0.2847		0.1681000		0.2846		88.12		0.798		15038		1		10.0084		10.0080		1452.71		1452.71	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	155.675		154.000		1.40630		1.40626		12.8179		12.8174		6.8118		6.8120		0.0647		0.0951		1.000e-12		0.2847		0.1721000		0.2630		87.64		0.683		15054		1		10.0112		10.0107		1452.72		1452.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	156.180		154.500		1.40671		1.40668		12.8215		12.8210		6.8129		6.8133		0.0649		0.0925		1.000e-12		0.2847		0.1866000		0.2810		92.60		0.472		15075		1		10.0139		10.0135		1452.74		1452.74	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	156.684		155.000		1.40725		1.40720		12.8262		12.8256		6.8142		6.8146		0.0661		0.0940		1.000e-12		0.2956		0.1683000		0.3017		85.94		0.410		15106		1		10.0175		10.0169		1452.76		1452.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	157.188		155.500		1.40793		1.40788		12.8321		12.8314		6.8164		6.8167		0.0565		0.0853		1.000e-12		0.2721		0.1489000		0.2850		85.73		0.579		15131		1		10.0219		10.0213		1452.78		1452.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	157.692		156.000		1.40921		1.40914		12.8433		12.8425		6.8199		6.8200		0.0486		0.0742		1.000e-12		0.2825		0.1593000		0.2788		85.31		0.698		15150		1		10.0304		10.0298		1452.82		1452.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	158.197		156.500		1.41049		1.41043		12.8547		12.8541		6.8228		6.8230		0.0379		0.0694		1.000e-12		0.2825		0.1604000		0.2741		84.82		0.710		15166		1		10.0392		10.0386		1452.86		1452.86	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	158.701		157.000		1.41146		1.41143		12.8634		12.8629		6.8250		6.8253		0.0323		0.0648		1.000e-12		0.2728		0.1610000		0.2623		84.28		0.606		15184		1		10.0458		10.0454		1452.88		1452.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	159.205		157.500		1.41191		1.41189		12.8674		12.8670		6.8260		6.8265		0.0278		0.0589		1.000e-12		0.2808		0.1845000		0.3038		83.65		0.366		15210		1		10.0488		10.0485		1452.90		1452.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	159.709		158.000		1.41241		1.41239		12.8718		12.8714		6.8270		6.8276		0.0282		0.0537		1.000e-12		0.2719		0.1824000		0.2818		83.00		0.320		15253		1		10.0522		10.0518		1452.92		1452.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	160.213		158.500		1.41339		1.41335		12.8805		12.8799		6.8294		6.8299		0.0250		0.0537		1.000e-12		0.2731		0.1964000		0.2506		82.61		0.536		15281		1		10.0588		10.0584		1452.95		1452.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	160.718		159.000		1.41420		1.41414		12.8875		12.8868		6.8318		6.8320		0.0216		0.0452		1.000e-12		0.2725		0.2054000		0.2427		82.21		0.661		15300		1		10.0641		10.0636		1452.97		1452.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	161.222		159.500		1.41578		1.41569		12.9016		12.9007		6.8355		6.8356		0.0162		0.0447		1.000e-12		0.2725		0.2056000		0.2416		81.74		0.691		15318		1		10.0749		10.0742		1453.02		1453.01	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	161.726		160.000		1.41671		1.41667		12.9099		12.9094		6.8377		6.8379		0.0127		0.0442		1.000e-12		0.2725		0.1867000		0.2963		81.24		0.609		15335		1		10.0812		10.0808		1453.04		1453.04	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	162.230		160.500		1.41746		1.41744		12.9165		12.9161		6.8394		6.8399		0.0172		0.0428		1.000e-12		0.2653		0.1959000		0.3535		80.61		0.368		15361		1		10.0863		10.0860		1453.07		1453.07	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	162.734		161.000		1.41817		1.41807		12.9228		12.9216		6.8410		6.8414		0.0168		0.0434		1.000e-12		0.2880		0.2062000		0.2771		79.87		0.316		15406		1		10.0911		10.0902		1453.09		1453.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	163.238		161.500		1.41898		1.41894		12.9298		12.9293		6.8435		6.8438		0.0176		0.0432		1.000e-12		0.2776		0.1930000		0.2886		79.46		0.561		15433		1		10.0964		10.0960		1453.12		1453.12	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	163.743		162.000		1.41963		1.41959		12.9353		12.9349		6.8455		6.8457		0.0176		0.0429		1.000e-12		0.2920		0.1850000		0.2636		78.70		0.649		15451		1		10.1006		10.1002		1453.14		1453.14	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	164.247		162.500		1.42007		1.42003		12.9392		12.9387		6.8465		6.8467		0.0180		0.0419		1.000e-12		0.3049		0.1818000		0.3132		78.08		0.614		15469		1		10.1035		10.1031		1453.16		1453.16	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	164.751		163.000		1.42045		1.42041		12.9425		12.9420		6.8473		6.8476		0.0171		0.0420		1.000e-12		0.2858		0.1880000		0.2608		77.50		0.459		15492		1		10.1061		10.1057		1453.17		1453.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	165.255		163.500		1.42077		1.42072		12.9453		12.9448		6.8480		6.8484		0.0176		0.0425		1.000e-12		0.2850		0.1796000		0.2803		76.43		0.308		15527		1		10.1082		10.1077		1453.18		1453.19	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	165.759		164.000		1.42131		1.42125		12.9501		12.9494		6.8493		6.8497		0.0173		0.0411		1.000e-12		0.3053		0.1642000		0.3055		75.95		0.496		15562		1		10.1118		10.1112		1453.21		1453.21	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	166.264		164.500		1.42187		1.42183		12.9550		12.9545		6.8508		6.8510		0.0200		0.0436		1.000e-12		0.3091		0.1737000		0.3152		75.67		0.706		15581		1		10.1156		10.1152		1453.23		1453.23	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	166.768		165.000		1.42247		1.42241		12.9600		12.9594		6.8529		6.8530		0.0174		0.0438		1.000e-12		0.3091		0.1779000		0.3166		75.53		0.800		15596		1		10.1193		10.1188		1453.25		1453.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	167.272		165.500		1.42356		1.42350		12.9695		12.9689		6.8560		6.8562		0.0168		0.0417		1.000e-12		0.2987		0.1510000		0.3129		75.09		0.775		15611		1		10.1265		10.1260		1453.28		1453.28	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	167.776		166.000		1.42434		1.42431		12.9764		12.9760		6.8580		6.8582		0.0174		0.0406		1.000e-12		0.2918		0.1490000		0.2472		74.73		0.619		15628		1		10.1318		10.1314		1453.31		1453.31	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	168.280		166.500		1.42474		1.42468		12.9798		12.9792		6.8589		6.8593		0.0176		0.0407		1.000e-12		0.2793		0.1513000		0.2884		74.27		0.347		15654		1		10.1344		10.1339		1453.32		1453.32	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	168.784		167.000		1.42521		1.42508		12.9841		12.9827		6.8597		6.8601		0.0180		0.0397		1.000e-12		0.2786		0.1429000		0.2390		73.65		0.274		15709		1		10.1377		10.1366		1453.34		1453.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	169.288		167.500		1.42576		1.42571		12.9893		12.9887		6.8600		6.8604		0.0172		0.0424		1.000e-12		0.3023		0.1544000		0.3185		73.29		0.578		15739		1		10.1417		10.1412		1453.36		1453.36	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	169.793		168.000		1.42633		1.42629		12.9943		12.9937		6.8615		6.8618		0.0164		0.0392		1.000e-12		0.3147		0.1491000		0.3172		72.93		0.797		15756		1		10.1456		10.1451		1453.38		1453.38	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	170.297		168.500		1.42668		1.42664		12.9973		12.9968		6.8623		6.8627		0.0183		0.0374		1.000e-12		0.3212		0.1423000		0.3171		72.54		0.943		15769		1		10.1479		10.1474		1453.39		1453.39	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	170.801		169.000		1.42698		1.42695		13.0001		12.9996		6.8625		6.8630		0.0168		0.0413		1.000e-12		0.3112		0.2007000		0.2648		72.11		1.018		15781		1		10.1500		10.1496		1453.40		1453.40	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	171.305		169.500		1.42747		1.42744		13.0044		13.0039		6.8637		6.8641		0.0182		0.0429		1.000e-12		0.2969		0.2859000		0.2630		71.20		1.023		15793		1		10.1533		10.1529		1453.42		1453.42	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	171.809		170.000		1.42802		1.42798		13.0093		13.0088		6.8647		6.8651		0.0138		0.0407		1.000e-12		0.2999		0.3211000		0.2501		70.42		0.946		15804		1		10.1571		10.1567		1453.44		1453.44	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	172.313		170.500		1.42860		1.42856		13.0142		13.0137		6.8669		6.8672		0.0137		0.0376		1.000e-12		0.3087		0.4432000		0.2438		70.13		0.763		15818		1		10.1607		10.1603		1453.46		1453.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	172.818		171.000		1.42890		1.42832		13.0170		13.0115		6.8672		6.8663		0.0168		0.0373		1.000e-12		0.3155		0.3964000		0.2895		69.55		0.407		15855		1		10.1629		10.1586		1453.47		1453.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	173.322		171.500		1.42853		1.42689		13.0135		12.9986		6.8662		6.8627		0.0171		0.0384		1.000e-12		0.3065		0.2882000		0.3201		69.15		0.614		15936		1		10.1602		10.1489		1453.48		1453.44	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	173.826		172.000		1.42981		1.42954		13.0250		13.0224		6.8692		6.8688		0.0150		0.0370		1.000e-12		0.2964		0.3154000		0.3199		68.86		0.904		15947		1		10.1690		10.1671		1453.51		1453.51	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	174.330		172.500		1.43074		1.43068		13.0331		13.0324		6.8714		6.8718		0.0122		0.0385		1.000e-12		0.3004		0.3276000		0.3162		68.48		1.063		15959		1		10.1752		10.1746		1453.54		1453.54	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	174.834		173.000		1.43107		1.43104		13.0359		13.0354		6.8725		6.8730		0.0170		0.0366		1.000e-12		0.3091		0.3632000		0.3164		68.07		1.137		15969		1		10.1773		10.1769		1453.55		1453.55	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	175.338		173.500		1.43150		1.43147		13.0397		13.0391		6.8736		6.8740		0.0183		0.0371		1.000e-12		0.3091		0.3645000		0.3188		67.62		1.137		15979		1		10.1802		10.1797		1453.57		1453.57	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	175.842		174.000		1.43195		1.43192		13.0437		13.0432		6.8745		6.8749		0.0189		0.0380		1.000e-12		0.3187		0.3379000		0.3198		67.14		1.055		15990		1		10.1832		10.1828		1453.59		1453.59	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	176.347		174.500		1.43234		1.43230		13.0472		13.0467		6.8751		6.8754		0.0167		0.0375		1.000e-12		0.3212		0.3317000		0.3187		66.56		0.875		16002		1		10.1859		10.1855		1453.60		1453.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	176.851		175.000		1.43266		1.43261		13.0500		13.0493		6.8757		6.8761		0.0133		0.0376		1.000e-12		0.3017		0.3782000		0.2544		65.86		0.551		16019		1		10.1881		10.1876		1453.62		1453.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	177.355		175.500		1.43260		1.43147		13.0494		13.0390		6.8753		6.8733		0.0141		0.0386		1.000e-12		0.3150		0.3603000		0.3110		64.99		0.245		16069		1		10.1877		10.1797		1453.62		1453.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	177.859		176.000		1.43296		1.43227		13.0526		13.0464		6.8759		6.8747		0.0160		0.0379		1.000e-12		0.3174		0.3326000		0.3118		64.48		0.447		16120		1		10.1902		10.1853		1453.64		1453.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	178.363		176.500		1.43319		1.43316		13.0548		13.0544		6.8759		6.8763		0.0154		0.0385		1.000e-12		0.3276		0.3777000		0.3055		64.13		0.674		16140		1		10.1919		10.1915		1453.65		1453.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	178.867		177.000		1.43368		1.43362		13.0591		13.0584		6.8771		6.8774		0.0148		0.0378		1.000e-12		0.3334		0.4163000		0.3061		63.73		0.805		16156		1		10.1951		10.1946		1453.67		1453.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	179.371		177.500		1.43418		1.43414		13.0631		13.0626		6.8792		6.8795		0.0147		0.0370		1.000e-12		0.3224		0.4593000		0.3060		63.29		0.890		16170		1		10.1981		10.1977		1453.69		1453.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	179.875		178.000		1.43442		1.43440		13.0652		13.0648		6.8799		6.8802		0.0144		0.0374		1.000e-12		0.3213		0.4657000		0.3059		62.86		0.936		16183		1		10.1996		10.1994		1453.70		1453.70	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	180.380		178.500		1.43465		1.43462		13.0669		13.0664		6.8810		6.8813		0.0126		0.0378		1.000e-12		0.2901		0.4022000		0.3029		62.36		0.925		16195		1		10.2009		10.2005		1453.72		1453.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	180.884		179.000		1.43492		1.43488		13.0697		13.0692		6.8804		6.8807		0.0134		0.0373		1.000e-12		0.2848		0.3932000		0.3017		61.87		0.839		16208		1		10.2032		10.2028		1453.72		1453.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	181.388		179.500		1.43549		1.43545		13.0745		13.0740		6.8825		6.8828		0.0160		0.0375		1.000e-12		0.3086		0.3818000		0.3339		61.28		0.664		16224		1		10.2067		10.2063		1453.75		1453.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	181.892		180.000		1.43593		1.43584		13.0783		13.0773		6.8834		6.8838		0.0142		0.0378		1.000e-12		0.3095		0.3592000		0.3299		60.55		0.400		16249		1		10.2097		10.2088		1453.76		1453.77	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	182.396		180.500		1.43608		1.43541		13.0796		13.0735		6.8838		6.8823		0.0141		0.0376		1.000e-12		0.3289		0.3569000		0.3014		59.79		0.214		16296		1		10.2106		10.2060		1453.77		1453.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	182.900		181.000		1.43643		1.43629		13.0826		13.0811		6.8847		6.8848		0.0137		0.0369		1.000e-12		0.3066		0.3690000		0.3121		59.33		0.444		16350		1		10.2130		10.2118		1453.79		1453.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	183.404		181.500		1.43689		1.43684		13.0865		13.0859		6.8860		6.8863		0.0141		0.0379		1.000e-12		0.3133		0.3595000		0.3364		59.02		0.798		16369		1		10.2159		10.2154		1453.81		1453.81	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	183.908		182.000		1.43744		1.43740		13.0913		13.0908		6.8873		6.8876		0.0138		0.0381		1.000e-12		0.3339		0.3618000		0.3200		58.65		1.014		16381		1		10.2196		10.2192		1453.83		1453.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	184.413		182.500		1.43769		1.43766		13.0935		13.0929		6.8879		6.8885		0.0136		0.0385		1.000e-12		0.3284		0.3502000		0.3147		58.28		1.132		16392		1		10.2212		10.2208		1453.84		1453.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	184.917		183.000		1.43805		1.43801		13.0966		13.0961		6.8888		6.8892		0.0138		0.0368		1.000e-12		0.3096		0.3006000		0.3105		57.86		1.155		16402		1		10.2236		10.2231		1453.86		1453.86	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	185.421		183.500		1.43847		1.43844		13.1004		13.1000		6.8893		6.8897		0.0146		0.0363		1.000e-12		0.3091		0.2994000		0.2910		57.38		1.079		16412		1		10.2265		10.2262		1453.87		1453.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	185.925		184.000		1.43882		1.43879		13.1036		13.1032		6.8896		6.8900		0.0146		0.0375		1.000e-12		0.3192		0.2282000		0.2933		56.81		0.882		16424		1		10.2291		10.2287		1453.89		1453.89	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	186.429		184.500		1.43928		1.43913		13.1084		13.1068		6.8888		6.8893		0.0130		0.0376		1.000e-12		0.3211		0.2627000		0.3159		56.07		0.484		16443		1		10.2328		10.2315		1453.90		1453.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	186.933		185.000		1.43870		1.43839		13.1028		13.0997		6.8883		6.8883		0.0139		0.0369		1.000e-12		0.3144		0.2611000		0.2964		55.20		0.256		16506		1		10.2285		10.2261		1453.90		1453.89	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	187.437		185.500		1.43951		1.44012		13.1103		13.1158		6.8895		6.8907		0.0141		0.0347		1.000e-12		0.3220		0.3252000		0.2773		54.81		0.432		16551		1		10.2343		10.2385		1453.92		1453.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	187.941		186.000		1.44076		1.44071		13.1218		13.1212		6.8911		6.8914		0.0130		0.0330		1.000e-12		0.3269		0.4122000		0.3196		54.42		0.676		16572		1		10.2432		10.2427		1453.95		1453.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	188.445		186.500		1.44098		1.44094		13.1239		13.1234		6.8910		6.8915		0.0135		0.0357		1.000e-12		0.3335		0.4469000		0.3485		53.99		0.825		16588		1		10.2449		10.2444		1453.96		1453.96	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	188.950		187.000		1.44122		1.44119		13.1262		13.1258		6.8909		6.8914		0.0144		0.0362		1.000e-12		0.3260		0.4711000		0.3642		53.57		0.884		16601		1		10.2467		10.2463		1453.97		1453.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	189.454		187.500		1.44161		1.44159		13.1297		13.1294		6.8915		6.8920		0.0112		0.0380		1.000e-12		0.3214		0.4800000		0.3449		53.10		0.860		16614		1		10.2494		10.2491		1453.98		1453.98	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	189.958		188.000		1.44191		1.44188		13.1324		13.1320		6.8920		6.8924		0.0136		0.0321		1.000e-12		0.3108		0.5038000		0.3310		52.57		0.763		16629		1		10.2514		10.2510		1453.99		1454.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	190.462		188.500		1.44244		1.44238		13.1371		13.1364		6.8932		6.8935		0.0138		0.0365		1.000e-12		0.3140		0.4907000		0.3188		51.98		0.571		16647		1		10.2550		10.2544		1454.02		1454.02	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	190.966		189.000		1.44235		1.44209		13.1362		13.1337		6.8930		6.8930		0.0136		0.0351		1.000e-12		0.3276		0.4389000		0.3037		51.19		0.276		16683		1		10.2543		10.2523		1454.02		1454.02	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	191.470		189.500		1.44276		1.44270		13.1399		13.1392		6.8936		6.8940		0.0108		0.0357		1.000e-12		0.3167		0.4348000		0.2845		50.63		0.463		16734		1		10.2572		10.2566		1454.04		1454.04	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	191.974		190.000		1.44325		1.44322		13.1442		13.1438		6.8946		6.8951		0.0126		0.0348		1.000e-12		0.3098		0.5479000		0.2843		50.33		0.762		16752		1		10.2605		10.2601		1454.05		1454.06	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	192.478		190.500		1.44355		1.44353		13.1469		13.1466		6.8951		6.8956		0.0109		0.0362		1.000e-12		0.3091		0.6562000		0.2866		49.95		0.910		16766		1		10.2626		10.2622		1454.07		1454.07	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	192.982		191.000		1.44391		1.44388		13.1502		13.1497		6.8956		6.8961		0.0125		0.0324		1.000e-12		0.3225		0.5319000		0.3190		49.55		0.948		16778		1		10.2651		10.2647		1454.08		1454.08	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	193.486		191.500		1.44416		1.44413		13.1524		13.1520		6.8959		6.8964		0.0116		0.0326		1.000e-12		0.3332		0.4339000		0.3223		49.06		0.859		16790		1		10.2668		10.2664		1454.09		1454.09	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	193.990		192.000		1.44441		1.44438		13.1548		13.1544		6.8959		6.8963		0.0136		0.0326		1.000e-12		0.3512		0.4348000		0.3463		48.43		0.585		16807		1		10.2687		10.2683		1454.11		1454.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	194.495		192.500		1.44382		1.44395		13.1492		13.1502		6.8951		6.8957		0.0103		0.0337		1.000e-12		0.3391		0.4311000		0.3536		47.51		0.420		16880		1		10.2643		10.2651		1454.10		1454.11	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	194.999		193.000		1.44458		1.44441		13.1562		13.1544		6.8961		6.8964		0.0140		0.0326		1.000e-12		0.3332		0.4160000		0.2825		47.20		0.940		16906		1		10.2697		10.2683		1454.12		1454.12	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	195.503		193.500		1.44504		1.44501		13.1605		13.1600		6.8965		6.8970		0.0159		0.0345		1.000e-12		0.3335		0.4062000		0.2716		46.88		1.181		16916		1		10.2731		10.2727		1454.14		1454.14	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	196.007		194.000		1.44526		1.44522		13.1623		13.1617		6.8972		6.8976		0.0133		0.0329		1.000e-12		0.3335		0.4042000		0.2910		46.52		1.326		16926		1		10.2744		10.2740		1454.15		1454.15	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	196.511		194.500		1.44559		1.44556		13.1652		13.1647		6.8978		6.8983		0.0112		0.0347		1.000e-12		0.3335		0.4124000		0.3198		46.10		1.381		16934		1		10.2767		10.2763		1454.17		1454.17	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	197.015		195.000		1.44583		1.44579		13.1675		13.1669		6.8979		6.8984		0.0117		0.0323		1.000e-12		0.3335		0.4137000		0.3196		45.65		1.345		16942		1		10.2784		10.2780		1454.18		1454.18	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	197.519		195.500		1.44613		1.44612		13.1699		13.1696		6.8989		6.8993		0.0124		0.0307		1.000e-12		0.3335		0.4096000		0.3155		45.16		1.203		16951		1		10.2803		10.2800		1454.19		1454.19	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	198.023		196.000		1.44629		1.44627		13.1713		13.1709		6.8992		6.8997		0.0114		0.0311		1.000e-12		0.3100		0.4002000		0.3013		44.57		0.881		16962		1		10.2813		10.2810		1454.20		1454.21	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	198.527		196.500		1.44593		1.44587		13.1678		13.1671		6.8986		6.8990		0.0122		0.0315		1.000e-12		0.3182		0.3932000		0.2930		43.77		0.668		17020		1		10.2787		10.2780		1454.20		1454.20	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	199.031		197.000		1.44572		1.44571		13.1658		13.1654		6.8983		6.8989		0.0148		0.0316		1.000e-12		0.3214		0.3805000		0.3000		43.37		1.382		17091		1		10.2771		10.2768		1454.21		1454.21	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	199.535		197.500		1.44588		1.44624		13.1671		13.1702		6.8986		6.8998		0.0124		0.0307		1.000e-12		0.3213		0.3827000		0.3028		42.99		1.484		17097		1		10.2781		10.2805		1454.22		1454.23	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	200.040		198.000		1.44699		1.44705		13.1774		13.1777		6.9003		6.9009		0.0118		0.0312		1.000e-12		0.3213		0.3853000		0.2977		42.58		1.522		17104		1		10.2860		10.2862		1454.25		1454.25	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	200.544		198.500		1.44731		1.44728		13.1803		13.1798		6.9005		6.9012		0.0115		0.0316		1.000e-12		0.3323		0.4294000		0.3133		42.19		1.478		17112		1		10.2883		10.2878		1454.26		1454.26	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	201.048		199.000		1.44750		1.44748		13.1820		13.1815		6.9009		6.9015		0.0122		0.0327		1.000e-12		0.3335		0.4377000		0.3167		41.67		1.340		17120		1		10.2896		10.2892		1454.27		1454.27	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	201.552		199.500		1.44785		1.44782		13.1852		13.1848		6.9010		6.9014		0.0101		0.0331		1.000e-12		0.3304		0.4294000		0.3205		41.08		1.092		17129		1		10.2922		10.2918		1454.28		1454.29	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	202.056		200.000		1.44793		1.44789		13.1860		13.1855		6.9008		6.9013		0.0109		0.0326		1.000e-12		0.3112		0.3832000		0.3060		40.34		0.618		17148		1		10.2928		10.2923		1454.29		1454.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	202.560		200.500		1.44748		1.44708		13.1815		13.1776		6.9006		6.9007		0.0099		0.0325		1.000e-12		0.3023		0.3931000		0.3178		39.48		0.676		17264		1		10.2893		10.2862		1454.30		1454.29	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	203.064		201.000		1.44751		1.44757		13.1817		13.1821		6.9007		6.9012		0.0120		0.0336		1.000e-12		0.3092		0.4070000		0.2993		39.09		0.929		17274		1		10.2894		10.2897		1454.30		1454.30	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	203.568		201.500		1.44824		1.44836		13.1887		13.1896		6.9012		6.9018		0.0112		0.0331		1.000e-12		0.3102		0.3960000		0.3009		38.70		1.068		17286		1		10.2948		10.2955		1454.32		1454.33	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	204.072		202.000		1.44871		1.44869		13.1930		13.1926		6.9016		6.9021		0.0110		0.0327		1.000e-12		0.3091		0.3810000		0.3428		38.27		1.133		17296		1		10.2982		10.2978		1454.34		1454.34	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	204.576		202.500		1.44891		1.44889		13.1949		13.1944		6.9019		6.9024		0.0106		0.0321		1.000e-12		0.3091		0.3808000		0.3513		37.80		1.122		17307		1		10.2996		10.2992		1454.35		1454.35	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	205.080		203.000		1.44907		1.44904		13.1962		13.1958		6.9018		6.9024		0.0086		0.0315		1.000e-12		0.3304		0.3974000		0.3294		37.31		1.026		17317		1		10.3007		10.3003		1454.36		1454.36	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	205.584		203.500		1.44921		1.44919		13.1975		13.1971		6.9019		6.9025		0.0098		0.0329		1.000e-12		0.3343		0.4003000		0.2885		36.72		0.799		17330		1		10.3017		10.3013		1454.37		1454.37	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	206.088		204.000		1.44910		1.44901		13.1963		13.1952		6.9019		6.9024		0.0111		0.0328		1.000e-12		0.3371		0.3899000		0.2800		35.85		0.372		17366		1		10.3007		10.2999		1454.38		1454.38	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	206.593		204.500		1.44895		1.44893		13.1947		13.1944		6.9019		6.9024		0.0101		0.0325		1.000e-12		0.3207		0.3678000		0.2592		35.16		0.452		17426		1		10.2995		10.2992		1454.38		1454.38	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	207.097		205.000		1.44942		1.44946		13.1991		13.1992		6.9026		6.9031		0.0101		0.0326		1.000e-12		0.3414		0.3871000		0.2839		34.82		0.586		17446		1		10.3029		10.3029		1454.40		1454.40	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	207.601		205.500		1.44964		1.44962		13.2010		13.2006		6.9029		6.9033		0.0109		0.0326		1.000e-12		0.3254		0.3894000		0.3099		34.35		0.547		17467		1		10.3044		10.3041		1454.41		1454.41	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	208.105		206.000		1.44976		1.44973		13.2020		13.2016		6.9030		6.9034		0.0088		0.0326		1.000e-12		0.3141		0.3851000		0.3647		33.80		0.527		17491		1		10.3051		10.3048		1454.42		1454.42	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	208.609		206.500		1.44991		1.44988		13.2033		13.2028		6.9032		6.9036		0.0098		0.0326		1.000e-12		0.3216		0.3841000		0.2742		33.35		0.662		17511		1		10.3061		10.3057		1454.43		1454.43	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	209.113		207.000		1.44998		1.44995		13.2039		13.2034		6.9033		6.9037		0.0115		0.0326		1.000e-12		0.3213		0.4009000		0.2931		32.91		0.765		17528		1		10.3066		10.3062		1454.44		1454.44	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	209.617		207.500		1.45002		1.45000		13.2042		13.2038		6.9033		6.9037		0.0118		0.0326		1.000e-12		0.3276		0.3976000		0.3161		32.46		0.771		17542		1		10.3068		10.3065		1454.45		1454.45	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	210.121		208.000		1.45021		1.45019		13.2058		13.2054		6.9037		6.9041		0.0102		0.0326		1.000e-12		0.3332		0.3929000		0.3200		31.92		0.649		17559		1		10.3080		10.3077		1454.46		1454.46	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	210.625		208.500		1.45039		1.45038		13.2073		13.2071		6.9040		6.9044		0.0101		0.0321		1.000e-12		0.3442		0.3753000		0.2994		31.24		0.343		17584		1		10.3092		10.3090		1454.47		1454.47	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	211.129		209.000		1.45042		1.45033		13.2076		13.2065		6.9039		6.9042		0.0106		0.0327		1.000e-12		0.3214		0.3773000		0.3262		30.54		0.391		17634		1		10.3095		10.3086		1454.48		1454.48	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	211.633		209.500		1.45090		1.45088		13.2119		13.2115		6.9048		6.9053		0.0102		0.0326		1.000e-12		0.3334		0.3751000		0.3273		30.19		0.640		17654		1		10.3127		10.3124		1454.49		1454.50	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	212.137		210.000		1.45134		1.45131		13.2158		13.2153		6.9055		6.9060		0.0099		0.0321		1.000e-12		0.3335		0.3823000		0.3183		29.75		0.670		17671		1		10.3158		10.3153		1454.51		1454.51	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	212.641		210.500		1.45186		1.45183		13.2206		13.2201		6.9064		6.9067		0.0099		0.0319		1.000e-12		0.3335		0.3739000		0.3180		29.22		0.484		17691		1		10.3194		10.3190		1454.53		1454.53	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	213.146		211.000		1.45197		1.45200		13.2214		13.2215		6.9065		6.9071		0.0101		0.0325		1.000e-12		0.3251		0.3271000		0.3071		28.53		0.305		17730		1		10.3201		10.3201		1454.54		1454.54	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	213.650		211.500		1.45229		1.45228		13.2241		13.2239		6.9073		6.9077		0.0096		0.0328		1.000e-12		0.3093		0.3147000		0.2788		28.13		0.650		17758		1		10.3222		10.3219		1454.55		1454.55	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	214.154		212.000		1.45269		1.45267		13.2278		13.2274		6.9079		6.9084		0.0103		0.0317		1.000e-12		0.3091		0.3177000		0.3184		27.75		0.836		17773		1		10.3250		10.3246		1454.57		1454.57	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	214.658		212.500		1.45307		1.45305		13.2313		13.2309		6.9084		6.9088		0.0111		0.0312		1.000e-12		0.3101		0.3197000		0.3114		27.36		0.897		17786		1		10.3277		10.3273		1454.58		1454.58	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	215.162		213.000		1.45356		1.45353		13.2359		13.2354		6.9088		6.9093		0.0112		0.0323		1.000e-12		0.2945		0.3183000		0.2818		26.88		0.837		17799		1		10.3312		10.3308		1454.60		1454.60	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	215.666		213.500		1.45415		1.45412		13.2413		13.2409		6.9094		6.9098		0.0105		0.0318		1.000e-12		0.2925		0.3149000		0.2666		26.33		0.631		17815		1		10.3355		10.3351		1454.61		1454.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	216.170		214.000		1.45404		1.45399		13.2403		13.2395		6.9092		6.9096		0.0095		0.0312		1.000e-12		0.3338		0.3268000		0.2556		25.53		0.269		17853		1		10.3346		10.3340		1454.62		1454.62	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	216.674		214.500		1.45421		1.45391		13.2417		13.2387		6.9094		6.9095		0.0096		0.0317		1.000e-12		0.3227		0.3046000		0.2885		24.92		0.430		17913		1		10.3357		10.3334		1454.63		1454.63	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	217.178		215.000		1.45467		1.45466		13.2459		13.2457		6.9099		6.9104		0.0104		0.0329		1.000e-12		0.3429		0.3407000		0.2703		24.56		0.724		17932		1		10.3390		10.3388		1454.65		1454.65	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	217.682		215.500		1.45505		1.45504		13.2495		13.2491		6.9103		6.9108		0.0109		0.0314		1.000e-12		0.3449		0.3435000		0.2983		24.17		0.892		17946		1		10.3418		10.3415		1454.66		1454.66	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	218.186		216.000		1.45536		1.45537		13.2523		13.2522		6.9105		6.9111		0.0097		0.0320		1.000e-12		0.3335		0.3449000		0.3182		23.78		0.973		17958		1		10.3440		10.3438		1454.67		1454.67	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	218.690		216.500		1.45558		1.45556		13.2543		13.2539		6.9108		6.9113		0.0091		0.0305		1.000e-12		0.3335		0.3460000		0.3086		23.30		0.975		17970		1		10.3456		10.3452		1454.68		1454.69	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	219.194		217.000		1.45637		1.45635		13.2619		13.2614		6.9111		6.9117		0.0087		0.0325		1.000e-12		0.3335		0.3679000		0.2887		22.81		0.884		17983		1		10.3515		10.3510		1454.70		1454.71	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	219.698		217.500		1.45661		1.45658		13.2641		13.2636		6.9112		6.9117		0.0102		0.0313		1.000e-12		0.3305		0.3766000		0.2937		22.22		0.642		17998		1		10.3532		10.3528		1454.71		1454.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	220.202		218.000		1.45611		1.45615		13.2592		13.2593		6.9107		6.9113		0.0090		0.0312		1.000e-12		0.3284		0.3613000		0.3082		21.36		0.298		18049		1		10.3494		10.3494		1454.71		1454.72	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	220.706		218.500		1.45686		1.45655		13.2663		13.2631		6.9113		6.9116		0.0084		0.0307		1.000e-12		0.3337		0.3322000		0.3005		20.90		0.588		18095		1		10.3549		10.3524		1454.73		1454.73	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	221.210		219.000		1.45702		1.45700		13.2678		13.2673		6.9113		6.9118		0.0093		0.0330		1.000e-12		0.3470		0.3691000		0.2861		20.54		0.769		18112		1		10.3560		10.3557		1454.74		1454.75	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	221.714		219.500		1.45711		1.45708		13.2685		13.2680		6.9115		6.9120		0.0089		0.0325		1.000e-12		0.3458		0.3730000		0.2928		20.14		0.837		18126		1		10.3566		10.3562		1454.75		1454.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	222.219		220.000		1.45715		1.45712		13.2688		13.2683		6.9115		6.9120		0.0104		0.0321		1.000e-12		0.3458		0.3865000		0.3185		19.68		0.830		18140		1		10.3568		10.3564		1454.76		1454.76	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	222.723		220.500		1.45717		1.45714		13.2689		13.2684		6.9115		6.9120		0.0102		0.0306		1.000e-12		0.3521		0.3860000		0.3200		19.17		0.771		18155		1		10.3569		10.3565		1454.77		1454.77	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	223.227		221.000		1.45719		1.45717		13.2690		13.2686		6.9115		6.9119		0.0088		0.0318		1.000e-12		0.3572		0.3876000		0.3173		18.59		0.663		18171		1		10.3570		10.3566		1454.78		1454.78	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	223.731		221.500		1.45725		1.45723		13.2695		13.2691		6.9115		6.9118		0.0092		0.0309		1.000e-12		0.3341		0.3879000		0.3023		17.98		0.516		18192		1		10.3574		10.3571		1454.79		1454.79	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	224.235		222.000		1.45733		1.45730		13.2702		13.2698		6.9114		6.9118		0.0097		0.0293		1.000e-12		0.3522		0.3774000		0.3287		17.31		0.322		18223		1		10.3579		10.3576		1454.80		1454.80	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	224.739		222.500		1.45741		1.45740		13.2708		13.2706		6.9115		6.9119		0.0086		0.0313		1.000e-12		0.3539		0.3677000		0.3337		16.68		0.332		18267		1		10.3585		10.3582		1454.80		1454.81	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	225.243		223.000		1.45755		1.45753		13.2719		13.2717		6.9119		6.9122		0.0110		0.0342		1.000e-12		0.3204		0.3763000		0.2951		16.30		0.590		18293		1		10.3593		10.3590		1454.82		1454.82	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	225.747		223.500		1.45779		1.45777		13.2741		13.2738		6.9121		6.9125		0.0110		0.0315		1.000e-12		0.3469		0.3808000		0.2997		15.91		0.726		18311		1		10.3610		10.3607		1454.83		1454.83	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	226.251		224.000		1.45802		1.45800		13.2763		13.2759		6.9122		6.9127		0.0069		0.0291		1.000e-12		0.3578		0.3828000		0.3166		15.46		0.763		18326		1		10.3627		10.3623		1454.84		1454.84	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	226.755		224.500		1.45810		1.45808		13.2770		13.2766		6.9123		6.9127		0.0069		0.0284		1.000e-12		0.3580		0.3885000		0.3076		14.96		0.740		18342		1		10.3632		10.3628		1454.85		1454.85	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	227.259		225.000		1.45820		1.45818		13.2778		13.2774		6.9125		6.9129		0.0077		0.0275		1.000e-12		0.3643		0.3917000		0.3046		14.46		0.668		18359		1		10.3638		10.3635		1454.86		1454.86	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	227.763		225.500		1.45830		1.45827		13.2786		13.2781		6.9126		6.9130		0.0119		0.0299		1.000e-12		0.3666		0.3896000		0.3327		13.86		0.524		18379		1		10.3644		10.3640		1454.87		1454.87	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	228.267		226.000		1.45863		1.45868		13.2817		13.2819		6.9127		6.9132		0.0092		0.0291		1.000e-12		0.3640		0.3872000		0.2832		13.20		0.378		18408		1		10.3669		10.3670		1454.88		1454.88	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	228.771		226.500		1.45922		1.45921		13.2873		13.2870		6.9130		6.9134		0.0091		0.0314		1.000e-12		0.3547		0.3942000		0.3127		12.67		0.441		18439		1		10.3712		10.3710		1454.90		1454.90	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	229.275		227.000		1.45945		1.45942		13.2894		13.2889		6.9131		6.9135		0.0086		0.0285		1.000e-12		0.3456		0.3928000		0.3104		12.23		0.573		18463		1		10.3729		10.3725		1454.91		1454.91	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	229.779		227.500		1.45954		1.45951		13.2901		13.2897		6.9132		6.9136		0.0072		0.0307		1.000e-12		0.3562		0.3996000		0.3625		11.79		0.617		18482		1		10.3735		10.3731		1454.92		1454.92	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	230.283		228.000		1.45959		1.45957		13.2905		13.2902		6.9132		6.9135		0.0072		0.0285		1.000e-12		0.3817		0.4079000		0.3297		11.25		0.518		18502		1		10.3738		10.3735		1454.93		1454.93	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	230.787		228.500		1.45973		1.45970		13.2919		13.2914		6.9130		6.9136		0.0096		0.0278		1.000e-12		0.3740		0.3894000		0.2963		10.59		0.368		18532		1		10.3748		10.3744		1454.93		1454.94	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	231.291		229.000		1.45979		1.45981		13.2923		13.2923		6.9132		6.9136		0.0092		0.0304		1.000e-12		0.3512		0.3977000		0.3020		10.05		0.471		18564		1		10.3752		10.3751		1454.94		1454.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	231.795		229.500		1.45982		1.45979		13.2924		13.2920		6.9134		6.9137		0.0077		0.0304		1.000e-12		0.3542		0.5003000		0.3212		9.63		0.601		18585		1		10.3752		10.3749		1454.95		1454.95	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	232.299		230.000		1.45993		1.45994		13.2934		13.2934		6.9135		6.9138		0.0066		0.0283		1.000e-12		0.3702		0.6997000		0.3177		9.17		0.639		18604		1		10.3760		10.3759		1454.96		1454.96	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	232.803		230.500		1.46003		1.45999		13.2943		13.2938		6.9135		6.9138		0.0107		0.0300		1.000e-12		0.3702		0.4485000		0.3204		8.70		0.648		18623		1		10.3767		10.3762		1454.97		1454.97	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	233.307		231.000		1.46002		1.46000		13.2941		13.2937		6.9135		6.9140		0.0112		0.0257		1.000e-12		0.3702		0.4284000		0.3206		8.22		0.703		18641		1		10.3765		10.3761		1454.98		1454.98	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	233.812		231.500		1.46005		1.46004		13.2942		13.2939		6.9135		6.9141		0.0074		0.0257		1.000e-12		0.3702		0.4251000		0.3524		7.76		0.755		18657		1		10.3766		10.3763		1454.99		1454.99	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	234.316		232.000		1.46012		1.46011		13.2949		13.2944		6.9135		6.9142		0.0075		0.0306		1.000e-12		0.3465		0.4261000		0.3585		7.26		0.689		18673		1		10.3771		10.3767		1455.00		1455.00	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	234.820		232.500		1.46013		1.46010		13.2949		13.2944		6.9135		6.9140		0.0073		0.0321		1.000e-12		0.3619		0.4187000		0.3054		6.56		0.460		18715		1		10.3771		10.3767		1455.00		1455.01	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	235.324		233.000		1.46015		1.46015		13.2948		13.2947		6.9138		6.9142		0.0073		0.0316		1.000e-12		0.3713		0.3958000		0.2905		6.05		0.817		18784		1		10.3770		10.3769		1455.01		1455.02	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	235.828		233.500		1.46019		1.46016		13.2951		13.2946		6.9138		6.9144		0.0080		0.0308		1.000e-12		0.3611		0.4360000		0.3185		5.72		0.993		18795		1		10.3773		10.3768		1455.02		1455.02	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	236.332		234.000		1.46021		1.46019		13.2952		13.2947		6.9138		6.9143		0.0062		0.0268		1.000e-12		0.3590		0.4476000		0.3211		5.30		1.025		18806		1		10.3774		10.3770		1455.03		1455.03	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	236.836		234.500		1.46023		1.46020		13.2953		13.2948		6.9137		6.9143		0.0059		0.0243		1.000e-12		0.3700		0.4599000		0.3212		4.83		0.905		18818		1		10.3774		10.3770		1455.04		1455.04	
+2018	01	28	18	03	00	2018_347V_SMHI-01-2018	BY15	57.31233	20.07667	237.340		235.000		1.46022		1.46020		13.2950		13.2947		6.9138		6.9143		0.0074		0.0283		1.000e-12		0.3881		0.4456000		0.3185		3.86		-0.033		18857		1		10.3773		10.3769		1455.05		1455.05	

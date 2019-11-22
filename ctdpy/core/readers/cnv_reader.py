@@ -10,10 +10,6 @@ from trollsift.parser import globify, parse
 from core.readers.txt_reader import load_txt
 from core.readers.file_handlers import BaseFileHandler
 from core import utils
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class CNVreader(BaseFileHandler):
@@ -50,10 +46,11 @@ class CNVreader(BaseFileHandler):
         return utils.get_file_list_match(file_list, self.settings.reader['suffix'])
 
     @staticmethod
-    def load(fid, as_series=False):
+    def load(fid, sep='\t', as_series=False):
         """
         :param fid: str, file path
+        :param sep: str, seperator
         :param as_series: NotImplementedError
         :return: pd.DataFrame (or pd.Series?)
         """
-        return load_txt(file_path=fid, as_dtype=True)
+        return load_txt(file_path=fid, seperator=sep, as_dtype=True)

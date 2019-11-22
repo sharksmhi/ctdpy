@@ -17,7 +17,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     """
     def __init__(self, settings):
         super().__init__(settings)
-
+        self._file_name = None
         # self.setup_standard_format()
         self.writer = self._get_writer_settings()
         self.txt_writer = TxtWriter()
@@ -114,6 +114,16 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         self.df_metadata.insert(self.df_metadata.columns.get_loc('FILE_NAME') + 1,
                                 'FILE_NAME_DATABASE', new_column)
 
+    def _adjust_data_formats(self):
+        """
+
+        :return:
+        """
+        self.file_name = self.df_metadata['FILE_NAME']  # property.setter, returns upper case filenames
+        self.df_metadata['SDATE'] = self.df_metadata['SDATE'].str.replace(' 00:00:00', '')
+        self.df_metadata['STIME'] = self.df_metadata['STIME'].apply(lambda x: x[:5])
+        self.df_metadata['SERNO'] = self.df_metadata['SERNO'].apply(lambda x: x.zfill(4))
+
     def _append_information(self, *args):
         """
         :param args: list of pd.Series to be appended as one
@@ -140,6 +150,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         self.information = self._get_information_serie(meta[0]['Information'],
                                                        separator=self.writer['separator_metadata'])
 
+        self._adjust_data_formats()
         self._add_new_information_to_metadata()
 
     def _get_template_format(self):
@@ -199,16 +210,18 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param separator: str, separator to separate row values
         :return: pd.Series, Lists according to template standards
         """
+        # print('filename', filename)
         meta = self.extract_metadata_dataframe(filename)
-
+        # print('meta', meta)
         self.reset_index(meta)
+
         meta = meta.iloc[0]
 
         serie = pd.Series(self.df_metadata.columns)
         # FutureWarning if not join is set to 'left' instead of None but then this func doesnt work.. mhmmm...
         serie = serie.str.cat(meta, sep=separator, join=None)
         serie = serie.radd(self.writer['prefix_metadata'] + separator)
-        # print(serie)
+
         return serie
 
     def extract_metadata_dataframe(self, filename):
@@ -217,7 +230,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param filename: str, filename of raw data
         :return: 1 row pd.DataFrame
         """
-        boolean = self.get_index(self.df_metadata['FILE_NAME'], filename,
+        boolean = self.get_index(self.file_name, filename.upper(),
                                  equals=True, as_boolean=True)
         return self.df_metadata.loc[boolean, :]
 
@@ -409,7 +422,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param fid:
         :return:
         """
-        boolean = self.df_metadata['FILE_NAME'] == fid
+        boolean = self.file_name == fid.upper()
         return self.df_metadata.loc[boolean, 'FILE_NAME_DATABASE'].values[0]
 
     def _set_data_path(self):
@@ -471,3 +484,18 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         statn = metadata.at[0, 'STATN']
         self.update_station_name(statn)
+
+    @property
+    def file_name(self):
+        """
+        :return:
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_series):
+        """
+        :return:
+        """
+        self._file_name = file_series.str.upper()
+

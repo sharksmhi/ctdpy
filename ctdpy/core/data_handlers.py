@@ -10,10 +10,6 @@ from core.readers.file_handlers import BaseFileHandler
 from core import utils
 import warnings
 warnings.filterwarnings("ignore", 'This pattern has match groups')
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class DataFrameHandler(BaseFileHandler):
@@ -127,11 +123,6 @@ class DataFrameHandler(BaseFileHandler):
         """
         df.reset_index(inplace=True, drop=True)
 
-"""
-#==============================================================================
-#==============================================================================
-"""
-
 
 class SeriesHandler(BaseFileHandler):
     """
@@ -180,7 +171,7 @@ class SeriesHandler(BaseFileHandler):
         """
         self.station = statn
 
-    def get_data_header(self, data, dataset=None, idx=1):
+    def get_data_header(self, data, dataset=None, idx=1, first_row=False):
         """
         Get header from identifier in settings file.
         Assumes all values shall be taken from 'idx' after splitting
@@ -192,13 +183,18 @@ class SeriesHandler(BaseFileHandler):
                     head will then be 't090C: Temperature [ITS-90, deg C]'
         :return: list of column names (header)
         """
-        index = self.get_index(data, self.settings.datasets[dataset]['identifier_header'])
+        identifier_header = self.settings.datasets[dataset]['identifier_header']
+        reversed = '~' in identifier_header
+        index = self.get_index(data, identifier_header.replace('~', ''), reversed_boolean=reversed)
         splitter = self.settings.datasets[dataset].get('separator_header')
-        header = [head.split(splitter)[idx].strip() for head in data[index]]
+        if first_row:
+            header = data[index].iloc[0].split(splitter)
+        else:
+            header = [head.split(splitter)[idx].strip() for head in data[index]]
 #        header = self.map_header(header)
         return header
 
-    def get_data_in_frame(self, series, columns, dataset=None):
+    def get_data_in_frame(self, series, columns, dataset=None, splitter=None):
         """
         Get data from pd.Series. separates row values in series into columns within the
         DataFrame
@@ -207,10 +203,18 @@ class SeriesHandler(BaseFileHandler):
         :param dataset: str, reader specific dataset. Determines how to handle data format
         :return: pd.DataFrame
         """
-        idx = self.get_index(series, self.settings.datasets[dataset]['identifier_data'])
-        return pd.DataFrame(series[idx].str.split().tolist(), columns=columns)
+        #FIXME NOOOO!! not the way to go! if anything, add reversedas input argument! let the identifier be clean!
+        identifier_header = self.settings.datasets[dataset]['identifier_data']
+        reversed = '~' in identifier_header
+        idx = self.get_index(series, identifier_header.replace('~', ''), reversed_boolean=reversed)
+        if splitter:
+            splitter = self.settings.datasets[dataset]['separator_data']
+            df = pd.DataFrame(series[idx].str.split(splitter).tolist(), columns=columns)
+        else:
+            df = pd.DataFrame(series[idx].str.split().tolist(), columns=columns)
+        return df
 
-    def get_meta_dict(self, series, keys=None, identifier='', separator=''):
+    def get_meta_dict(self, series, keys=[], identifier='', separator=''):
         """
         :param series: pd.Series, contains metadata
         :param keys: List of keys to search for
@@ -220,13 +224,16 @@ class SeriesHandler(BaseFileHandler):
         """
         meta_dict = {}
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
-        for key in keys:
-            boolean_contains = self.get_index(series, key, contains=True,
-                                              as_boolean=True)
-            boolean = boolean_startswith & boolean_contains
-            if any(boolean):
-                meta = series[boolean].tolist()[0].split(separator)[-1].strip()
-                meta_dict[key] = meta
+        if any(keys):
+            for key in keys:
+                boolean_contains = self.get_index(series, key, contains=True,
+                                                  as_boolean=True)
+                boolean = boolean_startswith & boolean_contains
+                if any(boolean):
+                    meta = series[boolean].tolist()[0].split(separator)[-1].strip()
+                    meta_dict.setdefault(key, meta)
+        else:
+            return series.loc[boolean_startswith]
         return meta_dict
 
     @staticmethod
@@ -239,7 +246,7 @@ class SeriesHandler(BaseFileHandler):
         return pd.DataFrame(data_dict, columns=columns)
 
     @staticmethod
-    def get_index(serie, string, contains=False, equals=False, as_boolean=False):
+    def get_index(serie, string, contains=False, equals=False, as_boolean=False, reversed_boolean=False):
         """
         #FIXME Rename? you get either an index array or boolean array
         :param serie: pd.Series
@@ -247,6 +254,7 @@ class SeriesHandler(BaseFileHandler):
         :param contains: False or True depending on purpose
         :param equals: False or True depending on purpose
         :param as_boolean: False or True depending on purpose
+        :param reversed_boolean: False or True depending on purpose
         :return: numpy index array or boolean list
         """
         if contains:
@@ -258,7 +266,10 @@ class SeriesHandler(BaseFileHandler):
         else:
             # startswith
             boolean = serie.str.startswith(string)
-                        
+
+        if reversed_boolean:
+            boolean = boolean == False
+
         if as_boolean:
             return boolean
         else:
@@ -272,15 +283,10 @@ class SeriesHandler(BaseFileHandler):
         :return: pd.Series
         """
         if isinstance(obj, pd.DataFrame):
-            return pd.Series(data=obj[obj.keys()[0]])
+            s = pd.Series(obj.keys()[0])
+            return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
             return pd.Series(obj)
-
-
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class BaseReader(object):

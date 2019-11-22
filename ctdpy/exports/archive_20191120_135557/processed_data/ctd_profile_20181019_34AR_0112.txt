@@ -1,0 +1,583 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2018
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2018-10-19
+//METADATA;STIME;13:56
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;34AR
+//METADATA;CRUISE_NO;SMHI-4-2018
+//METADATA;SERNO;0112
+//METADATA;STATN;Hanobukten
+//METADATA;LATIT;5537.05
+//METADATA;LONGI;01452.04
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1044_20181019_1556_34_01_0112.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20181019_34AR_0112.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg, bottlesum and split. 
+//INFORMATION;These steps with some extra information are available in the data file header. After processing, the data is plotted and visually quality controlled and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* FileName = C:\ctd\temp\ar18d112.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.7.107
+//INSTRUMENT_METADATA;* Temperature SN = 5351
+//INSTRUMENT_METADATA;* Conductivity SN = 3941
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Oct 19 2018 15:56:40
+//INSTRUMENT_METADATA;* NMEA Latitude = 55 37.05 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 014 52.04 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Oct 19 2018  13:56:22
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.1d
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  Hanobukten
+//INSTRUMENT_METADATA;** Operator:  Obac
+//INSTRUMENT_METADATA;** Ship: ARANDA
+//INSTRUMENT_METADATA;** Average sound velocity: 1464.08 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Fri, 19 Oct 2018 15:21:34 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20183401-0112
+//INSTRUMENT_METADATA;** Cruise: SMHI-4-2018
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N]:
+//INSTRUMENT_METADATA;** Longitude [GG MM.mm E]
+//INSTRUMENT_METADATA;* System UTC = Oct 19 2018 13:56:40
+//INSTRUMENT_METADATA;# nquan = 26
+//INSTRUMENT_METADATA;# nvalues = 145                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 5 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 6 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 7 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 8 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 9 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]
+//INSTRUMENT_METADATA;# name 10 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = sigma-t00: Density [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 19 = sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = depSM: Depth [salt water, m], lat = 55.6175
+//INSTRUMENT_METADATA;# name 21 = depFM: Depth [true depth, m], lat = 55.6175
+//INSTRUMENT_METADATA;# name 22 = dz/dtM: Descent Rate [m/s], WS = 2
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      16823,      20253       
+//INSTRUMENT_METADATA;# span 1 =      1.500,     73.500       
+//INSTRUMENT_METADATA;# span 2 =     7.7635,    12.9865       
+//INSTRUMENT_METADATA;# span 3 =     7.7645,    13.0760       
+//INSTRUMENT_METADATA;# span 4 =    -0.0425,     0.0888       
+//INSTRUMENT_METADATA;# span 5 =   0.955133,   1.917419       
+//INSTRUMENT_METADATA;# span 6 =   0.955079,   1.917479       
+//INSTRUMENT_METADATA;# span 7 =          1,          1       
+//INSTRUMENT_METADATA;# span 8 =    0.06589,    7.35992       
+//INSTRUMENT_METADATA;# span 9 =    0.11941,    6.94513       
+//INSTRUMENT_METADATA;# span 10 =       3.35,      98.54      
+//INSTRUMENT_METADATA;# span 11 =     0.2357,     2.2204      
+//INSTRUMENT_METADATA;# span 12 =     0.1642,     0.5484      
+//INSTRUMENT_METADATA;# span 13 = 1.0000e-12, 6.0743e+02      
+//INSTRUMENT_METADATA;# span 14 =     0.1728,     2.9778      
+//INSTRUMENT_METADATA;# span 15 =     7.7494,    16.5633      
+//INSTRUMENT_METADATA;# span 16 =     7.7423,    16.5629      
+//INSTRUMENT_METADATA;# span 17 =    -0.0295,     0.0126      
+//INSTRUMENT_METADATA;# span 18 =     5.3734,    12.6375      
+//INSTRUMENT_METADATA;# span 19 =     5.3549,    12.6369      
+//INSTRUMENT_METADATA;# span 20 =      1.486,     72.821      
+//INSTRUMENT_METADATA;# span 21 =      1.520,     74.260      
+//INSTRUMENT_METADATA;# span 22 =     -0.007,      0.632      
+//INSTRUMENT_METADATA;# span 23 =    1448.93,    1475.57      
+//INSTRUMENT_METADATA;# span 24 =    1448.93,    1475.63      
+//INSTRUMENT_METADATA;# span 25 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Oct 19 2018 13:56:22 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5351</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.33354868e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.28341990e-004</H>
+//INSTRUMENT_METADATA;#       <I>1.96454944e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.44205343e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3941</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.02606387e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.60795490e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.64752998e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.22862581e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1044</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Dec-16</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-9.860530e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>-4.859610e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.526990e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.661700e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.000165e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-2.536130e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.090200e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>4.120580e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00010000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.16770</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.284700e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-9.290830e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>5355</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.39734208e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.40996843e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.25657229e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.03815767e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3943</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>17-Jul-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.03008068e+001</G>
+//INSTRUMENT_METADATA;#         <H>1.61622390e+000</H>
+//INSTRUMENT_METADATA;#         <I>-1.43836136e-003</I>
+//INSTRUMENT_METADATA;#         <J>2.05891922e-004</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2126</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>14-Apr-17</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.9378e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.5109</offset>
+//INSTRUMENT_METADATA;#         <A>-3.0341e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4453e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.6131e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.3200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>0732</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jun-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>4.2704e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4858</offset>
+//INSTRUMENT_METADATA;#         <A>-4.4844e-003</A>
+//INSTRUMENT_METADATA;#         <B> 2.1003e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.9828e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1200</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>53447</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>10-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Oct 19 2018 15:21:10, 7.22.4 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.hex C:\ctd\temp\SBE09_1044_20181019_1556_34_01_0112.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Oct 19 2018 15:21:12, 7.22.4
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = T2-T190C sbeox1ML/L flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Oct 19 2018 15:21:16, 7.22.4
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0ML/L 3.000, sbeox1ML/L 3.000                                                                                                                                                                                  
+//INSTRUMENT_METADATA;# celltm_date = Oct 19 2018 15:21:18, 7.22.4
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Oct 19 2018 15:21:20, 7.22.4
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Oct 19 2018 15:21:23, 7.22.4 [derive_vars = 10]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_dzdt = seconds: 2
+//INSTRUMENT_METADATA;# binavg_date = Oct 19 2018 15:21:25, 7.22.4
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Oct 19 2018 15:21:28, 7.22.4
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1044_20181019_1556_34_01_0112.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+//INSTRUMENT_METADATA;*END*
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	1.520		1.500		1.02827		1.02804		7.7707		7.7721		12.7556		12.7397		7.2795		6.8857		6.074e+02		1.5436		0.3325000		0.4440		94.97		0.214		16823		1		5.4229		5.4262		1467.22		1467.16	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	2.026		2.000		1.02811		1.02769		7.7712		7.7734		12.7466		12.7192		7.2692		6.8815		5.274e+02		1.5778		0.3157000		0.3705		40.56		0.346		16858		1		5.4246		5.4301		1467.19		1467.09	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	2.533		2.500		1.02832		1.02825		7.7709		7.7709		12.7561		12.7529		7.2634		6.8423		4.271e+02		1.5303		0.3363000		0.4792		65.00		0.355		16893		1		5.4230		5.4235		1467.23		1467.22	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	3.039		3.000		1.02862		1.02843		7.7692		7.7698		12.7759		12.7655		7.3599		6.9451		3.319e+02		1.6150		0.3372000		0.4425		77.26		0.436		16924		1		5.4189		5.4208		1467.31		1467.27	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	3.546		3.500		1.03183		1.03129		7.7530		7.7552		12.9834		12.9506		7.2985		6.9084		3.165e+02		1.6565		0.3228000		0.4800		76.55		0.491		16949		1		5.3766		5.3830		1468.05		1467.93	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	4.052		4.000		1.03147		1.03285		7.7494		7.7423		12.9865		13.0760		7.2573		6.8845		2.529e+02		1.9143		0.3450000		0.4920		24.98		0.499		16973		1		5.3734		5.3549		1468.06		1468.38	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	4.559		4.500		1.02721		1.02737		7.7732		7.7721		12.7000		12.7116		7.2763		6.9041		2.000e+02		2.0977		0.5489000		0.5144		50.78		0.504		16997		1		5.4326		5.4302		1467.06		1467.10	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	5.065		5.000		1.02522		1.02526		7.7871		7.7865		12.5526		12.5567		7.2780		6.9072		1.682e+02		2.1190		0.4172000		0.4962		91.68		0.523		17020		1		5.4641		5.4631		1466.55		1466.57	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	5.572		5.500		1.02381		1.02405		7.7943		7.7938		12.4607		12.4731		7.2705		6.8956		1.429e+02		2.1773		0.3547000		0.4983		98.54		0.535		17043		1		5.4825		5.4803		1466.23		1466.28	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	6.078		6.000		1.02193		1.02204		7.7945		7.7942		12.3849		12.3909		7.2632		6.8800		1.141e+02		2.2204		0.3502000		0.5484		74.07		0.537		17065		1		5.4931		5.4920		1465.96		1465.99	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	6.585		6.500		1.02126		1.02140		7.7969		7.7965		12.3463		12.3539		7.2584		6.8738		9.638e+01		2.1541		0.3458000		0.4915		73.53		0.548		17088		1		5.5002		5.4988		1465.83		1465.86	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	7.091		7.000		1.02088		1.02086		7.7987		7.7981		12.3221		12.3243		7.2679		6.8729		8.075e+01		1.9880		0.3313000		0.4836		73.12		0.563		17109		1		5.5049		5.5041		1465.76		1465.76	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	7.598		7.500		1.02127		1.02126		7.8017		7.8013		12.3227		12.3245		7.2857		6.8660		6.687e+01		1.8705		0.3417000		0.4755		72.58		0.570		17130		1		5.5072		5.5066		1465.77		1465.78	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	8.104		8.000		1.02161		1.02158		7.8039		7.8035		12.3252		12.3266		7.2846		6.8573		5.911e+01		1.7599		0.3244000		0.4106		72.11		0.564		17151		1		5.5085		5.5080		1465.79		1465.79	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	8.611		8.500		1.02194		1.02190		7.8064		7.8058		12.3263		12.3276		7.2609		6.8572		4.903e+01		1.7407		0.3220000		0.4256		71.55		0.552		17173		1		5.5103		5.5096		1465.80		1465.81	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	9.117		9.000		1.02199		1.02201		7.8077		7.8073		12.3220		12.3242		7.2542		6.8537		4.284e+01		1.7377		0.3339000		0.4136		72.52		0.559		17195		1		5.5119		5.5113		1465.80		1465.80	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	9.624		9.500		1.02206		1.02205		7.8088		7.8083		12.3190		12.3212		7.2624		6.8528		3.833e+01		1.7291		0.3361000		0.4026		80.66		0.567		17216		1		5.5131		5.5124		1465.80		1465.80	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	10.130		10.000		1.02212		1.02212		7.8104		7.8099		12.3137		12.3158		7.2501		6.8526		3.212e+01		1.7045		0.3275000		0.4130		61.60		0.565		17237		1		5.5150		5.5144		1465.79		1465.79	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	10.637		10.500		1.02220		1.02218		7.8119		7.8113		12.3088		12.3109		7.2497		6.8594		2.805e+01		1.6558		0.3166000		0.4419		39.80		0.570		17258		1		5.5169		5.5162		1465.78		1465.79	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	11.143		11.000		1.02212		1.02214		7.8138		7.8133		12.2964		12.2998		7.2466		6.8579		2.393e+01		1.6750		0.3111000		0.4416		94.09		0.568		17279		1		5.5200		5.5192		1465.74		1465.76	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	11.649		11.500		1.02178		1.02179		7.8147		7.8142		12.2783		12.2809		7.1929		6.8203		2.098e+01		1.6273		0.3243000		0.4549		91.70		0.559		17300		1		5.5232		5.5225		1465.69		1465.69	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	12.156		12.000		1.02059		1.02079		7.8149		7.8148		12.2300		12.2380		7.1605		6.8084		1.831e+01		1.6348		0.3212000		0.3811		55.83		0.554		17322		1		5.5299		5.5288		1465.52		1465.55	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	12.662		12.500		1.01665		1.01674		7.8082		7.8080		12.1048		12.1095		7.1130		6.7829		1.600e+01		1.6328		0.3141000		0.3465		12.31		0.562		17344		1		5.5417		5.5409		1465.06		1465.07	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	13.169		13.000		1.01504		1.01505		7.8050		7.8045		12.0559		12.0586		7.0105		6.6843		1.402e+01		1.5788		0.3105000		0.3653		45.81		0.569		17365		1		5.5457		5.5450		1464.88		1464.89	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	13.675		13.500		1.01190		1.01219		7.8020		7.8024		11.9443		11.9544		6.9741		6.6313		1.216e+01		1.5581		0.3086000		0.3870		74.19		0.575		17386		1		5.5583		5.5572		1464.47		1464.51	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	14.182		14.000		1.00673		1.00629		7.8117		7.8081		11.6910		11.6914		6.9553		6.5977		1.066e+01		1.5106		0.3041000		0.3039		49.67		0.575		17407		1		5.5989		5.5960		1463.55		1463.55	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	14.688		14.500		1.01590		1.01531		7.8604		7.8571		11.8243		11.8164		6.9076		6.5357		9.307e+00		1.4045		0.2864000		0.3011		58.97		0.567		17428		1		5.6192		5.6176		1464.11		1464.08	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	15.195		15.000		1.02357		1.02307		7.9033		7.8994		11.9236		11.9224		6.8888		6.5124		8.210e+00		1.4098		0.2828000		0.3492		61.95		0.558		17449		1		5.6393		5.6364		1464.54		1464.53	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	15.701		15.500		1.02174		1.02181		7.9123		7.9118		11.8085		11.8134		6.8802		6.5219		7.255e+00		1.4365		0.2869000		0.3979		61.70		0.554		17471		1		5.6614		5.6604		1464.13		1464.15	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	16.207		16.000		1.02250		1.02237		7.9293		7.9276		11.7580		11.7609		6.8783		6.5405		6.421e+00		1.4011		0.2904000		0.4095		63.63		0.557		17492		1		5.6812		5.6794		1463.97		1463.98	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	16.714		16.500		1.02299		1.02313		7.9450		7.9446		11.7031		11.7102		6.8803		6.5485		5.674e+00		1.3833		0.2860000		0.4117		63.19		0.566		17514		1		5.7004		5.6992		1463.80		1463.82	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	17.220		17.000		1.01845		1.01859		7.9397		7.9399		11.5488		11.5534		6.8562		6.5301		5.009e+00		1.3298		0.2784000		0.3488		62.74		0.576		17535		1		5.7162		5.7157		1463.22		1463.24	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	17.727		17.500		1.01237		1.01276		7.9277		7.9290		11.3647		11.3740		6.8388		6.5220		4.422e+00		1.2467		0.2747000		0.3626		62.24		0.577		17555		1		5.7302		5.7300		1462.53		1462.56	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	18.233		18.000		1.00338		1.00365		7.9166		7.9173		11.0604		11.0678		6.8421		6.5285		3.909e+00		1.1749		0.2606000		0.3728		61.76		0.564		17576		1		5.7592		5.7589		1461.37		1461.40	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	18.739		18.500		0.99627		0.99642		7.9147		7.9146		10.7869		10.7930		6.7704		6.4762		3.490e+00		1.1121		0.2426000		0.3452		61.20		0.552		17598		1		5.7906		5.7898		1460.34		1460.36	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	19.246		19.000		0.99098		0.99120		7.9148		7.9154		10.5754		10.5812		6.7303		6.4348		3.123e+00		1.0622		0.2340000		0.2791		60.69		0.558		17620		1		5.8154		5.8153		1459.54		1459.56	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	19.752		19.500		0.98276		0.98291		7.9094		7.9095		10.2713		10.2769		6.7727		6.4481		2.798e+00		1.0255		0.2600000		0.3207		60.15		0.573		17641		1		5.8460		5.8454		1458.37		1458.39	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	20.258		20.000		0.98424		0.98369		7.9378		7.9339		10.2000		10.1959		6.6837		6.3427		2.508e+00		0.9046		0.2200000		0.3435		59.65		0.575		17662		1		5.8760		5.8734		1458.14		1458.12	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	20.765		20.500		0.99877		0.99798		8.0328		8.0288		10.3414		10.3286		6.6945		6.3152		2.247e+00		0.8423		0.2169000		0.3176		59.18		0.559		17683		1		5.9339		5.9322		1458.81		1458.75	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	21.271		21.000		0.99810		0.99813		8.0518		8.0518		10.2290		10.2303		6.8689		6.4297		2.025e+00		0.8156		0.2197000		0.2686		58.61		0.548		17705		1		5.9613		5.9611		1458.41		1458.41	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	21.777		21.500		1.01550		1.01336		8.1430		8.1311		10.4963		10.4660		6.8639		6.4349		1.831e+00		0.8019		0.2255000		0.2813		58.14		0.568		17726		1		6.0015		5.9958		1459.55		1459.42	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	22.283		22.000		1.03728		1.03732		8.2446		8.2442		10.8818		10.8854		6.7077		6.3374		1.653e+00		0.7912		0.2325000		0.2669		57.65		0.595		17747		1		6.0352		6.0345		1461.16		1461.17	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	22.789		22.500		1.03064		1.03165		8.2226		8.2269		10.7252		10.7446		6.6492		6.2985		1.477e+00		0.8349		0.2357000		0.3061		57.19		0.595		17767		1		6.0366		6.0377		1460.54		1460.62	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	23.296		23.000		1.01534		1.01534		8.1929		8.1920		10.2674		10.2715		6.6714		6.2883		1.325e+00		0.8447		0.2257000		0.3238		56.60		0.566		17787		1		6.0666		6.0654		1458.76		1458.77	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	23.802		23.500		1.03026		1.02983		8.2784		8.2750		10.4621		10.4609		6.6653		6.2568		1.202e+00		0.7826		0.2231000		0.3171		56.08		0.547		17809		1		6.1108		6.1083		1459.62		1459.61	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	24.308		24.000		1.04974		1.04900		8.3809		8.3756		10.7512		10.7461		6.6645		6.2709		1.092e+00		0.7254		0.2196000		0.3255		55.59		0.555		17831		1		6.1564		6.1529		1460.86		1460.83	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	24.814		24.500		1.06112		1.06102		8.4397		8.4386		10.9217		10.9230		6.8197		6.4334		9.937e-01		0.7095		0.2188000		0.2692		58.53		0.571		17853		1		6.1816		6.1805		1461.58		1461.59	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	25.320		25.000		1.06336		1.06321		8.4545		8.4530		10.9408		10.9422		6.7672		6.4760		8.873e-01		0.7254		0.2217000		0.2965		79.20		0.582		17873		1		6.1907		6.1894		1461.68		1461.68	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	25.826		25.500		1.05674		1.05730		8.4384		8.4410		10.7627		10.7722		6.3239		6.2100		7.994e-01		0.7150		0.2284000		0.3079		53.47		0.590		17894		1		6.1996		6.2005		1460.99		1461.03	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	26.333		26.000		1.03416		1.03655		8.3614		8.3739		10.2418		10.2786		6.2446		6.1945		7.175e-01		0.7033		0.2187000		0.3215		53.02		0.590		17914		1		6.1991		6.2049		1458.90		1459.06	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	26.839		26.500		0.96636		0.96667		8.1774		8.1806		8.4189		8.4171		6.4141		6.2771		6.454e-01		0.6680		0.2198000		0.3211		52.70		0.567		17935		1		6.2402		6.2428		1451.49		1451.49	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	27.345		27.000		0.96118		0.96095		8.1844		8.1816		8.1860		8.1888		6.4942		6.2279		5.851e-01		0.6267		0.2291000		0.2334		52.37		0.536		17956		1		6.2669		6.2645		1450.57		1450.58	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	27.851		27.500		0.96613		0.96643		8.2252		8.2254		8.2057		8.2169		6.3108		6.0042		5.268e-01		0.5768		0.2351000		0.2564		51.29		0.535		17979		1		6.2972		6.2963		1450.71		1450.76	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	28.357		28.000		0.97013		0.97035		8.2526		8.2547		8.2448		8.2444		6.3092		5.9768		4.734e-01		0.5146		0.2184000		0.2791		50.25		0.567		18001		1		6.3150		6.3167		1450.91		1450.91	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	28.863		28.500		0.95513		0.95508		8.2274		8.2266		7.7635		7.7645		6.3425		5.9470		4.268e-01		0.5045		0.2225000		0.2853		49.70		0.601		18022		1		6.3357		6.3351		1448.93		1448.93	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	29.369		29.000		0.97706		0.97682		8.3241		8.3176		8.2102		8.2282		6.2946		5.8822		3.764e-01		0.4650		0.2230000		0.2736		48.44		0.610		18041		1		6.3739		6.3673		1450.87		1450.94	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	29.875		29.500		0.98690		0.98670		8.3596		8.3581		8.4415		8.4401		6.1955		5.8134		3.300e-01		0.4858		0.2395000		0.2650		48.66		0.591		18061		1		6.3815		6.3805		1451.86		1451.86	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	30.381		30.000		0.98784		0.98784		8.3661		8.3656		8.4498		8.4519		6.0198		5.6707		2.999e-01		0.5009		0.2539000		0.2740		48.39		0.561		18082		1		6.3858		6.3852		1451.91		1451.92	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	30.887		30.500		0.98764		0.98782		8.3676		8.3678		8.4357		8.4416		6.1147		5.7132		2.732e-01		0.4734		0.2509000		0.2852		48.36		0.543		18104		1		6.3882		6.3879		1451.86		1451.89	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	31.393		31.000		0.99069		0.99155		8.3809		8.3808		8.4966		8.5301		6.3160		5.8268		2.445e-01		0.5039		0.2421000		0.2820		47.76		0.552		18126		1		6.3931		6.3900		1452.13		1452.27	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	31.899		31.500		1.04377		1.03931		8.6130		8.5835		9.5283		9.4845		6.3748		5.8687		2.196e-01		0.4803		0.2346000		0.2641		47.29		0.569		18147		1		6.4731		6.4545		1456.53		1456.32	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	32.405		32.000		1.07800		1.07628		8.7602		8.7495		10.1760		10.1577		6.3260		5.8722		1.879e-01		0.5713		0.2340000		0.2636		46.86		0.579		18168		1		6.5176		6.5113		1459.24		1459.15	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	32.911		32.500		1.08444		1.08447		8.7860		8.7851		10.3031		10.3079		6.2605		5.8791		1.642e-01		0.5806		0.2388000		0.2876		46.29		0.581		18189		1		6.5232		6.5220		1459.77		1459.78	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	33.417		33.000		1.08378		1.08383		8.7848		8.7848		10.2841		10.2855		6.2205		5.8888		1.398e-01		0.5662		0.2388000		0.2848		45.94		0.581		18209		1		6.5244		6.5243		1459.70		1459.71	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	33.923		33.500		1.08048		1.08058		8.7750		8.7751		10.2044		10.2076		6.2569		5.9482		1.206e-01		0.5760		0.2289000		0.2741		45.33		0.569		18230		1		6.5259		6.5256		1459.39		1459.40	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	34.429		34.000		1.07709		1.07751		8.7672		8.7682		10.1133		10.1239		6.2335		5.9422		1.062e-01		0.5749		0.2295000		0.2730		45.01		0.550		18252		1		6.5301		6.5297		1459.04		1459.08	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	34.935		34.500		1.07037		1.07058		8.7528		8.7536		9.9273		9.9316		6.1045		5.8503		8.832e-02		0.5631		0.2461000		0.2342		44.25		0.549		18274		1		6.5396		6.5398		1458.31		1458.33	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	35.441		35.000		1.05615		1.05784		8.7186		8.7247		9.5464		9.5832		6.0178		5.7951		7.525e-02		0.5444		0.2381000		0.2753		43.95		0.582		18295		1		6.5535		6.5544		1456.78		1456.93	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	35.947		35.500		1.03944		1.03965		8.7012		8.6996		9.0016		9.0158		6.0053		5.7779		5.754e-02		0.5237		0.2399000		0.3049		43.42		0.609		18315		1		6.5955		6.5929		1454.62		1454.68	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	36.453		36.000		1.03125		1.03151		8.6894		8.6891		8.7461		8.7570		5.9940		5.7416		4.505e-02		0.5001		0.2477000		0.2913		43.07		0.602		18335		1		6.6110		6.6097		1453.60		1453.64	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	36.959		36.500		1.02884		1.02905		8.6873		8.6867		8.6647		8.6747		5.9743		5.7014		3.693e-02		0.4793		0.2431000		0.2217		42.47		0.564		18355		1		6.6170		6.6156		1453.28		1453.32	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	37.465		37.000		1.02717		1.02731		8.6868		8.6853		8.6043		8.6158		5.9210		5.6384		2.111e-02		0.4569		0.2484000		0.2072		42.00		0.542		18377		1		6.6223		6.6200		1453.04		1453.08	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	37.971		37.500		1.03247		1.03204		8.7434		8.7390		8.5706		8.5723		5.8418		5.5507		1.131e-02		0.4350		0.2386000		0.2071		41.50		0.562		18399		1		6.6696		6.6660		1452.98		1452.98	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	38.476		38.000		1.03939		1.03890		8.8043		8.7995		8.5793		8.5807		5.8442		5.5211		2.548e-03		0.4237		0.2404000		0.2252		40.13		0.580		18420		1		6.7163		6.7124		1453.10		1453.10	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	38.982		38.500		1.06141		1.06009		8.9911		8.9801		8.6361		8.6319		5.8324		5.4801		2.201e-03		0.4093		0.2442000		0.2411		39.48		0.566		18441		1		6.8568		6.8487		1453.57		1453.54	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	39.488		39.000		1.10063		1.09852		9.2611		9.2423		8.9752		8.9736		5.7226		5.3736		2.706e-05		0.3919		0.2459000		0.2577		38.88		0.548		18462		1		7.0346		7.0201		1455.26		1455.23	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	39.994		39.500		1.15281		1.15121		9.6302		9.6157		9.3673		9.3674		5.6232		5.2790		1.722e-08		0.3807		0.2363000		0.2934		38.42		0.552		18484		1		7.2824		7.2711		1457.27		1457.25	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	40.499		40.000		1.18356		1.18256		9.8653		9.8559		9.5226		9.5239		5.5933		5.2530		1.000e-12		0.3581		0.2347000		0.2662		37.82		0.571		18506		1		7.4489		7.4415		1458.17		1458.17	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	41.005		40.500		1.21656		1.21603		10.0915		10.0872		9.7765		9.7752		5.4144		5.1108		1.000e-12		0.3377		0.2238000		0.2657		37.39		0.582		18527		1		7.5971		7.5939		1459.44		1459.43	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	41.510		41.000		1.25634		1.25465		10.3349		10.3223		10.1742		10.1656		5.1935		4.9305		1.000e-12		0.3482		0.2350000		0.2657		36.83		0.580		18547		1		7.7409		7.7321		1461.29		1461.24	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	42.015		41.500		1.27053		1.27013		10.5076		10.4983		10.0136		10.0333		4.9849		4.7549		1.000e-12		0.3492		0.2366000		0.2587		36.34		0.577		18568		1		7.8936		7.8841		1460.88		1460.95	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	42.521		42.000		1.31192		1.30881		10.8080		10.7887		10.2478		10.2196		4.8917		4.6703		1.000e-12		0.3217		0.2270000		0.2358		35.84		0.576		18589		1		8.0994		8.0878		1462.16		1462.02	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	43.026		42.500		1.37132		1.36928		11.1673		11.1556		10.8068		10.7860		4.9695		4.7247		1.000e-12		0.2558		0.2184000		0.2359		35.27		0.572		18610		1		8.3096		8.3031		1464.72		1464.63	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	43.531		43.000		1.37950		1.38026		11.2350		11.2355		10.8218		10.8421		5.0944		4.8225		1.000e-12		0.2963		0.2401000		0.2570		34.84		0.563		18631		1		8.3602		8.3580		1464.87		1464.95	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	44.036		43.500		1.37064		1.37043		11.2570		11.2531		10.4935		10.5003		5.0048		4.7269		1.000e-12		0.3428		0.2610000		0.2496		34.24		0.563		18652		1		8.4183		8.4144		1463.66		1463.68	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	44.541		44.000		1.42155		1.41963		11.5722		11.5590		10.9289		10.9169		4.7747		4.5160		1.000e-12		0.3287		0.2696000		0.2383		33.81		0.574		18673		1		8.6076		8.5989		1465.69		1465.63	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	45.046		44.500		1.47206		1.47069		11.8934		11.8863		11.3171		11.3015		4.6712		4.4250		1.000e-12		0.3011		0.2616000		0.2472		33.28		0.584		18694		1		8.8052		8.8019		1467.54		1467.47	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	45.551		45.000		1.50581		1.50532		12.0928		12.0889		11.6134		11.6122		4.6446		4.4091		1.000e-12		0.3012		0.2290000		0.2082		32.84		0.577		18715		1		8.9192		8.9163		1468.88		1468.88	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	46.055		45.500		1.52035		1.51994		12.2003		12.1972		11.6719		11.6703		4.6202		4.3812		1.000e-12		0.2879		0.2353000		0.2179		32.23		0.554		18736		1		8.9942		8.9920		1469.24		1469.23	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	46.560		46.000		1.53269		1.53220		12.2944		12.2903		11.7124		11.7118		4.4746		4.2474		1.000e-12		0.2806		0.2372000		0.2224		31.76		0.542		18758		1		9.0612		9.0581		1469.51		1469.50	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	47.065		46.500		1.56154		1.56035		12.4891		12.4801		11.8806		11.8766		4.2189		4.0361		1.000e-12		0.2534		0.2219000		0.2162		31.31		0.564		18780		1		9.1878		9.1815		1470.36		1470.34	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	47.569		47.000		1.61280		1.61147		12.8370		12.8265		12.1658		12.1631		4.0842		3.9207		1.000e-12		0.2680		0.2050000		0.2105		30.77		0.595		18800		1		9.4154		9.4076		1471.83		1471.80	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	48.074		47.500		1.65014		1.64962		13.1368		13.1315		12.2334		12.2354		3.8792		3.7351		1.000e-12		0.2829		0.1941000		0.2652		29.64		0.632		18820		1		9.6367		9.6324		1472.43		1472.43	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	48.578		48.000		1.66411		1.66356		13.2478		13.2444		12.2610		12.2571		3.5839		3.4739		1.000e-12		0.2481		0.1988000		0.2277		29.36		0.626		18838		1		9.7183		9.7162		1472.67		1472.66	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	49.082		48.500		1.68147		1.68102		13.3459		13.3434		12.4080		12.4039		3.3808		3.2892		1.000e-12		0.2671		0.2027000		0.1969		28.68		0.558		18859		1		9.7720		9.7707		1473.33		1473.31	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	49.587		49.000		1.70014		1.69932		13.4460		13.4405		12.5790		12.5747		3.5444		3.4025		1.000e-12		0.2725		0.2038000		0.1839		28.38		0.527		18881		1		9.8233		9.8197		1474.07		1474.05	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	50.091		49.500		1.72289		1.72241		13.5786		13.5748		12.7549		12.7539		3.7523		3.5689		1.000e-12		0.2504		0.2058000		0.2081		27.81		0.556		18904		1		9.8985		9.8958		1474.87		1474.86	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	50.595		50.000		1.72969		1.72953		13.6568		13.6535		12.6994		12.7046		3.6566		3.4951		1.000e-12		0.2357		0.1968000		0.2342		27.52		0.600		18925		1		9.9673		9.9640		1474.77		1474.78	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	51.100		50.500		1.73886		1.73831		13.7453		13.7419		12.6721		12.6682		3.4623		3.3323		1.000e-12		0.2359		0.1788000		0.2264		27.02		0.615		18944		1		10.0397		10.0378		1474.78		1474.77	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	51.604		51.000		1.75494		1.75473		13.8690		13.8655		12.7118		12.7166		3.2505		3.1535		1.000e-12		0.2483		0.1924000		0.2217		26.61		0.597		18964		1		10.1289		10.1255		1475.08		1475.09	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	52.108		51.500		1.76193		1.76147		13.9751		13.9703		12.5866		12.5891		3.1819		3.1070		1.000e-12		0.2392		0.1882000		0.2138		26.08		0.567		18984		1		10.2300		10.2259		1474.77		1474.77	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	52.612		52.000		1.78625		1.78569		14.1278		14.1249		12.7398		12.7346		3.2673		3.1730		1.000e-12		0.2655		0.1850000		0.1642		25.58		0.552		19006		1		10.3239		10.3225		1475.50		1475.48	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	53.116		52.500		1.79961		1.80003		14.2520		14.2491		12.7156		12.7327		2.9353		2.8867		1.000e-12		0.2748		0.1914000		0.2037		25.17		0.558		19028		1		10.4233		10.4185		1475.57		1475.63	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	53.620		53.000		1.77912		1.77953		14.2571		14.2550		12.2304		12.2457		2.4702		2.4988		1.000e-12		0.2602		0.1931000		0.2276		24.61		0.562		19049		1		10.5015		10.4975		1473.84		1473.90	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	54.124		53.500		1.77447		1.77419		14.2877		14.2855		12.0427		12.0421		2.3932		2.4109		1.000e-12		0.2609		0.1728000		0.2070		24.07		0.560		19071		1		10.5531		10.5516		1473.21		1473.20	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	54.628		54.000		1.78592		1.78580		14.3694		14.3674		12.0912		12.0938		2.4177		2.3972		1.000e-12		0.2609		0.1795000		0.1959		23.57		0.567		19092		1		10.6090		10.6071		1473.49		1473.50	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	55.132		54.500		1.78387		1.78384		14.4071		14.4049		11.9457		11.9510		2.2566		2.2399		1.000e-12		0.2545		0.2014000		0.2492		23.10		0.585		19113		1		10.6597		10.6571		1473.01		1473.03	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	55.636		55.000		1.77785		1.77788		14.4362		14.4341		11.7322		11.7384		1.8598		1.8940		1.000e-12		0.2524		0.2153000		0.3067		22.66		0.593		19133		1		10.7133		10.7108		1472.28		1472.30	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	56.140		55.500		1.80673		1.80609		14.5921		14.5900		11.9865		11.9773		1.4181		1.5120		1.000e-12		0.2493		0.2162000		0.2542		22.15		0.583		19153		1		10.7964		10.7962		1473.40		1473.36	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	56.643		56.000		1.82176		1.82167		14.6947		14.6927		12.0618		12.0649		1.1742		1.2830		1.000e-12		0.2470		0.2065000		0.2220		21.58		0.565		19174		1		10.8645		10.8625		1473.80		1473.81	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	57.147		56.500		1.82183		1.82182		14.7289		14.7278		11.9760		11.9785		1.1038		1.1982		1.000e-12		0.2822		0.2230000		0.2003		21.05		0.553		19196		1		10.9036		10.9024		1473.54		1473.55	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	57.651		57.000		1.82325		1.82318		14.7575		14.7561		11.9347		11.9368		1.0732		1.1565		1.000e-12		0.2847		0.2571000		0.1793		20.56		0.561		19218		1		10.9319		10.9304		1473.43		1473.44	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	58.155		57.500		1.82769		1.82748		14.8068		14.8053		11.9086		11.9080		1.0597		1.1355		1.000e-12		0.2847		0.2592000		0.2217		20.11		0.582		19239		1		10.9738		10.9727		1473.40		1473.40	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	58.658		58.000		1.81669		1.81726		14.8009		14.8000		11.6774		11.6926		1.1057		1.1627		1.000e-12		0.2791		0.2764000		0.1673		19.62		0.596		19259		1		11.0030		11.0000		1472.56		1472.61	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	59.162		58.500		1.79884		1.79901		14.7940		14.7935		11.2950		11.3001		1.0997		1.1418		1.000e-12		0.2731		0.2885000		0.1813		19.11		0.592		19279		1		11.0523		11.0512		1471.16		1471.17	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	59.666		59.000		1.78945		1.78941		14.8105		14.8102		11.0429		11.0426		0.9686		1.0258		1.000e-12		0.2725		0.2787000		0.2158		18.61		0.576		19299		1		11.1002		11.1000		1470.25		1470.25	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	60.169		59.500		1.78870		1.78875		14.8793		14.8789		10.8547		10.8569		0.7687		0.8528		1.000e-12		0.2736		0.3149000		0.1774		18.13		0.556		19321		1		11.1793		11.1786		1469.64		1469.65	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	60.673		60.000		1.79563		1.79523		14.9448		14.9421		10.8477		10.8455		0.6089		0.7080		1.000e-12		0.2647		0.3411000		0.1778		17.64		0.548		19343		1		11.2309		11.2291		1469.70		1469.69	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	61.177		60.500		1.79536		1.79555		14.9681		14.9683		10.7841		10.7878		0.5344		0.6327		1.000e-12		0.2858		0.3625000		0.2549		17.06		0.554		19364		1		11.2576		11.2573		1469.50		1469.51	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	61.680		61.000		1.79160		1.79178		15.0000		15.0015		10.6221		10.6224		0.4522		0.5574		1.000e-12		0.2882		0.3567000		0.2705		16.49		0.563		19386		1		11.3040		11.3052		1468.94		1468.94	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	62.184		61.500		1.76380		1.76461		15.0010		15.0092		9.9980		9.9963		0.2868		0.4150		1.000e-12		0.2765		0.3613000		0.2377		15.95		0.570		19407		1		11.3854		11.3920		1466.59		1466.59	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	62.687		62.000		1.74524		1.74515		15.0112		15.0121		9.5573		9.5532		0.1324		0.2777		1.000e-12		0.2882		0.4206000		0.1829		15.42		0.580		19428		1		11.4480		11.4492		1464.92		1464.91	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	63.191		62.500		1.74470		1.74472		15.0273		15.0268		9.5063		9.5078		0.0855		0.2208		1.000e-12		0.2999		0.4369000		0.2333		14.90		0.588		19448		1		11.4667		11.4661		1464.75		1464.76	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	63.694		63.000		1.74036		1.74063		15.0531		15.0528		9.3471		9.3537		0.0964		0.2078		1.000e-12		0.3129		0.4480000		0.2447		14.40		0.594		19469		1		11.5056		11.5046		1464.18		1464.20	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	64.198		63.500		1.73715		1.73715		15.1114		15.1114		9.1361		9.1360		0.1094		0.1998		1.000e-12		0.3143		0.4564000		0.2288		13.88		0.591		19489		1		11.5757		11.5758		1463.44		1463.44	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	64.701		64.000		1.74250		1.74158		15.1714		15.1650		9.1137		9.1082		0.1424		0.2198		1.000e-12		0.3047		0.4636000		0.2076		13.41		0.572		19509		1		11.6250		11.6207		1463.43		1463.40	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	65.205		64.500		1.77612		1.77625		15.3584		15.3545		9.4196		9.4317		0.2002		0.2626		1.000e-12		0.2958		0.4830000		0.2091		12.93		0.551		19531		1		11.7346		11.7301		1464.85		1464.90	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	65.708		65.000		1.76502		1.76417		15.4587		15.4571		8.9423		8.9272		0.2317		0.2804		1.000e-12		0.3406		0.6161000		0.2773		12.42		0.549		19553		1		11.8685		11.8690		1463.13		1463.07	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	66.211		65.500		1.78408		1.78406		15.5721		15.5710		9.0984		9.1005		0.2056		0.2578		1.000e-12		0.3257		0.5712000		0.2443		11.94		0.566		19575		1		11.9389		11.9379		1463.89		1463.89	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	66.714		66.000		1.78761		1.78755		15.6174		15.6162		9.0711		9.0727		0.1420		0.2068		1.000e-12		0.3256		0.5296000		0.2430		11.37		0.582		19595		1		11.9774		11.9763		1463.84		1463.85	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	67.218		66.500		1.79346		1.79330		15.6952		15.6933		9.0206		9.0214		0.0993		0.1696		1.000e-12		0.3347		0.8913000		0.2441		10.85		0.582		19616		1		12.0438		12.0423		1463.75		1463.75	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	67.721		67.000		1.80010		1.79986		15.7819		15.7789		8.9672		8.9688		0.0838		0.1527		1.000e-12		0.3593		1.5915000		0.2344		10.32		0.573		19637		1		12.1176		12.1151		1463.66		1463.66	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	68.224		67.500		1.81152		1.81114		15.8835		15.8794		8.9838		8.9849		0.0793		0.1470		1.000e-12		0.3861		2.4308000		0.2075		9.82		0.570		19658		1		12.1948		12.1915		1463.85		1463.85	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	68.727		68.000		1.81870		1.81867		15.9528		15.9520		8.9817		8.9830		0.0852		0.1439		1.000e-12		0.3973		2.3943000		0.2291		9.31		0.573		19679		1		12.2491		12.2483		1463.94		1463.94	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	69.230		68.500		1.82284		1.82300		15.9907		15.9908		8.9853		8.9884		0.0851		0.1420		1.000e-12		0.4101		2.4886000		0.2603		8.79		0.570		19700		1		12.2782		12.2779		1464.01		1464.02	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	69.733		69.000		1.81917		1.81925		16.0033		16.0032		8.8786		8.8805		0.0766		0.1375		1.000e-12		0.4091		2.4790000		0.2463		8.26		0.563		19721		1		12.3003		12.3000		1463.61		1463.62	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	70.236		69.500		1.82451		1.82411		16.0471		16.0432		8.8947		8.8948		0.0721		0.1311		1.000e-12		0.4150		2.6722000		0.1815		7.77		0.565		19742		1		12.3326		12.3296		1463.74		1463.73	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	70.739		70.000		1.83183		1.83165		16.1007		16.0981		8.9311		8.9331		0.0664		0.1232		1.000e-12		0.4126		2.9624000		0.2359		7.26		0.587		19763		1		12.3702		12.3679		1463.95		1463.96	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	71.242		70.500		1.84352		1.84263		16.1781		16.1710		9.0067		9.0036		0.0659		0.1194		1.000e-12		0.3853		2.9778000		0.2364		6.78		0.605		19783		1		12.4217		12.4165		1464.35		1464.33	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	71.746		71.000		1.87349		1.87240		16.3240		16.3165		9.3137		9.3076		0.1014		0.1485		1.000e-12		0.4073		2.4196000		0.2408		6.29		0.597		19803		1		12.4988		12.4937		1465.72		1465.69	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	72.248		71.500		1.91091		1.91091		16.5279		16.5257		9.6425		9.6473		0.1838		0.2142		1.000e-12		0.3946		2.5796000		0.2373		5.79		0.561		19824		1		12.6170		12.6147		1467.25		1467.26	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	72.751		72.000		1.91700		1.91702		16.5613		16.5606		9.6946		9.6966		0.2459		0.2631		1.000e-12		0.3614		1.6438000		0.2086		5.25		0.531		19846		1		12.6365		12.6356		1467.49		1467.50	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	73.254		72.500		1.91737		1.91745		16.5632		16.5629		9.6980		9.7003		0.2572		0.2821		1.000e-12		0.3312		0.5791000		0.2071		4.74		0.545		19869		1		12.6375		12.6369		1467.52		1467.53	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	73.757		73.000		1.91742		1.91748		16.5633		16.5629		9.6985		9.7006		0.2527		0.2837		1.000e-12		0.3249		0.5082000		0.2985		4.28		0.578		19890		1		12.6375		12.6369		1467.53		1467.54	
+2018	10	19	13	56	00	2018_34AR_SMHI-4-2018	HANOBUKTEN	55.61750	14.86733	74.260		73.500		1.91701		1.91703		16.5590		16.5584		9.6990		9.7008		0.2332		0.2594		1.000e-12		0.3270		0.5594000		0.2402		3.35		-0.007		20253		1		12.6341		12.6334		1467.53		1467.54	

@@ -7,10 +7,6 @@ Created on Thu Jul 05 11:18:06 2018
 from abc import ABCMeta
 import six
 from core import utils
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
@@ -23,6 +19,7 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         super().__init__()
         self.class_methods = utils.get_method_dictionary(BaseFileHandler)
         self.settings = settings
+        self.filename = ''
         self._station = None
         self._cruise = None
         self._longitude_dd = None
@@ -214,26 +211,11 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         """
         self._second = datetime_obj.strftime('%S')
 
-    # @property
-    # def sensor_names(self):
-    #     """
-    #     :return:
-    #     """
-    #     raise NotImplementedError
-
-
-"""
-#==============================================================================
-#==============================================================================
-"""
-
 
 class BaseReader(object):
     """
     """
     def __init__(self, settings):
-        # self.reader = settings.file_types['rawctd'].get('file_reader')(settings)
-        # self.reader = settings.file_types['rawctd'].get('file_reader')(settings)
         self.settings = settings
 
     def _extract_info(self):
@@ -242,26 +224,3 @@ class BaseReader(object):
 
     def get_reader(self):
         raise NotImplementedError
-
-
-"""
-#==============================================================================
-#==============================================================================
-"""
-if __name__ == '__main__':
-    pass
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

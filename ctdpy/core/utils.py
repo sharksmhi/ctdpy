@@ -22,6 +22,18 @@ def check_path(path):
         os.makedirs(path)
 
 
+def convert_string_to_datetime_obj(x, fmt):
+    """
+    :param x: str (can be any kind of date/time related string format)
+    :param fmt: format of output
+    :return: datetime object
+    """
+    if type(x) == str:
+        return datetime.strptime(x, fmt)
+    else:
+        return ''
+
+
 def copyfile(src, dst):
     """
     :param src: Source path
@@ -111,6 +123,38 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
         return float(output)
 
 
+def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
+                       pattern_list=[], not_pattern_list=[], endswith='', only_from_dir=True):
+    """
+    :param directory:
+    :param pattern:
+    :param not_pattern:
+    :param pattern_list:
+    :param endswith:
+    :param only_from_dir:
+    :return:
+    """
+    for path, subdir, fids in os.walk(directory):
+        if only_from_dir:
+            if path != directory:
+                continue
+        for f in fids:
+            if pattern in f and not_pattern not in f and f.endswith(endswith):
+                if any(pattern_list):
+                    for pat in pattern_list:
+                        if pat in f:
+                            yield os.path.abspath(os.path.join(path, f))
+                elif any(not_pattern_list):
+                    include = True
+                    for pat in not_pattern_list:
+                        if pat in f:
+                            include = False
+                    if include:
+                        yield os.path.abspath(os.path.join(path, f))
+                else:
+                    yield os.path.abspath(os.path.join(path, f))
+
+
 def generate_strings_based_on_suffix(dictionary, suffix):
     """
     :param dictionary: Nested dictionary
@@ -134,6 +178,8 @@ def get_datetime(date_string, time_string):
     :param time_string: HH:MM:SS  /  HH:MM
     :return:
     """
+    if ' ' in date_string:
+        date_string = date_string.split(' ')[0]
     if len(time_string) == 8:
         return datetime.strptime(date_string + ' ' + time_string, '%Y-%m-%d %H:%M:%S')
     elif len(time_string) == 5:
@@ -211,7 +257,10 @@ def get_format_from_datetime_obj(x, fmt):
     :param fmt: format of output
     :return: str (can be any kind of date/time related string format)
     """
-    return x.strftime(fmt)
+    try:
+        return x.strftime(fmt)
+    except:
+        return ''
 
 
 def get_index_where_df_equals_x(df, x):
@@ -295,26 +344,21 @@ def set_export_path(export_dir=None):
     if not os.path.isdir(export_dir):
         os.makedirs(export_dir)
 
-# class A(object):
-#     def __init__(self):
-#         super().__init__()
-#
-#     def _print(self):
-#         p = self.A_print()
-#         print(p)
-#
-#     def A_print(self):
-#         return 'A_print'
-#
-# class B(A):
-#     def __init__(self):
-#         super().__init__()
-#
-#     def A_print(self):
-#         return 'BBBB'
-#
-#
-# if __name__ == '__main__':
-#     b = B()
-#     b._print()
 
+def strip_text(x, text, strip=True):
+    """
+    :param x:
+    :param text:
+    :return:
+    """
+    new_x = x
+    if type(x) == str:
+        if not type(text) == list:
+            text = [text]
+        for t in text:
+            new_x = new_x.replace(t, '')
+        if strip:
+            new_x = new_x.strip()
+    else:
+        new_x = ''
+    return new_x

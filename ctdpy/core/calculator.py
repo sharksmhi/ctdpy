@@ -59,7 +59,6 @@ class Depth(object):
         :return:
         """
         for attr, value in attr_dictionary.items():
-            print(attr, value)
             setattr(self, attr, value)
 
     @property
