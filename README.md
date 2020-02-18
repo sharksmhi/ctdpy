@@ -1,3 +1,3 @@
 # CTDpy
 
-Python tool to handle sensor-data (eg. CTD (SeaBird, Rinco), MVP (AML).
+Python tool to handle high resolution oceanographic sensor-data (eg. CTD (SeaBird, Rinco), MVP (AML).
