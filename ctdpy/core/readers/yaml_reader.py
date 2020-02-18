@@ -4,12 +4,12 @@ Created on Thu Jul 05 10:29:30 2018
 
 @author: a002028
 """
-import os, sys
+import os
+import sys
 # reload(sys)
 # sys.setdefaultencoding('cp1252')
 
-#from config import recursive_dict_update
-import config
+from ctdpy.core import utils
 import numpy as np
 import yaml
 
@@ -19,11 +19,6 @@ def get_filebase(path, pattern):
     # A pattern can include directories
     tail_len = len(pattern.split(os.path.sep))
     return os.path.join(*path.split(os.path.sep)[-tail_len:])
-
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class YAMLreader(dict):
@@ -51,12 +46,14 @@ class YAMLreader(dict):
                     file = yaml.load(fd)
                 except yaml.YAMLError:
                     file = yaml.safe_load(fd)
-
+                # file = yaml.load(fd)
+                # print('config_file', config_file)
+                # print(file)
                 if file_names_as_key:
                     file_name = self.get_file_name(config_file)
                     self.config[file_name] = file
                 else:
-                    self.config = config.recursive_dict_update(self.config, file)
+                    self.config = utils.recursive_dict_update(self.config, file)
 
         if return_config:
             return self.config

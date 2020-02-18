@@ -6,7 +6,7 @@ Created on Thu Jul 19 13:38:35 2018
 """
 
 import pandas as pd
-# from core.writers.with_style import with_style
+# from .with_style import with_style
 
 
 class XlsxWriter(object):

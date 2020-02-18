@@ -6,9 +6,9 @@ Created on 2018-11-29 07:54:27
 
 """
 
-from core.data_handlers import DataFrameHandler
-from .template import Template
-import utils
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.templates.template import Template
+from ctdpy.core import utils
 
 
 class CTDTemplateHandler(DataFrameHandler):

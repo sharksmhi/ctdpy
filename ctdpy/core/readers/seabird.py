@@ -10,13 +10,12 @@ Created on 2019-11-04 10:31
 import sys
 sys.path.append("..")
 
-import config
-from core.utils import get_filename
-from core.data_handlers import DataFrameHandler
-from core.data_handlers import SeriesHandler
-from core.data_handlers import BaseReader
-from core.readers.cnv_reader import CNVreader
-from core import ctd_profile
+from ctdpy.core import utils
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.data_handlers import SeriesHandler
+from ctdpy.core.data_handlers import BaseReader
+from ctdpy.core.readers.cnv_reader import CNVreader
+from ctdpy.core.profile import Profile
 
 
 class SeaBird(BaseReader, CNVreader, SeriesHandler):
@@ -35,11 +34,11 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         """
         data = {}
         if add_low_resolution_data:
-            profile = ctd_profile.CtdProfile()
+            profile = Profile()
 
         for fid in filenames:
             file_data = self.load(fid)
-            fid = get_filename(fid)
+            fid = utils.get_filename(fid)
             self.setup_dictionary(fid, data)
 
             serie = self.get_series_object(file_data)
@@ -72,7 +71,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
                                       separator=self.settings.datasets['cnv'].get(sep),
                                       keys=self.settings.datasets['cnv'].get('keys_metadata'))
 
-            meta_dict = config.recursive_dict_update(meta_dict, data)
+            meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
             meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}

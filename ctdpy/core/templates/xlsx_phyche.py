@@ -5,8 +5,8 @@ Created on Fri Oct 19 17:06:23 2018
 @author: a002028
 """
 
-from core.data_handlers import DataFrameHandler
-from .template import Template
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.templates.template import Template
 
 
 class PhyCheTemplateHandler(DataFrameHandler):

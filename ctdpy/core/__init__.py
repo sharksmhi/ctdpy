@@ -5,13 +5,16 @@ Created on Thu Jul 05 11:38:08 2018
 @author: a002028
 """
 
-from . import readers
-from . import writers
-from . import templates
-from . import ctd_profile
-from . import data_handlers
-from . import calculator
-from . import mapping
-from . import session
+from ctdpy.core import readers
+from ctdpy.core import writers
+from ctdpy.core import templates
+from ctdpy.core import profile
+from ctdpy.core import data_handlers
+from ctdpy.core import calculator
+from ctdpy.core import mapping
+from ctdpy.core import session
 
-from . import utils
+from ctdpy.core import config
+from ctdpy.core import utils
+
+# from .. import get_package_path

@@ -7,9 +7,9 @@ Created on Tue Jul 10 15:54:41 2018
 import os
 import glob
 from trollsift.parser import globify, parse
-from core.readers.txt_reader import load_txt
-from core.readers.file_handlers import BaseFileHandler
-from core import utils
+from ctdpy.core.readers.txt_reader import load_txt
+from ctdpy.core.readers.file_handlers import BaseFileHandler
+from ctdpy.core import utils
 
 
 class CNVreader(BaseFileHandler):

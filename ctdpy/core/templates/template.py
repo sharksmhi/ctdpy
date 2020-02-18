@@ -6,11 +6,11 @@ Created on Fri Jul 13 12:09:23 2018
 """
 
 import numpy as np
-from core.readers.xlsx_reader import load_excel
+from ctdpy.core.readers.xlsx_reader import load_excel
 
 import pandas as pd
 from datetime import datetime
-import utils
+from ctdpy.core import utils
 import re
 
 
@@ -56,7 +56,10 @@ class Template(pd.DataFrame):
         :return: Converted formats
         """
         #FIXME Test version.. Use methods outside Template instead..
-        timestamp = self['SDATE'].apply(lambda x: utils.convert_string_to_datetime_obj(x, '%b %d %Y %H:%M:%S'))
+        if 'timestamp' in self:
+            timestamp = self['timestamp']
+        else:
+            timestamp = self['SDATE'].apply(lambda x: utils.convert_string_to_datetime_obj(x, '%b %d %Y %H:%M:%S'))
         self['MYEAR'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
         self['STIME'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
         self['SDATE'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))

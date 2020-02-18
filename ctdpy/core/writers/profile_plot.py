@@ -387,13 +387,13 @@ class ProfilePlot(BaseAxes):
         # show(components([col_1, col_2]))
         # show(row(circle_plot, widgets)) #, sizing_mode='stretch_both'))
 
+
 if __name__ == '__main__':
     # path_zipfile = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\exports\\SHARK_CTD_2018_IBT_SMHI.zip'
-    path_zipfile = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\tests\\etc\\SHARK_CTD_2018_BAS_SMHI.zip'
+    path_zipfile = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\SHARK_CTD_2018_BAS_SMHI.zip'
 
     # profile_name = 'ctd_profile_SBE09_0827_20180120_0910_26_01_0126'
     profile_name = 'ctd_profile_SBE09_1044_20181205_1536_34_01_0154'
-
 
     start_time = time.time()
     rzip = ReadZipFile(path_zipfile, profile_name)

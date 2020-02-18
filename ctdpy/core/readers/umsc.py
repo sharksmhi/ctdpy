@@ -10,13 +10,13 @@ Created on Mon Oct 22 11:01:38 2018
 """
 import sys
 sys.path.append("..")
-import config
-import utils
+
 import numpy as np
-from core.data_handlers import DataFrameHandler
-from core.readers.seabird import SeaBird
-from core.readers.metadata import XLSXmeta
-from core.calculator import Calculator
+from ctdpy.core import utils
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.readers.seabird import SeaBird
+from ctdpy.core.readers.metadata import XLSXmeta
+from ctdpy.core.calculator import Calculator
 
 
 class SeaBirdUMSC(SeaBird):
@@ -25,7 +25,8 @@ class SeaBirdUMSC(SeaBird):
     def __init__(self, settings):
         super().__init__(settings)
 
-    def add_calculated_parameters(self, df, latit):
+    @staticmethod
+    def add_calculated_parameters(df, latit):
         """
         :param df:
         :param latit:
@@ -79,7 +80,7 @@ class SeaBirdUMSC(SeaBird):
                                       separator=self.settings.datasets['cnv'].get(sep),
                                       keys=self.settings.datasets['cnv'].get('keys_metadata'))
 
-            meta_dict = config.recursive_dict_update(meta_dict, data)
+            meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
             # meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}

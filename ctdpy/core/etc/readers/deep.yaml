@@ -1,0 +1,29 @@
+reader:
+    description: TOB Reader for Rinco data (DEEP settings)
+    name: tob_rinco_deep
+    sensors: []
+    default_channels: []
+    suffix: '.TOB'
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    rawctd:
+        file_reader: !!python/name:ctdpy.core.readers.deep.RincoDEEP ''
+        file_suffix: '.TOB'
+    xlsxmeta:
+        file_reader: !!python/name:ctdpy.core.readers.deep.MetadataDEEP ''
+        file_suffix: '.xlsx'
+        
+datasets:
+    tob:
+        name: tob
+        file_type: rawctd
+        identifier_data: '    '
+        identifier_header: '; Datasets'
+        separator_data: None
+        separator_header: None
+    xlsx:
+        name: xlsx
+        file_type: xlsxmeta
+        sheet_names: ["F�rklaring", Metadata, Sensorinfo, Information]
+        header_rows: [null, 2, 2, 0]

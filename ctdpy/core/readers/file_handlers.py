@@ -6,7 +6,7 @@ Created on Thu Jul 05 11:18:06 2018
 """
 from abc import ABCMeta
 import six
-from core import utils
+from ctdpy.core import utils
 
 
 class BaseFileHandler(six.with_metaclass(ABCMeta, object)):

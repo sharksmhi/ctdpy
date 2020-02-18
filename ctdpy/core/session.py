@@ -5,19 +5,15 @@ Created on Mon Sep 17 10:50:49 2018
 @author: a002028
 
 """
-import os
 import sys
 sys.path.append("..")
-import config
-import core
-from fnmatch import fnmatch
-from pprint import pprint
-from core.writers.profile_plot import ProfilePlot
-from core.archive_handler import Archive
-from core.utils import get_file_list_based_on_suffix
-from core import utils
+
 import time
-import json
+from pprint import pprint
+from ctdpy.core import config
+from ctdpy.core.writers.profile_plot import ProfilePlot
+from ctdpy.core.archive_handler import Archive
+from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, match_filenames
 
 # import logging
 # logging.basicConfig(level=logging.DEBUG,
@@ -61,6 +57,11 @@ class Session(object):
     def __init__(self, filepaths=None, reader=None):
 
         self.settings = config.Settings()
+        # pprint(self.settings.readers.keys())
+        # print(self.settings.readers[reader])
+        # print('\n\nsys.path')
+        # pprint(sys.path)
+        # print('\n\n')
         self.update_settings_attributes(**self.settings.readers[reader])
 
         filepaths = list(filepaths)
@@ -115,7 +116,7 @@ class Session(object):
         :return: list of matched filenames
         """
         if 'file_patterns' in file_type:
-            filenames_matched = utils.match_filenames(filenames, file_type['file_patterns'])
+            filenames_matched = match_filenames(filenames, file_type['file_patterns'])
         elif 'file_suffix' in file_type:
             filenames_matched = get_file_list_based_on_suffix(filenames, file_type['file_suffix'])
         else:
@@ -131,7 +132,6 @@ class Session(object):
         """
         #TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
-        pprint(self.settings.readers[reader]['datasets'])
         for dataset, dictionary in self.settings.readers[reader]['datasets'].items():
             file_type = self.settings.readers[reader]['file_types'][dictionary['file_type']]
             filenames_matched = self._get_filenames_matched(filepaths, file_type)
@@ -244,22 +244,28 @@ class Session(object):
 
 
 if __name__ == '__main__':
+    # import pandas as pd
+    # path = 'C:\\Temp\\CTD_DV\\SMF_2018\\original\\B1180123.TOB'
+    # df = pd.read_csv(path, encoding='cp1252')
     # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
+    base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v2-3\\ctd\data'
     # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
-    base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
+    # base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
+    # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
     # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
     # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 
     # files = os.listdir(base_dir)
-    files = utils.generate_filepaths(base_dir,
-                                     pattern_list=['.cnv', '.xlsx'],
-                                     # endswith='.cnv',
-                                     # endswith='.txt',
-                                     only_from_dir=True)
+    files = generate_filepaths(base_dir,
+                               # pattern_list=['.TOB', '.xlsx'],
+                               endswith='.cnv',
+                               # endswith='.txt',
+                               only_from_dir=True)
 
     start_time = time.time()
     s = Session(filepaths=files,
                 # base_dir=base_dir,
+                # reader='deep',
                 reader='smhi',
                 # reader='umsc',
                 # reader='ctd_stdfmt',
@@ -284,15 +290,15 @@ if __name__ == '__main__':
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
-    # start_time = time.time()
-    # data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
-    # print("Datasets saved--%.3f sec" % (time.time() - start_time))
+    start_time = time.time()
+    data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
+    print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        CREATE ARCHIVE        ###################
-    # start_time = time.time()
-    # s.create_archive(data_path=data_path)
-    # print("Archive created--%.3f sec" % (time.time() - start_time))
+    start_time = time.time()
+    s.create_archive(data_path=data_path)
+    print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        TEST PRINTS        ###################

@@ -6,8 +6,8 @@ Created on Fri Jul 13 13:26:05 2018
 """
 import pandas as pd
 import numpy as np
-from core.readers.file_handlers import BaseFileHandler
-from core import utils
+from ctdpy.core.readers.file_handlers import BaseFileHandler
+from ctdpy.core import utils
 import warnings
 warnings.filterwarnings("ignore", 'This pattern has match groups')
 
@@ -188,11 +188,32 @@ class SeriesHandler(BaseFileHandler):
         index = self.get_index(data, identifier_header.replace('~', ''), reversed_boolean=reversed)
         splitter = self.settings.datasets[dataset].get('separator_header')
         if first_row:
-            header = data[index].iloc[0].split(splitter)
+            if splitter == None or splitter == 'None':
+                header = data[index].iloc[0].split()
+            else:
+                header = data[index].iloc[0].split(splitter)
         else:
             header = [head.split(splitter)[idx].strip() for head in data[index]]
-#        header = self.map_header(header)
+
+        header = self.map_doublet_columns(header)
+
         return header
+
+    @staticmethod
+    def map_doublet_columns(header):
+        """
+        :param header:
+        :return:
+        """
+        doublet_dict = {col: header.count(col) for col in header}
+        new_header = []
+        for col in header:
+            if doublet_dict.get(col) > 1 and col in new_header:
+                # Assuming we only have two columns of the same name
+                new_header.append(col + '_2')
+            else:
+                new_header.append(col)
+        return new_header
 
     def get_data_in_frame(self, series, columns, dataset=None, splitter=None):
         """
@@ -203,7 +224,7 @@ class SeriesHandler(BaseFileHandler):
         :param dataset: str, reader specific dataset. Determines how to handle data format
         :return: pd.DataFrame
         """
-        #FIXME NOOOO!! not the way to go! if anything, add reversedas input argument! let the identifier be clean!
+        #FIXME NOOOO!! not the way to go! if anything, add reversed as input argument! let the identifier be clean!
         identifier_header = self.settings.datasets[dataset]['identifier_data']
         reversed = '~' in identifier_header
         idx = self.get_index(series, identifier_header.replace('~', ''), reversed_boolean=reversed)

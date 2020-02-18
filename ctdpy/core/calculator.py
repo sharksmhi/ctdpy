@@ -8,7 +8,7 @@ Created on 2019-11-06 08:27
 import gsw
 import numpy as np
 
-import utils
+from ctdpy.core import utils
 
 
 class Depth(object):
@@ -46,7 +46,7 @@ class Depth(object):
 
             # add current calculated water package height and sum up height list
             water_package_height.append(height)
-            depth_list.append(sum(water_package_height))
+            depth_list.append(utils.round_value(sum(water_package_height)))
 
             pres_0 = pres
             dens_0 = dens
@@ -88,8 +88,9 @@ class Depth(object):
     @pressure.setter
     def pressure(self, pressure_series):
         if pressure_series[1] < 1000:
-            # value for index 0 might be 0 dbar
+            # value for index 0 might be 0 dbar, therefor index 1
             # input unit equals dbar
+            # output unit equals Pascal (1 dbar = 10000 Pa)
             self._pressure = pressure_series * 10000
         else:
             self._pressure = pressure_series
@@ -128,7 +129,8 @@ class Calculator(object):
         """
         self.df = new_df
 
-    def get_true_depth(self, attribute_dictionary={}):
+    @staticmethod
+    def get_true_depth(attribute_dictionary={}):
         """
         :return:
         """

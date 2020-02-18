@@ -4,14 +4,14 @@ reader:
     sensors: [prDM, t090C, c0S/m, sbeox0ML/L, altM, flECO-AFL, par, turbWETntu0, svCM]
     default_channels: []
     suffix: '*.cnv'
-    reader: !!python/name:core.readers.yaml_reader.YAMLreader ''
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
 
 file_types:
     rawctd:
-        file_reader: !!python/name:core.readers.umsc.SeaBirdUMSC ''
+        file_reader: !!python/name:ctdpy.core.readers.umsc.SeaBirdUMSC ''
         file_suffix: '.cnv'
     xlsxmeta:
-        file_reader: !!python/name:core.readers.umsc.MetadataUMSC ''
+        file_reader: !!python/name:ctdpy.core.readers.umsc.MetadataUMSC ''
         file_suffix: '.xlsx'
         
 datasets:
@@ -31,5 +31,5 @@ datasets:
     xlsx:
         name: xlsx
         file_type: xlsxmeta
-        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        sheet_names: ["Fï¿½rklaring", Metadata, Sensorinfo, Information]
         header_rows: [null, 2, 2, 0]

@@ -9,6 +9,7 @@ Created on Thu Jul 19 13:38:35 2018
 import csv
 import numpy as np
 
+
 class TxtWriter(object):
     """ """
     def __init__(self, in_template=None):

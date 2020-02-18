@@ -5,11 +5,11 @@ Created on Fri Oct 26 17:00:35 2018
 @author: a002028
 """
 import pandas as pd
-from core.data_handlers import DataFrameHandler
-from core.data_handlers import SeriesHandler
-from core.writers.txt_writer import TxtWriter
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.data_handlers import SeriesHandler
+from ctdpy.core.writers.txt_writer import TxtWriter
 
-import utils
+from ctdpy.core import utils
 
 
 class StandardCTDWriter(SeriesHandler, DataFrameHandler):
@@ -35,7 +35,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         for dataset in data:
             for fid, item in dataset.items():
                 instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
-                                                                    separator=self.writer['separator_metadata'])
+                                                                    separator=self.writer['separator_metadata'],
+                                                                    data_identifier=item.get('identifier_data'))
                 metadata = self.extract_metadata(fid, separator=self.writer['separator_metadata'])
                 metadata_df = self.extract_metadata_dataframe(fid)
                 self.reset_index(metadata_df)
@@ -116,7 +117,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _adjust_data_formats(self):
         """
-
         :return:
         """
         self.file_name = self.df_metadata['FILE_NAME']  # property.setter, returns upper case filenames
@@ -275,21 +275,23 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         out_info = out_info.radd(self.writer['prefix_info'] + separator)
         return out_info
 
-    def _get_instrument_metadata(self, serie, separator=None):
+    def _get_instrument_metadata(self, serie, separator=None, data_identifier=None):
         """
         Sorts out instrument metadata from serie (everything but data)
         :param serie: pd.Series, Data in raw format
         :param separator: str, separator to separate row values
+        :param data_identifier: str, identifier of data within pandas.Series
         :return: Lists according to template standards
         """
-        end_idx = self.get_index(serie, self.writer['identifier_instrument_metadata_end'])
-        out_info = serie.iloc[:end_idx[0]+1]
+        if not data_identifier:
+            data_identifier = self.writer['identifier_instrument_metadata_end']
+        end_idx = self.get_index(serie, data_identifier)
+        out_info = serie.iloc[:end_idx[0]]
         out_info = out_info.radd(self.writer['prefix_instrument_metadata'] + separator)
         return out_info
 
     def _get_data_serie(self, df, separator=None):
         """
-
         :param df: pd.DataFrame, Column data
         :return: pd.Series, row data merged with separator
         """
@@ -308,6 +310,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return: pd.DataFrame
         """
         header = self.set_header()
+        if 'DEPH' not in header:
+            header.append('DEPH')
         dictionary = {key: [] for key in header}
         column_length = data.shape[0]
 

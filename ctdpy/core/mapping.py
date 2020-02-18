@@ -7,12 +7,8 @@ Created on Thu Jul 05 13:47:52 2018
 
 import pandas as pd
 import numpy as np
-from . import readers
+from ctdpy.core import readers
 #from readers import YAMLreader
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class AttributeDict(dict):
@@ -113,11 +109,6 @@ class AttributeDict(dict):
         """
         return getattr(self, key)
 
-"""
-#==============================================================================
-#==============================================================================
-"""
-
 
 class ParameterMapping(AttributeDict):
     """ Load file to map data fields and parameters to a standard setting format
@@ -158,12 +149,6 @@ class ParameterMapping(AttributeDict):
         :return: Dictionary
         """
         return self.get_mapping_dict(para_list)
-
-
-"""
-#==============================================================================
-#==============================================================================
-"""
 
 
 class ShipMapping(AttributeDict):
@@ -216,36 +201,3 @@ class ShipMapping(AttributeDict):
         :return: str, SHIP code (according to standard of ICES)
         """
         return self.get(cntry_shipc)
-
-
-"""
-#==============================================================================
-#==============================================================================
-""" 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

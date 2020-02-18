@@ -1,12 +1,12 @@
 writer:
     description: Converts datasets into standard output for CTD data (Text Writer)
-    writer: !!python/name:core.writers.standard_formats.StandardCTDWriter ''
+    writer: !!python/name:ctdpy.core.writers.standard_formats.StandardCTDWriter ''
     extension_filename: .txt
     filename: ctd_profile_
     identifier_instrument_metadata_end: '*END*'
-    mapper_delivery_note: {beskrivning av datasetet: DESCR, "beställare": ORDERER, data kontrollerad av: '',
+    mapper_delivery_note: {beskrivning av datasetet: DESCR, "bestï¿½llare": ORDERER, data kontrollerad av: '',
         datatyp: DTYPE, format: FORMAT, kommentar: COMNT_DN, kontaktperson: REPBY, projekt: PROJ,
-        "provtagningsår": MYEAR, rapporterande institut: RLABO, "övervakningsprogram": MPROG}
+        "provtagningsï¿½r": MYEAR, rapporterande institut: RLABO, "ï¿½vervakningsprogram": MPROG}
     name: ctd_standard_template
     prefix_data_delimiter: //DATA_DELIMITER
     prefix_format: //FORMAT
@@ -18,6 +18,6 @@ writer:
     separator_delivery_note: ": "
     separator_data: "\t"
     separator_metadata: ;
-    standard_delivery_note_header: [data kontrollerad av, format, projekt, rapporterande institut, datatyp, beskrivning av datasetet, "övervakningsprogram", "beställare", "provtagningsår", kontaktperson, kommentar]
+    standard_delivery_note_header: [data kontrollerad av, format, projekt, rapporterande institut, datatyp, beskrivning av datasetet, "ï¿½vervakningsprogram", "bestï¿½llare", "provtagningsï¿½r", kontaktperson, kommentar]
     standard_data_header: [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CRUISE, STATION,
         LATITUDE_DD, LONGITUDE_DD]

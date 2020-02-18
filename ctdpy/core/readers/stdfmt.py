@@ -5,11 +5,10 @@ Created on 2019-11-21 12:27
 @author: a002028
 
 """
-import utils
-import config
-from core.data_handlers import SeriesHandler
-from core.data_handlers import BaseReader
-from core.readers.cnv_reader import CNVreader
+from ctdpy.core import utils
+from ctdpy.core.data_handlers import SeriesHandler
+from ctdpy.core.data_handlers import BaseReader
+from ctdpy.core.readers.cnv_reader import CNVreader
 
 
 class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
@@ -65,17 +64,11 @@ class StandardFormatCTD(BaseSTDFMT):
             self.setup_dictionary(fid, data, ('data', 'metadata'))
 
             serie = self.get_series_object(file_data)
-            # print('serie', serie)
             metadata = self.get_metadata(serie, filename=fid)
-            # print('metadata')
-            # from pprint import pprint
-            # pprint(metadata)
             dataframe = self.setup_dataframe(serie)
-            # print('dataframe', dataframe)
 
             data[fid]['data'] = dataframe
             data[fid]['metadata'] = metadata
-            # break
 
         return data
 
@@ -86,10 +79,6 @@ class StandardFormatCTD(BaseSTDFMT):
         :return: Dictionary with metadata
         """
         # meta_dict = {}
-
-        #TODO right now, data is a pd.Series, no seperation of metadata..
-        # perhaps we want to access the delivery_note / metadata / sensorinfo / information?
-        # In that case, we remake this method..
         data = self.get_meta_dict(serie,
                                   identifier=self.settings.datasets['txt'].get('identifier_meta'),
                                   # separator=self.settings.datasets['txt'].get('separator_metadata'),

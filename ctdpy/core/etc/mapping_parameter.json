@@ -17,7 +17,8 @@
             "Temperatur", 
             "t090C: Temperature [ITS-90, deg C]",
             "tv290C: Temperature [ITS-90, deg C]",
-            "Temperature [ITS-90, deg C]"
+            "Temperature [ITS-90, deg C]",
+            "Temp"
         ], 
         "CNDC2_CTD": [
             "Konduktivitet2", 
@@ -37,7 +38,11 @@
         ], 
         "DOXY_CTD": [
             "Syrgashalt", 
-            "sbeox0ML/L: Oxygen, SBE 43 [ml/l]"
+            "sbeox0ML/L: Oxygen, SBE 43 [ml/l]",
+            "sbeox0ML/L: Oxygen, SBE 43 [ml/l], WS",
+            "sbeox0ML/L: Oxygen [ml/l], WS",
+            "sbeox0ML/L: Oxygen, [ml/l], WS = 2",
+            "DO_ml"
         ], 
         "PUMP_CTD": [
             "pump status", 
@@ -49,7 +54,8 @@
         ], 
         "CNDC_CTD": [
             "Konduktivitet", 
-            "c0S/m: Conductivity [S/m]"
+            "c0S/m: Conductivity [S/m]",
+            "Cond"
         ], 
         "TURB_CTD": [
             "Turbiditet", 
@@ -71,24 +77,32 @@
             "Tryck", 
             "prDM: Pressure, Digiquartz [db]",
             "Pressure, Strain Gauge [db]",
-            "prdM: Pressure, Strain Gauge [db]"
+            "prdM: Pressure, Strain Gauge [db]",
+            "Press"
         ], 
         "SDATE": [
             "NMEA UTC",
             "System UTC",
-            "start_time"
+            "start_time",
+            "IntD"
+        ], 
+        "STIME": [
+            "IntT"
         ], 
         "DENS_CTD": [
-            "Densitet", 
+            "Densitet",
+            "sigma-t00: Density [sigma-t, kg/m^3 ]",
             "sigma-t00: Density [sigma-t, Kg/m^3 ]",
-            "density00: Density [density, kg/m^3]"
+            "density00: Density [density, kg/m^3]",
+            "SIGMA"
         ], 
         "SVEL_CTD": [
             "Ljudhastighet", 
             "svCM: Sound Velocity [Chen-Millero, m/s]"
         ], 
         "DEPH": [
-            "Djup", 
+            "Djup",
+            "depSM: Depth [salt water, m], lat",
             "depFM: Depth [true depth, m], lat",
             "depFM: Depth [fresh water, m], lat"
         ], 
@@ -128,7 +142,8 @@
         ], 
         "DOXY2_CTD": [
             "Syrgashalt2", 
-            "sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]"
+            "sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]",
+            "sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l], WS"
         ], 
         "HUMUS_CTD": [
             "Humus", 
@@ -144,11 +159,13 @@
         ], 
         "SALT_CTD": [
             "Salthalt", 
-            "sal00: Salinity, Practical [PSU]"
+            "sal00: Salinity, Practical [PSU]",
+            "SALIN"
         ], 
         "SCAN_BIN_CTD": [
             "antal scans", 
-            "nbin: number of scans per bin"
+            "nbin: number of scans per bin",
+            "Datasets"
         ],
         "Q_FLAG": [
             "flag: flag"

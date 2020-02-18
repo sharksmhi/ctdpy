@@ -4,15 +4,18 @@ reader:
     sensors: [prDM, t090C, c0S/m, sbeox0ML/L, altM, flECO-AFL, par, turbWETntu0, svCM]
     default_channels: []
     suffix: '.cnv'
-    reader: !!python/name:core.readers.yaml_reader.YAMLreader ''
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
 
 file_types:
     rawctd:
-        file_reader: !!python/name:core.readers.smhi.SeaBirdSMHI ''
+        file_reader: !!python/name:ctdpy.core.readers.smhi.SeaBirdSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
         file_suffix: '.cnv'
+    rawmvp:
+        file_reader: !!python/name:ctdpy.core.readers.smhi.MVPSMHI ''
+        file_suffix: '.cnv'
     xlsxmeta:
-        file_reader: !!python/name:core.readers.smhi.MetadataSMHI ''
+        file_reader: !!python/name:ctdpy.core.readers.smhi.MetadataSMHI ''
         file_suffix: '.xlsx'
         
 datasets:
@@ -29,8 +32,21 @@ datasets:
         separator_header: '='
         separator_metadata: '='
         separator_metadata_2: ':'
+    cnv_mvp:
+        name: cnv_mvp
+        file_type: rawmvp
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', 'LIMS Job', Ship, Station, FileName, 'Longitude [GG MM.mm E]', 'Latitude [GG MM.mm N]', 'System UTC']
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
     xlsx:
         name: xlsx
         file_type: xlsxmeta
-        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        sheet_names: ["Fï¿½rklaring", Metadata, Sensorinfo, Information]
         header_rows: [null, 2, 2, 0]

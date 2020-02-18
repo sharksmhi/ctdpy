@@ -6,10 +6,10 @@ Created on 2018-11-20 08:55
 
 """
 import pandas as pd
-import utils
-from core.data_handlers import DataFrameHandler
-from core.data_handlers import SeriesHandler
-from core.writers.xlsx_writer import XlsxWriter
+from ctdpy.core import utils
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.data_handlers import SeriesHandler
+from ctdpy.core.writers.xlsx_writer import XlsxWriter
 
 
 class MetadataWriter(SeriesHandler, DataFrameHandler):

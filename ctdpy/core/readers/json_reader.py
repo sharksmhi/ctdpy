@@ -7,8 +7,9 @@ Created on Tue Jul 10 08:46:00 2018
 import json
 import numpy as np
 import pandas as pd
+from ctdpy.core import utils
 #from config import recursive_dict_update
-import config
+# import config
 # import sys
 # import importlib
 # importlib.reload(sys)
@@ -147,7 +148,7 @@ class JSONreader(object):
             
         for config_file in config_files:
             with open(config_file, 'r') as fd:
-                self.config = config.recursive_dict_update(self.config, json.load(fd))
+                self.config = utils.recursive_dict_update(self.config, json.load(fd))
 
         if return_config:
             return self.config
@@ -159,4 +160,3 @@ class JSONreader(object):
     def update_element(self, main_key='', label='', value=''):
         """ """
         pass
-

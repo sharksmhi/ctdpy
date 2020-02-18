@@ -6,7 +6,7 @@ Created on Fri Jul 13 13:22:24 2018
 """
 
 import pandas as pd
-from utils import is_sequence
+from ctdpy.core import utils
 
 
 def load_excel(file_path='', sheet_name=None, header_row=None):
@@ -23,7 +23,7 @@ def load_excel(file_path='', sheet_name=None, header_row=None):
 
     xlxs = pd.ExcelFile(file_path)
 
-    if is_sequence(sheet_name):
+    if utils.is_sequence(sheet_name):
         sheets = {}
         for sheet, h_row in zip(sheet_name, header_row):
             sheets[sheet] = read_sheet(sheet, h_row,

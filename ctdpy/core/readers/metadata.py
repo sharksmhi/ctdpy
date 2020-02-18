@@ -9,10 +9,10 @@ Created on 2019-11-04 10:37
 """
 import sys
 sys.path.append("..")
-from core.utils import get_filename
-from core.data_handlers import DataFrameHandler
-from core.data_handlers import BaseReader
-from core.readers.xlsx_reader import load_excel
+from ctdpy.core.utils import get_filename
+from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.data_handlers import BaseReader
+from ctdpy.core.readers.xlsx_reader import load_excel
 
 
 class XLSXmeta(BaseReader, DataFrameHandler):

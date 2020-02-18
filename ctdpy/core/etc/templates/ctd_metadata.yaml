@@ -5,7 +5,7 @@ template:
     header_row: [null, 2, 2, null, 0, null]
     suffix: '*.xlsx'
     file_path: /templates/Format CTD Profile.xlsx
-    reader: !!python/name:core.readers.xlsx_reader.load_excel ''
+    reader: !!python/name:ctdpy.core.readers.xlsx_reader.load_excel ''
 
 template_handler: 
-    !!python/name:core.templates.ctd_metadata.CTDTemplateHandler ''
+    !!python/name:ctdpy.core.templates.ctd_metadata.CTDTemplateHandler ''

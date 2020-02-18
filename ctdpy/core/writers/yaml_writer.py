@@ -9,11 +9,6 @@ import yaml
 import numpy as np
 import pandas as pd
 
-"""
-#==============================================================================
-#==============================================================================
-"""
-
 
 class YAMLwriter(dict):
     """
@@ -45,10 +40,39 @@ class YAMLwriter(dict):
         """
         out_file = self._check_format(out_file)
         with open(out_path, 'w') as path:
-            yaml.safe_dump(out_file, path, indent=indent) #, default_flow_style=False)
+            yaml.safe_dump(out_file, path, indent=indent, default_flow_style=False)
 
 
-"""
-#==============================================================================
-#==============================================================================
-"""
+if __name__ == '__main__':
+    yw = YAMLwriter()
+    import json
+    j_path = 'C:/Utveckling/algaware/etc/plot_setup.json'
+    with open(j_path, 'r') as fd:
+        setup = json.load(fd)
+
+
+
+    setup['function_types'] = {'date_locator': "!!python/name:plot.functions.MPLDatelocator ''",
+                               'date_formatter': "!!python/name:plot.functions.MPLDateformatter ''"}
+
+    setup['algaware']['figures']['The Skagerrak']['axes']['7']['x_axis']['major_locator'] = {'style': 'month',
+                                                                                             'args': [],
+                                                                                             'kwargs': {},
+                                                                                             'function': 'date_locator'}
+
+    setup['algaware']['figures']['The Skagerrak']['axes']['7']['x_axis']['major_formatter'] = {'style': 'date',
+                                                                                             'args': [''],
+                                                                                             'kwargs': {},
+                                                                                             'function': 'date_formatter'}
+
+    setup['algaware']['figures']['The Skagerrak']['axes']['7']['x_axis']['minor_locator'] = {'style': 'month',
+                                                                                             'args': [],
+                                                                                             'kwargs': {'bymonthday': 15},
+                                                                                             'function': 'date_locator'}
+
+    setup['algaware']['figures']['The Skagerrak']['axes']['7']['x_axis']['minor_formatter'] = {'style': 'date',
+                                                                                               'args': ['%b'],
+                                                                                               'kwargs': {},
+                                                                                               'function': 'date_formatter'}
+
+    yw.write_yaml(setup, out_path=j_path.replace('.json', '.yaml'))

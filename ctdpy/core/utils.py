@@ -6,6 +6,9 @@ Created on Tue Jul 10 14:46:21 2018
 """
 import os
 import numpy as np
+import pandas as pd
+from decimal import Decimal, ROUND_HALF_UP
+from collections import Mapping
 from fnmatch import fnmatch
 from datetime import datetime
 import shutil
@@ -300,6 +303,23 @@ def get_object_path(obj):
     return obj.__module__ + "." + obj.__name__
 
 
+def get_timestamp(x):
+    """
+    :param x:
+    :return:
+    """
+    return pd.Timestamp(x)
+
+
+def get_timestamp_minus_daydelta(date, delta=1):
+    """
+    :param date:
+    :param delta:
+    :return:
+    """
+    return date - pd.DateOffset(delta)
+
+
 def match_filenames(filenames, pattern):
     """
     Get the filenames matching *pattern*
@@ -331,6 +351,34 @@ def is_sequence(arg):
     """
     return (not hasattr(arg, "strip") and
             hasattr(arg, "__iter__"))
+
+
+def recursive_dict_update(d, u):
+    """ Recursive dictionary update using
+    Copied from:
+        http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
+        via satpy
+    """
+    for k, v in u.items():
+        if isinstance(v, Mapping):
+            r = recursive_dict_update(d.get(k, {}), v)
+            d.setdefault(k, r)
+        else:
+            d.setdefault(k, u[k])
+    return d
+    #         d[k] = r
+    #     else:
+    #         d[k] = u[k]
+    # return d
+
+
+def round_value(value, nr_decimals=3):
+    """ Calculate rounded value
+        2019-02-11
+        2019-03-11: Updated with ROUND_HALF_UP
+    """
+    return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' %nr_decimals % 1),
+                       rounding=ROUND_HALF_UP))
 
 
 def set_export_path(export_dir=None):
