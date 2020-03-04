@@ -29,6 +29,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         :return: Dictionary with DataFrames
         """
         reader = self.get_reader_instance()
+        print('\n\nEXCEL-filenames\n\n')
         for file_path in filenames:
             fid = get_filename(file_path)
             self.data[fid] = {}

@@ -10,15 +10,28 @@ import numpy as np
 import pandas as pd
 import zipfile
 # from pprint import pprint
-from bokeh.models import ColumnDataSource, CustomJS, WidgetBox, LinearAxis, Spacer  # , LabelSet, Slider
-from bokeh.layouts import row, column # , layout, widgetbox
+from bokeh.models import ColumnDataSource, CustomJS, WidgetBox, LinearAxis, Circle, TapTool, HoverTool, WheelZoomTool, PanTool, LassoSelectTool  # , LabelSet, Slider
+from bokeh.layouts import grid, row, column  # , layout, widgetbox
 from bokeh.models.widgets import Select, RangeSlider, DataTable, TableColumn, Panel, Tabs
 from bokeh.plotting import figure, show, output_file
-# from bokeh.embed import components, file_html
-# from bokeh.resources import CDN
+from bokeh.tile_providers import get_provider, Vendors
 
-# from bokeh.sampledata.periodic_table import elements
-# from bokeh.resources import INLINE
+
+def convert_projection(lats, lons):
+    """
+
+    :param lats:
+    :param lons:
+    :return:
+    """
+    #TODO MOVE! this exists somewhere else too..
+    import pyproj
+
+    project_projection = pyproj.Proj("EPSG:4326")  # wgs84
+    google_projection = pyproj.Proj("EPSG:3857")  # default google projection
+
+    x, y = pyproj.transform(project_projection, google_projection, lats, lons)
+    return x, y
 
 
 class ReadZipFile(object):
@@ -62,7 +75,10 @@ class ReadZipFile(object):
         :param astype: set data as this type eg. float, int, str
         :return: dict or pd.DataFrame
         """
-        return self._df.loc[:, parameters].astype(astype)
+        if astype:
+            return self._df.loc[:, parameters].astype(astype)
+        else:
+            return self._df.loc[:, parameters]
 
     def open_file(self, file_path, comment='//'):
         """
@@ -388,40 +404,235 @@ class ProfilePlot(BaseAxes):
         # show(row(circle_plot, widgets)) #, sizing_mode='stretch_both'))
 
 
+class CallBacks(object):
+    """
+
+    """
+    def __init__(self):
+        super().__init__()
+
+    def station_callback(self, position_source=None, data_source=None):
+        """"""
+        # assert position_source, data_source
+        code = """
+        // Set column name to select similar glyphs
+        var column = 'KEY';
+
+        // Get data from ColumnDataSource
+        var data = source.data;
+        var data2 = source2.data;
+
+        // Get indices array of all selected items
+        var selected = source.selected.indices;
+
+        // Update active keys in data source 
+        data2['x1'] = data2[data[column][selected[0]]+'_TEMP_CTD [°C (ITS-90)]'];
+        data2['x1b'] = data2[data[column][selected[0]]+'_TEMP2_CTD [°C (ITS-90)]'];
+        
+        data2['x2'] = data2[data[column][selected[0]]+'_SALT_CTD [psu (PSS-78)]'];
+        data2['x2b'] = data2[data[column][selected[0]]+'_SALT2_CTD [psu (PSS-78)]'];
+        
+        data2['x3'] = data2[data[column][selected[0]]+'_DOXY_CTD [ml/l]'];
+        data2['x3b'] = data2[data[column][selected[0]]+'_DOXY2_CTD [ml/l]'];
+        
+        data2['y'] = data2[data[column][selected[0]]+'_PRES_CTD [dbar]'];
+
+        // Save changes to ColumnDataSource
+        source2.change.emit();
+
+        """
+        # Create a CustomJS callback with the code and the data
+        return CustomJS(args={'source': position_source,
+                              'source2': data_source},
+                        code=code)
+
+
+class QCPlot(CallBacks):
+    """
+    """
+    def __init__(self, dataframe, parameters=None, tabs=None):
+        super().__init__()
+        self.df = dataframe
+        self.parameters = parameters
+        self.tabs = tabs
+        output_file("tile.html")
+        self.TOOLS = "reset,hover,pan,wheel_zoom,box_zoom,lasso_select,save"
+
+        self.TOOLTIPS = HoverTool(tooltips=[("Station", "@STATION"),
+                                            # ("Date", "@SDATE"),
+                                            ("Serie", "@KEY")])
+
+        self.tile_provider = get_provider(Vendors.CARTODBPOSITRON_RETINA)
+
+        self._setup_position_source()
+        self._setup_data_source()
+
+    def _setup_position_source(self):
+        """
+        :return:
+        """
+        position_df = self.df[['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'KEY']].drop_duplicates(
+            keep='first').reset_index(drop=True)
+        xs, ys = convert_projection(position_df['LATITUDE_DD'].astype(float).values, position_df['LONGITUDE_DD'].astype(float).values)
+        position_df['LONGI'] = xs
+        position_df['LATIT'] = ys
+        self.position_source = ColumnDataSource(data=position_df)
+
+    def _setup_data_source(self):
+        """
+        :return:
+        """
+        print('Setting up data source structure...')
+        # self.df[self.parameters] = self.df[self.parameters].astype(float)
+        data_dict = {}
+        for key in self.position_source.data['KEY']:
+            for parameter in self.parameters:
+                data_key = '_'.join((key, parameter))
+                data_boolean = self.df['KEY'] == key
+                data_dict[data_key] = self.df.loc[data_boolean, parameter].values
+
+        length = 0
+        for key in data_dict:
+            l = len(data_dict[key])
+            if l > length:
+                length = l
+        for key in data_dict:
+            if len(data_dict[key]) < length:
+                data_dict[key] = np.pad(data_dict[key].astype(float),
+                                        (0, length-len(data_dict[key])),
+                                        'constant',
+                                        constant_values=np.nan)
+        for std_key in ('x1', 'x1b', 'x2', 'x2b', 'x3', 'x3b', 'y'):
+            data_dict[std_key] = [1.] * length
+        self.data_source = ColumnDataSource(data=data_dict)
+
+        print('\nData source structure completed!\n')
+
+    def set_map(self):
+        """"""
+        pan = PanTool()
+        tap = TapTool()
+        wheel = WheelZoomTool()
+        # range bounds supplied in web mercator coordinates
+        self.map = figure(x_range=(500000, 3500000), y_range=(7000000, 8500000),
+                          x_axis_type="mercator", y_axis_type="mercator",
+                          tools=[pan, wheel, tap,
+                                 self.TOOLTIPS])
+
+        self.map.toolbar.active_scroll = self.map.select_one(WheelZoomTool)
+
+        self.map.add_tile(self.tile_provider)
+
+        tap.callback = self.station_callback(position_source=self.position_source, data_source=self.data_source)
+
+    def plot_stations(self):
+        """"""
+        renderer = self.map.circle('LONGI', 'LATIT', source=self.position_source,
+                                   color="blue", line_color="aquamarine", size=8, alpha=0.7)
+
+        selected_circle = Circle(fill_alpha=1, fill_color="red", line_color=None)
+        nonselected_circle = Circle(fill_alpha=0.3, fill_color="blue", line_color="aquamarine")
+
+        renderer.selection_glyph = selected_circle
+        renderer.nonselection_glyph = nonselected_circle
+
+    def plot_data(self):
+        """"""
+        self.temp = figure(tools="reset,wheel_zoom,lasso_select", title="CTD Temperature")
+        self.temp.circle('x1', 'y', color="navy", size=8, alpha=0.5, source=self.data_source, legend='Sensor 1')
+        self.temp.circle('x1b', 'y', color="deepskyblue", size=8, alpha=0.5, source=self.data_source, legend='Sensor 2')
+        self.temp.toolbar.active_scroll = self.temp.select_one(WheelZoomTool)
+        self.temp.y_range.flipped = True
+        self.temp.legend.location = "top_left"
+
+        self.salt = figure(tools="reset,wheel_zoom,lasso_select", title="CTD Salinity")
+        self.salt.circle('x2', 'y', color="indianred", size=8, alpha=0.5, source=self.data_source, legend='Sensor 1')
+        self.salt.circle('x2b', 'y', color="sandybrown", size=8, alpha=0.5, source=self.data_source, legend='Sensor 2')
+        self.salt.toolbar.active_scroll = self.salt.select_one(WheelZoomTool)
+        self.salt.y_range.flipped = True
+        self.salt.legend.location = "top_left"
+
+        self.doxy = figure(tools="reset,wheel_zoom,lasso_select", title="CTD Oxygen")
+        self.doxy.circle('x3', 'y', color="dimgray", size=8, alpha=0.5, source=self.data_source, legend='Sensor 1')
+        self.doxy.circle('x3b', 'y', color="black", size=8, alpha=0.5, source=self.data_source, legend='Sensor 2')
+        self.doxy.toolbar.active_scroll = self.doxy.select_one(WheelZoomTool)
+        self.doxy.y_range.flipped = True
+        self.doxy.legend.location = "top_left"
+
+        # self.ts = figure(tools="reset,wheel_zoom,lasso_select", title="CTD TS Diagram")
+        # self.ts.circle('x2', 'x1', color="dimgray", size=8, alpha=0.5, source=self.data_source, legend='Sensor 1')
+        # self.ts.circle('x2b', 'x1b', color="black", size=8, alpha=0.5, source=self.data_source, legend='Sensor 2')
+        # self.ts.toolbar.active_scroll = self.ts.select_one(WheelZoomTool)
+        # self.ts.y_range.flipped = True
+        # self.ts.legend.location = "top_left"
+
+    def show_plot(self):
+        l = grid([[self.map],
+                  [self.temp, self.salt, self.doxy]],  # self.ts
+                 sizing_mode='stretch_both'
+                 )
+        show(l)
+
+
 if __name__ == '__main__':
     # path_zipfile = 'D:\\Utveckling\\Github\\ctdpy\\ctdpy\\exports\\SHARK_CTD_2018_IBT_SMHI.zip'
     path_zipfile = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\SHARK_CTD_2018_BAS_SMHI.zip'
 
     # profile_name = 'ctd_profile_SBE09_0827_20180120_0910_26_01_0126'
     profile_name = 'ctd_profile_SBE09_1044_20181205_1536_34_01_0154'
+    profile_name2 = 'ctd_profile_SBE09_1044_20181206_1139_34_01_0157'
 
     start_time = time.time()
     rzip = ReadZipFile(path_zipfile, profile_name)
+    rzip2 = ReadZipFile(path_zipfile, profile_name2)
     print("Zipfile loaded--%.3f sec" % (time.time() - start_time))
     # print(rzip._df)
 
-    parameter_list = ['PRES_CTD [dbar]', 'CNDC_CTD [S/m]', 'CNDC2_CTD [S/m]', 'SALT_CTD [psu (PSS-78)]',
-                      'SALT2_CTD [psu (PSS-78)]', 'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
-                      'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]', 'PAR_CTD [µE/(cm2 ·sec)]', 'CHLFLUO_CTD [mg/m3]',
-                      'TURB_CTD [NTU]', 'PHYC_CTD [ppb]']
+    data_parameter_list = ['PRES_CTD [dbar]',
+                           'SALT_CTD [psu (PSS-78)]', 'SALT2_CTD [psu (PSS-78)]',
+                           'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
+                           'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]',
+                           ]
+    df_parameter_list = data_parameter_list + ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'YEAR', 'MONTH', 'DAY']
+    # parameter_list = ['PRES_CTD [dbar]', 'CNDC_CTD [S/m]', 'CNDC2_CTD [S/m]', 'SALT_CTD [psu (PSS-78)]',
+    #                   'SALT2_CTD [psu (PSS-78)]', 'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
+    #                   'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]', 'PAR_CTD [µE/(cm2 ·sec)]', 'CHLFLUO_CTD [mg/m3]',
+    #                   'TURB_CTD [NTU]', 'PHYC_CTD [ppb]']
     # parameter_list = ['PRES_CTD [dbar]','CNDC_CTD [mS/m]','CNDC2_CTD [mS/m]','SALT_CTD [psu]','SALT2_CTD [psu]',
     #                       'TEMP_CTD [°C]','TEMP2_CTD [°C]','DOXY_CTD [ml/l]','DOXY2_CTD [ml/l]',
     #                       'PAR_CTD [µE/(cm2 ·sec)]','CHLFLUO_CTD [mg/m3]','TURB_CTD [NTU]','PHYC_CTD [ppb]']
 
     start_time = time.time()
-    data = rzip.get_data(parameter_list)
+    data = rzip.get_data(df_parameter_list, astype=None)
+    data2 = rzip2.get_data(df_parameter_list, astype=None)
 
     print("Data retrieved--%.3f sec" % (time.time() - start_time))
     #    data = rzip.get_dataframe()
     # print(data)
+    data['key'] = data[['YEAR', 'MONTH', 'DAY', 'STATION']].apply(lambda x: '_'.join(x), axis=1)
+    data2['key'] = data2[['YEAR', 'MONTH', 'DAY', 'STATION']].apply(lambda x: '_'.join(x), axis=1)
+
+    data = data.append(data2).reset_index(drop=True)
 
     start_time = time.time()
-    profile = ProfilePlot(data, parameters=parameter_list)
-    profile.plot(x='TEMP_CTD [°C (ITS-90)]',
-                 y='PRES_CTD [dbar]',
-                 z='SALT_CTD [psu (PSS-78)]',
-                 name=profile_name)
+    plot = QCPlot(data, parameters=data_parameter_list)
+    plot.set_map()
+    plot.plot_stations()
+    plot.plot_data()
+    plot.show_plot()
+    # plot.plot(x='TEMP_CTD [°C (ITS-90)]',
+    #              y='PRES_CTD [dbar]',
+    #              z='SALT_CTD [psu (PSS-78)]',
+    #              name=profile_name)
     print("Data ploted--%.3f sec" % (time.time() - start_time))
+
+    # start_time = time.time()
+    # profile = ProfilePlot(data, parameters=parameter_list)
+    # profile.plot(x='TEMP_CTD [°C (ITS-90)]',
+    #              y='PRES_CTD [dbar]',
+    #              z='SALT_CTD [psu (PSS-78)]',
+    #              name=profile_name)
+    # print("Data ploted--%.3f sec" % (time.time() - start_time))
 
 
 

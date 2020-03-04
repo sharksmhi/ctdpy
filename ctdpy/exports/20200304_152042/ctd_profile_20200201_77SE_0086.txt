@@ -1,0 +1,529 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2020
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2020-02-01
+//METADATA;STIME;05:29
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;77SE
+//METADATA;CRUISE_NO;SMHI-02-2020
+//METADATA;SERNO;0086
+//METADATA;STATN;Laso ranna
+//METADATA;LATIT;5726.43
+//METADATA;LONGI;01049.68
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1387_20200201_0529_77_10_0086.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20200201_77SE_0086.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Information om instrumenthantering, datahantering; processering, beskrivning, kvalitetskontroll etc, kommentarer på datakvalité m.m.
+//INFORMATION;(förslagsvis på engelska för att att nå ut till fler användare av data)
+//INSTRUMENT_METADATA;* Sea-Bird SBE 9 Data File:
+//INSTRUMENT_METADATA;* FileName = L:\2020\sv20d0086.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.7.121
+//INSTRUMENT_METADATA;* Temperature SN = 6378
+//INSTRUMENT_METADATA;* Conductivity SN = 4824
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Feb 01 2020 05:29:25
+//INSTRUMENT_METADATA;* NMEA Latitude = 57 26.43 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 010 49.68 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Feb 01 2020  05:29:24
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  Laso ranna
+//INSTRUMENT_METADATA;** Operator:  A-KTh
+//INSTRUMENT_METADATA;** Ship: SVEA
+//INSTRUMENT_METADATA;** Average sound velocity: 1474.01 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sat, 01 Feb 2020 09:52:35 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20207710-0086
+//INSTRUMENT_METADATA;** Cruise: SMHI-02-2020
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GGG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Feb 01 2020 05:29:25
+//INSTRUMENT_METADATA;# nquan = 30
+//INSTRUMENT_METADATA;# nvalues = 80                          
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 5 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 6 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 7 = sbeox0V: Oxygen raw, SBE 43 [V]
+//INSTRUMENT_METADATA;# name 8 = sbeox1V: Oxygen raw, SBE 43, 2 [V]
+//INSTRUMENT_METADATA;# name 9 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 10 = dz/dtM: Descent Rate [m/s]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 19 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 21 = depSM: Depth [salt water, m], lat = 57.4405
+//INSTRUMENT_METADATA;# name 22 = depFM: Depth [true depth, m], lat = 57.4405
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = sbeox0ML/L: Oxygen, SBE 43 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 26 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 27 = sbeox0PS: Oxygen, SBE 43 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 28 = sbeox1PS: Oxygen, SBE 43, 2 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 29 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      23195,      31881       
+//INSTRUMENT_METADATA;# span 1 =      1.000,     40.500       
+//INSTRUMENT_METADATA;# span 2 =     5.8368,     6.9810       
+//INSTRUMENT_METADATA;# span 3 =     5.8367,     6.9803       
+//INSTRUMENT_METADATA;# span 4 =   2.959402,   3.400338       
+//INSTRUMENT_METADATA;# span 5 =   2.959383,   3.400161       
+//INSTRUMENT_METADATA;# span 6 =          1,          1       
+//INSTRUMENT_METADATA;# span 7 =     3.5043,     3.5990       
+//INSTRUMENT_METADATA;# span 8 =     3.2669,     3.3518       
+//INSTRUMENT_METADATA;# span 9 =       0.95,      61.36       
+//INSTRUMENT_METADATA;# span 10 =     -0.191,      0.563      
+//INSTRUMENT_METADATA;# span 11 =     0.3789,     2.4821      
+//INSTRUMENT_METADATA;# span 12 =     0.1953,     0.7159      
+//INSTRUMENT_METADATA;# span 13 = 1.0000e-12, 2.0844e+00      
+//INSTRUMENT_METADATA;# span 14 =     0.4255,     2.3896      
+//INSTRUMENT_METADATA;# span 15 =    29.8019,    33.5901      
+//INSTRUMENT_METADATA;# span 16 =    29.8021,    33.5890      
+//INSTRUMENT_METADATA;# span 17 =    -0.0249,     0.0288      
+//INSTRUMENT_METADATA;# span 18 =    -0.0060,     0.0106      
+//INSTRUMENT_METADATA;# span 19 =    23.4664,    26.3109      
+//INSTRUMENT_METADATA;# span 20 =    23.4666,    26.3100      
+//INSTRUMENT_METADATA;# span 21 =      0.991,     40.123      
+//INSTRUMENT_METADATA;# span 22 =      0.995,     40.228      
+//INSTRUMENT_METADATA;# span 23 =    1467.56,    1477.48      
+//INSTRUMENT_METADATA;# span 24 =    1467.56,    1477.48      
+//INSTRUMENT_METADATA;# span 25 =     6.2738,     6.8185      
+//INSTRUMENT_METADATA;# span 26 =     6.3660,     6.9226      
+//INSTRUMENT_METADATA;# span 27 =     92.026,     94.985      
+//INSTRUMENT_METADATA;# span 28 =     93.368,     96.432      
+//INSTRUMENT_METADATA;# span 29 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Feb 01 2020 05:29:24 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6378</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.38203097e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.42735305e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.29129716e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.11079008e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4824</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.87146657e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.28867025e+000</H>
+//INSTRUMENT_METADATA;#         <I>4.09053062e-004</I>
+//INSTRUMENT_METADATA;#         <J>3.18252404e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1387</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>31-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-7.924400e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>1.544540e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.127510e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.358900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.019071e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-1.409710e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.227440e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.567620e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.278280e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.997610e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6384</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>04-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.32006699e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.32109851e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.15638014e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.96975443e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.81362538e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.31135002e+000</H>
+//INSTRUMENT_METADATA;#         <I>9.90527855e-005</I>
+//INSTRUMENT_METADATA;#         <J>5.58058935e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3823</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.3650e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7250</offset>
+//INSTRUMENT_METADATA;#         <A>-3.8927e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4045e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2716e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1700</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.7087e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7004</offset>
+//INSTRUMENT_METADATA;#         <A>-4.4432e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.8923e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.9772e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.8000</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1251</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Feb 01 2020 09:52:18, 7.26.7.129 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.hex C:\ctd\temp\SBE09_1387_20200201_0529_77_10_0086.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Feb 01 2020 09:52:20, 7.26.7.129
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = dz/dtM flECO-AFL flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Feb 01 2020 09:52:22, 7.26.7.129
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0V 4.000, sbeox1V 4.000                                                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Feb 01 2020 09:52:23, 7.26.7.129
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Feb 01 2020 09:52:24, 7.26.7.129
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Feb 01 2020 09:52:25, 7.26.7.129 [derive_vars = 14]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_docdt = seconds: 2
+//INSTRUMENT_METADATA;# derive_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# binavg_date = Feb 01 2020 09:52:27, 7.26.7.129
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_omit = 0
+//INSTRUMENT_METADATA;# binavg_min_scans_bin = 1
+//INSTRUMENT_METADATA;# binavg_max_scans_bin = 2147483647
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Feb 01 2020 09:52:29, 7.26.7.129
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1387_20200201_0529_77_10_0086.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	0.995		1.000		2.96160		2.96022		29.8268		29.8119		5.8377		5.8372		6.8125		6.9187		2.084e+00		2.2636		0.4255000		0.6286		57.04		0.022		23195		1		23.4860		23.4742		1467.58		1467.56	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	1.493		1.500		2.95979		2.95950		29.8065		29.8030		5.8377		5.8380		6.8185		6.9100		1.404e+00		2.4821		0.4395000		0.6912		39.36		0.115		23326		1		23.4699		23.4671		1467.56		1467.56	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	1.990		2.000		2.95940		2.95938		29.8019		29.8021		5.8377		5.8372		6.8149		6.9148		1.211e+00		2.4011		0.5293000		0.6707		39.53		0.334		23360		1		23.4664		23.4666		1467.56		1467.56	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	2.488		2.500		2.95950		2.95948		29.8036		29.8035		5.8368		5.8367		6.8168		6.9226		1.119e+00		2.4257		0.5259000		0.7108		46.61		0.329		23395		1		23.4677		23.4677		1467.57		1467.57	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	2.986		3.000		2.95952		2.96010		29.8033		29.8098		5.8371		5.8370		6.8166		6.9199		8.844e-01		2.3298		0.4840000		0.6986		41.13		0.304		23436		1		23.4675		23.4726		1467.58		1467.59	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	3.483		3.500		2.96055		2.96318		29.8145		29.8430		5.8371		5.8380		6.8139		6.9198		6.815e-01		2.3206		0.4941000		0.6321		26.30		0.286		23478		1		23.4763		23.4987		1467.60		1467.64	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	3.981		4.000		2.96480		2.96508		29.8603		29.8632		5.8385		5.8388		6.8108		6.9165		5.276e-01		2.3554		0.5293000		0.6883		45.54		0.267		23522		1		23.5123		23.5146		1467.67		1467.68	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	4.478		4.500		2.96625		2.96600		29.8755		29.8727		5.8393		5.8393		6.8093		6.9180		3.903e-01		2.4281		0.5125000		0.6713		46.30		0.303		23562		1		23.5242		23.5221		1467.70		1467.70	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	4.976		5.000		2.96795		2.96798		29.8934		29.8937		5.8403		5.8402		6.8060		6.9155		3.089e-01		2.3504		0.5201000		0.7159		56.40		0.307		23598		1		23.5383		23.5385		1467.74		1467.74	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	5.473		5.500		2.97072		2.97047		29.9226		29.9199		5.8418		5.8416		6.8082		6.9140		2.357e-01		2.2796		0.5208000		0.6242		43.28		0.392		23629		1		23.5611		23.5590		1467.79		1467.79	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	5.971		6.000		2.97387		2.97418		29.9559		29.9591		5.8435		5.8438		6.8021		6.9115		1.812e-01		2.3002		0.5225000		0.5673		35.19		0.319		23667		1		23.5872		23.5897		1467.85		1467.85	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	6.468		6.500		2.98023		2.98047		30.0230		30.0256		5.8473		5.8474		6.7978		6.9064		1.362e-01		2.3061		0.5390000		0.5451		56.18		0.359		23697		1		23.6398		23.6419		1467.96		1467.96	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	6.966		7.000		2.98709		2.98805		30.0950		30.1053		5.8518		5.8524		6.7958		6.8955		8.920e-02		2.2728		0.5732000		0.6059		43.30		0.452		23723		1		23.6961		23.7041		1468.07		1468.09	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	7.463		7.500		2.99397		2.99460		30.1665		30.1732		5.8572		5.8576		6.7888		6.8876		4.863e-02		2.2121		0.5479000		0.6981		34.06		0.441		23751		1		23.7519		23.7572		1468.19		1468.20	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	7.961		8.000		2.99839		2.99871		30.2124		30.2157		5.8608		5.8610		6.7859		6.8945		2.589e-02		2.2830		0.5660000		0.6263		61.36		0.396		23782		1		23.7877		23.7903		1468.27		1468.28	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	8.458		8.500		3.00654		3.00709		30.2966		30.3026		5.8677		5.8679		6.7818		6.8910		8.289e-03		2.2391		0.5556000		0.6062		32.47		0.424		23808		1		23.8534		23.8581		1468.42		1468.43	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	8.956		9.000		3.01274		3.01247		30.3613		30.3586		5.8723		5.8720		6.7624		6.8643		4.838e-05		2.1938		0.5334000		0.6884		32.50		0.494		23831		1		23.9039		23.9018		1468.53		1468.52	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	9.453		9.500		3.02231		3.02122		30.4583		30.4472		5.8827		5.8815		6.7415		6.8385		5.811e-07		2.1297		0.5745000		0.6720		32.08		0.518		23855		1		23.9794		23.9707		1468.70		1468.68	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	9.950		10.000		3.07199		3.07207		30.9602		30.9613		5.9390		5.9388		6.7055		6.7928		1.000e-12		1.5868		0.5196000		0.5978		32.09		0.487		23880		1		24.3690		24.3699		1469.56		1469.56	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	10.447		10.500		3.11498		3.11599		31.3886		31.3977		5.9939		5.9962		6.6643		6.7531		1.000e-12		1.4338		0.4807000		0.4803		31.84		0.456		23907		1		24.7008		24.7077		1470.33		1470.35	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	10.944		11.000		3.12223		3.12520		31.4581		31.4869		6.0058		6.0104		6.6502		6.7476		1.000e-12		1.4991		0.4640000		0.4884		30.76		0.436		23934		1		24.7542		24.7764		1470.48		1470.53	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	11.441		11.500		3.14593		3.14320		31.6816		31.6567		6.0492		6.0432		6.6353		6.7313		1.000e-12		1.4379		0.4622000		0.3915		30.18		0.448		23961		1		24.9254		24.9065		1470.94		1470.88	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	11.938		12.000		3.15283		3.15299		31.7431		31.7439		6.0654		6.0665		6.6318		6.7203		1.000e-12		1.3064		0.4488000		0.3966		29.70		0.458		23987		1		24.9720		24.9725		1471.09		1471.10	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	12.435		12.500		3.15566		3.15594		31.7590		31.7613		6.0819		6.0827		6.6307		6.7234		1.000e-12		1.2663		0.4581000		0.4646		29.22		0.476		24011		1		24.9826		24.9843		1471.18		1471.19	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	12.932		13.000		3.16239		3.16312		31.8045		31.8105		6.1130		6.1153		6.6272		6.7140		1.000e-12		1.1791		0.4642000		0.3633		28.63		0.517		24033		1		25.0147		25.0192		1471.37		1471.39	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	13.429		13.500		3.17875		3.17979		31.9283		31.9376		6.1748		6.1771		6.5794		6.6513		1.000e-12		1.0832		0.4742000		0.3593		26.62		0.536		24056		1		25.1049		25.1119		1471.79		1471.81	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	13.925		14.000		3.20628		3.20782		32.1584		32.1720		6.2550		6.2586		6.5440		6.6111		1.000e-12		0.8992		0.4504000		0.3099		22.02		0.519		24080		1		25.2765		25.2868		1472.40		1472.43	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	14.422		14.500		3.24268		3.24566		32.4131		32.4368		6.4117		6.4215		6.5059		6.5743		1.000e-12		0.7458		0.4575000		0.3072		17.33		0.507		24103		1		25.4577		25.4752		1473.35		1473.42	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	14.919		15.000		3.28264		3.28418		32.7093		32.7241		6.5644		6.5668		6.4539		6.5304		1.000e-12		0.5778		0.5285000		0.2833		16.05		0.503		24128		1		25.6719		25.6832		1474.33		1474.36	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	15.415		15.500		3.30007		3.30174		32.8714		32.8796		6.5959		6.6064		6.4409		6.5358		1.000e-12		0.5002		0.6046000		0.2598		15.76		0.477		24153		1		25.7956		25.8007		1474.67		1474.72	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	15.912		16.000		3.31335		3.31506		32.9673		32.9781		6.6483		6.6566		6.4477		6.5561		1.000e-12		0.4614		0.6813000		0.2710		13.75		0.459		24179		1		25.8644		25.8718		1475.00		1475.05	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	16.408		16.500		3.32474		3.32548		33.0717		33.0837		6.6701		6.6661		6.4555		6.5567		1.000e-12		0.4572		0.7799000		0.2931		12.95		0.465		24205		1		25.9438		25.9538		1475.23		1475.23	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	16.904		17.000		3.32762		3.32851		33.1257		33.1364		6.6468		6.6461		6.4639		6.5587		1.000e-12		0.4126		0.8306000		0.3022		11.35		0.462		24231		1		25.9895		25.9979		1475.21		1475.22	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	17.401		17.500		3.33002		3.32969		33.1500		33.1469		6.6489		6.6483		6.4649		6.5592		1.000e-12		0.4037		0.7506000		0.2767		11.34		0.474		24255		1		26.0083		26.0060		1475.26		1475.25	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	17.897		18.000		3.33019		3.33007		33.1510		33.1498		6.6495		6.6495		6.4695		6.5588		1.000e-12		0.4054		0.7516000		0.2902		13.56		0.525		24277		1		26.0090		26.0081		1475.27		1475.27	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	18.393		18.500		3.33048		3.33038		33.1530		33.1518		6.6505		6.6506		6.4651		6.5519		1.000e-12		0.4057		0.7721000		0.2364		14.01		0.559		24299		1		26.0105		26.0095		1475.29		1475.29	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	18.890		19.000		3.33066		3.33060		33.1541		33.1532		6.6512		6.6514		6.4543		6.5410		1.000e-12		0.4138		0.7610000		0.2378		13.86		0.514		24324		1		26.0112		26.0105		1475.30		1475.30	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	19.386		19.500		3.33490		3.33622		33.1826		33.1915		6.6698		6.6756		6.4353		6.5232		1.000e-12		0.3935		0.7477000		0.2207		13.73		0.456		24350		1		26.0312		26.0375		1475.41		1475.45	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	19.882		20.000		3.34330		3.34393		33.2396		33.2433		6.7064		6.7097		6.4153		6.5012		1.000e-12		0.4035		0.8481000		0.2911		13.57		0.489		24373		1		26.0714		26.0739		1475.64		1475.65	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	20.379		20.500		3.34918		3.34950		33.2771		33.2781		6.7343		6.7370		6.4061		6.4924		1.000e-12		0.4059		1.0144000		0.2482		14.14		0.520		24396		1		26.0973		26.0976		1475.80		1475.81	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	20.875		21.000		3.35411		3.35400		33.3045		33.3034		6.7617		6.7617		6.3981		6.4844		1.000e-12		0.3854		1.1817000		0.2557		13.63		0.500		24421		1		26.1152		26.1143		1475.95		1475.95	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	21.371		21.500		3.35638		3.35632		33.3167		33.3157		6.7747		6.7750		6.3852		6.4743		1.000e-12		0.3887		1.2366000		0.2596		13.34		0.458		24448		1		26.1231		26.1223		1476.03		1476.03	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	21.868		22.000		3.35815		3.35810		33.3265		33.3252		6.7843		6.7851		6.3794		6.4722		1.000e-12		0.3891		1.2717000		0.2293		12.82		0.444		24475		1		26.1296		26.1284		1476.09		1476.09	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	22.364		22.500		3.36263		3.36162		33.3533		33.3466		6.8073		6.8028		6.3759		6.4743		1.000e-12		0.3789		1.2866000		0.2180		13.34		0.465		24500		1		26.1476		26.1429		1476.22		1476.19	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	22.860		23.000		3.36322		3.36276		33.3564		33.3529		6.8105		6.8089		6.3898		6.4815		1.000e-12		0.3884		1.3319000		0.2596		15.38		0.497		24523		1		26.1497		26.1471		1476.24		1476.23	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	23.357		23.500		3.36291		3.36255		33.3542		33.3515		6.8090		6.8078		6.3835		6.4689		1.000e-12		0.4020		1.3963000		0.2622		15.68		0.531		24545		1		26.1480		26.1461		1476.24		1476.23	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	23.853		24.000		3.36376		3.36303		33.3594		33.3543		6.8131		6.8100		6.3610		6.4404		1.000e-12		0.4104		1.4517000		0.2414		15.62		0.563		24566		1		26.1517		26.1480		1476.27		1476.25	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	24.349		24.500		3.36657		3.36662		33.3759		33.3753		6.8276		6.8288		6.3440		6.4279		1.000e-12		0.4272		1.4433000		0.2613		14.65		0.558		24588		1		26.1627		26.1621		1476.36		1476.36	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	24.845		25.000		3.38632		3.38532		33.5010		33.4931		6.9219		6.9187		6.3123		6.4065		1.000e-12		0.4099		1.4118000		0.2642		14.82		0.485		24615		1		26.2486		26.2428		1476.89		1476.87	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	25.342		25.500		3.39312		3.39302		33.5456		33.5445		6.9525		6.9525		6.2924		6.3883		1.000e-12		0.4095		1.4744000		0.2615		14.45		0.409		24645		1		26.2795		26.2787		1477.07		1477.07	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	25.838		26.000		3.39576		3.39585		33.5639		33.5646		6.9632		6.9635		6.2850		6.3829		1.000e-12		0.3921		1.4893000		0.2212		14.34		0.431		24671		1		26.2925		26.2930		1477.14		1477.15	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	26.334		26.500		3.39792		3.39781		33.5790		33.5780		6.9717		6.9714		6.2796		6.3782		1.000e-12		0.4028		1.6329000		0.2634		14.41		0.487		24694		1		26.3033		26.3026		1477.20		1477.20	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	26.830		27.000		3.39821		3.39812		33.5810		33.5801		6.9727		6.9726		6.2781		6.3705		1.000e-12		0.4048		1.7308000		0.2816		14.37		0.523		24717		1		26.3047		26.3040		1477.22		1477.22	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	27.327		27.500		3.39858		3.39871		33.5833		33.5840		6.9742		6.9749		6.2802		6.3660		1.000e-12		0.3951		1.7937000		0.1953		13.62		0.522		24741		1		26.3064		26.3068		1477.24		1477.24	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	27.823		28.000		3.39911		3.39904		33.5869		33.5861		6.9762		6.9763		6.2820		6.3749		1.000e-12		0.4004		1.7977000		0.2840		13.40		0.513		24764		1		26.3089		26.3082		1477.26		1477.26	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	28.319		28.500		3.39920		3.39909		33.5872		33.5862		6.9767		6.9764		6.2826		6.3818		1.000e-12		0.4143		1.8649000		0.2778		13.05		0.530		24786		1		26.3091		26.3083		1477.27		1477.26	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	28.815		29.000		3.39934		3.39920		33.5880		33.5867		6.9771		6.9769		6.2808		6.3809		1.000e-12		0.4041		1.9624000		0.2636		12.51		0.545		24808		1		26.3096		26.3087		1477.28		1477.28	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	29.311		29.500		3.39934		3.39920		33.5878		33.5865		6.9771		6.9769		6.2790		6.3803		1.000e-12		0.3960		2.0122000		0.2473		11.92		0.501		24834		1		26.3095		26.3085		1477.29		1477.28	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	29.808		30.000		3.39925		3.39914		33.5869		33.5858		6.9767		6.9766		6.2815		6.3837		1.000e-12		0.3946		2.0325000		0.2492		11.51		0.423		24863		1		26.3089		26.3080		1477.29		1477.29	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	30.304		30.500		3.39940		3.39930		33.5877		33.5866		6.9774		6.9773		6.2820		6.3789		1.000e-12		0.3997		2.0370000		0.2455		11.06		0.420		24890		1		26.3094		26.3085		1477.30		1477.30	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	30.800		31.000		3.39952		3.39939		33.5883		33.5871		6.9779		6.9776		6.2763		6.3754		1.000e-12		0.4026		2.0448000		0.2504		10.59		0.468		24915		1		26.3097		26.3089		1477.31		1477.31	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	31.296		31.500		3.39961		3.39947		33.5887		33.5874		6.9782		6.9779		6.2738		6.3799		1.000e-12		0.3950		2.0726000		0.2486		9.80		0.519		24937		1		26.3100		26.3091		1477.32		1477.32	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	31.792		32.000		3.39975		3.39958		33.5893		33.5878		6.9790		6.9786		6.2786		6.3806		1.000e-12		0.3891		2.0717000		0.2331		9.22		0.543		24959		1		26.3104		26.3093		1477.34		1477.33	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	32.289		32.500		3.39981		3.39969		33.5894		33.5882		6.9793		6.9792		6.2855		6.3820		1.000e-12		0.3896		2.0337000		0.2218		8.98		0.517		24983		1		26.3105		26.3095		1477.34		1477.34	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	32.785		33.000		3.39986		3.39970		33.5895		33.5882		6.9794		6.9791		6.2839		6.3804		1.000e-12		0.4025		2.1429000		0.2395		8.47		0.457		25011		1		26.3105		26.3095		1477.35		1477.35	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	33.281		33.500		3.39986		3.39972		33.5896		33.5881		6.9791		6.9791		6.2778		6.3746		1.000e-12		0.4054		2.3896000		0.2714		7.84		0.384		25043		1		26.3106		26.3095		1477.36		1477.36	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	33.777		34.000		3.39987		3.39974		33.5894		33.5881		6.9792		6.9790		6.2781		6.3762		1.000e-12		0.4100		2.1105000		0.2041		7.40		0.379		25075		1		26.3105		26.3095		1477.37		1477.37	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	34.274		34.500		3.39991		3.39975		33.5894		33.5880		6.9793		6.9791		6.2801		6.3764		1.000e-12		0.4040		2.0999000		0.2456		6.97		0.352		25110		1		26.3105		26.3094		1477.38		1477.38	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	34.770		35.000		3.39996		3.39980		33.5896		33.5882		6.9795		6.9792		6.2795		6.3750		1.000e-12		0.4115		2.1539000		0.2274		6.44		0.298		25151		1		26.3106		26.3095		1477.39		1477.38	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	35.266		35.500		3.39999		3.39984		33.5897		33.5882		6.9796		6.9793		6.2786		6.3829		1.000e-12		0.4135		2.0562000		0.2554		5.03		0.269		25195		1		26.3106		26.3095		1477.39		1477.39	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	35.762		36.000		3.40001		3.39987		33.5896		33.5883		6.9796		6.9793		6.2755		6.3803		1.000e-12		0.4039		2.1024000		0.2477		5.27		0.318		25232		1		26.3106		26.3096		1477.40		1477.40	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	36.258		36.500		3.40006		3.39990		33.5898		33.5883		6.9796		6.9794		6.2788		6.3720		1.000e-12		0.3915		2.1705000		0.2496		38.24		0.291		25274		1		26.3108		26.3096		1477.41		1477.41	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	36.755		37.000		3.40001		3.39988		33.5898		33.5883		6.9789		6.9789		6.2756		6.3744		1.000e-12		0.4060		2.0826000		0.2271		10.31		0.173		25347		1		26.3108		26.3096		1477.42		1477.42	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	37.251		37.500		3.40013		3.39998		33.5898		33.5886		6.9799		6.9795		6.2767		6.3786		1.000e-12		0.4222		2.1726000		0.2382		36.40		0.181		25413		1		26.3107		26.3098		1477.43		1477.43	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	37.747		38.000		3.40016		3.40001		33.5899		33.5886		6.9799		6.9796		6.2777		6.3775		1.000e-12		0.4084		2.3065000		0.2708		20.63		0.192		25476		1		26.3108		26.3098		1477.44		1477.43	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	38.243		38.500		3.40017		3.40003		33.5900		33.5886		6.9796		6.9796		6.2770		6.3765		1.000e-12		0.3982		2.1106000		0.2298		7.07		0.157		25552		1		26.3109		26.3098		1477.45		1477.44	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	38.739		39.000		3.40022		3.40007		33.5900		33.5888		6.9799		6.9796		6.2810		6.3731		1.000e-12		0.4300		2.2667000		0.2105		2.32		0.186		25621		1		26.3109		26.3100		1477.45		1477.45	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	39.236		39.500		3.40027		3.40013		33.5900		33.5890		6.9802		6.9799		6.2800		6.3785		1.000e-12		0.4299		2.2013000		0.2385		1.41		0.168		25694		1		26.3108		26.3100		1477.46		1477.46	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	39.732		40.000		3.40029		3.40016		33.5901		33.5888		6.9803		6.9800		6.2775		6.3790		1.000e-12		0.4149		2.1978000		0.2358		0.95		0.211		25753		1		26.3108		26.3099		1477.47		1477.47	
+2020	02	01	05	29	00	2020_77SE_SMHI-02-2020	LASO RANNA	57.44050	10.82800	40.228		40.500		3.40034		3.40011		33.5896		33.5878		6.9810		6.9803		6.2765		6.3732		1.000e-12		0.4268		1.6973000		0.2781		17.52		-0.191		31881		1		26.3104		26.3091		1477.48		1477.48	

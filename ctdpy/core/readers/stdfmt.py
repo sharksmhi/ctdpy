@@ -43,7 +43,8 @@ class StandardFormatCTD(BaseSTDFMT):
     def __init__(self, settings):
         super().__init__(settings)
 
-    def _adjust_dataframe(self, df):
+    @staticmethod
+    def _adjust_dataframe(df):
         """
         :param df:
         :return:

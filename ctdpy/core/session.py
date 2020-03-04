@@ -6,12 +6,11 @@ Created on Mon Sep 17 10:50:49 2018
 
 """
 import sys
-sys.path.append("..")
-
+sys.path.append('C:\\Utveckling\\sharkpylib')
 import time
 from pprint import pprint
-from ctdpy.core import config
-from ctdpy.core.writers.profile_plot import ProfilePlot
+from ctdpy.core import config, data_handlers
+from ctdpy.core.writers.profile_plot import ProfilePlot, QCPlot
 from ctdpy.core.archive_handler import Archive
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, match_filenames
 
@@ -96,6 +95,7 @@ class Session(object):
         #TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
+            print('dataset', dataset)
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
@@ -248,7 +248,10 @@ if __name__ == '__main__':
     # path = 'C:\\Temp\\CTD_DV\\SMF_2018\\original\\B1180123.TOB'
     # df = pd.read_csv(path, encoding='cp1252')
     # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
-    base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v2-3\\ctd\data'
+    # base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v2-3\\ctd\\data'
+    # base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v6-7 Feb\\ctd\\cnv'
+    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_feb_2020'
+    base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
     # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
     # base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
     # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
@@ -258,17 +261,18 @@ if __name__ == '__main__':
     # files = os.listdir(base_dir)
     files = generate_filepaths(base_dir,
                                # pattern_list=['.TOB', '.xlsx'],
-                               endswith='.cnv',
-                               # endswith='.txt',
+                               # pattern_list=['.cnv', '.xlsx'],
+                               # endswith='.cnv',
+                               endswith='.txt',
                                only_from_dir=True)
 
     start_time = time.time()
     s = Session(filepaths=files,
                 # base_dir=base_dir,
                 # reader='deep',
-                reader='smhi',
+                # reader='smhi',
                 # reader='umsc',
-                # reader='ctd_stdfmt',
+                reader='ctd_stdfmt',
                 )
     print("Session--%.3f sec" % (time.time() - start_time))
     #  -----------------------------------------------------------------------------------------------------------------
@@ -285,20 +289,48 @@ if __name__ == '__main__':
     # start_time = time.time()
     # # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
     # datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
+    # datasets = s.read(add_merged_data=True)
     datasets = s.read()
     # print("Datasets loaded--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
+    #  ##################        QUALITY CONTROL       ###################
+    # ex_data = datasets[0]['SBE09_1387_20200107_2137_77_10_0006.cnv'].get('hires_data')
+    # for key in ex_data:
+    #     if not key.startswith('Q_'):
+    #         ex_data['Q0_'+key] = ['0000'] * ex_data.__len__()
+    # from sharkpylib.qc.qc_default import QCBlueprint
+    #
+    # start_time = time.time()
+    # qc_run = QCBlueprint(ex_data)
+    # qc_run()
+    # print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
+    # for qc_check in ['decrease', 'increase', 'diff', 'range']:
+    #     qc_obj = getattr(qc_settings, qc_check)
+    #     for qc_para, item in qc_obj['parameters'].items():
+    #         print(qc_para)
+    #         func = qc_obj['functions'][item.get('function')].get('function')(ex_data, **item)
+    #         func()
+    #         func.action()
+
+
+    # diff_func = DataDiff(ex_data, parameters=['TEMP_CTD', 'TEMP2_CTD'], acceptable_error=0.5)
+    # diff_func = DataDiff(ex_data, parameters=['SALT_CTD', 'SALT2_CTD'], acceptable_error=0.3)
+    # diff_func = func(ex_data, parameters=['CNDC_CTD', 'CNDC2_CTD'], acceptable_error=0.01)
+    # diff_func = DataDiff(ex_data, parameters=['DOXY_CTD', 'DOXY2_CTD'], acceptable_error=0.3)
+    # diff_func = DataDiff(ex_data, parameters=['DENS_CTD', 'DENS2_CTD'], acceptable_error=0.3)
+    # diff_func()
+    #  -----------------------------------------------------------------------------------------------------------------
     #  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
-    start_time = time.time()
-    data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
-    print("Datasets saved--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
+    # print("Datasets saved--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        CREATE ARCHIVE        ###################
-    start_time = time.time()
-    s.create_archive(data_path=data_path)
-    print("Archive created--%.3f sec" % (time.time() - start_time))
+    # start_time = time.time()
+    # s.create_archive(data_path=data_path)
+    # print("Archive created--%.3f sec" % (time.time() - start_time))
 
     #  -----------------------------------------------------------------------------------------------------------------
     #  ###################        TEST PRINTS        ###################
@@ -346,3 +378,47 @@ if __name__ == '__main__':
     # template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
     # pprint(template_data)
     # s.save_data(template_data)
+
+    #  -----------------------------------------------------------------------------------------------------------------
+    #  ###################        Plot HTML map /diagrams        ###################
+
+    data_parameter_list = ['PRES_CTD [dbar]',
+                           'SALT_CTD [psu (PSS-78)]', 'SALT2_CTD [psu (PSS-78)]',
+                           'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
+                           'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]',
+                           ]
+    df_parameter_list = data_parameter_list + ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'SDATE', 'STIME', 'KEY']
+    # parameter_list = ['PRES_CTD [dbar]', 'CNDC_CTD [S/m]', 'CNDC2_CTD [S/m]', 'SALT_CTD [psu (PSS-78)]',
+    #                   'SALT2_CTD [psu (PSS-78)]', 'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
+    #                   'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]', 'PAR_CTD [µE/(cm2 ·sec)]', 'CHLFLUO_CTD [mg/m3]',
+    #                   'TURB_CTD [NTU]', 'PHYC_CTD [ppb]']
+    # parameter_list = ['PRES_CTD [dbar]','CNDC_CTD [mS/m]','CNDC2_CTD [mS/m]','SALT_CTD [psu]','SALT2_CTD [psu]',
+    #                       'TEMP_CTD [°C]','TEMP2_CTD [°C]','DOXY_CTD [ml/l]','DOXY2_CTD [ml/l]',
+    #                       'PAR_CTD [µE/(cm2 ·sec)]','CHLFLUO_CTD [mg/m3]','TURB_CTD [NTU]','PHYC_CTD [ppb]']
+
+    parameter_formats = {p: float for p in data_parameter_list}
+    start_time = time.time()
+
+    data_transformer = data_handlers.DataTransformation()
+    data_transformer.add_keys_to_datasets(datasets)
+
+    dataframes = [datasets[0][key].get('data') for key in datasets[0].keys()]
+    data_transformer.append_dataframes(dataframes)
+    data_transformer.add_columns()
+    data_transformer.set_column_format(**parameter_formats)
+
+    dataframe = data_transformer.get_dataframe(columns=df_parameter_list)
+
+    print("Data retrieved--%.3f sec" % (time.time() - start_time))
+    #
+    start_time = time.time()
+    plot = QCPlot(dataframe, parameters=data_parameter_list)
+    plot.set_map()
+    plot.plot_stations()
+    plot.plot_data()
+    plot.show_plot()
+    # plot.plot(x='TEMP_CTD [°C (ITS-90)]',
+    #              y='PRES_CTD [dbar]',
+    #              z='SALT_CTD [psu (PSS-78)]',
+    #              name=profile_name)
+    print("Data ploted--%.3f sec" % (time.time() - start_time))

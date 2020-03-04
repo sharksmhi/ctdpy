@@ -142,6 +142,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         # TODO should be able to handle multiple metadatasets? (.xlsx delivery files)
         self.delimiters = self._get_delimiters()
+        print(meta)
+        print(type(meta))
         self.df_metadata = self._get_reduced_dataframe(meta[0]['Metadata'])
         self.delivery_note = self._get_delivery_note(meta[0]['Förklaring'])
         self.template_format = self._get_template_format()

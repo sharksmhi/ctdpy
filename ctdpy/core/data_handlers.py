@@ -364,6 +364,66 @@ class BaseReader(object):
         raise NotImplementedError
 
 
+class DataTransformation(object):
+    """
+    - Append multiple dataframes into one
+    - Add columns
+    - ...
+    """
+    def __init__(self):
+        self.df = pd.DataFrame(index=[])
+
+    def append_dataframes(self, dataframes):
+        """"""
+        assert type(dataframes) == list
+
+        print('appending dataframes..')
+        for df in dataframes:
+            self.df = self.df.append(df)
+
+        self.df.reset_index(drop=True, inplace=True)
+        print('dataframes appended!')
+
+    def add_columns(self):
+        """"""
+        self.add_date_column()
+        self.add_time_column()
+
+    def add_date_column(self):
+        """"""
+        self.df['SDATE'] = self.df[['YEAR', 'MONTH', 'DAY']].astype(str).apply('-'.join, axis=1)
+
+    def add_time_column(self):
+        """"""
+        self.df['STIME'] = self.df[['HOUR', 'MINUTE']].astype(str).apply(':'.join, axis=1)
+
+    def set_column_format(self, **kwargs):
+        """
+        :param kwargs: {'para_1': float,
+                        'para_2': str}
+        :return:
+        """
+        for key, value in kwargs.items():
+            if key in self.df:
+                self.df[key] = self.df[key].astype(value)
+
+    def get_dataframe(self, columns=None):
+        """
+        :param columns:
+        :return:
+        """
+        if not columns:
+            return self.df
+        else:
+            return self.df[columns]
+
+    def add_keys_to_datasets(self, datasets):
+        """"""
+        for key_name in datasets[0].keys():
+            datasets[0][key_name]['data']['KEY'] = key_name.strip('ctd_profile|.txt')
+
+
+
 
 
 

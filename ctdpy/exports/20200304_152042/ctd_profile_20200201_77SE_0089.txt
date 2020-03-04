@@ -1,0 +1,548 @@
+//FORMAT=CTDPRO
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2020
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2020-02-01
+//METADATA;STIME;15:33
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;77SE
+//METADATA;CRUISE_NO;SMHI-02-2020
+//METADATA;SERNO;0089
+//METADATA;STATN;SW Vinga
+//METADATA;LATIT;5732.64
+//METADATA;LONGI;01134.29
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1387_20200201_1533_77_10_0089.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20200201_77SE_0089.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1044;Seabird;911plus;1044;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Information om instrumenthantering, datahantering; processering, beskrivning, kvalitetskontroll etc, kommentarer på datakvalité m.m.
+//INFORMATION;(förslagsvis på engelska för att att nå ut till fler användare av data)
+//INSTRUMENT_METADATA;* Sea-Bird SBE 9 Data File:
+//INSTRUMENT_METADATA;* FileName = L:\2020\sv20d0089.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.7.121
+//INSTRUMENT_METADATA;* Temperature SN = 6378
+//INSTRUMENT_METADATA;* Conductivity SN = 4824
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Feb 01 2020 15:33:24
+//INSTRUMENT_METADATA;* NMEA Latitude = 57 32.64 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 011 34.29 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Feb 01 2020  15:33:23
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* SBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  SW Vinga
+//INSTRUMENT_METADATA;** Operator:  A-KTh
+//INSTRUMENT_METADATA;** Ship: SVEA
+//INSTRUMENT_METADATA;** Average sound velocity: 1470.61 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Sat, 01 Feb 2020 18:10:18 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20207710-0089
+//INSTRUMENT_METADATA;** Cruise: SMHI-02-2020
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GGG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Feb 01 2020 15:33:24
+//INSTRUMENT_METADATA;# nquan = 30
+//INSTRUMENT_METADATA;# nvalues = 99                          
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 5 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 6 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 7 = sbeox0V: Oxygen raw, SBE 43 [V]
+//INSTRUMENT_METADATA;# name 8 = sbeox1V: Oxygen raw, SBE 43, 2 [V]
+//INSTRUMENT_METADATA;# name 9 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 10 = dz/dtM: Descent Rate [m/s]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 19 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 21 = depSM: Depth [salt water, m], lat = 57.544
+//INSTRUMENT_METADATA;# name 22 = depFM: Depth [true depth, m], lat = 57.544
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = sbeox0ML/L: Oxygen, SBE 43 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 26 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 27 = sbeox0PS: Oxygen, SBE 43 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 28 = sbeox1PS: Oxygen, SBE 43, 2 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 29 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      23040,      27030       
+//INSTRUMENT_METADATA;# span 1 =      1.500,     50.500       
+//INSTRUMENT_METADATA;# span 2 =     5.9493,     6.9294       
+//INSTRUMENT_METADATA;# span 3 =     5.9479,     6.9245       
+//INSTRUMENT_METADATA;# span 4 =   2.909465,   3.398816       
+//INSTRUMENT_METADATA;# span 5 =   2.909455,   3.397697       
+//INSTRUMENT_METADATA;# span 6 =          1,          1       
+//INSTRUMENT_METADATA;# span 7 =     3.5041,     3.6032       
+//INSTRUMENT_METADATA;# span 8 =     3.2685,     3.3590       
+//INSTRUMENT_METADATA;# span 9 =      -8.19,      99.65       
+//INSTRUMENT_METADATA;# span 10 =     -0.087,      0.805      
+//INSTRUMENT_METADATA;# span 11 =     0.4294,     2.0991      
+//INSTRUMENT_METADATA;# span 12 =     0.1789,     0.6333      
+//INSTRUMENT_METADATA;# span 13 = -2.988e-05, 2.8968e+00      
+//INSTRUMENT_METADATA;# span 14 =     0.3306,     3.0451      
+//INSTRUMENT_METADATA;# span 15 =    29.1356,    33.6187      
+//INSTRUMENT_METADATA;# span 16 =    29.1357,    33.6111      
+//INSTRUMENT_METADATA;# span 17 =    -0.0902,     0.0783      
+//INSTRUMENT_METADATA;# span 18 =    -0.0529,     0.0241      
+//INSTRUMENT_METADATA;# span 19 =    22.9260,    26.3403      
+//INSTRUMENT_METADATA;# span 20 =    22.9261,    26.3350      
+//INSTRUMENT_METADATA;# span 21 =      1.486,     50.028      
+//INSTRUMENT_METADATA;# span 22 =      1.494,     50.226      
+//INSTRUMENT_METADATA;# span 23 =    1467.25,    1477.47      
+//INSTRUMENT_METADATA;# span 24 =    1467.25,    1477.45      
+//INSTRUMENT_METADATA;# span 25 =     6.2902,     6.8350      
+//INSTRUMENT_METADATA;# span 26 =     6.3865,     6.9449      
+//INSTRUMENT_METADATA;# span 27 =     91.904,     95.081      
+//INSTRUMENT_METADATA;# span 28 =     93.279,     96.619      
+//INSTRUMENT_METADATA;# span 29 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Feb 01 2020 15:33:23 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6378</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.38203097e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.42735305e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.29129716e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.11079008e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4824</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.87146657e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.28867025e+000</H>
+//INSTRUMENT_METADATA;#         <I>4.09053062e-004</I>
+//INSTRUMENT_METADATA;#         <J>3.18252404e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1387</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>31-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-7.924400e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>1.544540e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.127510e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.358900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.019071e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-1.409710e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.227440e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.567620e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.278280e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.997610e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6384</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>04-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.32006699e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.32109851e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.15638014e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.96975443e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.81362538e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.31135002e+000</H>
+//INSTRUMENT_METADATA;#         <I>9.90527855e-005</I>
+//INSTRUMENT_METADATA;#         <J>5.58058935e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3823</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.3650e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7250</offset>
+//INSTRUMENT_METADATA;#         <A>-3.8927e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4045e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2716e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1700</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.7087e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7004</offset>
+//INSTRUMENT_METADATA;#         <A>-4.4432e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.8923e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.9772e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.8000</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1251</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Feb 01 2020 18:10:03, 7.26.7.129 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.hex C:\ctd\temp\SBE09_1387_20200201_1533_77_10_0089.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Feb 01 2020 18:10:06, 7.26.7.129
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = dz/dtM flECO-AFL flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Feb 01 2020 18:10:07, 7.26.7.129
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0V 4.000, sbeox1V 4.000                                                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Feb 01 2020 18:10:08, 7.26.7.129
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Feb 01 2020 18:10:09, 7.26.7.129
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Feb 01 2020 18:10:10, 7.26.7.129 [derive_vars = 14]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_docdt = seconds: 2
+//INSTRUMENT_METADATA;# derive_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# binavg_date = Feb 01 2020 18:10:12, 7.26.7.129
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_omit = 0
+//INSTRUMENT_METADATA;# binavg_min_scans_bin = 1
+//INSTRUMENT_METADATA;# binavg_max_scans_bin = 2147483647
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Feb 01 2020 18:10:14, 7.26.7.129
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1387_20200201_1533_77_10_0089.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q_DEPH	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q_TURB_CTD	PHYC_CTD [ppb]	Q_PHYC_CTD	ALTM_CTD [m]	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	SCAN_CTD []	Q_SCAN_CTD	PUMP_CTD []	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q_DENS2_CTD	SVEL_CTD [m/s]	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q_SVEL2_CTD
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	1.494		1.500		2.91231		2.91172		29.1742		29.1668		5.9591		5.9602		6.8330		6.9446		2.897e+00		1.9336		0.3828000		0.5014		87.01		-0.009		23040		1		22.9572		22.9512		1467.25		1467.25	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	1.991		2.000		2.91055		2.91050		29.1510		29.1507		5.9633		5.9630		6.8297		6.9389		2.064e+00		1.8588		0.3916000		0.5600		54.38		0.236		23269		1		22.9385		22.9383		1467.25		1467.25	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	2.489		2.500		2.91064		2.91055		29.1519		29.1510		5.9632		5.9631		6.8332		6.9407		1.901e+00		1.9055		0.3938000		0.5744		68.32		0.380		23324		1		22.9391		22.9385		1467.26		1467.26	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	2.987		3.000		2.91049		2.91032		29.1497		29.1477		5.9636		5.9636		6.8325		6.9284		1.382e+00		1.8309		0.3306000		0.5386		47.39		0.112		23416		1		22.9374		22.9358		1467.27		1467.26	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	3.485		3.500		2.91021		2.91009		29.1459		29.1446		5.9641		5.9641		6.8322		6.9365		1.282e+00		1.8709		0.4074000		0.5751		48.37		0.436		23432		1		22.9343		22.9333		1467.27		1467.27	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	3.983		4.000		2.90987		2.90970		29.1413		29.1393		5.9648		5.9650		6.8317		6.9404		9.884e-01		1.9634		0.4055000		0.6026		84.44		0.442		23469		1		22.9306		22.9290		1467.28		1467.27	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	4.481		4.500		2.90960		2.90950		29.1375		29.1365		5.9654		5.9654		6.8313		6.9406		7.124e-01		1.8367		0.3315000		0.5213		87.57		0.138		23536		1		22.9276		22.9267		1467.28		1467.28	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	4.978		5.000		2.90946		2.90945		29.1356		29.1357		5.9657		5.9655		6.8341		6.9433		6.589e-01		1.9168		0.3890000		0.5295		60.60		0.417		23555		1		22.9260		22.9261		1467.29		1467.29	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	5.476		5.500		2.90995		2.91013		29.1414		29.1440		5.9649		5.9641		6.8350		6.9428		4.847e-01		1.9446		0.4214000		0.5606		72.77		0.579		23576		1		22.9307		22.9329		1467.30		1467.30	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	5.974		6.000		2.91061		2.91043		29.1497		29.1476		5.9635		5.9637		6.8324		6.9426		4.028e-01		1.9283		0.3841000		0.5669		78.28		0.287		23622		1		22.9374		22.9357		1467.32		1467.31	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	6.472		6.500		2.91228		2.91278		29.1713		29.1779		5.9596		5.9584		6.8287		6.9449		3.273e-01		1.9572		0.3650000		0.5592		59.20		0.270		23661		1		22.9549		22.9603		1467.34		1467.34	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	6.970		7.000		2.91441		2.91473		29.1988		29.2030		5.9547		5.9541		6.8249		6.9425		2.654e-01		1.9774		0.4247000		0.5705		57.65		0.488		23682		1		22.9772		22.9805		1467.36		1467.36	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	7.468		7.500		2.91582		2.91491		29.2172		29.2047		5.9512		5.9540		6.8251		6.9394		2.052e-01		1.9770		0.4267000		0.5847		79.84		0.481		23711		1		22.9920		22.9819		1467.38		1467.37	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	7.966		8.000		2.91568		2.91595		29.2141		29.2179		5.9528		5.9517		6.8259		6.9320		1.724e-01		1.9766		0.4061000		0.5749		61.06		0.313		23747		1		22.9894		22.9926		1467.39		1467.39	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	8.463		8.500		2.91566		2.91580		29.2134		29.2155		5.9531		5.9525		6.8249		6.9305		1.394e-01		1.9633		0.4027000		0.5879		53.32		0.419		23769		1		22.9888		22.9905		1467.39		1467.39	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	8.961		9.000		2.91597		2.91602		29.2168		29.2173		5.9528		5.9529		6.8268		6.9315		9.722e-02		1.9547		0.4286000		0.5239		42.70		0.556		23791		1		22.9916		22.9920		1467.40		1467.41	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	9.459		9.500		2.91606		2.91620		29.2175		29.2193		5.9529		5.9527		6.8275		6.9315		6.285e-02		1.9680		0.4330000		0.5657		42.07		0.446		23822		1		22.9921		22.9935		1467.41		1467.42	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	9.957		10.000		2.91742		2.91749		29.2354		29.2364		5.9493		5.9491		6.8273		6.9328		4.974e-02		1.9496		0.4677000		0.5514		41.69		0.353		23852		1		23.0067		23.0074		1467.43		1467.43	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	10.455		10.500		2.91944		2.91890		29.2557		29.2528		5.9514		5.9479		6.8251		6.9338		2.555e-02		1.8949		0.4467000		0.6283		41.39		0.492		23871		1		23.0224		23.0205		1467.47		1467.45	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	10.952		11.000		2.91811		2.91872		29.2382		29.2455		5.9544		5.9538		6.8240		6.9264		1.366e-02		1.9904		0.4444000		0.5623		41.06		0.600		23892		1		23.0082		23.0141		1467.47		1467.48	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	11.450		11.500		2.91738		2.91832		29.2290		29.2399		5.9555		5.9549		6.8245		6.9294		6.567e-04		2.0991		0.4439000		0.5747		40.20		0.429		23925		1		23.0009		23.0095		1467.47		1467.48	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	11.948		12.000		2.91710		2.91749		29.2242		29.2289		5.9571		5.9568		6.8258		6.9360		-2.988e-05		1.9100		0.3784000		0.5222		99.65		0.299		23960		1		22.9969		23.0007		1467.48		1467.49	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	12.446		12.500		2.91671		2.91731		29.2193		29.2260		5.9576		5.9575		6.8236		6.9345		1.000e-12		2.0019		0.4022000		0.5564		45.86		0.461		23980		1		22.9929		22.9983		1467.48		1467.49	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	12.944		13.000		2.91600		2.91560		29.2115		29.2077		5.9573		5.9566		6.8266		6.9329		1.000e-12		1.9007		0.4021000		0.5035		38.76		0.597		23999		1		22.9869		22.9840		1467.48		1467.47	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	13.442		13.500		2.91590		2.91600		29.2103		29.2112		5.9571		5.9573		6.8330		6.9330		1.000e-12		1.9543		0.4420000		0.5389		64.55		0.605		24021		1		22.9859		22.9866		1467.49		1467.49	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	13.939		14.000		2.91653		2.91799		29.2166		29.2322		5.9576		5.9584		6.8123		6.9108		1.000e-12		2.0214		0.4134000		0.5824		37.06		0.410		24053		1		22.9908		23.0031		1467.51		1467.53	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	14.437		14.500		2.91671		2.91656		29.2184		29.2176		5.9577		5.9566		6.7986		6.8877		1.000e-12		1.9489		0.4105000		0.6333		37.01		0.363		24083		1		22.9923		22.9918		1467.52		1467.51	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	14.935		15.000		2.93127		2.93160		29.3635		29.3670		5.9757		5.9759		6.7874		6.8871		1.000e-12		1.9291		0.4388000		0.5358		36.61		0.493		24103		1		23.1047		23.1074		1467.78		1467.79	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	15.433		15.500		2.94006		2.94202		29.4501		29.4703		5.9876		5.9893		6.7677		6.8813		1.000e-12		1.7799		0.4253000		0.5142		36.22		0.618		24121		1		23.1716		23.1874		1467.95		1467.98	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	15.930		16.000		2.93562		2.93837		29.4114		29.4355		5.9754		5.9827		6.7546		6.8606		1.000e-12		1.5689		0.4131000		0.4813		35.79		0.599		24144		1		23.1425		23.1607		1467.86		1467.92	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	16.428		16.500		2.94586		2.94314		29.5068		29.4804		5.9956		5.9914		6.7329		6.8317		1.000e-12		1.4591		0.4119000		0.4085		38.56		0.381		24178		1		23.2155		23.1951		1468.07		1468.02	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	16.926		17.000		2.95429		2.95331		29.5836		29.5739		6.0142		6.0129		6.7190		6.8228		1.000e-12		1.4734		0.3959000		0.3972		69.73		0.384		24203		1		23.2739		23.2665		1468.24		1468.23	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	17.424		17.500		2.95568		2.95567		29.5923		29.5922		6.0215		6.0215		6.7192		6.8216		1.000e-12		1.3666		0.4047000		0.4113		33.44		0.549		24219		1		23.2800		23.2799		1468.29		1468.29	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	17.921		18.000		2.95698		2.95708		29.6012		29.6026		6.0275		6.0272		6.7206		6.8252		1.000e-12		1.2719		0.4029000		0.4220		33.15		0.696		24236		1		23.2863		23.2874		1468.34		1468.34	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	18.419		18.500		2.95924		2.95800		29.6280		29.6177		6.0251		6.0213		6.7230		6.8412		1.000e-12		1.1148		0.3870000		0.3802		32.81		0.658		24258		1		23.3077		23.3000		1468.37		1468.34	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	18.917		19.000		2.95620		2.95480		29.6041		29.5885		6.0137		6.0139		6.7670		6.8903		1.000e-12		1.1375		0.3446000		0.3515		32.08		0.172		24310		1		23.2902		23.2779		1468.30		1468.28	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	19.414		19.500		2.95876		2.95811		29.6631		29.6546		5.9785		5.9801		6.7669		6.8843		1.000e-12		1.0953		0.3732000		0.3969		31.71		0.351		24332		1		23.3408		23.3338		1468.24		1468.24	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	19.912		20.000		2.95812		2.95802		29.6648		29.6640		5.9683		5.9678		6.7733		6.8865		1.000e-12		1.3246		0.4179000		0.4388		31.06		0.587		24347		1		23.3432		23.3427		1468.21		1468.21	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	20.410		20.500		2.96097		2.96143		29.7083		29.7154		5.9543		5.9521		6.7754		6.8859		1.000e-12		1.3713		0.4337000		0.5119		30.56		0.750		24362		1		23.3792		23.3850		1468.22		1468.22	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	20.907		21.000		2.96866		2.96609		29.7798		29.7484		5.9696		5.9730		6.7327		6.8377		1.000e-12		1.4014		0.4401000		0.4570		30.18		0.626		24388		1		23.4339		23.4087		1468.38		1468.35	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	21.405		21.500		2.97400		2.97161		29.8213		29.7852		5.9895		6.0004		6.7139		6.8180		1.000e-12		1.0775		0.3516000		0.3602		29.50		0.211		24431		1		23.4643		23.4346		1468.52		1468.52	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	21.902		22.000		2.99938		2.99840		30.0220		30.0185		6.0799		6.0717		6.6819		6.7890		1.000e-12		0.9570		0.3843000		0.4096		29.25		0.382		24452		1		23.6122		23.6104		1469.14		1469.11	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	22.400		22.500		3.00516		3.00597		30.1534		30.1675		6.0037		5.9979		6.6935		6.8018		1.000e-12		1.1687		0.4382000		0.3835		28.89		0.594		24467		1		23.7247		23.7365		1469.01		1469.01	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	22.897		23.000		3.01737		3.01705		30.2720		30.2695		6.0222		6.0211		6.6955		6.8024		1.000e-12		1.2803		0.4650000		0.3962		28.57		0.749		24482		1		23.8161		23.8143		1469.24		1469.24	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	23.395		23.500		3.01964		3.02042		30.2851		30.2945		6.0354		6.0346		6.6932		6.7975		1.000e-12		1.5564		0.5142000		0.4823		27.92		0.725		24502		1		23.8249		23.8325		1469.32		1469.33	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	23.892		24.000		3.01305		3.01450		30.2152		30.2216		6.0317		6.0426		6.6624		6.7579		1.000e-12		1.4236		0.4165000		0.4412		27.17		0.233		24548		1		23.7702		23.7740		1469.23		1469.28	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	24.390		24.500		3.03565		3.03626		30.4161		30.4224		6.0867		6.0872		6.6224		6.7196		1.000e-12		1.3862		0.4515000		0.4259		26.87		0.331		24573		1		23.9223		23.9272		1469.71		1469.72	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	24.887		25.000		3.04533		3.04696		30.4979		30.5099		6.1147		6.1214		6.6124		6.7107		1.000e-12		1.3622		0.4673000		0.4412		26.57		0.566		24588		1		23.9836		23.9922		1469.93		1469.97	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	25.384		25.500		3.05394		3.05437		30.5575		30.5598		6.1541		6.1568		6.6122		6.7080		1.000e-12		1.3395		0.4835000		0.4986		26.12		0.735		24604		1		24.0259		24.0274		1470.17		1470.19	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	25.882		26.000		3.05799		3.05845		30.5788		30.5800		6.1799		6.1843		6.6056		6.7053		1.000e-12		1.2444		0.4811000		0.4119		25.61		0.714		24624		1		24.0396		24.0400		1470.31		1470.33	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	26.379		26.500		3.05405		3.05689		30.5440		30.5638		6.1699		6.1828		6.5991		6.6983		1.000e-12		1.0387		0.4233000		0.3699		24.88		0.346		24662		1		24.0134		24.0274		1470.23		1470.31	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	26.876		27.000		3.06358		3.06379		30.6037		30.6045		6.2203		6.2220		6.5853		6.6927		1.000e-12		1.0043		0.4150000		0.3610		24.51		0.328		24693		1		24.0544		24.0548		1470.52		1470.53	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	27.373		27.500		3.06650		3.06686		30.6232		30.6267		6.2342		6.2348		6.5857		6.6904		1.000e-12		0.9624		0.4610000		0.3922		24.20		0.503		24712		1		24.0682		24.0708		1470.61		1470.61	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	27.871		28.000		3.06914		3.06951		30.6443		30.6478		6.2429		6.2436		6.5872		6.6922		1.000e-12		0.9049		0.4898000		0.3811		23.68		0.618		24731		1		24.0838		24.0864		1470.68		1470.68	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	28.368		28.500		3.07200		3.07330		30.6696		30.6814		6.2496		6.2525		6.5833		6.6928		1.000e-12		0.9078		0.4415000		0.3569		23.12		0.585		24755		1		24.1028		24.1118		1470.74		1470.77	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	28.865		29.000		3.07409		3.07624		30.6885		30.7071		6.2540		6.2597		6.5820		6.6843		1.000e-12		0.8785		0.3838000		0.3205		22.51		0.394		24787		1		24.1172		24.1312		1470.79		1470.84	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	29.363		29.500		3.07717		3.07709		30.7154		30.7147		6.2617		6.2614		6.5770		6.6763		1.000e-12		0.9004		0.3790000		0.3016		22.04		0.394		24814		1		24.1375		24.1371		1470.87		1470.86	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	29.860		30.000		3.07769		3.07766		30.7203		30.7199		6.2623		6.2623		6.5753		6.6806		1.000e-12		0.9176		0.3985000		0.3161		21.55		0.506		24835		1		24.1414		24.1411		1470.88		1470.88	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	30.357		30.500		3.07846		3.07836		30.7265		30.7257		6.2646		6.2643		6.5774		6.6818		1.000e-12		0.8931		0.4002000		0.3377		14.47		0.579		24856		1		24.1459		24.1453		1470.91		1470.91	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	30.854		31.000		3.07958		3.07960		30.7356		30.7355		6.2680		6.2682		6.5769		6.6768		1.000e-12		0.8611		0.3937000		0.3391		14.32		0.555		24878		1		24.1527		24.1526		1470.94		1470.94	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	31.352		31.500		3.08041		3.08039		30.7423		30.7421		6.2704		6.2704		6.5763		6.6823		1.000e-12		0.8410		0.3859000		0.3312		17.64		0.518		24902		1		24.1577		24.1576		1470.97		1470.97	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	31.849		32.000		3.08120		3.08121		30.7491		30.7492		6.2722		6.2723		6.5763		6.6890		1.000e-12		0.8459		0.4172000		0.3342		14.65		0.519		24925		1		24.1629		24.1629		1470.99		1470.99	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	32.346		32.500		3.08288		3.08301		30.7636		30.7646		6.2765		6.2770		6.5823		6.6950		1.000e-12		0.8966		0.3885000		0.3335		13.22		0.456		24954		1		24.1737		24.1745		1471.03		1471.04	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	32.843		33.000		3.08483		3.08495		30.7802		30.7811		6.2817		6.2821		6.5598		6.6647		1.000e-12		0.8413		0.4126000		0.3316		16.87		0.381		24984		1		24.1862		24.1869		1471.08		1471.09	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	33.341		33.500		3.08772		3.08791		30.8048		30.8065		6.2895		6.2900		6.5187		6.6145		1.000e-12		0.8257		0.4322000		0.3280		17.85		0.447		25007		1		24.2046		24.2060		1471.15		1471.16	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	33.838		34.000		3.09503		3.09642		30.8686		30.8817		6.3079		6.3102		6.5011		6.5940		1.000e-12		0.8284		0.3960000		0.3183		17.41		0.563		25026		1		24.2527		24.2628		1471.32		1471.34	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	34.335		34.500		3.12864		3.13061		31.1616		31.1790		6.3927		6.3974		6.4728		6.5627		1.000e-12		0.8157		0.4238000		0.3021		17.10		0.644		25045		1		24.4733		24.4865		1472.03		1472.07	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	34.832		35.000		3.14228		3.14178		31.2785		31.2738		6.4288		6.4280		6.4431		6.5399		1.000e-12		0.7739		0.4496000		0.3239		16.55		0.513		25073		1		24.5611		24.5575		1472.33		1472.32	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	35.329		35.500		3.14497		3.14511		31.3044		31.3063		6.4327		6.4324		6.4463		6.5789		1.000e-12		0.7848		0.4594000		0.3177		16.06		0.336		25106		1		24.5811		24.5825		1472.38		1472.38	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	35.826		36.000		3.14921		3.14930		31.3611		31.3617		6.4216		6.4220		6.5014		6.6394		1.000e-12		0.8247		0.4515000		0.3206		15.64		0.442		25128		1		24.6271		24.6275		1472.42		1472.42	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	36.323		36.500		3.15160		3.15148		31.3860		31.3865		6.4229		6.4210		6.5360		6.6579		1.000e-12		0.8076		0.4631000		0.3372		15.22		0.589		25146		1		24.6466		24.6472		1472.47		1472.46	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	36.820		37.000		3.14760		3.14728		31.4675		31.4685		6.2865		6.2815		6.5664		6.6738		1.000e-12		0.9068		0.4876000		0.3169		14.67		0.643		25166		1		24.7276		24.7291		1472.03		1472.02	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	37.317		37.500		3.15406		3.15418		31.6031		31.5984		6.2171		6.2235		6.5508		6.6413		1.000e-12		1.0400		0.5172000		0.3237		14.05		0.428		25199		1		24.8431		24.8386		1471.93		1471.96	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	37.814		38.000		3.17329		3.17353		31.7577		31.7601		6.2798		6.2800		6.5206		6.6109		1.000e-12		1.0510		0.5427000		0.3593		13.55		0.343		25229		1		24.9573		24.9592		1472.39		1472.39	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	38.311		38.500		3.18667		3.18716		31.8597		31.8644		6.3288		6.3297		6.5069		6.6094		1.000e-12		0.8752		0.5560000		0.3450		13.05		0.495		25247		1		25.0318		25.0353		1472.72		1472.73	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	38.808		39.000		3.20649		3.20792		32.0540		32.0695		6.3554		6.3558		6.4960		6.6077		1.000e-12		0.7943		0.5198000		0.3329		12.58		0.659		25262		1		25.1817		25.1939		1473.08		1473.10	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	39.304		39.500		3.22908		3.22928		32.2893		32.2914		6.3710		6.3711		6.4827		6.5991		1.000e-12		0.7275		0.5386000		0.3052		12.09		0.727		25281		1		25.3653		25.3669		1473.44		1473.45	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	39.801		40.000		3.23399		3.23153		32.3366		32.3117		6.3781		6.3758		6.4627		6.5667		1.000e-12		0.6576		0.5994000		0.2896		11.43		0.413		25316		1		25.4017		25.3824		1473.54		1473.50	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	40.298		40.500		3.23765		3.23821		32.3672		32.3718		6.3884		6.3901		6.4713		6.5761		1.000e-12		0.6698		0.6197000		0.2687		10.87		0.293		25349		1		25.4245		25.4279		1473.63		1473.64	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	40.794		41.000		3.24724		3.24749		32.4204		32.4218		6.4438		6.4453		6.4686		6.5738		1.000e-12		0.6333		0.6933000		0.2054		10.62		0.487		25365		1		25.4595		25.4604		1473.92		1473.93	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	41.291		41.500		3.24975		3.24968		32.4629		32.4634		6.4282		6.4269		6.4758		6.5777		1.000e-12		0.6228		0.7560000		0.2625		10.25		0.679		25380		1		25.4950		25.4956		1473.92		1473.91	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	41.788		42.000		3.25422		3.25435		32.5329		32.5342		6.4064		6.4065		6.4780		6.5784		1.000e-12		0.6012		0.8910000		0.2933		9.73		0.771		25397		1		25.5530		25.5540		1473.93		1473.93	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	42.284		42.500		3.25397		3.25321		32.5228		32.5164		6.4139		6.4117		6.4568		6.5552		1.000e-12		0.5962		0.7557000		0.2757		8.97		0.367		25437		1		25.5440		25.5393		1473.95		1473.94	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	42.781		43.000		3.26981		3.27007		32.6496		32.6524		6.4645		6.4645		6.4283		6.5280		1.000e-12		0.5707		0.8084000		0.3008		8.56		0.269		25472		1		25.6376		25.6399		1474.32		1474.33	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	43.277		43.500		3.28096		3.28106		32.7301		32.7308		6.5089		6.5094		6.4230		6.5202		1.000e-12		0.5603		1.0479000		0.3310		8.21		0.501		25487		1		25.6954		25.6959		1474.61		1474.61	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	43.774		44.000		3.28461		3.28472		32.7673		32.7689		6.5120		6.5116		6.4267		6.5246		1.000e-12		0.5569		1.1176000		0.3304		7.79		0.708		25501		1		25.7244		25.7257		1474.68		1474.67	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	44.270		44.500		3.29136		3.29159		32.8347		32.8373		6.5193		6.5193		6.4289		6.5320		1.000e-12		0.5494		1.2635000		0.3158		7.25		0.805		25518		1		25.7766		25.7786		1474.80		1474.80	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	44.767		45.000		3.29160		3.28608		32.8379		32.7867		6.5185		6.5082		6.4168		6.5210		1.000e-12		0.5467		1.0756000		0.2980		6.50		0.215		25576		1		25.7792		25.7401		1474.80		1474.70	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	45.263		45.500		3.29352		3.30216		32.8504		32.9287		6.5273		6.5452		6.4207		6.5161		1.000e-12		0.5210		1.1910000		0.2763		6.12		0.304		25611		1		25.7879		25.8473		1474.86		1475.03	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	45.760		46.000		3.33320		3.33610		33.1632		33.1873		6.6571		6.6653		6.3975		6.4998		1.000e-12		0.5040		1.4854000		0.2503		5.66		0.525		25632		1		26.0176		26.0355		1475.77		1475.84	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	46.256		46.500		3.33317		3.32870		33.1579		33.1195		6.6621		6.6507		6.3761		6.4785		1.000e-12		0.4903		1.3433000		0.2685		24.48		0.169		25710		1		26.0128		25.9840		1475.80		1475.70	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	46.752		47.000		3.37184		3.36608		33.4343		33.3946		6.8160		6.7915		6.3468		6.4532		1.000e-12		0.4475		1.5659000		0.2480		6.59		0.328		25751		1		26.2102		26.1822		1476.75		1476.61	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	47.249		47.500		3.37808		3.36522		33.4794		33.3892		6.8399		6.7871		6.3537		6.4751		1.000e-12		0.4294		1.6740000		0.2703		56.03		0.223		25812		1		26.2426		26.1785		1476.91		1476.59	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	47.745		48.000		3.38183		3.38293		33.5039		33.5131		6.8568		6.8597		6.3502		6.4482		1.000e-12		0.4355		1.7659000		0.2478		5.03		0.274		25868		1		26.2596		26.2665		1477.02		1477.04	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	48.241		48.500		3.38474		3.38323		33.5261		33.5162		6.8666		6.8598		6.3351		6.4349		1.000e-12		0.4318		1.9113000		0.2567		3.03		0.154		25971		1		26.2758		26.2689		1477.09		1477.05	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	48.737		49.000		3.38755		3.38950		33.5452		33.5581		6.8785		6.8871		6.3193		6.4147		1.000e-12		0.4464		2.0780000		0.2273		2.59		0.156		26084		1		26.2892		26.2983		1477.17		1477.22	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	49.233		49.500		3.39619		3.39581		33.6018		33.5994		6.9174		6.9156		6.3059		6.4115		1.000e-12		0.4491		2.3689000		0.2578		11.06		0.168		26187		1		26.3286		26.3270		1477.40		1477.39	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	49.730		50.000		3.39882		3.39770		33.6187		33.6111		6.9294		6.9245		6.2902		6.3865		1.000e-12		0.4507		2.6493000		0.2355		19.41		0.262		26273		1		26.3403		26.3350		1477.47		1477.45	
+2020	02	01	15	33	00	2020_77SE_SMHI-02-2020	SW VINGA	57.54400	11.57150	50.226		50.500		3.38776		3.39446		33.5385		33.5885		6.8870		6.9111		6.3185		6.4129		1.000e-12		0.4889		3.0451000		0.1789		-8.19		-0.087		27030		1		26.2829		26.3190		1477.22		1477.37	
