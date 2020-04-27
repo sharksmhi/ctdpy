@@ -13,6 +13,7 @@ file_types:
         file_suffix: '.cnv'
     rawmvp:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MVPSMHI ''
+        file_patterns: ['FALSE_PATTERN']
         file_suffix: '.cnv'
     xlsxmeta:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MetadataSMHI ''

@@ -64,11 +64,14 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         save_path = self._get_save_path()
         headers = [True if h is not None else None for h in self.settings.templates['ctd_metadata'][
             'template']['header_row']]
+        start_rows = [h if h is not None else 0 for h in self.settings.templates['ctd_metadata'][
+            'template']['header_row']]
         self.xlsx_writer.write_multiple_sheets(save_path,
                                                dict_df=self.template_handler.template,
                                                sheet_names=self.settings.templates['ctd_metadata']['template'][
                                                    'sheet_name'],
-                                               headers=headers)
+                                               headers=headers,
+                                               start_rows=start_rows)
 
     def append_to_template(self, df):
         """

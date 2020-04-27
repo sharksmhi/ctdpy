@@ -43,7 +43,7 @@ class YAMLreader(dict):
         for config_file in config_files:
             with open(config_file) as fd:
                 try:
-                    file = yaml.load(fd)
+                    file = yaml.load(fd, Loader=yaml.FullLoader)
                 except yaml.YAMLError:
                     file = yaml.safe_load(fd)
                 # file = yaml.load(fd)

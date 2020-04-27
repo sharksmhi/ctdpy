@@ -25,7 +25,7 @@ class XlsxWriter(object):
         """
         self.xlsx_writer = pd.ExcelWriter(save_path, engine=engine)
 
-    def write_multiple_sheets(self, save_path, dict_df=None, sheet_names=None, headers=None,
+    def write_multiple_sheets(self, save_path, dict_df=None, sheet_names=None, headers=None, start_rows=None,
                               na_rep='', index=False, encoding='cp1252'):
         """
         :param dict_df: Dictionary with multiple pd.DataFrame
@@ -38,10 +38,11 @@ class XlsxWriter(object):
         :return: Saved excel file
         """
         self._load_xlsx_writer(save_path)
-        for sheet, head in zip(sheet_names, headers):
+        for sheet, head, st_row in zip(sheet_names, headers, start_rows):
             dict_df[sheet].to_excel(self.xlsx_writer,
                                     sheet_name=sheet,
                                     header=head,
+                                    startrow=st_row,
                                     na_rep=na_rep,
                                     index=index,
                                     encoding=encoding)
@@ -87,26 +88,3 @@ class XlsxWriter(object):
                     sheet_name=sheet_name,
                     index=index,
                     encoding=encoding)
-
-
-
-# writer = pd.ExcelWriter('pandas_multiple.xlsx', engine='xlsxwriter')
-#
-# # Write each dataframe to a different worksheet.
-# df1.to_excel(writer, sheet_name='Sheet1')
-# df2.to_excel(writer, sheet_name='Sheet2')
-# df3.to_excel(writer, sheet_name='Sheet3')
-
-
-
-
-
-
-
-
-
-
-
-
-
-

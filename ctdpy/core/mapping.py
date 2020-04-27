@@ -43,6 +43,7 @@ class AttributeDict(dict):
                 
             for value in array:
                 if not pd.isnull(value):
+                    setattr(self, value, key)
                     setattr(self, value.lower(), key)
 
     def add_entries_from_keylist(self, data, from_combo_keys=[], from_synonyms=[], to_key=u''):

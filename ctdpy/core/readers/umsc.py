@@ -11,6 +11,7 @@ Created on Mon Oct 22 11:01:38 2018
 import sys
 sys.path.append("..")
 
+import re
 import numpy as np
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
@@ -92,6 +93,32 @@ class SeaBirdUMSC(SeaBird):
 
         self._convert_formats(meta_dict, filename)
 
+        return meta_dict
+
+    def get_meta_dict(self, series, keys=[], identifier='', separator=''):
+        """
+        :param series: pd.Series, contains metadata
+        :param keys: List of keys to search for
+        :param identifier: str
+        :param separator: str
+        :return: Dictionary
+        """
+        meta_dict = {}
+        boolean_startswith = self.get_index(series, identifier, as_boolean=True)
+        if any(keys):
+            for key in keys:
+                boolean_contains = self.get_index(series, key, contains=True,
+                                                  as_boolean=True)
+                boolean = boolean_startswith & boolean_contains
+                if any(boolean):
+                    if key == 'SERIAL NO':
+                        # print('series[boolean]', series[boolean])
+                        meta = re.search('SERIAL NO. (.+?) ', series[boolean].iloc[0]).group(1)
+                    else:
+                        meta = series[boolean].tolist()[0].split(separator)[-1].strip()
+                    meta_dict.setdefault(key, meta)
+        else:
+            return series.loc[boolean_startswith]
         return meta_dict
 
     def _setup_dataframe(self, serie, metadata):

@@ -1,0 +1,224 @@
+* Sea-Bird SBE19plus Data File:
+* FileName = C:\CTD\CTD 2019\K05\Sdo19_v8_2019.hex
+* Software Version 1.59
+* Temperature SN =  7668
+* Conductivity SN =  7668
+* System UpLoad Time = Feb 21 2019 13:39:59
+** Sdo19_v8_2019
+* ds
+* SBE 19plus V 2.5.2  SERIAL NO. 7668    21 Feb 2019 13:40:29
+* vbatt = 12.3, vlith =  7.9, ioper =  61.7 ma, ipump =  41.9 ma,
+* iext01 =   4.1 ma
+* status = not logging
+* number of scans to average = 1
+* samples = 32059, free = 4354483, casts = 21
+* mode = profile, minimum cond freq = 3183, pump delay = 60 sec
+* autorun = no, ignore magnetic switch = no
+* battery type = alkaline, battery cutoff =  7.5 volts
+* pressure sensor = strain gauge, range = 870.0
+* SBE 38 = no, WETLABS = no, OPTODE = no, SBE63 = no, Gas Tension Device = no
+* Ext Volt 0 = yes, Ext Volt 1 = yes
+* Ext Volt 2 = no, Ext Volt 3 = no
+* Ext Volt 4 = no, Ext Volt 5 = no
+* echo characters = yes
+* output format = raw HEX
+
+* S>
+*
+* SBE 19plus V 2.5.2  SERIAL NO. 7668    21 Feb 2019 13:40:39
+* temperature:  25-Dec-15
+*     TA0 = 1.267225e-03
+*     TA1 = 2.737002e-04
+*     TA2 = -1.293778e-06
+*     TA3 = 1.869809e-07
+*     TOFFSET = 0.000000e+00
+* conductivity:  25-Dec-15
+*     G = -9.867356e-01
+*     H = 1.373357e-01
+*     I = -1.882663e-04
+*     J = 3.200928e-05
+*     CPCOR = -9.570000e-08
+*     CTCOR = 3.250000e-06
+*     CSLOPE = 1.000000e+00
+* pressure S/N = 4415748, range = 870 psia:  21-Dec-15
+*     PA0 = 4.043883e+00
+*     PA1 = 3.197376e-03
+*     PA2 = 9.416148e-11
+*     PTCA0 = 5.272488e+05
+*     PTCA1 = 4.657508e+01
+*     PTCA2 = 6.246729e-01
+*     PTCB0 = 2.483225e+01
+*     PTCB1 = 2.500000e-04
+*     PTCB2 = 0.000000e+00
+*     PTEMPA0 = 1.560700e+02
+*     PTEMPA1 = -6.159452e+01
+*     PTEMPA2 = -1.654344e-02
+*     POFFSET = 0.000000e+00
+* volt 0: offset = -4.555895e-02, slope = 1.250207e+00
+* volt 1: offset = -4.614421e-02, slope = 1.249831e+00
+* volt 2: offset = -4.682737e-02, slope = 1.250739e+00
+* volt 3: offset = -4.622000e-02, slope = 1.250014e+00
+* volt 4: offset = -4.569790e-02, slope = 1.249327e+00
+* volt 5: offset = -4.670526e-02, slope = 1.249043e+00
+*     EXTFREQSF = 9.999902e-01
+* dh
+* cast  21 21 Feb 2019 13:32:46 samples 30695 to 32059, avg = 1, stop = mag switch
+
+* S>
+# nquan = 10
+# nvalues = 16                          
+# units = specified
+# name 0 = prdM: Pressure, Strain Gauge [db]
+# name 1 = c0S/m: Conductivity [S/m]
+# name 2 = tv290C: Temperature [ITS-90, deg C]
+# name 3 = par: PAR/Irradiance, Biospherical/Licor
+# name 4 = dz/dtM: Descent Rate [m/s]
+# name 5 = density00: Density [density, kg/m^3]
+# name 6 = sal00: Salinity, Practical [PSU]
+# name 7 = depFM: Depth [fresh water, m], lat = 0
+# name 8 = nbin: number of scans per bin
+# name 9 = flag: flag
+# span 0 =      1.000,     16.000       
+# span 1 =   0.455433,   0.528997       
+# span 2 =    -0.1929,     0.9786       
+# span 3 = 1.7436e-02, 3.3434e+01       
+# span 4 =      0.253,      0.842       
+# span 5 =  1003.7029,  1004.3282       
+# span 6 =     4.7412,     5.3669       
+# span 7 =      1.020,     16.316       
+# span 8 =          1,         10       
+# span 9 = 0.0000e+00, 0.0000e+00       
+# interval = decibars: 1                
+# start_time = Feb 21 2019 13:32:46 [Instrument's time stamp, header]
+# bad_flag = -9.990e-29
+# <Sensors count="5" >
+#   <sensor Channel="1" >
+#     <!-- Count, Temperature -->
+#     <TemperatureSensor SensorID="58" >
+#       <SerialNumber>7668</SerialNumber>
+#       <CalibrationDate>25-Dec-15</CalibrationDate>
+#       <A0>1.26722461e-003</A0>
+#       <A1>2.73700160e-004</A1>
+#       <A2>-1.29377762e-006</A2>
+#       <A3>1.86980942e-007</A3>
+#       <Slope>1.00000000</Slope>
+#       <Offset>0.0000</Offset>
+#     </TemperatureSensor>
+#   </sensor>
+#   <sensor Channel="2" >
+#     <!-- Frequency 0, Conductivity -->
+#     <ConductivitySensor SensorID="3" >
+#       <SerialNumber>7668</SerialNumber>
+#       <CalibrationDate>25-Dec-15</CalibrationDate>
+#       <UseG_J>1</UseG_J>
+#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+#       <SeriesR>0.0000</SeriesR>
+#       <CellConst>2000.0000</CellConst>
+#       <ConductivityType>0</ConductivityType>
+#       <Coefficients equation="0" >
+#         <A>0.00000000e+000</A>
+#         <B>0.00000000e+000</B>
+#         <C>0.00000000e+000</C>
+#         <D>0.00000000e+000</D>
+#         <M>0.0</M>
+#         <CPcor>-9.57000000e-008</CPcor>
+#       </Coefficients>
+#       <Coefficients equation="1" >
+#         <G>-9.86735597e-001</G>
+#         <H>1.37335659e-001</H>
+#         <I>-1.88266263e-004</I>
+#         <J>3.20092794e-005</J>
+#         <CPcor>-9.57000000e-008</CPcor>
+#         <CTcor>3.2500e-006</CTcor>
+#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+#         <WBOTC>0.00000000e+000</WBOTC>
+#       </Coefficients>
+#       <Slope>1.00000000</Slope>
+#       <Offset>0.00000</Offset>
+#     </ConductivitySensor>
+#   </sensor>
+#   <sensor Channel="3" >
+#     <!-- Count, Pressure, Strain Gauge -->
+#     <PressureSensor SensorID="46" >
+#       <SerialNumber>7668</SerialNumber>
+#       <CalibrationDate>21-Dec-15</CalibrationDate>
+#       <PA0>4.04388260e+000</PA0>
+#       <PA1>3.19737581e-003</PA1>
+#       <PA2>9.41614771e-011</PA2>
+#       <PTEMPA0>1.56069976e+002</PTEMPA0>
+#       <PTEMPA1>-6.15945216e+001</PTEMPA1>
+#       <PTEMPA2>-1.65434382e-002</PTEMPA2>
+#       <PTCA0>5.27248823e+005</PTCA0>
+#       <PTCA1>4.65750762e+001</PTCA1>
+#       <PTCA2>6.24672921e-001</PTCA2>
+#       <PTCB0>2.48322500e+001</PTCB0>
+#       <PTCB1>2.50000000e-004</PTCB1>
+#       <PTCB2>0.00000000e+000</PTCB2>
+#       <Offset>0.000000</Offset>
+#     </PressureSensor>
+#   </sensor>
+#   <sensor Channel="4" >
+#     <!-- A/D voltage 0, PAR/Irradiance, Biospherical/Licor -->
+#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+#       <SerialNumber>70306</SerialNumber>
+#       <CalibrationDate>08-Oct-2015</CalibrationDate>
+#       <M>1.00000000</M>
+#       <B>0.00000000</B>
+#       <CalibrationConstant>11682000000.00000000</CalibrationConstant>
+#       <Multiplier>1.00000000</Multiplier>
+#       <Offset>-0.08747295</Offset>
+#     </PAR_BiosphericalLicorChelseaSensor>
+#   </sensor>
+#   <sensor Channel="5" >
+#     <!-- A/D voltage 1, Free -->
+#   </sensor>
+# </Sensors>
+# datcnv_date = Feb 22 2019 09:49:30, 7.23.2 [datcnv_vars = 5]
+# datcnv_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.hex C:\CTD\Setup\UMF_SBE19pV2_160203.xmlcon
+# datcnv_skipover = 360
+# filter_date = Feb 22 2019 09:49:32, 7.23.2
+# filter_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv
+# filter_low_pass_tc_A = 0.500
+# filter_low_pass_tc_B = 1.000
+# filter_low_pass_A_vars = c0S/m tv290C
+# filter_low_pass_B_vars = prdM
+# alignctd_date = Feb 22 2019 09:49:32, 7.23.2
+# alignctd_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv
+# alignctd_adv = tv290C 0.500                                                                                                                                                                                                        
+# celltm_date = Feb 22 2019 09:49:32, 7.23.2
+# celltm_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv
+# celltm_alpha = 0.0400, 0.0000
+# celltm_tau = 8.0000, 0.0000
+# celltm_temp_sensor_use_for_cond = primary, 
+# loopedit_date = Feb 22 2019 09:49:32, 7.23.2
+# loopedit_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv
+# loopedit_minVelocity = 0.100                                                                                            
+# loopedit_surfaceSoak: do not remove                                                                                     
+# loopedit_excl_bad_scans = yes
+# Derive_date = Feb 22 2019 09:49:33, 7.23.2 [derive_vars = 3]
+# Derive_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv C:\CTD\Setup\UMF_SBE19pV2_160203.xmlcon
+# binavg_date = Feb 22 2019 09:49:33, 7.23.2
+# binavg_in = C:\CTD\SBE_19plusV2\Temp\do19_v08_19.cnv
+# binavg_bintype = decibars
+# binavg_binsize = 1
+# binavg_excl_bad_scans = yes
+# binavg_skipover = 0
+# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+# file_type = ascii
+*END*
+      1.000   0.455433    -0.1095 3.3434e+01      0.253  1003.7029     4.7412      1.020         10 0.0000e+00
+      2.000   0.457518    -0.0952 9.4809e+00      0.618  1003.7256     4.7620      2.040          5 0.0000e+00
+      3.000   0.458613    -0.1423 4.8537e+00      0.842  1003.7440     4.7815      3.059          5 0.0000e+00
+      4.000   0.460462    -0.1875 2.9944e+00      0.806  1003.7691     4.8091      4.079          5 0.0000e+00
+      5.000   0.465967    -0.1929 2.0314e+00      0.799  1003.8242     4.8713      5.098          5 0.0000e+00
+      6.000   0.471430    -0.1568 1.3938e+00      0.797  1003.8758     4.9262      6.118          6 0.0000e+00
+      7.000   0.480827    -0.0830 1.0089e+00      0.758  1003.9594     5.0187      7.138          5 0.0000e+00
+      8.000   0.496655     0.0842 7.1015e-01      0.759  1004.0922     5.1665      8.158          5 0.0000e+00
+      9.000   0.508324     0.3232 5.2124e-01      0.788  1004.1791     5.2548      9.177          5 0.0000e+00
+     10.000   0.516627     0.5436 3.8452e-01      0.820  1004.2360     5.3080     10.197          5 0.0000e+00
+     11.000   0.520753     0.6758 2.6819e-01      0.829  1004.2638     5.3302     11.217          5 0.0000e+00
+     12.000   0.522730     0.7501 1.9273e-01      0.766  1004.2783     5.3388     12.237          6 0.0000e+00
+     13.000   0.524477     0.8148 1.3682e-01      0.686  1004.2917     5.3465     13.256          6 0.0000e+00
+     14.000   0.525875     0.8684 8.6794e-02      0.663  1004.3031     5.3524     14.276          6 0.0000e+00
+     15.000   0.527439     0.9235 4.6615e-02      0.605  1004.3158     5.3597     15.296          9 0.0000e+00
+     16.000   0.528997     0.9786 1.7436e-02      0.631  1004.3282     5.3669     16.316          1 0.0000e+00

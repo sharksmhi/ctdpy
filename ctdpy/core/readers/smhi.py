@@ -37,7 +37,19 @@ class SeaBirdSMHI(SeaBird):
 
         return serno
 
-    def _convert_formats(self, meta_dict):
+    def _extract_filename_information(self, filename):
+        """
+
+        :param filename:
+        :return:
+        """
+        # pattern = '{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv'
+        dictionary = {}
+        info_list = filename.split('_')
+        dictionary['INSTRUMENT_SERIE'] = info_list[1]
+        return dictionary
+
+    def _convert_formats(self, meta_dict, filename=None):
         """
         :param meta_dict:
         :return:
@@ -48,6 +60,10 @@ class SeaBirdSMHI(SeaBird):
         meta_dict.setdefault('SLABO', 'SMHI')
         meta_dict.setdefault('ALABO', 'SMHI')
         meta_dict.setdefault('POSYS', 'GPS')
+        if filename:
+            fid_info = self._extract_filename_information(filename)
+            for item, value in fid_info.items():
+                meta_dict[item] = value
 
     def get_metadata(self, serie, map_keys=True, filename=None):
         """
@@ -72,7 +88,7 @@ class SeaBirdSMHI(SeaBird):
                 if meta_dict[key]:
                     new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
             meta_dict = new_dict
-        self._convert_formats(meta_dict)
+        self._convert_formats(meta_dict, filename=filename)
 
         return meta_dict
 

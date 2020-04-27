@@ -1,9 +1,239 @@
-# # -*- coding: utf-8 -*-
-# """
-# Created on Thu Jul 05 08:22:21 2018
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul 05 08:22:21 2018
+
+@author: a002028
+"""
+import sys
+sys.path.append('C:\\Utveckling\\sharkpylib')
+import time
+from pprint import pprint
+from ctdpy.core.session import Session
+from ctdpy.core import config, data_handlers
+from ctdpy.core.writers.profile_plot import ProfilePlot, QCPlot
+from ctdpy.core.archive_handler import Archive
+from sharkpylib.qc.qc_default import QCBlueprint
+from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
+
+
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
+# base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v2-3\\ctd\\data'
+# base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v6-7 Feb\\ctd\\cnv'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_feb_2020'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_april_2020'
+base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_expedition_april_2020'
+
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
+# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
+# base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
+# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
+# base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200312_132344\\processed_data'
+# base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2019\\BAS_UMSC\\arbetsmapp\\'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200326_115716\\processed_data'  # 2019 UMF data
+
+# files = os.listdir(base_dir)
+files = generate_filepaths(base_dir,
+                           # pattern_list=['.TOB', '.xlsx'],
+                           # pattern_list=['.cnv', '.xlsx'],
+                           # endswith='.cnv',
+                           endswith='.txt',
+                           only_from_dir=False,
+                           )
+
+start_time = time.time()
+s = Session(filepaths=files,
+            # reader='deep',
+            # reader='smhi',
+            # reader='umsc',
+            reader='ctd_stdfmt',
+            )
+print("Session--%.3f sec" % (time.time() - start_time))
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        TEST PRINTS        ###################
+# print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
+# print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
+# print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
+# print('SHIPmapping test', s.settings.smap.map_shipc('ARANDA'))
+# pprint(s.settings.templates['ctd_metadata'])
+# pprint(s.settings.settings_paths)
+
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        READ DELIVERY DATA, CNV, XLSX        ###################
+start_time = time.time()
+# # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
+# datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
+# datasets = s.read(add_merged_data=True)
+datasets = s.read()
+print("Datasets loaded--%.3f sec" % (time.time() - start_time))
+try:
+    pprint(list(datasets[1].keys()))
+except:
+    pass
+pprint(list(datasets[0].keys()))
+#  -----------------------------------------------------------------------------------------------------------------
+#  ##################        QUALITY CONTROL       ###################
+# ex_data = datasets[0]['SBE09_1387_20200107_2137_77_10_0006.cnv'].get('hires_data')
+# for key in ex_data:
+#     if not key.startswith('Q_'):
+#         ex_data['Q0_'+key] = ['0000'] * ex_data.__len__()
+# pmap = s.settings.pmap
+
+start_time = time.time()
+for data_key, item in datasets[0].items():
+    print(data_key)
+    parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
+    qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
+    qc_run()
+
+print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
+# diff_func = DataDiff(ex_data, parameters=['TEMP_CTD', 'TEMP2_CTD'], acceptable_error=0.5)
+# diff_func = DataDiff(ex_data, parameters=['SALT_CTD', 'SALT2_CTD'], acceptable_error=0.3)
+# diff_func = func(ex_data, parameters=['CNDC_CTD', 'CNDC2_CTD'], acceptable_error=0.01)
+# diff_func = DataDiff(ex_data, parameters=['DOXY_CTD', 'DOXY2_CTD'], acceptable_error=0.3)
+# diff_func = DataDiff(ex_data, parameters=['DENS_CTD', 'DENS2_CTD'], acceptable_error=0.3)
+# diff_func()
+#  -----------------------------------------------------------------------------------------------------------------
+#  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
+# start_time = time.time()
+# data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
+# print("Datasets saved--%.3f sec" % (time.time() - start_time))
+
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        CREATE ARCHIVE        ###################
+# start_time = time.time()
+# s.create_archive(data_path=data_path)
+# print("Archive created--%.3f sec" % (time.time() - start_time))
+
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        TEST PRINTS        ###################
+# from calculator import Calculator
+# import numpy as np
+# attr_dict = {'latitude': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['LATIT'],
+#              'pressure': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
+#              'gravity': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
+#              'density': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['DENS_CTD'].astype(np.float)}
+# calc_obj = Calculator()
+# td = calc_obj.get_true_depth(attribute_dictionary=attr_dict)
+# res_head = 'hires_data'
+# res_head = 'lores_data_all'
+# print(datasets[0].keys())
+# print(datasets[1].keys())
+# print(datasets[1]['CTD Profile ifylld.xlsx']['Metadata'].keys())
+# print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'].keys())
+# print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata'].keys())
+# print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'][res_head].keys())
+# pprint(datasets[0].keys())
+# print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['FILENAME'])
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        WRITE METADATA TO TEMPLATE        ###################
+# start_time = time.time()
+# s.save_data(datasets[0], writer='metadata_template')
+# print("Metadata file created--%.3f sec" % (time.time() - start_time))
+
+#  -----------------------------------------------------------------------------------------------------------------
+# TODO läsare med alt. för fler flagfält
+# TODO skrivare med alt. för fler Q-flags-fält per parameter
+
+# pprint(s.settings.templates)
+# pprint(s.settings.writers['ctd_standard_template']['writer'])
+# pprint(type(datasets[0]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].columns))
+# import pandas as pd
+# print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['hires_data']['TEMP_CTD'].values)
+# datasets[1]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].pop('Tabellhuvud:')
+# print(datasets[1]['Test_Leveransmall_CTD.xlsx']['Information'])
+# f = pd.Series(datasets[1]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].columns)
+# print(f)
+# print(f.str.cat(sep='\t'))
+# for dset in datasets:
+#     print(dset.keys())
+# FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
+# template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
+# pprint(template_data)
+# s.save_data(template_data)
+
+#  -----------------------------------------------------------------------------------------------------------------
+#  ###################        Plot HTML map /diagrams        ###################
+
+# data_parameter_list = ['PRES_CTD [dbar]',
+#                        'SALT_CTD [psu (PSS-78)]', 'SALT2_CTD [psu (PSS-78)]',
+#                        'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
+#                        'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]',
+#                        ]
+# plot_parameters_mapping = {'x1': 'TEMP_CTD [°C (ITS-90)]', 'x1b': 'TEMP2_CTD [°C (ITS-90)]',
+#                            'x1_q0': 'Q0_TEMP_CTD', 'x1b_q0': 'Q0_TEMP2_CTD',
+#                            'x2': 'SALT_CTD [psu (PSS-78)]', 'x2b': 'SALT2_CTD [psu (PSS-78)]',
+#                            'x2_q0': 'Q0_SALT_CTD', 'x2b_q0': 'Q0_SALT2_CTD',
+#                            'x3': 'DOXY_CTD [ml/l]', 'x3b': 'DOXY2_CTD [ml/l]',
+#                            'x3_q0': 'Q0_DOXY_CTD', 'x3b_q0': 'Q0_DOXY2_CTD',
+#                            'y': 'PRES_CTD [dbar]'}
+# q_flag_parameters = ['Q_SALT_CTD', 'Q_SALT2_CTD', 'Q_TEMP_CTD', 'Q_TEMP2_CTD', 'Q_DOXY_CTD', 'Q_DOXY2_CTD']
+# auto_q_flag_parameters = ['Q0_SALT_CTD', 'Q0_SALT2_CTD', 'Q0_TEMP_CTD', 'Q0_TEMP2_CTD', 'Q0_DOXY_CTD', 'Q0_DOXY2_CTD']
+# q_colors = ['color_x1', 'color_x2', 'color_x3', 'color_x1b', 'color_x2b', 'color_x3b']
+
+data_parameter_list = ['PRES_CTD [dbar]', 'SALT_CTD [psu (PSS-78)]',
+                       'TEMP_CTD [°C (ITS-90)]', 'DOXY_CTD [ml/l]',
+                       ]
+plot_parameters_mapping = {'x1': 'TEMP_CTD [°C (ITS-90)]',
+                           'x1_q0': 'Q0_TEMP_CTD',
+                           'x2': 'SALT_CTD [psu (PSS-78)]',
+                           'x2_q0': 'Q0_SALT_CTD',
+                           'x3': 'DOXY_CTD [ml/l]',
+                           'x3_q0': 'Q0_DOXY_CTD',
+                           'y': 'PRES_CTD [dbar]'}
+
+q_flag_parameters = ['Q_SALT_CTD', 'Q_TEMP_CTD', 'Q_DOXY_CTD']
+auto_q_flag_parameters = ['Q0_SALT_CTD', 'Q0_TEMP_CTD', 'Q0_DOXY_CTD']
 #
-# @author: a002028
-# """
+q_colors = ['color_x1', 'color_x2', 'color_x3']
+df_parameter_list = data_parameter_list + q_colors + q_flag_parameters + auto_q_flag_parameters + \
+                    ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'SDATE', 'MONTH', 'STIME', 'KEY']
+
+parameter_formats = {p: float for p in data_parameter_list}
+start_time = time.time()
+
+data_transformer = data_handlers.DataTransformation()
+data_transformer.add_keys_to_datasets(datasets)
+
+dataframes = [datasets[0][key].get('data') for key in datasets[0].keys()]
+data_transformer.append_dataframes(dataframes)
+data_transformer.add_columns()
+data_transformer.add_color_columns(auto_q_flag_parameters)
+data_transformer.set_column_format(**parameter_formats)
+
+dataframe = data_transformer.get_dataframe(columns=df_parameter_list)
+
+print("Data retrieved--%.3f sec" % (time.time() - start_time))
+
+# TODO
+#  - Spara undan datafilerna i txtformat
+#  - Separera data och metadata
+#  - Addera QC_COMNT
+
+start_time = time.time()
+plot = QCPlot(dataframe,
+              parameters=data_parameter_list,
+              plot_parameters_mapping=plot_parameters_mapping,
+              color_fields=q_colors,
+              qflag_fields=q_flag_parameters,
+              auto_q_flag_parameters=auto_q_flag_parameters,
+              output_filename="svea_2020.html",
+              # output_filename="UMSC_2019.html",
+              )
+# plot.set_map()
+plot.plot_stations()
+plot.plot_data()
+plot.show_plot()
+# plot.plot(x='TEMP_CTD [°C (ITS-90)]',
+#              y='PRES_CTD [dbar]',
+#              z='SALT_CTD [psu (PSS-78)]',
+#              name=profile_name)
+print("Data plotted--%.3f sec" % (time.time() - start_time))
+
+
+
+
 # import sys
 # import os
 # current_path = os.path.dirname(os.path.realpath(__file__))[:-5]

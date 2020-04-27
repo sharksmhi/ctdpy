@@ -4,7 +4,7 @@ template:
     sheet_name: ["Förklaring", Metadata, Sensorinfo, Information, "Kolumnförklaring"]
     header_row: [null, 2, 2, null, 0, null]
     suffix: '*.xlsx'
-    file_path: /templates/Format CTD Profile.xlsx
+    file_path: /templates/Format Profile.xlsx
     reader: !!python/name:ctdpy.core.readers.xlsx_reader.load_excel ''
 
 template_handler: 

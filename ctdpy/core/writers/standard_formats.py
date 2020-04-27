@@ -22,42 +22,49 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         self.writer = self._get_writer_settings()
         self.txt_writer = TxtWriter()
 
+        self._sensorinfo_boolean = False
+        self.std_format = False
+
     def write(self, datasets):
         """
         Calls methods in order to strucure data according to standard and then writes to standard output format
         :param datasets: All loaded datasets [pd.DataFrame(s), pd.Series]
         """
-        meta = self.get_metadata_sets(datasets)
-        data = self.get_datasets(datasets)
-
-        self.setup_metadata_information(meta)
-
-        for dataset in data:
-            for fid, item in dataset.items():
-                instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
-                                                                    separator=self.writer['separator_metadata'],
-                                                                    data_identifier=item.get('identifier_data'))
-                metadata = self.extract_metadata(fid, separator=self.writer['separator_metadata'])
-                metadata_df = self.extract_metadata_dataframe(fid)
-                self.reset_index(metadata_df)
-                self._update_visit_info(metadata_df)
-
-                data_df = self._get_data_columns(item['hires_data'], metadata_df)
-                data_series = self._get_data_serie(data_df, separator=self.writer['separator_data'])
-                data_series = self._append_information(self.template_format,
-                                                       self.delimiters['meta'],
-                                                       self.delimiters['data'],
-                                                       metadata,
-                                                       self.sensorinfo,
-                                                       self.information,
-                                                       instrument_metadata,
-                                                       data_series)
-                self._write(fid, data_series)
-
-        self._write_delivery_note()
-        self._write_metadata()
-        self._write_sensorinfo()
-        self._write_information()
+        self._check_dataset_format(datasets)
+        if self.std_format:
+            self._redirect_to_data_update(datasets)
+        else:
+            meta = self.get_metadata_sets(datasets)
+            data = self.get_datasets(datasets)
+            self.setup_metadata_information(meta)
+    
+            for dataset in data:
+                for fid, item in dataset.items():
+                    self.sensorinfo_boolean = item['metadata'].get('INSTRUMENT_SERIE')
+                    instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
+                                                                        separator=self.writer['separator_metadata'],
+                                                                        data_identifier=item.get('identifier_data'))
+                    metadata = self.extract_metadata(fid, separator=self.writer['separator_metadata'])
+                    metadata_df = self.extract_metadata_dataframe(fid)
+                    self.reset_index(metadata_df)
+                    self._update_visit_info(metadata_df)
+    
+                    data_df = self._get_data_columns(item['hires_data'], metadata_df)
+                    data_series = self._get_data_serie(data_df, separator=self.writer['separator_data'])
+                    data_series = self._append_information(self.template_format,
+                                                           self.delimiters['meta'],
+                                                           self.delimiters['data'],
+                                                           metadata,
+                                                           self.sensorinfo[item['metadata'].get('INSTRUMENT_SERIE')],
+                                                           self.information,
+                                                           instrument_metadata,
+                                                           data_series)
+                    self._write(fid, data_series)
+    
+            self._write_delivery_note()
+            self._write_metadata()
+            self._write_sensorinfo()
+            self._write_information()
 
     def _write_delivery_note(self):
         """
@@ -142,8 +149,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         # TODO should be able to handle multiple metadatasets? (.xlsx delivery files)
         self.delimiters = self._get_delimiters()
-        print(meta)
-        print(type(meta))
         self.df_metadata = self._get_reduced_dataframe(meta[0]['Metadata'])
         self.delivery_note = self._get_delivery_note(meta[0]['Förklaring'])
         self.template_format = self._get_template_format()
@@ -217,11 +222,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         # print('meta', meta)
         self.reset_index(meta)
 
-        meta = meta.iloc[0]
-
+        meta = meta.iloc[0].to_list()
         serie = pd.Series(self.df_metadata.columns)
-        # FutureWarning if not join is set to 'left' instead of None but then this func doesnt work.. mhmmm...
-        serie = serie.str.cat(meta, sep=separator, join=None)
+
+        serie = serie.str.cat(meta, sep=separator)
         serie = serie.radd(self.writer['prefix_metadata'] + separator)
 
         return serie
@@ -249,16 +253,19 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _get_sensorinfo_serie(self, separator=None):
         """
-
         :param separator: str, separator to separate row values
         :return:
         """
-        out_info = [pd.Series(self.df_sensorinfo.columns).str.cat(sep=separator)]
-        for index, row in self.df_sensorinfo.iterrows():
-            out_info.append(row.str.cat(sep=separator))
+        out_info = {}
+        for inst_serno in self.df_sensorinfo['INSTRUMENT_SERIE'].unique():
+            out_info[inst_serno] = [pd.Series(self.df_sensorinfo.columns).str.cat(sep=separator)]
 
-        out_info = self.get_series_object(out_info)
-        out_info = out_info.radd(self.writer['prefix_sensorinfo'] + separator)
+        for index, row in self.df_sensorinfo.iterrows():
+            out_info[row['INSTRUMENT_SERIE']].append(row.str.cat(sep=separator))
+
+        for inst_serno in out_info.keys():
+            out_info[inst_serno] = self.get_series_object(out_info[inst_serno])
+            out_info[inst_serno] = out_info[inst_serno].radd(self.writer['prefix_sensorinfo'] + separator)
         return out_info
 
     def _get_information_serie(self, info, separator=None):
@@ -354,13 +361,16 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         parameters_list = self.get_parameters_from_sensorinfo()
         return self.writer['standard_data_header'] + parameters_list
 
-    def get_parameters_from_sensorinfo(self):
+    def get_parameters_from_sensorinfo(self, qc0=True):
         """
         :return: All parameters from sensorinfo including Q-flags
         """
+        #TODO    qc0.. if QC-0 has been performed we have a True value
         outlist = []
-        for param in self.df_sensorinfo['PARAM'].values:
+        for param in self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values:
             outlist.append(param)
+            if qc0:
+                outlist.append('Q0_'+param)
             outlist.append('Q_'+param)
         return outlist
 
@@ -409,12 +419,9 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             self._set_data_path()
             utils.check_path(self.data_path)
 
-        if 'delivery_note' in fid or 'information' in fid or 'sensorinfo' in fid or 'metadata' in fid:
-            # file_prefix = ''
+        if 'delivery_note' in fid or 'metadata' in fid or 'sensorinfo' in fid or 'information' in fid:
             pass
-        else:
-            # file_prefix = self.writer.get('filename')
-            # file_prefix = ''
+        elif not fid.startswith(self.writer.get('filename')):
             fid = self._replace_data_file_name(fid)
 
         file_path = ''.join([self.data_path,
@@ -428,6 +435,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param fid:
         :return:
         """
+
         boolean = self.file_name == fid.upper()
         return self.df_metadata.loc[boolean, 'FILE_NAME_DATABASE'].values[0]
 
@@ -436,7 +444,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return:
         """
         time_now = utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
-        self.data_path = ''.join([self.settings.settings_paths.get('export_path'), time_now, '/'])
+        folder_prefix = 'ctd_std_fmt_'
+        self.data_path = ''.join([self.settings.settings_paths.get('export_path'), folder_prefix, time_now, '/'])
 
     def _update_visit_info(self, metadata):
         """
@@ -505,3 +514,32 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         self._file_name = file_series.str.upper()
 
+    @property
+    def sensorinfo_boolean(self):
+        return self._sensorinfo_boolean
+
+    @sensorinfo_boolean.setter
+    def sensorinfo_boolean(self, value):
+        self._sensorinfo_boolean = self.df_sensorinfo['INSTRUMENT_SERIE'] == value
+
+    def _check_dataset_format(self, datasets):
+        """
+        :param datasets: list
+        :return:
+        """
+        if len(datasets) == 1:
+            self.std_format = True
+
+    def _redirect_to_data_update(self, datasets):
+        """
+
+        :param datasets: consits of data as CTD standard format. Each dataset has metadata according to standard format
+                         (pd.Series) and data as pd.DataFramedatasets consits of CTD standard format. Each dataset has
+                         metadata according to standard format (pd.Series) and data as pd.DataFrame
+        :return:
+        """
+        for key, item in datasets[0].items():
+            data_series = self._get_data_serie(item['data'], separator=self.writer['separator_data'])
+            data_series = self._append_information(item['metadata'],
+                                                   data_series)
+            self._write(key, data_series)

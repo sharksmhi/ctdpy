@@ -1,0 +1,715 @@
+//FORMAT=PROFILE
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2020
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV, SMHI
+//METADATA;SLABO;SMHI
+//METADATA;ALABO;SMHI
+//METADATA;SDATE;2020-04-14
+//METADATA;STIME;17:34
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;77SE
+//METADATA;CRUISE_NO;SMHI-07-2020
+//METADATA;SERNO;0339
+//METADATA;STATN;A15
+//METADATA;LATIT;5817.70
+//METADATA;LONGI;01050.71
+//METADATA;POSYS;GPS
+//METADATA;WADEP;
+//METADATA;COMNT_VISIT;
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;
+//METADATA;INSTRUMENT_ID;
+//METADATA;REFSK_SMP;
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;SBE09_1387_20200414_1734_77_10_0339.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20200414_77SE_0339.txt
+//METADATA;WINDIR;
+//METADATA;WINSP;
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;
+//METADATA;CLOUD;
+//METADATA;WAVES;
+//METADATA;ICEOB;
+//METADATA;INSTRUMENT_SERIE;1387
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;depFM: Depth [true depth, m], lat ;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;prDM: Pressure, Digiquartz [db];Tryck;PRES_CTD;dbar;;;Paroscientific;Digiquartz 8000-series;1044;2016-12-14;0;0-1400 m;0.01% Typical Accuracy;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;Seabird;SBE 4C;3941;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;c1S/m: Conductivity, 2 [S/m];Konduktivitet2;CNDC2_CTD;S/m;;;Seabird;SBE 4C;3943;2014-07-17;0;0.0-7.0 S/m;± 0.0003 S/m;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sal11: Salinity, Practical, 2 [PSU];Salthalt2;SALT2_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;t090C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5351;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;t190C: Temperature, 2 [ITS-90, deg C];Temperatur2;TEMP2_CTD;°C (ITS-90);;;Seabird;SBE 3plus;5355;2014-07-16;-5.0;-5.0 - +35 °C;± 0.001 °C;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;Seabird;SBE 43;0732;2016-11-12;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l];Syrgashalt2;DOXY2_CTD;ml/l;;;Seabird;SBE 43;1243;2016-10-28;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;24;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;par: PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µE/(cm2 sec);;;Biospherical;QSP-2000;70374;2014-09-25;1.4x10e-5;1.4x10e-5 µE/(cm2 ·sec) to 0.5 µE/(cm2 ·sec);;;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;flECO-AFL: Fluorescence, WET Labs ECO-AFL/FL [mg/m^3];Klorofyllfluorescens;CHLFLUO_CTD;mg/m3;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-50 µg/I;0.025 µg/I;8;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;turbWETntu0: Turbidity, WET Labs ECO [NTU];Turbiditet;TURB_CTD;NTU;;;WET Labs;ECO-FLNTU-RTD;2288;2014-08-19*;0;0-25 NTU;0.013 NTU;8;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;flECO-AFL1: Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3];Phycocyaninfluorescens;PHYC_CTD;ppb;;;WET Labs;ECO-FLPC-RTD;2290;2011-06-24*;0;0-230 ppb;0.03 ppb;8;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;altM: Altimeter [m];Altimeter;ALTM_CTD;m;;;Teledyne;PSA-916;53447;2014-09-10;1;1-100 m;2.5 cm;;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;dz/dtM: Descent Rate [m/s], WS ;fallhastighet;DESC_RATE_CTD;m/s;ja;derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;scan: Scan Count;scan nummer;SCAN_CTD;;;;;;;;;;;;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;pumps: Pump Status;pump status;PUMP_CTD;;;;Seabird;SBE 5T;;;;;;;
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sigma-t00: Density [sigma-t, Kg/m^3 ];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;sigma-t11: Density, 2 [sigma-t, Kg/m^3 ];Densitet2;DENS2_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;svCM: Sound Velocity [Chen-Millero, m/s];Ljudhastighet;SVEL_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE1387;Seabird;911plus;1387;2017-11-01;2018-12-31;svCM1: Sound Velocity, 2 [Chen-Millero, m/s];Ljudhastighet2;SVEL2_CTD;m/s;ja;UNESCO 1983 (EOS 80) Chen-Millero;;;;;;;;;calculated from salinity, temperature and pressure
+//INFORMATION;Information om instrumenthantering, datahantering; processering, beskrivning, kvalitetskontroll etc, kommentarer på datakvalité m.m.
+//INFORMATION;(förslagsvis på engelska för att att nå ut till fler användare av data)
+//INSTRUMENT_METADATA;* Sea-Bird SBE 9 Data File:
+//INSTRUMENT_METADATA;* FileName = L:\2020\sv20d0339.hex
+//INSTRUMENT_METADATA;* Software Version Seasave V 7.26.7.121
+//INSTRUMENT_METADATA;* Temperature SN = 6378
+//INSTRUMENT_METADATA;* Conductivity SN = 4824
+//INSTRUMENT_METADATA;* Number of Bytes Per Scan = 41
+//INSTRUMENT_METADATA;* Number of Voltage Words = 4
+//INSTRUMENT_METADATA;* Number of Scans Averaged by the Deck Unit = 1
+//INSTRUMENT_METADATA;* System UpLoad Time = Apr 14 2020 17:34:39
+//INSTRUMENT_METADATA;* NMEA Latitude = 58 17.70 N
+//INSTRUMENT_METADATA;* NMEA Longitude = 010 50.71 E
+//INSTRUMENT_METADATA;* NMEA UTC (Time) = Apr 14 2020  17:34:37
+//INSTRUMENT_METADATA;* Store Lat/Lon Data = Append to Every Scan
+//INSTRUMENT_METADATA;* tSBE 11plus V 5.2
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* pressure baud rate = 9600
+//INSTRUMENT_METADATA;* NMEA baud rate = 4800
+//INSTRUMENT_METADATA;* GPIB address = 1
+//INSTRUMENT_METADATA;* advance primary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* advance secondary conductivity  0.073 seconds
+//INSTRUMENT_METADATA;* autorun on power up is disabled
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;** Station:  A15
+//INSTRUMENT_METADATA;** Operator:  JKro
+//INSTRUMENT_METADATA;** Ship: SVEA
+//INSTRUMENT_METADATA;** Average sound velocity: 1478.74 m/s
+//INSTRUMENT_METADATA;** True-depth calculation Tue, 14 Apr 2020 18:47:29 +0000
+//INSTRUMENT_METADATA;** CTD Python Module SMHI /ver 3-12/ feb 2012 
+//INSTRUMENT_METADATA;** LIMS Job: 20207710-0339
+//INSTRUMENT_METADATA;** Cruise: SMHI-07-2020
+//INSTRUMENT_METADATA;** Latitude [GG MM.mm N] :
+//INSTRUMENT_METADATA;** Longitude [GGG MM.mm E]:
+//INSTRUMENT_METADATA;* System UTC = Apr 14 2020 17:34:39
+//INSTRUMENT_METADATA;# nquan = 30
+//INSTRUMENT_METADATA;# nvalues = 265                         
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = scan: Scan Count
+//INSTRUMENT_METADATA;# name 1 = prDM: Pressure, Digiquartz [db]
+//INSTRUMENT_METADATA;# name 2 = t090C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = t190C: Temperature, 2 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 4 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 5 = c1S/m: Conductivity, 2 [S/m]
+//INSTRUMENT_METADATA;# name 6 = pumps: Pump Status
+//INSTRUMENT_METADATA;# name 7 = sbeox0V: Oxygen raw, SBE 43 [V]
+//INSTRUMENT_METADATA;# name 8 = sbeox1V: Oxygen raw, SBE 43, 2 [V]
+//INSTRUMENT_METADATA;# name 9 = altM: Altimeter [m]
+//INSTRUMENT_METADATA;# name 10 = dz/dtM: Descent Rate [m/s]
+//INSTRUMENT_METADATA;# name 11 = flECO-AFL: Chl-a Fluorescence, WET Labs ECO-AFL/FL [mg/m^3]
+//INSTRUMENT_METADATA;# name 12 = flECO-AFL1: Phycocyanin Fluorescence, WET Labs ECO-AFL/FL, 2 [mg/m^3]
+//INSTRUMENT_METADATA;# name 13 = par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]
+//INSTRUMENT_METADATA;# name 14 = turbWETntu0: Turbidity, WET Labs ECO [NTU]
+//INSTRUMENT_METADATA;# name 15 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 16 = sal11: Salinity, Practical, 2 [PSU]
+//INSTRUMENT_METADATA;# name 17 = secS-priS: Salinity, Practical, Difference, 2 - 1 [PSU]
+//INSTRUMENT_METADATA;# name 18 = T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 19 = sigma-t00: Density [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 20 = sigma-t11: Density, 2 [sigma-t, kg/m^3 ]
+//INSTRUMENT_METADATA;# name 21 = depSM: Depth [salt water, m], lat = 58.295
+//INSTRUMENT_METADATA;# name 22 = depFM: Depth [true depth, m], lat = 58.295
+//INSTRUMENT_METADATA;# name 23 = svCM: Sound Velocity [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 24 = svCM1: Sound Velocity, 2 [Chen-Millero, m/s]
+//INSTRUMENT_METADATA;# name 25 = sbeox0ML/L: Oxygen, SBE 43 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 26 = sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l], WS = 2
+//INSTRUMENT_METADATA;# name 27 = sbeox0PS: Oxygen, SBE 43 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 28 = sbeox1PS: Oxygen, SBE 43, 2 [% saturation], WS = 2
+//INSTRUMENT_METADATA;# name 29 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      37001,      44180       
+//INSTRUMENT_METADATA;# span 1 =      1.500,    133.500       
+//INSTRUMENT_METADATA;# span 2 =     6.4246,     7.2464       
+//INSTRUMENT_METADATA;# span 3 =     6.4270,     7.2461       
+//INSTRUMENT_METADATA;# span 4 =   2.877417,   3.564572       
+//INSTRUMENT_METADATA;# span 5 =   2.877149,   3.564323       
+//INSTRUMENT_METADATA;# span 6 =          1,          1       
+//INSTRUMENT_METADATA;# span 7 =     3.4852,     3.6655       
+//INSTRUMENT_METADATA;# span 8 =     3.2572,     3.4238       
+//INSTRUMENT_METADATA;# span 9 =       1.91,      98.38       
+//INSTRUMENT_METADATA;# span 10 =     -0.432,      0.677      
+//INSTRUMENT_METADATA;# span 11 =     0.2225,     1.4224      
+//INSTRUMENT_METADATA;# span 12 =     0.1278,     0.4225      
+//INSTRUMENT_METADATA;# span 13 = -1.677e-07, 5.0666e+00      
+//INSTRUMENT_METADATA;# span 14 =     0.1239,     1.5660      
+//INSTRUMENT_METADATA;# span 15 =    28.3469,    35.1173      
+//INSTRUMENT_METADATA;# span 16 =    28.3440,    35.1153      
+//INSTRUMENT_METADATA;# span 17 =    -0.0190,     0.0701      
+//INSTRUMENT_METADATA;# span 18 =    -0.0075,     0.0083      
+//INSTRUMENT_METADATA;# span 19 =    22.2452,    27.4911      
+//INSTRUMENT_METADATA;# span 20 =    22.2429,    27.4892      
+//INSTRUMENT_METADATA;# span 21 =      1.486,    132.217      
+//INSTRUMENT_METADATA;# span 22 =      1.495,    132.439      
+//INSTRUMENT_METADATA;# span 23 =    1468.34,    1481.46      
+//INSTRUMENT_METADATA;# span 24 =    1468.32,    1481.46      
+//INSTRUMENT_METADATA;# span 25 =     6.1437,     6.9238      
+//INSTRUMENT_METADATA;# span 26 =     6.2474,     7.0628      
+//INSTRUMENT_METADATA;# span 27 =     91.585,     96.999      
+//INSTRUMENT_METADATA;# span 28 =     93.098,     98.948      
+//INSTRUMENT_METADATA;# span 29 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 0.5              
+//INSTRUMENT_METADATA;# start_time = Apr 14 2020 17:34:38 [NMEA time, first data scan]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="13" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6378</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.38203097e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.42735305e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.29129716e-005</I>
+//INSTRUMENT_METADATA;#       <J>2.11079008e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 1, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4824</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.87146657e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.28867025e+000</H>
+//INSTRUMENT_METADATA;#         <I>4.09053062e-004</I>
+//INSTRUMENT_METADATA;#         <J>3.18252404e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 2, Pressure, Digiquartz with TC -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="45" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1387</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>31-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <C1>-7.924400e+003</C1>
+//INSTRUMENT_METADATA;#       <C2>1.544540e-002</C2>
+//INSTRUMENT_METADATA;#       <C3>2.127510e-003</C3>
+//INSTRUMENT_METADATA;#       <D1>5.358900e-002</D1>
+//INSTRUMENT_METADATA;#       <D2>0.000000e+000</D2>
+//INSTRUMENT_METADATA;#       <T1>3.019071e+001</T1>
+//INSTRUMENT_METADATA;#       <T2>-1.409710e-004</T2>
+//INSTRUMENT_METADATA;#       <T3>3.227440e-006</T3>
+//INSTRUMENT_METADATA;#       <T4>2.567620e-009</T4>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#       <T5>0.000000e+000</T5>
+//INSTRUMENT_METADATA;#       <AD590M>1.278280e-002</AD590M>
+//INSTRUMENT_METADATA;#       <AD590B>-8.997610e+000</AD590B>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 3, Temperature, 2 -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="55" >
+//INSTRUMENT_METADATA;#       <SerialNumber>6384</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>04-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#       <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#       <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#       <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#       <F0_Old>0.000</F0_Old>
+//INSTRUMENT_METADATA;#       <G>4.32006699e-003</G>
+//INSTRUMENT_METADATA;#       <H>6.32109851e-004</H>
+//INSTRUMENT_METADATA;#       <I>2.15638014e-005</I>
+//INSTRUMENT_METADATA;#       <J>1.96975443e-006</J>
+//INSTRUMENT_METADATA;#       <F0>1000.000</F0>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 4, Conductivity, 2 -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>08-May-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-9.81362538e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.31135002e+000</H>
+//INSTRUMENT_METADATA;#         <I>9.90527855e-005</I>
+//INSTRUMENT_METADATA;#         <J>5.58058935e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="6" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3823</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.3650e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7250</offset>
+//INSTRUMENT_METADATA;#         <A>-3.8927e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.4045e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.2716e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.1700</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="7" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, Oxygen, SBE 43, 2 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>3829</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Jun-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>3.7087e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.7004</offset>
+//INSTRUMENT_METADATA;#         <A>-4.4432e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.8923e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.9772e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.8000</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="8" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 2, Chl-a Fluorometer, WET Labs ECO-AFL/FL -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>01-Jan-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.00000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0570</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="9" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 3, Turbidity Meter, WET Labs, ECO-NTU -->
+//INSTRUMENT_METADATA;#     <TurbidityMeter SensorID="67" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLNTURTD-2288</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>19-Aug-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>5.000000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <DarkVoltage>0.060000</DarkVoltage>
+//INSTRUMENT_METADATA;#     </TurbidityMeter>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="10" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 4, Phycocyanin Fluorometer, WET Labs ECO-AFL/FL, 2 -->
+//INSTRUMENT_METADATA;#     <FluoroWetlabECO_AFL_FL_Sensor SensorID="20" >
+//INSTRUMENT_METADATA;#       <SerialNumber>FLPCRTD-2299</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>24-Jun-11</CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>1.20000000e+001</ScaleFactor>
+//INSTRUMENT_METADATA;#       <!-- Dark output -->
+//INSTRUMENT_METADATA;#       <Vblank>0.0560</Vblank>
+//INSTRUMENT_METADATA;#     </FluoroWetlabECO_AFL_FL_Sensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="11" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 5, Altimeter -->
+//INSTRUMENT_METADATA;#     <AltimeterSensor SensorID="0" >
+//INSTRUMENT_METADATA;#       <SerialNumber>1251</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate></CalibrationDate>
+//INSTRUMENT_METADATA;#       <ScaleFactor>15.000</ScaleFactor>
+//INSTRUMENT_METADATA;#       <Offset>0.000</Offset>
+//INSTRUMENT_METADATA;#     </AltimeterSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="12" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 6, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>70374</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>25-Sep-14</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>1.00000000</M>
+//INSTRUMENT_METADATA;#       <B>0.00000000</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>12005000000.00000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>-0.08575215</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="13" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 7, Free -->
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Apr 14 2020 18:47:09, 7.26.7.129 [datcnv_vars = 15]
+//INSTRUMENT_METADATA;# datcnv_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.hex C:\ctd\temp\SBE09_1387_20200414_1734_77_10_0339.XMLCON
+//INSTRUMENT_METADATA;# datcnv_skipover = 0
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Apr 14 2020 18:47:11, 7.26.7.129
+//INSTRUMENT_METADATA;# filter_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.030
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 0.150
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = dz/dtM flECO-AFL flECO-AFL1 par turbWETntu0
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prDM
+//INSTRUMENT_METADATA;# alignctd_date = Apr 14 2020 18:47:14, 7.26.7.129
+//INSTRUMENT_METADATA;# alignctd_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = sbeox0V 4.000, sbeox1V 4.000                                                                                                                                                                                        
+//INSTRUMENT_METADATA;# celltm_date = Apr 14 2020 18:47:16, 7.26.7.129
+//INSTRUMENT_METADATA;# celltm_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0300, 0.0300
+//INSTRUMENT_METADATA;# celltm_tau = 7.0000, 7.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, secondary
+//INSTRUMENT_METADATA;# loopedit_date = Apr 14 2020 18:47:17, 7.26.7.129
+//INSTRUMENT_METADATA;# loopedit_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.150                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: minDepth = 4.0, maxDepth = 15, useDeckPress = 0                                                   
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Apr 14 2020 18:47:20, 7.26.7.129 [derive_vars = 14]
+//INSTRUMENT_METADATA;# Derive_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.XMLCON
+//INSTRUMENT_METADATA;# derive_time_window_docdt = seconds: 2
+//INSTRUMENT_METADATA;# derive_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# binavg_date = Apr 14 2020 18:47:22, 7.26.7.129
+//INSTRUMENT_METADATA;# binavg_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 0.5
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_omit = 0
+//INSTRUMENT_METADATA;# binavg_min_scans_bin = 1
+//INSTRUMENT_METADATA;# binavg_max_scans_bin = 2147483647
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# split_date = Apr 14 2020 18:47:25, 7.26.7.129
+//INSTRUMENT_METADATA;# split_in = C:\ctd\temp\sbe09_1387_20200414_1734_77_10_0339.cnv
+//INSTRUMENT_METADATA;# split_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# file_type = ascii
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	DEPH [m]	Q0_DEPH	Q_DEPH	PRES_CTD [dbar]	Q0_PRES_CTD	Q_PRES_CTD	CNDC_CTD [S/m]	Q0_CNDC_CTD	Q_CNDC_CTD	CNDC2_CTD [S/m]	Q0_CNDC2_CTD	Q_CNDC2_CTD	SALT_CTD [psu (PSS-78)]	Q0_SALT_CTD	Q_SALT_CTD	SALT2_CTD [psu (PSS-78)]	Q0_SALT2_CTD	Q_SALT2_CTD	TEMP_CTD [°C (ITS-90)]	Q0_TEMP_CTD	Q_TEMP_CTD	TEMP2_CTD [°C (ITS-90)]	Q0_TEMP2_CTD	Q_TEMP2_CTD	DOXY_CTD [ml/l]	Q0_DOXY_CTD	Q_DOXY_CTD	DOXY2_CTD [ml/l]	Q0_DOXY2_CTD	Q_DOXY2_CTD	PAR_CTD [µE/(cm2 sec)]	Q0_PAR_CTD	Q_PAR_CTD	CHLFLUO_CTD [mg/m3]	Q0_CHLFLUO_CTD	Q_CHLFLUO_CTD	TURB_CTD [NTU]	Q0_TURB_CTD	Q_TURB_CTD	PHYC_CTD [ppb]	Q0_PHYC_CTD	Q_PHYC_CTD	ALTM_CTD [m]	Q0_ALTM_CTD	Q_ALTM_CTD	DESC_RATE_CTD [m/s]	Q0_DESC_RATE_CTD	Q_DESC_RATE_CTD	SCAN_CTD []	Q0_SCAN_CTD	Q_SCAN_CTD	PUMP_CTD []	Q0_PUMP_CTD	Q_PUMP_CTD	DENS_CTD [kg/m3]	Q0_DENS_CTD	Q_DENS_CTD	DENS2_CTD [kg/m3]	Q0_DENS2_CTD	Q_DENS2_CTD	SVEL_CTD [m/s]	Q0_SVEL_CTD	Q_SVEL_CTD	SVEL2_CTD [m/s]	Q0_SVEL2_CTD	Q_SVEL2_CTD
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	1.495			1.500			2.87996			2.87833			28.3809			28.3620			6.4777			6.4792			6.9147			7.0601			5.067e+00			1.3631			0.2297000			0.3663			97.26			-0.432			37001			1			22.2723			22.2573			1468.34			1468.32		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	1.993			2.000			2.88045			2.87951			28.3872			28.3762			6.4762			6.4773			6.9201			7.0570			4.001e+00			1.3354			0.2446000			0.3728			97.22			0.077			37042			1			22.2775			22.2687			1468.35			1468.34		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	2.491			2.500			2.88032			2.88026			28.3854			28.3850			6.4764			6.4761			6.9238			7.0547			3.404e+00			1.3366			0.2577000			0.3274			97.24			0.405			37150			1			22.2761			22.2758			1468.36			1468.36		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	2.989			3.000			2.88169			2.88115			28.4016			28.3956			6.4747			6.4748			6.9207			7.0518			3.002e+00			1.3327			0.2401000			0.3760			97.26			0.146			37223			1			22.2890			22.2843			1468.38			1468.37		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	3.487			3.500			2.88281			2.88235			28.4152			28.4100			6.4726			6.4729			6.9228			7.0534			2.595e+00			1.3311			0.2394000			0.3360			73.89			0.317			37261			1			22.3000			22.2958			1468.40			1468.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	3.985			4.000			2.88146			2.88156			28.3999			28.4010			6.4732			6.4731			6.9186			7.0628			2.162e+00			1.3582			0.2563000			0.3444			95.73			0.308			37298			1			22.2878			22.2887			1468.39			1468.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	4.484			4.500			2.88042			2.88162			28.3867			28.4014			6.4752			6.4732			6.9195			7.0582			1.959e+00			1.3919			0.2678000			0.3170			97.22			0.415			37324			1			22.2772			22.2890			1468.39			1468.40		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	4.982			5.000			2.87960			2.88024			28.3756			28.3842			6.4775			6.4756			6.9235			7.0529			1.627e+00			1.4224			0.2493000			0.3655			97.27			0.440			37353			1			22.2682			22.2752			1468.39			1468.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	5.480			5.500			2.88097			2.88101			28.3924			28.3934			6.4750			6.4742			6.9215			7.0483			1.475e+00			1.3977			0.2424000			0.3391			97.26			0.336			37388			1			22.2817			22.2826			1468.41			1468.41		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	5.978			6.000			2.88158			2.88210			28.3995			28.4068			6.4741			6.4721			6.9191			7.0407			1.250e+00			1.3509			0.2514000			0.3440			97.26			0.398			37414			1			22.2875			22.2934			1468.42			1468.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	6.476			6.500			2.88240			2.88333			28.4096			28.4215			6.4724			6.4704			6.9210			7.0372			1.073e+00			1.3690			0.2555000			0.3637			97.29			0.537			37434			1			22.2956			22.3051			1468.44			1468.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	6.974			7.000			2.88216			2.88238			28.4066			28.4094			6.4727			6.4722			6.9192			7.0377			9.504e-01			1.4001			0.3178000			0.3515			97.27			0.556			37458			1			22.2932			22.2954			1468.44			1468.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	7.473			7.500			2.88255			2.88192			28.4094			28.4022			6.4741			6.4745			6.9153			7.0457			8.710e-01			1.4021			0.2724000			0.4225			97.27			0.395			37490			1			22.2952			22.2895			1468.46			1468.45		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	7.971			8.000			2.88060			2.88095			28.3859			28.3905			6.4765			6.4757			6.9164			7.0408			7.637e-01			1.3863			0.2440000			0.3372			95.92			0.395			37516			1			22.2765			22.2802			1468.45			1468.45		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	8.469			8.500			2.87914			2.88000			28.3674			28.3782			6.4796			6.4779			6.9194			7.0484			6.585e-01			1.4075			0.2715000			0.3383			50.70			0.527			37536			1			22.2615			22.2702			1468.45			1468.45		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	8.967			9.000			2.88051			2.88027			28.3853			28.3827			6.4757			6.4756			6.9159			7.0551			5.566e-01			1.3962			0.2719000			0.2997			91.98			0.585			37557			1			22.2760			22.2740			1468.46			1468.46		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	9.465			9.500			2.87742			2.87715			28.3469			28.3440			6.4812			6.4812			6.9079			7.0500			4.969e-01			1.3936			0.2699000			0.3275			96.26			0.542			37581			1			22.2452			22.2429			1468.44			1468.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	9.963			10.000			2.87952			2.87857			28.3730			28.3617			6.4770			6.4781			6.9023			7.0323			4.498e-01			1.3846			0.2739000			0.3687			97.28			0.453			37609			1			22.2662			22.2572			1468.47			1468.46		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	10.462			10.500			2.88693			2.88764			28.4669			28.4765			6.4608			6.4586			6.8840			7.0006			3.978e-01			1.3249			0.2499000			0.3967			97.26			0.425			37637			1			22.3420			22.3498			1468.53			1468.53		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	10.960			11.000			2.90265			2.90490			28.6587			28.6852			6.4357			6.4334			6.8594			6.9717			3.441e-01			1.2408			0.2361000			0.3867			97.26			0.464			37661			1			22.4960			22.5171			1468.68			1468.70		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	11.458			11.500			2.92809			2.92973			28.9451			28.9610			6.4246			6.4270			6.8432			6.9477			2.912e-01			1.1936			0.2243000			0.3555			97.24			0.525			37683			1			22.7229			22.7351			1469.00			1469.03		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	11.956			12.000			2.98945			2.99255			29.5723			29.6040			6.4740			6.4766			6.8084			6.9086			2.504e-01			1.0887			0.1934000			0.3328			97.23			0.559			37704			1			23.2111			23.2358			1469.99			1470.04		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	12.453			12.500			3.03601			3.04129			30.0599			30.1158			6.4983			6.5005			6.7811			6.8994			2.255e-01			0.9718			0.1729000			0.3100			97.23			0.538			37728			1			23.5923			23.6360			1470.71			1470.78		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	12.951			13.000			3.08469			3.08906			30.5751			30.6196			6.5182			6.5219			6.7526			6.8751			2.055e-01			0.9114			0.1664000			0.3097			97.23			0.465			37755			1			23.9957			24.0303			1471.44			1471.51		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	13.448			13.500			3.15668			3.16279			31.3523			31.4223			6.5323			6.5292			6.7056			6.8224			1.875e-01			0.8829			0.1574000			0.2977			97.24			0.425			37783			1			24.6064			24.6620			1472.48			1472.55		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	13.945			14.000			3.19768			3.19686			31.8117			31.8026			6.5230			6.5230			6.6864			6.8066			1.665e-01			0.8376			0.1516000			0.2502			97.21			0.475			37806			1			24.9696			24.9624			1473.03			1473.02		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	14.442			14.500			3.21385			3.21510			31.9893			32.0033			6.5234			6.5231			6.6773			6.7989			1.440e-01			0.7648			0.1680000			0.2367			97.20			0.543			37827			1			25.1095			25.1206			1473.26			1473.28		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	14.938			15.000			3.22264			3.22193			32.0849			32.0772			6.5245			6.5245			6.6735			6.8031			1.304e-01			0.7236			0.1690000			0.2364			97.20			0.541			37851			1			25.1847			25.1787			1473.39			1473.38		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	15.435			15.500			3.22595			3.22537			32.1203			32.1150			6.5255			6.5243			6.6744			6.8047			1.156e-01			0.7431			0.1772000			0.2318			97.22			0.469			37878			1			25.2125			25.2085			1473.45			1473.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	15.932			16.000			3.22784			3.22798			32.1441			32.1464			6.5220			6.5213			6.6700			6.7942			1.061e-01			0.7543			0.1710000			0.2357			97.24			0.435			37904			1			25.2317			25.2337			1473.47			1473.47		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	16.429			16.500			3.23282			3.23291			32.1981			32.1997			6.5227			6.5221			6.6686			6.7824			9.589e-02			0.7344			0.1599000			0.2218			97.21			0.494			37926			1			25.2742			25.2755			1473.55			1473.55		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	16.925			17.000			3.23747			3.23712			32.2512			32.2477			6.5206			6.5203			6.6658			6.7920			8.061e-02			0.7127			0.1587000			0.2246			97.21			0.562			37947			1			25.3164			25.3136			1473.62			1473.61		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	17.422			17.500			3.23798			3.23768			32.2564			32.2534			6.5208			6.5206			6.6629			6.8048			7.302e-02			0.7038			0.1441000			0.2330			97.21			0.553			37970			1			25.3204			25.3181			1473.63			1473.63		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	17.919			18.000			3.23810			3.23778			32.2574			32.2542			6.5209			6.5207			6.6646			6.7996			6.366e-02			0.6986			0.1677000			0.2364			97.22			0.499			37995			1			25.3212			25.3187			1473.64			1473.64		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	18.415			18.500			3.23823			3.23799			32.2586			32.2561			6.5210			6.5207			6.6623			6.7899			5.721e-02			0.6850			0.1367000			0.2515			97.22			0.474			38020			1			25.3221			25.3202			1473.65			1473.65		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	18.912			19.000			3.23836			3.23812			32.2598			32.2574			6.5209			6.5207			6.6593			6.7710			4.118e-02			0.6914			0.1400000			0.2664			97.23			0.460			38047			1			25.3231			25.3212			1473.66			1473.66		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	19.409			19.500			3.23854			3.23826			32.2615			32.2586			6.5210			6.5208			6.6591			6.7811			3.270e-02			0.6939			0.1455000			0.2476			67.13			0.459			38072			1			25.3244			25.3222			1473.67			1473.67		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	19.905			20.000			3.23870			3.23851			32.2630			32.2611			6.5211			6.5209			6.6586			6.7883			2.081e-02			0.7022			0.1450000			0.2776			77.06			0.503			38094			1			25.3256			25.3241			1473.68			1473.68		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	20.402			20.500			3.23889			3.23872			32.2646			32.2628			6.5213			6.5211			6.6606			6.7758			1.443e-02			0.7451			0.1630000			0.2385			87.19			0.545			38116			1			25.3268			25.3255			1473.70			1473.69		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	20.899			21.000			3.23901			3.23876			32.2655			32.2631			6.5214			6.5212			6.6629			6.7851			8.101e-03			0.8757			0.1412000			0.2662			97.21			0.539			38139			1			25.3275			25.3256			1473.70			1473.70		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	21.395			21.500			3.23929			3.23907			32.2681			32.2659			6.5218			6.5216			6.6633			6.7963			4.008e-03			0.7033			0.1302000			0.2797			97.24			0.499			38164			1			25.3295			25.3278			1473.72			1473.71		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	21.892			22.000			3.23950			3.23925			32.2703			32.2679			6.5216			6.5213			6.6738			6.8035			4.860e-04			0.7038			0.1377000			0.2434			97.24			0.473			38190			1			25.3313			25.3294			1473.73			1473.72		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	22.389			22.500			3.23970			3.23947			32.2726			32.2700			6.5214			6.5213			6.6823			6.8104			1.105e-05			0.6870			0.1357000			0.2555			97.24			0.426			38219			1			25.3331			25.3311			1473.74			1473.73		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	22.885			23.000			3.24319			3.24420			32.3043			32.3133			6.5282			6.5305			6.6749			6.7890			-1.677e-07			0.6522			0.1320000			0.2211			97.27			0.432			38245			1			25.3572			25.3640			1473.81			1473.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	23.382			23.500			3.25715			3.25825			32.4299			32.4408			6.5580			6.5593			6.6437			6.7586			1.000e-12			0.5949			0.1361000			0.2387			97.25			0.501			38267			1			25.4524			25.4609			1474.10			1474.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	23.879			24.000			3.28576			3.28941			32.7017			32.7359			6.6037			6.6102			6.5934			6.7003			1.000e-12			0.5414			0.1308000			0.2542			97.26			0.560			38288			1			25.6608			25.6869			1474.63			1474.69		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	24.375			24.500			3.31949			3.32353			33.0397			33.0850			6.6392			6.6385			6.5435			6.6439			1.000e-12			0.4858			0.1380000			0.2501			97.24			0.558			38311			1			25.9227			25.9585			1475.20			1475.25		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	24.872			25.000			3.34884			3.34989			33.3723			33.3886			6.6303			6.6257			6.5171			6.6260			1.000e-12			0.4390			0.1421000			0.2306			97.22			0.517			38335			1			26.1860			26.1994			1475.59			1475.59		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	25.368			25.500			3.37060			3.37201			33.6062			33.6137			6.6371			6.6454			6.5149			6.6348			1.000e-12			0.3901			0.1373000			0.2252			97.21			0.479			38361			1			26.3695			26.3743			1475.92			1475.96		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	25.864			26.000			3.38354			3.38456			33.7107			33.7189			6.6761			6.6793			6.5251			6.6523			1.000e-12			0.3893			0.1385000			0.2401			97.22			0.443			38388			1			26.4468			26.4527			1476.21			1476.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	26.360			26.500			3.39308			3.39367			33.7906			33.7945			6.7018			6.7045			6.5370			6.6598			1.000e-12			0.3834			0.1439000			0.2466			97.22			0.444			38414			1			26.5063			26.5090			1476.42			1476.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	26.856			27.000			3.40235			3.40279			33.8604			33.8636			6.7346			6.7364			6.5366			6.6632			1.000e-12			0.3638			0.1239000			0.2611			97.22			0.506			38436			1			26.5570			26.5592			1476.64			1476.65		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	27.352			27.500			3.41028			3.41026			33.9161			33.9153			6.7666			6.7673			6.5291			6.6543			1.000e-12			0.3759			0.1400000			0.2633			97.21			0.554			38457			1			26.5966			26.5958			1476.84			1476.85		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	27.848			28.000			3.41473			3.41540			33.9491			33.9541			6.7827			6.7851			6.5280			6.6387			1.000e-12			0.3642			0.1263000			0.2623			97.20			0.513			38483			1			26.6204			26.6241			1476.96			1476.97		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	28.344			28.500			3.41995			3.42006			33.9911			33.9909			6.7982			6.7996			6.5203			6.6337			1.000e-12			0.3524			0.1243000			0.1811			97.19			0.431			38511			1			26.6515			26.6511			1477.08			1477.08		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	28.840			29.000			3.42253			3.42235			34.0138			34.0124			6.8038			6.8032			6.5127			6.6332			1.000e-12			0.3504			0.1244000			0.2693			97.21			0.460			38535			1			26.6686			26.6676			1477.14			1477.13		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	29.336			29.500			3.42628			3.42618			34.0471			34.0459			6.8117			6.8118			6.5038			6.6287			1.000e-12			0.3418			0.1244000			0.2417			97.22			0.520			38557			1			26.6938			26.6928			1477.22			1477.22		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	29.832			30.000			3.42991			3.43155			34.0786			34.0928			6.8201			6.8240			6.5014			6.6245			1.000e-12			0.3415			0.1466000			0.2242			97.23			0.516			38582			1			26.7174			26.7281			1477.30			1477.33		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	30.328			30.500			3.43911			3.44052			34.1603			34.1714			6.8398			6.8443			6.4955			6.6073			1.000e-12			0.3278			0.1707000			0.2598			90.69			0.455			38609			1			26.7791			26.7873			1477.49			1477.52		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	30.824			31.000			3.44244			3.44204			34.1895			34.1865			6.8470			6.8456			6.4881			6.5969			1.000e-12			0.3287			0.1489000			0.2447			51.40			0.458			38634			1			26.8012			26.7990			1477.56			1477.55		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	31.320			31.500			3.44278			3.44239			34.1947			34.1908			6.8454			6.8451			6.4859			6.6067			1.000e-12			0.3175			0.1429000			0.2386			80.65			0.510			38656			1			26.8055			26.8025			1477.57			1477.56		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	31.816			32.000			3.44293			3.44267			34.1977			34.1961			6.8437			6.8425			6.4797			6.6049			1.000e-12			0.3569			0.1676000			0.2394			97.29			0.536			38679			1			26.8081			26.8070			1477.57			1477.57		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	32.312			32.500			3.44438			3.44508			34.2157			34.2230			6.8416			6.8419			6.4782			6.5891			1.000e-12			0.3278			0.1672000			0.2392			97.24			0.513			38704			1			26.8226			26.8283			1477.59			1477.60		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	32.808			33.000			3.44872			3.44954			34.2574			34.2647			6.8475			6.8493			6.4706			6.5829			1.000e-12			0.3082			0.1652000			0.2143			97.23			0.449			38732			1			26.8546			26.8601			1477.68			1477.69		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	33.304			33.500			3.45156			3.45198			34.2856			34.2886			6.8504			6.8521			6.4689			6.5835			1.000e-12			0.3153			0.1694000			0.1914			96.87			0.411			38760			1			26.8765			26.8786			1477.73			1477.74		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	33.800			34.000			3.45317			3.45289			34.2986			34.2957			6.8549			6.8548			6.4639			6.5888			1.000e-12			0.3087			0.2016000			0.1912			97.23			0.465			38784			1			26.8861			26.8838			1477.78			1477.77		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	34.296			34.500			3.45364			3.45372			34.3029			34.3034			6.8556			6.8560			6.4635			6.5819			1.000e-12			0.3078			0.1902000			0.2121			97.23			0.535			38805			1			26.8894			26.8897			1477.79			1477.79		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	34.792			35.000			3.45591			3.45577			34.3224			34.3203			6.8609			6.8614			6.4613			6.5697			1.000e-12			0.3067			0.1991000			0.2515			97.21			0.554			38827			1			26.9040			26.9023			1477.84			1477.84		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	35.288			35.500			3.45759			3.45804			34.3353			34.3381			6.8662			6.8684			6.4600			6.5718			1.000e-12			0.3067			0.1719000			0.2036			97.24			0.502			38853			1			26.9135			26.9154			1477.89			1477.90		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	35.784			36.000			3.46244			3.46296			34.3746			34.3770			6.8802			6.8836			6.4545			6.5732			1.000e-12			0.2948			0.1932000			0.2599			97.24			0.455			38879			1			26.9426			26.9440			1478.00			1478.02		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	36.280			36.500			3.46454			3.46532			34.3894			34.3946			6.8883			6.8917			6.4473			6.5703			1.000e-12			0.3050			0.1691000			0.2380			97.25			0.477			38903			1			26.9531			26.9567			1478.06			1478.08		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	36.776			37.000			3.47138			3.47204			34.4378			34.4414			6.9150			6.9187			6.4396			6.5578			1.000e-12			0.3078			0.1617000			0.2064			97.22			0.518			38925			1			26.9876			26.9899			1478.23			1478.25		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	37.272			37.500			3.47531			3.47590			34.4638			34.4670			6.9320			6.9354			6.4356			6.5438			1.000e-12			0.2996			0.1565000			0.1936			97.21			0.553			38947			1			27.0058			27.0078			1478.34			1478.36		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	37.767			38.000			3.47822			3.47824			34.4834			34.4825			6.9442			6.9453			6.4218			6.5336			1.000e-12			0.2959			0.1413000			0.1835			97.21			0.560			38969			1			27.0195			27.0187			1478.42			1478.42		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	38.263			38.500			3.48019			3.48083			34.4970			34.5006			6.9520			6.9556			6.4104			6.5249			1.000e-12			0.2941			0.1365000			0.1840			97.22			0.517			38993			1			27.0292			27.0315			1478.47			1478.49		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	38.759			39.000			3.48322			3.48385			34.5189			34.5223			6.9632			6.9668			6.3972			6.5118			1.000e-12			0.3013			0.1351000			0.1973			96.74			0.455			39020			1			27.0449			27.0471			1478.55			1478.57		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	39.255			39.500			3.48633			3.48648			34.5419			34.5419			6.9742			6.9758			6.3882			6.5038			1.000e-12			0.3136			0.1348000			0.1991			93.77			0.467			39044			1			27.0615			27.0613			1478.63			1478.64		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	39.751			40.000			3.48829			3.48835			34.5566			34.5567			6.9808			6.9813			6.3881			6.4964			1.000e-12			0.3123			0.1387000			0.1942			97.22			0.538			39065			1			27.0722			27.0722			1478.68			1478.69		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	40.247			40.500			3.48978			3.48961			34.5682			34.5663			6.9854			6.9853			6.3875			6.4913			1.000e-12			0.3044			0.1438000			0.2180			97.22			0.587			39085			1			27.0806			27.0791			1478.73			1478.72		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	40.743			41.000			3.49060			3.49050			34.5743			34.5727			6.9880			6.9886			6.3823			6.4943			1.000e-12			0.2992			0.1462000			0.2604			97.21			0.529			39111			1			27.0851			27.0837			1478.75			1478.75		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	41.238			41.500			3.49238			3.49302			34.5888			34.5929			6.9928			6.9958			6.3565			6.4740			1.000e-12			0.3050			0.1402000			0.2057			59.10			0.382			39143			1			27.0958			27.0986			1478.80			1478.81		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	41.734			42.000			3.49806			3.49578			34.6328			34.6138			7.0110			7.0049			6.3319			6.4457			1.000e-12			0.3016			0.1401000			0.1638			98.38			0.411			39168			1			27.1280			27.1139			1478.93			1478.88		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	42.230			42.500			3.50672			3.50549			34.6882			34.6822			7.0504			7.0429			6.3178			6.4291			1.000e-12			0.3092			0.1407000			0.1927			97.22			0.527			39188			1			27.1661			27.1625			1479.16			1479.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	42.726			43.000			3.51477			3.51500			34.7429			34.7437			7.0836			7.0854			6.3047			6.4125			1.000e-12			0.3147			0.1375000			0.2252			97.18			0.610			39207			1			27.2046			27.2050			1479.36			1479.37		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	43.222			43.500			3.51849			3.51871			34.7644			34.7650			7.1026			7.1044			6.3016			6.4036			1.000e-12			0.2934			0.1424000			0.2103			97.21			0.591			39230			1			27.2189			27.2191			1479.47			1479.48		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	43.717			44.000			3.52288			3.52349			34.7942			34.7976			7.1206			7.1239			6.2914			6.3978			1.000e-12			0.3051			0.1396000			0.2185			97.20			0.478			39257			1			27.2398			27.2420			1479.59			1479.61		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	44.213			44.500			3.52822			3.52809			34.8282			34.8266			7.1448			7.1449			6.2718			6.3745			1.000e-12			0.2924			0.1542000			0.2296			97.23			0.455			39282			1			27.2632			27.2619			1479.73			1479.73		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	44.709			45.000			3.53247			3.53266			34.8576			34.8587			7.1615			7.1626			6.2625			6.3541			1.000e-12			0.2818			0.1501000			0.2195			97.21			0.515			39303			1			27.2840			27.2847			1479.84			1479.85		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	45.205			45.500			3.54021			3.54043			34.9162			34.9183			7.1874			7.1877			6.2573			6.3450			1.000e-12			0.2915			0.1633000			0.2174			97.21			0.566			39324			1			27.3265			27.3281			1480.02			1480.03		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	45.700			46.000			3.54442			3.54460			34.9518			34.9526			7.1976			7.1988			6.2536			6.3609			1.000e-12			0.2840			0.1665000			0.2078			97.21			0.554			39347			1			27.3531			27.3536			1480.11			1480.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	46.196			46.500			3.54769			3.54767			34.9795			34.9793			7.2054			7.2054			6.2495			6.3674			1.000e-12			0.2649			0.1708000			0.2816			97.21			0.507			39371			1			27.3738			27.3737			1480.19			1480.19		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	46.692			47.000			3.54990			3.54965			34.9988			34.9964			7.2100			7.2097			6.2459			6.3638			1.000e-12			0.2660			0.1767000			0.2392			97.20			0.482			39397			1			27.3884			27.3866			1480.24			1480.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	47.187			47.500			3.55027			3.54997			35.0020			34.9992			7.2106			7.2102			6.2443			6.3625			1.000e-12			0.2616			0.1783000			0.2213			97.18			0.465			39423			1			27.3908			27.3886			1480.25			1480.25		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	47.683			48.000			3.55047			3.55023			35.0035			35.0013			7.2111			7.2107			6.2449			6.3602			1.000e-12			0.2691			0.1791000			0.2212			97.18			0.473			39447			1			27.3919			27.3902			1480.26			1480.26		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	48.179			48.500			3.55093			3.55064			35.0078			35.0054			7.2116			7.2108			6.2363			6.3463			1.000e-12			0.2621			0.1789000			0.2520			97.20			0.516			39469			1			27.3953			27.3934			1480.28			1480.27		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	48.675			49.000			3.55125			3.55103			35.0138			35.0118			7.2089			7.2084			6.2252			6.3363			1.000e-12			0.2505			0.1827000			0.2301			97.15			0.549			39491			1			27.4003			27.3988			1480.28			1480.28		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	49.170			49.500			3.55292			3.55307			35.0273			35.0274			7.2134			7.2148			6.2192			6.3332			1.000e-12			0.2471			0.1905000			0.1997			97.16			0.536			39514			1			27.4103			27.4102			1480.33			1480.33		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	49.666			50.000			3.55506			3.55484			35.0394			35.0369			7.2243			7.2243			6.2207			6.3358			1.000e-12			0.2597			0.1998000			0.2189			97.19			0.494			39539			1			27.4184			27.4164			1480.39			1480.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	50.162			50.500			3.55521			3.55496			35.0428			35.0403			7.2223			7.2221			6.2240			6.3468			1.000e-12			0.2641			0.2062000			0.2239			97.07			0.470			39565			1			27.4213			27.4193			1480.40			1480.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	50.657			51.000			3.55551			3.55524			35.0525			35.0510			7.2158			7.2144			6.2343			6.3525			1.000e-12			0.2651			0.2021000			0.1776			88.79			0.485			39589			1			27.4298			27.4289			1480.39			1480.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	51.153			51.500			3.55517			3.55484			35.0620			35.0601			7.2025			7.2008			6.2453			6.3619			1.000e-12			0.2643			0.2120000			0.2401			97.22			0.522			39611			1			27.4392			27.4380			1480.36			1480.35		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	51.649			52.000			3.55413			3.55372			35.0648			35.0621			7.1882			7.1865			6.2555			6.3784			1.000e-12			0.2597			0.2423000			0.2074			97.18			0.553			39632			1			27.4434			27.4415			1480.32			1480.31		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	52.144			52.500			3.55380			3.55338			35.0654			35.0626			7.1839			7.1821			6.2618			6.3826			1.000e-12			0.2603			0.2583000			0.2315			97.18			0.565			39653			1			27.4445			27.4425			1480.31			1480.30		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	52.640			53.000			3.55187			3.55168			35.0624			35.0603			7.1657			7.1658			6.2745			6.3983			1.000e-12			0.2691			0.2710000			0.2352			97.18			0.542			39677			1			27.4448			27.4431			1480.24			1480.24		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	53.136			53.500			3.55153			3.55131			35.0645			35.0616			7.1598			7.1602			6.2874			6.4116			1.000e-12			0.2700			0.2892000			0.2545			97.20			0.495			39702			1			27.4472			27.4449			1480.23			1480.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	53.631			54.000			3.54957			3.54918			35.0686			35.0672			7.1343			7.1314			6.2833			6.4011			1.000e-12			0.2673			0.3045000			0.1982			85.07			0.469			39727			1			27.4540			27.4534			1480.15			1480.14		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	54.127			54.500			3.54946			3.54924			35.0766			35.0742			7.1250			7.1249			6.2734			6.3913			1.000e-12			0.2596			0.3368000			0.1819			89.29			0.476			39752			1			27.4616			27.4598			1480.13			1480.13		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	54.623			55.000			3.55093			3.55078			35.0828			35.0808			7.1345			7.1348			6.2756			6.3956			1.000e-12			0.2584			0.3428000			0.2046			97.18			0.515			39774			1			27.4652			27.4636			1480.18			1480.18		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	55.118			55.500			3.55197			3.55182			35.0843			35.0830			7.1440			7.1437			6.2816			6.3969			1.000e-12			0.2595			0.3373000			0.1756			97.16			0.536			39797			1			27.4650			27.4641			1480.23			1480.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	55.614			56.000			3.55204			3.55168			35.0861			35.0828			7.1428			7.1421			6.2497			6.3520			1.000e-12			0.2570			0.3363000			0.1767			97.19			0.502			39822			1			27.4666			27.4641			1480.24			1480.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	56.109			56.500			3.55133			3.55110			35.0853			35.0832			7.1356			7.1352			6.1969			6.2899			1.000e-12			0.2681			0.3481000			0.1784			97.18			0.460			39848			1			27.4670			27.4654			1480.22			1480.21		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	56.605			57.000			3.55632			3.55652			35.1017			35.1003			7.1731			7.1767			6.1653			6.2597			1.000e-12			0.2589			0.3650000			0.1965			97.19			0.466			39873			1			27.4746			27.4730			1480.39			1480.40		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	57.101			57.500			3.56223			3.56249			35.1105			35.1092			7.2280			7.2321			6.1504			6.2474			1.000e-12			0.2471			0.2789000			0.2340			97.18			0.500			39896			1			27.4738			27.4722			1480.62			1480.63		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	57.596			58.000			3.56370			3.56353			35.1134			35.1112			7.2407			7.2411			6.1498			6.2513			1.000e-12			0.2464			0.2601000			0.2359			97.17			0.528			39919			1			27.4743			27.4724			1480.68			1480.68		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	58.092			58.500			3.56382			3.56365			35.1135			35.1113			7.2417			7.2420			6.1504			6.2608			1.000e-12			0.2471			0.2255000			0.2004			97.15			0.534			39942			1			27.4741			27.4724			1480.69			1480.69		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	58.588			59.000			3.56399			3.56378			35.1138			35.1115			7.2429			7.2430			6.1485			6.2646			1.000e-12			0.2540			0.2319000			0.1795			97.18			0.507			39966			1			27.4743			27.4724			1480.70			1480.70		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	59.083			59.500			3.56416			3.56393			35.1144			35.1121			7.2439			7.2437			6.1459			6.2676			1.000e-12			0.2475			0.2529000			0.1848			97.16			0.476			39991			1			27.4746			27.4728			1480.72			1480.72		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	59.579			60.000			3.56425			3.56400			35.1146			35.1123			7.2445			7.2441			6.1473			6.2633			1.000e-12			0.2538			0.2214000			0.1998			97.16			0.487			40015			1			27.4747			27.4729			1480.73			1480.72		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	60.075			60.500			3.56427			3.56405			35.1145			35.1122			7.2446			7.2444			6.1507			6.2604			1.000e-12			0.2496			0.2188000			0.2008			86.76			0.525			40037			1			27.4746			27.4728			1480.74			1480.73		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	60.570			61.000			3.56432			3.56410			35.1145			35.1123			7.2449			7.2446			6.1482			6.2628			1.000e-12			0.2413			0.2393000			0.1982			90.98			0.567			40057			1			27.4745			27.4729			1480.75			1480.74		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	61.066			61.500			3.56448			3.56425			35.1150			35.1128			7.2459			7.2456			6.1437			6.2619			1.000e-12			0.2485			0.2506000			0.2343			86.39			0.569			40080			1			27.4747			27.4731			1480.76			1480.76		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	61.562			62.000			3.56455			3.56430			35.1150			35.1126			7.2463			7.2460			6.1448			6.2721			1.000e-12			0.2566			0.2344000			0.1642			88.36			0.507			40105			1			27.4748			27.4729			1480.77			1480.76		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	62.057			62.500			3.56457			3.56432			35.1150			35.1126			7.2464			7.2461			6.1536			6.2698			1.000e-12			0.2574			0.2325000			0.1905			97.30			0.464			40130			1			27.4747			27.4728			1480.78			1480.77		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	62.553			63.000			3.56456			3.56431			35.1150			35.1127			7.2460			7.2455			6.1556			6.2646			1.000e-12			0.2534			0.2247000			0.2354			97.14			0.487			40154			1			27.4748			27.4730			1480.78			1480.78		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	63.049			63.500			3.56456			3.56432			35.1151			35.1127			7.2457			7.2454			6.1539			6.2684			1.000e-12			0.2493			0.2404000			0.2130			86.03			0.519			40177			1			27.4749			27.4730			1480.79			1480.79		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	63.544			64.000			3.56454			3.56430			35.1153			35.1128			7.2450			7.2448			6.1529			6.2640			1.000e-12			0.2665			0.2545000			0.2066			70.55			0.476			40204			1			27.4751			27.4732			1480.80			1480.79		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	64.040			64.500			3.56453			3.56428			35.1152			35.1129			7.2447			7.2444			6.1526			6.2609			1.000e-12			0.2573			0.2327000			0.2187			83.99			0.436			40231			1			27.4751			27.4733			1480.80			1480.80		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	64.536			65.000			3.56440			3.56427			35.1150			35.1128			7.2432			7.2441			6.1503			6.2712			1.000e-12			0.2449			0.2313000			0.2352			97.18			0.471			40255			1			27.4752			27.4733			1480.81			1480.81		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	65.031			65.500			3.56426			3.56404			35.1147			35.1125			7.2418			7.2415			6.1510			6.2731			1.000e-12			0.2468			0.2422000			0.2281			97.16			0.525			40277			1			27.4751			27.4734			1480.81			1480.80		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	65.527			66.000			3.56431			3.56403			35.1151			35.1127			7.2418			7.2410			6.1574			6.2757			1.000e-12			0.2450			0.2553000			0.2298			97.19			0.558			40298			1			27.4754			27.4737			1480.82			1480.81		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	66.023			66.500			3.56438			3.56417			35.1153			35.1132			7.2420			7.2418			6.1596			6.2793			1.000e-12			0.2554			0.2389000			0.2384			97.18			0.548			40321			1			27.4756			27.4739			1480.83			1480.82		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	66.518			67.000			3.56421			3.56399			35.1155			35.1133			7.2398			7.2396			6.1595			6.2872			1.000e-12			0.2547			0.2378000			0.2393			97.17			0.514			40345			1			27.4760			27.4743			1480.83			1480.82		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	67.014			67.500			3.56421			3.56391			35.1157			35.1132			7.2393			7.2386			6.1643			6.2924			1.000e-12			0.2453			0.2265000			0.2350			96.99			0.501			40368			1			27.4763			27.4744			1480.83			1480.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	67.509			68.000			3.56392			3.56350			35.1151			35.1129			7.2364			7.2342			6.1728			6.2915			1.000e-12			0.2439			0.2256000			0.2194			97.19			0.526			40391			1			27.4762			27.4748			1480.83			1480.82		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	68.005			68.500			3.56354			3.56328			35.1156			35.1135			7.2317			7.2310			6.1823			6.3010			1.000e-12			0.2713			0.2559000			0.2070			78.03			0.519			40415			1			27.4773			27.4757			1480.82			1480.81		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	68.501			69.000			3.56348			3.56316			35.1163			35.1138			7.2301			7.2291			6.1945			6.3211			1.000e-12			0.2393			0.2459000			0.1936			75.48			0.464			40441			1			27.4781			27.4762			1480.82			1480.82		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	68.996			69.500			3.56297			3.56248			35.1158			35.1133			7.2248			7.2220			6.2068			6.3410			1.000e-12			0.2537			0.2385000			0.2033			97.55			0.466			40466			1			27.4784			27.4768			1480.81			1480.80		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	69.492			70.000			3.56187			3.56161			35.1145			35.1127			7.2139			7.2130			6.2174			6.3517			1.000e-12			0.2465			0.2238000			0.2064			83.69			0.520			40487			1			27.4790			27.4776			1480.77			1480.77		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	69.988			70.500			3.56132			3.56121			35.1152			35.1127			7.2071			7.2084			6.2245			6.3508			1.000e-12			0.2456			0.2232000			0.2212			64.58			0.561			40509			1			27.4805			27.4783			1480.76			1480.76		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	70.483			71.000			3.56086			3.56063			35.1151			35.1129			7.2020			7.2018			6.2274			6.3486			1.000e-12			0.2368			0.2222000			0.2490			64.12			0.517			40534			1			27.4811			27.4793			1480.75			1480.74		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	70.979			71.500			3.56074			3.56053			35.1157			35.1136			7.2000			7.1997			6.2284			6.3458			1.000e-12			0.2481			0.2201000			0.2397			63.62			0.457			40561			1			27.4818			27.4803			1480.75			1480.74		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	71.475			72.000			3.56073			3.56051			35.1154			35.1132			7.1998			7.1997			6.2260			6.3447			1.000e-12			0.2471			0.2192000			0.2201			72.73			0.470			40585			1			27.4817			27.4799			1480.75			1480.75		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	71.970			72.500			3.56058			3.56034			35.1155			35.1134			7.1979			7.1974			6.2240			6.3485			1.000e-12			0.2381			0.2075000			0.2205			72.69			0.501			40608			1			27.4820			27.4804			1480.76			1480.75		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	72.466			73.000			3.56060			3.56037			35.1155			35.1133			7.1979			7.1975			6.2242			6.3523			1.000e-12			0.2400			0.1959000			0.1645			89.67			0.530			40631			1			27.4820			27.4803			1480.76			1480.76		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	72.962			73.500			3.56065			3.56040			35.1156			35.1134			7.1980			7.1976			6.2272			6.3465			1.000e-12			0.2427			0.1977000			0.2609			97.00			0.531			40654			1			27.4821			27.4803			1480.77			1480.77		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	73.457			74.000			3.56063			3.56042			35.1153			35.1132			7.1980			7.1977			6.2282			6.3443			1.000e-12			0.2381			0.2162000			0.1485			97.17			0.487			40679			1			27.4818			27.4802			1480.78			1480.78		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	73.953			74.500			3.56047			3.56042			35.1137			35.1131			7.1975			7.1975			6.2315			6.3390			1.000e-12			0.2354			0.2255000			0.2011			90.56			0.489			40702			1			27.4807			27.4802			1480.79			1480.78		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	74.449			75.000			3.56055			3.56033			35.1153			35.1136			7.1965			7.1959			6.2321			6.3461			1.000e-12			0.2377			0.2229000			0.2499			60.30			0.545			40723			1			27.4821			27.4808			1480.79			1480.79		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	74.944			75.500			3.56056			3.56033			35.1158			35.1136			7.1959			7.1955			6.2303			6.3544			1.000e-12			0.2450			0.2115000			0.2430			59.66			0.564			40746			1			27.4825			27.4809			1480.80			1480.79		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	75.440			76.000			3.56055			3.56036			35.1159			35.1137			7.1955			7.1955			6.2268			6.3565			1.000e-12			0.2416			0.2190000			0.2208			59.08			0.489			40772			1			27.4827			27.4809			1480.80			1480.80		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	75.935			76.500			3.56062			3.56040			35.1158			35.1135			7.1961			7.1959			6.2263			6.3524			1.000e-12			0.2419			0.2242000			0.2031			81.86			0.426			40800			1			27.4824			27.4808			1480.82			1480.81		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	76.431			77.000			3.56064			3.56040			35.1156			35.1137			7.1962			7.1956			6.2294			6.3516			1.000e-12			0.2548			0.2529000			0.2106			80.71			0.474			40823			1			27.4823			27.4809			1480.82			1480.82		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	76.927			77.500			3.56064			3.56044			35.1156			35.1137			7.1960			7.1956			6.2259			6.3544			1.000e-12			0.2456			0.2041000			0.2168			58.11			0.545			40844			1			27.4823			27.4809			1480.83			1480.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	77.422			78.000			3.56066			3.56045			35.1158			35.1137			7.1958			7.1956			6.2227			6.3504			1.000e-12			0.2560			0.2134000			0.1730			57.34			0.549			40867			1			27.4825			27.4809			1480.84			1480.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	77.918			78.500			3.56064			3.56044			35.1157			35.1137			7.1953			7.1952			6.2313			6.3447			1.000e-12			0.2461			0.2071000			0.2202			56.69			0.469			40895			1			27.4825			27.4810			1480.84			1480.84		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	78.414			79.000			3.56063			3.56043			35.1160			35.1138			7.1947			7.1947			6.2458			6.3612			1.000e-12			0.2481			0.2035000			0.2170			77.20			0.419			40922			1			27.4828			27.4811			1480.85			1480.85		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	78.909			79.500			3.56040			3.56032			35.1157			35.1139			7.1924			7.1933			6.2499			6.3726			1.000e-12			0.2548			0.2106000			0.2062			56.52			0.478			40944			1			27.4829			27.4813			1480.85			1480.85		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	79.405			80.000			3.55983			3.55963			35.1165			35.1143			7.1851			7.1852			6.2550			6.3755			1.000e-12			0.2355			0.2450000			0.1902			55.28			0.582			40963			1			27.4846			27.4828			1480.83			1480.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	79.901			80.500			3.55976			3.55956			35.1167			35.1146			7.1840			7.1838			6.2533			6.3778			1.000e-12			0.2419			0.1918000			0.2100			54.76			0.614			40984			1			27.4849			27.4833			1480.83			1480.83		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	80.396			81.000			3.55976			3.55954			35.1168			35.1147			7.1836			7.1833			6.2454			6.3613			1.000e-12			0.2349			0.1776000			0.1907			54.19			0.472			41013			1			27.4850			27.4834			1480.84			1480.84		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	80.892			81.500			3.55981			3.55959			35.1170			35.1149			7.1837			7.1833			6.2511			6.3687			1.000e-12			0.2225			0.1863000			0.1875			53.79			0.395			41041			1			27.4852			27.4836			1480.85			1480.85		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	81.388			82.000			3.55985			3.55963			35.1170			35.1151			7.1838			7.1834			6.2589			6.3784			1.000e-12			0.2357			0.2132000			0.2002			53.39			0.483			41062			1			27.4852			27.4837			1480.86			1480.86		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	81.883			82.500			3.55986			3.55964			35.1171			35.1151			7.1837			7.1832			6.2613			6.3751			1.000e-12			0.2422			0.2054000			0.2067			61.68			0.604			41080			1			27.4852			27.4838			1480.87			1480.86		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	82.379			83.000			3.55971			3.55949			35.1169			35.1149			7.1820			7.1816			6.2613			6.3756			1.000e-12			0.2400			0.2083000			0.2062			72.61			0.665			41099			1			27.4853			27.4838			1480.87			1480.86		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	82.875			83.500			3.55963			3.55941			35.1170			35.1149			7.1807			7.1805			6.2584			6.3745			1.000e-12			0.2348			0.2379000			0.2556			71.27			0.559			41124			1			27.4856			27.4840			1480.87			1480.87		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	83.370			84.000			3.55960			3.55939			35.1170			35.1149			7.1802			7.1799			6.2571			6.3689			1.000e-12			0.2344			0.2637000			0.1642			50.16			0.368			41157			1			27.4857			27.4841			1480.88			1480.87		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	83.866			84.500			3.55962			3.55941			35.1170			35.1150			7.1802			7.1799			6.2552			6.3750			1.000e-12			0.2359			0.2045000			0.2014			50.73			0.387			41185			1			27.4857			27.4841			1480.89			1480.88		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	84.361			85.000			3.55965			3.55942			35.1168			35.1149			7.1803			7.1799			6.2537			6.3820			1.000e-12			0.2348			0.1913000			0.2332			50.27			0.514			41205			1			27.4856			27.4840			1480.90			1480.89		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	84.857			85.500			3.55957			3.55937			35.1168			35.1149			7.1793			7.1790			6.2592			6.3799			1.000e-12			0.2410			0.1904000			0.1674			49.77			0.600			41225			1			27.4856			27.4842			1480.90			1480.90		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	85.353			86.000			3.55958			3.55937			35.1169			35.1149			7.1790			7.1787			6.2623			6.3774			1.000e-12			0.2392			0.1873000			0.1962			49.29			0.522			41251			1			27.4858			27.4842			1480.91			1480.90		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	85.848			86.500			3.55955			3.55932			35.1169			35.1148			7.1785			7.1781			6.2603			6.3778			1.000e-12			0.2275			0.1849000			0.1907			48.71			0.410			41279			1			27.4858			27.4842			1480.91			1480.91		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	86.344			87.000			3.55955			3.55934			35.1169			35.1149			7.1783			7.1780			6.2615			6.3779			1.000e-12			0.2358			0.1733000			0.2038			48.24			0.476			41301			1			27.4859			27.4843			1480.92			1480.92		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	86.840			87.500			3.55952			3.55931			35.1167			35.1148			7.1778			7.1774			6.2634			6.3785			1.000e-12			0.2414			0.1800000			0.1858			47.75			0.571			41321			1			27.4858			27.4844			1480.93			1480.92		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	87.335			88.000			3.55951			3.55930			35.1170			35.1150			7.1772			7.1769			6.2620			6.3795			1.000e-12			0.2326			0.1989000			0.1766			47.23			0.577			41344			1			27.4861			27.4845			1480.93			1480.93		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	87.831			88.500			3.55952			3.55931			35.1170			35.1150			7.1771			7.1768			6.2558			6.3785			1.000e-12			0.2268			0.1816000			0.1773			46.69			0.484			41370			1			27.4861			27.4846			1480.94			1480.94		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	88.327			89.000			3.55952			3.55930			35.1170			35.1149			7.1769			7.1766			6.2558			6.3798			1.000e-12			0.2349			0.1841000			0.1745			46.21			0.445			41396			1			27.4861			27.4845			1480.95			1480.94		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	88.822			89.500			3.55952			3.55931			35.1169			35.1149			7.1767			7.1763			6.2593			6.3863			1.000e-12			0.2340			0.1749000			0.1725			45.81			0.508			41417			1			27.4861			27.4846			1480.96			1480.95		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	89.318			90.000			3.55953			3.55931			35.1168			35.1149			7.1766			7.1761			6.2620			6.3878			1.000e-12			0.2345			0.1892000			0.1325			45.37			0.599			41435			1			27.4861			27.4846			1480.96			1480.96		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	89.814			90.500			3.55948			3.55927			35.1169			35.1149			7.1758			7.1755			6.2623			6.3864			1.000e-12			0.2349			0.1903000			0.1893			44.95			0.629			41456			1			27.4862			27.4847			1480.97			1480.96		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	90.309			91.000			3.55945			3.55924			35.1169			35.1149			7.1751			7.1749			6.2679			6.3821			1.000e-12			0.2246			0.1752000			0.1871			44.34			0.476			41485			1			27.4864			27.4848			1480.97			1480.97		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	90.805			91.500			3.55942			3.55921			35.1168			35.1147			7.1747			7.1745			6.2640			6.3802			1.000e-12			0.2270			0.1756000			0.2326			43.76			0.338			41518			1			27.4863			27.4847			1480.98			1480.98		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	91.300			92.000			3.55916			3.55895			35.1165			35.1146			7.1719			7.1715			6.2649			6.3828			1.000e-12			0.2360			0.1879000			0.1278			43.33			0.443			41541			1			27.4865			27.4850			1480.98			1480.97		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	91.796			92.500			3.55914			3.55892			35.1166			35.1146			7.1713			7.1710			6.2684			6.3825			1.000e-12			0.2359			0.1954000			0.1829			42.88			0.566			41560			1			27.4867			27.4851			1480.98			1480.98		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	92.292			93.000			3.55914			3.55893			35.1167			35.1148			7.1711			7.1707			6.2695			6.3823			1.000e-12			0.2359			0.1903000			0.1987			42.36			0.598			41582			1			27.4867			27.4853			1480.99			1480.99		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	92.787			93.500			3.55915			3.55895			35.1167			35.1147			7.1709			7.1707			6.2652			6.3908			1.000e-12			0.2359			0.2137000			0.1833			41.84			0.485			41609			1			27.4867			27.4852			1481.00			1480.99		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	93.283			94.000			3.55919			3.55898			35.1168			35.1147			7.1710			7.1707			6.2669			6.3888			1.000e-12			0.2450			0.1737000			0.1940			41.26			0.401			41638			1			27.4868			27.4852			1481.01			1481.00		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	93.779			94.500			3.55922			3.55900			35.1166			35.1147			7.1713			7.1708			6.2677			6.3830			1.000e-12			0.2236			0.2016000			0.1940			40.84			0.477			41659			1			27.4866			27.4852			1481.02			1481.01		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	94.274			95.000			3.55924			3.55902			35.1166			35.1147			7.1712			7.1708			6.2641			6.3839			1.000e-12			0.2329			0.1929000			0.1764			40.38			0.595			41677			1			27.4867			27.4852			1481.02			1481.02		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	94.770			95.500			3.55926			3.55906			35.1167			35.1150			7.1711			7.1707			6.2621			6.3840			1.000e-12			0.2352			0.1928000			0.1898			39.92			0.677			41694			1			27.4868			27.4854			1481.03			1481.03		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	95.266			96.000			3.55930			3.55910			35.1169			35.1150			7.1711			7.1708			6.2622			6.3756			1.000e-12			0.2359			0.1956000			0.2008			39.31			0.638			41716			1			27.4869			27.4855			1481.04			1481.04		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	95.761			96.500			3.55933			3.55911			35.1170			35.1149			7.1710			7.1708			6.2639			6.3758			1.000e-12			0.2352			0.2024000			0.2146			38.75			0.450			41746			1			27.4870			27.4854			1481.05			1481.04		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	96.257			97.000			3.55934			3.55913			35.1169			35.1150			7.1710			7.1706			6.2687			6.3795			1.000e-12			0.2432			0.2037000			0.2078			38.23			0.370			41777			1			27.4869			27.4855			1481.06			1481.05		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	96.753			97.500			3.55930			3.55908			35.1169			35.1149			7.1704			7.1699			6.2709			6.3782			1.000e-12			0.2317			0.1941000			0.2057			37.81			0.455			41799			1			27.4870			27.4855			1481.06			1481.06		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	97.248			98.000			3.55927			3.55906			35.1169			35.1149			7.1698			7.1695			6.2672			6.3727			1.000e-12			0.2232			0.1936000			0.1891			37.42			0.559			41819			1			27.4871			27.4856			1481.07			1481.06		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	97.744			98.500			3.55926			3.55904			35.1170			35.1149			7.1693			7.1690			6.2613			6.3784			1.000e-12			0.2232			0.2075000			0.2010			36.83			0.579			41842			1			27.4872			27.4856			1481.08			1481.07		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	98.240			99.000			3.55921			3.55900			35.1172			35.1151			7.1684			7.1682			6.2621			6.3751			1.000e-12			0.2237			0.2137000			0.1817			36.29			0.447			41871			1			27.4875			27.4859			1481.08			1481.08		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	98.735			99.500			3.55925			3.55904			35.1172			35.1152			7.1685			7.1682			6.2677			6.3742			1.000e-12			0.2304			0.2021000			0.1919			35.86			0.398			41899			1			27.4875			27.4860			1481.09			1481.08		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	99.231			100.000			3.55929			3.55907			35.1173			35.1153			7.1686			7.1683			6.2647			6.3741			1.000e-12			0.2420			0.2030000			0.2182			35.35			0.489			41921			1			27.4875			27.4860			1481.10			1481.09		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	99.726			100.500			3.55930			3.55909			35.1173			35.1153			7.1685			7.1681			6.2590			6.3737			1.000e-12			0.2400			0.2150000			0.1922			34.87			0.575			41941			1			27.4876			27.4861			1481.10			1481.10		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	100.222			101.000			3.55927			3.55906			35.1173			35.1153			7.1679			7.1676			6.2507			6.3744			1.000e-12			0.2239			0.2328000			0.2043			34.35			0.566			41964			1			27.4877			27.4861			1481.11			1481.11		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	100.718			101.500			3.55924			3.55902			35.1173			35.1152			7.1674			7.1670			6.2540			6.3755			1.000e-12			0.2251			0.2184000			0.1776			33.93			0.484			41990			1			27.4877			27.4861			1481.12			1481.11		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	101.213			102.000			3.55918			3.55896			35.1171			35.1151			7.1666			7.1663			6.2509			6.3774			1.000e-12			0.2237			0.2272000			0.2419			33.39			0.473			42014			1			27.4877			27.4862			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	101.709			102.500			3.55887			3.55864			35.1165			35.1146			7.1637			7.1631			6.2499			6.3722			1.000e-12			0.2247			0.2482000			0.2662			32.90			0.529			42034			1			27.4876			27.4862			1481.12			1481.11		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	102.205			103.000			3.55869			3.55847			35.1165			35.1146			7.1615			7.1610			6.2518			6.3612			1.000e-12			0.2352			0.3182000			0.2623			32.41			0.594			42054			1			27.4879			27.4865			1481.12			1481.11		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	102.700			103.500			3.55857			3.55837			35.1165			35.1145			7.1599			7.1597			6.2513			6.3549			1.000e-12			0.2364			0.3564000			0.2332			31.90			0.604			42075			1			27.4882			27.4866			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	103.196			104.000			3.55847			3.55826			35.1163			35.1143			7.1587			7.1586			6.2448			6.3480			1.000e-12			0.2354			0.3672000			0.2006			31.31			0.475			42103			1			27.4882			27.4866			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	103.692			104.500			3.55830			3.55805			35.1160			35.1138			7.1570			7.1566			6.2360			6.3459			1.000e-12			0.2350			0.3949000			0.1892			30.82			0.406			42131			1			27.4882			27.4865			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	104.187			105.000			3.55799			3.55776			35.1156			35.1135			7.1539			7.1534			6.2260			6.3510			1.000e-12			0.2365			0.4949000			0.1491			30.38			0.492			42153			1			27.4883			27.4867			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	104.683			105.500			3.55787			3.55765			35.1154			35.1134			7.1524			7.1522			6.2250			6.3509			1.000e-12			0.2359			0.5625000			0.1963			29.87			0.552			42175			1			27.4883			27.4868			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	105.179			106.000			3.55774			3.55751			35.1153			35.1131			7.1509			7.1507			6.2280			6.3424			1.000e-12			0.2273			0.5809000			0.1840			29.31			0.460			42204			1			27.4884			27.4868			1481.12			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	105.674			106.500			3.55756			3.55735			35.1149			35.1129			7.1491			7.1489			6.2217			6.3452			1.000e-12			0.2380			0.6142000			0.2308			28.79			0.379			42234			1			27.4885			27.4869			1481.13			1481.12		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	106.170			107.000			3.55752			3.55731			35.1149			35.1130			7.1485			7.1481			6.2171			6.3447			1.000e-12			0.2482			0.6655000			0.2186			28.42			0.461			42256			1			27.4885			27.4870			1481.13			1481.13		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	106.665			107.500			3.55749			3.55729			35.1146			35.1128			7.1482			7.1478			6.2154			6.3355			1.000e-12			0.2385			0.7526000			0.2064			28.07			0.577			42275			1			27.4884			27.4870			1481.14			1481.13		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	107.161			108.000			3.55741			3.55721			35.1147			35.1127			7.1469			7.1468			6.2129			6.3349			1.000e-12			0.2439			0.8114000			0.2064			27.55			0.634			42295			1			27.4886			27.4870			1481.14			1481.14		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	107.657			108.500			3.55739			3.55720			35.1147			35.1127			7.1465			7.1464			6.2129			6.3358			1.000e-12			0.2472			0.8161000			0.1673			26.97			0.553			42319			1			27.4887			27.4870			1481.15			1481.14		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	108.152			109.000			3.55739			3.55717			35.1147			35.1126			7.1463			7.1460			6.2141			6.3307			1.000e-12			0.2481			0.8067000			0.1894			26.39			0.438			42347			1			27.4886			27.4871			1481.16			1481.15		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	108.648			109.500			3.55737			3.55716			35.1145			35.1126			7.1460			7.1456			6.2138			6.3347			1.000e-12			0.2403			0.8153000			0.2251			25.90			0.464			42371			1			27.4885			27.4871			1481.16			1481.16		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	109.144			110.000			3.55739			3.55717			35.1145			35.1125			7.1460			7.1456			6.2129			6.3392			1.000e-12			0.2479			0.8693000			0.2109			25.44			0.540			42391			1			27.4886			27.4870			1481.17			1481.17		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	109.639			110.500			3.55740			3.55718			35.1146			35.1124			7.1457			7.1455			6.2103			6.3394			1.000e-12			0.2594			0.9000000			0.1772			24.96			0.557			42414			1			27.4887			27.4870			1481.18			1481.17		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	110.135			111.000			3.55741			3.55719			35.1145			35.1124			7.1456			7.1453			6.2115			6.3360			1.000e-12			0.2603			0.9114000			0.1898			24.41			0.479			42441			1			27.4886			27.4870			1481.19			1481.18		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	110.631			111.500			3.55743			3.55721			35.1145			35.1124			7.1456			7.1454			6.2138			6.3315			1.000e-12			0.2460			0.9213000			0.2057			23.93			0.435			42468			1			27.4886			27.4870			1481.19			1481.19		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	111.126			112.000			3.55744			3.55724			35.1144			35.1125			7.1457			7.1453			6.2162			6.3339			1.000e-12			0.2366			0.9253000			0.1732			23.44			0.479			42491			1			27.4885			27.4871			1481.20			1481.20		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	111.622			112.500			3.55745			3.55724			35.1145			35.1125			7.1453			7.1451			6.2116			6.3360			1.000e-12			0.2424			0.9460000			0.1479			23.02			0.560			42510			1			27.4886			27.4871			1481.21			1481.21		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	112.118			113.000			3.55747			3.55726			35.1146			35.1125			7.1453			7.1451			6.2116			6.3390			1.000e-12			0.2591			0.9578000			0.1828			22.55			0.600			42531			1			27.4887			27.4871			1481.22			1481.21		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	112.613			113.500			3.55749			3.55729			35.1146			35.1125			7.1453			7.1451			6.2135			6.3412			1.000e-12			0.2603			1.0137000			0.2608			21.96			0.512			42558			1			27.4887			27.4871			1481.22			1481.22		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	113.109			114.000			3.55753			3.55731			35.1146			35.1124			7.1453			7.1451			6.2158			6.3358			1.000e-12			0.2565			0.9624000			0.2166			21.42			0.405			42587			1			27.4888			27.4871			1481.23			1481.23		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	113.605			114.500			3.55754			3.55733			35.1145			35.1125			7.1454			7.1451			6.2166			6.3307			1.000e-12			0.2441			0.9891000			0.2312			20.95			0.452			42611			1			27.4886			27.4871			1481.24			1481.24		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	114.100			115.000			3.55756			3.55734			35.1145			35.1124			7.1453			7.1450			6.2155			6.3343			1.000e-12			0.2418			1.0453000			0.2257			20.50			0.530			42633			1			27.4887			27.4870			1481.25			1481.25		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	114.596			115.500			3.55758			3.55737			35.1146			35.1125			7.1452			7.1449			6.2134			6.3355			1.000e-12			0.2577			1.0110000			0.2332			20.00			0.529			42656			1			27.4887			27.4872			1481.26			1481.25		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	115.091			116.000			3.55760			3.55739			35.1146			35.1125			7.1451			7.1449			6.2125			6.3322			1.000e-12			0.2504			0.9869000			0.2138			19.50			0.490			42681			1			27.4888			27.4871			1481.27			1481.26		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	115.587			116.500			3.55761			3.55740			35.1145			35.1124			7.1452			7.1450			6.2074			6.3317			1.000e-12			0.2490			0.9687000			0.2099			19.03			0.511			42703			1			27.4886			27.4871			1481.27			1481.27		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	116.083			117.000			3.55764			3.55743			35.1145			35.1124			7.1452			7.1449			6.2082			6.3295			1.000e-12			0.2496			1.0632000			0.2575			18.58			0.546			42725			1			27.4886			27.4871			1481.28			1481.28		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	116.578			117.500			3.55767			3.55744			35.1146			35.1124			7.1452			7.1449			6.2074			6.3331			1.000e-12			0.2496			0.9906000			0.1777			18.02			0.547			42747			1			27.4887			27.4870			1481.29			1481.29		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	117.074			118.000			3.55768			3.55747			35.1146			35.1125			7.1451			7.1449			6.2076			6.3287			1.000e-12			0.2582			1.0125000			0.2053			17.50			0.513			42772			1			27.4887			27.4871			1481.30			1481.30		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	117.570			118.500			3.55770			3.55749			35.1145			35.1124			7.1451			7.1449			6.2154			6.3256			1.000e-12			0.2492			0.9880000			0.1935			17.00			0.458			42799			1			27.4887			27.4871			1481.31			1481.30		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	118.065			119.000			3.55769			3.55749			35.1144			35.1124			7.1449			7.1447			6.2127			6.3282			1.000e-12			0.2606			1.0072000			0.2840			16.51			0.442			42825			1			27.4886			27.4871			1481.31			1481.31		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	118.561			119.500			3.55769			3.55748			35.1145			35.1125			7.1445			7.1443			6.2117			6.3316			1.000e-12			0.2484			1.0720000			0.1952			16.06			0.486			42849			1			27.4888			27.4872			1481.32			1481.32		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	119.057			120.000			3.55771			3.55750			35.1145			35.1124			7.1446			7.1443			6.2085			6.3338			1.000e-12			0.2396			1.0312000			0.1791			15.56			0.516			42872			1			27.4887			27.4871			1481.33			1481.33		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	119.552			120.500			3.55774			3.55752			35.1146			35.1124			7.1445			7.1442			6.2054			6.3339			1.000e-12			0.2487			1.0117000			0.2155			15.08			0.517			42895			1			27.4888			27.4872			1481.34			1481.33		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	120.048			121.000			3.55777			3.55756			35.1145			35.1125			7.1447			7.1443			6.2078			6.3328			1.000e-12			0.2417			1.0134000			0.2258			14.60			0.524			42918			1			27.4887			27.4872			1481.35			1481.34		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	120.544			121.500			3.55778			3.55756			35.1145			35.1124			7.1445			7.1442			6.2127			6.3279			1.000e-12			0.2540			1.0800000			0.2261			14.10			0.525			42941			1			27.4888			27.4871			1481.35			1481.35		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	121.039			122.000			3.55779			3.55757			35.1146			35.1125			7.1443			7.1440			6.2125			6.3281			1.000e-12			0.2605			1.0719000			0.2456			13.59			0.502			42966			1			27.4889			27.4873			1481.36			1481.36		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	121.535			122.500			3.55778			3.55756			35.1145			35.1123			7.1441			7.1438			6.2140			6.3248			1.000e-12			0.2604			1.0143000			0.2323			13.05			0.410			42997			1			27.4888			27.4871			1481.37			1481.36		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	122.030			123.000			3.55775			3.55756			35.1145			35.1125			7.1434			7.1434			6.2118			6.3299			1.000e-12			0.2488			0.9672000			0.2482			12.57			0.382			43026			1			27.4889			27.4874			1481.37			1481.37		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	122.526			123.500			3.55774			3.55752			35.1143			35.1122			7.1433			7.1430			6.2052			6.3381			1.000e-12			0.2513			0.9793000			0.2301			12.17			0.481			43048			1			27.4888			27.4871			1481.38			1481.38		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	123.022			124.000			3.55772			3.55753			35.1145			35.1124			7.1426			7.1426			6.2046			6.3364			1.000e-12			0.2403			1.0320000			0.1851			11.70			0.591			43066			1			27.4890			27.4874			1481.39			1481.38		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	123.517			124.500			3.55776			3.55754			35.1146			35.1124			7.1427			7.1425			6.2117			6.3310			1.000e-12			0.2489			1.0407000			0.1506			11.18			0.613			43088			1			27.4891			27.4874			1481.40			1481.39		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	124.013			125.000			3.55778			3.55757			35.1145			35.1124			7.1428			7.1426			6.2154			6.3258			1.000e-12			0.2536			1.0164000			0.1997			10.62			0.485			43115			1			27.4890			27.4873			1481.41			1481.40		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	124.509			125.500			3.55778			3.55756			35.1146			35.1124			7.1424			7.1423			6.2154			6.3247			1.000e-12			0.2566			0.9941000			0.2611			10.10			0.416			43143			1			27.4892			27.4874			1481.41			1481.41		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	125.004			126.000			3.55766			3.55742			35.1143			35.1120			7.1412			7.1408			6.2077			6.3337			1.000e-12			0.2523			1.0173000			0.2063			9.65			0.467			43167			1			27.4890			27.4873			1481.41			1481.41		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	125.500			126.500			3.55756			3.55733			35.1144			35.1121			7.1398			7.1395			6.2134			6.3382			1.000e-12			0.2576			1.0255000			0.2188			9.14			0.498			43192			1			27.4893			27.4876			1481.42			1481.41		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	125.996			127.000			3.55753			3.55729			35.1143			35.1121			7.1392			7.1389			6.2196			6.3436			1.000e-12			0.2561			1.0422000			0.2117			8.54			0.374			43227			1			27.4894			27.4876			1481.42			1481.42		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	126.491			127.500			3.55749			3.55728			35.1143			35.1120			7.1386			7.1386			6.2180			6.3422			1.000e-12			0.2496			1.0014000			0.2018			8.02			0.278			43270			1			27.4895			27.4877			1481.43			1481.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	126.987			128.000			3.55747			3.55723			35.1142			35.1120			7.1382			7.1378			6.2124			6.3431			1.000e-12			0.2543			1.0231000			0.1914			7.53			0.306			43309			1			27.4894			27.4877			1481.44			1481.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	127.483			128.500			3.55742			3.55718			35.1142			35.1120			7.1374			7.1371			6.2144			6.3454			1.000e-12			0.2436			1.0203000			0.2063			7.02			0.283			43351			1			27.4895			27.4878			1481.44			1481.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	127.978			129.000			3.55725			3.55713			35.1130			35.1118			7.1366			7.1364			6.2190			6.3438			1.000e-12			0.2386			1.0056000			0.2868			6.53			0.271			43395			1			27.4887			27.4878			1481.44			1481.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	128.474			129.500			3.55668			3.55670			35.1121			35.1106			7.1310			7.1328			6.2216			6.3495			1.000e-12			0.2538			1.0737000			0.2362			6.06			0.313			43433			1			27.4888			27.4874			1481.43			1481.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	128.969			130.000			3.55629			3.55607			35.1133			35.1108			7.1254			7.1256			6.2236			6.3500			1.000e-12			0.2479			1.0612000			0.2196			5.57			0.326			43470			1			27.4905			27.4885			1481.42			1481.42		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	129.465			130.500			3.55610			3.55583			35.1134			35.1111			7.1229			7.1224			6.2226			6.3409			1.000e-12			0.2414			1.2348000			0.2069			5.15			0.247			43518			1			27.4910			27.4892			1481.42			1481.41		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	129.961			131.000			3.55619			3.55594			35.1134			35.1112			7.1237			7.1233			6.2252			6.3338			1.000e-12			0.2486			1.3850000			0.1976			4.61			0.259			43565			1			27.4908			27.4891			1481.43			1481.42		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	130.456			131.500			3.55620			3.55594			35.1135			35.1109			7.1235			7.1232			6.2248			6.3415			1.000e-12			0.2559			1.4827000			0.2078			4.07			0.215			43620			1			27.4910			27.4889			1481.43			1481.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	130.952			132.000			3.55609			3.55586			35.1131			35.1110			7.1225			7.1221			6.2240			6.3450			1.000e-12			0.2359			1.4548000			0.2291			3.58			0.203			43680			1			27.4908			27.4891			1481.44			1481.43		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	131.448			132.500			3.55611			3.55586			35.1133			35.1110			7.1222			7.1219			6.2265			6.3487			1.000e-12			0.2557			1.5660000			0.2061			3.10			0.280			43723			1			27.4910			27.4892			1481.45			1481.44		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	131.943			133.000			3.55613			3.55587			35.1134			35.1109			7.1221			7.1218			6.2243			6.3490			1.000e-12			0.2589			1.4156000			0.2137			2.54			0.152			43806			1			27.4911			27.4891			1481.46			1481.45		
+2020	04	14	17	34	00	2020_77SE_SMHI-07-2020	A15	58.29500	10.84517	132.439			133.500			3.55617			3.55586			35.1134			35.1099			7.1223			7.1225			6.2253			6.3392			1.000e-12			0.2746			1.1990000			0.1317			1.91			-0.012			44180			1			27.4910			27.4882			1481.46			1481.46		

@@ -1,11 +1,12 @@
 {
     "mapping_parameter": {
         "SALT2_CTD": [
+            "SALT2_CTD [psu (PSS-78)]",
             "Salthalt2", 
             "sal11: Salinity, Practical, 2 [PSU]"
         ], 
         "DESC_RATE_CTD": [
-            "fallhastighet", 
+            "fallhastighet",
             "dz/dtM: Descent Rate [m/s], WS",
             "dz/dtM: Descent Rate [m/s]"
         ], 
@@ -14,30 +15,33 @@
             "altM: Altimeter [m]"
         ], 
         "TEMP_CTD": [
-            "Temperatur", 
+            "TEMP_CTD [°C (ITS-90)]",
+            "Temperatur",
             "t090C: Temperature [ITS-90, deg C]",
             "tv290C: Temperature [ITS-90, deg C]",
             "Temperature [ITS-90, deg C]",
             "Temp"
         ], 
         "CNDC2_CTD": [
-            "Konduktivitet2", 
+            "CNDC2_CTD [S/m]", 
+            "Konduktivitet2",
             "c1S/m: Conductivity, 2 [S/m]"
         ], 
         "DELTA_TEMP_CTD": [
-            "temperatur delta", 
+            "temperatur delta",
             "T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]"
         ], 
         "YELLOW_CTD": [
-            "Gulämne", 
+            "Gulämne",
             "haardtY: Fluorescence, Dr. Haardt Yellow Sub"
         ], 
         "SVEL2_CTD": [
-            "Ljudhastighet2", 
+            "Ljudhastighet2",
             "svCM1: Sound Velocity, 2 [Chen-Millero, m/s]"
         ], 
         "DOXY_CTD": [
-            "Syrgashalt", 
+            "DOXY_CTD [ml/l]",
+            "Syrgashalt",
             "sbeox0ML/L: Oxygen, SBE 43 [ml/l]",
             "sbeox0ML/L: Oxygen, SBE 43 [ml/l], WS",
             "sbeox0ML/L: Oxygen [ml/l], WS",
@@ -49,11 +53,13 @@
             "pumps: Pump Status"
         ], 
         "DENS2_CTD": [
+            "DENS2_CTD [kg/m3]",
             "Densitet2", 
             "sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]"
         ], 
         "CNDC_CTD": [
-            "Konduktivitet", 
+            "CNDC_CTD [S/m]", 
+            "Konduktivitet",
             "c0S/m: Conductivity [S/m]",
             "Cond"
         ], 
@@ -74,6 +80,7 @@
             "LIMS Job"
         ], 
         "PRES_CTD": [
+            "PRES_CTD [dbar]",
             "Tryck", 
             "prDM: Pressure, Digiquartz [db]",
             "Pressure, Strain Gauge [db]",
@@ -88,8 +95,27 @@
         ], 
         "STIME": [
             "IntT"
-        ], 
+        ],
+        "YEAR": [
+            "YEAR"
+        ],
+        "MONTH": [
+            "MONTH"
+        ],
+        "DAY": [
+            "DAY"
+        ],
+        "HOUR": [
+            "HOUR"
+        ],
+        "MINUTE": [
+            "MINUTE"
+        ],
+        "SECOND": [
+            "SECOND"
+        ],
         "DENS_CTD": [
+            "DENS_CTD [kg/m3]",
             "Densitet",
             "sigma-t00: Density [sigma-t, kg/m^3 ]",
             "sigma-t00: Density [sigma-t, Kg/m^3 ]",
@@ -101,6 +127,7 @@
             "svCM: Sound Velocity [Chen-Millero, m/s]"
         ], 
         "DEPH": [
+            "DEPH [m]",
             "Djup",
             "depFM: Depth [true depth, m], lat",
             "depFM: Depth [fresh water, m], lat"
@@ -119,6 +146,7 @@
             "Longitude [GG MM.mm E]"
         ], 
         "TEMP2_CTD": [
+            "TEMP2_CTD [°C (ITS-90)]",
             "Temperatur2", 
             "t190C: Temperature, 2 [ITS-90, deg C]"
         ], 
@@ -140,13 +168,13 @@
             "nbin: number of scans per bin"
         ], 
         "DOXY2_CTD": [
-            "Syrgashalt2", 
+            "DOXY2_CTD [ml/l]",
+            "Syrgashalt2",
             "sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l]",
             "sbeox1ML/L: Oxygen, SBE 43, 2 [ml/l], WS"
         ], 
         "HUMUS_CTD": [
-            "Humus", 
-            ""
+            "Humus",
         ], 
         "SPAR_CTD": [
             "SPAR", 
@@ -157,7 +185,8 @@
             "Latitude [GG MM.mm N]"
         ], 
         "SALT_CTD": [
-            "Salthalt", 
+            "SALT_CTD [psu (PSS-78)]",
+            "Salthalt",
             "sal00: Salinity, Practical [PSU]",
             "SALIN"
         ], 
@@ -165,6 +194,9 @@
             "antal scans", 
             "nbin: number of scans per bin",
             "Datasets"
+        ], 
+        "INSTRUMENT_SERIE": [
+            "SERIAL NO"
         ],
         "Q_FLAG": [
             "flag: flag"

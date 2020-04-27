@@ -7,47 +7,9 @@ Created on Mon Sep 17 10:50:49 2018
 """
 import sys
 sys.path.append('C:\\Utveckling\\sharkpylib')
-import time
-from pprint import pprint
 from ctdpy.core import config, data_handlers
-from ctdpy.core.writers.profile_plot import ProfilePlot, QCPlot
 from ctdpy.core.archive_handler import Archive
-from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, match_filenames
-
-# import logging
-# logging.basicConfig(level=logging.DEBUG,
-#                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
-#                     datefmt='%m-%d %H:%M',
-#                     filename='log.txt',
-#                     filemode='w')
-# # define a Handler which writes INFO messages or higher to the sys.stderr
-# console = logging.StreamHandler()
-# console.setLevel(logging.INFO)
-# # set a format which is simpler for console use
-# formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
-# # tell the handler to use this format
-# console.setFormatter(formatter)
-# # add the handler to the root logger
-# logging.getLogger('').addHandler(console)
-#
-# # Now, we can log to the root logger, or any other logger. First the root...
-# logging.info('Jackdaws love my big sphinx of quartz.')
-#
-# # Now, define a couple of other loggers which might represent areas in your
-# # application:
-#
-# logger1 = logging.getLogger('myapp.area1')
-# logger2 = logging.getLogger('myapp.area2')
-#
-# logger1.debug('Quick zephyrs blow, vexing daft Jim.')
-# logger1.info('How quickly daft jumping zebras vex.')
-# logger2.warning('Jail zesty vixen who grabbed pay from quack.')
-# logger2.error('The five boxing wizards jump quickly.')
-#
-# # missing_str = ", ".join(str(x) for x in missing)
-# LOG.warning(
-#     "The following datasets "
-#     "were not created: {}".format('4,5'))
+from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
 
 
 class Session(object):
@@ -56,11 +18,6 @@ class Session(object):
     def __init__(self, filepaths=None, reader=None):
 
         self.settings = config.Settings()
-        # pprint(self.settings.readers.keys())
-        # print(self.settings.readers[reader])
-        # print('\n\nsys.path')
-        # pprint(sys.path)
-        # print('\n\n')
         self.update_settings_attributes(**self.settings.readers[reader])
 
         filepaths = list(filepaths)
@@ -189,7 +146,7 @@ class Session(object):
         writer_instance = self.settings.writers[writer]['writer'].get('writer')
         return writer_instance(self.settings)
 
-    def save_data(self, datasets, file_name=None, save_path=None, writer="xlsx", return_data_path=False):
+    def save_data(self, datasets, file_name=None, save_path=None, writer=None, return_data_path=False):
         """
         #TODO Needs to be more flexible. Savepath should be dealt with within each writer?
         :param datasets: list of different types of datasets. Can be metadata and profile data
@@ -241,184 +198,3 @@ class Session(object):
         :return: self.settings with specified reader kwargs at a higher level within the settings dictionary tree
         """
         self.settings.set_attributes(self.settings, **dictionary)
-
-
-if __name__ == '__main__':
-    # import pandas as pd
-    # path = 'C:\\Temp\\CTD_DV\\SMF_2018\\original\\B1180123.TOB'
-    # df = pd.read_csv(path, encoding='cp1252')
-    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\data_aranda'
-    # base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v2-3\\ctd\\data'
-    # base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v6-7 Feb\\ctd\\cnv'
-    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_feb_2020'
-    base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
-    # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
-    # base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
-    # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
-    # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
-    # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
-
-    # files = os.listdir(base_dir)
-    files = generate_filepaths(base_dir,
-                               # pattern_list=['.TOB', '.xlsx'],
-                               # pattern_list=['.cnv', '.xlsx'],
-                               # endswith='.cnv',
-                               endswith='.txt',
-                               only_from_dir=True)
-
-    start_time = time.time()
-    s = Session(filepaths=files,
-                # base_dir=base_dir,
-                # reader='deep',
-                # reader='smhi',
-                # reader='umsc',
-                reader='ctd_stdfmt',
-                )
-    print("Session--%.3f sec" % (time.time() - start_time))
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        TEST PRINTS        ###################
-    # print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
-    # print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
-    # print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
-    # print('SHIPmapping test', s.settings.smap.map_shipc('ARANDA'))
-    # pprint(s.settings.templates['ctd_metadata'])
-    # pprint(s.settings.settings_paths)
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        READ DELIVERY DATA, CNV, XLSX        ###################
-    # start_time = time.time()
-    # # FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
-    # datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
-    # datasets = s.read(add_merged_data=True)
-    datasets = s.read()
-    # print("Datasets loaded--%.3f sec" % (time.time() - start_time))
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ##################        QUALITY CONTROL       ###################
-    # ex_data = datasets[0]['SBE09_1387_20200107_2137_77_10_0006.cnv'].get('hires_data')
-    # for key in ex_data:
-    #     if not key.startswith('Q_'):
-    #         ex_data['Q0_'+key] = ['0000'] * ex_data.__len__()
-    # from sharkpylib.qc.qc_default import QCBlueprint
-    #
-    # start_time = time.time()
-    # qc_run = QCBlueprint(ex_data)
-    # qc_run()
-    # print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
-    # for qc_check in ['decrease', 'increase', 'diff', 'range']:
-    #     qc_obj = getattr(qc_settings, qc_check)
-    #     for qc_para, item in qc_obj['parameters'].items():
-    #         print(qc_para)
-    #         func = qc_obj['functions'][item.get('function')].get('function')(ex_data, **item)
-    #         func()
-    #         func.action()
-
-
-    # diff_func = DataDiff(ex_data, parameters=['TEMP_CTD', 'TEMP2_CTD'], acceptable_error=0.5)
-    # diff_func = DataDiff(ex_data, parameters=['SALT_CTD', 'SALT2_CTD'], acceptable_error=0.3)
-    # diff_func = func(ex_data, parameters=['CNDC_CTD', 'CNDC2_CTD'], acceptable_error=0.01)
-    # diff_func = DataDiff(ex_data, parameters=['DOXY_CTD', 'DOXY2_CTD'], acceptable_error=0.3)
-    # diff_func = DataDiff(ex_data, parameters=['DENS_CTD', 'DENS2_CTD'], acceptable_error=0.3)
-    # diff_func()
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ##################        SAVE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
-    # start_time = time.time()
-    # data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
-    # print("Datasets saved--%.3f sec" % (time.time() - start_time))
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        CREATE ARCHIVE        ###################
-    # start_time = time.time()
-    # s.create_archive(data_path=data_path)
-    # print("Archive created--%.3f sec" % (time.time() - start_time))
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        TEST PRINTS        ###################
-    # from calculator import Calculator
-    # import numpy as np
-    # attr_dict = {'latitude': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['LATIT'],
-    #              'pressure': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
-    #              'gravity': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['PRES_CTD'].astype(np.float),
-    #              'density': datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['hires_data']['DENS_CTD'].astype(np.float)}
-    # calc_obj = Calculator()
-    # td = calc_obj.get_true_depth(attribute_dictionary=attr_dict)
-    # res_head = 'hires_data'
-    # res_head = 'lores_data_all'
-    # print(datasets[0].keys())
-    # print(datasets[1].keys())
-    # print(datasets[1]['CTD Profile ifylld.xlsx']['Metadata'].keys())
-    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'].keys())
-    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata'].keys())
-    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv'][res_head].keys())
-    # pprint(datasets[0].keys())
-    # print(datasets[0]['SBE09_1044_20181205_1536_34_01_0154.cnv']['metadata']['FILENAME'])
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        WRITE METADATA TO TEMPLATE        ###################
-    # start_time = time.time()
-    # s.save_data(datasets[0], writer='metadata_template')
-    # print("Metadata file created--%.3f sec" % (time.time() - start_time))
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    # TODO läsare med alt. för fler flagfält
-    # TODO skrivare med alt. för fler Q-flags-fält per parameter
-
-    # pprint(s.settings.templates)
-    # pprint(s.settings.writers['ctd_standard_template']['writer'])
-    # pprint(type(datasets[0]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].columns))
-    # import pandas as pd
-    # print(datasets[0]['SBE09_0827_20180120_0910_26_01_0126.cnv']['hires_data']['TEMP_CTD'].values)
-    # datasets[1]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].pop('Tabellhuvud:')
-    # print(datasets[1]['Test_Leveransmall_CTD.xlsx']['Information'])
-    # f = pd.Series(datasets[1]['Test_Leveransmall_CTD.xlsx']['Sensorinfo'].columns)
-    # print(f)
-    # print(f.str.cat(sep='\t'))
-    # for dset in datasets:
-    #     print(dset.keys())
-    #FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
-    # template_data = s.get_data_in_template(datasets[0], writer='xlsx', template='phyche')
-    # pprint(template_data)
-    # s.save_data(template_data)
-
-    #  -----------------------------------------------------------------------------------------------------------------
-    #  ###################        Plot HTML map /diagrams        ###################
-
-    data_parameter_list = ['PRES_CTD [dbar]',
-                           'SALT_CTD [psu (PSS-78)]', 'SALT2_CTD [psu (PSS-78)]',
-                           'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
-                           'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]',
-                           ]
-    df_parameter_list = data_parameter_list + ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'SDATE', 'STIME', 'KEY']
-    # parameter_list = ['PRES_CTD [dbar]', 'CNDC_CTD [S/m]', 'CNDC2_CTD [S/m]', 'SALT_CTD [psu (PSS-78)]',
-    #                   'SALT2_CTD [psu (PSS-78)]', 'TEMP_CTD [°C (ITS-90)]', 'TEMP2_CTD [°C (ITS-90)]',
-    #                   'DOXY_CTD [ml/l]', 'DOXY2_CTD [ml/l]', 'PAR_CTD [µE/(cm2 ·sec)]', 'CHLFLUO_CTD [mg/m3]',
-    #                   'TURB_CTD [NTU]', 'PHYC_CTD [ppb]']
-    # parameter_list = ['PRES_CTD [dbar]','CNDC_CTD [mS/m]','CNDC2_CTD [mS/m]','SALT_CTD [psu]','SALT2_CTD [psu]',
-    #                       'TEMP_CTD [°C]','TEMP2_CTD [°C]','DOXY_CTD [ml/l]','DOXY2_CTD [ml/l]',
-    #                       'PAR_CTD [µE/(cm2 ·sec)]','CHLFLUO_CTD [mg/m3]','TURB_CTD [NTU]','PHYC_CTD [ppb]']
-
-    parameter_formats = {p: float for p in data_parameter_list}
-    start_time = time.time()
-
-    data_transformer = data_handlers.DataTransformation()
-    data_transformer.add_keys_to_datasets(datasets)
-
-    dataframes = [datasets[0][key].get('data') for key in datasets[0].keys()]
-    data_transformer.append_dataframes(dataframes)
-    data_transformer.add_columns()
-    data_transformer.set_column_format(**parameter_formats)
-
-    dataframe = data_transformer.get_dataframe(columns=df_parameter_list)
-
-    print("Data retrieved--%.3f sec" % (time.time() - start_time))
-    #
-    start_time = time.time()
-    plot = QCPlot(dataframe, parameters=data_parameter_list)
-    plot.set_map()
-    plot.plot_stations()
-    plot.plot_data()
-    plot.show_plot()
-    # plot.plot(x='TEMP_CTD [°C (ITS-90)]',
-    #              y='PRES_CTD [dbar]',
-    #              z='SALT_CTD [psu (PSS-78)]',
-    #              name=profile_name)
-    print("Data ploted--%.3f sec" % (time.time() - start_time))

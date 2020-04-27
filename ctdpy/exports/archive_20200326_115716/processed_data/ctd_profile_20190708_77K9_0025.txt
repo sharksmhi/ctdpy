@@ -1,0 +1,314 @@
+//FORMAT=PROFILE
+//METADATA_DELIMITER=;
+//DATA_DELIMITER=\t
+//METADATA;MYEAR;2019
+//METADATA;PROJ;BAS
+//METADATA;ORDERER;HAV
+//METADATA;SLABO;UMSC
+//METADATA;ALABO;UMSC
+//METADATA;SDATE;2019-07-08
+//METADATA;STIME;12:26
+//METADATA;EDATE;
+//METADATA;ETIME;
+//METADATA;SHIPC;77K9
+//METADATA;CRUISE_NO;18
+//METADATA;SERNO;0025
+//METADATA;STATN;B3
+//METADATA;LATIT;6329.96
+//METADATA;LONGI;1949.09
+//METADATA;POSYS;GPS
+//METADATA;WADEP;24
+//METADATA;COMNT_VISIT;Metallprov och DOC på 7m. Locket till detta DOC-prov tappades på golvet.
+//METADATA;ADD_SMP;
+//METADATA;SMTYP;CTD
+//METADATA;INSTRUMENT_ID;SBE4644
+//METADATA;REFSK_SMP;HC-C-C2
+//METADATA;REV_DATE;
+//METADATA;FILE_NAME;B3_v28_19.cnv
+//METADATA;FILE_NAME_DATABASE;ctd_profile_20190708_77K9_0025.txt
+//METADATA;WINDIR;4
+//METADATA;WINSP;11
+//METADATA;AIRTEMP;
+//METADATA;AIRPRES;
+//METADATA;WEATH;2
+//METADATA;CLOUD;7
+//METADATA;WAVES;3
+//METADATA;ICEOB;0
+//SENSORINFO;INSTRUMENT_ID;INSTRUMENT_PROD;INSTRUMENT_MOD;INSTRUMENT_SERIE;VALIDFR;VALIDTO;PARAM_REPORTED;PARAM_SIMPLE;PARAM;MUNIT;CALCULATED;CALCULATE_REF;SENSOR_PROD;SENSOR_MOD;SENSOR_ID;CALIB_DATE;LMQNT;RANA;UNCERT;FREQ;MET_COMNT
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00;prdM: Pressure, Strain Gauge [db];Tryck;PRES_CTD;dbar;;;;Strain Gauge sensor;4644;2018-03-20;0;0-1000m;0.001;4;
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00; c0S/m: Conductivity [S/m];Konduktivitet;CNDC_CTD;S/m;;;SeaBird;SBE 19plus;4644;2018-03-20;0;0.0-9.0 S/m;± 0.0005 S/m;4;
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00;tv290C: Temperature [ITS-90, deg C];Temperatur;TEMP_CTD;°C (ITS-90);;;SeaBird;SBE 19plus;4644;2018-03-20;-5.0;-5.0 - +35 °C;± 0.005 °C;4;
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00;PAR/Irradiance, Biospherical/Licor;PAR;PAR_CTD;µmol/(m2 sec);;;Licor;LI 193 SA;4468;2010-04-27;1;1 – 10 000 µmol/(s*m2);;;
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00; dz/dtM: Descent Rate [m/s];Fallhastighet;DESC_RATE_CTD;m/s;ja;Derivative of pressure with respect to time;;;;;;;;;calculated in seabird dataprocessing by using the derivative of pressure with respect to time
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00;sbeox0ML/L: Oxygen, SBE 43 [ml/l];Syrgashalt;DOXY_CTD;ml/l;;;SeaBird;SBE 43;2235;2019-04-06;0.1;120% of surface saturation in all natural waters, fresh and salt;± 2% of saturation;4;
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00;density00: Density [density, kg/m^3];Densitet;DENS_CTD;kg/m3;ja;UNESCO 1983 (EOS 80);;;;;;;;;calculated from salinity, temperature and pressure
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00; sal00: Salinity, Practical [PSU];Salthalt;SALT_CTD;psu (PSS-78);ja;UNESCO 1983 (EOS 80);;;;;2;;;;calculated from conductivity, temperature and pressure
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00; depFM: Depth [fresh water, m], lat;Djup;DEPH;m;ja;Calculated from true density profile;;;;;;;;;calculated from density and pressure
+//SENSORINFO;SBE4644;Seabird;SBE 19 plus;4644;2019-01-01 00:00:00;2019-12-31 00:00:00; nbin: number of scans per bin;Antal scans;SCAN_CTD;;;;;;;;;;;;
+//INFORMATION;Sensors are regularly calibrated, cleaned and stored according to the latest recommendations from the manufacturer. 
+//INFORMATION;Data is processed by the following seabird steps: datcnv, filter, alignctd, celltm, loopedit, derive, binavg and ascii out. These steps with some extra information are available in the data file header.
+//INFORMATION;After processing, the data is plotted and visually quality controlled in MATLAB and possible errors are flagged as bad.
+//INSTRUMENT_METADATA;* Sea-Bird SBE19plus Data File:
+//INSTRUMENT_METADATA;* FileName = C:\CTD\CTD 2019\K18\B3_v28_19.hex
+//INSTRUMENT_METADATA;* Software Version 1.59
+//INSTRUMENT_METADATA;* Temperature SN =  4644
+//INSTRUMENT_METADATA;* Conductivity SN =  4644
+//INSTRUMENT_METADATA;* System UpLoad Time = Jul 08 2019 12:43:31
+//INSTRUMENT_METADATA;** B3_v28_19
+//INSTRUMENT_METADATA;* ds
+//INSTRUMENT_METADATA;* SeacatPlus V 1.6b  SERIAL NO. 4644    08 Jul 2019  12:40:13
+//INSTRUMENT_METADATA;* vbatt = 13.1, vlith =  8.1, ioper =  61.9 ma, ipump =   0.4 ma,
+//INSTRUMENT_METADATA;* iext01 =   5.0 ma
+//INSTRUMENT_METADATA;* iext23 =   0.4 ma
+//INSTRUMENT_METADATA;*
+//INSTRUMENT_METADATA;* status = not logging
+//INSTRUMENT_METADATA;* number of scans to average = 1
+//INSTRUMENT_METADATA;* samples = 106677, free = 452563, casts = 52
+//INSTRUMENT_METADATA;* mode = profile, minimum cond freq = 3336, pump delay = 45 sec
+//INSTRUMENT_METADATA;* autorun = no, ignore magnetic switch = no
+//INSTRUMENT_METADATA;* battery type = alkaline, battery cutoff =  7.3 volts
+//INSTRUMENT_METADATA;* pressure sensor = strain gauge, range = 1450.0
+//INSTRUMENT_METADATA;* SBE 38 = no, Gas Tension Device = no
+//INSTRUMENT_METADATA;* Ext Volt 0 = yes, Ext Volt 1 = no, Ext Volt 2 = no, Ext Volt 3 = yes
+//INSTRUMENT_METADATA;* echo commands = yes
+//INSTRUMENT_METADATA;* output format = raw HEX
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;*
+//INSTRUMENT_METADATA;* SeacatPlus V 1.6b  SERIAL NO. 4644    08 Jul 2019  12:40:38
+//INSTRUMENT_METADATA;* temperature:  20-mar-18
+//INSTRUMENT_METADATA;*     TA0 = 1.143603e-03
+//INSTRUMENT_METADATA;*     TA1 = 2.763132e-04
+//INSTRUMENT_METADATA;*     TA2 = -1.195184e-06
+//INSTRUMENT_METADATA;*     TA3 = 1.894666e-07
+//INSTRUMENT_METADATA;*     TOFFSET = 0.000000e+00
+//INSTRUMENT_METADATA;* conductivity:  20-mar-18
+//INSTRUMENT_METADATA;*     G = -1.005644e+00
+//INSTRUMENT_METADATA;*     H = 1.254359e-01
+//INSTRUMENT_METADATA;*     I = -2.221951e-04
+//INSTRUMENT_METADATA;*     J = 3.238534e-05
+//INSTRUMENT_METADATA;*     CF0 = 1.000000e+03
+//INSTRUMENT_METADATA;*     CPCOR = -9.570000e-08
+//INSTRUMENT_METADATA;*     CTCOR = 3.250000e-06
+//INSTRUMENT_METADATA;*     CSLOPE = 1.000000e+00
+//INSTRUMENT_METADATA;* pressure S/N = 5710, range = 1450 psia:  16-mar-18
+//INSTRUMENT_METADATA;*     PA0 = 7.708599e-01
+//INSTRUMENT_METADATA;*     PA1 = 4.437139e-03
+//INSTRUMENT_METADATA;*     PA2 = -1.933642e-11
+//INSTRUMENT_METADATA;*     PTCA0 = 5.206926e+05
+//INSTRUMENT_METADATA;*     PTCA1 = 1.184423e+01
+//INSTRUMENT_METADATA;*     PTCA2 = -1.904569e-01
+//INSTRUMENT_METADATA;*     PTCB0 = 2.478600e+01
+//INSTRUMENT_METADATA;*     PTCB1 = -2.000000e-04
+//INSTRUMENT_METADATA;*     PTCB2 = 0.000000e+00
+//INSTRUMENT_METADATA;*     PTEMPA0 = -7.721961e+01
+//INSTRUMENT_METADATA;*     PTEMPA1 = 5.214770e+01
+//INSTRUMENT_METADATA;*     PTEMPA2 = -6.901002e-01
+//INSTRUMENT_METADATA;*     POFFSET = 0.000000e+00
+//INSTRUMENT_METADATA;* volt 0: offset = -4.702316e-02, slope = 1.247716e+00
+//INSTRUMENT_METADATA;* volt 1: offset = -4.711053e-02, slope = 1.247548e+00
+//INSTRUMENT_METADATA;* volt 2: offset = -4.681579e-02, slope = 1.248258e+00
+//INSTRUMENT_METADATA;* volt 3: offset = 0.000000e+00, slope = 1.000000e+00
+//INSTRUMENT_METADATA;*     EXTFREQSF = 1.000008e+00
+//INSTRUMENT_METADATA;* dh
+//INSTRUMENT_METADATA;* cast  52 08 Jul 2019 12:26:06 samples 104930 to 106677, avg = 1, stop = mag switch
+//INSTRUMENT_METADATA;* S>
+//INSTRUMENT_METADATA;# nquan = 11
+//INSTRUMENT_METADATA;# nvalues = 25                          
+//INSTRUMENT_METADATA;# units = specified
+//INSTRUMENT_METADATA;# name 0 = prdM: Pressure, Strain Gauge [db]
+//INSTRUMENT_METADATA;# name 1 = c0S/m: Conductivity [S/m]
+//INSTRUMENT_METADATA;# name 2 = tv290C: Temperature [ITS-90, deg C]
+//INSTRUMENT_METADATA;# name 3 = par: PAR/Irradiance, Biospherical/Licor
+//INSTRUMENT_METADATA;# name 4 = dz/dtM: Descent Rate [m/s]
+//INSTRUMENT_METADATA;# name 5 = sbeox0ML/L: Oxygen, SBE 43 [ml/l]
+//INSTRUMENT_METADATA;# name 6 = density00: Density [density, kg/m^3]
+//INSTRUMENT_METADATA;# name 7 = sal00: Salinity, Practical [PSU]
+//INSTRUMENT_METADATA;# name 8 = depFM: Depth [fresh water, m], lat = 58
+//INSTRUMENT_METADATA;# name 9 = nbin: number of scans per bin
+//INSTRUMENT_METADATA;# name 10 = flag: flag
+//INSTRUMENT_METADATA;# span 0 =      1.000,     25.000       
+//INSTRUMENT_METADATA;# span 1 =   0.560037,   0.584424       
+//INSTRUMENT_METADATA;# span 2 =     3.9831,    10.5867       
+//INSTRUMENT_METADATA;# span 3 = 1.1053e-01, 2.7344e+02       
+//INSTRUMENT_METADATA;# span 4 =      0.125,      0.496       
+//INSTRUMENT_METADATA;# span 5 =     6.6434,     7.5175       
+//INSTRUMENT_METADATA;# span 6 =  1003.1237,  1004.4396       
+//INSTRUMENT_METADATA;# span 7 =     4.4332,     5.4308       
+//INSTRUMENT_METADATA;# span 8 =      1.020,     25.493       
+//INSTRUMENT_METADATA;# span 9 =          5,         21       
+//INSTRUMENT_METADATA;# span 10 = 0.0000e+00, 0.0000e+00      
+//INSTRUMENT_METADATA;# interval = decibars: 1                
+//INSTRUMENT_METADATA;# start_time = Jul 08 2019 12:26:06 [Instrument's time stamp, header]
+//INSTRUMENT_METADATA;# bad_flag = -9.990e-29
+//INSTRUMENT_METADATA;# <Sensors count="5" >
+//INSTRUMENT_METADATA;#   <sensor Channel="1" >
+//INSTRUMENT_METADATA;#     <!-- Count, Temperature -->
+//INSTRUMENT_METADATA;#     <TemperatureSensor SensorID="58" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4644</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>20-Mar-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <A0>1.14360340e-003</A0>
+//INSTRUMENT_METADATA;#       <A1>2.76313236e-004</A1>
+//INSTRUMENT_METADATA;#       <A2>-1.19518357e-006</A2>
+//INSTRUMENT_METADATA;#       <A3>1.89466639e-007</A3>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.0000</Offset>
+//INSTRUMENT_METADATA;#     </TemperatureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="2" >
+//INSTRUMENT_METADATA;#     <!-- Frequency 0, Conductivity -->
+//INSTRUMENT_METADATA;#     <ConductivitySensor SensorID="3" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4644</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>20-Mar-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <UseG_J>1</UseG_J>
+//INSTRUMENT_METADATA;#       <!-- Cell const and series R are applicable only for wide range sensors. -->
+//INSTRUMENT_METADATA;#       <SeriesR>0.0000</SeriesR>
+//INSTRUMENT_METADATA;#       <CellConst>2000.0000</CellConst>
+//INSTRUMENT_METADATA;#       <ConductivityType>0</ConductivityType>
+//INSTRUMENT_METADATA;#       <Coefficients equation="0" >
+//INSTRUMENT_METADATA;#         <A>0.00000000e+000</A>
+//INSTRUMENT_METADATA;#         <B>0.00000000e+000</B>
+//INSTRUMENT_METADATA;#         <C>0.00000000e+000</C>
+//INSTRUMENT_METADATA;#         <D>0.00000000e+000</D>
+//INSTRUMENT_METADATA;#         <M>0.0</M>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Coefficients equation="1" >
+//INSTRUMENT_METADATA;#         <G>-1.00564416e+000</G>
+//INSTRUMENT_METADATA;#         <H>1.25435866e-001</H>
+//INSTRUMENT_METADATA;#         <I>-2.22195073e-004</I>
+//INSTRUMENT_METADATA;#         <J>3.23853420e-005</J>
+//INSTRUMENT_METADATA;#         <CPcor>-9.57000000e-008</CPcor>
+//INSTRUMENT_METADATA;#         <CTcor>3.2500e-006</CTcor>
+//INSTRUMENT_METADATA;#         <!-- WBOTC not applicable unless ConductivityType = 1. -->
+//INSTRUMENT_METADATA;#         <WBOTC>0.00000000e+000</WBOTC>
+//INSTRUMENT_METADATA;#       </Coefficients>
+//INSTRUMENT_METADATA;#       <Slope>1.00000000</Slope>
+//INSTRUMENT_METADATA;#       <Offset>0.00000</Offset>
+//INSTRUMENT_METADATA;#     </ConductivitySensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="3" >
+//INSTRUMENT_METADATA;#     <!-- Count, Pressure, Strain Gauge -->
+//INSTRUMENT_METADATA;#     <PressureSensor SensorID="46" >
+//INSTRUMENT_METADATA;#       <SerialNumber>4644</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>16-Mar-18</CalibrationDate>
+//INSTRUMENT_METADATA;#       <PA0>7.70859837e-001</PA0>
+//INSTRUMENT_METADATA;#       <PA1>4.43713870e-003</PA1>
+//INSTRUMENT_METADATA;#       <PA2>-1.93364202e-011</PA2>
+//INSTRUMENT_METADATA;#       <PTEMPA0>-7.72196101e+001</PTEMPA0>
+//INSTRUMENT_METADATA;#       <PTEMPA1>5.21477025e+001</PTEMPA1>
+//INSTRUMENT_METADATA;#       <PTEMPA2>-6.90100144e-001</PTEMPA2>
+//INSTRUMENT_METADATA;#       <PTCA0>5.20692572e+005</PTCA0>
+//INSTRUMENT_METADATA;#       <PTCA1>1.18442255e+001</PTCA1>
+//INSTRUMENT_METADATA;#       <PTCA2>-1.90456871e-001</PTCA2>
+//INSTRUMENT_METADATA;#       <PTCB0>2.47860000e+001</PTCB0>
+//INSTRUMENT_METADATA;#       <PTCB1>-2.00000000e-004</PTCB1>
+//INSTRUMENT_METADATA;#       <PTCB2>0.00000000e+000</PTCB2>
+//INSTRUMENT_METADATA;#       <Offset>0.000000</Offset>
+//INSTRUMENT_METADATA;#     </PressureSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="4" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 0, Oxygen, SBE 43 -->
+//INSTRUMENT_METADATA;#     <OxygenSensor SensorID="38" >
+//INSTRUMENT_METADATA;#       <SerialNumber>2235</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>06-Apr-19</CalibrationDate>
+//INSTRUMENT_METADATA;#       <Use2007Equation>1</Use2007Equation>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="0" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Owens-Millard equation. -->
+//INSTRUMENT_METADATA;#         <Boc>0.0000</Boc>
+//INSTRUMENT_METADATA;#         <Soc>0.0000e+000</Soc>
+//INSTRUMENT_METADATA;#         <offset>0.0000</offset>
+//INSTRUMENT_METADATA;#         <Pcor>0.00e+000</Pcor>
+//INSTRUMENT_METADATA;#         <Tcor>0.0000</Tcor>
+//INSTRUMENT_METADATA;#         <Tau>0.0</Tau>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#       <CalibrationCoefficients equation="1" >
+//INSTRUMENT_METADATA;#         <!-- Coefficients for Sea-Bird equation - SBE calibration in 2007 and later. -->
+//INSTRUMENT_METADATA;#         <Soc>5.4580e-001</Soc>
+//INSTRUMENT_METADATA;#         <offset>-0.4885</offset>
+//INSTRUMENT_METADATA;#         <A>-4.6618e-003</A>
+//INSTRUMENT_METADATA;#         <B> 1.5467e-004</B>
+//INSTRUMENT_METADATA;#         <C>-2.4278e-006</C>
+//INSTRUMENT_METADATA;#         <D0> 2.5826e+000</D0>
+//INSTRUMENT_METADATA;#         <D1> 1.92634e-004</D1>
+//INSTRUMENT_METADATA;#         <D2>-4.64803e-002</D2>
+//INSTRUMENT_METADATA;#         <E> 3.6000e-002</E>
+//INSTRUMENT_METADATA;#         <Tau20> 1.3300</Tau20>
+//INSTRUMENT_METADATA;#         <H1>-3.3000e-002</H1>
+//INSTRUMENT_METADATA;#         <H2> 5.0000e+003</H2>
+//INSTRUMENT_METADATA;#         <H3> 1.4500e+003</H3>
+//INSTRUMENT_METADATA;#       </CalibrationCoefficients>
+//INSTRUMENT_METADATA;#     </OxygenSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;#   <sensor Channel="5" >
+//INSTRUMENT_METADATA;#     <!-- A/D voltage 1, PAR/Irradiance, Biospherical/Licor -->
+//INSTRUMENT_METADATA;#     <PAR_BiosphericalLicorChelseaSensor SensorID="42" >
+//INSTRUMENT_METADATA;#       <SerialNumber>SPQA-4468</SerialNumber>
+//INSTRUMENT_METADATA;#       <CalibrationDate>27-Apr-10</CalibrationDate>
+//INSTRUMENT_METADATA;#       <M>-0.77025333</M>
+//INSTRUMENT_METADATA;#       <B>-3.44585239</B>
+//INSTRUMENT_METADATA;#       <CalibrationConstant>3.71000000</CalibrationConstant>
+//INSTRUMENT_METADATA;#       <Multiplier>1.00000000</Multiplier>
+//INSTRUMENT_METADATA;#       <Offset>0.00000000</Offset>
+//INSTRUMENT_METADATA;#     </PAR_BiosphericalLicorChelseaSensor>
+//INSTRUMENT_METADATA;#   </sensor>
+//INSTRUMENT_METADATA;# </Sensors>
+//INSTRUMENT_METADATA;# datcnv_date = Sep 25 2019 09:11:59, 7.23.2 [datcnv_vars = 6]
+//INSTRUMENT_METADATA;# datcnv_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.hex C:\CTD\Setup\UMF_SBE19p_190429.xmlcon
+//INSTRUMENT_METADATA;# datcnv_skipover = 480
+//INSTRUMENT_METADATA;# datcnv_ox_hysteresis_correction = no
+//INSTRUMENT_METADATA;# datcnv_ox_tau_correction = yes
+//INSTRUMENT_METADATA;# filter_date = Sep 25 2019 09:12:02, 7.23.2
+//INSTRUMENT_METADATA;# filter_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv
+//INSTRUMENT_METADATA;# filter_low_pass_tc_A = 0.500
+//INSTRUMENT_METADATA;# filter_low_pass_tc_B = 1.000
+//INSTRUMENT_METADATA;# filter_low_pass_A_vars = c0S/m tv290C
+//INSTRUMENT_METADATA;# filter_low_pass_B_vars = prdM
+//INSTRUMENT_METADATA;# alignctd_date = Sep 25 2019 09:12:02, 7.23.2
+//INSTRUMENT_METADATA;# alignctd_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv
+//INSTRUMENT_METADATA;# alignctd_adv = tv290C 0.500, sbeox0ML/L 4.000                                                                                                                                                                                      
+//INSTRUMENT_METADATA;# celltm_date = Sep 25 2019 09:12:03, 7.23.2
+//INSTRUMENT_METADATA;# celltm_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv
+//INSTRUMENT_METADATA;# celltm_alpha = 0.0400, 0.0000
+//INSTRUMENT_METADATA;# celltm_tau = 8.0000, 0.0000
+//INSTRUMENT_METADATA;# celltm_temp_sensor_use_for_cond = primary, 
+//INSTRUMENT_METADATA;# loopedit_date = Sep 25 2019 09:12:03, 7.23.2
+//INSTRUMENT_METADATA;# loopedit_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv
+//INSTRUMENT_METADATA;# loopedit_minVelocity = 0.100                                                                                            
+//INSTRUMENT_METADATA;# loopedit_surfaceSoak: do not remove                                                                                     
+//INSTRUMENT_METADATA;# loopedit_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# Derive_date = Sep 25 2019 09:12:03, 7.23.2 [derive_vars = 3]
+//INSTRUMENT_METADATA;# Derive_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv C:\CTD\Setup\UMF_SBE19p_190429.xmlcon
+//INSTRUMENT_METADATA;# binavg_date = Sep 25 2019 09:12:04, 7.23.2
+//INSTRUMENT_METADATA;# binavg_in = C:\CTD\SBE_19plus\Temp\b3_v28_19.cnv
+//INSTRUMENT_METADATA;# binavg_bintype = decibars
+//INSTRUMENT_METADATA;# binavg_binsize = 1
+//INSTRUMENT_METADATA;# binavg_excl_bad_scans = yes
+//INSTRUMENT_METADATA;# binavg_skipover = 0
+//INSTRUMENT_METADATA;# binavg_surface_bin = no, min = 0.000, max = 0.000, value = 0.000
+//INSTRUMENT_METADATA;# file_type = ascii
+YEAR	MONTH	DAY	HOUR	MINUTE	SECOND	CRUISE	STATION	LATITUDE_DD	LONGITUDE_DD	PRES_CTD [dbar]	Q_PRES_CTD	CNDC_CTD [S/m]	Q_CNDC_CTD	TEMP_CTD [°C (ITS-90)]	Q_TEMP_CTD	PAR_CTD [µmol/(m2 sec)]	Q_PAR_CTD	DESC_RATE_CTD [m/s]	Q_DESC_RATE_CTD	DOXY_CTD [ml/l]	Q_DOXY_CTD	DENS_CTD [kg/m3]	Q_DENS_CTD	SALT_CTD [psu (PSS-78)]	Q_SALT_CTD	DEPH [m]	Q_DEPH	SCAN_CTD []	Q_SCAN_CTD
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	1.000		0.577337		10.5319		2.7344e+02		0.125		7.4864		1003.1241		4.4385		1.020			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	2.000		0.577435		10.5589		1.5093e+02		0.212		7.5127		1003.1240		4.4359		2.039			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	3.000		0.577523		10.5867		8.9293e+01		0.372		7.5175		1003.1237		4.4332		3.059			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	4.000		0.577371		10.5674		5.6453e+01		0.406		7.5065		1003.1313		4.4343		4.079			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	5.000		0.576971		10.5207		3.5446e+01		0.450		7.5021		1003.1428		4.4366		5.099			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	6.000		0.577035		10.5238		2.3210e+01		0.453		7.5004		1003.1472		4.4366		6.118			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	7.000		0.576864		10.4863		1.5453e+01		0.471		7.4684		1003.1583		4.4397		7.138			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	8.000		0.575684		10.2758		1.0469e+01		0.466		7.4567		1003.1974		4.4555		8.158			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	9.000		0.574084		9.9928		7.1861e+00		0.496		7.4650		1003.2476		4.4768		9.177			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	10.000		0.574022		9.9330		4.9308e+00		0.448		7.4342		1003.2636		4.4836		10.197			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	11.000		0.570437		9.2913		3.5353e+00		0.329		7.2281		1003.3675		4.5337		11.217			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	12.000		0.560042		7.5919		2.4539e+00		0.378		7.2468		1003.6102		4.6642		12.237			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	13.000		0.560037		6.7878		1.8174e+00		0.238		7.2592		1003.7528		4.7734		13.256			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	14.000		0.562653		6.2442		1.3027e+00		0.328		7.1513		1003.8663		4.8739		14.276			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	15.000		0.564319		6.0356		9.8551e-01		0.394		7.0284		1003.9172		4.9194		15.296			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	16.000		0.565990		5.6968		7.2941e-01		0.466		7.0099		1003.9888		4.9846		16.315			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	17.000		0.567959		5.3164		5.5219e-01		0.413		6.8754		1004.0686		5.0600		17.335			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	18.000		0.571260		5.1282		4.3094e-01		0.451		6.6434		1004.1279		5.1201		18.355			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	19.000		0.574872		4.9912		3.3142e-01		0.454		6.6463		1004.1816		5.1759		19.375			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	20.000		0.576817		4.8732		2.6032e-01		0.436		6.6558		1004.2197		5.2130		20.394			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	21.000		0.578370		4.7128		2.0892e-01		0.471		6.7245		1004.2614		5.2533		21.414			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	22.000		0.579920		4.5483		1.7202e-01		0.470		6.7176		1004.3036		5.2945		22.434			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	23.000		0.583525		4.3302		1.4577e-01		0.281		6.8097		1004.3700		5.3650		23.454			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	24.000		0.582326		4.0621		1.2995e-01		0.153		6.7604		1004.4063		5.3970		24.473			
+2019	07	08	12	26	00	2019_77K9_18	B3	63.49933	19.81817	25.000		0.584424		3.9831		1.1053e-01		0.441		-9.990e-29		1004.4396		5.4308		25.493			

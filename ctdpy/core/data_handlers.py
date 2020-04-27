@@ -205,6 +205,7 @@ class SeriesHandler(BaseFileHandler):
         :param header:
         :return:
         """
+        # print('header', header)
         doublet_dict = {col: header.count(col) for col in header}
         new_header = []
         for col in header:
@@ -389,6 +390,22 @@ class DataTransformation(object):
         self.add_date_column()
         self.add_time_column()
 
+    def add_color_columns(self, qflags):
+        """"""
+        mapper = {'Q0_TEMP_CTD': 'color_x1',
+                  'Q0_TEMP2_CTD': 'color_x1b',
+                  'Q0_SALT_CTD': 'color_x2',
+                  'Q0_SALT2_CTD': 'color_x2b',
+                  'Q0_DOXY_CTD': 'color_x3',
+                  'Q0_DOXY2_CTD': 'color_x3b'}
+        for qf in qflags:
+            color_key = mapper.get(qf)
+            if 'b' in color_key:
+                color = 'green'
+            else:
+                color = 'navy'
+            self.df[color_key] = self.df[qf].fillna('').apply(lambda x: color if 'B' not in x else 'red')
+
     def add_date_column(self):
         """"""
         self.df['SDATE'] = self.df[['YEAR', 'MONTH', 'DAY']].astype(str).apply('-'.join, axis=1)
@@ -405,7 +422,10 @@ class DataTransformation(object):
         """
         for key, value in kwargs.items():
             if key in self.df:
-                self.df[key] = self.df[key].astype(value)
+                try:
+                    self.df[key] = self.df[key].astype(value)
+                except ValueError:
+                    self.df[key] = self.df[key].replace('', np.nan).astype(value)
 
     def get_dataframe(self, columns=None):
         """
@@ -421,21 +441,4 @@ class DataTransformation(object):
         """"""
         for key_name in datasets[0].keys():
             datasets[0][key_name]['data']['KEY'] = key_name.strip('ctd_profile|.txt')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

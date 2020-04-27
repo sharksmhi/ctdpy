@@ -303,6 +303,15 @@ def get_object_path(obj):
     return obj.__module__ + "." + obj.__name__
 
 
+def get_reversed_dictionary(dictionary, keys):
+    """
+    :param dictionary:
+    :param keys:
+    :return:
+    """
+    return {dictionary.get(k): k for k in keys if dictionary.get(k)}
+
+
 def get_timestamp(x):
     """
     :param x:
@@ -386,8 +395,7 @@ def set_export_path(export_dir=None):
     :param export_dir:
     :return:
     """
-    if not export_dir:
-        export_dir = os.getcwd() + '/exports'
+    export_dir = export_dir or os.getcwd() + '/exports'
 
     if not os.path.isdir(export_dir):
         os.makedirs(export_dir)
