@@ -10,7 +10,7 @@ import time
 from pprint import pprint
 from ctdpy.core.session import Session
 from ctdpy.core import config, data_handlers
-from ctdpy.core.writers.profile_plot import ProfilePlot, QCPlot
+from ctdpy.core.writers.profile_plot import ProfilePlot, QCWorkTool
 from ctdpy.core.archive_handler import Archive
 from sharkpylib.qc.qc_default import QCBlueprint
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
@@ -21,7 +21,8 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 # base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\Svea v6-7 Feb\\ctd\\cnv'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_feb_2020'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_april_2020'
-base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_expedition_april_2020'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_expedition_april_2020'
+base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_QC_done_exprapp_april_2020'
 
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
@@ -80,14 +81,14 @@ pprint(list(datasets[0].keys()))
 #         ex_data['Q0_'+key] = ['0000'] * ex_data.__len__()
 # pmap = s.settings.pmap
 
-start_time = time.time()
-for data_key, item in datasets[0].items():
-    print(data_key)
-    parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
-    qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
-    qc_run()
-
-print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
+# start_time = time.time()
+# for data_key, item in datasets[0].items():
+#     print(data_key)
+#     parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
+#     qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
+#     qc_run()
+#
+# print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
 # diff_func = DataDiff(ex_data, parameters=['TEMP_CTD', 'TEMP2_CTD'], acceptable_error=0.5)
 # diff_func = DataDiff(ex_data, parameters=['SALT_CTD', 'SALT2_CTD'], acceptable_error=0.3)
 # diff_func = func(ex_data, parameters=['CNDC_CTD', 'CNDC2_CTD'], acceptable_error=0.01)
@@ -212,7 +213,8 @@ print("Data retrieved--%.3f sec" % (time.time() - start_time))
 #  - Addera QC_COMNT
 
 start_time = time.time()
-plot = QCPlot(dataframe,
+plot = QCWorkTool(dataframe,
+              datasets=datasets[0],
               parameters=data_parameter_list,
               plot_parameters_mapping=plot_parameters_mapping,
               color_fields=q_colors,

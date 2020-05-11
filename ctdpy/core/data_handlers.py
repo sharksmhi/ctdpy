@@ -390,18 +390,18 @@ class DataTransformation(object):
         self.add_date_column()
         self.add_time_column()
 
-    def add_color_columns(self, qflags):
+    def add_color_columns(self, qflags, mapper=None):
         """"""
-        mapper = {'Q0_TEMP_CTD': 'color_x1',
-                  'Q0_TEMP2_CTD': 'color_x1b',
-                  'Q0_SALT_CTD': 'color_x2',
-                  'Q0_SALT2_CTD': 'color_x2b',
-                  'Q0_DOXY_CTD': 'color_x3',
-                  'Q0_DOXY2_CTD': 'color_x3b'}
+        mapper = mapper or {'Q0_TEMP_CTD': 'color_x1',
+                            'Q0_TEMP2_CTD': 'color_x1b',
+                            'Q0_SALT_CTD': 'color_x2',
+                            'Q0_SALT2_CTD': 'color_x2b',
+                            'Q0_DOXY_CTD': 'color_x3',
+                            'Q0_DOXY2_CTD': 'color_x3b'}
         for qf in qflags:
             color_key = mapper.get(qf)
             if 'b' in color_key:
-                color = 'green'
+                color = 'purple'
             else:
                 color = 'navy'
             self.df[color_key] = self.df[qf].fillna('').apply(lambda x: color if 'B' not in x else 'red')
@@ -437,8 +437,8 @@ class DataTransformation(object):
         else:
             return self.df[columns]
 
-    def add_keys_to_datasets(self, datasets):
+    @staticmethod
+    def add_keys_to_datasets(datasets):
         """"""
         for key_name in datasets[0].keys():
             datasets[0][key_name]['data']['KEY'] = key_name.strip('ctd_profile|.txt')
-

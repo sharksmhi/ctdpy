@@ -45,6 +45,7 @@ class Settings(object):
         self.dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\core', '')
         # self.dir_path = get_package_path()
         etc_path = '\\'.join([self.dir_path, 'core', 'etc', ''])
+        self.user = os.path.expanduser('~').split('\\')[-1]
         # print('etc_path', etc_path)
         self._load_settings(etc_path)
         self._check_local_paths()

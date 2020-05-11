@@ -320,6 +320,18 @@ def get_timestamp(x):
     return pd.Timestamp(x)
 
 
+def get_time_as_format(**kwargs):
+    if kwargs.get('now'):
+        d = datetime.now()
+    elif kwargs.get('timestamp'):
+        raise NotImplementedError
+
+    if kwargs.get('fmt'):
+        return d.strftime(kwargs.get('fmt'))
+    else:
+        raise NotImplementedError
+
+
 def get_timestamp_minus_daydelta(date, delta=1):
     """
     :param date:
