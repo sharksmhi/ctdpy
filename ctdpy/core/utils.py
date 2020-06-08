@@ -14,6 +14,7 @@ from datetime import datetime
 import shutil
 from trollsift.parser import globify, parse
 import inspect
+from threading import Thread
 
 
 def check_path(path):
@@ -43,25 +44,30 @@ def copyfile(src, dst):
     :param dst: Destination path
     :return: File copied
     """
-    shutil.copy2(src, dst)
+    thread_process(shutil.copy2, src, dst)
+    # shutil.copy2(src, dst)
 
 
-def copytree(src, dst, symlinks=False, ignore=None):
+def copytree(src, dst, symlinks=False, ignore=None, file_paths=None):
     """
-    Source: https://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth
     :param src:
     :param dst:
     :param symlinks:
     :param ignore:
     :return:
     """
-    for item in os.listdir(src):
-        s = os.path.join(src, item)
-        d = os.path.join(dst, item)
-        if os.path.isdir(s):
-            shutil.copytree(s, d, symlinks, ignore)
+    items = file_paths or (os.path.join(src, item) for item in os.listdir(src))
+
+    for item in items:
+        d = os.path.join(dst, os.path.basename(item))
+        if '.' not in item[-5:-2]:
+            # so, rather then using os.path.isdir(s) we do a string check to conclude if its a directory or a file that
+            # we´re trying to copy. Why?! Because if "s" is a directory on a SLOooW file server, e.g. \\WINFS\prod\
+            # os.path.isdir or os.path.isfile will be unnecessary time consuming..
+            # assuming that all file extension are between 2 and 4 characters long (eg. '.7z', '.txt', '.xlsx')
+            thread_process(shutil.copytree, item, d, symlinks, ignore)
         else:
-            shutil.copy2(s, d)
+            thread_process(shutil.copy2, item, d)
 
 
 def create_directory_structure(dictionary, base_path):
@@ -402,6 +408,35 @@ def round_value(value, nr_decimals=3):
                        rounding=ROUND_HALF_UP))
 
 
+def f_string_1(value):
+    return f'{value:.1f}'
+
+
+def f_string_2(value):
+    return f'{value:.2f}'
+
+
+def f_string_3(value):
+    return f'{value:.3f}'
+
+
+def f_string_4(value):
+    return f'{value:.4f}'
+
+
+def rounder(values, decimals=3):
+    if decimals == 3:
+        return np.vectorize(f_string_3)(values)
+    elif decimals == 2:
+        return np.vectorize(f_string_2)(values)
+    elif decimals == 1:
+        return np.vectorize(f_string_1)(values)
+    elif decimals == 4:
+        return np.vectorize(f_string_4)(values)
+    else:
+        return values
+
+
 def set_export_path(export_dir=None):
     """
     :param export_dir:
@@ -430,3 +465,13 @@ def strip_text(x, text, strip=True):
     else:
         new_x = ''
     return new_x
+
+
+def thread_process(call_function, *args, **kwargs):
+    """
+    :param call_function:
+    :param args:
+    :param kwargs:
+    :return:
+    """
+    Thread(target=call_function, args=args, kwargs=kwargs).start()

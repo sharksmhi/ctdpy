@@ -304,9 +304,12 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param df: pd.DataFrame, Column data
         :return: pd.Series, row data merged with separator
         """
-        out_info = [pd.Series(df.columns).str.cat(sep=separator)]
-        for index, row in df.iterrows():
-            out_info.append(row.str.cat(sep=separator))
+        out_info = [separator.join(df.columns)]
+        out_info.extend(df.apply(lambda x: separator.join(x), axis=1).to_list())
+
+        # out_info = [pd.Series(df.columns).str.cat(sep=separator)]
+        # for index, row in df.iterrows():
+        #     out_info.append(row.str.cat(sep=separator))
 
         out_info = self.get_series_object(out_info)
         return out_info
@@ -319,8 +322,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return: pd.DataFrame
         """
         header = self.set_header()
-        if 'DEPH' not in header:
-            header.append('DEPH')
+        # if 'DEPH' not in header:
+        #     header.append('DEPH')
         dictionary = {key: [] for key in header}
         column_length = data.shape[0]
 
@@ -538,8 +541,9 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                          metadata according to standard format (pd.Series) and data as pd.DataFrame
         :return:
         """
+        sep = self.writer['separator_data']
         for key, item in datasets[0].items():
-            data_series = self._get_data_serie(item['data'], separator=self.writer['separator_data'])
+            data_series = self._get_data_serie(item['data'], separator=sep)
             data_series = self._append_information(item['metadata'],
                                                    data_series)
             self._write(key, data_series)

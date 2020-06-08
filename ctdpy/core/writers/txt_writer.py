@@ -8,6 +8,7 @@ Created on Thu Jul 19 13:38:35 2018
 # from core.writers.with_style import with_style
 import csv
 import numpy as np
+from ctdpy.core.utils import thread_process
 
 
 class TxtWriter(object):
@@ -44,7 +45,8 @@ class TxtWriter(object):
         :return: Text file
         """
         # print('numpy', save_path)
-        np.savetxt(save_path, data, fmt=fmt)
+        thread_process(np.savetxt, save_path, data, fmt=fmt)
+        # np.savetxt(save_path, data, fmt=fmt)
 
     @staticmethod
     def write_with_python(data=None, save_path=None):

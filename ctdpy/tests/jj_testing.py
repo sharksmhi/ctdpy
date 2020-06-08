@@ -22,7 +22,7 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_feb_2020'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\exprapp_april_2020'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_expedition_april_2020'
-base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_QC_done_exprapp_april_2020'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_QC_done_exprapp_april_2020'
 
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
@@ -32,23 +32,24 @@ base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\ctd_std_fmt_QC_done_exprap
 # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200312_132344\\processed_data'
 # base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2019\\BAS_UMSC\\arbetsmapp\\'
+base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2018\\BAS_DEEP\\original\\'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200326_115716\\processed_data'  # 2019 UMF data
 
 # files = os.listdir(base_dir)
 files = generate_filepaths(base_dir,
-                           # pattern_list=['.TOB', '.xlsx'],
+                           pattern_list=['.TOB', '.xlsx'],
                            # pattern_list=['.cnv', '.xlsx'],
                            # endswith='.cnv',
-                           endswith='.txt',
-                           only_from_dir=False,
+                           # endswith='.txt',
+                           # only_from_dir=False,
                            )
 
 start_time = time.time()
 s = Session(filepaths=files,
-            # reader='deep',
+            reader='deep',
             # reader='smhi',
             # reader='umsc',
-            reader='ctd_stdfmt',
+            # reader='ctd_stdfmt',
             )
 print("Session--%.3f sec" % (time.time() - start_time))
 #  -----------------------------------------------------------------------------------------------------------------
@@ -67,12 +68,31 @@ start_time = time.time()
 # datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
 # datasets = s.read(add_merged_data=True)
 datasets = s.read()
-print("Datasets loaded--%.3f sec" % (time.time() - start_time))
-try:
-    pprint(list(datasets[1].keys()))
-except:
-    pass
-pprint(list(datasets[0].keys()))
+# print("Datasets loaded--%.3f sec" % (time.time() - start_time))
+# try:
+#     pprint(list(datasets[1].keys()))
+# except:
+#     pass
+# pprint(list(datasets[0].keys()))
+#  -----------------------------------------------------------------------------------------------------------------
+#  ##################        UNIT CONVERSION       ###################
+converter = data_handlers.UnitConverter(s.settings.mapping_unit,
+                                        s.settings.user)
+
+for data_key, item in datasets[0].items():
+    print(data_key)
+    converter.update_meta(item['metadata'])
+    unit_converted = False
+    for parameter in converter.mapper:
+        if parameter in item['data']:
+            unit_converted = True
+            converter.convert_values(item['data'][parameter])
+
+    if unit_converted:
+        converter.rename_dataframe_columns(df=item['data'])
+        converter.append_conversion_comment()
+
+
 #  -----------------------------------------------------------------------------------------------------------------
 #  ##################        QUALITY CONTROL       ###################
 # ex_data = datasets[0]['SBE09_1387_20200107_2137_77_10_0006.cnv'].get('hires_data')
@@ -173,65 +193,65 @@ pprint(list(datasets[0].keys()))
 # auto_q_flag_parameters = ['Q0_SALT_CTD', 'Q0_SALT2_CTD', 'Q0_TEMP_CTD', 'Q0_TEMP2_CTD', 'Q0_DOXY_CTD', 'Q0_DOXY2_CTD']
 # q_colors = ['color_x1', 'color_x2', 'color_x3', 'color_x1b', 'color_x2b', 'color_x3b']
 
-data_parameter_list = ['PRES_CTD [dbar]', 'SALT_CTD [psu (PSS-78)]',
-                       'TEMP_CTD [°C (ITS-90)]', 'DOXY_CTD [ml/l]',
-                       ]
-plot_parameters_mapping = {'x1': 'TEMP_CTD [°C (ITS-90)]',
-                           'x1_q0': 'Q0_TEMP_CTD',
-                           'x2': 'SALT_CTD [psu (PSS-78)]',
-                           'x2_q0': 'Q0_SALT_CTD',
-                           'x3': 'DOXY_CTD [ml/l]',
-                           'x3_q0': 'Q0_DOXY_CTD',
-                           'y': 'PRES_CTD [dbar]'}
-
-q_flag_parameters = ['Q_SALT_CTD', 'Q_TEMP_CTD', 'Q_DOXY_CTD']
-auto_q_flag_parameters = ['Q0_SALT_CTD', 'Q0_TEMP_CTD', 'Q0_DOXY_CTD']
+# data_parameter_list = ['PRES_CTD [dbar]', 'SALT_CTD [psu (PSS-78)]',
+#                        'TEMP_CTD [°C (ITS-90)]', 'DOXY_CTD [ml/l]',
+#                        ]
+# plot_parameters_mapping = {'x1': 'TEMP_CTD [°C (ITS-90)]',
+#                            'x1_q0': 'Q0_TEMP_CTD',
+#                            'x2': 'SALT_CTD [psu (PSS-78)]',
+#                            'x2_q0': 'Q0_SALT_CTD',
+#                            'x3': 'DOXY_CTD [ml/l]',
+#                            'x3_q0': 'Q0_DOXY_CTD',
+#                            'y': 'PRES_CTD [dbar]'}
 #
-q_colors = ['color_x1', 'color_x2', 'color_x3']
-df_parameter_list = data_parameter_list + q_colors + q_flag_parameters + auto_q_flag_parameters + \
-                    ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'SDATE', 'MONTH', 'STIME', 'KEY']
-
-parameter_formats = {p: float for p in data_parameter_list}
-start_time = time.time()
-
-data_transformer = data_handlers.DataTransformation()
-data_transformer.add_keys_to_datasets(datasets)
-
-dataframes = [datasets[0][key].get('data') for key in datasets[0].keys()]
-data_transformer.append_dataframes(dataframes)
-data_transformer.add_columns()
-data_transformer.add_color_columns(auto_q_flag_parameters)
-data_transformer.set_column_format(**parameter_formats)
-
-dataframe = data_transformer.get_dataframe(columns=df_parameter_list)
-
-print("Data retrieved--%.3f sec" % (time.time() - start_time))
-
-# TODO
-#  - Spara undan datafilerna i txtformat
-#  - Separera data och metadata
-#  - Addera QC_COMNT
-
-start_time = time.time()
-plot = QCWorkTool(dataframe,
-              datasets=datasets[0],
-              parameters=data_parameter_list,
-              plot_parameters_mapping=plot_parameters_mapping,
-              color_fields=q_colors,
-              qflag_fields=q_flag_parameters,
-              auto_q_flag_parameters=auto_q_flag_parameters,
-              output_filename="svea_2020.html",
-              # output_filename="UMSC_2019.html",
-              )
-# plot.set_map()
-plot.plot_stations()
-plot.plot_data()
-plot.show_plot()
-# plot.plot(x='TEMP_CTD [°C (ITS-90)]',
-#              y='PRES_CTD [dbar]',
-#              z='SALT_CTD [psu (PSS-78)]',
-#              name=profile_name)
-print("Data plotted--%.3f sec" % (time.time() - start_time))
+# q_flag_parameters = ['Q_SALT_CTD', 'Q_TEMP_CTD', 'Q_DOXY_CTD']
+# auto_q_flag_parameters = ['Q0_SALT_CTD', 'Q0_TEMP_CTD', 'Q0_DOXY_CTD']
+# #
+# q_colors = ['color_x1', 'color_x2', 'color_x3']
+# df_parameter_list = data_parameter_list + q_colors + q_flag_parameters + auto_q_flag_parameters + \
+#                     ['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'SDATE', 'MONTH', 'STIME', 'KEY']
+#
+# parameter_formats = {p: float for p in data_parameter_list}
+# start_time = time.time()
+#
+# data_transformer = data_handlers.DataTransformation()
+# data_transformer.add_keys_to_datasets(datasets)
+#
+# dataframes = [datasets[0][key].get('data') for key in datasets[0].keys()]
+# data_transformer.append_dataframes(dataframes)
+# data_transformer.add_columns()
+# data_transformer.add_color_columns(auto_q_flag_parameters)
+# data_transformer.set_column_format(**parameter_formats)
+#
+# dataframe = data_transformer.get_dataframe(columns=df_parameter_list)
+#
+# print("Data retrieved--%.3f sec" % (time.time() - start_time))
+#
+# # TODO
+# #  - Spara undan datafilerna i txtformat
+# #  - Separera data och metadata
+# #  - Addera QC_COMNT
+#
+# start_time = time.time()
+# plot = QCWorkTool(dataframe,
+#               datasets=datasets[0],
+#               parameters=data_parameter_list,
+#               plot_parameters_mapping=plot_parameters_mapping,
+#               color_fields=q_colors,
+#               qflag_fields=q_flag_parameters,
+#               auto_q_flag_parameters=auto_q_flag_parameters,
+#               output_filename="svea_2020.html",
+#               # output_filename="UMSC_2019.html",
+#               )
+# # plot.set_map()
+# plot.plot_stations()
+# plot.plot_data()
+# plot.show_plot()
+# # plot.plot(x='TEMP_CTD [°C (ITS-90)]',
+# #              y='PRES_CTD [dbar]',
+# #              z='SALT_CTD [psu (PSS-78)]',
+# #              name=profile_name)
+# print("Data plotted--%.3f sec" % (time.time() - start_time))
 
 
 

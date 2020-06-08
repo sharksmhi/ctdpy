@@ -162,7 +162,10 @@ class SeriesHandler(BaseFileHandler):
         :param cruise_no: Specific cruise number, YYYY_SHIP_NNNN
         :return:
         """
-        self.cruise = [self.year, shipc, cruise_no]
+        if cruise_no:
+            self.cruise = [self.year, shipc, cruise_no]
+        else:
+            self.cruise = ''
 
     def update_station_name(self, statn):
         """
@@ -205,7 +208,6 @@ class SeriesHandler(BaseFileHandler):
         :param header:
         :return:
         """
-        # print('header', header)
         doublet_dict = {col: header.count(col) for col in header}
         new_header = []
         for col in header:
@@ -231,9 +233,9 @@ class SeriesHandler(BaseFileHandler):
         idx = self.get_index(series, identifier_header.replace('~', ''), reversed_boolean=reversed)
         if splitter:
             splitter = self.settings.datasets[dataset]['separator_data']
-            df = pd.DataFrame(series[idx].str.split(splitter).tolist(), columns=columns)
+            df = pd.DataFrame(series[idx].str.split(splitter).tolist(), columns=columns).fillna('')
         else:
-            df = pd.DataFrame(series[idx].str.split().tolist(), columns=columns)
+            df = pd.DataFrame(series[idx].str.split().tolist(), columns=columns).fillna('')
         return df
 
     def get_meta_dict(self, series, keys=[], identifier='', separator=''):
@@ -442,3 +444,91 @@ class DataTransformation(object):
         """"""
         for key_name in datasets[0].keys():
             datasets[0][key_name]['data']['KEY'] = key_name.strip('ctd_profile|.txt')
+
+
+class UnitConverter(object):
+    """
+    Plan:
+    - input ctd-standard-format unit (rawdata unit)
+        - dataframe metadata?
+    - standard parameter unit (etc-file)
+        - converting factor
+    - converting function
+        - pandas apply? numpy vecorize?
+        - change [unit] of parameter name eg. CNDC_CTD [S/m] instead of CNDC_CTD [mS/cm]
+    """
+    def __init__(self, mapper, user):
+        self.mapper = mapper
+        self.user = user
+        self.meta = None
+
+    def update_meta(self, meta_serie):
+        """
+        :param meta_serie:
+        :return:
+        """
+        self.meta = meta_serie
+
+    def convert_values(self, serie):
+        """
+        :param serie: pandas.Series
+        :return:
+        """
+        factor = self.get_conversion_factor(serie.name)
+        decimals = self.get_number_of_decimals(serie.name)
+
+        serie = serie.astype(float) * factor
+        serie = utils.rounder(serie, decimals=decimals)
+
+        return serie
+
+    def get_conversion_factor(self, parameter):
+        """
+        :param parameter: str, parameter with unit eg. DOXY_CTD [mg/l]
+        :return: float, conversion factor
+        """
+        return self.mapper[parameter].get('conversion_factor')
+
+    def get_number_of_decimals(self, parameter):
+        """
+        :param parameter: str, parameter with unit eg. DOXY_CTD [mg/l]
+        :return: int, number_of_decimals
+        """
+        return self.mapper[parameter].get('number_of_decimals')
+
+    def set_new_parameter_name(self, serie):
+        """
+        Change name of serie if mapping is found
+        :param serie: pandas.Series
+        """
+        new_name = self.mapper[serie.name].get('standard_parameter_name')
+        serie.name = new_name or serie.name
+
+    @staticmethod
+    def rename_dataframe_columns(df):
+        """
+        #TODO move to utils?
+        :param df: pandas.DataFrame
+        :return: Renames columns of dataframe based on the corresponding Series.name
+        """
+        df.rename(columns={key: df[key].name for key in df.columns}, inplace=True)
+
+    def append_conversion_comment(self):
+        """
+        :param metadata:
+        :return:
+        """
+        time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
+        self.meta[len(self.meta) + 1] = '//UNIT_COMNT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'.format(
+            self.user, time_stamp)
+
+
+if __name__ == "__main__":
+    df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
+    uc = UnitConverter(None, None)
+
+    s = df['a']
+    s.name = 'hej'
+
+    uc.rename_dataframe_columns(df=df)
+    print(df)

@@ -43,12 +43,12 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         :param latit:
         :return:
         """
-        if 'DEPH' not in df:
-            calc = Calculator()
-            df['DEPH'] = calc.get_true_depth(attribute_dictionary={'latitude': latit,
-                                                                   'pressure': df['PRES_CTD'].astype(np.float),
-                                                                   'gravity': df['PRES_CTD'].astype(np.float),
-                                                                   'density': df['DENS_CTD'].astype(np.float)})
+        # if 'DEPH' not in df:
+        #     calc = Calculator()
+        #     df['DEPH'] = calc.get_true_depth(attribute_dictionary={'latitude': latit,
+        #                                                            'pressure': df['PRES_CTD'].astype(np.float),
+        #                                                            'gravity': df['PRES_CTD'].astype(np.float),
+        #                                                            'density': df['DENS_CTD'].astype(np.float)})
             # self.metadata_update.setdefault('DEPH': )
 
         timestamp_array = df[['SDATE', 'STIME']].apply(lambda x: utils.get_timestamp(' '.join(x)), axis=1)
@@ -74,7 +74,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
 
             serie = self.get_series_object(file_data)
             hires_data = self.setup_dataframe(serie, None)  #, metadata)
-            metadata = self.get_metadata(None, filename=fid,
+            metadata = self.get_metadata(serie, filename=fid,
                                          sdate=hires_data['SDATE'][0],
                                          stime=hires_data['STIME'][0])
 
@@ -98,20 +98,6 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         :return: Dictionary with metadata
         """
         raise NotImplementedError
-        # meta_dict = {}
-        # for ident, sep in zip(['identifier_metadata'],
-        #                       ['separator_metadata']):
-        #     data = self.get_meta_dict(serie,
-        #                               identifier=self.settings.datasets['tob'].get(ident),
-        #                               separator=self.settings.datasets['tob'].get(sep),
-        #                               keys=self.settings.datasets['tob'].get('keys_metadata'))
-        #
-        #     meta_dict = utils.recursive_dict_update(meta_dict, data)
-        #
-        # if map_keys:
-        #     meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
-        #
-        # return meta_dict
 
     def merge_data(self, data, resolution='lores_data'):
         """

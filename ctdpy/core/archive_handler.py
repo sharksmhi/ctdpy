@@ -7,6 +7,7 @@ Created on Wen Oct 31 10:26:30 2018
 
 import os
 from ctdpy.core import utils
+import time
 
 
 class Archive(object):
@@ -87,8 +88,7 @@ class Archive(object):
         :return:
         """
         target_path = self._get_received_data_path_in_archive()
-        for fid in file_paths:
-            utils.copyfile(fid, target_path)
+        utils.copytree(None, target_path, file_paths=file_paths)
 
     def _load_zipwriter_instance(self):
         """
@@ -102,4 +102,3 @@ class Archive(object):
         :return: Zipped archive ready for sharkweb to load
         """
         zipzy = self._load_zipwriter_instance()
-

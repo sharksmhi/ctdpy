@@ -36,6 +36,9 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
         """
         data[fid] = {key: None for key in keys}
 
+    def _adjust_dataframe(self):
+        raise NotImplementedError
+
 
 class StandardFormatCTD(BaseSTDFMT):
     """

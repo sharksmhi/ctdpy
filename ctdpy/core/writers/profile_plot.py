@@ -1331,7 +1331,7 @@ class QCWorkTool(CallBacks):
         fig_tabs = [Panel(child=self.ts, title="TS")]
         for p, item in self.figures.items():
             if (self.multi_sensors and p not in ['x1', 'x2', 'x3', 'x4', 'x5', 'x6']) \
-                    or (p not in ['x1', 'x2', 'x3']):
+                    or (not self.multi_sensors and p not in ['x1', 'x2', 'x3']):
                 tab_layout = column([self.flag_widgets[p], item])
                 pan = Panel(child=tab_layout, title=self.plot_parameters_mapping.get(p).split()[0].replace('_CTD', ''))
                 fig_tabs.append(pan)

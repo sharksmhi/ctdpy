@@ -49,6 +49,40 @@ class RincoDEEP(Rinco):
         statn = file_name[:index]
         return statn.upper()
 
+    def _get_instrument_serie(self, serie):
+        """
+        DEEP CTD-data files processing routines follow pattern '001 {INSTRUMENT_ID{INSTRUMENT_SERIE}}.... '
+        We therefore locate rows that starts with '001 '..
+        Example:
+            StandardDataAcquisition SDA (C)opyright by T. Finger 1999-2010
+
+            001 CTM469 001  N  Vbatt  Volt -1.5701 ...
+            001 CTM469 002  P  Press  dbar -2.6940 ...
+
+        :param serie: pandas.Serie
+        :return:
+        """
+        try:
+            index = self.get_index(serie, '001 ')
+            index = index[0]
+            instrument_id = self._get_instrument_id(serie.iloc[index])
+            instrument_serie = instrument_id.strip('CTM')
+        except:
+            instrument_serie = None
+
+        return instrument_serie
+
+    @staticmethod
+    def _get_instrument_id(string):
+        """
+        :param string:
+        :return:
+        """
+        for s in string.split():
+            if s.startswith('CTM'):
+                return s
+        return None
+
     def _get_string_index(self, string, value):
         """
         :param string:
@@ -89,19 +123,12 @@ class RincoDEEP(Rinco):
         :param stime:
         :return:
         """
-        #TODO ADD STIME IN THE SAME WAY,, PERHAPS USING TIMESTAMP AS INPUT RATHER THEN SDATE AND STIME ?
+        instrument_serie = self._get_instrument_serie(serie)
         meta_dict = {'FILE_NAME': filename,
                      'SDATE': sdate,
                      'STIME': stime,
+                     'INSTRUMENT_SERIE': instrument_serie
                      }
-        # for ident, sep in zip(['identifier_metadata'],
-        #                       ['separator_metadata']):
-        #     data = self.get_meta_dict(serie,
-        #                               identifier=self.settings.datasets['tob'].get(ident),
-        #                               separator=self.settings.datasets['tob'].get(sep),
-        #                               keys=self.settings.datasets['tob'].get('keys_metadata'))
-        #
-        #     meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
             # meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
