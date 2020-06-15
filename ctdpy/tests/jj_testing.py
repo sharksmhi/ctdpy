@@ -76,21 +76,21 @@ datasets = s.read()
 # pprint(list(datasets[0].keys()))
 #  -----------------------------------------------------------------------------------------------------------------
 #  ##################        UNIT CONVERSION       ###################
-converter = data_handlers.UnitConverter(s.settings.mapping_unit,
-                                        s.settings.user)
-
-for data_key, item in datasets[0].items():
-    print(data_key)
-    converter.update_meta(item['metadata'])
-    unit_converted = False
-    for parameter in converter.mapper:
-        if parameter in item['data']:
-            unit_converted = True
-            converter.convert_values(item['data'][parameter])
-
-    if unit_converted:
-        converter.rename_dataframe_columns(df=item['data'])
-        converter.append_conversion_comment()
+# converter = data_handlers.UnitConverter(s.settings.mapping_unit,
+#                                         s.settings.user)
+#
+# for data_key, item in datasets[0].items():
+#     print(data_key)
+#     converter.update_meta(item['metadata'])
+#     unit_converted = False
+#     for parameter in converter.mapper:
+#         if parameter in item['data']:
+#             unit_converted = True
+#             converter.convert_values(item['data'][parameter])
+#
+#     if unit_converted:
+#         converter.rename_dataframe_columns(df=item['data'])
+#         converter.append_conversion_comment()
 
 
 #  -----------------------------------------------------------------------------------------------------------------

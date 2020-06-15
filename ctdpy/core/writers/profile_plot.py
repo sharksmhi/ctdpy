@@ -75,7 +75,7 @@ def get_color_palette(dep_serie=None, ):
     cm_map = cm.get_cmap('cool', number_of_colors)
     color_array = pd.Series([colors.to_hex(cm_map(c)) for c in range(number_of_colors)])
 
-    return [color_array[int(d*2)] for d in dep_serie]
+    return [color_array[int(d*2)] if d > 0 else 0 for d in dep_serie]
 
 
 def convert_projection(lats, lons):
@@ -475,6 +475,18 @@ class CallBacks(object):
         super().__init__()
 
     @staticmethod
+    def callback_test(source):
+        code = """
+        // CALLBACK TESTING WITH PRINT
+        console.log('console print callback_test!')        
+                
+        """
+        # Create a CustomJS callback
+        return CustomJS(args={'source': source,
+                              },
+                        code=code)
+
+    @staticmethod
     def month_selection_callback(position_source=None, position_plot_source=None):
         """"""
         code = """
@@ -607,7 +619,8 @@ class CallBacks(object):
 
     @staticmethod
     def station_callback_2(position_source=None, data_source=None,
-                           figures=None, seconds=None, pmap=None):
+                           figures=None, seconds=None, pmap=None,
+                           single_select=None):
         # assert position_source, data_source
         code = """
         // Set column name to select similar glyphs
@@ -620,6 +633,7 @@ class CallBacks(object):
         var data = data_source.data;
         var parameter_mapping = parameter_mapping;
         var figures = figures;
+        var single_select = single_select;
         
         console.log('parameter_mapping', parameter_mapping);
         
@@ -631,23 +645,24 @@ class CallBacks(object):
         var selected_key = position_data[key][selected[0]];
 
         // Update active keys in data source    
-        
-        var data_parameter_name, q0_key, color_key;
-        for (var fig_key in figures){
-            data_parameter_name = parameter_mapping[fig_key];
-            q0_key = fig_key+'_q0';
-            color_key = 'color_'+fig_key;
-            
-            data[fig_key] = data[selected_key+'_'+data_parameter_name];
-            data[q0_key] = data[selected_key+'_'+parameter_mapping[q0_key]];
-            data[color_key] = data[selected_key+'_'+color_key];
-            
-            figures[fig_key].title.text = station_name + ' - ' + selected_key
+        if ((single_select == 1 && selected.length == 1) || (single_select == 0)) {
+            var data_parameter_name, q0_key, color_key;
+            for (var fig_key in figures){
+                data_parameter_name = parameter_mapping[fig_key];
+                q0_key = fig_key+'_q0';
+                color_key = 'color_'+fig_key;
+                
+                data[fig_key] = data[selected_key+'_'+data_parameter_name];
+                data[q0_key] = data[selected_key+'_'+parameter_mapping[q0_key]];
+                data[color_key] = data[selected_key+'_'+color_key];
+                
+                figures[fig_key].title.text = station_name + ' - ' + selected_key
+            }
+            data['y'] = data[selected_key+'_'+parameter_mapping['y']];
+    
+            // Save changes to ColumnDataSource
+            data_source.change.emit();
         }
-        data['y'] = data[selected_key+'_'+parameter_mapping['y']];
-
-        // Save changes to ColumnDataSource
-        data_source.change.emit();
 
         var d = new Date();
         var t = d.getTime();
@@ -665,6 +680,7 @@ class CallBacks(object):
                               'figures': figures,
                               'seconds': seconds,
                               'parameter_mapping': pmap,
+                              'single_select': single_select,
                               },
                         code=code)
 
@@ -672,7 +688,7 @@ class CallBacks(object):
     def lasso_callback(monthly_keys=None, in_data=None, plot_data=None, x_range=None, y_range=None):
         """"""
         code = """
-        
+        console.log('Update lasso_callback!')
         var month_mapping = {'All': 'All',
                              'January': '01', 'February': '02',
                              'March': '03', 'April': '04',
@@ -690,7 +706,7 @@ class CallBacks(object):
             selected_keys.push(monthly_keys[selected_month][indices[i]]);
         }
         
-        //console.log('selected_keys', selected_keys)
+        console.log('selected_keys', selected_keys)
         
         var key_val, x_val, y_val, c_val;
         for (var i = 0; i < in_data.KEY.length; i++) {
@@ -716,7 +732,7 @@ class CallBacks(object):
             x_range.change.emit();
             y_range.change.emit();
             //console.log('x_range.start', x_range.start)
-        } 
+        }
         """
         return CustomJS(args=dict(monthly_keys=monthly_keys,
                                   in_data=in_data.data,
@@ -773,7 +789,8 @@ class CallBacks(object):
         return row([flag_selector, button], sizing_mode="stretch_width")
 
     @staticmethod
-    def get_flag_buttons_widget(position_source, data_source, flag_key=None, color_key=None, figure_objs=None):
+    def get_flag_buttons_widget(position_source, data_source, datasets, flag_key=None,
+                                color_key=None, figure_objs=None):
         """"""
         code = """
         var flag_color_mapping = {'A-flag': {'c':'navy', 'flag': ''},
@@ -804,37 +821,37 @@ class CallBacks(object):
         var flag_value = flag_color_mapping[selected_flag]['flag'];
         var color_value = flag_color_mapping[selected_flag]['c'];
         var color_tuple, flag_tuple, index_value;
-        console.log('flag_value', flag_value)
-        console.log('color_value', color_value)
-        console.log('patches', patches)
-        for (var i = 0; i < selected_indices.length; i++) {
-            index_value = selected_indices[i];
-            color_tuple = (index_value, color_value);
-            flag_tuple = (index_value, flag_value);
+        //console.log('flag_value', flag_value)
+        //console.log('color_value', color_value)
+        //console.log('patches', patches)
+        console.log('selected_indices.length', selected_indices.length)
+        if (selected_position.length == 1) {
+            for (var i = 0; i < selected_indices.length; i++) {
+                index_value = selected_indices[i];
+                color_tuple = (index_value, color_value);
+                flag_tuple = (index_value, flag_value);
+                
+                //console.log('index_value', index_value)
+                //console.log('color_tuple', color_tuple)
+                //console.log('flag_tuple', flag_tuple)
+                
+                data[color_column][index_value] = color_value;
+                data[flag_column][index_value] = flag_value;
+            }
+    
+            // Save changes to ColumnDataSource (only on the plotting side of ColumnDataSource)
+            data_source.change.emit();
+            for (var key in figure_objs) {
+                figure_objs[key].reset.emit();
+            }
+            data_source.selected.indices = selected_indices;
             
-            console.log('index_value', index_value)
-            console.log('color_tuple', color_tuple)
-            console.log('flag_tuple', flag_tuple)
+            // Trigger python callback inorder to save changes to the actual datasets
+            dummy_trigger.glyph.size = Math.random();
+            dummy_trigger.glyph.change.emit();
             
-            //patches[color_column].push(color_tuple);
-            //patches[flag_column].push(flag_tuple);
-            data[color_column][index_value] = color_value;
-            data[flag_column][index_value] = flag_value;
-            //console.log('data[flag_column][selected_indices[i]]', data[flag_column][selected_indices[i]])
-        }
-
-        // Save changes to ColumnDataSource
-        //data_source.data = data;
-        //data_source.patch(patches)
-        data_source.change.emit();
-        for (var i = 0; i < figure_objs.length; i++) {
-            figure_objs[i].reset.emit();
-        }
-        """
-        fig_code = """
-        console.log('Changing figure_objs')
-        for (var i = 0; i < figure_objs.length; i++) {
-            figure_objs[i].reset.emit();
+        } else {
+            console.log('To many selected stations!! We can only work with one at a time', selected_position.length)
         }
         """
         flag_color_mapping = {'A-flag': {'c': 'navy', 'flag': ''},
@@ -842,53 +859,48 @@ class CallBacks(object):
                               'E-flag': {'c': 'green', 'flag': 'E'},
                               'S-flag': {'c': 'orange', 'flag': 'S'}}
 
-        def callback_py(position_source, data_source, figure_objs, flag):
+        def callback_py(attr, old, new, flag=None):
+            start_time = time.time()
             selected_position = position_source.selected.indices
+            if len(selected_position) > 1:
+                print('multi serie selection, no good! len(selected_position) = {}'.format(len(selected_position)))
+                return
+
             selected_key = position_source.data['KEY'][selected_position[0]]
             selected_indices = data_source.selected.indices
-            flag_column = selected_key + '_' + flag_key
-            color_column = selected_key + '_' + color_key
-            patches = {color_column: [],
-                       flag_column: [],
-                       }
-            color_value = flag_color_mapping[flag].get('c')
+            # ds_key = self.key_ds_mapper.get(selected_key)
+            ds_key = ''.join(('ctd_profile_', selected_key, '.txt'))
             flag_value = flag_color_mapping[flag].get('flag')
-            for idx in selected_indices:
-                patches[color_column].append((idx, color_value))
-                patches[flag_column].append((idx, flag_value))
-
-            data_source.patch(patches)
-            # data_source.change.emit()
-
-            # for f_obj in figure_objs:
-            #     f_obj.trigger('change', None, None)
+            datasets[ds_key]['data'][flag_key].iloc[selected_indices] = flag_value
+            print('datasets update in -- %.3f sec' % (time.time() - start_time))
 
         # button_types = default, primary, success, warning or danger
         button_types = ['primary', 'danger', 'success', 'warning']
         flag_list = ['A-flag', 'B-flag', 'E-flag', 'S-flag']
         button_list = [Spacer(width=10)]
+        dummy_figure = figure()
         for flag, b_type in zip(flag_list, button_types):
-            # callback = CustomJS(args={'position_source': position_source,
-            #                           'data_source': data_source,
-            #                           'figure_objs': figure_objs,
-            #                           'flag': flag},
-            #                     code=code)
-            #
-            # callback.args["color_key"] = color_key
-            # callback.args["flag_key"] = flag_key
-            # callback = CustomJS(args={'figure_objs': figure_objs},
-            #                     code=fig_code)
+
+            dummy_trigger = dummy_figure.circle(x=[1], y=[2], alpha=0)
+            dummy_trigger.glyph.on_change('size', partial(callback_py, flag=flag))
+
+            callback = CustomJS(args={'position_source': position_source,
+                                      'data_source': data_source,
+                                      'figure_objs': figure_objs,
+                                      'flag': flag,
+                                      'dummy_trigger': dummy_trigger},
+                                code=code)
+
+            callback.args["color_key"] = color_key
+            callback.args["flag_key"] = flag_key
+
             button = Button(label=flag, width=30, button_type=b_type)
-            # button.on_event(ButtonClick,
-            #                 partial(callback_py, position_source=position_source, data_source=data_source,
-            #                         figure_objs=figure_objs, flag=flag),
-            #                 callback)
-            button.on_click(partial(callback_py, position_source=position_source, data_source=data_source,
-                                    figure_objs=figure_objs, flag=flag))
-            # button.js_on_event(ButtonClick, callback)
+            button.js_on_event(ButtonClick, callback)
 
             button_list.append(button)
+
         button_list.append(Spacer(width=10))
+
         return row(button_list, sizing_mode="stretch_width")
 
     def get_download_widget(self, datasets, series, session):
@@ -902,23 +914,29 @@ class CallBacks(object):
 
             def append_qc_comment(meta):
                 time_stamp = get_time_as_format(now=True, fmt='%Y%m%d%H%M')
-                meta[len(meta) + 1] = '//QC_COMNT; MANUAL QC PERFORMED BY {}; TIMESTAMP {}'.format(
+                meta[len(meta) + 1] = '//COMNT_QC; MANUAL QC PERFORMED BY {}; TIMESTAMP {}'.format(
                     session.settings.user, time_stamp)
 
-            def update_flags(df, key):
-                idx = np.where(np.isfinite(self.data_source.data[key+'_PRES_CTD [dbar]']))[0]
-                for qf in df.columns:
-                    if qf.startswith('Q_'):
-                        if key+'_'+qf in self.data_source.data:
-                            df[qf] = self.data_source.data[key+'_'+qf][idx]
+            # def update_flags(df, key):
+            #     idx = np.where(np.isfinite(self.data_source.data[key+'_PRES_CTD [dbar]']))[0]
+            #     for qf in df.columns:
+            #         if qf.startswith('Q_'):
+            #             if key+'_'+qf in self.data_source.data:
+            #                 df[qf] = self.data_source.data[key+'_'+qf][idx]
+
+            if not any(series.selected.indices):
+                print('No selected series to download')
+                print('len(series.selected.indices)', series.selected.indices)
+                return
 
             start_time = time.time()
             generator = serie_generator(datasets.keys(),
-                                        series.data['KEY'][series.selected.indices])
+                                        [series.data['KEY'][idx] for idx in series.selected.indices])
+
             datasets_to_update = {}
             for ds_name, serie_key in generator:
                 append_qc_comment(datasets[ds_name]['metadata'])
-                update_flags(datasets[ds_name]['data'], serie_key)
+                # update_flags(datasets[ds_name]['data'], serie_key)
                 datasets_to_update[ds_name] = datasets[ds_name]
 
             if any(datasets_to_update):
@@ -1048,8 +1066,9 @@ class QCWorkTool(CallBacks):
 
         self.map = None
         # self.selected_series = None
-        self.df = dataframe
+        # self.df = dataframe
         self.datasets = datasets
+        self.key_ds_mapper = self.get_mapper_key_to_ds()
         self.parameters = parameters
         self.plot_parameters_mapping = plot_parameters_mapping
         self.color_fields = color_fields
@@ -1104,9 +1123,9 @@ class QCWorkTool(CallBacks):
                          x_range=(2, 36), y_range=(-2, 20))
         self.ts.title.align = 'center'
 
-        self._setup_position_source()
-        self._setup_data_source()
-        self._setup_TS_source()
+        self._setup_position_source(dataframe)
+        self._setup_data_source(dataframe)
+        self._setup_TS_source(dataframe)
         self._setup_month_selector()
         self._setup_flag_widgets()
         self._setup_download_button()
@@ -1115,6 +1134,14 @@ class QCWorkTool(CallBacks):
         self._setup_map()
 
         self.ts_axis_ranges = {'t_min': 0, 't_max': 25, 's_min': 2, 's_max': 36}
+
+    def get_mapper_key_to_ds(self):
+        #TODO would we like to create this mapper in any other way?
+        # Let´s say that the dataset name doesnt starts with "ctd_profile_"
+        # mapper = {}
+        # for key, item in self.datasets.items():
+        #
+        return {ds_name.strip('ctd_profile_|.txt'): ds_name for ds_name in self.datasets}
 
     @staticmethod
     def _get_monthly_keys(position_df):
@@ -1126,11 +1153,31 @@ class QCWorkTool(CallBacks):
             dictionary[month] = position_df.loc[boolean, 'KEY'].to_list()
         return dictionary
 
-    def _setup_position_source(self):
+    def update_source(self, old_source, new_df):
+        """
+
+        :param old_source:
+        :param new_df:
+        :return:
+        """
+        data_update = old_source.data
+        if new_df.__len__() > data_update['index'].__len__():
+            length = data_update['index'].__len__()
+            data_update = {key: np.append(data_update[key], np.repeat(np.nan, new_df.__len__() - length))
+                           for key in data_update.keys()}
+        elif data_update['index'].__len__() > new_df.__len__():
+            new_df = new_df.reindex(range(data_update['index'].__len__()))
+
+        for key in new_df.columns:
+            data_update[key] = new_df[key].values
+
+        old_source.data = data_update
+
+    def _setup_position_source(self, df):
         """
         :return:
         """
-        position_df = self.df[['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'KEY', 'MONTH']].drop_duplicates(
+        position_df = df[['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'KEY', 'MONTH']].drop_duplicates(
             keep='first').reset_index(drop=True)
         xs, ys = convert_projection(position_df['LATITUDE_DD'].astype(float).values, position_df['LONGITUDE_DD'].astype(float).values)
         position_df['LONGI'] = xs
@@ -1149,7 +1196,6 @@ class QCWorkTool(CallBacks):
                                      # callback=callback,
                                      # width=120,
                                      )
-        # self.month_selector.js_event_callbacks('value', callback)
         self.month_selector.js_on_change('value', callback)
         # self.month_selector.title.text_align = 'center'
         callback.args["month"] = self.month_selector
@@ -1185,23 +1231,26 @@ class QCWorkTool(CallBacks):
         self.flag_widgets = {}
         for fig_key in self.figures.keys():
             q_key = 'Q_' + self.plot_parameters_mapping.get(fig_key).split()[0]
-            self.flag_widgets[fig_key] = self.get_flag_buttons_widget(self.position_plot_source, self.data_source,
+            self.flag_widgets[fig_key] = self.get_flag_buttons_widget(self.position_plot_source,
+                                                                      self.data_source,
+                                                                      self.datasets,
+                                                                      figure_objs=self.figures,
                                                                       flag_key=q_key,
                                                                       color_key='color_{}'.format(fig_key))
 
-    def _setup_TS_source(self):
+    def _setup_TS_source(self, df):
         """
         :return:
         """
         params = self.parameters + ['KEY']
-        ts_df = self.df[params]
+        ts_df = df[params]
         ts_df['x'] = ts_df[self.plot_parameters_mapping.get('x2')]  # x2 = SALT
         ts_df['y'] = ts_df[self.plot_parameters_mapping.get('x1')]  # x1 = TEMP
         ts_df['color'] = get_color_palette(dep_serie=ts_df[self.plot_parameters_mapping.get('y')])
         self.ts_source = ColumnDataSource(data=ts_df)
         self.ts_plot_source = ColumnDataSource(data=dict(x=[], y=[], color=[], key=[]))
 
-    def _setup_data_source(self):
+    def _setup_data_source(self, df):
         """
         :return:
         """
@@ -1209,10 +1258,10 @@ class QCWorkTool(CallBacks):
         # self.df[self.parameters] = self.df[self.parameters].astype(float)
         data_dict = {}
         for key in self.position_source.data['KEY']:
-            data_boolean = self.df['KEY'] == key
+            data_boolean = df['KEY'] == key
             for parameter in self.parameters + self.color_fields + self.qflag_fields + self.auto_qflag_fields:
                 data_key = '_'.join((key, parameter))
-                data_dict[data_key] = self.df.loc[data_boolean, parameter].values
+                data_dict[data_key] = df.loc[data_boolean, parameter].values
 
         length = 0
         for key in data_dict:
@@ -1263,12 +1312,13 @@ class QCWorkTool(CallBacks):
         #                                      salt_obj=self.salt,
         #                                      doxy_obj=self.doxy,
         #                                      seconds=self.seconds)
-
-        tap.callback = self.station_callback_2(position_source=self.position_plot_source,
-                                               data_source=self.data_source,
-                                               figures=self.figures,
-                                               seconds=self.seconds,
-                                               pmap=self.plot_parameters_mapping)
+        station_data_callback = self.station_callback_2(position_source=self.position_plot_source,
+                                                        data_source=self.data_source,
+                                                        figures=self.figures,
+                                                        seconds=self.seconds,
+                                                        pmap=self.plot_parameters_mapping,
+                                                        single_select=0)
+        tap.callback = station_data_callback
 
         # When we mark stations on the map using lasso selection, we activate the TS-diagram.
         lasso_callback = self.lasso_callback(monthly_keys=self.monthly_keys,
@@ -1276,8 +1326,15 @@ class QCWorkTool(CallBacks):
                                              plot_data=self.ts_plot_source,
                                              x_range=self.ts.x_range,
                                              y_range=self.ts.y_range)
+
+        station_data_callback_2 = self.station_callback_2(position_source=self.position_plot_source,
+                                                          data_source=self.data_source,
+                                                          figures=self.figures,
+                                                          seconds=self.seconds,
+                                                          pmap=self.plot_parameters_mapping,
+                                                          single_select=1)
         lasso_callback.args["month"] = self.month_selector
-        self.position_plot_source.selected.js_on_change('indices', lasso_callback)
+        self.position_plot_source.selected.js_on_change('indices', lasso_callback, station_data_callback_2)
 
     def plot_stations(self):
         """"""

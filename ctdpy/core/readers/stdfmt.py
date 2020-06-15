@@ -56,25 +56,40 @@ class StandardFormatCTD(BaseSTDFMT):
             df.drop(0, inplace=True)
             df.reset_index(drop=True, inplace=True)
 
-    def get_data(self, filenames=None, add_low_resolution_data=False):
+    def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
         """
+        :param thread_load:
+        :param add_low_resolution_data:
         :param filenames: list of file paths
         :return:
         """
         data = {}
         for fid in filenames:
-            file_data = self.load(fid, sep='NO__SEPERATOR')
-            fid = utils.get_filename(fid)
-            self.setup_dictionary(fid, data, ('data', 'metadata'))
-
-            serie = self.get_series_object(file_data)
-            metadata = self.get_metadata(serie, filename=fid)
-            dataframe = self.setup_dataframe(serie)
-
-            data[fid]['data'] = dataframe
-            data[fid]['metadata'] = metadata
+            if thread_load:
+                # If we don´t have a process starting instantly after data load,
+                # we might just aswell load we thread processes
+                utils.thread_process(self.load_func, fid, data)
+            else:
+                self.load_func(fid, data)
 
         return data
+
+    def load_func(self, fid, dictionary):
+        """
+        :param fid:
+        :param dictionary:
+        :return:
+        """
+        file_data = self.load(fid, sep='NO__SEPERATOR')
+        fid = utils.get_filename(fid)
+        dictionary[fid] = {}
+
+        serie = self.get_series_object(file_data)
+        metadata = self.get_metadata(serie, filename=fid)
+        dataframe = self.setup_dataframe(serie)
+
+        dictionary[fid]['data'] = dataframe
+        dictionary[fid]['metadata'] = metadata
 
     def get_metadata(self, serie, map_keys=True, filename=None):
         """
@@ -95,4 +110,3 @@ class StandardFormatCTD(BaseSTDFMT):
         #     meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
 
         return data
-

@@ -519,7 +519,7 @@ class UnitConverter(object):
         :return:
         """
         time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
-        self.meta[len(self.meta) + 1] = '//UNIT_COMNT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'.format(
+        self.meta[len(self.meta) + 1] = '//COMNT_UNIT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'.format(
             self.user, time_stamp)
 
 
