@@ -136,6 +136,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param args: list of pd.Series to be appended as one
         :return: complete pd.Serie
         """
+        
         out_serie = pd.Series([])
         out_serie = out_serie.append([serie for serie in args])
         return out_serie
@@ -543,7 +544,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         sep = self.writer['separator_data']
         for key, item in datasets[0].items():
-            data_series = self._get_data_serie(item['data'], separator=sep)
+            if 'data' in item.keys():
+                data_series = self._get_data_serie(item['data'], separator=sep)
+            else: 
+                data_series = self._get_data_serie(item['hires_data'], separator=sep)
             data_series = self._append_information(item['metadata'],
                                                    data_series)
             self._write(key, data_series)
