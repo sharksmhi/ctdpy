@@ -537,7 +537,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
 
         :param datasets: consits of data as CTD standard format. Each dataset has metadata according to standard format
-                         (pd.Series) and data as pd.DataFramedatasets consits of CTD standard format. Each dataset has
+                         (pd.Series) and data as pd.DataFramedatasets consists of CTD standard format. Each dataset has
                          metadata according to standard format (pd.Series) and data as pd.DataFrame
         :return:
         """
