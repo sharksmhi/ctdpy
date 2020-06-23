@@ -238,7 +238,7 @@ class SeriesHandler(BaseFileHandler):
             df = pd.DataFrame(series[idx].str.split().tolist(), columns=columns).fillna('')
         return df
 
-    def get_meta_dict(self, series, keys=[], identifier='', separator=''):
+    def get_meta_dict(self, series, keys=None, identifier='', separator=''):
         """
         :param series: pd.Series, contains metadata
         :param keys: List of keys to search for
@@ -248,14 +248,22 @@ class SeriesHandler(BaseFileHandler):
         """
         meta_dict = {}
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
-        if any(keys):
+        if keys:
             for key in keys:
                 boolean_contains = self.get_index(series, key, contains=True,
                                                   as_boolean=True)
                 boolean = boolean_startswith & boolean_contains
                 if any(boolean):
-                    meta = series[boolean].tolist()[0].split(separator)[-1].strip()
-                    meta_dict.setdefault(key, meta)
+                    value = series[boolean].tolist()[0]
+
+                    if separator in value:
+                        meta = value.split(separator)[-1].strip()
+                    else:
+                        #FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        meta = value[value.index(key)+len(key):].strip()
+
+                    if meta:
+                        meta_dict.setdefault(key, meta)
         else:
             return series.loc[boolean_startswith]
         return meta_dict
@@ -283,7 +291,7 @@ class SeriesHandler(BaseFileHandler):
         """
         if contains:
             # contains
-            boolean = serie.str.contains(string)
+            boolean = serie.str.contains(string, regex=False)
         elif equals:
             # equals
             boolean = serie == string

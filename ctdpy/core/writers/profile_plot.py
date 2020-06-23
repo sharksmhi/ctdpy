@@ -753,11 +753,11 @@ class CallBacks(object):
         // Get data from ColumnDataSource
         var position_data = position_source.data;
         var data = data_source.data;
-        
+
         // Set variables attributes
         var color_column = color_key;
         var selected_flag = flag_selection.value;
-        
+
         var selected_position = position_source.selected.indices;
         var selected_key = position_data['KEY'][selected_position[0]];
         var flag_column = selected_key+'_'+flag_key;
@@ -1179,6 +1179,7 @@ class QCWorkTool(CallBacks):
         """
         position_df = df[['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'KEY', 'MONTH']].drop_duplicates(
             keep='first').reset_index(drop=True)
+        boolean = position_df['LATITUDE_DD'].isna()
         xs, ys = convert_projection(position_df['LATITUDE_DD'].astype(float).values, position_df['LONGITUDE_DD'].astype(float).values)
         position_df['LONGI'] = xs
         position_df['LATIT'] = ys

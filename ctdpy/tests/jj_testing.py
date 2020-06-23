@@ -27,18 +27,19 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
-# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
+# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\processed_data'
+base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\test'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
 # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200312_132344\\processed_data'
 # base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2019\\BAS_UMSC\\arbetsmapp\\'
-base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2018\\BAS_DEEP\\original\\'
+# base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2018\\BAS_DEEP\\original\\'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200326_115716\\processed_data'  # 2019 UMF data
 
 # files = os.listdir(base_dir)
 files = generate_filepaths(base_dir,
-                           pattern_list=['.TOB', '.xlsx'],
-                           # pattern_list=['.cnv', '.xlsx'],
+                           # pattern_list=['.TOB', '.xlsx'],
+                           pattern_list=['.cnv', '.xlsx'],
                            # endswith='.cnv',
                            # endswith='.txt',
                            # only_from_dir=False,
@@ -46,8 +47,8 @@ files = generate_filepaths(base_dir,
 
 start_time = time.time()
 s = Session(filepaths=files,
-            reader='deep',
-            # reader='smhi',
+            # reader='deep',
+            reader='smhi',
             # reader='umsc',
             # reader='ctd_stdfmt',
             )
