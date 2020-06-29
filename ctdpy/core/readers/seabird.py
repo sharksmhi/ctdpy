@@ -25,36 +25,59 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         super().__init__(settings)
         self.df_handler = DataFrameHandler(self.settings)
 
-    def get_data(self, filenames=None, add_low_resolution_data=False):
+    def load_func(self, fid, dictionary):
+        file_data = self.load(fid)
+        fid = utils.get_filename(fid)
+        self.setup_dictionary(fid, dictionary, None)
+
+        serie = self.get_series_object(file_data)
+        metadata = self.get_metadata(serie, filename=fid)
+        hires_data = self.setup_dataframe(serie, metadata)
+
+        dictionary[fid]['raw_format'] = serie
+        dictionary[fid]['metadata'] = metadata
+        dictionary[fid]['data'] = hires_data
+
+    def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
         """
+        :param thread_load:
         :param filenames: list of file paths
         :param merge_data_and_metadata: False or True
         :param add_low_resolution_data: False or True
         :return: datasets
         """
         data = {}
+        profile = None
         if add_low_resolution_data:
             profile = Profile()
-
+        print('thread_load', thread_load)
         for fid in filenames:
-            file_data = self.load(fid)
-            fid = utils.get_filename(fid)
-            self.setup_dictionary(fid, data)
+            # print(fid)
+            if thread_load:
+                # If we don´t have a process starting instantly after data load,
+                # we might just aswell load with thread processes
+                utils.thread_process(self.load_func, fid, data)
+            else:
+                self.load_func(fid, data)
 
-            serie = self.get_series_object(file_data)
-            metadata = self.get_metadata(serie, filename=fid)
-            hires_data = self.setup_dataframe(serie, metadata)
+            # file_data = self.load(fid)
+            # fid = utils.get_filename(fid)
+            # self.setup_dictionary(fid, data, None)
+            #
+            # serie = self.get_series_object(file_data)
+            # metadata = self.get_metadata(serie, filename=fid)
+            # hires_data = self.setup_dataframe(serie, metadata)
+            #
+            # data[fid]['raw_format'] = serie
+            # data[fid]['metadata'] = metadata
+            # data[fid]['data'] = hires_data
 
-            data[fid]['raw_format'] = serie
-            data[fid]['metadata'] = metadata
-            data[fid]['hires_data'] = hires_data
-
-            if add_low_resolution_data:
-                profile.update_data(data=hires_data)
-                lores_data = profile.extract_lores_data(key_depth='DEPH',
-                                                        discrete_depths=self.settings.depths)
-                data[fid]['lores_data'] = lores_data
-
+            # if add_low_resolution_data:
+            #     profile.update_data(data=hires_data)
+            #     lores_data = profile.extract_lores_data(key_depth='DEPH',
+            #                                             discrete_depths=self.settings.depths)
+            #     data[fid]['lores_data'] = lores_data
+        print('return data')
         return data
 
     def get_metadata(self, serie, map_keys=True, filename=None):
@@ -103,11 +126,13 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def setup_dictionary(self, fid, data):
+    def setup_dictionary(self, fid, data, keys):
         """
+        :param keys:
+        :param data:
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'hires_data': None,
+        data[fid] = {'data': None,
                      'lores_data': None,
                      'metadata': None}

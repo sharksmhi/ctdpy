@@ -27,8 +27,9 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\20200304_152042'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\resultat\\archive_20191121_122431\\processed_data'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMF_2018\\original'
-# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\processed_data'
-base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\test'
+base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
+# base_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2018\\SHARK_Profile_2018_BAS_SMHI\\processed_data'
+# base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\test'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
 # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200312_132344\\processed_data'
@@ -69,12 +70,13 @@ start_time = time.time()
 # datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
 # datasets = s.read(add_merged_data=True)
 datasets = s.read()
-# print("Datasets loaded--%.3f sec" % (time.time() - start_time))
+print("Datasets loaded--%.3f sec" % (time.time() - start_time))
 # try:
 #     pprint(list(datasets[1].keys()))
 # except:
 #     pass
-# pprint(list(datasets[0].keys()))
+print(len(datasets[0].keys()))
+pprint(list(datasets[0].keys()))
 #  -----------------------------------------------------------------------------------------------------------------
 #  ##################        UNIT CONVERSION       ###################
 # converter = data_handlers.UnitConverter(s.settings.mapping_unit,

@@ -49,7 +49,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                     self.reset_index(metadata_df)
                     self._update_visit_info(metadata_df)
     
-                    data_df = self._get_data_columns(item['hires_data'], metadata_df)
+                    data_df = self._get_data_columns(item['data'], metadata_df)
                     data_series = self._get_data_serie(data_df, separator=self.writer['separator_data'])
                     data_series = self._append_information(self.template_format,
                                                            self.delimiters['meta'],
@@ -544,10 +544,11 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         sep = self.writer['separator_data']
         for key, item in datasets[0].items():
-            if 'data' in item.keys():
-                data_series = self._get_data_serie(item['data'], separator=sep)
-            else: 
-                data_series = self._get_data_serie(item['hires_data'], separator=sep)
+            # if 'data' in item.keys():
+            #     data_series = self._get_data_serie(item['data'], separator=sep)
+            # else:
+            #     data_series = self._get_data_serie(item['hires_data'], separator=sep)
+            data_series = self._get_data_serie(item['data'], separator=sep)
             data_series = self._append_information(item['metadata'],
                                                    data_series)
             self._write(key, data_series)

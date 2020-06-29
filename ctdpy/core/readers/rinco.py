@@ -80,7 +80,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
 
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
-            data[fid]['hires_data'] = hires_data
+            data[fid]['data'] = hires_data
             data[fid]['identifier_data'] = self.settings.datasets['tob']['identifier_data']
 
             if add_low_resolution_data:
@@ -133,6 +133,6 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'hires_data': None,
+        data[fid] = {'data': None,
                      'lores_data': None,
                      'metadata': None}

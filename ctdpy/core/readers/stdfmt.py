@@ -67,7 +67,7 @@ class StandardFormatCTD(BaseSTDFMT):
         for fid in filenames:
             if thread_load:
                 # If we don´t have a process starting instantly after data load,
-                # we might just aswell load we thread processes
+                # we might just aswell load with thread processes
                 utils.thread_process(self.load_func, fid, data)
             else:
                 self.load_func(fid, data)

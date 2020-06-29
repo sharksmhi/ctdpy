@@ -366,8 +366,9 @@ class BaseReader(object):
         """
         raise NotImplementedError
 
-    def setup_dictionary(self, fid, data):
+    def setup_dictionary(self, fid, data, keys):
         """
+        :param keys:
         :param fid:
         :param data:
         :return:

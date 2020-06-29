@@ -55,6 +55,7 @@ class Session(object):
             print('dataset', dataset)
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
+            print('we have data')
 
             # TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefore do this elsewhere
             if add_merged_data and add_low_resolution_data:

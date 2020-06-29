@@ -45,7 +45,7 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
 
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
-            data[fid]['hires_data'] = hires_data
+            data[fid]['data'] = hires_data
 
             if add_low_resolution_data:
                 profile.update_data(data=hires_data)
@@ -106,6 +106,6 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'hires_data': None,
+        data[fid] = {'data': None,
                      'lores_data': None,
                      'metadata': None}
