@@ -742,6 +742,45 @@ class CallBacks(object):
                         code=code)
 
     @staticmethod
+    def comnt_callback(position_source=None, comnt_obj=None, single_select=None):
+        # assert position_source, data_source
+        code = """
+        // Set column name to select similar glyphs
+        var key = 'KEY';
+        var statn_key = 'STATION';
+        var comnt_key = 'COMNT_VISIT';
+
+        // Set Sources
+        var position_data = position_source.data;
+        var comnt_obj = comnt_obj;
+        var single_select = single_select;
+
+        // Get indices array of all selected items
+        var selected = position_source.selected.indices;
+
+        // Update figure title
+        var station_name = position_data[statn_key][selected[0]];
+        var selected_key = position_data[key][selected[0]];
+        var comnt = position_data[comnt_key][selected[0]];
+
+        // Update active keys in data source    
+        if ((single_select == 1 && selected.length == 1) || (single_select == 0)) {
+            comnt_obj.value = comnt
+            comnt_obj.title = comnt_key + ':  ' + station_name + ' - ' + selected_key
+            
+            console.log('comnt_obj.value', comnt_obj.value)
+            console.log('comnt_obj.title', comnt_obj.title)
+        }
+
+        """
+        # Create a CustomJS callback with the code and the data
+        return CustomJS(args={'position_source': position_source,
+                              'comnt_obj': comnt_obj,
+                              'single_select': single_select,
+                              },
+                        code=code)
+
+    @staticmethod
     def get_flag_widget(position_source, data_source, flag_key=None, color_key=None):
         """"""
         code = """
@@ -950,6 +989,57 @@ class CallBacks(object):
         return button
 
     @staticmethod
+    def comnt_visit_change_button(datasets=None, position_source=None, comnt_obj=None):
+        """"""
+        def callback_py(attr, old, new, comnt_obj=None):
+            start_time = time.time()
+            selected_indices = position_source.selected.indices
+            if len(selected_indices) > 1:
+                print('multi serie selection, no good! len(selected_position) = {}'.format(len(selected_indices)))
+                return
+
+            selected_key = position_source.data['KEY'][selected_indices[0]]
+            ds_key = ''.join(('ctd_profile_', selected_key, '.txt'))
+            cv_boolean = datasets[ds_key]['metadata'].str.startswith('//METADATA;COMNT_VISIT;')
+            datasets[ds_key]['metadata'][cv_boolean] = '//METADATA;COMNT_VISIT;' + comnt_obj.value
+
+        js_code = """
+        // Get data from ColumnDataSource
+        var comnt_column = 'COMNT_VISIT';
+        var position_data = position_source.data;
+
+        // Set variables attributes
+        var new_comnt = comnt_obj.value;
+        var selected_indices = position_source.selected.indices;
+        
+        if (selected_indices.length == 1) {
+            position_data[comnt_column][selected_indices[0]] = new_comnt;
+            
+            // Save changes to ColumnDataSource
+            position_source.change.emit();
+            
+            // Trigger python callback inorder to save changes to the actual datasets
+            dummy_trigger.glyph.size = Math.random();
+            dummy_trigger.glyph.change.emit();
+            
+        } else {
+            console.log('To many selected stations!! We can only work with one at a time', selected_indices.length)
+        }
+        """
+        dummy_figure = figure()
+        dummy_trigger = dummy_figure.circle(x=[1], y=[2], alpha=0)
+        dummy_trigger.glyph.on_change('size', partial(callback_py, comnt_obj=comnt_obj))
+
+        callback = CustomJS(args={'position_source': position_source,
+                                  'comnt_obj': comnt_obj,
+                                  'dummy_trigger': dummy_trigger},
+                            code=js_code)
+
+        button = Button(label="Commit", width=30, button_type="success")
+        button.js_on_event(ButtonClick, callback)
+        return button
+
+    @staticmethod
     def get_file_widget():
         # button_input = FileInput(accept=".csv,.txt")
         button_input = FileInput()
@@ -1128,7 +1218,7 @@ class QCWorkTool(CallBacks):
         self._setup_TS_source(dataframe)
         self._setup_month_selector()
         self._setup_flag_widgets()
-        self.set_comnt_inputs()
+        self._setup_comnt_inputs()
         self._setup_download_button()
         self._setup_get_file_button()
         self._setup_serie_table()
@@ -1184,6 +1274,15 @@ class QCWorkTool(CallBacks):
         xs, ys = convert_projection(position_df['LATITUDE_DD'].astype(float).values, position_df['LONGITUDE_DD'].astype(float).values)
         position_df['LONGI'] = xs
         position_df['LATIT'] = ys
+
+        comnts = []
+        for key in position_df['KEY']:
+            ds_meta = self.datasets[self.key_ds_mapper.get(key)]['metadata']
+            cv_boolean = ds_meta.str.startswith('//METADATA;COMNT_VISIT;')
+            value = ds_meta[cv_boolean].values[0].replace('//METADATA;COMNT_VISIT;', '')
+            comnts.append(value)
+        position_df['COMNT_VISIT'] = comnts
+
         self.monthly_keys = self._get_monthly_keys(position_df)
         self.position_source = ColumnDataSource(data=position_df)
         self.position_plot_source = ColumnDataSource(data=position_df)
@@ -1286,6 +1385,16 @@ class QCWorkTool(CallBacks):
 
         print('\nData source structure completed!\n')
 
+    def _setup_comnt_inputs(self):
+        """
+        :return:
+        """
+        self.comnt_samp = TextInput(value="", title="COMNT_SAMP:")
+        self.comnt_visit = TextInput(value="", title="COMNT_VISIT:")
+        self.comnt_visit_button = self.comnt_visit_change_button(datasets=self.datasets,
+                                                                 position_source=self.position_plot_source,
+                                                                 comnt_obj=self.comnt_visit)
+
     def _setup_map(self):
         """"""
 
@@ -1335,8 +1444,13 @@ class QCWorkTool(CallBacks):
                                                           seconds=self.seconds,
                                                           pmap=self.plot_parameters_mapping,
                                                           single_select=1)
+
+        comnt_callback = self.comnt_callback(position_source=self.position_plot_source,
+                                             comnt_obj=self.comnt_visit,
+                                             single_select=1)
+
         lasso_callback.args["month"] = self.month_selector
-        self.position_plot_source.selected.js_on_change('indices', lasso_callback, station_data_callback_2)
+        self.position_plot_source.selected.js_on_change('indices', lasso_callback, station_data_callback_2, comnt_callback)
 
     def plot_stations(self):
         """"""
@@ -1426,13 +1540,9 @@ class QCWorkTool(CallBacks):
 
         return columns
 
-    def set_comnt_inputs(self):
-        self.comnt_samp = TextInput(value="TextInput here", title="COMNT_SAMP:")
-        self.comnt_visit = TextInput(value="TextInput here", title="COMNT_VISIT")
-
     def get_layout(self):
         tabs = self.get_tab_layout()
-        meta_tabs = self.get_tabs(Metadata=['comnt_samp', 'comnt_visit'],
+        meta_tabs = self.get_tabs(Metadata=['comnt_samp', 'comnt_visit', 'comnt_visit_button'],
                                   Import_Export=['file_button', 'download_button'])
         std_parameter_tabs = self.get_std_parameter_tab_layout()
         widgets_1 = column([self.month_selector, Spacer(height=10), self.selected_series], sizing_mode="fixed", height=300, width=200)
