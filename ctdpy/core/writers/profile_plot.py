@@ -12,7 +12,7 @@ import pandas as pd
 import zipfile
 # from pprint import pprint
 from bokeh.io import output_notebook
-from bokeh.models import Button, FileInput, ColumnDataSource, Range1d, CustomJS, Div, WidgetBox, LinearAxis, Circle, TapTool, HoverTool, CrosshairTool, WheelZoomTool, ResetTool, PanTool, SaveTool,  LassoSelectTool, ColorBar, LinearColorMapper  # , LabelSet, Slider
+from bokeh.models import Button, FileInput, TextInput, ColumnDataSource, Range1d, CustomJS, Div, WidgetBox, LinearAxis, Circle, TapTool, HoverTool, CrosshairTool, WheelZoomTool, ResetTool, PanTool, SaveTool,  LassoSelectTool, ColorBar, LinearColorMapper  # , LabelSet, Slider
 from bokeh.layouts import grid, row, column, layout, gridplot, GridSpec, widgetbox, Spacer  # , layout, widgetbox
 from bokeh.models.widgets import Select, RangeSlider, DataTable, TableColumn, Panel, Tabs
 from bokeh.plotting import figure, show, output_file
@@ -635,7 +635,7 @@ class CallBacks(object):
         var figures = figures;
         var single_select = single_select;
         
-        console.log('parameter_mapping', parameter_mapping);
+        //console.log('parameter_mapping', parameter_mapping);
         
         // Get indices array of all selected items
         var selected = position_source.selected.indices;
@@ -688,7 +688,7 @@ class CallBacks(object):
     def lasso_callback(monthly_keys=None, in_data=None, plot_data=None, x_range=None, y_range=None):
         """"""
         code = """
-        console.log('Update lasso_callback!')
+        //console.log('Update lasso_callback!')
         var month_mapping = {'All': 'All',
                              'January': '01', 'February': '02',
                              'March': '03', 'April': '04',
@@ -706,7 +706,7 @@ class CallBacks(object):
             selected_keys.push(monthly_keys[selected_month][indices[i]]);
         }
         
-        console.log('selected_keys', selected_keys)
+        //console.log('selected_keys', selected_keys)
         
         var key_val, x_val, y_val, c_val;
         for (var i = 0; i < in_data.KEY.length; i++) {
@@ -1128,6 +1128,7 @@ class QCWorkTool(CallBacks):
         self._setup_TS_source(dataframe)
         self._setup_month_selector()
         self._setup_flag_widgets()
+        self.set_comnt_inputs()
         self._setup_download_button()
         self._setup_get_file_button()
         self._setup_serie_table()
@@ -1221,7 +1222,7 @@ class QCWorkTool(CallBacks):
                    TableColumn(field="KEY", title="Key"),
                    ]
         self.selected_series = DataTable(source=self.position_plot_source, columns=columns,
-                                         width=300, height=400)
+                                         width=300, height=300)
 
     def _setup_flag_widgets(self):
         """
@@ -1396,6 +1397,19 @@ class QCWorkTool(CallBacks):
 
         return Tabs(tabs=fig_tabs)
 
+    def get_tabs(self, **kwargs):
+        """
+        :param kwargs:
+        :return:
+        """
+        tabs = []
+        for name, item in kwargs.items():
+            tab = column([self.__getattribute__(attr) for attr in item])
+            pan = Panel(child=tab, title=name)
+            tabs.append(pan)
+
+        return Tabs(tabs=tabs)
+
     def get_std_parameter_tab_layout(self):
         columns = []
 
@@ -1412,17 +1426,22 @@ class QCWorkTool(CallBacks):
 
         return columns
 
+    def set_comnt_inputs(self):
+        self.comnt_samp = TextInput(value="TextInput here", title="COMNT_SAMP:")
+        self.comnt_visit = TextInput(value="TextInput here", title="COMNT_VISIT")
+
     def get_layout(self):
         tabs = self.get_tab_layout()
+        meta_tabs = self.get_tabs(Metadata=['comnt_samp', 'comnt_visit'],
+                                  Import_Export=['file_button', 'download_button'])
         std_parameter_tabs = self.get_std_parameter_tab_layout()
-        widgets_1 = column([self.selected_series], sizing_mode="fixed", height=360, width=200)
+        widgets_1 = column([self.month_selector, Spacer(height=10), self.selected_series], sizing_mode="fixed", height=300, width=200)
         widgets_2 = column([Spacer(width=125)], sizing_mode="fixed", height=10, width=125)
-        widgets_3 = column([self.month_selector,
-                            Spacer(height=10),
-                            self.file_button,
-                            Spacer(height=10),
-                            self.download_button],
-                            sizing_mode="fixed", height=100, width=100)
+        # widgets_3 = column([self.file_button,
+        #                     Spacer(height=10),
+        #                     self.download_button],
+        #                     sizing_mode="fixed", height=100, width=100)
+        widgets_3 = column([meta_tabs], sizing_mode="fixed", height=100, width=100)
         l = grid([row([self.map, widgets_1, widgets_2, widgets_3]),
                   row([*std_parameter_tabs,
                        column([tabs]),
