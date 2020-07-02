@@ -482,16 +482,23 @@ class CallBacks(object):
                 
         """
         # Create a CustomJS callback
-        return CustomJS(args={'source': source,
-                              },
+        return CustomJS(args={'source': source},
                         code=code)
 
     @staticmethod
     def month_selection_callback(position_source=None, position_plot_source=None):
-        """"""
+        """
+        # TODO We need to rewrite the JScallback code.. not very versatile..
+        # simply use all columns from position_source to begin with?
+
+        :param position_source:
+        :param position_plot_source:
+        :return:
+        """
         code = """
+        console.log('month_selection_callback');
         // Get data from ColumnDataSource
-        var selected_data = {LATIT: [], LONGI: [], STATION: [], KEY: [], MONTH: []};
+        var selected_data = {LATIT: [], LONGI: [], STATION: [], KEY: [], MONTH: [], COMNT_VISIT: []};
         var data = source.data;
         
         var month_mapping = {'All': 'All',
@@ -504,13 +511,14 @@ class CallBacks(object):
 
         var selected_month = month_mapping[month.value];
 
-        var key_val, lat_val, lon_val, statn_val, mon_val;
+        var key_val, lat_val, lon_val, statn_val, mon_val, cvis_val;
         for (var i = 0; i < data.KEY.length; i++) {
             key_val = data.KEY[i];
             lat_val = data.LATIT[i];
             lon_val = data.LONGI[i];
             statn_val = data.STATION[i];
             mon_val = data.MONTH[i];
+            cvis_val = data.COMNT_VISIT[i];
 
             if (selected_month == 'All') {
                 selected_data.KEY.push(key_val);
@@ -518,12 +526,14 @@ class CallBacks(object):
                 selected_data.LONGI.push(lon_val);
                 selected_data.STATION.push(statn_val);
                 selected_data.MONTH.push(mon_val);
+                selected_data.COMNT_VISIT.push(cvis_val);
             } else if (mon_val == selected_month) {
                 selected_data.KEY.push(key_val);
                 selected_data.LATIT.push(lat_val);
                 selected_data.LONGI.push(lon_val);
                 selected_data.STATION.push(statn_val);
                 selected_data.MONTH.push(mon_val);
+                selected_data.COMNT_VISIT.push(cvis_val);
             }
         }
         
@@ -535,94 +545,12 @@ class CallBacks(object):
                         code=code)
 
     @staticmethod
-    def station_callback(position_source=None, data_source=None,
-                         temp_obj=None, salt_obj=None, doxy_obj=None,
-                         seconds=None):
-        """
-        'title': fig.title, 'text_input': text_input},
-        code="title.text = text_input.value"
-
-        """
-        # assert position_source, data_source
-        code = """
-        // Set column name to select similar glyphs
-        var key = 'KEY';
-        var statn_key = 'STATION';
-        var sec = seconds.data;
-
-        // Get data from ColumnDataSource
-        var position_data = position_source.data;
-        var data = data_source.data;
-
-        // Get indices array of all selected items
-        var selected = position_source.selected.indices;
-
-        // Update figure titlesflag_color_mapping 
-        var station_name = position_data[statn_key][selected[0]];
-        var selected_key = position_data[key][selected[0]];
-        
-        temp_obj.title.text = station_name + ' - ' + selected_key
-        salt_obj.title.text = station_name + ' - ' + selected_key
-        doxy_obj.title.text = station_name + ' - ' + selected_key
-
-        // Update active keys in data source 
-        data['x1'] = data[selected_key+'_TEMP_CTD [°C (ITS-90)]'];
-        data['x1_q0'] = data[selected_key+'_Q0_TEMP_CTD'];
-        data['color_x1'] = data[selected_key+'_color_x1'];
-        if ('x1b' in data) {
-            data['x1b'] = data[selected_key+'_TEMP2_CTD [°C (ITS-90)]'];
-            data['color_x1b'] = data[selected_key+'_color_x1b'];
-        }
-
-        data['x2'] = data[selected_key+'_SALT_CTD [psu (PSS-78)]'];
-        data['x2_q0'] = data[selected_key+'_Q0_SALT_CTD'];
-        data['color_x2'] = data[selected_key+'_color_x2'];
-        if ('x2b' in data) {
-            data['x2b'] = data[selected_key+'_SALT2_CTD [psu (PSS-78)]'];
-            data['color_x2b'] = data[selected_key+'_color_x2b'];
-        }
-        
-        data['x3'] = data[selected_key+'_DOXY_CTD [ml/l]'];
-        data['x3_q0'] = data[selected_key+'_Q0_DOXY_CTD'];
-        data['color_x3'] = data[selected_key+'_color_x3'];
-        if ('x3b' in data) {
-            data['x3b'] = data[selected_key+'_DOXY2_CTD [ml/l]'];
-            data['color_x3b'] = data[selected_key+'_color_x3b'];
-        }
-        
-        data['y'] = data[selected_key+'_PRES_CTD [dbar]'];
-
-        // Save changes to ColumnDataSource
-        data_source.change.emit();
-        
-        var d = new Date();
-        var t = d.getTime();
-        var new_seconds = Math.round(t / 1000);
-        sec.tap_time[0] = new_seconds;
-        sec.reset_time[0] = new_seconds;
-        seconds.change.emit();
-        temp_obj.reset.emit();
-        salt_obj.reset.emit();
-        doxy_obj.reset.emit();
-        //console.log('new_seconds', new_seconds)
-        //console.log('sec.tap_time[0]', sec.tap_time[0])
-        """
-        # Create a CustomJS callback with the code and the data
-        return CustomJS(args={'position_source': position_source,
-                              'data_source': data_source,
-                              'temp_obj': temp_obj,
-                              'salt_obj': salt_obj,
-                              'doxy_obj': doxy_obj,
-                              'seconds': seconds,
-                              },
-                        code=code)
-
-    @staticmethod
     def station_callback_2(position_source=None, data_source=None,
                            figures=None, seconds=None, pmap=None,
                            single_select=None):
         # assert position_source, data_source
         code = """
+        //console.log('station_callback_2');
         // Set column name to select similar glyphs
         var key = 'KEY';
         var statn_key = 'STATION';
@@ -639,23 +567,30 @@ class CallBacks(object):
         
         // Get indices array of all selected items
         var selected = position_source.selected.indices;
-
+        
+        //console.log('data[y].length', data['y'].length)
+        //console.log('selected', selected);
+        
         // Update figure titlesflag_color_mapping 
         var station_name = position_data[statn_key][selected[0]];
         var selected_key = position_data[key][selected[0]];
-
+        
+        //console.log('station_name', station_name);
+        //console.log('selected_key', selected_key);
+        
         // Update active keys in data source    
         if ((single_select == 1 && selected.length == 1) || (single_select == 0)) {
             var data_parameter_name, q0_key, color_key;
             for (var fig_key in figures){
-                data_parameter_name = parameter_mapping[fig_key];
-                q0_key = fig_key+'_q0';
-                color_key = 'color_'+fig_key;
-                
-                data[fig_key] = data[selected_key+'_'+data_parameter_name];
-                data[q0_key] = data[selected_key+'_'+parameter_mapping[q0_key]];
-                data[color_key] = data[selected_key+'_'+color_key];
-                
+                if ( ! fig_key.startsWith("COMBO")) {
+                    data_parameter_name = parameter_mapping[fig_key];
+                    q0_key = fig_key+'_q0';
+                    color_key = 'color_'+fig_key;
+                    
+                    data[fig_key] = data[selected_key+'_'+data_parameter_name];
+                    data[q0_key] = data[selected_key+'_'+parameter_mapping[q0_key]];
+                    data[color_key] = data[selected_key+'_'+color_key];
+                }
                 figures[fig_key].title.text = station_name + ' - ' + selected_key
             }
             data['y'] = data[selected_key+'_'+parameter_mapping['y']];
@@ -673,6 +608,7 @@ class CallBacks(object):
         for (var fig_key in figures){
             figures[fig_key].reset.emit();
         }
+        //console.log('station_callback_2 - DONE');
         """
         # Create a CustomJS callback with the code and the data
         return CustomJS(args={'position_source': position_source,
@@ -688,7 +624,7 @@ class CallBacks(object):
     def lasso_callback(monthly_keys=None, in_data=None, plot_data=None, x_range=None, y_range=None):
         """"""
         code = """
-        //console.log('Update lasso_callback!')
+        //console.log('lasso_callback');
         var month_mapping = {'All': 'All',
                              'January': '01', 'February': '02',
                              'March': '03', 'April': '04',
@@ -745,6 +681,7 @@ class CallBacks(object):
     def comnt_callback(position_source=None, comnt_obj=None, single_select=None):
         # assert position_source, data_source
         code = """
+        //console.log('comnt_callback');
         // Set column name to select similar glyphs
         var key = 'KEY';
         var statn_key = 'STATION';
@@ -767,9 +704,6 @@ class CallBacks(object):
         if ((single_select == 1 && selected.length == 1) || (single_select == 0)) {
             comnt_obj.value = comnt
             comnt_obj.title = comnt_key + ':  ' + station_name + ' - ' + selected_key
-            
-            console.log('comnt_obj.value', comnt_obj.value)
-            console.log('comnt_obj.title', comnt_obj.title)
         }
 
         """
@@ -781,9 +715,87 @@ class CallBacks(object):
                         code=code)
 
     @staticmethod
+    def change_button_type_callback(button=None, btype=None):
+        """"""
+        code = """
+        button.button_type = btype;
+        """
+        return CustomJS(args={'button': button, 'btype': btype}, code=code)
+
+    def select_button(self, data_source=None):
+        """"""
+        code = """
+        var data = data_source.data;
+        var indices = [];
+        
+        var i = 0;
+        while ( ! isNaN(data.y[i]) ) {
+            indices.push(i)
+            i++
+        }
+        data_source.selected.indices = indices;
+        button.button_type = 'success';
+        //console.log('select_button DONE');
+        """
+        button = Button(label="Select all", width=30, button_type="default")
+        callback = CustomJS(args={'data_source': data_source, 'button': button}, code=code)
+        button_type_callback = self.change_button_type_callback(button=button, btype='success')
+        button.js_on_event(ButtonClick, callback, button_type_callback)
+        return button
+
+    @staticmethod
+    def deselect_button(data_source=None):
+        """"""
+        code = """
+        data_source.selected.indices = [];
+        """
+        callback = CustomJS(args={'data_source': data_source}, code=code)
+        button = Button(label="Deselect all", width=30, button_type="default")
+        button.js_on_event(ButtonClick, callback)
+        return button
+
+    @staticmethod
+    def range_slider_update_callback(slider=None, data_source=None):
+        """"""
+        code = """
+        var data = data_source.data;        
+        var values = [];
+        var i = 0;
+        while ( ! isNaN(data.y[i]) ) {
+            values.push(data.y[i])
+            i++
+        }
+        slider.start = Math.min.apply(Math, values);
+        slider.end = Math.max.apply(Math, values);
+        slider.value = [slider.start, slider.end];
+        slider.change.emit();
+        """
+        return CustomJS(args={'slider': slider, 'data_source': data_source},
+                        code=code)
+
+    @staticmethod
+    def range_selection_callback(data_source=None):
+        """"""
+        code = """
+        var data = data_source.data;
+        var min_pres = cb_obj.value[0];
+        var max_pres = cb_obj.value[1];
+        var indices = [];
+        for (var i = 0; i < data.y.length; i++) {
+            if ((data.y[i] >= min_pres) && (data.y[i] <= max_pres)) {
+                indices.push(i)
+            }
+        }
+        data_source.selected.indices = indices;
+        """
+        return CustomJS(args={'data_source': data_source},
+                        code=code)
+
+    @staticmethod
     def get_flag_widget(position_source, data_source, flag_key=None, color_key=None):
         """"""
         code = """
+        console.log('get_flag_widget');
         var flag_color_mapping = {'A-flag': {'c':'navy', 'flag': ''},
                                   'B-flag': {'c':'red', 'flag': 'B'},
                                   'E-flag': {'c':'green', 'flag': 'E'},
@@ -829,9 +841,10 @@ class CallBacks(object):
 
     @staticmethod
     def get_flag_buttons_widget(position_source, data_source, datasets, flag_key=None,
-                                color_key=None, figure_objs=None):
+                                color_key=None, figure_objs=None, select_button=None):
         """"""
         code = """
+        //console.log('get_flag_buttons_widget');
         var flag_color_mapping = {'A-flag': {'c':'navy', 'flag': ''},
                                   'B-flag': {'c':'red', 'flag': 'B'},
                                   'E-flag': {'c':'green', 'flag': 'E'},
@@ -840,6 +853,7 @@ class CallBacks(object):
         // Get data from ColumnDataSource
         var position_data = position_source.data;
         var data = data_source.data;
+        var select_button_type = select_button.button_type;
 
         // Set variables attributes
         var color_column = color_key;
@@ -860,10 +874,12 @@ class CallBacks(object):
         var flag_value = flag_color_mapping[selected_flag]['flag'];
         var color_value = flag_color_mapping[selected_flag]['c'];
         var color_tuple, flag_tuple, index_value;
+        
         //console.log('flag_value', flag_value)
         //console.log('color_value', color_value)
         //console.log('patches', patches)
-        console.log('selected_indices.length', selected_indices.length)
+        //console.log('selected_indices.length', selected_indices.length)
+        
         if (selected_position.length == 1) {
             for (var i = 0; i < selected_indices.length; i++) {
                 index_value = selected_indices[i];
@@ -884,6 +900,7 @@ class CallBacks(object):
                 figure_objs[key].reset.emit();
             }
             data_source.selected.indices = selected_indices;
+            select_button.button_type = select_button_type;
             
             // Trigger python callback inorder to save changes to the actual datasets
             dummy_trigger.glyph.size = Math.random();
@@ -927,7 +944,8 @@ class CallBacks(object):
                                       'data_source': data_source,
                                       'figure_objs': figure_objs,
                                       'flag': flag,
-                                      'dummy_trigger': dummy_trigger},
+                                      'dummy_trigger': dummy_trigger,
+                                      'select_button': select_button},
                                 code=code)
 
             callback.args["color_key"] = color_key
@@ -992,18 +1010,17 @@ class CallBacks(object):
     def comnt_visit_change_button(datasets=None, position_source=None, comnt_obj=None):
         """"""
         def callback_py(attr, old, new, comnt_obj=None):
-            start_time = time.time()
             selected_indices = position_source.selected.indices
             if len(selected_indices) > 1:
                 print('multi serie selection, no good! len(selected_position) = {}'.format(len(selected_indices)))
                 return
-
             selected_key = position_source.data['KEY'][selected_indices[0]]
             ds_key = ''.join(('ctd_profile_', selected_key, '.txt'))
             cv_boolean = datasets[ds_key]['metadata'].str.startswith('//METADATA;COMNT_VISIT;')
             datasets[ds_key]['metadata'][cv_boolean] = '//METADATA;COMNT_VISIT;' + comnt_obj.value
 
         js_code = """
+        console.log('comnt_visit_change_button')
         // Get data from ColumnDataSource
         var comnt_column = 'COMNT_VISIT';
         var position_data = position_source.data;
@@ -1076,24 +1093,25 @@ class CallBacks(object):
             fig_objs[i].js_on_event('mousemove', CustomJS(args=args, code=js_move))
             fig_objs[i].js_on_event('mouseleave', CustomJS(args=args, code=js_leave))
 
-    @staticmethod
-    def render_callback(source=None, x_range_dict=None):
-        """"""
-        return CustomJS(args={'source': source, 'xr': x_range_dict}, code="""
-                var geometry = cb_data['geometry'];
-                var y_data = geometry.y; // current mouse y position in plot coordinates
-                //console.log("(,y)=", y_data)
-                var data = {'tempx': [xr.xr_temp.start, xr.xr_temp.end], 
-                            'saltx': [xr.xr_salt.start, xr.xr_salt.end], 
-                            'doxyx': [xr.xr_doxy.start, xr.xr_doxy.end], 
-                            'y': [y_data, y_data]};
-                source.data = data;
-                cb_obj.reset.emit();
-            """)
+    # @staticmethod
+    # def render_callback(source=None, x_range_dict=None):
+    #     """"""
+    #     return CustomJS(args={'source': source, 'xr': x_range_dict}, code="""
+    #             var geometry = cb_data['geometry'];
+    #             var y_data = geometry.y; // current mouse y position in plot coordinates
+    #             //console.log("(,y)=", y_data)
+    #             var data = {'tempx': [xr.xr_temp.start, xr.xr_temp.end],
+    #                         'saltx': [xr.xr_salt.start, xr.xr_salt.end],
+    #                         'doxyx': [xr.xr_doxy.start, xr.xr_doxy.end],
+    #                         'y': [y_data, y_data]};
+    #             source.data = data;
+    #             cb_obj.reset.emit();
+    #         """)
 
     @staticmethod
     def x_range_callback(x_range_obj=None, delta=4, seconds=None):
         code = """
+        //console.log('x_range_callback');
         var sec = seconds.data;
         var d = new Date();
         var t = d.getTime();
@@ -1122,6 +1140,7 @@ class CallBacks(object):
     @staticmethod
     def reset_callback(seconds):
         code = """
+        //console.log('reset_callback');
         var sec = seconds.data;
         var d = new Date();
         var t = d.getTime();
@@ -1135,7 +1154,7 @@ class CallBacks(object):
     @staticmethod
     def reset_all_callback(figures):
         code = """
-        console.log('Changing figure_objs')
+        console.log('reset_all_callback');
         for (var i = 0; i < figure_objs.length; i++) {
             figure_objs[i].reset.emit();
         }
@@ -1148,11 +1167,12 @@ class QCWorkTool(CallBacks):
     """
     """
     def __init__(self, dataframe, datasets=None, parameters=None, color_fields=None, qflag_fields=None, auto_q_flag_parameters=None,
-                 tabs=None, plot_parameters_mapping=None, ctdpy_session=None, multi_sensors=False, output_filename="CTD_QC_VIZ.html", output_as_notebook=False):
+                 tabs=None, plot_parameters_mapping=None, ctdpy_session=None, multi_sensors=False, combo_plots=False, output_filename="CTD_QC_VIZ.html", output_as_notebook=False):
         super().__init__()
         self.seconds = ColumnDataSource(data=dict(tap_time=[None], reset_time=[None]))
         self.ctd_session = ctdpy_session
         self.multi_sensors = multi_sensors
+        self.combo_plots = combo_plots
 
         self.map = None
         # self.selected_series = None
@@ -1202,9 +1222,25 @@ class QCWorkTool(CallBacks):
             xrange_callbacks[p] = self.x_range_callback(x_range_obj=self.figures[p].x_range, seconds=self.seconds)
             self.figures[p].x_range.js_on_change('start', xrange_callbacks[p])
 
-        for p, item in self.figures.items():
-            xr_cbs = (xr_cb for i, xr_cb in xrange_callbacks.items())
-            self.figures[p].js_on_event('reset', self.reset_callback(self.seconds), *xr_cbs)
+        if self.combo_plots and self.multi_sensors:
+            for name, p1, p2 in zip(('COMBO_TEMP', 'COMBO_SALT', 'COMBO_DOXY'),
+                                    ('x1', 'x2', 'x3'),
+                                    ('x4', 'x5', 'x6')):
+                param = self.plot_parameters_mapping.get(p1)
+                self.figures[name] = figure(tools="pan,reset,wheel_zoom,lasso_select,save", active_drag="lasso_select",
+                                             title="", height=400, width=400,
+                                             y_range=y_range_setting,
+                                            )
+                self.figures[name].title.align = 'center'
+                self.figures[name].xaxis.axis_label = param
+                self.figures[name].xaxis.axis_label_text_font_style = 'bold'
+                self.figures[name].ygrid.band_fill_alpha = 0.05
+                self.figures[name].ygrid.band_fill_color = "black"
+                self.figures[name].toolbar.active_scroll = self.figures[name].select_one(WheelZoomTool)
+
+                if p1 == 'x1':
+                    self.figures[name].yaxis.axis_label = 'Pressure (dbar)'
+                    self.figures[name].yaxis.axis_label_text_font_style = 'bold'
 
         self.add_hlinked_crosshairs(*(fig_obj for i, fig_obj in self.figures.items()))
 
@@ -1217,8 +1253,11 @@ class QCWorkTool(CallBacks):
         self._setup_data_source(dataframe)
         self._setup_TS_source(dataframe)
         self._setup_month_selector()
-        self._setup_flag_widgets()
         self._setup_comnt_inputs()
+        self._setup_selection_widgets()
+        self._setup_flag_widgets()
+        self._setup_reset_callback(**xrange_callbacks)
+        self._setup_datasource_callbacks()
         self._setup_download_button()
         self._setup_get_file_button()
         self._setup_serie_table()
@@ -1244,33 +1283,13 @@ class QCWorkTool(CallBacks):
             dictionary[month] = position_df.loc[boolean, 'KEY'].to_list()
         return dictionary
 
-    def update_source(self, old_source, new_df):
-        """
-
-        :param old_source:
-        :param new_df:
-        :return:
-        """
-        data_update = old_source.data
-        if new_df.__len__() > data_update['index'].__len__():
-            length = data_update['index'].__len__()
-            data_update = {key: np.append(data_update[key], np.repeat(np.nan, new_df.__len__() - length))
-                           for key in data_update.keys()}
-        elif data_update['index'].__len__() > new_df.__len__():
-            new_df = new_df.reindex(range(data_update['index'].__len__()))
-
-        for key in new_df.columns:
-            data_update[key] = new_df[key].values
-
-        old_source.data = data_update
-
     def _setup_position_source(self, df):
         """
         :return:
         """
         position_df = df[['STATION', 'LATITUDE_DD', 'LONGITUDE_DD', 'KEY', 'MONTH']].drop_duplicates(
             keep='first').reset_index(drop=True)
-        boolean = position_df['LATITUDE_DD'].isna()
+        # boolean = position_df['LATITUDE_DD'].isna()
         xs, ys = convert_projection(position_df['LATITUDE_DD'].astype(float).values, position_df['LONGITUDE_DD'].astype(float).values)
         position_df['LONGI'] = xs
         position_df['LATIT'] = ys
@@ -1331,13 +1350,16 @@ class QCWorkTool(CallBacks):
         """
         self.flag_widgets = {}
         for fig_key in self.figures.keys():
+            if fig_key.startswith('COMBO'):
+                continue
             q_key = 'Q_' + self.plot_parameters_mapping.get(fig_key).split()[0]
             self.flag_widgets[fig_key] = self.get_flag_buttons_widget(self.position_plot_source,
                                                                       self.data_source,
                                                                       self.datasets,
                                                                       figure_objs=self.figures,
                                                                       flag_key=q_key,
-                                                                      color_key='color_{}'.format(fig_key))
+                                                                      color_key='color_{}'.format(fig_key),
+                                                                      select_button=self.select_all_button)
 
     def _setup_TS_source(self, df):
         """
@@ -1345,9 +1367,9 @@ class QCWorkTool(CallBacks):
         """
         params = self.parameters + ['KEY']
         ts_df = df[params]
-        ts_df['x'] = ts_df[self.plot_parameters_mapping.get('x2')]  # x2 = SALT
-        ts_df['y'] = ts_df[self.plot_parameters_mapping.get('x1')]  # x1 = TEMP
-        ts_df['color'] = get_color_palette(dep_serie=ts_df[self.plot_parameters_mapping.get('y')])
+        ts_df.loc[:, 'x'] = ts_df[self.plot_parameters_mapping.get('x2')]  # x2 = SALT
+        ts_df.loc[:, 'y'] = ts_df[self.plot_parameters_mapping.get('x1')]  # x1 = TEMP
+        ts_df.loc[:, 'color'] = get_color_palette(dep_serie=ts_df[self.plot_parameters_mapping.get('y')])
         self.ts_source = ColumnDataSource(data=ts_df)
         self.ts_plot_source = ColumnDataSource(data=dict(x=[], y=[], color=[], key=[]))
 
@@ -1394,6 +1416,32 @@ class QCWorkTool(CallBacks):
         self.comnt_visit_button = self.comnt_visit_change_button(datasets=self.datasets,
                                                                  position_source=self.position_plot_source,
                                                                  comnt_obj=self.comnt_visit)
+
+    def _setup_selection_widgets(self):
+        """
+        :return:
+        """
+        self.select_all_button = self.select_button(data_source=self.data_source)
+        self.deselect_all_button = self.deselect_button(data_source=self.data_source)
+
+        self.pressure_slider = RangeSlider(start=0, end=100, value=(0, 100),
+                                           step=0.5, title="Select with pressure range", width=300)
+        callback = self.range_selection_callback(data_source=self.data_source)
+        self.pressure_slider.js_on_change('value', callback)
+
+    def _setup_reset_callback(self, **kwargs):
+        """"""
+        # Autoreset all figures on xrange
+        for p, item in self.figures.items():
+            xr_cbs = (xr_cb for i, xr_cb in kwargs.items())
+            self.figures[p].js_on_event('reset', self.reset_callback(self.seconds),
+                                        *xr_cbs)
+
+    def _setup_datasource_callbacks(self):
+        """"""
+        set_button_type_callback = self.change_button_type_callback(button=self.select_all_button,
+                                                                    btype='default')
+        self.data_source.selected.js_on_change('indices', set_button_type_callback)
 
     def _setup_map(self):
         """"""
@@ -1449,26 +1497,58 @@ class QCWorkTool(CallBacks):
                                              comnt_obj=self.comnt_visit,
                                              single_select=1)
 
+        update_slider_callback = self.range_slider_update_callback(slider=self.pressure_slider,
+                                                                   data_source=self.data_source)
+
+        select_button_type_callback = self.change_button_type_callback(button=self.select_all_button, btype='default')
+
         lasso_callback.args["month"] = self.month_selector
-        self.position_plot_source.selected.js_on_change('indices', lasso_callback, station_data_callback_2, comnt_callback)
+        self.position_plot_source.selected.js_on_change('indices',
+                                                        lasso_callback,
+                                                        station_data_callback_2,
+                                                        comnt_callback,
+                                                        update_slider_callback,
+                                                        select_button_type_callback)
 
     def plot_stations(self):
         """"""
         renderer = self.map.circle('LONGI', 'LATIT', source=self.position_plot_source,
                                    color="#5BC798", line_color="aquamarine", size=10, alpha=0.7)
 
-        selected_circle = Circle(fill_alpha=0.5, fill_color="red", line_color="aquamarine")
-        nonselected_circle = Circle(fill_alpha=0.2, fill_color="blue", line_color="aquamarine")
+        selected_circle = Circle(fill_alpha=0.5, fill_color="#FF0202", line_color="aquamarine")
+        nonselected_circle = Circle(fill_alpha=0.3, fill_color="#5BC798", line_color="aquamarine")
 
         renderer.selection_glyph = selected_circle
         renderer.nonselection_glyph = nonselected_circle
 
     def plot_data(self):
-        """"""
+        """
+        self.temp.circle('x1b', 'y', color="deepskyblue", size=8, alpha=0.5, source=self.data_source, legend='Sensor 2')
+        self.temp.legend.location = "top_left"
+        :return:
+        """
+        combo_mapping = {'COMBO_TEMP': ('x1', 'x4'), 'COMBO_SALT': ('x2', 'x5'), 'COMBO_DOXY': ('x3', 'x6')}
+        legend_mapper = {'x1': 'TEMP 1', 'x2': 'SALT 1', 'x3': 'DOXY 1',
+                         'x4': 'TEMP 2', 'x5': 'SALT 2', 'x6': 'DOXY 2'}
+
+        nonselected_circle = Circle(fill_alpha=0.1, fill_color="#898989", line_color="lightgrey")
+
         for p, item in self.figures.items():
-            item.line(p, 'y', color="color_{}".format(p), line_color="navy", line_width=1, alpha=0.3, source=self.data_source)
-            item.circle(p, 'y', color="color_{}".format(p), line_color="white", size=6, alpha=0.5, source=self.data_source)
-            item.y_range.flipped = True
+            if p.startswith('COMBO'):
+                p1, p2 = combo_mapping.get(p)
+                item.line(p1, 'y', color="color_{}".format(p1), line_color="navy", line_width=1, alpha=0.3, source=self.data_source)
+                item.circle(p1, 'y', color="color_{}".format(p1), line_color="white", size=6, alpha=0.5, source=self.data_source)
+
+                item.line(p2, 'y', color="color_{}".format(p2), line_color="navy", line_width=1, alpha=0.3, source=self.data_source)
+                item.cross(p2, 'y', color="color_{}".format(p2), size=6, alpha=0.5, source=self.data_source)
+
+                item.y_range.flipped = True
+                # item.legend.location = "top_right"
+            else:
+                item.line(p, 'y', color="color_{}".format(p), line_color="navy", line_width=1, alpha=0.3, source=self.data_source) #, legend_label=p)
+                renderer = item.circle(p, 'y', color="color_{}".format(p), line_color="white", size=6, alpha=0.5, source=self.data_source) #, legend_label=p)
+                renderer.nonselection_glyph = nonselected_circle
+                item.y_range.flipped = True
 
         # T/S - diagram
         self.ts.circle('x', 'y', color='color', size=3, alpha=0.8, source=self.ts_plot_source, legend_label='Sensor 1')
@@ -1483,6 +1563,7 @@ class QCWorkTool(CallBacks):
                              # border_line_color='black',
                              location=(0, 0),
                              )
+
         self.ts.add_layout(color_bar, 'right')
 
         x_min, x_max, y_min, y_max = 0, 40, -10, 30
@@ -1501,12 +1582,13 @@ class QCWorkTool(CallBacks):
             self.ctd_session.settings.user, time_stamp)
 
     def get_tab_layout(self):
-        fig_tabs = [Panel(child=self.ts, title="TS")]
+        fig_tabs = [Panel(child=column([Spacer(height=30), self.ts]), title="TS")]
         for p, item in self.figures.items():
-            if (self.multi_sensors and p not in ['x1', 'x2', 'x3', 'x4', 'x5', 'x6']) \
+            if (self.multi_sensors and p not in ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'COMBO_TEMP', 'COMBO_SALT', 'COMBO_DOXY']) \
                     or (not self.multi_sensors and p not in ['x1', 'x2', 'x3']):
                 tab_layout = column([self.flag_widgets[p], item])
-                pan = Panel(child=tab_layout, title=self.plot_parameters_mapping.get(p).split()[0].replace('_CTD', ''))
+                tab_name = self.plot_parameters_mapping.get(p).split()[0].replace('_CTD', '')
+                pan = Panel(child=tab_layout, title=tab_name)
                 fig_tabs.append(pan)
 
         return Tabs(tabs=fig_tabs)
@@ -1525,15 +1607,26 @@ class QCWorkTool(CallBacks):
         return Tabs(tabs=tabs)
 
     def get_std_parameter_tab_layout(self):
+        def pan_title(string):
+            return string.split()[0].replace('_CTD', '')
+
         columns = []
 
         if self.multi_sensors:
-            for p1, p2 in zip(('x1', 'x2', 'x3'), ('x4', 'x5', 'x6')):
-                tab1 = column([self.flag_widgets[p1], self.figures[p1]])
-                pan1 = Panel(child=tab1, title=self.plot_parameters_mapping.get(p1).split()[0].replace('_CTD', ''))
-                tab2 = column([self.flag_widgets[p2], self.figures[p2]])
-                pan2 = Panel(child=tab2, title=self.plot_parameters_mapping.get(p2).split()[0].replace('_CTD', ''))
-                columns.append(column([Tabs(tabs=[pan1, pan2])]))
+            for params in zip(('x1', 'x2', 'x3'), ('x4', 'x5', 'x6'), ('COMBO_TEMP', 'COMBO_SALT', 'COMBO_DOXY')):
+                pans = []
+                for p in params:
+                    if p in self.figures:
+                        tab_cols = []
+                        if p in self.flag_widgets:
+                            tab_cols.append(self.flag_widgets[p])
+                        else:
+                            tab_cols.append(Spacer(height=41))
+                        tab_cols.append(self.figures[p])
+                        tab = column(tab_cols)
+                        pan = Panel(child=tab, title=pan_title(self.plot_parameters_mapping.get(p) or p))
+                        pans.append(pan)
+                columns.append(column([Tabs(tabs=pans)]))
         else:
             for p1 in ('x1', 'x2', 'x3'):
                 columns.append(column([self.flag_widgets[p1], self.figures[p1]]))
@@ -1542,22 +1635,23 @@ class QCWorkTool(CallBacks):
 
     def get_layout(self):
         tabs = self.get_tab_layout()
-        meta_tabs = self.get_tabs(Metadata=['comnt_samp', 'comnt_visit', 'comnt_visit_button'],
+        meta_tabs = self.get_tabs(Data=['select_all_button', 'deselect_all_button', 'pressure_slider'],
+                                  Metadata=['comnt_samp', 'comnt_visit', 'comnt_visit_button'],
                                   Import_Export=['file_button', 'download_button'])
         std_parameter_tabs = self.get_std_parameter_tab_layout()
-        widgets_1 = column([self.month_selector, Spacer(height=10), self.selected_series], sizing_mode="fixed", height=300, width=200)
+        widgets_1 = column([self.month_selector, self.spacer, self.selected_series], sizing_mode="fixed", height=300, width=200)
         widgets_2 = column([Spacer(width=125)], sizing_mode="fixed", height=10, width=125)
-        # widgets_3 = column([self.file_button,
-        #                     Spacer(height=10),
-        #                     self.download_button],
-        #                     sizing_mode="fixed", height=100, width=100)
         widgets_3 = column([meta_tabs], sizing_mode="fixed", height=100, width=100)
         l = grid([row([self.map, widgets_1, widgets_2, widgets_3]),
                   row([*std_parameter_tabs,
                        column([tabs]),
-                       ])],  # self.ts
+                       ])],
                  )
         return l
+
+    @property
+    def spacer(self):
+        return Spacer(height=10)
 
     def return_layout(self):
         """
