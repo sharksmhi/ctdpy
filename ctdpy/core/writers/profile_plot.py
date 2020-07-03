@@ -1261,6 +1261,7 @@ class QCWorkTool(CallBacks):
         self._setup_download_button()
         self._setup_get_file_button()
         self._setup_serie_table()
+        self._setup_info_block()
         self._setup_map()
 
         self.ts_axis_ranges = {'t_min': 0, 't_max': 25, 's_min': 2, 's_max': 36}
@@ -1340,7 +1341,7 @@ class QCWorkTool(CallBacks):
                    TableColumn(field="KEY", title="Key"),
                    ]
         self.selected_series = DataTable(source=self.position_plot_source, columns=columns,
-                                         width=300, height=300)
+                                         width=300, height=322)
 
     def _setup_flag_widgets(self):
         """
@@ -1416,6 +1417,28 @@ class QCWorkTool(CallBacks):
         self.comnt_visit_button = self.comnt_visit_change_button(datasets=self.datasets,
                                                                  position_source=self.position_plot_source,
                                                                  comnt_obj=self.comnt_visit)
+
+    def _setup_info_block(self):
+        """
+        :return:
+        """
+        text = """
+        <h4>Info links</h4>
+        <ul>
+          <li><a href="https://docs.bokeh.org/en/latest/docs/user_guide/tools.html" target="_blank">Bokeh toolbar info</a></li>
+          <li><a href="https://github.com/sharksmhi/sharkpylib/tree/master/sharkpylib/qc" target="_blank">SHARK-QC-library</a></li>
+        </ul>
+        
+        <h4>QC routines</h4>
+        <ol>
+          <li>Range check</li>
+          <li>Increase check</li>
+          <li>Decrease check</li>
+          <li>Sensor diff check</li>
+          <li>Spike check</li>
+        </ol>
+        """
+        self.info_block = Div(text=text, width=200, height=100)
 
     def _setup_selection_widgets(self):
         """
@@ -1637,7 +1660,8 @@ class QCWorkTool(CallBacks):
         tabs = self.get_tab_layout()
         meta_tabs = self.get_tabs(Data=['select_all_button', 'deselect_all_button', 'pressure_slider'],
                                   Metadata=['comnt_samp', 'comnt_visit', 'comnt_visit_button'],
-                                  Import_Export=['file_button', 'download_button'])
+                                  Import_Export=['file_button', 'download_button'],
+                                  Info=['info_block'])
         std_parameter_tabs = self.get_std_parameter_tab_layout()
         widgets_1 = column([self.month_selector, self.spacer, self.selected_series], sizing_mode="fixed", height=300, width=200)
         widgets_2 = column([Spacer(width=125)], sizing_mode="fixed", height=10, width=125)
