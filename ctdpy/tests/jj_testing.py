@@ -10,7 +10,7 @@ import time
 from pprint import pprint
 from ctdpy.core.session import Session
 from ctdpy.core import config, data_handlers
-from ctdpy.core.writers.profile_plot import ProfilePlot, QCWorkTool
+from ctdpy.core.writers.profile_plot import ProfilePlot
 from ctdpy.core.archive_handler import Archive
 from sharkpylib.qc.qc_default import QCBlueprint
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
@@ -30,7 +30,7 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
 # base_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2018\\SHARK_Profile_2018_BAS_SMHI\\processed_data'
 # base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\test'
-# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\etc\\datatest_CTD_Umeå'
+# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\test_data'
 # base_dir = 'C:\\Temp\\CTD_DV\\UMF_2018\\arbetsmapp'
 # base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\exports\\archive_20200312_132344\\processed_data'
 # base_dir = '\\\\WINFS\prod\\shark_bio\\Originalfiler_från_dataleverantörer\\Profil\\NATIONELLA_Data\\2019\\BAS_UMSC\\arbetsmapp\\'
@@ -40,8 +40,8 @@ base_dir = 'C:\\Temp\\CTD_DV\\SMHI_2018\\original'
 # files = os.listdir(base_dir)
 files = generate_filepaths(base_dir,
                            # pattern_list=['.TOB', '.xlsx'],
-                           pattern_list=['.cnv', '.xlsx'],
-                           # endswith='.cnv',
+                           # pattern_list=['.cnv', '.xlsx'],
+                           endswith='.cnv',
                            # endswith='.txt',
                            # only_from_dir=False,
                            )
@@ -153,7 +153,7 @@ pprint(list(datasets[0].keys()))
 #  -----------------------------------------------------------------------------------------------------------------
 #  ###################        WRITE METADATA TO TEMPLATE        ###################
 # start_time = time.time()
-# s.save_data(datasets[0], writer='metadata_template')
+s.save_data(datasets[0], writer='metadata_template')
 # print("Metadata file created--%.3f sec" % (time.time() - start_time))
 
 #  -----------------------------------------------------------------------------------------------------------------
