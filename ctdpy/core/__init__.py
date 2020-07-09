@@ -4,7 +4,6 @@ Created on Thu Jul 05 11:38:08 2018
 
 @author: a002028
 """
-
 from ctdpy.core import readers
 from ctdpy.core import writers
 from ctdpy.core import templates
@@ -16,5 +15,3 @@ from ctdpy.core import session
 
 from ctdpy.core import config
 from ctdpy.core import utils
-
-# from .. import get_package_path

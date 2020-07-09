@@ -4,9 +4,7 @@ Created on Thu Jul 19 13:38:35 2018
 
 @author: a002028
 """
-
 import pandas as pd
-# from .with_style import with_style
 
 
 class XlsxWriter(object):

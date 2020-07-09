@@ -4,10 +4,7 @@ Created on Wen Oct 31 10:26:30 2018
 
 @author: a002028
 """
-
-import os
 from ctdpy.core import utils
-import time
 
 
 class Archive(object):

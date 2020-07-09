@@ -8,13 +8,9 @@ Created on Mon Oct 22 11:01:38 2018
 #
 """ Sea-Bird-UMSC reader 
 """
-import sys
-sys.path.append("..")
-
 import re
 import numpy as np
 from ctdpy.core import utils
-from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.seabird import SeaBird
 from ctdpy.core.readers.metadata import XLSXmeta
 from ctdpy.core.calculator import Calculator

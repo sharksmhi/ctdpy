@@ -7,9 +7,6 @@ Created on 2019-12-11 15:26
 """
 """ DEEP-Rinco reader
 """
-import sys
-sys.path.append("..")
-
 from ctdpy.core import utils
 from ctdpy.core.readers.rinco import Rinco
 from ctdpy.core.readers.metadata import XLSXmeta

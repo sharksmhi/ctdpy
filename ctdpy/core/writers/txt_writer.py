@@ -4,9 +4,6 @@ Created on Thu Jul 19 13:38:35 2018
 
 @author: a002028
 """
-
-# from core.writers.with_style import with_style
-import csv
 import numpy as np
 from ctdpy.core.utils import thread_process
 

@@ -5,9 +5,6 @@ Created on Thu Jul 05 10:29:30 2018
 @author: a002028
 """
 import os
-import sys
-# reload(sys)
-# sys.setdefaultencoding('cp1252')
 
 from ctdpy.core import utils
 import numpy as np

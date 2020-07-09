@@ -8,15 +8,6 @@ Created on Thu Jul 05 14:23:22 2018
 import os
 from collections import Mapping
 from ctdpy.core import readers, mapping
-# try:
-#     from ctdpy.core import readers, mapping
-# except:
-#     from ctdpy_core import readers, mapping
-
-# import get_package_path
-
-#from six.moves import configparser
-from pprint import pprint
 
 
 def recursive_dict_update(d, u):

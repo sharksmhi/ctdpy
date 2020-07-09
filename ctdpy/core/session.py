@@ -5,8 +5,6 @@ Created on Mon Sep 17 10:50:49 2018
 @author: a002028
 
 """
-import sys
-sys.path.append('C:\\Utveckling\\sharkpylib')
 from ctdpy.core import config, data_handlers
 from ctdpy.core.archive_handler import Archive
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames

@@ -7,11 +7,6 @@ Created on 2019-12-11 15:28
 """
 """ Rinco reader
 """
-import sys
-sys.path.append("..")
-
-import numpy as np
-
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler

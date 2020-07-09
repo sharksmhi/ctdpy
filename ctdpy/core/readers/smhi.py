@@ -6,8 +6,6 @@ Created on Thu Jul 05 09:37:38 2018
 """
 """ Sea-Bird reader
 """
-import sys
-sys.path.append("..")
 import re
 
 from ctdpy.core import utils

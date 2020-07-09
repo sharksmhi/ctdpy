@@ -4,10 +4,8 @@ Created on Thu Jul 19 13:38:35 2018
 
 @author: a002028
 """
-
 import os
 import zipfile
-import pandas as pd
 
 
 class ZipWriter(object):

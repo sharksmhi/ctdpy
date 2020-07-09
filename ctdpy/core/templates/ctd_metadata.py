@@ -5,7 +5,6 @@ Created on 2018-11-29 07:54:27
 @author: Johannes Johansson
 
 """
-
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.templates.template import Template
 from ctdpy.core import utils

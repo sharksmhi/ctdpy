@@ -7,8 +7,6 @@ Created on 2019-11-04 10:37
 """
 """ Metadata reader
 """
-import sys
-sys.path.append("..")
 from ctdpy.core.utils import get_filename, thread_process
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import BaseReader

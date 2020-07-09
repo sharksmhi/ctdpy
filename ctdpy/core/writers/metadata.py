@@ -5,7 +5,6 @@ Created on 2018-11-20 08:55
 @author: Johannes Johansson
 
 """
-import pandas as pd
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler

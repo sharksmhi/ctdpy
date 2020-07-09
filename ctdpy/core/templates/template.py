@@ -4,14 +4,8 @@ Created on Fri Jul 13 12:09:23 2018
 
 @author: a002028
 """
-
-import numpy as np
-from ctdpy.core.readers.xlsx_reader import load_excel
-
 import pandas as pd
-from datetime import datetime
 from ctdpy.core import utils
-import re
 
 
 class TemplateBase(dict):

@@ -7,9 +7,6 @@ Created on 2019-11-04 10:31
 """
 """ Sea-Bird reader
 """
-import sys
-sys.path.append("..")
-
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler

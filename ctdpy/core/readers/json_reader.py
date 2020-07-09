@@ -8,12 +8,6 @@ import json
 import numpy as np
 import pandas as pd
 from ctdpy.core import utils
-#from config import recursive_dict_update
-# import config
-# import sys
-# import importlib
-# importlib.reload(sys)
-# sys.setdefaultencoding('cp1252')
 
 
 class JSONreader(object):

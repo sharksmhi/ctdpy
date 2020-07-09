@@ -6,9 +6,7 @@ Created on Thu Jul 05 13:47:52 2018
 """
 
 import pandas as pd
-import numpy as np
 from ctdpy.core import readers
-#from readers import YAMLreader
 
 
 class AttributeDict(dict):

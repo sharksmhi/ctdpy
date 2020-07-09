@@ -5,7 +5,6 @@ Created on 2019-01-14 14:04:33
 @author: Johannes Johansson
 
 """
-
 from bokeh.plotting import figure
 from bokeh.io import output_notebook, push_notebook, show
 
