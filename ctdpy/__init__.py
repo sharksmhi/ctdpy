@@ -20,7 +20,6 @@ pypath_path = package_path + '\\pypaths.json'
 def append_path_to_system(item):
     if isinstance(item, str):
         if item not in sys.path:
-            print(item)
             if os.path.isdir(item):
                 sys.path.append(item)
             else:
