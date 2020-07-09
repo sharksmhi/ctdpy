@@ -14,7 +14,7 @@ name = "ctdpy"
 package_path = os.path.dirname(os.path.realpath(__file__))
 package_path = package_path.replace('ctdpy\\ctdpy', 'ctdpy')
 
-pypath_path = package_path + '\\pypaths.json'
+pypaths_path = package_path + '\\pypaths.json'
 
 
 def append_path_to_system(item):
@@ -25,7 +25,7 @@ def append_path_to_system(item):
             else:
                 print('\nWARNING! Could not add "{}" to sys.path. \n'
                       'You should probably change path to the py-package "{}" in '
-                      'settingsfile: {}\n'.format(item, os.path.basename(item), pypath_path))
+                      'settingsfile: {}\n'.format(item, os.path.basename(item), pypaths_path))
     elif isinstance(item, list):
         for it in item:
             append_path_to_system(it)
@@ -35,8 +35,8 @@ def append_path_to_system(item):
 
 
 def append_python_paths():
-    if os.path.isfile(pypath_path):
-        with open(pypath_path, 'r') as fd:
+    if os.path.isfile(pypaths_path):
+        with open(pypaths_path, 'r') as fd:
             d = json.load(fd)
         append_path_to_system(d)
 
