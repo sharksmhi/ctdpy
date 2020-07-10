@@ -4,6 +4,3 @@ Created on Thu Jul 05 11:38:08 2018
 
 @author: a002028
 """
-import sys
-sys.path.append("..")
-# import config

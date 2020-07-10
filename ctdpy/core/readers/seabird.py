@@ -37,7 +37,8 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
 
     def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
         """
-        :param thread_load:
+        :param thread_load: does not seem to be working as expected.. yes it´s done in 1 sec but the loading function
+        are busy for 30 sec..
         :param filenames: list of file paths
         :param merge_data_and_metadata: False or True
         :param add_low_resolution_data: False or True
@@ -49,7 +50,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
             profile = Profile()
         print('thread_load', thread_load)
         for fid in filenames:
-            # print(fid)
+            print('loading: {}'.foramt(fid))
             if thread_load:
                 # If we don´t have a process starting instantly after data load,
                 # we might just aswell load with thread processes
