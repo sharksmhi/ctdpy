@@ -50,7 +50,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
             profile = Profile()
         print('thread_load', thread_load)
         for fid in filenames:
-            print('loading: {}'.foramt(fid))
+            print('loading: {}'.format(fid))
             if thread_load:
                 # If we don´t have a process starting instantly after data load,
                 # we might just aswell load with thread processes
