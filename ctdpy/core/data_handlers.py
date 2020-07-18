@@ -7,6 +7,7 @@ Created on Fri Jul 13 13:26:05 2018
 import pandas as pd
 import numpy as np
 from ctdpy.core.readers.file_handlers import BaseFileHandler
+from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core import utils
 import warnings
 warnings.filterwarnings("ignore", 'This pattern has match groups')
@@ -453,12 +454,111 @@ class UnitConverter(object):
             self.user, time_stamp)
 
 
+class CorrectionFile(dict):
+    """
+    For now hardcoded parameters..
+    # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
+    """
+    def __init__(self, fid):
+        df = load_txt(file_path=fid)
+        for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
+            self.setdefault(key, {})
+            if p_corr:
+                self[key]['PRES_CTD [dbar]'] = p_corr
+            if s_corr:
+                self[key]['SALT_CTD [psu]'] = s_corr
+
+
+class DeltaCorrection:
+    """
+    If data deliverer has provided correction deltas for specific parameter profiles, we append that correction here.
+    Eg.
+        SALT_CTD:
+            corr: 0.04
+        PRES_CTD:
+            corr: -0.2
+    """
+    def __init__(self, corr_obj=None, user=None):
+        """
+        :param corr_obj: dictionary
+        corr_obj:
+            visit keys:
+                parameters:
+                    correction delta
+        """
+        self.corr_obj = corr_obj
+        self.user = user
+        self.meta = None
+
+    def append_correction_comment(self, key_dict):
+        """
+        :param metadata:
+        :return:
+        """
+        time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
+        corr = ', '.join((': '.join((para, str(key_dict[para]))) for para in key_dict))
+        self.meta[len(self.meta) + 1] = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; TIMESTAMP {}; CORRECTION: {}'.format(
+            self.user, time_stamp, corr)
+
+    def correct_dataset(self, ds):
+        """
+        :param ds:
+        :return:
+        """
+        print('correction...')
+        for key, item in ds.items():
+            self.update_meta(item['metadata'])
+            self._correct(item['data'], key)
+            self.append_correction_comment(self.corr_obj.get(key))
+        print('correction completed!')
+
+    def _correct(self, df, key):
+        """
+        :param df: pd.DataFrame
+        :param key: profile key (visit key: 'ctd_profile_20180122_7798_5051')
+        :return:
+        """
+        visit_corr = self.corr_obj.get(key)
+        for para, value in visit_corr.items():
+            if para in df:
+                nr_decimals = len(df[para][0].split('.')[1])
+                s = df[para].astype(float) + value
+                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_decimals))
+                # print(para, df[para])
+
+    def update_meta(self, meta_serie):
+        """
+        :param meta_serie:
+        :return:
+        """
+        self.meta = meta_serie
+
+
 if __name__ == "__main__":
-    df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
-    uc = UnitConverter(None, None)
+    # cf = CorrectionFile('...\\2018\\BAS_DEEP\\arbetsmapp\\data_corr.txt')
+    # cf.df['PRES_CTD'] = ''
+    # cf.df['SALT_CTD'] = ''
+    #
+    # for i, v in enumerate(cf.df['korr']):
+    #     if 's' in v and 'p' in v:
+    #         cf.df['SALT_CTD'][i] = float(v[v.index('s') + 1: v.index('p')])
+    #         cf.df['PRES_CTD'][i] = float(v[v.index('p') + 1:])
+    #     elif v.startswith('s'):
+    #         cf.df['SALT_CTD'][i] = float(v[1:])
+    #     elif v.startswith('p'):
+    #         cf.df['PRES_CTD'][i] = float(v[1:])
 
-    s = df['a']
-    s.name = 'hej'
+    df = pd.DataFrame({'a': ['1.32', '1.1', '1.4']})
+    co = {'key': {'a': {'corr': 0.2}}}
 
-    uc.rename_dataframe_columns(df=df)
-    print(df)
+    dc = DeltaCorrection(corr_obj=co)
+    c._correct(df, 'key')
+
+    # df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
+    # uc = UnitConverter(None, None)
+    #
+    # s = df['a']
+    # s.name = 'hej'
+    #
+    # uc.rename_dataframe_columns(df=df)
+    # print(df)
