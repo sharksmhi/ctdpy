@@ -66,5 +66,5 @@ print(datasets[0][first_ds]['metadata'])
 # delivery_note, metadata, sensorinfo, information are exclude.. (will be included..#TODO..)
 
 start_time = time.time()
-data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True)
+data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True, save_path='C:/ctdpy_exports')
 print("Datasets saved--%.3f sec" % (time.time() - start_time))

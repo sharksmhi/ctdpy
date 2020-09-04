@@ -64,7 +64,8 @@ class Settings(object):
         :return:
         """
         if os.path.isdir(new_path):
-            self.export_path = new_path
+            self.settings_paths['export_path'] = new_path
+            print('new export path: %s' % self.settings_paths['export_path'])
         else:
             raise Warning('Could not change export path, the given path is not valid: %s \n '
                           'using default export path' % new_path)

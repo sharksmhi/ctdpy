@@ -4,6 +4,7 @@ Created on Fri Oct 26 17:00:35 2018
 
 @author: a002028
 """
+import os
 import pandas as pd
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
@@ -428,10 +429,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         elif not fid.startswith(self.writer.get('filename')):
             fid = self._replace_data_file_name(fid)
 
-        file_path = ''.join([self.data_path,
-                             # file_prefix,
-                             fid.split('.')[0],
-                             self.writer.get('extension_filename')])
+        file_path = ''.join((fid.split('.')[0], self.writer.get('extension_filename')))
+        file_path = os.path.join(self.data_path, file_path)
         return file_path
 
     def _replace_data_file_name(self, fid):
@@ -446,9 +445,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         :return:
         """
-        time_now = utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
-        folder_prefix = 'ctd_std_fmt_'
-        self.data_path = ''.join([self.settings.settings_paths.get('export_path'), folder_prefix, time_now, '/'])
+        folder_prefix = 'ctd_std_fmt_' + utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
+        self.data_path = os.path.join(self.settings.settings_paths.get('export_path'), folder_prefix)
 
     def _update_visit_info(self, metadata):
         """
