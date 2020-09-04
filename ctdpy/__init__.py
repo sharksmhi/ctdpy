@@ -42,3 +42,5 @@ def append_python_paths():
 
 
 append_python_paths()
+
+from ctdpy import core

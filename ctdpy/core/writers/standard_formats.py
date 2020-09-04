@@ -439,7 +439,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :param fid:
         :return:
         """
-
         boolean = self.file_name == fid.upper()
         return self.df_metadata.loc[boolean, 'FILE_NAME_DATABASE'].values[0]
 
