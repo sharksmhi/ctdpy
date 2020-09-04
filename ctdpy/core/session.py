@@ -147,7 +147,6 @@ class Session(object):
 
     def save_data(self, datasets, save_path=None, writer=None, return_data_path=False):
         """
-        #TODO Needs to be more flexible. Savepath should be dealt with within each writer?
         :param datasets: list of different types of datasets. Can be metadata and profile data
         :param save_path: str
         :param writer: writer instance
@@ -157,19 +156,9 @@ class Session(object):
         """
         if save_path:
             self.settings.update_export_path(save_path)
-        # if save_path is None:
-            # save_path = self.settings.settings_paths.get('export_path')
-        # if file_name is None:
-        #     file_name = self.get_writer_file_name(writer)
-
-        # if not save_path.endswith('\\') and not save_path.endswith('/'):
-        #     save_path = '/'.join([save_path, file_name])
-        # else:
-        #     save_path = ''.join([save_path, file_name])
 
         writer = self.load_writer(writer)
         writer.write(datasets)
-        # writer.write(datasets, save_path)
         if return_data_path:
             return writer.data_path
 

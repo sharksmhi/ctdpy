@@ -59,6 +59,10 @@ class Settings(object):
         super().__setattr__(name, value)
 
     def update_export_path(self, new_path):
+        """
+        :param new_path: str
+        :return:
+        """
         if os.path.isdir(new_path):
             self.export_path = new_path
         else:
