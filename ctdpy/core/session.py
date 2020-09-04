@@ -5,6 +5,7 @@ Created on Mon Sep 17 10:50:49 2018
 @author: a002028
 
 """
+import os
 from ctdpy.core import config, data_handlers
 from ctdpy.core.archive_handler import Archive
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
@@ -144,25 +145,27 @@ class Session(object):
         writer_instance = self.settings.writers[writer]['writer'].get('writer')
         return writer_instance(self.settings)
 
-    def save_data(self, datasets, file_name=None, save_path=None, writer=None, return_data_path=False):
+    def save_data(self, datasets, save_path=None, writer=None, return_data_path=False):
         """
         #TODO Needs to be more flexible. Savepath should be dealt with within each writer?
         :param datasets: list of different types of datasets. Can be metadata and profile data
-        :param file_name: str
         :param save_path: str
         :param writer: writer instance
         :param return_data_path: False or True
         :return: Data is saved.
                  If return_data_path: str, data saved with this path
         """
-        if save_path is None:
-            save_path = self.settings.settings_paths.get('export_path')
-        if file_name is None:
-            file_name = self.get_writer_file_name(writer)
-        if not save_path.endswith('\\') and not save_path.endswith('/'):
-            save_path = '/'.join([save_path, file_name])
-        else:
-            save_path = ''.join([save_path, file_name])
+        if save_path:
+            self.settings.update_export_path(save_path)
+        # if save_path is None:
+            # save_path = self.settings.settings_paths.get('export_path')
+        # if file_name is None:
+        #     file_name = self.get_writer_file_name(writer)
+
+        # if not save_path.endswith('\\') and not save_path.endswith('/'):
+        #     save_path = '/'.join([save_path, file_name])
+        # else:
+        #     save_path = ''.join([save_path, file_name])
 
         writer = self.load_writer(writer)
         writer.write(datasets)

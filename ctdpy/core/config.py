@@ -58,6 +58,13 @@ class Settings(object):
             self._check_for_paths(value)
         super().__setattr__(name, value)
 
+    def update_export_path(self, new_path):
+        if os.path.isdir(new_path):
+            self.export_path = new_path
+        else:
+            raise Warning('Could not change export path, the given path is not valid: %s \n '
+                          'using default export path' % new_path)
+
     def _check_local_paths(self):
         """
         Checks paths in settings_paths..
