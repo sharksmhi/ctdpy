@@ -71,6 +71,8 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
                                                    'sheet_name'],
                                                headers=headers,
                                                start_rows=start_rows)
+        self.data_path = save_path
+        # TODO:
 
     def append_to_template(self, df):
         """

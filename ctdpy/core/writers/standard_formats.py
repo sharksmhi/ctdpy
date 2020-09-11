@@ -48,7 +48,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                     metadata_df = self.extract_metadata_dataframe(fid)
                     self.reset_index(metadata_df)
                     self._update_visit_info(metadata_df)
-    
+
                     data_df = self._get_data_columns(item['data'], metadata_df)
                     data_series = self._get_data_serie(data_df, separator=self.writer['separator_data'])
                     data_series = self._append_information(self.template_format,

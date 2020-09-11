@@ -162,6 +162,22 @@ class Session(object):
         if return_data_path:
             return writer.data_path
 
+    def update_metadata(self, datasets=[], metadata={}, overwrite=False):
+        """
+        Updates the given datasets with information in metadata. Option to overwrite.
+        :param datasets: list of metadata
+        :param metadata: dict
+        :param overwrite: boolean
+        :return:
+        """
+        for file_name, dataset in datasets.items():
+            for key, value in metadata.items():
+                current_value = dataset['metadata'].get(key, None)
+                print('current_value:', current_value)
+                if current_value and not overwrite:
+                    continue
+                dataset['metadata'][key] = value
+
     def create_archive(self, data_path=None):
         """
         :param data_path: str, path to data folder
