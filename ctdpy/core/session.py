@@ -15,13 +15,14 @@ class Session(object):
     """
     """
     def __init__(self, filepaths=None, reader=None):
-
         self.settings = config.Settings()
-        self.update_settings_attributes(**self.settings.readers[reader])
-
-        filepaths = list(filepaths)
-        self.readers = self.create_reader_instances(filepaths=filepaths,
-                                                    reader=reader)
+        self.readers = None
+        if filepaths and reader:
+            self.update_settings_attributes(**self.settings.readers[reader])
+    
+            filepaths = list(filepaths)
+            self.readers = self.create_reader_instances(filepaths=filepaths,
+                                                        reader=reader)
 
     def _set_file_reader(self):
         """

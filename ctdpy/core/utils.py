@@ -143,6 +143,7 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
     :param only_from_dir:
     :return:
     """
+    directory = str(directory) # MW: To also allow directory to be of type pathlib.Path
     for path, subdir, fids in os.walk(directory):
         if only_from_dir:
             if path != directory:
@@ -215,6 +216,7 @@ def get_file_list_based_on_suffix(file_list, suffix):
     match_list = []
 
     for fid in file_list:
+        fid = str(fid)  # MW: To also allow fid to be of type pathlib.Path
         if '~$' in fid:
             # memory prefix when a file is open
             continue
@@ -234,6 +236,7 @@ def get_file_list_match(file_list, match_string):
     match_list = []
     
     for fid in file_list:
+        fid = str(fid)  # MW: To also allow fid to be of type pathlib.Path
         if fnmatch(fid, match_string):
             match_list.append(fid)
             
@@ -356,6 +359,7 @@ def match_filenames(filenames, pattern):
     """
     matching = []
     for filename in filenames:
+        filename = str(filename) # MW: To also allow filename to be of type pathlib.Path
         if '~$' in filename:
             # memory prefix when a file is open
             continue
