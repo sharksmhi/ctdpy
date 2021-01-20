@@ -30,7 +30,7 @@ class YAMLwriter(dict):
         else:
             return None
 
-    def write_yaml(self, out_file, out_path=u'', indent=4):
+    def write_yaml(self, out_file, out_path='', indent=4):
         """
         :param out_file: Preferably dictionary or pd.DataFrame
         :param out_path: str

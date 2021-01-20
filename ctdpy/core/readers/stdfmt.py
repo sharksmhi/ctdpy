@@ -65,6 +65,7 @@ class StandardFormatCTD(BaseSTDFMT):
         """
         data = {}
         for fid in filenames:
+            print('reading file: {}'.format(fid))
             if thread_load:
                 # If we don´t have a process starting instantly after data load,
                 # we might just aswell load with thread processes

@@ -33,7 +33,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             print('file_path', file_path)
             fid = get_filename(file_path)
             data[fid] = {}
-            print('before _read')
+            # print('before _read')
             self._read(file_path, self.file_specs, reader, data[fid])
 
         print('DONE XLSXmeta')
@@ -59,20 +59,20 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             print(sheet_name, header_row)
 
             # thread_process(self.load_func, file_path, sheet_name, header_row, data, reader)
-            df = reader(file_path=file_path,
-                        sheet_name=sheet_name,
-                        header_row=header_row)
+            df = reader(
+                file_path=file_path,
+                sheet_name=sheet_name,
+                header_row=header_row,
+            )
             data[sheet_name] = df.fillna('')
 
     @staticmethod
     def load_func(file_path, sheet_name, header_row, data, reader):
-        """
-
-        :return:
-        """
-        df = reader(file_path=file_path,
-                    sheet_name=sheet_name,
-                    header_row=header_row)
+        df = reader(
+            file_path=file_path,
+            sheet_name=sheet_name,
+            header_row=header_row,
+        )
         data[sheet_name] = df.fillna('')
 
     @staticmethod

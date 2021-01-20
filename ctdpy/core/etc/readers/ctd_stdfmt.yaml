@@ -10,7 +10,7 @@ file_types:
         file_reader: !!python/name:ctdpy.core.readers.stdfmt.StandardFormatCTD ''
         file_patterns: ['{instrument_type:11s}_{visit_date:%Y%m%d}_{shipc:4s}_{serno:4d}.txt']
         file_suffix: '.txt'
-        
+
 datasets:
     txt:
         name: txt
