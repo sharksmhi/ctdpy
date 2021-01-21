@@ -11,7 +11,7 @@ from ctdpy.core.archive_handler import Archive
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
 
 
-class Session(object):
+class Session:
     """
     """
     def __init__(self, filepaths=None, reader=None):

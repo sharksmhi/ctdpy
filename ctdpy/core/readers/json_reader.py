@@ -94,7 +94,6 @@ class JSONreader(object):
         """ Find a dictionary based on a specific key within the target dictionary
             config could potentially be a list with dictionaries within 
         """
-        
         if isinstance(self.config, list):
             for element in self.config:
                 if key in element:
