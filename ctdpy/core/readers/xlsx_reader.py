@@ -21,9 +21,9 @@ def load_excel(file_path='', sheet_name=None, header_row=None):
     if utils.is_sequence(sheet_name):
         sheets = {}
         for sheet, h_row in zip(sheet_name, header_row):
-            xlxs.parse(
+            sheets[sheet] = xlxs.parse(
                 sheet,
-                header=header_row,
+                header=h_row,
                 dtype=str,
                 keep_default_na=False,
             )
