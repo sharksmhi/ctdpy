@@ -322,7 +322,7 @@ class SeriesHandler(BaseFileHandler):
             return pd.Series(obj)
 
 
-class BaseReader(object):
+class BaseReader:
     """
     Base structure for data readers
     """
@@ -377,7 +377,7 @@ class BaseReader(object):
         raise NotImplementedError
 
 
-class UnitConverter(object):
+class UnitConverter:
     """
     Plan:
     - input ctd-standard-format unit (rawdata unit)

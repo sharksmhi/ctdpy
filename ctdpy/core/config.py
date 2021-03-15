@@ -29,7 +29,7 @@ def recursive_dict_update(d, u):
     # return d
 
 
-class Settings(object):
+class Settings:
     """
     """
     def __init__(self):
@@ -67,8 +67,13 @@ class Settings(object):
             self.settings_paths['export_path'] = new_path
             print('new export path: %s' % self.settings_paths['export_path'])
         else:
-            raise Warning('Could not change export path, the given path is not valid: %s \n '
-                          'using default export path' % new_path)
+            try:
+                os.makedirs(new_path)
+                self.settings_paths['export_path'] = new_path
+                print('new export path: %s' % self.settings_paths['export_path'])
+            except:
+                raise Warning('Could not change export path, the given path is not valid: %s \n '
+                              'using default export path' % new_path)
 
     def _check_local_paths(self):
         """

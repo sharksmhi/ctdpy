@@ -8,7 +8,7 @@ import os
 import zipfile
 
 
-class ZipWriter(object):
+class ZipWriter:
     """ """
     #TODO skriv klart!
     def __init__(self):
@@ -47,29 +47,29 @@ class ZipWriter(object):
                 append_sub_directory('/received_data')
 
 
-    def _get_dataset_name_and_path(self, dataset_zipfilename_map, dataset_path_map):
-        """
-        :param dataset_zipfilename_map:
-        :param dataset_path_map:
-        :return:
-        """
-        repos_path = item[0].data[u'repos_path']
-        dataset_name = repos_path.split(u'/')[-1]
-        date_string = datetime.datetime.fromtimestamp(item[0].data[u'time']).isoformat()
-        date_string = date_string[0:10]
-        #
-        if dataset_name.startswith(u'SHARK_'):
-            #
-            zip_file_name = dataset_name + u'_version_' + date_string + u'.zip'
-            dataset_zipfilename_map[dataset_name] = zip_file_name
-            #                 dataset_path_map[dataset_name] = work_shark_archive + repos_path.replace(u'/trunk/TEST_SHARK_Archive', u'')
-            dataset_path_map[dataset_name] = self.work_shark_archive + repos_path.replace(
-                u'trunk/datasets/' + self.datatype, u'')  ######
+    # def _get_dataset_name_and_path(self, dataset_zipfilename_map, dataset_path_map):
+    #     """
+    #     :param dataset_zipfilename_map:
+    #     :param dataset_path_map:
+    #     :return:
+    #     """
+    #     repos_path = item[0].data[u'repos_path']
+    #     dataset_name = repos_path.split(u'/')[-1]
+    #     date_string = datetime.datetime.fromtimestamp(item[0].data[u'time']).isoformat()
+    #     date_string = date_string[0:10]
+    #     #
+    #     if dataset_name.startswith(u'SHARK_'):
+    #         #
+    #         zip_file_name = dataset_name + u'_version_' + date_string + u'.zip'
+    #         dataset_zipfilename_map[dataset_name] = zip_file_name
+    #         #                 dataset_path_map[dataset_name] = work_shark_archive + repos_path.replace(u'/trunk/TEST_SHARK_Archive', u'')
+    #         dataset_path_map[dataset_name] = self.work_shark_archive + repos_path.replace(
+    #             u'trunk/datasets/' + self.datatype, u'')  ######
+    #
+    #     return dataset_zipfilename_map, dataset_path_map
 
-        return dataset_zipfilename_map, dataset_path_map
 
-
-class ZipArchive():
+class ZipArchive:
     """
     """
     def __init__(self, zip_file_name, zip_dir_path=None):
@@ -109,7 +109,3 @@ class ZipArchive():
         finally:
             if ziparchive:
                 ziparchive.close()
-
-
-
-

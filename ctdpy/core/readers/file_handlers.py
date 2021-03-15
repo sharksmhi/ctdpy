@@ -212,7 +212,7 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         self._second = datetime_obj.strftime('%S')
 
 
-class BaseReader(object):
+class BaseReader:
     """
     """
     def __init__(self, settings):

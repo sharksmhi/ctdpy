@@ -11,7 +11,7 @@ import numpy as np
 from ctdpy.core import utils
 
 
-class Depth(object):
+class Depth:
     """
 
     """
@@ -118,7 +118,7 @@ class Depth(object):
         self._gravity = gsw.grav(self.latitude, pressure_series)
 
 
-class Calculator(object):
+class Calculator:
     """
 
     """

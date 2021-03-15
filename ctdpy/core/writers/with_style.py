@@ -6,7 +6,7 @@ Created on Thu Jul 19 13:35:11 2018
 """
 
 
-class StyleSheet(object):
+class StyleSheet:
     """
     Uses style object from pandas DataFrame and CSS formats to style an excel
     sheet..

@@ -10,7 +10,7 @@ import pandas as pd
 from ctdpy.core import utils
 
 
-class JSONreader(object):
+class JSONreader:
     """
     - Import json
     - Export to json

@@ -8,7 +8,7 @@ Created on Tue Jul 10 14:41:47 2018
 import numpy as np
 
 
-class Profile(object):
+class Profile:
     """ Handles one profile at a time
     """
     def __init__(self, data=None):

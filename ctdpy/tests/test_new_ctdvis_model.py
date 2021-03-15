@@ -1,28 +1,14 @@
-# -*- coding: utf-8 -*-
 """
-Created on 2020-05-08 10:36
-
-@author: a002028
-
-
-Ref: https://stackoverflow.com/questions/55049175/running-bokeh-server-on-local-network
-
-In a conda-prompt run:
-    cd "PATH_TO_THIS_SCRIPT"
-    bokeh serve app_to_serve.py
-
-Open in web browser: http://localhost:5006/app_to_serve
-    Bokeh app running at: http://localhost:5006/app_to_serve
-
+Created on 2021-03-12 14:04
+@author: johannes
 """
 import sys
 sys.path.append('C:\\Utveckling\\ctdvis')
-from bokeh.plotting import curdoc
 from ctdvis.session import Session
+from ctdvis.sources.data import setup_data_source
 
 
-def bokeh_qc_tool():
-    # data_dir = 'C:\\Temp\\CTD_DV\\qc_SMHI_2018\\ctd_std_fmt_20200622_130128_april_2020'
+if __name__ == "__main__":
     data_dir = 'C:/Arbetsmapp/datasets/Profile/2019/SHARK_Profile_2019_SMHI/processed_data'
     # data_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2018\\SHARK_Profile_2018_BAS_SMHI\\processed_data'
 
@@ -40,11 +26,15 @@ def bokeh_qc_tool():
 
     s = Session(visualize_setting='smhi_vis', data_directory=data_dir, filters=filters)
     s.setup_datahandler()
-    layout = s.run_tool(return_layout=True)
 
-    return layout
+    import numpy as np
 
-
-bokeh_layout = bokeh_qc_tool()
-doc = curdoc()
-doc.add_root(bokeh_layout)
+    ds = setup_data_source(
+        s.dh.df[s.settings.selected_keys],
+        pmap=s.settings.plot_parameters_mapping,
+        key_list=np.unique(s.dh.df['KEY']),
+        parameter_list=s.settings.data_parameters_with_units +
+                       s.settings.q_colors +
+                       s.settings.q_parameters +
+                       s.settings.q0_parameters
+    )

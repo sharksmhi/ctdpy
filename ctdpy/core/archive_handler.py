@@ -7,7 +7,7 @@ Created on Wen Oct 31 10:26:30 2018
 from ctdpy.core import utils
 
 
-class Archive(object):
+class Archive:
     """
 
     """
