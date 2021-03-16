@@ -5,7 +5,7 @@ CTDpy
     :target: https://pypi.python.org/pypi/ctdpy/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/wheel/ctdvis/badge.svg
+.. image:: https://pypip.in/wheel/ctdpy/badge.svg
     :target: https://pypi.python.org/pypi/ctdpy/
 
 .. image:: https://pypip.in/license/ctdpy/badge.svg
