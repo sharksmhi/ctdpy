@@ -44,7 +44,7 @@ class AttributeDict(dict):
                     setattr(self, value, key)
                     setattr(self, value.lower(), key)
 
-    def add_entries_from_keylist(self, data, from_combo_keys=[], from_synonyms=[], to_key=u''):
+    def add_entries_from_keylist(self, data, from_combo_keys=None, from_synonyms=None, to_key=u''):
         """
         Main application: create mapping attributes for ShipMapping()
         :param data: dict
@@ -53,6 +53,9 @@ class AttributeDict(dict):
         :param to_key: str
         :return: mapping attributes
         """
+        from_combo_keys = from_combo_keys or []
+        from_synonyms = from_synonyms or []
+
         for i, value in enumerate(data[to_key]):
             setattr(self, value, value)
             if any(from_combo_keys):
@@ -180,11 +183,15 @@ class ShipMapping(AttributeDict):
                                             as_dict=True,
                                             as_dtype=str,
                                             loading_info='ShipMapping')
+        else:
+            return
 
-        self.add_entries_from_keylist(mapping_file,
-                                      from_combo_keys=[cntry_head, ship_head],
-                                      from_synonyms=[name_head],
-                                      to_key=to_key)
+        self.add_entries_from_keylist(
+            mapping_file,
+            from_combo_keys=[cntry_head, ship_head],
+            from_synonyms=[name_head],
+            to_key=to_key,
+        )
 
     def map_cntry_and_shipc(self, cntry=None, shipc=None):
         """

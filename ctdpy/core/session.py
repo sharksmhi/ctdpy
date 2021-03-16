@@ -14,8 +14,11 @@ from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, 
 class Session:
     """
     """
-    def __init__(self, filepaths=None, reader=None):
+    def __init__(self, filepaths=None, reader=None, export_path=None):
         self.settings = config.Settings()
+        if export_path:
+            self.settings.update_export_path(export_path)
+
         self.readers = None
         if filepaths and reader:
             self.update_settings_attributes(**self.settings.readers[reader])
@@ -163,7 +166,7 @@ class Session:
         if return_data_path:
             return writer.data_path
 
-    def update_metadata(self, datasets=[], metadata={}, overwrite=False):
+    def update_metadata(self, datasets=None, metadata=None, overwrite=False):
         """
         Updates the given datasets with information in metadata. Option to overwrite.
         :param datasets: list of metadata
@@ -171,10 +174,12 @@ class Session:
         :param overwrite: boolean
         :return:
         """
+        datasets = datasets or []
+        metadata = metadata or {}
         for file_name, dataset in datasets.items():
             for key, value in metadata.items():
                 current_value = dataset['metadata'].get(key, None)
-                print('current_value:', current_value)
+                # print('current_value:', current_value)
                 if current_value and not overwrite:
                     continue
                 dataset['metadata'][key] = value

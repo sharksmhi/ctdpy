@@ -13,7 +13,7 @@ class TemplateBase(dict):
 
     """
     def __init__(self):
-        pass
+        super().__init__()
 
     def read(self):#, reader):
         """
@@ -107,11 +107,13 @@ class Template(pd.DataFrame):
 
         self = self.append(meta, ignore_index=True)
 
-    def sort(self, sort_by_keys=[]):
+    def sort(self, sort_by_keys=None):
         """
+        :param sort_by_keys:
         :param df:
         :return:
         """
+        sort_by_keys = sort_by_keys or []
         self.sort_values(sort_by_keys, ascending=[True]*len(sort_by_keys), inplace=True)
         self.reset_index(drop=True, inplace=True)
 

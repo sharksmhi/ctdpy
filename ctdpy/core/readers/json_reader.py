@@ -24,11 +24,13 @@ class JSONreader:
         
         self.config = {}
         
-    def _export_json(self, data_dict={}, out_source='', indent=4):
+    def _export_json(self, data_dict=None, out_source='', indent=4):
         """ """
+        if data_dict is None:
+            data_dict = {}
         if isinstance(data_dict, pd.DataFrame):
             data_dict = self._get_dict(df=data_dict)
-                
+
         with open(out_source, "w") as outfile:
             json.dump(data_dict, outfile, indent=indent)
             
@@ -41,20 +43,26 @@ class JSONreader:
         """
         self.out_file = []
     
-    def _get_dictionary_reference(self, dictionary={}, dict_path=[]):
+    def _get_dictionary_reference(self, dictionary=None, dict_path=None):
         """ """
+        if dictionary is None:
+            dictionary = {}
+        if dict_path is None:
+            dict_path = []
         for key in dict_path:
             if isinstance(key, str) and key not in dictionary:
                 return None
             dictionary = dictionary[key]
         return dictionary
             
-    def add_element(self, main_key='', label='', value='', dict_path=None, add_dict={}):
+    def add_element(self, main_key='', label='', value='', dict_path=None, add_dict=None):
         """ main_key: 
             label: 
             value: 
             dict_path: list with a direct path to target key. Ex. ['info','types', 0, 'label']
         """
+        if add_dict is None:
+            add_dict = {}
         if main_key and self.config.get(main_key) is not None:
             return
         
@@ -132,10 +140,12 @@ class JSONreader:
                         for result in self.find_key(key, d):
                             yield result
                             
-    def load_json(self, config_files=[], return_config=False):
+    def load_json(self, config_files=None, return_config=False):
         """ array will be either a list of dictionaries or one single dictionary 
             depending on what the json file includes
         """
+        if config_files is None:
+            config_files = []
         if not isinstance(config_files, (list, np.ndarray)):
             config_files = [config_files]
             
@@ -146,8 +156,10 @@ class JSONreader:
         if return_config:
             return self.config
     
-    def setup_dict(self, keys=[]):
+    def setup_dict(self, keys=None):
         """ """
+        if keys is None:
+            keys = []
         return {key:True for key in keys}
                     
     def update_element(self, main_key='', label='', value=''):

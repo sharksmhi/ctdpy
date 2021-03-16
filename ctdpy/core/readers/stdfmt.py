@@ -17,7 +17,7 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
     def __init__(self, settings):
         super().__init__(settings)
 
-    def setup_dataframe(self, serie):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :param metadata: used if needed for parameter calculations
@@ -29,14 +29,15 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def setup_dictionary(self, fid, data, keys):
+    def setup_dictionary(self, fid, data, keys=None):
         """
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
+        keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 
-    def _adjust_dataframe(self):
+    def _adjust_dataframe(self, df):
         raise NotImplementedError
 
 

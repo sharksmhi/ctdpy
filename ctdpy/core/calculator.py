@@ -53,11 +53,13 @@ class Depth:
 
         self.true_depth = list(map(str, depth_list))
 
-    def set_attributes(self, attr_dictionary={}):
+    def set_attributes(self, attr_dictionary=None):
         """
         :param attr_dictionary:
         :return:
         """
+        if attr_dictionary is None:
+            attr_dictionary = {}
         for attr, value in attr_dictionary.items():
             setattr(self, attr, value)
 
@@ -130,10 +132,12 @@ class Calculator:
         self.df = new_df
 
     @staticmethod
-    def get_true_depth(attribute_dictionary={}):
+    def get_true_depth(attribute_dictionary=None):
         """
         :return:
         """
+        if attribute_dictionary is None:
+            attribute_dictionary = {}
         depth_calculator = Depth()
         depth_calculator.set_attributes(attribute_dictionary)
         depth_calculator.calculate_true_depth()

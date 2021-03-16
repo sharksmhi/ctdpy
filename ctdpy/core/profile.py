@@ -21,13 +21,14 @@ class Profile:
         """
         self.data = data
 
-    def extract_lores_data(self, key_depth=None, discrete_depths=[]):
+    def extract_lores_data(self, key_depth=None, discrete_depths=None):
         """
         Get data from discrete depths based on discrete_depths
         :param key_depth: str
         :param discrete_depths: list, discrete depths
         :return: pd.DataFrame
         """
+        discrete_depths = discrete_depths or []
         idx = self._get_index_array(key_depth, discrete_depths)
         return self.data.iloc[idx, :]
 

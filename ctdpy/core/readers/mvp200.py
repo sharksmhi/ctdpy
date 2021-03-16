@@ -5,14 +5,15 @@ Created on 2020-02-18 13:23
 @author: a002028
 
 """
-""" MVP-reader (Moving Vessel Profiler)
-"""
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.readers.cnv_reader import CNVreader
 from ctdpy.core.profile import Profile
+
+""" MVP-reader (Moving Vessel Profiler)
+"""
 
 
 class MVP200(BaseReader, CNVreader, SeriesHandler):
@@ -30,8 +31,7 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
         :return: datasets
         """
         data = {}
-        if add_low_resolution_data:
-            profile = Profile()
+        profile = Profile() if add_low_resolution_data else None
 
         for fid in filenames:
             file_data = self.load(fid)
@@ -40,7 +40,7 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
 
             serie = self.get_series_object(file_data)
             metadata = self.get_metadata(serie, filename=fid)
-            hires_data = self.setup_dataframe(serie, metadata)
+            hires_data = self.setup_dataframe(serie, metadata=metadata)
 
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
@@ -88,7 +88,7 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
                                                             len_col=len(data[fid][resolution].index))
             data[fid][resolution + '_all'] = in_data
 
-    def setup_dataframe(self, serie, metadata):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :param metadata: used if needed for parameter calculations
@@ -100,11 +100,11 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def setup_dictionary(self, fid, data):
+    def setup_dictionary(self, fid, data, keys=None):
         """
+        :param data:
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'data': None,
-                     'lores_data': None,
-                     'metadata': None}
+        keys = keys or ['data', 'lores_data', 'metadata']
+        data[fid] = {key: None for key in keys}

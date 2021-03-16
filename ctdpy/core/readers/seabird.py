@@ -25,11 +25,11 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
     def load_func(self, fid, dictionary):
         file_data = self.load(fid)
         fid = utils.get_filename(fid)
-        self.setup_dictionary(fid, dictionary, None)
+        self.setup_dictionary(fid, dictionary)
 
         serie = self.get_series_object(file_data)
         metadata = self.get_metadata(serie, filename=fid)
-        hires_data = self.setup_dataframe(serie, metadata)
+        hires_data = self.setup_dataframe(serie, metadata=metadata)
 
         dictionary[fid]['raw_format'] = serie
         dictionary[fid]['metadata'] = metadata
@@ -40,7 +40,6 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         :param thread_load: does not seem to be working as expected.. yes it´s done in 1 sec but the loading function
         are busy for 30 sec..
         :param filenames: list of file paths
-        :param merge_data_and_metadata: False or True
         :param add_low_resolution_data: False or True
         :return: datasets
         """
@@ -112,7 +111,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
                                                             len_col=len(data[fid][resolution].index))
             data[fid][resolution + '_all'] = in_data
 
-    def setup_dataframe(self, serie, metadata):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :param metadata: used if needed for parameter calculations
@@ -124,13 +123,12 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def setup_dictionary(self, fid, data, keys):
+    def setup_dictionary(self, fid, data, keys=None):
         """
         :param keys:
         :param data:
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'data': None,
-                     'lores_data': None,
-                     'metadata': None}
+        keys = keys or ['data', 'lores_data', 'metadata']
+        data[fid] = {key: None for key in keys}

@@ -133,7 +133,7 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
 
 
 def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
-                       pattern_list=[], not_pattern_list=[], endswith='', only_from_dir=True):
+                       pattern_list=None, not_pattern_list=None, endswith='', only_from_dir=True):
     """
     :param directory:
     :param pattern:
@@ -143,6 +143,8 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
     :param only_from_dir:
     :return:
     """
+    pattern_list = pattern_list or []
+    not_pattern_list = not_pattern_list or []
     directory = str(directory) # MW: To also allow directory to be of type pathlib.Path
     for path, subdir, fids in os.walk(directory):
         if only_from_dir:

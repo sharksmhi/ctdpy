@@ -192,7 +192,7 @@ class SeriesHandler(BaseFileHandler):
         index = self.get_index(data, identifier_header.replace('~', ''), reversed_boolean=reversed)
         splitter = self.settings.datasets[dataset].get('separator_header')
         if first_row:
-            if splitter == None or splitter == 'None':
+            if not splitter or splitter == 'None':
                 header = data[index].iloc[0].split()
             else:
                 header = data[index].iloc[0].split(splitter)
@@ -360,14 +360,14 @@ class BaseReader:
         """
         raise NotImplementedError
 
-    def setup_dataframe(self, serie):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :return:
         """
         raise NotImplementedError
 
-    def setup_dictionary(self, fid, data, keys):
+    def setup_dictionary(self, fid, data, keys=None):
         """
         :param keys:
         :param fid:
@@ -460,6 +460,7 @@ class CorrectionFile(dict):
     # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
     """
     def __init__(self, fid):
+        super().__init__()
         df = load_txt(file_path=fid)
         for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
             self.setdefault(key, {})
@@ -552,7 +553,7 @@ if __name__ == "__main__":
     co = {'key': {'a': {'corr': 0.2}}}
 
     dc = DeltaCorrection(corr_obj=co)
-    c._correct(df, 'key')
+    # c._correct(df, 'key')
 
     # df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
     # uc = UnitConverter(None, None)
