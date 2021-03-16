@@ -8,5 +8,5 @@ Installation
 ------------
 CTDpy can be installed from PyPI with pip:
 
-`pip3 install ctdpy`
+`pip install ctdpy`
 

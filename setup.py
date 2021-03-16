@@ -15,11 +15,12 @@ with open('requirements.txt', 'r') as fh:
         requirements.append(line.strip())
 
 NAME = 'ctdpy'
+VERSION = '0.1.1'
 README = open('READMEpypi.rst', 'r').read()
 
 setuptools.setup(
-    name="ctdpy",
-    version="0.1.0",
+    name=NAME,
+    version=VERSION,
     author="Johannes Johansson",
     author_email="johannes.johansson@smhi.se",
     description="Package to handle CTD data",
