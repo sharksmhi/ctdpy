@@ -15,8 +15,8 @@ Open in web browser: http://localhost:5006/app_to_serve
     Bokeh app running at: http://localhost:5006/app_to_serve
 
 """
-import sys
-sys.path.append('C:\\Utveckling\\ctdvis')
+# import sys
+# sys.path.append('C:\\Utveckling\\ctdvis')
 from bokeh.plotting import curdoc
 from ctdvis.session import Session
 

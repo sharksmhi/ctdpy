@@ -15,7 +15,7 @@ with open('requirements.txt', 'r') as fh:
         requirements.append(line.strip())
 
 NAME = 'ctdpy'
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 README = open('READMEpypi.rst', 'r').read()
 
 setuptools.setup(
@@ -28,7 +28,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/sharksmhi/ctdpy",
     packages=setuptools.find_packages(),
-    package_data={'ctdpy': [os.path.join('core', 'etc', '*.yaml'),
+    package_data={'ctdpy': [os.path.join('core', 'etc', '*.json'),
                             os.path.join('core', 'etc', 'readers', '*.yaml'),
                             os.path.join('core', 'etc', 'writers', '*.yaml'),
                             os.path.join('core', 'etc', 'templates', '*.yaml'),
