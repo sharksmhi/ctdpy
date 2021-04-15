@@ -71,6 +71,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return: Text file with "delivery_note"
         """
         serie = pd.Series(self.writer['standard_delivery_note_header'])
+        print(self.delivery_note)
+        print(self.writer['mapper_delivery_note'])
+        print(serie)
+        # FIXME standard_delivery_note_header och serie info har inte samma encoding
         info = pd.Series([self.delivery_note[self.writer['mapper_delivery_note'][key]]
                           for key in serie])
 
@@ -222,7 +226,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         meta = self.extract_metadata_dataframe(filename)
         # print('meta', meta)
         self.reset_index(meta)
-
         meta = meta.iloc[0].to_list()
         serie = pd.Series(self.df_metadata.columns)
 

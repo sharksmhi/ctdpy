@@ -36,7 +36,7 @@ class YAMLreader(dict):
         """
         if not isinstance(config_files, (list, np.ndarray)):
             config_files = [config_files]
-            
+
         for config_file in config_files:
             with open(config_file) as fd:
                 try:
