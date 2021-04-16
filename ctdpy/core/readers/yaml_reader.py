@@ -36,9 +36,9 @@ class YAMLreader(dict):
         """
         if not isinstance(config_files, (list, np.ndarray)):
             config_files = [config_files]
-            
+
         for config_file in config_files:
-            with open(config_file) as fd:
+            with open(config_file, encoding='cp1252') as fd:
                 try:
                     file = yaml.load(fd, Loader=yaml.FullLoader)
                 except yaml.YAMLError:

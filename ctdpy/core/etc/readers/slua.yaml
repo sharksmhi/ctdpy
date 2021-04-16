@@ -1,0 +1,36 @@
+reader:
+    description: CNV Reader for SeaBird data (SLU-AQUA settings)
+    name: cnv_seabird_slua
+    sensors: [prDM, t090C, c0S/m, sbeox0ML/L, altM, flECO-AFL, par, turbWETntu0, svCM]
+    default_channels: []
+    suffix: '.cnv'
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    rawctd:
+        file_reader: !!python/name:ctdpy.core.readers.slua.SeaBirdSLUA ''
+        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
+        file_suffix: '.cnv'
+    xlsxmeta:
+        file_reader: !!python/name:ctdpy.core.readers.slua.MetadataSLUA ''
+        file_suffix: '.xlsx'
+
+datasets:
+    cnv:
+        name: cnv
+        file_type: rawctd
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: ['FileName', 'System UpLoad Time', Station, Ship, 'LIMS Job', Cruise, 'Latitude [GG MM.mm N]', 'Longitude [GG MM.mm E]', 'Latitude', 'Longitude']
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
+    xlsx:
+        name: xlsx
+        file_type: xlsxmeta
+        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        header_rows: [null, 2, 2, 0]

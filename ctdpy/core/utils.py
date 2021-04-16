@@ -132,6 +132,10 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
         return float(output)
 
 
+def eliminate_empty_rows(df):
+    return df.loc[df.apply(any, axis=1), :].reset_index(drop=True)
+
+
 def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
                        pattern_list=None, not_pattern_list=None, endswith='', only_from_dir=True):
     """
