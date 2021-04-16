@@ -47,7 +47,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         profile = None
         if add_low_resolution_data:
             profile = Profile()
-        print('thread_load', thread_load)
+
         for fid in filenames:
             print('loading: {}'.format(fid))
             if thread_load:
