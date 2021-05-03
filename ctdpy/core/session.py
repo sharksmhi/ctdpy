@@ -24,8 +24,7 @@ class Session:
             self.update_settings_attributes(**self.settings.readers[reader])
     
             filepaths = list(filepaths)
-            self.readers = self.create_reader_instances(filepaths=filepaths,
-                                                        reader=reader)
+            self.readers = self.create_reader_instances(filepaths=filepaths, reader=reader)
 
     def _set_file_reader(self):
         """

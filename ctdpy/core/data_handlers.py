@@ -279,7 +279,7 @@ class SeriesHandler(BaseFileHandler):
         return pd.DataFrame(data_dict, columns=columns)
 
     @staticmethod
-    def get_index(serie, string, contains=False, equals=False, as_boolean=False, reversed_boolean=False):
+    def get_index(serie, string, contains=False, equals=False, between=False, as_boolean=False, reversed_boolean=False):
         """
         #FIXME Rename? you get either an index array or boolean array
         :param serie: pd.Series
@@ -296,6 +296,13 @@ class SeriesHandler(BaseFileHandler):
         elif equals:
             # equals
             boolean = serie == string
+        elif between:
+            start_idx = serie[serie == string[0]].index[0]
+            if string[1]:
+                stop_idx = serie[serie == string[1]].index[0]
+            else:
+                stop_idx = 999999
+            boolean = (serie.index > start_idx) & (serie.index < stop_idx)
         else:
             # startswith
             boolean = serie.str.startswith(string)
@@ -316,7 +323,7 @@ class SeriesHandler(BaseFileHandler):
         :return: pd.Series
         """
         if isinstance(obj, pd.DataFrame):
-            s = pd.Series(obj.keys()[0])
+            s = pd.Series(obj.keys()[0])  # Not really necessary if you load file with argument pd.read_csv(..., header=None)
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
             return pd.Series(obj)
@@ -410,7 +417,6 @@ class UnitConverter:
 
         serie = serie.astype(float) * factor
         serie = utils.rounder(serie, decimals=decimals)
-
         return serie
 
     def get_conversion_factor(self, parameter):
@@ -435,14 +441,14 @@ class UnitConverter:
         new_name = self.mapper[serie.name].get('standard_parameter_name')
         serie.name = new_name or serie.name
 
-    @staticmethod
-    def rename_dataframe_columns(df):
+    def rename_dataframe_columns(self, df):
         """
         #TODO move to utils?
         :param df: pandas.DataFrame
         :return: Renames columns of dataframe based on the corresponding Series.name
         """
-        df.rename(columns={key: df[key].name for key in df.columns}, inplace=True)
+        mapper = {key: self.mapper[key].get('standard_parameter_name') for key in df.columns if key in self.mapper}
+        df.rename(columns=mapper, inplace=True)
 
     def append_conversion_comment(self):
         """

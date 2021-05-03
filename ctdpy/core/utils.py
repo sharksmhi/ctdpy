@@ -379,6 +379,10 @@ def match_filenames(filenames, pattern):
     return matching
 
 
+def milliseconds(ts):
+    return ts.strftime('%S.%f')[:-3]
+
+
 def is_sequence(arg):
     """
     Checks if an object is iterable (you can loop over it) and not a string
