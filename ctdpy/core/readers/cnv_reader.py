@@ -46,11 +46,11 @@ class CNVreader(BaseFileHandler):
         return utils.get_file_list_match(file_list, self.settings.reader['suffix'])
 
     @staticmethod
-    def load(fid, sep='\t', as_series=False):
+    def load(fid, sep='\t', as_series=False, **kwargs):
         """
         :param fid: str, file path
         :param sep: str, seperator
         :param as_series: NotImplementedError
         :return: pd.DataFrame (or pd.Series?)
         """
-        return load_txt(file_path=fid, seperator=sep, as_dtype=True)
+        return load_txt(file_path=fid, seperator=sep, as_dtype=True, **kwargs)

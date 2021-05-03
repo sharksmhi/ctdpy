@@ -1,0 +1,34 @@
+reader:
+    description: VP2 Reader for SWIFT SVP data (SGUS settings)
+    name: vp2_svp_sgus
+    sensors: []
+    default_channels: []
+    suffix: '.vp2'
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    rawvp2:
+        file_reader: !!python/name:ctdpy.core.readers.sgus.SvpSGUS ''
+        file_patterns: ['{proj_id:5s}_{statn_id:3s}_{manufacturer_id:2s}_{instrument_id:5s}_{visit_date:%y%m%d}{sample_time:%H%M%S}.vp2']
+        file_suffix: '.vp2'
+    xlsxmeta:
+        file_reader: !!python/name:ctdpy.core.readers.sgus.MetadataSGUS ''
+        file_suffix: '.xlsx'
+
+datasets:
+    vp2:
+        name: vp2
+        file_type: rawvp2
+        identifier_metadata: '[HEADER]'
+        identifier_header: '[COLUMNS]'
+        identifier_data: '[DATA]'
+        keys_metadata: [Latitude, Longitude, SiteInfo, TimeStamp]
+        keys_data: [DEPH]
+        separator_data: '\t'
+        separator_header: '='
+        separator_metadata: '='
+    xlsx:
+        name: xlsx
+        file_type: xlsxmeta
+        sheet_names: ["F�rklaring", Metadata, Sensorinfo, Information]
+        header_rows: [null, 2, 2, 0]

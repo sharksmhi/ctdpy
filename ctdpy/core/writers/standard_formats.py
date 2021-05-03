@@ -38,9 +38,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             meta = self.get_metadata_sets(datasets)
             data = self.get_datasets(datasets)
             self.setup_metadata_information(meta)
-    
+
             for dataset in data:
                 for fid, item in dataset.items():
+                    # print(item['metadata'])
                     self.sensorinfo_boolean = item['metadata'].get('INSTRUMENT_SERIE')
                     instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
                                                                         separator=self.writer['separator_metadata'],
