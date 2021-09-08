@@ -37,6 +37,19 @@ datasets:
         separator_header: '='
         separator_metadata: '='
         separator_metadata_2: ':'
+    cnv_new_fmt:
+        name: cnv_new_fmt
+        file_type: masterctd
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', Station, FileName, 'Longitude [GG MM.mm E]', 'Latitude [GG MM.mm N]', 'System UTC']
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
     cnv_mvp:
         name: cnv_mvp
         file_type: rawmvp
