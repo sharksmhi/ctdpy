@@ -6,8 +6,7 @@ Created on 2019-11-21 12:27
 
 """
 from ctdpy.core import utils
-from ctdpy.core.data_handlers import SeriesHandler
-from ctdpy.core.data_handlers import BaseReader
+from ctdpy.core.data_handlers import SeriesHandler, BaseReader
 from ctdpy.core.readers.cnv_reader import CNVreader
 
 

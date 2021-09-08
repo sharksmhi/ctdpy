@@ -40,9 +40,12 @@ class Profile:
         :return: index array
         """
         hires_dep = self.data[key].values.astype(float)
+        qf_pres = 'Q_PRES_CTD'
+        if qf_pres in self.data:
+            hires_dep[self.data[qf_pres] == 'B'] = -999
         idx = [(np.abs(hires_dep-dep)).argmin() for dep in depths if dep <= hires_dep.max()]
         idx = self._append_maximum_depth_index(idx, hires_dep)
-        return idx
+        return sorted(set(idx))
 
     @staticmethod
     def _append_maximum_depth_index(idx, array):

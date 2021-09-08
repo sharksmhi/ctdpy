@@ -569,3 +569,8 @@ if __name__ == "__main__":
     #
     # uc.rename_dataframe_columns(df=df)
     # print(df)
+
+class MetaHandler(SeriesHandler):
+    """
+    """
+

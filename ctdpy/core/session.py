@@ -7,8 +7,14 @@ Created on Mon Sep 17 10:50:49 2018
 """
 import os
 from ctdpy.core import config, data_handlers
+from ctdpy.core.profile import Profile
 from ctdpy.core.archive_handler import Archive
-from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
+from ctdpy.core.utils import (
+    get_file_list_based_on_suffix,
+    generate_filepaths,
+    get_reversed_dictionary,
+    match_filenames,
+)
 
 
 class Session:
@@ -100,19 +106,37 @@ class Session:
                 reader_instances[dataset]['reader'] = self.load_reader(file_type)
         return reader_instances
 
-    def get_data_in_template(self, data, template=None, resolution='lores_data_all'):
+    def get_data_in_template(self, datasets, template=None, resolution='lores'):
         """
         Appends dataframes to template dataframe
-        :param data: Dictionary with data
+        :param datasets: Dictionary with data
         :param template: str
         :param resolution: str
         :return: data in template
         """
         template_handler = self.load_template_handler(template)
-        for fid in data:
-            template_handler.append_to_template(data[fid][resolution])
+        profile = None
+        if resolution == 'lores':
+            profile = Profile()
 
-        template_handler.convert_formats()
+        meta_handler = data_handlers.MetaHandler(self.settings)
+        for fid in datasets:
+            if resolution == 'lores':
+                profile.update_data(data=datasets[fid]['data'])
+                data = profile.extract_lores_data(key_depth='DEPH [m]', discrete_depths=self.settings.depths)
+            else:
+                data = datasets[fid]['data']
+
+            meta = meta_handler.get_meta_dict(
+                datasets[fid]['metadata'],
+                keys=self.settings.templates[template]['template'].get('meta_parameters'),
+                identifier='//METADATA',
+                separator=';',
+            )
+
+            template_handler.append_to_template(data, meta=meta)
+
+        # template_handler.convert_formats()
         return template_handler.template
 
     def get_writer_file_name(self, writer):

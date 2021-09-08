@@ -10,7 +10,6 @@ from ctdpy.core import utils
 
 class TemplateBase(dict):
     """
-
     """
     def __init__(self):
         super().__init__()
@@ -51,16 +50,20 @@ class Template(pd.DataFrame):
         """
         #FIXME Test version.. Use methods outside Template instead..
         if 'timestamp' in self:
-            timestamp = self['timestamp']
-        else:
-            timestamp = self['SDATE'].apply(lambda x: utils.convert_string_to_datetime_obj(x, '%b %d %Y %H:%M:%S'))
-        self['MYEAR'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
-        self['STIME'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
-        self['SDATE'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
+            self['timestamp']
+            self['MYEAR'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
+            self['STIME'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
+            self['SDATE'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
+        elif 'SDATE' in self:
+            self['MYEAR'] = self['SDATE'].apply(lambda x: x[:4])
+
         self['LATIT'] = self['LATIT'].apply(lambda x: utils.strip_text(x, ['N', ' ']))
         self['LONGI'] = self['LONGI'].apply(lambda x: utils.strip_text(x, ['E', ' ']))
 
-        self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
+        try:
+            self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
+        except:
+            self['SHIPC'] = '77SE'
 
     def import_column_order(self, order):
         """

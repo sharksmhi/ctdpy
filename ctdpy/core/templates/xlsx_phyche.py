@@ -4,7 +4,7 @@ Created on Fri Oct 19 17:06:23 2018
 
 @author: a002028
 """
-
+import pandas as pd
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.templates.template import Template
 
@@ -15,15 +15,25 @@ class PhyCheTemplateHandler(DataFrameHandler):
     """
     def __init__(self, settings):
         super().__init__(settings)
-        # self.settings = settings
         self.template = self.load_template()
 
-    def append_to_template(self, data):
+    def append_to_template(self, data, meta=None):
         """
         :param data: pd.DataFrame
         :return: appends data to template
         """
-        data = self.template.check_data(data)
+        mapper = {key: self.settings.pmap.get(key) for key in data.columns}
+        # ts = '{YEAR:4s}-{MONTH:2s}-{DAY:2s} {HOUR:2s}:{MINUTE:2s}:{SECOND:2s}'
+        # data['timestamp'] = data[['YEAR', 'MONTH', 'DAY', 'HOUR', 'MINUTE', 'SECOND']].apply(lambda x: pd.Timestamp(ts.format(**x)), axis=1)
+        # data['SDATE'] = data[['YEAR', 'MONTH', 'DAY']].apply(lambda x: '{YEAR:4s}-{MONTH:2s}-{DAY:2s}'.format(**x), axis=1)
+        # data['STIME'] = data[['HOUR', 'MINUTE']].apply(lambda x: '{HOUR:2s}:{MINUTE:2s}'.format(**x), axis=1)
+        data = self.template.check_data(data.rename(mapper, axis=1))
+
+        if meta:
+            for key, item in meta.items():
+                if key in self.template:
+                    data[key] = item
+
         self.template = self.template.append(data, ignore_index=True, sort=False)
 
     def convert_formats(self):
