@@ -1,0 +1,663 @@
+@startuml
+
+title ctdpy_class_diagram
+
+class archive_handler.Archive #7EDAC0 {
+	+write_archive_package()
+	-_copy_data_files_to_archive_path()
+	-_get_data_path_in_archive()
+	-_get_received_data_path_in_archive()
+	-_copy_standard_archive_structure()
+	+load_standard_archive_files()
+	-_get_destination_path()
+	-_get_standard_archive_structure()
+	+import_received_data()
+	-_load_zipwriter_instance()
+	+zip_archive()
+}
+
+class calculator.Depth #4A88CF {
+	+calculate_true_depth()
+	+set_attributes()
+	+true_depth, @p
+	+density, @p
+	+pressure, @p
+	+latitude, @p
+	+gravity, @p
+}
+
+class calculator.Calculator #4A88CF {
+	+update_dataframe()
+	+get_true_depth(), @sm
+}
+
+class config.Settings #BD9379 {
+	-__setattr__()
+	+update_export_path()
+	-_check_local_paths()
+	-_check_for_paths()
+	-_load_settings()
+	+set_reader()
+	+set_writer()
+	-_set_sub_object()
+	-_setup_mapping_parameter()
+	-_setup_mapping_ship()
+	+set_attributes(), @sm
+	+generate_filepaths(), @sm
+	+get_subdirectories(), @sm
+	+get_filepaths_from_directory(), @sm
+}
+
+class data_handlers.DataFrameHandler #5A5A22 {
+	+map_column_names_of_dataframe()
+	-_rename_columns_of_dataframe(), @sm
+	+add_metadata_to_frame(), @sm
+	+get_data_header(), @sm
+	+get_index(), @sm
+	+get_datetime_format(), @sm
+	+get_sdate(), @sm
+	+get_stime(), @sm
+	+get_position_decimal_degrees(), @sm
+	+reset_index(), @sm
+}
+
+class data_handlers.SeriesHandler #5A5A22 {
+	+update_datetime_object()
+	+update_position()
+	+update_cruise()
+	+update_station_name()
+	+get_data_header()
+	+map_doublet_columns(), @sm
+	+get_data_in_frame()
+	+get_meta_dict()
+	+get_metadata_in_frame(), @sm
+	+get_index(), @sm
+	+get_series_object(), @sm
+}
+
+class data_handlers.BaseReader #5A5A22 {
+	+get_data()
+	+get_metadata()
+	+merge_data()
+	+setup_dataframe()
+	+setup_dictionary()
+}
+
+class data_handlers.UnitConverter #5A5A22 {
+	+update_meta()
+	+convert_values()
+	+get_conversion_factor()
+	+get_number_of_decimals()
+	+set_new_parameter_name()
+	+rename_dataframe_columns(), @sm
+	+append_conversion_comment()
+}
+
+class data_handlers.CorrectionFile #5A5A22 {
+	
+}
+
+class data_handlers.DeltaCorrection #5A5A22 {
+	+append_correction_comment()
+	+correct_dataset()
+	-_correct()
+	+update_meta()
+}
+
+class mapping.AttributeDict #068053 {
+	-_add_arrays_to_entries()
+	+add_entries()
+	+add_entries_from_keylist()
+	+keys()
+	+get()
+	+get_list()
+	+get_mapping_dict()
+	-__getitem__()
+}
+
+class mapping.ParameterMapping #068053 {
+	+load_mapping_settings()
+	+map_parameter_list()
+	+get_parameter_mapping()
+}
+
+class mapping.ShipMapping #068053 {
+	+load_mapping_settings()
+	+map_cntry_and_shipc()
+	+map_shipc()
+}
+
+class profile.Profile #8E43AE {
+	+update_data()
+	+extract_lores_data()
+	-_get_index_array()
+	-_append_maximum_depth_index(), @sm
+}
+
+class session.Session #C12D14 {
+	-_set_file_reader()
+	+read()
+	-_read_datasets()
+	-_get_filenames_matched(), @sm
+	+create_reader_instances()
+	+get_data_in_template()
+	+get_writer_file_name()
+	+load_template_handler()
+	+load_reader()
+	+load_writer()
+	+save_data()
+	+update_metadata()
+	+create_archive()
+	-_get_loaded_filenames()
+	+update_settings_attributes()
+}
+
+class cnv_reader.CNVreader #1BF2EE {
+	+select_files_from_directory()
+	+get_file_list_match()
+	+load(), @sm
+}
+
+class deep.RincoDEEP #EA54A3 {
+	-_get_statn()
+	-_get_instrument_serie()
+	-_get_instrument_id(), @sm
+	-_get_string_index()
+	-_get_timestamp()
+	-_convert_formats()
+	+get_metadata()
+	-_setup_dataframe()
+}
+
+class deep.MetadataDEEP #EA54A3 {
+	
+}
+
+class file_handlers.BaseFileHandler #3A0E2F {
+	-__str__()
+	-__repr__()
+	+get_dataset()
+	+get_bounding_box()
+	+get_property_value()
+	+station, @p
+	+cruise, @p
+	+longitude_dd, @p
+	+latitude_dd, @p
+	+year, @p
+	+month, @p
+	+day, @p
+	+hour, @p
+	+minute, @p
+	+second, @p
+}
+
+class file_handlers.BaseReader #3A0E2F {
+	-_extract_info()
+	+get_reader()
+}
+
+class json_reader.JSONreader #B402F9 {
+	-_export_json()
+	-_initiate_attributes()
+	-_initiate_outfile()
+	-_get_dictionary_reference()
+	+add_element()
+	+append_dict_to_outfile()
+	+export()
+	+get_dict()
+	+find_key()
+	+load_json()
+	+setup_dict()
+	+update_element()
+}
+
+class metadata.XLSXmeta #443698 {
+	+get_data()
+	+merge_data()
+	-_read()
+	+load_func(), @sm
+	+get_reader_instance(), @sm
+}
+
+class mvp200.MVP200 #92CBE8 {
+	+get_data()
+	+get_metadata()
+	+merge_data()
+	+setup_dataframe()
+	+setup_dictionary()
+}
+
+class rinco.Rinco #E7E365 {
+	+add_calculated_parameters()
+	+get_data()
+	+get_metadata()
+	+merge_data()
+	+setup_dataframe()
+	+setup_dictionary()
+}
+
+class seabird.SeaBird #08B928 {
+	+load_func()
+	+get_data()
+	+get_metadata()
+	+merge_data()
+	+setup_dataframe()
+	+setup_dictionary()
+}
+
+class smhi.SeaBirdSMHI #A2942D {
+	-_get_serno(), @sm
+	-_extract_filename_information()
+	-_convert_formats()
+	+get_metadata()
+	-_setup_dataframe()
+}
+
+class smhi.MVPSMHI #A2942D {
+	-_get_serno(), @sm
+	-_convert_formats()
+	+get_metadata()
+	-_setup_dataframe()
+}
+
+class smhi.MetadataSMHI #A2942D {
+	
+}
+
+class stdfmt.BaseSTDFMT #50F7E9 {
+	+setup_dataframe()
+	+setup_dictionary()
+	-_adjust_dataframe()
+}
+
+class stdfmt.StandardFormatCTD #50F7E9 {
+	-_adjust_dataframe(), @sm
+	+get_data()
+	+load_func()
+	+get_metadata()
+}
+
+class umsc.SeaBirdUMSC #E29E5C {
+	+add_calculated_parameters(), @sm
+	-_get_datetime()
+	-_convert_formats()
+	+get_metadata()
+	+get_meta_dict()
+	-_setup_dataframe()
+}
+
+class umsc.MetadataUMSC #E29E5C {
+	
+}
+
+class yaml_reader.YAMLreader #FC0A81 {
+	+load_yaml()
+	+get_file_name(), @sm
+}
+
+class ctd_metadata.CTDTemplateHandler #14B67A {
+	+append_to_template()
+	+read_template()
+	+get_template_columns()
+	+get_reader()
+}
+
+class template.TemplateBase #253FA9 {
+	+read()
+}
+
+class template.Template #253FA9 {
+	-_constructor, @p
+	+check_data()
+	+convert_formats()
+	+import_column_order()
+	+export_data_as_excel()
+	+import_metadata()
+	+sort()
+}
+
+class xlsx_phyche.PhyCheTemplateHandler #C0B58D {
+	+append_to_template()
+	+convert_formats()
+	+load_template()
+	+get_template_columns()
+	+get_reader()
+}
+
+class metadata.MetadataWriter #9B9F79 {
+	+get_handler_instance()
+	+convert_formats()
+	+write()
+	-_write()
+	+append_to_template()
+	-_get_data_path()
+	-_get_save_path()
+	-_get_writer_settings()
+}
+
+class profile_plot.ReadZipFile #E72E81 {
+	+setup_dataframe()
+	+get_dataframe()
+	+get_data()
+	+open_file()
+	+get_filepath(), @sm
+}
+
+class profile_plot.BaseAxes #E72E81 {
+	-_convert_yaxis_values()
+	+xaxis, @p
+	+yaxis, @p
+}
+
+class profile_plot.ProfilePlot #E72E81 {
+	-_set_output_file()
+	-_convert_yaxis_values()
+	-_turn_values_negative()
+	-_get_source_selecters()
+	-_get_xaxis_slider()
+	-_get_data_table()
+	+circle_plot()
+	+line_plot()
+	+plot()
+}
+
+class standard_formats.StandardCTDWriter #419A02 {
+	+write()
+	-_write_delivery_note()
+	-_write_metadata()
+	-_write_sensorinfo()
+	-_write_information()
+	-_write()
+	-_add_new_information_to_metadata()
+	-_adjust_data_formats()
+	-_append_information()
+	+setup_metadata_information()
+	-_get_template_format()
+	-_get_delimiters()
+	-_get_delivery_note()
+	-_get_index(), @sm
+	+extract_metadata()
+	+extract_metadata_dataframe()
+	-_get_reduced_dataframe(), @sm
+	-_get_sensorinfo_serie()
+	-_get_information_serie()
+	-_get_instrument_metadata()
+	-_get_data_serie()
+	-_get_data_columns()
+	-_get_header_mapping_dict()
+	+set_header()
+	+get_parameters_from_sensorinfo()
+	-_get_writer_settings()
+	+get_metadata_sets(), @sm
+	+get_datasets(), @sm
+	-_get_save_path()
+	-_replace_data_file_name()
+	-_set_data_path()
+	-_update_visit_info()
+	-_update_visit_cruise_name()
+	-_update_visit_datetime_object()
+	-_update_visit_position()
+	-_update_visit_station()
+	+file_name, @p
+	+sensorinfo_boolean, @p
+	-_check_dataset_format()
+	-_redirect_to_data_update()
+}
+
+class txt_writer.TxtWriter #60D1CA {
+	+write_with_pandas(), @sm
+	+write_with_numpy(), @sm
+	+write_with_python(), @sm
+}
+
+class with_style.StyleSheet #005CFC {
+	-_set_default()
+	+set_cell_color()
+	+set_column_color()
+	+set_row_color()
+	+set_odd_row_color()
+	+set_fontweight()
+	+set_text_alignment()
+	+set_border_style()
+	+set_properties()
+	+get_stylesheet()
+	+highlight_cells()
+	+highlight_column(), @sm
+	+highlight_row(), @sm
+	+highlight_odd_rows()
+	+add_fontweight()
+	+alignment()
+	+cell_border_width(), @sm
+	+cell_border(), @sm
+	+column_width(), @sm
+	+bold_cell_lines()
+	-_is_odd(), @sm
+}
+
+class xlsx_writer.XlsxWriter #E226D3 {
+	-_load_xlsx_writer()
+	+write_multiple_sheets()
+	+close_writer()
+	+write(), @sm
+	+write_dataframe(), @sm
+}
+
+class yaml_writer.YAMLwriter #6C207A {
+	-_check_format()
+	+write_yaml()
+}
+
+class zip_writer.ZipWriter #325ABB {
+	+write()
+	+append_sub_directory()
+	-_get_dataset_name_and_path()
+}
+
+class zip_writer.ZipArchive #325ABB {
+	+appendFile()
+	+appendZipEntry()
+}
+
+
+archive_handler.Archive <|-- object
+
+calculator.Depth <|-- object
+
+calculator.Calculator <|-- object
+
+config.Settings <|-- object
+
+data_handlers.DataFrameHandler <|-- BaseFileHandler
+data_handlers.DataFrameHandler <|-- file_handlers.BaseFileHandler
+
+data_handlers.SeriesHandler <|-- BaseFileHandler
+data_handlers.SeriesHandler <|-- file_handlers.BaseFileHandler
+
+data_handlers.BaseReader <|-- object
+
+data_handlers.UnitConverter <|-- object
+
+data_handlers.CorrectionFile <|-- dict
+
+mapping.AttributeDict <|-- dict
+
+mapping.ParameterMapping <|-- mapping.AttributeDict
+
+mapping.ShipMapping <|-- mapping.AttributeDict
+
+profile.Profile <|-- object
+
+cnv_reader.CNVreader <|-- BaseFileHandler
+cnv_reader.CNVreader <|-- file_handlers.BaseFileHandler
+
+deep.RincoDEEP <|-- Rinco
+deep.RincoDEEP <|-- rinco.Rinco
+
+deep.MetadataDEEP <|-- XLSXmeta
+deep.MetadataDEEP <|-- metadata.XLSXmeta
+
+file_handlers.BaseFileHandler <|-- six.with_metaclass
+
+file_handlers.BaseReader <|-- object
+
+json_reader.JSONreader <|-- object
+
+metadata.XLSXmeta <|-- BaseReader
+metadata.XLSXmeta <|-- DataFrameHandler
+metadata.XLSXmeta <|-- data_handlers.BaseReader
+metadata.XLSXmeta <|-- data_handlers.DataFrameHandler
+metadata.XLSXmeta <|-- file_handlers.BaseReader
+
+mvp200.MVP200 <|-- BaseReader
+mvp200.MVP200 <|-- CNVreader
+mvp200.MVP200 <|-- SeriesHandler
+mvp200.MVP200 <|-- data_handlers.BaseReader
+mvp200.MVP200 <|-- data_handlers.SeriesHandler
+mvp200.MVP200 <|-- cnv_reader.CNVreader
+mvp200.MVP200 <|-- file_handlers.BaseReader
+
+rinco.Rinco <|-- BaseReader
+rinco.Rinco <|-- CNVreader
+rinco.Rinco <|-- SeriesHandler
+rinco.Rinco <|-- data_handlers.BaseReader
+rinco.Rinco <|-- data_handlers.SeriesHandler
+rinco.Rinco <|-- cnv_reader.CNVreader
+rinco.Rinco <|-- file_handlers.BaseReader
+
+seabird.SeaBird <|-- BaseReader
+seabird.SeaBird <|-- CNVreader
+seabird.SeaBird <|-- SeriesHandler
+seabird.SeaBird <|-- data_handlers.BaseReader
+seabird.SeaBird <|-- data_handlers.SeriesHandler
+seabird.SeaBird <|-- cnv_reader.CNVreader
+seabird.SeaBird <|-- file_handlers.BaseReader
+
+smhi.SeaBirdSMHI <|-- SeaBird
+smhi.SeaBirdSMHI <|-- seabird.SeaBird
+
+smhi.MVPSMHI <|-- SeaBird
+smhi.MVPSMHI <|-- seabird.SeaBird
+
+smhi.MetadataSMHI <|-- XLSXmeta
+smhi.MetadataSMHI <|-- metadata.XLSXmeta
+
+stdfmt.BaseSTDFMT <|-- BaseReader
+stdfmt.BaseSTDFMT <|-- CNVreader
+stdfmt.BaseSTDFMT <|-- SeriesHandler
+stdfmt.BaseSTDFMT <|-- data_handlers.BaseReader
+stdfmt.BaseSTDFMT <|-- data_handlers.SeriesHandler
+stdfmt.BaseSTDFMT <|-- cnv_reader.CNVreader
+stdfmt.BaseSTDFMT <|-- file_handlers.BaseReader
+
+stdfmt.StandardFormatCTD <|-- stdfmt.BaseSTDFMT
+
+umsc.SeaBirdUMSC <|-- SeaBird
+umsc.SeaBirdUMSC <|-- seabird.SeaBird
+
+umsc.MetadataUMSC <|-- XLSXmeta
+umsc.MetadataUMSC <|-- metadata.XLSXmeta
+
+yaml_reader.YAMLreader <|-- dict
+
+ctd_metadata.CTDTemplateHandler <|-- DataFrameHandler
+ctd_metadata.CTDTemplateHandler <|-- data_handlers.DataFrameHandler
+
+template.TemplateBase <|-- dict
+
+template.Template <|-- pd.DataFrame
+
+xlsx_phyche.PhyCheTemplateHandler <|-- DataFrameHandler
+xlsx_phyche.PhyCheTemplateHandler <|-- data_handlers.DataFrameHandler
+
+metadata.MetadataWriter <|-- SeriesHandler
+metadata.MetadataWriter <|-- DataFrameHandler
+metadata.MetadataWriter <|-- data_handlers.SeriesHandler
+metadata.MetadataWriter <|-- data_handlers.DataFrameHandler
+
+profile_plot.ReadZipFile <|-- object
+
+profile_plot.BaseAxes <|-- object
+
+profile_plot.ProfilePlot <|-- profile_plot.BaseAxes
+
+standard_formats.StandardCTDWriter <|-- SeriesHandler
+standard_formats.StandardCTDWriter <|-- DataFrameHandler
+standard_formats.StandardCTDWriter <|-- data_handlers.SeriesHandler
+standard_formats.StandardCTDWriter <|-- data_handlers.DataFrameHandler
+
+txt_writer.TxtWriter <|-- object
+
+with_style.StyleSheet <|-- object
+
+xlsx_writer.XlsxWriter <|-- object
+
+yaml_writer.YAMLwriter <|-- dict
+
+zip_writer.ZipWriter <|-- object
+
+calculator.Calculator o-- calculator.Depth
+
+mapping.AttributeDict o-- mapping.ShipMapping
+
+session.Session o-- session.Session
+session.Session o-- archive_handler.Archive
+session.Session o-- config.Settings
+session.Session o-- template.Template
+
+cnv_reader.CNVreader o-- cnv_reader.CNVreader
+
+file_handlers.BaseFileHandler o-- file_handlers.BaseFileHandler
+
+json_reader.JSONreader o-- json_reader.JSONreader
+
+metadata.XLSXmeta o-- metadata.XLSXmeta
+
+template.Template o-- template.Template
+template.Template o-- template.Template
+template.Template o-- template.Template
+template.Template o-- template.Template
+template.Template o-- template.Template
+template.Template o-- with_style.StyleSheet
+
+zip_writer.ZipWriter o-- zip_writer.ZipArchive
+zip_writer.ZipWriter o-- archive_handler.Archive
+
+rinco.Rinco o-- calculator.Calculator
+rinco.Rinco o-- data_handlers.DataFrameHandler
+rinco.Rinco o-- profile.Profile
+
+umsc.SeaBirdUMSC o-- calculator.Calculator
+
+mapping.ShipMapping o-- config.Settings
+mapping.ShipMapping o-- yaml_reader.YAMLreader
+
+mvp200.MVP200 o-- data_handlers.DataFrameHandler
+mvp200.MVP200 o-- profile.Profile
+
+seabird.SeaBird o-- data_handlers.DataFrameHandler
+seabird.SeaBird o-- profile.Profile
+
+ctd_metadata.CTDTemplateHandler o-- data_handlers.DataFrameHandler
+ctd_metadata.CTDTemplateHandler o-- template.Template
+
+xlsx_phyche.PhyCheTemplateHandler o-- data_handlers.DataFrameHandler
+xlsx_phyche.PhyCheTemplateHandler o-- template.Template
+
+config.Settings o-- mapping.ParameterMapping
+config.Settings o-- mapping.ShipMapping
+config.Settings o-- yaml_reader.YAMLreader
+
+archive_handler.Archive o-- profile.Profile
+
+profile_plot.ProfilePlot o-- profile.Profile
+
+standard_formats.StandardCTDWriter o-- file_handlers.BaseFileHandler
+standard_formats.StandardCTDWriter o-- txt_writer.TxtWriter
+
+mapping.ParameterMapping o-- json_reader.JSONreader
+mapping.ParameterMapping o-- yaml_reader.YAMLreader
+
+metadata.MetadataWriter o-- template.Template
+metadata.MetadataWriter o-- xlsx_writer.XlsxWriter
+
+@enduml

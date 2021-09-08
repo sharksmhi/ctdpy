@@ -89,8 +89,10 @@ class Session:
         """
         #TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
+        print('reader', reader)
         for dataset, dictionary in self.settings.readers[reader]['datasets'].items():
             file_type = self.settings.readers[reader]['file_types'][dictionary['file_type']]
+            print('file_type', file_type)
             filenames_matched = self._get_filenames_matched(filepaths, file_type)
             if any(filenames_matched):
                 reader_instances[dataset] = {}

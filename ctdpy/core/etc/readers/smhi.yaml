@@ -7,6 +7,10 @@ reader:
     reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
 
 file_types:
+    masterctd:
+        file_reader: !!python/name:ctdpy.core.readers.smhi.MasterSMHI ''
+        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}{shipc:2s}_{cruise:2s}_{serno:4d}.cnv']
+        file_suffix: '.cnv'
     rawctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.SeaBirdSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
@@ -49,5 +53,5 @@ datasets:
     xlsx:
         name: xlsx
         file_type: xlsxmeta
-        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        sheet_names: ["Fï¿½rklaring", Metadata, Sensorinfo, Information]
         header_rows: [null, 2, 2, 0]
