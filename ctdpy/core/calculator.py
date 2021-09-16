@@ -13,7 +13,6 @@ from ctdpy.core import utils
 
 class Depth:
     """
-
     """
     def __init__(self):
         self._true_depth = None
@@ -122,7 +121,6 @@ class Depth:
 
 class Calculator:
     """
-
     """
     def update_dataframe(self, new_df):
         """

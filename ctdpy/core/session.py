@@ -5,7 +5,6 @@ Created on Mon Sep 17 10:50:49 2018
 @author: a002028
 
 """
-import os
 from ctdpy.core import config, data_handlers
 from ctdpy.core.profile import Profile
 from ctdpy.core.archive_handler import Archive

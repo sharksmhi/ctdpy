@@ -10,7 +10,6 @@ import time
 from pprint import pprint
 from ctdpy.core.session import Session
 from ctdpy.core import config, data_handlers
-from ctdpy.core.writers.profile_plot import ProfilePlot
 from ctdpy.core.archive_handler import Archive
 from sharkpylib.qc.qc_default import QCBlueprint
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
