@@ -11,8 +11,7 @@ from ctdpy.core import config
 from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, match_filenames
 
 
-
-base_dir = '\\\\winfs-proj\\proj\\havgem\\EXPRAPP\\Exprap2020\\Svea v6-7 Feb\\mvp\\cnv'
+base_dir = '...Svea v6-7 Feb\\mvp\\cnv'
 
 # files = os.listdir(base_dir)
 files = generate_filepaths(base_dir,

@@ -4,9 +4,8 @@ Created on Tue Sep 11 08:05:22 2018
 
 @author: a002028
 """
-
-import setuptools
 import os
+import setuptools
 
 
 requirements = []
