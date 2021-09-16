@@ -193,22 +193,6 @@ class MasterSMHI(SeaBird):
     def __init__(self, settings):
         super().__init__(settings)
 
-    # @staticmethod
-    # def _get_serno(value):
-    #     """
-    #     IN SMHI Seabird CTD-files there usually are specified information about "LIMS Job", which is the SMHI-internal
-    #     key number YEAR-SHIP-SERNO. This method picks out the SERNO number.
-    #     :param value:
-    #     :return:
-    #     """
-    #     lims_job_list = re.findall(r"[0-9]{4}", value)
-    #     if len(lims_job_list):
-    #         serno = lims_job_list[-1]
-    #     else:
-    #         serno = ''
-    #
-    #     return serno
-
     def _extract_filename_information(self, filename):
         """
 
@@ -219,7 +203,6 @@ class MasterSMHI(SeaBird):
         dictionary = {}
         info_list = filename.split('_')
         dictionary['INSTRUMENT_SERIE'] = info_list[1]
-        print('info_list', info_list)
         dictionary['SERNO'] = info_list[-1].split('.')[0]
         return dictionary
 

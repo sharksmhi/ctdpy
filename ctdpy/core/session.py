@@ -52,7 +52,6 @@ class Session:
         #TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
-            print('dataset', dataset)
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
@@ -89,10 +88,8 @@ class Session:
         """
         #TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
-        print('reader', reader)
         for dataset, dictionary in self.settings.readers[reader]['datasets'].items():
             file_type = self.settings.readers[reader]['file_types'][dictionary['file_type']]
-            print('file_type', file_type)
             filenames_matched = self._get_filenames_matched(filepaths, file_type)
             if any(filenames_matched):
                 reader_instances[dataset] = {}
@@ -176,7 +173,6 @@ class Session:
         for file_name, dataset in datasets.items():
             for key, value in metadata.items():
                 current_value = dataset['metadata'].get(key, None)
-                print('current_value:', current_value)
                 if current_value and not overwrite:
                     continue
                 dataset['metadata'][key] = value

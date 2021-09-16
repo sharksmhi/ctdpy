@@ -365,7 +365,6 @@ def match_filenames(filenames, pattern):
             continue
         if type(pattern) == list:
             for p in pattern:
-                print('p', p)
                 if fnmatch(get_filebase(filename, p), globify(p)):
                     matching.append(filename)
         else:
