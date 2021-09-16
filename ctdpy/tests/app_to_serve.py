@@ -15,22 +15,26 @@ Open in web browser: http://localhost:5006/app_to_serve
     Bokeh app running at: http://localhost:5006/app_to_serve
 
 """
-# import sys
+import sys
 # sys.path.append('C:\\Utveckling\\ctdvis')
 from bokeh.plotting import curdoc
 from ctdvis.session import Session
 
 
 def bokeh_qc_tool():
+    # data_dir = r'C:\mw\temp_svea\standard_format'
+    # data_dir = r'C:\mw\Profile\2018\SHARK_Profile_2018_BAS_SMHI\processed_data'
     # data_dir = 'C:\\Temp\\CTD_DV\\qc_SMHI_2018\\ctd_std_fmt_20200622_130128_april_2020'
-    data_dir = 'C:/Arbetsmapp/datasets/Profile/2019/SHARK_Profile_2019_SMHI/processed_data'
+    # data_dir = 'C:\\Temp\\CTD_DV\\qc_SMHI_2018\\ctd_std_fmt_20200622_130128_april_2020'
+    # data_dir = 'C:/Arbetsmapp/datasets/Profile/2019/SHARK_Profile_2019_SMHI/processed_data'
     # data_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2018\\SHARK_Profile_2018_BAS_SMHI\\processed_data'
 
     """ Filters are advised to be implemented if the datasource is big, (~ >3 months of SMHI-EXP-data) """
     # filters = None
     filters = dict(
-        # month_list=[1, 2, 3],
         month_list=[5],
+        # month_list=[1, 2, 3],
+        # month_list=[4, 5, 6],
         # month_list=[7, 8, 9],
         # month_list=[10, 11, 12],
         # ship_list=['77SE', '34AR']

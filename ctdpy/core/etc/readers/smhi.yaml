@@ -7,6 +7,10 @@ reader:
     reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
 
 file_types:
+    masterctd:
+        file_reader: !!python/name:ctdpy.core.readers.smhi.MasterSMHI ''
+        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}{shipc:2s}_{cruise:2s}_{serno:4d}.cnv']
+        file_suffix: '.cnv'
     rawctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.SeaBirdSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
@@ -28,6 +32,19 @@ datasets:
         identifier_metadata: '* '
         identifier_metadata_2: '**'
         keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', 'LIMS Job', Ship, Station, FileName, 'Longitude [GG MM.mm E]', 'Latitude [GG MM.mm N]', 'System UTC']
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
+    cnv_new_fmt:
+        name: cnv_new_fmt
+        file_type: masterctd
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', Station, FileName, 'Longitude [GG MM.mm E]', 'Latitude [GG MM.mm N]', 'System UTC']
         keys_data: [DEPH]
         separator_data: None
         separator_header: '='
