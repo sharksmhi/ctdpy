@@ -10,10 +10,9 @@ from ctdpy.core import utils
 
 class TemplateBase(dict):
     """
-
     """
     def __init__(self):
-        pass
+        super().__init__()
 
     def read(self):#, reader):
         """
@@ -51,16 +50,20 @@ class Template(pd.DataFrame):
         """
         #FIXME Test version.. Use methods outside Template instead..
         if 'timestamp' in self:
-            timestamp = self['timestamp']
-        else:
-            timestamp = self['SDATE'].apply(lambda x: utils.convert_string_to_datetime_obj(x, '%b %d %Y %H:%M:%S'))
-        self['MYEAR'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
-        self['STIME'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
-        self['SDATE'] = timestamp.apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
+            self['timestamp']
+            self['MYEAR'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
+            self['STIME'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
+            self['SDATE'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
+        elif 'SDATE' in self:
+            self['MYEAR'] = self['SDATE'].apply(lambda x: x[:4])
+
         self['LATIT'] = self['LATIT'].apply(lambda x: utils.strip_text(x, ['N', ' ']))
         self['LONGI'] = self['LONGI'].apply(lambda x: utils.strip_text(x, ['E', ' ']))
 
-        self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
+        try:
+            self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
+        except:
+            self['SHIPC'] = '77SE'
 
     def import_column_order(self, order):
         """
@@ -107,11 +110,13 @@ class Template(pd.DataFrame):
 
         self = self.append(meta, ignore_index=True)
 
-    def sort(self, sort_by_keys=[]):
+    def sort(self, sort_by_keys=None):
         """
+        :param sort_by_keys:
         :param df:
         :return:
         """
+        sort_by_keys = sort_by_keys or []
         self.sort_values(sort_by_keys, ascending=[True]*len(sort_by_keys), inplace=True)
         self.reset_index(drop=True, inplace=True)
 

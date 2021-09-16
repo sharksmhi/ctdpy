@@ -6,7 +6,7 @@ Created on Thu Jul 19 13:35:11 2018
 """
 
 
-class StyleSheet(object):
+class StyleSheet:
     """
     Uses style object from pandas DataFrame and CSS formats to style an excel
     sheet..
@@ -22,8 +22,7 @@ class StyleSheet(object):
     def _set_default(self, cell_color='#5FB404', column_color='#00B0F0',
                      row_color='#92d050', odd_row_color='#D8D8D8',
                      fontweight='bold', text_alignment='center',
-                     border_style={'border_left': 'solid', 'border_right': 'solid',
-                                   'border_top': 'solid', 'border_bottom': 'solid'}):
+                     border_style=None):
         """
         :param cell_color:
         :param column_color:
@@ -34,6 +33,9 @@ class StyleSheet(object):
         :param border_style:
         :return:
         """
+        if not border_style:
+            border_style = {'border_left': 'solid', 'border_right': 'solid',
+                            'border_top': 'solid', 'border_bottom': 'solid'}
         self.set_cell_color(cell_color)
         self.set_column_color(column_color)
         self.set_row_color(row_color)

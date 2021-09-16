@@ -8,7 +8,7 @@ import numpy as np
 from ctdpy.core.utils import thread_process
 
 
-class TxtWriter(object):
+class TxtWriter:
     """ """
     def __init__(self, in_template=None):
         self.in_template = in_template

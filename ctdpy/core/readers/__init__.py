@@ -11,7 +11,9 @@ from ctdpy.core.readers.json_reader import JSONreader
 from ctdpy.core.readers.metadata import XLSXmeta
 from ctdpy.core.readers.rinco import Rinco
 from ctdpy.core.readers.seabird import SeaBird
+from ctdpy.core.readers.sgus import SvpSGUS, MetadataSGUS
 from ctdpy.core.readers.smhi import SeaBirdSMHI, MetadataSMHI
+from ctdpy.core.readers.slua import SeaBirdSLUA, MetadataSLUA
 from ctdpy.core.readers.stdfmt import StandardFormatCTD
 from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core.readers.umsc import SeaBirdUMSC, MetadataUMSC

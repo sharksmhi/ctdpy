@@ -15,17 +15,18 @@
             "ALTM_CTD [m]",
             "Altimeter", 
             "altM: Altimeter [m]"
-        ], 
+        ],
         "TEMP_CTD": [
-            "TEMP_CTD [°C (ITS-90)]",
-            "TEMP_CTD [°C]",
+            "TEMP_CTD [ï¿½C (ITS-90)]",
+            "TEMP_CTD [ï¿½C]",
+            "TEMP_CTD [deg C]",
             "Temperatur",
+            "Temperature",
             "t090C: Temperature [ITS-90, deg C]",
-            "t190C: Temperature, 2 [ITS-90, deg C]", 
             "tv290C: Temperature [ITS-90, deg C]",
             "Temperature [ITS-90, deg C]",
             "Temp"
-        ], 
+        ],
         "CNDC2_CTD": [
             "CNDC2_CTD [S/m]", 
             "Konduktivitet2",
@@ -36,7 +37,7 @@
             "T2-T190C: Temperature Difference, 2 - 1 [ITS-90, deg C]"
         ],
         "YELLOW_CTD": [
-            "Gulämne",
+            "Gulï¿½mne",
             "haardtY: Fluorescence, Dr. Haardt Yellow Sub"
         ], 
         "SVEL2_CTD": [
@@ -54,9 +55,14 @@
             "DO_ml"
         ],
         "DOXY_SAT_CTD": [
+            "sbeox0PS: Oxygen, SBE 43 [% saturation], WS",
             "DOXY_SAT_CTD [%]",
             "DO",
             "sat"
+        ],
+        "DOXY_SIGNAL": [
+            "sbeox0V: Oxygen raw, SBE 43 [V]",
+            "DOXY_SIGNAL [V]",
         ],
         "PUMP_CTD": [
             "PUMP_CTD []",
@@ -65,13 +71,14 @@
         ], 
         "DENS2_CTD": [
             "DENS2_CTD [kg/m3]",
-            "Densitet2", 
+            "Densitet2",
             "sigma-t11: Density, 2 [sigma-t, Kg/m^3 ]"
         ], 
         "CNDC_CTD": [
             "CNDC_CTD [S/m]",
             "CNDC_CTD [mS/cm]",
             "Konduktivitet",
+            "Conductivity",
             "c0S/m: Conductivity [S/m]",
             "Cond"
         ], 
@@ -84,17 +91,20 @@
             "Cruise"
         ], 
         "STATN": [
-            "Station"
+            "Station",
+            "STATION"
         ], 
         "SHIPC": [
-            "Ship"
+            "Ship",
+            "SiteInfo"
         ], 
         "SERNO": [
             "LIMS Job"
         ], 
         "PRES_CTD": [
             "PRES_CTD [dbar]",
-            "Tryck", 
+            "Tryck",
+            "Pressure",
             "prDM: Pressure, Digiquartz [db]",
             "Pressure, Strain Gauge [db]",
             "prdM: Pressure, Strain Gauge [db]",
@@ -104,10 +114,13 @@
             "NMEA UTC",
             "System UTC",
             "start_time",
-            "IntD"
+            "IntD",
         ], 
         "STIME": [
             "IntT"
+        ],
+        "TIMESTAMP": [
+            "Date/Time"
         ],
         "YEAR": [
             "YEAR"
@@ -129,7 +142,9 @@
         ],
         "DENS_CTD": [
             "DENS_CTD [kg/m3]",
+            "DENS_CTD [kg/m^3 ]",
             "Densitet",
+            "Density",
             "sigma-t00: Density [sigma-t, kg/m^3 ]",
             "sigma-t00: Density [sigma-t, Kg/m^3 ]",
             "density00: Density [density, kg/m^3]",
@@ -137,11 +152,13 @@
         ], 
         "SVEL_CTD": [
             "SVEL_CTD [m/s]",
-            "Ljudhastighet", 
+            "Ljudhastighet",
+            "Sound Velocity",
             "svCM: Sound Velocity [Chen-Millero, m/s]"
         ], 
         "DEPH": [
             "DEPH [m]",
+            "Depth",
             "Djup",
             "depFM: Depth [true depth, m], lat",
             "depFM: Depth [fresh water, m], lat"
@@ -150,21 +167,17 @@
             "FileName"
         ], 
         "PAR_CTD": [
-            "PAR_CTD [µmol/(m2 sec)]",
-            "PAR_CTD [µE/(cm2 sec)]",
-            "PAR_CTD [µE]",
+            "PAR_CTD [ï¿½mol/(m2 sec)]",
+            "PAR_CTD [ï¿½E/(cm2 sec)]",
+            "PAR_CTD [ï¿½E]",
             "PAR", 
             "par: PAR/Irradiance, Biospherical/Licor", 
             "par: PAR/Irradiance, Biospherical/Lico [ÂµE/(cm^2*s)]",
             "par: PAR/Irradiance, Biospherical/Lico [\u00b5E/(cm^2*s)]"
-        ], 
-        "LONGI": [
-            "NMEA Longitude",
-            "Longitude [GG MM.mm E]"
-        ], 
+        ],
         "TEMP2_CTD": [
-            "TEMP2_CTD [°C (ITS-90)]",
-            "TEMP2_CTD [°C]",
+            "TEMP2_CTD [ï¿½C (ITS-90)]",
+            "TEMP2_CTD [ï¿½C]",
             "Temperatur2", 
             "t190C: Temperature, 2 [ITS-90, deg C]",
             "T_iS"
@@ -203,13 +216,20 @@
             "spar: SPAR/Surface Irradiance"
         ], 
         "LATIT": [
+            "Latitude",
             "NMEA Latitude",
             "Latitude [GG MM.mm N]"
-        ], 
+        ],
+        "LONGI": [
+            "Longitude",
+            "NMEA Longitude",
+            "Longitude [GG MM.mm E]"
+        ],
         "SALT_CTD": [
             "SALT_CTD [psu (PSS-78)]",
             "SALT_CTD [psu]",
             "Salthalt",
+            "Salinity",
             "sal00: Salinity, Practical [PSU]",
             "SALIN"
         ], 

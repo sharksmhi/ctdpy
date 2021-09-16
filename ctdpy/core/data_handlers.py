@@ -192,7 +192,7 @@ class SeriesHandler(BaseFileHandler):
         index = self.get_index(data, identifier_header.replace('~', ''), reversed_boolean=reversed)
         splitter = self.settings.datasets[dataset].get('separator_header')
         if first_row:
-            if splitter == None or splitter == 'None':
+            if not splitter or splitter == 'None':
                 header = data[index].iloc[0].split()
             else:
                 header = data[index].iloc[0].split(splitter)
@@ -279,7 +279,7 @@ class SeriesHandler(BaseFileHandler):
         return pd.DataFrame(data_dict, columns=columns)
 
     @staticmethod
-    def get_index(serie, string, contains=False, equals=False, as_boolean=False, reversed_boolean=False):
+    def get_index(serie, string, contains=False, equals=False, between=False, as_boolean=False, reversed_boolean=False):
         """
         #FIXME Rename? you get either an index array or boolean array
         :param serie: pd.Series
@@ -296,6 +296,13 @@ class SeriesHandler(BaseFileHandler):
         elif equals:
             # equals
             boolean = serie == string
+        elif between:
+            start_idx = serie[serie == string[0]].index[0]
+            if string[1]:
+                stop_idx = serie[serie == string[1]].index[0]
+            else:
+                stop_idx = 999999
+            boolean = (serie.index > start_idx) & (serie.index < stop_idx)
         else:
             # startswith
             boolean = serie.str.startswith(string)
@@ -316,13 +323,13 @@ class SeriesHandler(BaseFileHandler):
         :return: pd.Series
         """
         if isinstance(obj, pd.DataFrame):
-            s = pd.Series(obj.keys()[0])
+            s = pd.Series(obj.keys()[0])  # Not really necessary if you load file with argument pd.read_csv(..., header=None)
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
             return pd.Series(obj)
 
 
-class BaseReader(object):
+class BaseReader:
     """
     Base structure for data readers
     """
@@ -360,14 +367,14 @@ class BaseReader(object):
         """
         raise NotImplementedError
 
-    def setup_dataframe(self, serie):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :return:
         """
         raise NotImplementedError
 
-    def setup_dictionary(self, fid, data, keys):
+    def setup_dictionary(self, fid, data, keys=None):
         """
         :param keys:
         :param fid:
@@ -377,7 +384,7 @@ class BaseReader(object):
         raise NotImplementedError
 
 
-class UnitConverter(object):
+class UnitConverter:
     """
     Plan:
     - input ctd-standard-format unit (rawdata unit)
@@ -410,7 +417,6 @@ class UnitConverter(object):
 
         serie = serie.astype(float) * factor
         serie = utils.rounder(serie, decimals=decimals)
-
         return serie
 
     def get_conversion_factor(self, parameter):
@@ -435,14 +441,14 @@ class UnitConverter(object):
         new_name = self.mapper[serie.name].get('standard_parameter_name')
         serie.name = new_name or serie.name
 
-    @staticmethod
-    def rename_dataframe_columns(df):
+    def rename_dataframe_columns(self, df):
         """
         #TODO move to utils?
         :param df: pandas.DataFrame
         :return: Renames columns of dataframe based on the corresponding Series.name
         """
-        df.rename(columns={key: df[key].name for key in df.columns}, inplace=True)
+        mapper = {key: self.mapper[key].get('standard_parameter_name') for key in df.columns if key in self.mapper}
+        df.rename(columns=mapper, inplace=True)
 
     def append_conversion_comment(self):
         """
@@ -460,6 +466,7 @@ class CorrectionFile(dict):
     # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
     """
     def __init__(self, fid):
+        super().__init__()
         df = load_txt(file_path=fid)
         for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
             self.setdefault(key, {})
@@ -552,7 +559,7 @@ if __name__ == "__main__":
     co = {'key': {'a': {'corr': 0.2}}}
 
     dc = DeltaCorrection(corr_obj=co)
-    c._correct(df, 'key')
+    # c._correct(df, 'key')
 
     # df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
     # uc = UnitConverter(None, None)
@@ -562,3 +569,8 @@ if __name__ == "__main__":
     #
     # uc.rename_dataframe_columns(df=df)
     # print(df)
+
+class MetaHandler(SeriesHandler):
+    """
+    """
+

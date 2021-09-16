@@ -18,6 +18,7 @@ from bokeh.palettes import viridis
 from matplotlib import colors
 from matplotlib import cm
 import gsw
+from pyproj import CRS, transform
 
 
 def get_contour_arrays(x_min, x_max, y_min, y_max):
@@ -77,19 +78,13 @@ def convert_projection(lats, lons):
     :param lons:
     :return:
     """
-    #TODO MOVE! this exists somewhere else too..
-    import pyproj
-
-    # project_projection = pyproj.Proj("EPSG:4326")  # wgs84
-    # google_projection = pyproj.Proj("EPSG:3857")  # default google projection
-    project_projection = pyproj.Proj({'init': 'epsg:4326', 'no_defs': True}, preserve_flags=True)  # wgs84
-    google_projection = pyproj.Proj({'init': 'epsg:3857', 'no_defs': True}, preserve_flags=True)  # default google projection
-
-    x, y = pyproj.transform(project_projection, google_projection, lons, lats)
+    project_projection = CRS('EPSG:4326')
+    google_projection = CRS('EPSG:3857')
+    x, y = transform(project_projection, google_projection, lons, lats, always_xy=True)
     return x, y
 
 
-class ReadZipFile(object):
+class ReadZipFile:
     """
     """
     def __init__(self, zipfile_path, filename):
@@ -142,7 +137,7 @@ class ReadZipFile(object):
         :return: list, selected rows
         """
         file = self.archive.open(file_path)
-        row_list = [l.decode('cp1252') for l in file if not l.decode('cp1252').startswith(comment)]
+        row_list = [row_.decode('cp1252') for row_ in file if not row_.decode('cp1252').startswith(comment)]
 
         return row_list
 
@@ -158,10 +153,11 @@ class ReadZipFile(object):
                 return path
 
 
-class BaseAxes(object):
+class BaseAxes:
     """
     """
     def __init__(self):
+        super().__init__()
         self._xaxis = None
         self._yaxis = None
 
@@ -212,6 +208,7 @@ class ProfilePlot(BaseAxes):
     https://bokeh.pydata.org/en/latest/
     """
     def __init__(self, dataframe, parameters=None, tabs=None):
+        super().__init__()
         self.df = dataframe
         self.parameters = parameters
         self.tabs = tabs

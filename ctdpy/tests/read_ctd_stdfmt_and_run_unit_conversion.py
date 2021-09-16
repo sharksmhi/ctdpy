@@ -18,7 +18,7 @@ import time
 from pprint import pprint
 
 ###################        GET FILES        ####################
-base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\test_data\\ctd_std_fmt_expedition_april_2020'
+base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_NMK_SGUS\processed_data'
 
 files = generate_filepaths(base_dir,
                            endswith='.txt',                # Presumably CTD-standard format
@@ -45,16 +45,16 @@ converter = data_handlers.UnitConverter(s.settings.mapping_unit,
                                         s.settings.user)
 
 for data_key, item in datasets[0].items():
-    print(data_key)
+    # print(data_key)
     converter.update_meta(item['metadata'])
     unit_converted = False
     for parameter in converter.mapper:
         if parameter in item['data']:
             unit_converted = True
-            converter.convert_values(item['data'][parameter])
+            item['data'][parameter] = converter.convert_values(item['data'][parameter])
 
     if unit_converted:
-        converter.rename_dataframe_columns(df=item['data'])
+        converter.rename_dataframe_columns(item['data'])
         converter.append_conversion_comment()
 
 

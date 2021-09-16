@@ -29,7 +29,7 @@ def recursive_dict_update(d, u):
     # return d
 
 
-class Settings(object):
+class Settings:
     """
     """
     def __init__(self):
@@ -42,6 +42,7 @@ class Settings(object):
         self._check_local_paths()
         self._setup_mapping_parameter()
         self._setup_mapping_ship()
+        self._check_archive_folder_structure()
 
     def __setattr__(self, name, value):
         """
@@ -63,12 +64,26 @@ class Settings(object):
         :param new_path: str
         :return:
         """
-        if os.path.isdir(new_path):
-            self.settings_paths['export_path'] = new_path
-            print('new export path: %s' % self.settings_paths['export_path'])
-        else:
-            raise Warning('Could not change export path, the given path is not valid: %s \n '
-                          'using default export path' % new_path)
+        if new_path:
+            if os.path.isdir(new_path):
+                self.settings_paths['export_path'] = new_path
+                print('new export path: %s' % self.settings_paths['export_path'])
+            else:
+                try:
+                    os.makedirs(new_path)
+                    self.settings_paths['export_path'] = new_path
+                    print('new export path: %s' % self.settings_paths['export_path'])
+                except:
+                    raise Warning('Could not change export path, the given path is not valid: %s \n '
+                                  'using default export path' % new_path)
+
+    def _check_archive_folder_structure(self):
+        """
+        The "received_data" folder is an empty folder, and hence might need to be created
+        """
+        received_folder = os.path.join(self.settings_paths['archive_structure_path'], 'received_data')
+        if not os.path.exists(received_folder):
+            os.makedirs(received_folder)
 
     def _check_local_paths(self):
         """
@@ -99,7 +114,6 @@ class Settings(object):
         :return: Updates attributes of self
         """
         paths = self.get_filepaths_from_directory(etc_path)
-        # pprint(paths)
         settings = readers.YAMLreader().load_yaml(paths, return_config=True)
         self.set_attributes(self, **settings)
         subdirectories = self.get_subdirectories(etc_path)
@@ -111,8 +125,6 @@ class Settings(object):
             sub_settings = readers.YAMLreader().load_yaml(paths,
                                                           file_names_as_key=True,
                                                           return_config=True)
-            # print('sub_settings')
-            # pprint(sub_settings)
             self._check_for_paths(sub_settings)
             self._set_sub_object(subdir, sub_settings)
 

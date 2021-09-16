@@ -7,7 +7,7 @@ Created on 2019-11-04 10:37
 """
 """ Metadata reader
 """
-from ctdpy.core.utils import get_filename, thread_process
+from ctdpy.core.utils import get_filename, thread_process, eliminate_empty_rows
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.readers.xlsx_reader import load_excel
@@ -26,11 +26,11 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         :param filenames: list of file paths
         :return: Dictionary with DataFrames
         """
-        print('XLSXmeta')
+        print(self.__class__.__name__)
         data = {}
         reader = self.get_reader_instance()
         for file_path in filenames:
-            print('file_path', file_path)
+            # print('file_path', file_path)
             fid = get_filename(file_path)
             data[fid] = {}
             # print('before _read')
@@ -56,7 +56,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         :return: Updates data
         """
         for sheet_name, header_row in zip(file_specs['sheet_names'], file_specs['header_rows']):
-            print(sheet_name, header_row)
+            # print(sheet_name, header_row)
 
             # thread_process(self.load_func, file_path, sheet_name, header_row, data, reader)
             df = reader(
@@ -64,6 +64,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
                 sheet_name=sheet_name,
                 header_row=header_row,
             )
+            df = eliminate_empty_rows(df)
             data[sheet_name] = df.fillna('')
 
     @staticmethod
@@ -73,6 +74,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             sheet_name=sheet_name,
             header_row=header_row,
         )
+        df = eliminate_empty_rows(df)
         data[sheet_name] = df.fillna('')
 
     @staticmethod

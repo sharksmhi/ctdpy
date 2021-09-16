@@ -44,7 +44,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         #                                                            'pressure': df['PRES_CTD'].astype(np.float),
         #                                                            'gravity': df['PRES_CTD'].astype(np.float),
         #                                                            'density': df['DENS_CTD'].astype(np.float)})
-            # self.metadata_update.setdefault('DEPH': )
+        #     self.metadata_update.setdefault('DEPH': )
 
         timestamp_array = df[['SDATE', 'STIME']].apply(lambda x: utils.get_timestamp(' '.join(x)), axis=1)
         for ts_key in self.ts_map:
@@ -68,10 +68,13 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
             self.setup_dictionary(fid, data)
 
             serie = self.get_series_object(file_data)
-            hires_data = self.setup_dataframe(serie, None)  #, metadata)
-            metadata = self.get_metadata(serie, filename=fid,
-                                         sdate=hires_data['SDATE'][0],
-                                         stime=hires_data['STIME'][0])
+            hires_data = self.setup_dataframe(serie, metadata=None)  #, metadata)
+            metadata = self.get_metadata(
+                serie,
+                filename=fid,
+                sdate=hires_data['SDATE'][0],
+                stime=hires_data['STIME'][0],
+            )
 
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
@@ -86,7 +89,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
 
         return data
 
-    def get_metadata(self, serie, map_keys=True, filename=None):
+    def get_metadata(self, serie, map_keys=True, filename=None, sdate=None, stime=None):
         """
         :param serie: pd.Series
         :param map_keys: False or True
@@ -107,7 +110,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
                                                             len_col=len(data[fid][resolution].index))
             data[fid][resolution + '_all'] = in_data
 
-    def setup_dataframe(self, serie, metadata):
+    def setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :param metadata: used if needed for parameter calculations
@@ -123,11 +126,10 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
 
         return df
 
-    def setup_dictionary(self, fid, data):
+    def setup_dictionary(self, fid, data, keys=None):
         """
         :param fid: str, file name identifier
         :return: standard dictionary structure
         """
-        data[fid] = {'data': None,
-                     'lores_data': None,
-                     'metadata': None}
+        keys = keys or ['data', 'lores_data', 'metadata']
+        data[fid] = {key: None for key in keys}

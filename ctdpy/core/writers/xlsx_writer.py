@@ -7,7 +7,7 @@ Created on Thu Jul 19 13:38:35 2018
 import pandas as pd
 
 
-class XlsxWriter(object):
+class XlsxWriter:
     """ """
     def __init__(self, with_style=False, in_template=None):
         self.with_style = with_style

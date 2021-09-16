@@ -91,7 +91,7 @@ class SeaBirdUMSC(SeaBird):
 
         return meta_dict
 
-    def get_meta_dict(self, series, keys=[], identifier='', separator=''):
+    def get_meta_dict(self, series, keys=None, identifier='', separator=''):
         """
         :param series: pd.Series, contains metadata
         :param keys: List of keys to search for
@@ -99,6 +99,7 @@ class SeaBirdUMSC(SeaBird):
         :param separator: str
         :return: Dictionary
         """
+        keys = keys or []
         meta_dict = {}
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
         if any(keys):
@@ -117,7 +118,7 @@ class SeaBirdUMSC(SeaBird):
             return series.loc[boolean_startswith]
         return meta_dict
 
-    def _setup_dataframe(self, serie, metadata):
+    def _setup_dataframe(self, serie, metadata=None):
         """
         :param serie:
         :param metadata:

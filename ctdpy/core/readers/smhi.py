@@ -90,7 +90,7 @@ class SeaBirdSMHI(SeaBird):
 
         return meta_dict
 
-    def _setup_dataframe(self, serie, metadata):
+    def _setup_dataframe(self, serie, metadata=None):
         """
         :param serie: pd.Series
         :return: pd.DataFrame
@@ -164,7 +164,7 @@ class MVPSMHI(SeaBird):
 
         return meta_dict
 
-    def _setup_dataframe(self, serie, metadata):
+    def _setup_dataframe(self, serie, metadata=None):
         """
         :param serie: pd.Series
         :return: pd.DataFrame

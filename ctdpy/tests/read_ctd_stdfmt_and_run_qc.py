@@ -16,7 +16,7 @@ from pprint import pprint
 
 
 ###################        GET FILES        ####################
-base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\test_data\\ctd_std_fmt_expedition_april_2020'
+base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_NMK_SGUS\processed_data'
 
 files = generate_filepaths(base_dir,
                            endswith='.txt',                # Presumably CTD-standard format

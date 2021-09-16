@@ -38,9 +38,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             meta = self.get_metadata_sets(datasets)
             data = self.get_datasets(datasets)
             self.setup_metadata_information(meta)
-    
+
             for dataset in data:
                 for fid, item in dataset.items():
+                    # print(item['metadata'])
                     self.sensorinfo_boolean = item['metadata'].get('INSTRUMENT_SERIE')
                     instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
                                                                         separator=self.writer['separator_metadata'],
@@ -71,11 +72,16 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         :return: Text file with "delivery_note"
         """
         serie = pd.Series(self.writer['standard_delivery_note_header'])
-        info = pd.Series([self.delivery_note[self.writer['mapper_delivery_note'][key]]
-                          for key in serie])
+        info = []
+        for key in serie:
+            info.append(self.delivery_note.get(self.writer['mapper_delivery_note'].get(key), ''))
+        info = pd.Series(info)
 
-        serie = serie.str.cat(info, join=None,
-                              sep=self.writer['separator_delivery_note'])
+        serie = serie.str.cat(
+            info,
+            join=None,
+            sep=self.writer['separator_delivery_note'],
+        )
         self._write('delivery_note', serie)
 
     def _write_metadata(self):
@@ -222,7 +228,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         meta = self.extract_metadata_dataframe(filename)
         # print('meta', meta)
         self.reset_index(meta)
-
         meta = meta.iloc[0].to_list()
         serie = pd.Series(self.df_metadata.columns)
 
