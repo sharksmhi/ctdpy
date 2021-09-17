@@ -52,5 +52,3 @@ from ctdpy import core
 #
 #
 # append_python_paths()
-
-

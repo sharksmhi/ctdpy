@@ -9,7 +9,6 @@ from ctdpy.core import utils
 
 class Archive:
     """
-
     """
     # TODO Fix archive name. Either copy archive structure from Phyche
     #  (eg. SHARK_Profile_BAS_UMSC_2018, SHARK_Profile_GAV_UMSC_2018....)
@@ -17,85 +16,58 @@ class Archive:
     #  or just SHARK_Profile_UMSC_2018
 
     def __init__(self, settings, data_path=''):
+        """Store the settings object."""
         self.settings = settings
         self.data_path = data_path
-        # self.archive_structure = self._get_standard_archive_structure()
 
     def write_archive_package(self, data_path):
-        """
-        :param path: folder with data files
-        :return:
-        """
+        """Copy archive_package and write data to that archive."""
         self._copy_standard_archive_structure()
         self._copy_data_files_to_archive_path(data_path)
 
     def _copy_data_files_to_archive_path(self, data_path):
-        """
-        :param data_path: Path to data files
-        :return: Copies datafiles to archive_data_path
-        """
+        """Copies data files to archive_data_path."""
         archive_data_path = self._get_data_path_in_archive()
         utils.copytree(data_path, archive_data_path)
 
     def _get_data_path_in_archive(self):
-        """
-        :return:
-        """
+        """Get data path."""
         return '/'.join([self.archive_path, 'processed_data', ''])
 
     def _get_received_data_path_in_archive(self):
-        """
-        :return:
-        """
+        """Get data path."""
         return '/'.join([self.archive_path, 'received_data', ''])
 
     def _copy_standard_archive_structure(self):
-        """
-        :return:
-        """
+        """Copy standard archive structure (standard according to SHARK)."""
         source_path = self._get_standard_archive_structure()
         self.archive_path = self._get_destination_path()
         utils.copytree(source_path, self.archive_path)
 
     def load_standard_archive_files(self):
-        """
-        :return:
-        """
+        """NotImplemented."""
         raise NotImplementedError
-        # generator = utils.generate_strings_based_on_suffix(self.archive_structure, '.txt')
-        # files = [filename for filename in generator]
 
     def _get_destination_path(self, archive_name='archive_'):
-        """
-        :return: Path to new archive
-        """
+        """Path to new archive."""
         folder_time_stamp = utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
         return ''.join([self.settings.settings_paths.get('export_path'),
                         archive_name, folder_time_stamp])
 
     def _get_standard_archive_structure(self):
-        """
-        :return: archive_structure_path
-        """
+        """ Get archive structure path."""
         return self.settings.settings_paths.get('archive_structure_path')
 
     def import_received_data(self, file_paths):
-        """
-        :param file_paths:
-        :return:
-        """
+        """Copy original data files to received_data - folder."""
         target_path = self._get_received_data_path_in_archive()
         utils.copytree(None, target_path, file_paths=file_paths)
 
     def _load_zipwriter_instance(self):
-        """
-        :return: Writer
-        """
+        """Get zip writer."""
         writer_instance = self.settings.writers['zip']['writer'].get('writer')
         return writer_instance()
 
     def zip_archive(self):
-        """
-        :return: Zipped archive ready for sharkweb to load
-        """
+        """Zipped archive ready for sharkweb to load."""
         zipzy = self._load_zipwriter_instance()
