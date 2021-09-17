@@ -14,29 +14,28 @@ warnings.filterwarnings("ignore", 'This pattern has match groups')
 
 
 class DataFrameHandler(BaseFileHandler):
-    """
-    #TODO perhaps we should move staticmethods (.get_"datetimes", _"position" to utils?
-    """    
+    """Handler for dataframes."""
+
+    # TODO perhaps we should move staticmethods (.get_"datetimes", _"position" to utils?
+
     def __init__(self, settings):
+        """Store the settings object."""
         super().__init__(settings)
         self.settings = settings
 
     def map_column_names_of_dataframe(self, df):
-        """
-        :param df: pd.DataFrame
-        :return: pd.DataFrame
-        """
+        """Map column names of the given dataframe."""
         map_dict = self.settings.pmap.get_parameter_mapping(df.columns.tolist())
-
         return self._rename_columns_of_dataframe(df, map_dict)
 
     @staticmethod
     def _rename_columns_of_dataframe(df, mapping_dict):
-        """
-        :param df: pd.DataFrame
-        Rename dataframe columns
-        :param mapping_dict: Dictionary with old names as keys and new names as values
-        :return: pd.DataFrame
+        """Return dataframe with renamed columns.
+
+        Args:
+            df: pandas.DataFrame
+            mapping_dict: dictionary with old names as keys and new names as values.
+
         """
         return df.rename(index=str, columns=mapping_dict)
 
@@ -534,43 +533,9 @@ class DeltaCorrection:
                 # print(para, df[para])
 
     def update_meta(self, meta_serie):
-        """
-        :param meta_serie:
-        :return:
-        """
+        """Update meta serie."""
         self.meta = meta_serie
 
 
-if __name__ == "__main__":
-    # cf = CorrectionFile('...\\2018\\BAS_DEEP\\arbetsmapp\\data_corr.txt')
-    # cf.df['PRES_CTD'] = ''
-    # cf.df['SALT_CTD'] = ''
-    #
-    # for i, v in enumerate(cf.df['korr']):
-    #     if 's' in v and 'p' in v:
-    #         cf.df['SALT_CTD'][i] = float(v[v.index('s') + 1: v.index('p')])
-    #         cf.df['PRES_CTD'][i] = float(v[v.index('p') + 1:])
-    #     elif v.startswith('s'):
-    #         cf.df['SALT_CTD'][i] = float(v[1:])
-    #     elif v.startswith('p'):
-    #         cf.df['PRES_CTD'][i] = float(v[1:])
-
-    df = pd.DataFrame({'a': ['1.32', '1.1', '1.4']})
-    co = {'key': {'a': {'corr': 0.2}}}
-
-    dc = DeltaCorrection(corr_obj=co)
-    # c._correct(df, 'key')
-
-    # df = pd.DataFrame({'a': [1, 2, 3, 4, 5]})
-    # uc = UnitConverter(None, None)
-    #
-    # s = df['a']
-    # s.name = 'hej'
-    #
-    # uc.rename_dataframe_columns(df=df)
-    # print(df)
-
 class MetaHandler(SeriesHandler):
-    """
-    """
-
+    """We intend to write some more code here. Right?"""

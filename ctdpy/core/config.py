@@ -11,6 +11,7 @@ from ctdpy.core import readers, mapping
 
 def recursive_dict_update(d, u):
     """Recursive dictionary update.
+
     Copied from:
         http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
         via satpy
@@ -59,19 +60,19 @@ class Settings:
                     os.makedirs(new_path)
                     self.settings_paths['export_path'] = new_path
                     print('new export path: %s' % self.settings_paths['export_path'])
-                except:
+                except BaseException:
                     raise Warning('Could not change export path, the given path is not valid: %s \n '
                                   'using default export path' % new_path)
 
     def _check_archive_folder_structure(self):
-        """The "received_data" folder is an empty folder, and hence might need to be created."""
+        """Create the "received_data" folder. It is an empty folder, and hence might need to be created."""
         received_folder = os.path.join(self.settings_paths['archive_structure_path'], 'received_data')
         if not os.path.exists(received_folder):
             os.makedirs(received_folder)
 
     def _check_local_paths(self):
         """Check paths in settings_paths."""
-        #FIXME Näh, så här kan vi inte ha det..
+        # FIXME Näh, så här kan vi inte ha det..
 
         for path in self.settings_paths:
             if not os.path.exists(self.settings_paths.get(path)) and '.' not in self.settings_paths.get(path):
@@ -104,7 +105,6 @@ class Settings:
         for subdir in subdirectories:
             subdir_path = '/'.join([etc_path, subdir, ''])
             paths = self.get_filepaths_from_directory(subdir_path)
-            # print('paths', paths)
             sub_settings = readers.YAMLreader().load_yaml(paths,
                                                           file_names_as_key=True,
                                                           return_config=True)
@@ -149,7 +149,7 @@ class Settings:
 
         With the possibility to add attributes to an object which is not 'self'.
         """
-        #TODO Move to utils?
+        # TODO Move to utils?
 
         for key, value in kwargs.items():
             setattr(obj, key, value)
@@ -159,7 +159,7 @@ class Settings:
         """Return a generator for file paths."""
         # TODO Move to utils?
 
-        for path, subdir, fids in os.walk(directory):
+        for path, _, fids in os.walk(directory):
             for f in fids:
                 if pattern in f:
                     yield os.path.abspath(os.path.join(path, f))
@@ -172,6 +172,6 @@ class Settings:
 
     @staticmethod
     def get_filepaths_from_directory(directory):
-        """Return list of files in directory (not sub directories)"""
+        """Return list of files in directory (not sub directories)."""
         return [''.join([directory, fid]) for fid in os.listdir(directory)
                 if not os.path.isdir(directory+fid)]
