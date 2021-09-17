@@ -8,8 +8,7 @@ from ctdpy.core import utils
 
 
 class Archive:
-    """
-    """
+    """Handler for standard SHARK archive."""
     # TODO Fix archive name. Either copy archive structure from Phyche
     #  (eg. SHARK_Profile_BAS_UMSC_2018, SHARK_Profile_GAV_UMSC_2018....)
     #  or simply merge all PROJs as a complete delivery package ? SHARK_Profile_BAS_GAV_RNE_PBX_XXX_UMSC_2018
@@ -31,11 +30,11 @@ class Archive:
         utils.copytree(data_path, archive_data_path)
 
     def _get_data_path_in_archive(self):
-        """Get data path."""
+        """Return joined path of archive and processed_data-folder."""
         return '/'.join([self.archive_path, 'processed_data', ''])
 
     def _get_received_data_path_in_archive(self):
-        """Get data path."""
+        """Return joined path of archive and received_data-folder."""
         return '/'.join([self.archive_path, 'received_data', ''])
 
     def _copy_standard_archive_structure(self):
@@ -55,7 +54,7 @@ class Archive:
                         archive_name, folder_time_stamp])
 
     def _get_standard_archive_structure(self):
-        """ Get archive structure path."""
+        """Get archive structure path."""
         return self.settings.settings_paths.get('archive_structure_path')
 
     def import_received_data(self, file_paths):
@@ -67,7 +66,3 @@ class Archive:
         """Get zip writer."""
         writer_instance = self.settings.writers['zip']['writer'].get('writer')
         return writer_instance()
-
-    def zip_archive(self):
-        """Zipped archive ready for sharkweb to load."""
-        zipzy = self._load_zipwriter_instance()

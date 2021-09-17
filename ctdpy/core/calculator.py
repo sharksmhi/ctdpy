@@ -7,13 +7,12 @@ Created on 2019-11-06 08:27
 """
 import gsw
 import numpy as np
-
 from ctdpy.core import utils
 
 
 class Depth:
-    """
-    """
+    """Handler for the depth parameter. Consider density, pressure and latitude when calculating true depth."""
+
     def __init__(self):
         self._true_depth = None
         self._latitude = None
@@ -22,9 +21,7 @@ class Depth:
         self._pressure = None
 
     def calculate_true_depth(self):
-        """
-        :return:
-        """
+        """Calculate true depth."""
         water_package_height = []
         depth_list = []
 
@@ -53,29 +50,29 @@ class Depth:
         self.true_depth = list(map(str, depth_list))
 
     def set_attributes(self, attr_dictionary=None):
-        """
-        :param attr_dictionary:
-        :return:
-        """
-        if attr_dictionary is None:
-            attr_dictionary = {}
+        """Set class attribute."""
+        attr_dictionary = attr_dictionary or {}
         for attr, value in attr_dictionary.items():
             setattr(self, attr, value)
 
     @property
     def true_depth(self):
+        """Return true depth."""
         return self._true_depth
 
     @true_depth.setter
     def true_depth(self, depth_list):
+        """Set the true_depth property."""
         self._true_depth = depth_list
 
     @property
     def density(self):
+        """Return density."""
         return self._density
 
     @density.setter
     def density(self, density_series):
+        """Set the density property."""
         if density_series[0] < 100:
             # input equals Sigma-T (density - 1000)
             self._density = density_series + 1000
@@ -84,10 +81,12 @@ class Depth:
 
     @property
     def pressure(self):
+        """Return pressure."""
         return self._pressure
 
     @pressure.setter
     def pressure(self, pressure_series):
+        """Set the pressure property."""
         if pressure_series[1] < 1000:
             # value for index 0 might be 0 dbar, therefor index 1
             # input unit equals dbar
@@ -98,42 +97,41 @@ class Depth:
 
     @property
     def latitude(self):
+        """Return latitude."""
         return self._latitude
 
     @latitude.setter
     def latitude(self, latitude_value):
+        """Set the latitude property."""
         if isinstance(latitude_value, str):
             latitude_value = latitude_value.replace('N', '').replace(' ', '')
         self._latitude = utils.decmin_to_decdeg(latitude_value)
 
     @property
     def gravity(self):
+        """Return gravity."""
         return self._gravity
 
     @gravity.setter
     def gravity(self, pressure_series):
-        """
-        :param pressure_series: pressure with unit [dbar]
-        :return:
+        """Set the gravity property based on the gsw.grav function.
+
+        Args:
+            pressure_series: pressure with unit [dbar]
         """
         self._gravity = gsw.grav(self.latitude, pressure_series)
 
 
 class Calculator:
-    """
-    """
+    """Calculate true depth."""
+
     def update_dataframe(self, new_df):
-        """
-        :param new_df:
-        :return:
-        """
+        """Reset dataframe."""
         self.df = new_df
 
     @staticmethod
     def get_true_depth(attribute_dictionary=None):
-        """
-        :return:
-        """
+        """Return true depth."""
         if attribute_dictionary is None:
             attribute_dictionary = {}
         depth_calculator = Depth()
