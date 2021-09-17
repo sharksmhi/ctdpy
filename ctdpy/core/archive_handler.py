@@ -9,6 +9,7 @@ from ctdpy.core import utils
 
 class Archive:
     """Handler for standard SHARK archive."""
+
     # TODO Fix archive name. Either copy archive structure from Phyche
     #  (eg. SHARK_Profile_BAS_UMSC_2018, SHARK_Profile_GAV_UMSC_2018....)
     #  or simply merge all PROJs as a complete delivery package ? SHARK_Profile_BAS_GAV_RNE_PBX_XXX_UMSC_2018
@@ -25,7 +26,7 @@ class Archive:
         self._copy_data_files_to_archive_path(data_path)
 
     def _copy_data_files_to_archive_path(self, data_path):
-        """Copies data files to archive_data_path."""
+        """Copy data files to archive_data_path."""
         archive_data_path = self._get_data_path_in_archive()
         utils.copytree(data_path, archive_data_path)
 

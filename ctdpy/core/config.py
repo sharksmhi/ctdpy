@@ -4,14 +4,13 @@ Created on Thu Jul 05 14:23:22 2018
 
 @author: a002028
 """
-
 import os
 from collections import Mapping
 from ctdpy.core import readers, mapping
 
 
 def recursive_dict_update(d, u):
-    """ Recursive dictionary update using
+    """Recursive dictionary update.
     Copied from:
         http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
         via satpy
@@ -23,21 +22,16 @@ def recursive_dict_update(d, u):
         else:
             d.setdefault(k, u[k])
     return d
-    #         d[k] = r
-    #     else:
-    #         d[k] = u[k]
-    # return d
 
 
 class Settings:
-    """
-    """
+    """Settings class for ctdpy."""
+
     def __init__(self):
+        """Load all static files."""
         self.dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\core', '')
-        # self.dir_path = get_package_path()
         etc_path = '\\'.join([self.dir_path, 'core', 'etc', ''])
         self.user = os.path.expanduser('~').split('\\')[-1]
-        # print('etc_path', etc_path)
         self._load_settings(etc_path)
         self._check_local_paths()
         self._setup_mapping_parameter()
@@ -45,12 +39,7 @@ class Settings:
         self._check_archive_folder_structure()
 
     def __setattr__(self, name, value):
-        """
-        Defines the setattr for object self
-        :param name: str
-        :param value: any kind
-        :return:
-        """
+        """Define the setattr for self."""
         if name == 'dir_path':
             pass
         elif isinstance(value, str) and 'path' in name:
@@ -60,10 +49,7 @@ class Settings:
         super().__setattr__(name, value)
 
     def update_export_path(self, new_path):
-        """
-        :param new_path: str
-        :return:
-        """
+        """Update path to export directory."""
         if new_path:
             if os.path.isdir(new_path):
                 self.settings_paths['export_path'] = new_path
@@ -78,29 +64,25 @@ class Settings:
                                   'using default export path' % new_path)
 
     def _check_archive_folder_structure(self):
-        """
-        The "received_data" folder is an empty folder, and hence might need to be created
-        """
+        """The "received_data" folder is an empty folder, and hence might need to be created."""
         received_folder = os.path.join(self.settings_paths['archive_structure_path'], 'received_data')
         if not os.path.exists(received_folder):
             os.makedirs(received_folder)
 
     def _check_local_paths(self):
-        """
-        Checks paths in settings_paths..
-        :return:
-        """
+        """Check paths in settings_paths."""
         #FIXME Näh, så här kan vi inte ha det..
+
         for path in self.settings_paths:
             if not os.path.exists(self.settings_paths.get(path)) and '.' not in self.settings_paths.get(path):
                 os.makedirs(self.settings_paths.get(path))
 
     def _check_for_paths(self, dictionary):
-        """
-        Since default path settings are set to ctdpy base folder
-        we need to add that base folder to all paths
-        :param dictionary: Dictionary with paths as values and keys as items..
-        :return: Updates dictionary with local path (self.dir_path)
+        """Save pathways from dictionary.
+
+        Since default path settings are set to ctdpy base folder we need to add that base folder to all paths
+        Args:
+             dictionary: Dictionary with paths as values and keys as items.
         """
         for item, value in dictionary.items():
             if isinstance(value, dict):
@@ -109,9 +91,10 @@ class Settings:
                 dictionary[item] = ''.join([self.dir_path, value])
 
     def _load_settings(self, etc_path):
-        """
-        :param etc_path: str, local path to settings
-        :return: Updates attributes of self
+        """Load all settings.
+
+        Args:
+            etc_path: local path to settings
         """
         paths = self.get_filepaths_from_directory(etc_path)
         settings = readers.YAMLreader().load_yaml(paths, return_config=True)
@@ -129,49 +112,32 @@ class Settings:
             self._set_sub_object(subdir, sub_settings)
 
     def set_reader(self, reader):
-        """
-        :param reader: str
-        :return: Includes reader kwargs as attributes to self
-        """
+        """Set attributes for the given reader."""
         self.set_attributes(self, **self.readers[reader])
 
     def set_writer(self, writer=None):
-        """
-        :param writer: str
-        :return: Includes writer kwargs as attributes to self
-        """
+        """Set attributes for the given writer."""
         self.set_attributes(self, **self.writers.get(writer))
 
     def _set_sub_object(self, attr, value):
-        """
-        :param attr: str, attribute
-        :param value: any kind
-        :return: Updates attributes of self
-        """
+        """Set attributes."""
         setattr(self, attr, value)
 
-    # @classmethod
     def _setup_mapping_parameter(self):
-        """
-        #FIXME god damn it! where does self.mapping_parameter come from???.. in .set_attributes()
-        Creates parameter mapping object within self
-        :return:
-        """
+        """Create parameter mapping object."""
+        # FIXME god damn it!:) where does self.mapping_parameter come from???.. in .set_attributes()
         self.pmap = mapping.ParameterMapping()
         self.pmap.add_entries(**self.mapping_parameter)
 
     def _setup_mapping_ship(self):
-        """
+        """Create ship mapping object within self.
+
         cntry_head = u'land'
         ship_head = u'SMHI-kod'
         name_head = u'namn'
         to_key = u'kodlista'
-        Creates ship mapping object within self
-        :return:
         """
-
         self.smap = mapping.ShipMapping()
-        # self.smap.load_mapping_settings()
         self.smap.add_entries_from_keylist(self.mapping_ship,
                                            from_combo_keys=[u'land', u'SMHI-kod'],
                                            from_synonyms=[u'namn'],
@@ -179,24 +145,20 @@ class Settings:
 
     @staticmethod
     def set_attributes(obj, **kwargs):
+        """Set attributes.
+
+        With the possibility to add attributes to an object which is not 'self'.
         """
         #TODO Move to utils?
-        With the possibility to add attributes to an object which is not 'self'
-        :param obj: object
-        :param kwargs: Dictionary
-        :return: sets attributes to object
-        """
+
         for key, value in kwargs.items():
             setattr(obj, key, value)
 
     @staticmethod
     def generate_filepaths(directory, pattern=''):
-        """
-        #TODO Move to utils?
-        :param directory: str, directory path
-        :param pattern: str
-        :return: generator
-        """
+        """Return a generator for file paths."""
+        # TODO Move to utils?
+
         for path, subdir, fids in os.walk(directory):
             for f in fids:
                 if pattern in f:
@@ -204,18 +166,12 @@ class Settings:
 
     @staticmethod
     def get_subdirectories(directory):
-        """
-        :param directory: str, directory path
-        :return: list of existing directories (not files)
-        """
+        """Return list of existing directories (not files)."""
         return [subdir for subdir in os.listdir(directory)
                 if os.path.isdir(os.path.join(directory, subdir))]
 
     @staticmethod
     def get_filepaths_from_directory(directory):
-        """
-        :param directory: str, directory path
-        :return: list of files in directory (not sub directories)
-        """
+        """Return list of files in directory (not sub directories)"""
         return [''.join([directory, fid]) for fid in os.listdir(directory)
                 if not os.path.isdir(directory+fid)]

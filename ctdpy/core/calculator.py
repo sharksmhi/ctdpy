@@ -14,6 +14,7 @@ class Depth:
     """Handler for the depth parameter. Consider density, pressure and latitude when calculating true depth."""
 
     def __init__(self):
+        """Set default values to class properties."""
         self._true_depth = None
         self._latitude = None
         self._density = None
