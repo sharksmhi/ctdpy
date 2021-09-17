@@ -22,4 +22,4 @@ jobs:
           pip install -e .
       - name: Run linting
         run: |
-          flake8 ctdpy/
+          flake8 ctdpy/ --ignore D400
