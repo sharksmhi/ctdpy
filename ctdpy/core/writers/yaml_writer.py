@@ -20,11 +20,11 @@ class YAMLwriter(dict):
 
     def _check_format(self, data):
         """Check format of data."""
-        if isinstance(out_file, dict):
-            return out_file
-        elif isinstance(out_file, pd.DataFrame):
-            return out_file.to_dict()
-        elif isinstance(out_file, np.ndarray):
+        if isinstance(data, dict):
+            return data
+        elif isinstance(data, pd.DataFrame):
+            return data.to_dict()
+        elif isinstance(data, np.ndarray):
             raise NotImplementedError('Array to dictionary?')
             # FIXME possible in-format?
         else:

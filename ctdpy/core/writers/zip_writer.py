@@ -19,7 +19,7 @@ class ZipWriter:
         """Write to zip."""
         def append_sub_directory(folder_name):
             root_len = len(dataset_name)
-            for root, dirs, files in os.walk(dataset_name + folder_name):
+            for root, _, files in os.walk(dataset_name + folder_name):
                 for filename in files:
                     filenamepath = ''.join([root, '/', filename])
                     ziparchive.appendFile(filenamepath, filenamepath[root_len:])
@@ -43,8 +43,8 @@ class ZipWriter:
 
 
 class ZipArchive:
-    """
-    """
+    """ZipArchive handler."""
+
     def __init__(self, zip_file_name, zip_dir_path=None):
         """Initialize and check format of zip-path."""
         if zip_dir_path:

@@ -63,7 +63,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                                                            instrument_metadata,
                                                            data_series)
                     self._write(fid, data_series)
-    
+
             self._write_delivery_note()
             self._write_metadata()
             self._write_sensorinfo()
@@ -112,7 +112,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         prefix = self.writer.get('filename')
         suffix = self.writer.get('extension_filename')
 
-        new_column = self.df_metadata[['SDATE', 'SHIPC', 'SERNO']].apply(lambda x: prefix + '_'.join(x) + suffix, axis=1)
+        new_column = self.df_metadata[['SDATE', 'SHIPC', 'SERNO']].apply(
+            lambda x: prefix + '_'.join(x) + suffix,
+            axis=1,
+        )
         new_column = new_column.str.replace('-', '')
         self.df_metadata.insert(self.df_metadata.columns.get_loc('FILE_NAME') + 1,
                                 'FILE_NAME_DATABASE', new_column)
@@ -150,16 +153,19 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         self._add_new_information_to_metadata()
 
     def _get_template_format(self):
-        """Standard format of template output."""
+        """Get standard format of template output."""
         # TODO adjust reader, get format from tamplate ('Förklaring').. ö..
-        return pd.Series([''.join([self.writer['prefix_format'], '=', self.delivery_note['DTYPE']])])
+        return pd.Series([''.join([self.writer['prefix_format'],
+                                   '=', self.delivery_note['DTYPE']])])
 
     def _get_delimiters(self):
         """Return delimiters of data and meta."""
         # FIXME Redo and delete hardcoded parts.. Get better solution than '\ t'.replace(' ','') for tabb-sign
         # FIXME self.writer['separator_data']])}
-        return {'meta': pd.Series([''.join([self.writer['prefix_metadata_delimiter'], '=', self.writer['separator_metadata']])]),
-                'data': pd.Series([''.join([self.writer['prefix_data_delimiter'], '=', '\ t'.replace(' ', '')])])}
+        return {'meta': pd.Series([''.join([self.writer['prefix_metadata_delimiter'],
+                                            '=', self.writer['separator_metadata']])]),
+                'data': pd.Series([''.join([self.writer['prefix_data_delimiter'],
+                                            '=', '\ t'.replace(' ', '')])])}
 
     def _get_delivery_note(self, delivery_info):
         """Return dictionary with information taken from the delivery_note ("Förklarings-flik")"""
@@ -238,7 +244,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         for inst_serno in self.df_sensorinfo['INSTRUMENT_SERIE'].unique():
             out_info[inst_serno] = [pd.Series(self.df_sensorinfo.columns).str.cat(sep=separator)]
 
-        for index, row in self.df_sensorinfo.iterrows():
+        for _, row in self.df_sensorinfo.iterrows():
             out_info[row['INSTRUMENT_SERIE']].append(row.str.cat(sep=separator))
 
         for inst_serno in out_info.keys():
@@ -254,7 +260,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         # TODO is it ok that the information sheet is assumed to be a single column?
         out_info = [pd.Series(info.columns).str.cat(sep=separator)]
-        for index, row in info.iterrows():
+        for _, row in info.iterrows():
             out_info.append(row.str.cat(sep=separator))
 
         out_info = self.get_series_object(out_info)
@@ -351,13 +357,13 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         Args:
             qc0 (bool): True / False. If flag "QC-0" should be included.
         """
-        #TODO    qc0.. if QC-0 has been performed we have a True value
+        # TODO qc0.. if QC-0 has been performed we have a True value
         outlist = []
         for param in self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values:
             outlist.append(param)
             if qc0:
-                outlist.append('Q0_'+param)
-            outlist.append('Q_'+param)
+                outlist.append('Q0_' + param)
+            outlist.append('Q_' + param)
         return outlist
 
     def _get_writer_settings(self):
