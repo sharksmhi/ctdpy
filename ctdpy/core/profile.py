@@ -8,7 +8,7 @@ import numpy as np
 
 
 class Profile:
-    """ Handles one profile at a time."""
+    """Handles one profile at a time."""
 
     def __init__(self, data=None):
         """Initialize and store data."""
@@ -24,13 +24,13 @@ class Profile:
         idx = self._get_index_array(key_depth, discrete_depths)
         return self.data.iloc[idx, :]
 
-    def _get_index_array(self, key, depths):    
+    def _get_index_array(self, key, depths):
         """Extract indices for discrete depth."""
         hires_dep = self.data[key].values.astype(float)
         qf_pres = 'Q_PRES_CTD'
         if qf_pres in self.data:
             hires_dep[self.data[qf_pres] == 'B'] = -999
-        idx = [(np.abs(hires_dep-dep)).argmin() for dep in depths if dep <= hires_dep.max()]
+        idx = [(np.abs(hires_dep - dep)).argmin() for dep in depths if dep <= hires_dep.max()]
         idx = self._append_maximum_depth_index(idx, hires_dep)
         return sorted(set(idx))
 

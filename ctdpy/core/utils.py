@@ -12,7 +12,7 @@ from collections import Mapping
 from fnmatch import fnmatch
 from datetime import datetime
 import shutil
-from trollsift.parser import globify, parse
+from trollsift.parser import globify
 import inspect
 from threading import Thread
 
@@ -88,7 +88,7 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
         # Allready in decdeg
         return pos
 
-    output = np.floor(pos/100.) + (pos % 100)/60.
+    output = np.floor(pos / 100.) + (pos % 100) / 60.
     output = "%.5f" % output
     if string_type:
         return output
@@ -97,6 +97,7 @@ def decmin_to_decdeg(pos, string_type=True, decimals=4):
 
 
 def eliminate_empty_rows(df):
+    """Return dataframe without empty rows."""
     return df.loc[df.apply(any, axis=1), :].reset_index(drop=True)
 
 
@@ -105,8 +106,8 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
     """Generate file paths."""
     pattern_list = pattern_list or []
     not_pattern_list = not_pattern_list or []
-    directory = str(directory) # MW: To also allow directory to be of type pathlib.Path
-    for path, subdir, fids in os.walk(directory):
+    directory = str(directory)  # MW: To also allow directory to be of type pathlib.Path
+    for path, _, fids in os.walk(directory):
         if only_from_dir:
             if path != directory:
                 continue
@@ -183,15 +184,15 @@ def get_file_list_based_on_suffix(file_list, suffix):
     return match_list
 
 
-def get_file_list_match(file_list, match_string): 
+def get_file_list_match(file_list, match_string):
     """Get filenames containing the given match_string."""
     match_list = []
-    
+
     for fid in file_list:
         fid = str(fid)  # MW: To also allow fid to be of type pathlib.Path
         if fnmatch(fid, match_string):
             match_list.append(fid)
-            
+
     return match_list
 
 
@@ -211,7 +212,7 @@ def get_format_from_datetime_obj(x, fmt):
     """Return str from datetime object according to the given format."""
     try:
         return x.strftime(fmt)
-    except:
+    except Exception:
         return ''
 
 
@@ -274,7 +275,7 @@ def match_filenames(filenames, pattern):
     """Get the filenames matching *pattern*."""
     matching = []
     for filename in filenames:
-        filename = str(filename) # MW: To also allow filename to be of type pathlib.Path
+        filename = str(filename)  # MW: To also allow filename to be of type pathlib.Path
         if '~$' in filename:
             # memory prefix when a file is open
             continue
@@ -289,13 +290,13 @@ def match_filenames(filenames, pattern):
 
 
 def milliseconds(ts):
+    """Get milliseconds."""
     return ts.strftime('%S.%f')[:-3]
 
 
 def is_sequence(arg):
-    """Checks if an object is iterable (you can loop over it) and not a string."""
-    return (not hasattr(arg, "strip") and
-            hasattr(arg, "__iter__"))
+    """Return if an object is iterable (you can loop over it) and not a string."""
+    return (not hasattr(arg, "strip") and hasattr(arg, "__iter__"))
 
 
 def recursive_dict_update(d, u):
@@ -316,27 +317,32 @@ def recursive_dict_update(d, u):
 
 def round_value(value, nr_decimals=3):
     """Calculate rounded value."""
-    return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' %nr_decimals % 1),
-                       rounding=ROUND_HALF_UP))
+    return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' % nr_decimals % 1),
+                                            rounding=ROUND_HALF_UP))
 
 
 def f_string_1(value):
+    """Round value with 1 decimals."""
     return f'{value:.1f}'
 
 
 def f_string_2(value):
+    """Round value with 2 decimals."""
     return f'{value:.2f}'
 
 
 def f_string_3(value):
+    """Round value with 3 decimals."""
     return f'{value:.3f}'
 
 
 def f_string_4(value):
+    """Round value with 4 decimals."""
     return f'{value:.4f}'
 
 
 def rounder(values, decimals=3):
+    """Round the given values with number of decimals."""
     if decimals == 3:
         return np.vectorize(f_string_3)(values)
     elif decimals == 2:

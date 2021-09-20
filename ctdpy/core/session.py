@@ -10,8 +10,6 @@ from ctdpy.core.profile import Profile
 from ctdpy.core.archive_handler import Archive
 from ctdpy.core.utils import (
     get_file_list_based_on_suffix,
-    generate_filepaths,
-    get_reversed_dictionary,
     match_filenames,
 )
 
@@ -37,6 +35,7 @@ class Session:
         # Datasets are stored in a list of 2 (0: data, 1: metadata). For this example we only have data, no metadata.
         s.save_data(datasets[0], writer='metadata_template')
     """
+
     def __init__(self, filepaths=None, reader=None, export_path=None):
         """Initialize settings object, create reader instance and set path to export path.
 
@@ -45,7 +44,6 @@ class Session:
             reader (str): Name of reader.
             export_path (str): Path to export path.
         """
-
         self.settings = config.Settings()
         if export_path:
             self.settings.update_export_path(export_path)
@@ -53,7 +51,7 @@ class Session:
         self.readers = None
         if filepaths and reader:
             self.update_settings_attributes(**self.settings.readers[reader])
-    
+
             filepaths = list(filepaths)
             self.readers = self.create_reader_instances(filepaths=filepaths, reader=reader)
 
@@ -199,7 +197,7 @@ class Session:
         """Update the given datasets with information in metadata. Option to overwrite."""
         datasets = datasets or []
         metadata = metadata or {}
-        for file_name, dataset in datasets.items():
+        for dataset in datasets.values():
             for key, value in metadata.items():
                 current_value = dataset['metadata'].get(key, None)
                 if current_value and not overwrite:

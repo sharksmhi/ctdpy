@@ -9,8 +9,15 @@ from ctdpy.core.utils import thread_process
 
 
 class TxtWriter:
-    """ """
+    """Writer of text files."""
+
     def __init__(self, in_template=None):
+        """Initialize and store in_template.
+
+        Args:
+            in_template:
+        """
+        # TODO Is self.in_template ever used?
         self.in_template = in_template
 
     @staticmethod
@@ -18,55 +25,30 @@ class TxtWriter:
                           save_path=None,
                           header=False,
                           sep='\t',
-                          # encoding='utf-8'):
                           encoding='cp1252'):
+        """Write dataframe or serie.
+
+        Args:
+            data: pd.DataFrame, pd.Series
+            save_path (str): complete path to file
+            header (bool): True / False. Include header.
+            sep (str): separator
+            encoding (str): Encoding to use when writing
         """
-        Writes dataframe or series
-        :param data: pd.DataFrame, pd.Series
-        :param save_path: complete path to file
-        :param header: Include header in file
-        :param sep: Row separator
-        :param encoding: Encoding of out file
-        :return: Text file
-        """
-        # print('pandas', save_path)
         data.to_csv(save_path, sep=sep, encoding=encoding, index=False, header=header)
 
     @staticmethod
     def write_with_numpy(data=None, save_path=None, fmt='%s'):
+        """Write numpy arrays or pd.Series to file.
+
+        Args:
+            data: array
+            save_path (str): complete path to file
+            fmt: format of file eg. '%s', '%f'
         """
-        Writes numpy arrays or pd.Series
-        :param data: array
-        :param save_path: complete path to file
-        :param fmt: format of file e.g. s:str, f:float
-        :return: Text file
-        """
-        # print('numpy', save_path)
         thread_process(np.savetxt, save_path, data, fmt=fmt)
-        # np.savetxt(save_path, data, fmt=fmt)
 
     @staticmethod
     def write_with_python(data=None, save_path=None):
-        """
-        :param data:
-        :param save_path:
-        :return:
-        """
-        # open(save_path, "wb").write('\n'.join(data))
+        """Write with the python open method."""
         raise NotImplementedError
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

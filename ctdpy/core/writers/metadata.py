@@ -12,10 +12,10 @@ from ctdpy.core.writers.xlsx_writer import XlsxWriter
 
 
 class MetadataWriter(SeriesHandler, DataFrameHandler):
-    """
+    """Convert datasets into standard output for CTD metadata (Xlsx Writer)."""
 
-    """
     def __init__(self, settings):
+        """Load writer and initialize the template handler."""
         super().__init__(settings)
         self.writer = self._get_writer_settings()
         self.xlsx_writer = XlsxWriter()
@@ -32,22 +32,15 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
     #     self.template_handler = handler_instance(self.settings)
 
     def get_handler_instance(self):
-        """
-        :return: Template Handler
-        """
+        """Return Template Handler."""
         return self.settings.templates['ctd_metadata'].get('template_handler')
 
     def convert_formats(self):
-        """
-        :return:
-        """
+        """Call the convert_formats method of the current template handler."""
         self.template_handler.template['Metadata'].convert_formats(ship_map=self.settings.smap)
 
     def write(self, dataset):
-        """
-        :param dataset: list, datasets
-        :return:
-        """
+        """Write dataset to file."""
         for fid, item in dataset.items():
             item['metadata']['FILE_NAME'] = fid
             self.append_to_template(item['metadata'])
@@ -57,9 +50,7 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         self._write()
 
     def _write(self):
-        """
-        :return:
-        """
+        """Write to file."""
         save_path = self._get_save_path()
         headers = [True if h is not None else None for h in self.settings.templates['ctd_metadata'][
             'template']['header_row']]
@@ -72,27 +63,19 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
                                                headers=headers,
                                                start_rows=start_rows)
         self.data_path = save_path
-        # TODO:
 
     def append_to_template(self, df):
-        """
-        :param df: pd.DataFrame
-        :return:
-        """
+        """Append the given dataframe to the template handler."""
         self.template_handler.append_to_template(df, template_key='Metadata')
 
     def _get_data_path(self):
-        """
-        :return: base folder for export
-        """
+        """Return path to data."""
         time_now = utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
         return ''.join([self.settings.settings_paths.get('export_path'),
                         'metadata_', time_now, '/'])
 
     def _get_save_path(self):
-        """
-        :return: save path to file
-        """
+        """Return path to file."""
         data_path = self._get_data_path()
         utils.check_path(data_path)
         save_path = ''.join([data_path, self.writer.get('filename'),
@@ -100,7 +83,5 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         return save_path
 
     def _get_writer_settings(self):
-        """
-        :return: Specialized writer settings
-        """
+        """Return writer settings."""
         return self.settings.writers['metadata_template']['writer']

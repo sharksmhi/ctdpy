@@ -124,7 +124,8 @@ class SeriesHandler(BaseFileHandler):
     def update_position(self, lat, lon):
         """Set position information properties.
 
-        See the different setters of latitude_dd, longitude_dd under the class BaseFileHandler."""
+        See the different setters of latitude_dd, longitude_dd under the class BaseFileHandler.
+        """
         self.latitude_dd = lat
         self.longitude_dd = lon
 
@@ -231,8 +232,8 @@ class SeriesHandler(BaseFileHandler):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        #FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
-                        meta = value[value.index(key)+len(key):].strip()
+                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        meta = value[value.index(key) + len(key):].strip()
 
                     if meta:
                         meta_dict.setdefault(key, meta)
@@ -247,7 +248,7 @@ class SeriesHandler(BaseFileHandler):
 
     @staticmethod
     def get_index(serie, string, contains=False, equals=False, between=False, as_boolean=False, reversed_boolean=False):
-        """ Get index or boolean array.
+        """Get index or boolean array.
 
         Args:
             serie (pd.Series):
@@ -296,7 +297,6 @@ class BaseReader:
 
     def __init__(self, settings):
         """Initialize Base Class."""
-
         super().__init__(settings)
 
     def get_data(self, filenames=None, add_low_resolution_data=False, **kwargs):
@@ -331,9 +331,9 @@ class UnitConverter:
         - pandas apply? numpy vecorize?
         - change [unit] of parameter name eg. CNDC_CTD [S/m] instead of CNDC_CTD [mS/cm]
     """
+
     def __init__(self, mapper, user):
         """Initialize and store mapper and user."""
-
         self.mapper = mapper
         self.user = user
         self.meta = None
@@ -391,7 +391,6 @@ class CorrectionFile(dict):
 
     def __init__(self, fid):
         """Initialize and store information from 'fid'-file."""
-
         super().__init__()
         df = load_txt(file_path=fid)
         for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
@@ -411,6 +410,7 @@ class DeltaCorrection:
         PRES_CTD:
             corr: -0.2
     """
+
     def __init__(self, corr_obj=None, user=None):
         """Initialize and store corr_obj and user.
 
@@ -429,8 +429,8 @@ class DeltaCorrection:
         """Append comment self.meta."""
         time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
         corr = ', '.join((': '.join((para, str(key_dict[para]))) for para in key_dict))
-        self.meta[len(self.meta) + 1] = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; TIMESTAMP {}; CORRECTION: {}'.format(
-            self.user, time_stamp, corr)
+        self.meta[len(self.meta) + 1] = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; ' \
+                                        'TIMESTAMP {}; CORRECTION: {}'.format(self.user, time_stamp, corr)
 
     def correct_dataset(self, ds):
         """Loop over datasets and correct data series."""

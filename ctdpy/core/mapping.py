@@ -5,7 +5,6 @@ Created on Thu Jul 05 13:47:52 2018
 @author: a002028
 """
 import pandas as pd
-from ctdpy.core import readers
 
 
 class AttributeDict(dict):
@@ -26,10 +25,10 @@ class AttributeDict(dict):
         for key, array in entries.items():
             setattr(self, key, key)
             setattr(self, key.lower(), key)
-            
+
             if isinstance(array, pd.core.series.Series):
                 array = array.values
-                
+
             for value in array:
                 if not pd.isnull(value):
                     setattr(self, value, key)
@@ -67,7 +66,7 @@ class AttributeDict(dict):
         except AttributeError:
             try:
                 return getattr(self, key.lower())
-            except:
+            except Exception:
                 print('No mapping found for key: ' + key)
                 return key
 
@@ -85,7 +84,7 @@ class AttributeDict(dict):
 
 
 class ParameterMapping(AttributeDict):
-    """ Load file to map data fields and parameters to a standard setting format."""
+    """Load file to map data fields and parameters to a standard setting format."""
 
     def __init__(self):
         """Initialize."""
@@ -114,7 +113,7 @@ class ShipMapping(AttributeDict):
 
     def map_cntry_and_shipc(self, cntry=None, shipc=None):
         """Get SHIP code (according to standard of ICES)."""
-        return self.get(cntry+shipc)
+        return self.get(cntry + shipc)
 
     def map_shipc(self, cntry_shipc):
         """Map SHIP code (according to standard of ICES)."""
