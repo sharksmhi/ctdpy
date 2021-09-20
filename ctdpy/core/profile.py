@@ -8,36 +8,24 @@ import numpy as np
 
 
 class Profile:
-    """ Handles one profile at a time
-    """
+    """ Handles one profile at a time."""
+
     def __init__(self, data=None):
+        """Initialize and store data."""
         self.data = data
 
     def update_data(self, data=None):
-        """
-        :param data: pd.DataFrame
-        :return: Writes over self.data
-        """
+        """Update self.data."""
         self.data = data
 
     def extract_lores_data(self, key_depth=None, discrete_depths=None):
-        """
-        Get data from discrete depths based on discrete_depths
-        :param key_depth: str
-        :param discrete_depths: list, discrete depths
-        :return: pd.DataFrame
-        """
+        """Return data from discrete depths based on the list discrete_depths."""
         discrete_depths = discrete_depths or []
         idx = self._get_index_array(key_depth, discrete_depths)
         return self.data.iloc[idx, :]
 
     def _get_index_array(self, key, depths):    
-        """
-        Extract indices for discrete depth
-        :param key: str
-        :param depths: list
-        :return: index array
-        """
+        """Extract indices for discrete depth."""
         hires_dep = self.data[key].values.astype(float)
         qf_pres = 'Q_PRES_CTD'
         if qf_pres in self.data:
@@ -48,12 +36,7 @@ class Profile:
 
     @staticmethod
     def _append_maximum_depth_index(idx, array):
-        """
-        Allways append max depth index
-        :param idx: index array
-        :param array: array with depth
-        :return: extended index array
-        """
+        """Append index for max depth."""
         maxdep_idx = np.where(array == array.max())[0][0]
         if maxdep_idx not in idx:
             idx.append(maxdep_idx)

@@ -332,7 +332,7 @@ class UnitConverter:
         - change [unit] of parameter name eg. CNDC_CTD [S/m] instead of CNDC_CTD [mS/cm]
     """
     def __init__(self, mapper, user):
-        """Initilize and store mapper and user."""
+        """Initialize and store mapper and user."""
 
         self.mapper = mapper
         self.user = user
@@ -390,7 +390,7 @@ class CorrectionFile(dict):
     # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
 
     def __init__(self, fid):
-        """Initilize and store information from 'fid'-file."""
+        """Initialize and store information from 'fid'-file."""
 
         super().__init__()
         df = load_txt(file_path=fid)
@@ -412,33 +412,28 @@ class DeltaCorrection:
             corr: -0.2
     """
     def __init__(self, corr_obj=None, user=None):
-        """Initilize and store corr_obj and user.
+        """Initialize and store corr_obj and user.
 
         Args:
             corr_obj (dict):
                 visit keys:
                     parameters:
                         correction delta
+            user (str): Session user.
         """
         self.corr_obj = corr_obj
         self.user = user
         self.meta = None
 
     def append_correction_comment(self, key_dict):
-        """
-        :param metadata:
-        :return:
-        """
+        """Append comment self.meta."""
         time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
         corr = ', '.join((': '.join((para, str(key_dict[para]))) for para in key_dict))
         self.meta[len(self.meta) + 1] = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; TIMESTAMP {}; CORRECTION: {}'.format(
             self.user, time_stamp, corr)
 
     def correct_dataset(self, ds):
-        """
-        :param ds:
-        :return:
-        """
+        """Loop over datasets and correct data series."""
         print('correction...')
         for key, item in ds.items():
             self.update_meta(item['metadata'])
@@ -447,10 +442,11 @@ class DeltaCorrection:
         print('correction completed!')
 
     def _correct(self, df, key):
-        """
-        :param df: pd.DataFrame
-        :param key: profile key (visit key: 'ctd_profile_20180122_7798_5051')
-        :return:
+        """Correct the given pd.Serie.
+
+        Args:
+            df (pd.DataFrame): Data.
+            key (str): visit key. Eg.'ctd_profile_20180122_7798_5051'
         """
         visit_corr = self.corr_obj.get(key)
         for para, value in visit_corr.items():

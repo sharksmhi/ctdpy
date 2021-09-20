@@ -17,9 +17,35 @@ from ctdpy.core.utils import (
 
 
 class Session:
-    """
+    """The Main Class for ctdpy.
+
+    Example usage:
+
+        from ctdpy.core.session import Session
+        from ctdpy.core.utils import generate_filepaths
+
+        # Create generator for cnv-files.
+        files = generate_filepaths('/path/to/files/', endswith='.cnv')
+
+        # Create reader.
+        s = Session(filepaths=files, reader='smhi')
+
+        # Load data.
+        datasets = s.read()
+
+        # Save data with a given writer.
+        # Datasets are stored in a list of 2 (0: data, 1: metadata). For this example we only have data, no metadata.
+        s.save_data(datasets[0], writer='metadata_template')
     """
     def __init__(self, filepaths=None, reader=None, export_path=None):
+        """Initialize settings object, create reader instance and set path to export path.
+
+        Args:
+            filepaths (iterable): A sequence of files that will be used to load data from.
+            reader (str): Name of reader.
+            export_path (str): Path to export path.
+        """
+
         self.settings = config.Settings()
         if export_path:
             self.settings.update_export_path(export_path)
@@ -31,40 +57,45 @@ class Session:
             filepaths = list(filepaths)
             self.readers = self.create_reader_instances(filepaths=filepaths, reader=reader)
 
-    def _set_file_reader(self):
-        """
-        #FIXME do we use this one?
-        :return:
-        """
-        self.file_reader = self.settings.reader
-
     def read(self, add_merged_data=False, add_low_resolution_data=False):
+        """Load data and return dataset.
+
+        Args:
+            add_merged_data (bool): WILL PROBABLY BE MOVED AND USED ELSEWHERE.
+                                    False or True. Merge metadata and data into template.
+            add_low_resolution_data (bool): WILL PROBABLY BE MOVED AND USED ELSEWHERE.
+                                            Include extra pd.DataFrame for low resolution data
         """
-        :param add_merged_data: False or True
-        :param add_low_resolution_data: Include extra pd.DataFrame for low resolution data
-        :return: list, datasets
-        """
+        if add_merged_data:
+            raise FutureWarning('The functionality of ctdpy.core.session.Session.read(add_merged_data=True)'
+                                'will be moved elsewhere in the future.')
+        if add_low_resolution_data:
+            raise FutureWarning('The functionality of ctdpy.core.session.Session.read(add_low_resolution_data=True)'
+                                'will be moved elsewhere in the future.')
         datasets = self._read_datasets(add_merged_data, add_low_resolution_data)
         return datasets
 
     def _read_datasets(self, add_merged_data, add_low_resolution_data):
-        """
+        """Read and return datasets.
+
         Different "datasets" for one type of data (e.g. seabird_smhi).
-        Could be both cnv and xlsx files (metadata and data seperated
-        in different files but belong together).
-        :param add_merged_data: False or True
-        :param add_low_resolution_data: Include extra pd.DataFrame for low resolution data
-        :return:
+        Could be both cnv and xlsx files (metadata and data seperated in different files but belong together).
+
+        Args:
+            add_merged_data (bool): WILL PROBABLY BE MOVED AND USED ELSEWHERE.
+                                    False or True. Merge metadata and data into template.
+            add_low_resolution_data (bool): WILL PROBABLY BE MOVED AND USED ELSEWHERE.
+                                            Include extra pd.DataFrame for low resolution data
         """
-        #TODO Merge the different datasets?
+        # TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
             data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
                                                             add_low_resolution_data=add_low_resolution_data)
 
-            # TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template. we should therefore do this elsewhere
+            # TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template.
+            #  We should therefore do this elsewhere
             if add_merged_data and add_low_resolution_data:
-                # data = self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
                 self.readers[dataset]['reader'].merge_data(data, resolution='lores_data')
 
             datasets.append(data)
@@ -73,11 +104,7 @@ class Session:
 
     @staticmethod
     def _get_filenames_matched(filenames, file_type):
-        """
-        :param filenames: list of strings
-        :param file_type: from reader **kwargs
-        :return: list of matched filenames
-        """
+        """Get matching filenames."""
         if 'file_patterns' in file_type:
             filenames_matched = match_filenames(filenames, file_type['file_patterns'])
         elif 'file_suffix' in file_type:
@@ -87,13 +114,8 @@ class Session:
         return filenames_matched
 
     def create_reader_instances(self, filepaths=None, reader=None):
-        """
-        Find readers and return their instances
-        :param filenames: list of strings
-        :param reader: string
-        :return: Dictionary, reader instances
-        """
-        #TODO Redo and move to utils.py or __init__.py
+        """Find readers and return their instances."""
+        # TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
         for dataset, dictionary in self.settings.readers[reader]['datasets'].items():
             file_type = self.settings.readers[reader]['file_types'][dictionary['file_type']]
@@ -105,12 +127,12 @@ class Session:
         return reader_instances
 
     def get_data_in_template(self, datasets, template=None, resolution='lores'):
-        """
-        Appends dataframes to template dataframe
-        :param datasets: Dictionary with data
-        :param template: str
-        :param resolution: str
-        :return: data in template
+        """Append dataframes to template dataframe.
+
+        Args:
+            datasets (dict): data
+            template (str): Name of template to use.
+            resolution (str): 'hires' / 'lores'
         """
         template_handler = self.load_template_handler(template)
         profile = None
@@ -134,50 +156,36 @@ class Session:
 
             template_handler.append_to_template(data, meta=meta)
 
-        # template_handler.convert_formats()
         return template_handler.template
 
     def get_writer_file_name(self, writer):
-        """
-        #FIXME move elsewhere?
-        #Fixme change 'filename' to 'filename_prefix'? perhaps not prefix in all cases?
-        :param writer: str
-        :return: str, standard filename prefix
-        """
+        """Get filename specification for the given writer."""
+        # Fixme change 'filename' to 'filename_prefix'? perhaps not prefix in all cases?
         return self.settings.writers[writer]['writer'].get('filename')
 
     def load_template_handler(self, template):
-        """
-        :param template: str
-        :return: Template instance
-        """
+        """Return Template instance."""
         template_instance = self.settings.templates[template].get('template_handler')
         return template_instance(self.settings)
 
     def load_reader(self, file_type):
-        """
-        :param file_type: Dictionary
-        :return: Reader instance
-        """
+        """Return Reader instance."""
         reader_instance = file_type.get('file_reader')
         return reader_instance(self.settings)
 
     def load_writer(self, writer):
-        """
-        :param writer: str
-        :return: Writer instance
-        """
+        """Return Writer instance."""
         writer_instance = self.settings.writers[writer]['writer'].get('writer')
         return writer_instance(self.settings)
 
     def save_data(self, datasets, save_path=None, writer=None, return_data_path=False):
-        """
-        :param datasets: list of different types of datasets. Can be metadata and profile data
-        :param save_path: str
-        :param writer: writer instance
-        :param return_data_path: False or True
-        :return: Data is saved.
-                 If return_data_path: str, data saved with this path
+        """Save datasets.
+
+        Args:
+            datasets (list): list of datasets. Eg. metadata and profile data.
+            save_path (str): path to export folder.
+            writer (object): writer instance
+            return_data_path (bool): False or True
         """
         if save_path:
             self.settings.update_export_path(save_path)
@@ -188,13 +196,7 @@ class Session:
             return writer.data_path
 
     def update_metadata(self, datasets=None, metadata=None, overwrite=False):
-        """
-        Updates the given datasets with information in metadata. Option to overwrite.
-        :param datasets: list of metadata
-        :param metadata: dict
-        :param overwrite: boolean
-        :return:
-        """
+        """Update the given datasets with information in metadata. Option to overwrite."""
         datasets = datasets or []
         metadata = metadata or {}
         for file_name, dataset in datasets.items():
@@ -205,28 +207,26 @@ class Session:
                 dataset['metadata'][key] = value
 
     def create_archive(self, data_path=None):
-        """
-        :param data_path: str, path to data folder
-        :return: Data written to archive structure
-        """
+        """Create standard archive folder structure, and place data therein."""
         archive = Archive(self.settings)
         archive.write_archive_package(data_path)
         recieved_data = self._get_loaded_filenames()
         archive.import_received_data(recieved_data)
 
     def _get_loaded_filenames(self):
-        """
-        :return: List of filenames that have been loaded in Session
-        """
+        """Return list of filenames that have been loaded in Session."""
         recieved_data = []
         for dset in self.readers:
             recieved_data.extend(self.readers[dset]['file_names'])
         return recieved_data
 
     def update_settings_attributes(self, **dictionary):
+        """Update setting attributes.
+
+        Settings with specified reader kwargs at a higher level within the settings dictionary tree.
+
+        Args:
+            dictionary: kwargs, eg. reader settings
         """
-        #FIXME Do we need to add attributes of specified reader to a higer level within the self.settings structure?
-        :param dictionary: Dictionary (E.g. reader settings)
-        :return: self.settings with specified reader kwargs at a higher level within the settings dictionary tree
-        """
+        # FIXME Do we need to add attributes of specified reader to a higer level within the self.settings structure?
         self.settings.set_attributes(self.settings, **dictionary)

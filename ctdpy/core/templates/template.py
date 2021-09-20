@@ -73,7 +73,7 @@ class Template(pd.DataFrame):
         self.column_order = order
 
     def export_data_as_excel(self, with_style=False, columns=None,
-                             save_path=u'', sheet_name='Data'):
+                             save_path='', sheet_name='Data'):
         """
         :param with_style: False or True, implements StyleSheet instead of ordinary pd.DataFrame
         :param columns: list, columns to write
@@ -164,7 +164,7 @@ class Template(pd.DataFrame):
 #         self.column_order = order
 #
 #     def export_data_as_excel(self, with_style=False, columns=None,
-#                              save_path=u'', sheet_name='Data'):
+#                              save_path='', sheet_name='Data'):
 #         """
 #         :param with_style: False or True, implements StyleSheet instead of ordinary pd.DataFrame
 #         :param columns: list, columns to write

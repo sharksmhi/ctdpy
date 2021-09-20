@@ -18,20 +18,13 @@ from threading import Thread
 
 
 def check_path(path):
-    """
-    :param path:
-    :return:
-    """
+    """Create fodler if path doesn´t exists."""
     if not os.path.exists(path):
         os.makedirs(path)
 
 
 def convert_string_to_datetime_obj(x, fmt):
-    """
-    :param x: str (can be any kind of date/time related string format)
-    :param fmt: format of output
-    :return: datetime object
-    """
+    """Get datetime object from string."""
     if type(x) == str:
         return datetime.strptime(x, fmt)
     else:
@@ -39,30 +32,19 @@ def convert_string_to_datetime_obj(x, fmt):
 
 
 def copyfile(src, dst):
-    """
-    :param src: Source path
-    :param dst: Destination path
-    :return: File copied
-    """
+    """Copy file in thread."""
     thread_process(shutil.copy2, src, dst)
-    # shutil.copy2(src, dst)
 
 
 def copytree(src, dst, symlinks=False, ignore=None, file_paths=None):
-    """
-    :param src:
-    :param dst:
-    :param symlinks:
-    :param ignore:
-    :return:
-    """
+    """Copy folder tree."""
     items = file_paths or (os.path.join(src, item) for item in os.listdir(src))
 
     for item in items:
         d = os.path.join(dst, os.path.basename(item))
         if '.' not in item[-5:-2]:
             # so, rather then using os.path.isdir(s) we do a string check to conclude if its a directory or a file that
-            # we´re trying to copy. Why?! Because if "s" is a directory on a SLOooW file server, e.g. \\WINFS\prod\
+            # we´re trying to copy. Why?! Because item might be a directory on a SLOooW file server..
             # os.path.isdir or os.path.isfile will be unnecessary time consuming..
             # assuming that all file extension are between 2 and 4 characters long (eg. '.7z', '.txt', '.xlsx')
             thread_process(shutil.copytree, item, d, symlinks, ignore)
@@ -71,12 +53,7 @@ def copytree(src, dst, symlinks=False, ignore=None, file_paths=None):
 
 
 def create_directory_structure(dictionary, base_path):
-    """
-    Creates directory based on nested dictionary
-    :param dictionary: nested dictionary
-    :param base_path: Base folder
-    :return: Folders from keys in dictionary
-    """
+    """Create directory based on nested dictionary."""
     if len(dictionary) and not isinstance(dictionary, str):
         for direc in dictionary:
             if isinstance(direc, str):
@@ -89,12 +66,7 @@ def create_directory_structure(dictionary, base_path):
 
 
 def decdeg_to_decmin(pos, string_type=True, decimals=2):
-    """
-    :param pos: Position in format DD.dddd (Decimal degrees)
-    :param string_type: As str?
-    :param decimals: Number of decimals
-    :return: Position in format DDMM.mm(Degrees + decimal minutes)
-    """
+    """Convert position from decimal degrees into degrees and decimal minutes."""
     pos = float(pos)
     deg = np.floor(pos)
     minute = pos % deg * 60.0
@@ -110,15 +82,7 @@ def decdeg_to_decmin(pos, string_type=True, decimals=2):
 
 
 def decmin_to_decdeg(pos, string_type=True, decimals=4):
-    """
-    :param pos: str, Position in format DDMM.mm (Degrees + decimal minutes)
-    :param string_type: As str?
-    :param decimals: Number of decimals
-    :return: Position in format DD.dddd (Decimal degrees)
-    """
-    # pos = pos.replace(' ','')
-    # if len(pos.split('.')[0]) > 2:
-    #     return pos
+    """Convert position from degrees and decimal minutes into decimal degrees."""
     pos = float(pos)
     if pos < 99:
         # Allready in decdeg
@@ -138,15 +102,7 @@ def eliminate_empty_rows(df):
 
 def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
                        pattern_list=None, not_pattern_list=None, endswith='', only_from_dir=True):
-    """
-    :param directory:
-    :param pattern:
-    :param not_pattern:
-    :param pattern_list:
-    :param endswith:
-    :param only_from_dir:
-    :return:
-    """
+    """Generate file paths."""
     pattern_list = pattern_list or []
     not_pattern_list = not_pattern_list or []
     directory = str(directory) # MW: To also allow directory to be of type pathlib.Path
@@ -172,10 +128,11 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
 
 
 def generate_strings_based_on_suffix(dictionary, suffix):
-    """
-    :param dictionary: Nested dictionary
-    :param suffix: str, e.g. '.txt'
-    :return: generator to produce a stringlist
+    """Generate stringlist.
+
+    Args:
+        dictionary: Nested dictionary
+        suffix (str): '.txt' or '.cnv'
     """
     for item in dictionary.values():
         if isinstance(item, dict):
@@ -189,11 +146,13 @@ def generate_strings_based_on_suffix(dictionary, suffix):
 
 
 def get_datetime(date_string, time_string):
+    """Get datetime object based on both date and time.
+
+    Args:
+        date_string: YYYY-MM-DD
+        time_string: HH:MM:SS  /  HH:MM
     """
-    :param date_string: YYYY-MM-DD
-    :param time_string: HH:MM:SS  /  HH:MM
-    :return:
-    """
+    # TODO this is not that pretty..
     if ' ' in date_string:
         date_string = date_string.split(' ')[0]
     if len(time_string) == 8:
@@ -205,20 +164,12 @@ def get_datetime(date_string, time_string):
 
 
 def get_datetime_now(fmt='%Y-%m-%d %H:%M:%S'):
-    """
-    :param fmt:
-    :return:
-    """
+    """Get datetime object according to the given format for time right NOW."""
     return datetime.now().strftime(fmt)
 
 
 def get_file_list_based_on_suffix(file_list, suffix):
-    """
-    Get filenames endinge with "suffix"
-    :param file_list:
-    :param suffix:
-    :return:
-    """
+    """Get filenames ending with the given suffix."""
     match_list = []
 
     for fid in file_list:
@@ -233,12 +184,7 @@ def get_file_list_based_on_suffix(file_list, suffix):
 
 
 def get_file_list_match(file_list, match_string): 
-    """
-    Get filenames containing "match_string"
-    :param file_list:
-    :param match_string:
-    :return:
-    """
+    """Get filenames containing the given match_string."""
     match_list = []
     
     for fid in file_list:
@@ -250,31 +196,19 @@ def get_file_list_match(file_list, match_string):
 
 
 def get_filebase(path, pattern):
-    """
-    Get the end of *path* of same length as *pattern*
-    :param path: str
-    :param pattern: str
-    :return:
-    """
+    """Get the end of *path* of same length as *pattern*."""
     # A pattern can include directories
     tail_len = len(pattern.split(os.path.sep))
     return os.path.join(*path.split(os.path.sep)[-tail_len:])
 
 
 def get_filename(file_path):
-    """
-    :param file_path:
-    :return:
-    """
+    """Get filename from filepath."""
     return os.path.basename(file_path)
 
 
 def get_format_from_datetime_obj(x, fmt):
-    """
-    :param x: datetime object
-    :param fmt: format of output
-    :return: str (can be any kind of date/time related string format)
-    """
+    """Return str from datetime object according to the given format."""
     try:
         return x.strftime(fmt)
     except:
@@ -282,20 +216,16 @@ def get_format_from_datetime_obj(x, fmt):
 
 
 def get_index_where_df_equals_x(df, x):
-    """
-    :param df: pd.DataFrame
-    :param x: any kind of value
-    :return: Boolean
-    """
+    """Return boolean array."""
     return np.where(df == x)
 
 
 def get_kwargs(func, info):
-    """
-    Creates a key word dictionary to use as input to "func"
-    :param func: Function
-    :param info: Dictionary with info to include in kwargs
-    :return: kwargs
+    """Return a key word dictionary to use as input to "func".
+
+    Args:
+        func: Function
+        info: Dictionary with info to include in kwargs
     """
     funcargs = inspect.getfullargspec(func)
     kwargs = {key: info.get(key) for key in funcargs.args}
@@ -303,39 +233,27 @@ def get_kwargs(func, info):
 
 
 def get_method_dictionary(obj):
-    """
-    :param obj: Object
-    :return: Dictionary of all methods from object including those from parent classes
-    """
+    """Return dictionary of all methods from the given object, including those from parent classes."""
     return {func: True for func in dir(obj) if not func.startswith("__")}
 
 
 def get_object_path(obj):
-    """
-    :param obj:
-    :return:
-    """
+    """Return path to object."""
     return obj.__module__ + "." + obj.__name__
 
 
 def get_reversed_dictionary(dictionary, keys):
-    """
-    :param dictionary:
-    :param keys:
-    :return:
-    """
+    """Return reveresed dictionary."""
     return {dictionary.get(k): k for k in keys if dictionary.get(k)}
 
 
 def get_timestamp(x):
-    """
-    :param x:
-    :return:
-    """
+    """Get pandas Timestamp from x."""
     return pd.Timestamp(x)
 
 
 def get_time_as_format(**kwargs):
+    """Get time as format in kwargs."""
     if kwargs.get('now'):
         d = datetime.now()
     elif kwargs.get('timestamp'):
@@ -348,21 +266,12 @@ def get_time_as_format(**kwargs):
 
 
 def get_timestamp_minus_daydelta(date, delta=1):
-    """
-    :param date:
-    :param delta:
-    :return:
-    """
+    """Get timestamp based on date and delta."""
     return date - pd.DateOffset(delta)
 
 
 def match_filenames(filenames, pattern):
-    """
-    Get the filenames matching *pattern*
-    :param filenames: list
-    :param pattern: str
-    :return:
-    """
+    """Get the filenames matching *pattern*."""
     matching = []
     for filename in filenames:
         filename = str(filename) # MW: To also allow filename to be of type pathlib.Path
@@ -384,18 +293,14 @@ def milliseconds(ts):
 
 
 def is_sequence(arg):
-    """
-    Checks if an object is iterable (you can loop over it) and not a string
-    ** Taken from SHARKToolbox
-    :param arg:
-    :return:
-    """
+    """Checks if an object is iterable (you can loop over it) and not a string."""
     return (not hasattr(arg, "strip") and
             hasattr(arg, "__iter__"))
 
 
 def recursive_dict_update(d, u):
-    """ Recursive dictionary update using
+    """Recursive dictionary update.
+
     Copied from:
         http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
         via satpy
@@ -407,17 +312,10 @@ def recursive_dict_update(d, u):
         else:
             d.setdefault(k, u[k])
     return d
-    #         d[k] = r
-    #     else:
-    #         d[k] = u[k]
-    # return d
 
 
 def round_value(value, nr_decimals=3):
-    """ Calculate rounded value
-        2019-02-11
-        2019-03-11: Updated with ROUND_HALF_UP
-    """
+    """Calculate rounded value."""
     return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' %nr_decimals % 1),
                        rounding=ROUND_HALF_UP))
 
@@ -452,10 +350,7 @@ def rounder(values, decimals=3):
 
 
 def set_export_path(export_dir=None):
-    """
-    :param export_dir:
-    :return:
-    """
+    """Create export folder."""
     export_dir = export_dir or os.getcwd() + '/exports'
 
     if not os.path.isdir(export_dir):
@@ -463,11 +358,7 @@ def set_export_path(export_dir=None):
 
 
 def strip_text(x, text, strip=True):
-    """
-    :param x:
-    :param text:
-    :return:
-    """
+    """Return a stripped string."""
     new_x = x
     if type(x) == str:
         if not type(text) == list:
@@ -482,10 +373,11 @@ def strip_text(x, text, strip=True):
 
 
 def thread_process(call_function, *args, **kwargs):
-    """
-    :param call_function:
-    :param args:
-    :param kwargs:
-    :return:
+    """Thread process.
+
+    Args:
+        call_function: function to use
+        args: Arguments to call_function
+        kwargs: Key word arguments to call_function
     """
     Thread(target=call_function, args=args, kwargs=kwargs).start()

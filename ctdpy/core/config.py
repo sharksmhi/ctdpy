@@ -132,16 +132,16 @@ class Settings:
     def _setup_mapping_ship(self):
         """Create ship mapping object within self.
 
-        cntry_head = u'land'
-        ship_head = u'SMHI-kod'
-        name_head = u'namn'
-        to_key = u'kodlista'
+        cntry_head = 'land'
+        ship_head = 'SMHI-kod'
+        name_head = 'namn'
+        to_key = 'kodlista'
         """
         self.smap = mapping.ShipMapping()
         self.smap.add_entries_from_keylist(self.mapping_ship,
-                                           from_combo_keys=[u'land', u'SMHI-kod'],
-                                           from_synonyms=[u'namn'],
-                                           to_key=u'kodlista')
+                                           from_combo_keys=['land', 'SMHI-kod'],
+                                           from_synonyms=['namn'],
+                                           to_key='kodlista')
 
     @staticmethod
     def set_attributes(obj, **kwargs):
@@ -174,4 +174,4 @@ class Settings:
     def get_filepaths_from_directory(directory):
         """Return list of files in directory (not sub directories)."""
         return [''.join([directory, fid]) for fid in os.listdir(directory)
-                if not os.path.isdir(directory+fid)]
+                if not os.path.isdir(directory + fid)]
