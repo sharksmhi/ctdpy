@@ -35,17 +35,6 @@ class SeaBirdUMSC(SeaBird):
                                                                'gravity': df['PRES_CTD'].astype(np.float),
                                                                'density': df['DENS_CTD'].astype(np.float)})
 
-    def _get_datetime(self, date_string):
-        """
-        Expecting date_string with format e.g. "Feb 21 2018 16:08:54 [Instrument's time stamp, header]"
-        :param date_string: str
-        :return:
-        """
-        if not date_string:
-            return ''
-        return utils.convert_string_to_datetime_obj(date_string.split('[')[0].strip(),
-                                                    '%b %d %Y %H:%M:%S')
-
     def _convert_formats(self, meta_dict, filename):
         """
         :param meta_dict:

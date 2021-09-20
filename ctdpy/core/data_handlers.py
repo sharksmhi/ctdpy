@@ -41,11 +41,12 @@ class DataFrameHandler(BaseFileHandler):
 
     @staticmethod
     def add_metadata_to_frame(df, meta, len_col=None):
-        """
-        :param df: pd.DataFrame
-        :param meta: Dictionary with metadata
-        :param len_col: Length of DataFrame columns
-        :return: pd.DataFrame
+        """Return a merged dataframe.
+
+        Args:
+            df: pandas.DataFrame
+            meta: Dictionary with metadata
+            len_col: Length of DataFrame columns
         """
         df_meta = pd.DataFrame({k: [meta[k]] * len_col for k in meta})
         df = df.reset_index(drop=False)  # orginal index of df is saved
@@ -53,90 +54,64 @@ class DataFrameHandler(BaseFileHandler):
         return df
 
     @staticmethod
-    def get_data_header(df):
-        """
-        :param df: pd.DataFrame
-        :return: list of dataframe column names
-        """
+    def get_data_header(df, *args, **kwargs):
+        """Return header of data. Base method meant to be overwriten."""
         return df.columns
 
     @staticmethod
     def get_index(data, key, string):
-        """
-
-        :param data: pd.DataFrame or dictionary
-        :param key: str
-        :param string: str, search for string
-        :return: array with indices
-        """
+        """Get index of string value of pandas Serie."""
+        # TODO Ever used? do we only use SeriesHandler.get_index() ??
         # FIXME use pandas isin instead.. booleans..
         return np.where(data[key] == string)[0]
 
     @staticmethod
     def get_datetime_format(df, sdate_key=None, stime_key=None):
-        """
-        Uses date and time to create array with datetime object
-        :param df: pd.DataFrame
-        :param sdate_key: str
-        :param stime_key: str
-        :return: datetime object
-        """
+        """Get datetime array. Uses date and time to create array with datetime object."""
         datetime_format = np.vectorize(utils.get_datetime)(df[sdate_key], df[stime_key])
         return datetime_format
 
     @staticmethod
     def get_sdate(datetime_obj, fmt='%Y-%m-%d'):
-        """
-        :param datetime_obj: datetime object
-        :param fmt: str
-        :return: str according to fmt
-        """
+        """Return date string array according to fmt from datatime array."""
         stime = np.vectorize(utils.get_format_from_datetime_obj)(datetime_obj, fmt)
         return stime
 
     @staticmethod
     def get_stime(datetime_obj, fmt='%H:%M:%S'):
-        """
-        :param datetime_obj: datetime object
-        :param fmt: str
-        :return: str according to fmt
-        """
+        """Return time string array according to fmt from datatime array."""
         stime = np.vectorize(utils.get_format_from_datetime_obj)(datetime_obj, fmt)
         return stime
 
     @staticmethod
     def get_position_decimal_degrees(pos_serie):
-        """
+        """Return array of positions according to format DD.dddd.
+
         Uses numpy.vectorize to transform position format DDMM.mm into DD.dddd
-        :param pos_serie: pd.Series of coordinates in format DDMM.mm
-        :return: pd.Series of coordinates in format DD.dddd
+
+        Args: pos_serie pos_serie: pd.Series of coordinates in format DDMM.mm
         """
         pos = np.vectorize(utils.decmin_to_decdeg)(pos_serie)
         return pos
 
     @staticmethod
     def reset_index(df):
-        """
-        Resets the index array for the dataframe in question
-        :param df: pd.DataFrame
-        :return: DataFrame with index array from 0 --> x
-        """
+        """Reset the index array for the given dataframe."""
         df.reset_index(inplace=True, drop=True)
 
 
 class SeriesHandler(BaseFileHandler):
-    """
-    Handles object: pandas.Series
-    """    
+    """Handles pandas.Series."""
+
     def __init__(self, settings):
+        """Store the settings object."""
         super().__init__(settings)
         self.settings = settings
 
     def update_datetime_object(self, date_string, time_string):
-        """
-        :param date_string: str, YYYY-MM-DD
-        :param time_string: str, HH:MM:SS
-        :return: Using property.setter
+        """Set time information properties.
+
+        See the different setters of year, month day, hour, minute, second under the class BaseFileHandler.
         """
         datetime_obj = utils.get_datetime(date_string, time_string)
         self.year = datetime_obj
@@ -147,20 +122,17 @@ class SeriesHandler(BaseFileHandler):
         self.second = datetime_obj
 
     def update_position(self, lat, lon):
-        """
-        :param lat: str, Latitude DDMM.mmm
-        :param lon: str, Longitude DDMM.mmm
-        :return: Using property.setter
-        """
+        """Set position information properties.
+
+        See the different setters of latitude_dd, longitude_dd under the class BaseFileHandler."""
         self.latitude_dd = lat
         self.longitude_dd = lon
 
     def update_cruise(self, shipc, cruise_no):
-        """
-        myear_shipc_cruise_no, where myear is taken from property
-        :param shipc: ship code
-        :param cruise_no: Specific cruise number, YYYY_SHIP_NNNN
-        :return:
+        """Set cruise information properties.
+
+        See setter of cruise under the class BaseFileHandler.
+        Specific cruise number, YYYY_SHIP_NNNN. Should be updated?
         """
         if cruise_no:
             self.cruise = [self.year, shipc, cruise_no]
@@ -168,23 +140,24 @@ class SeriesHandler(BaseFileHandler):
             self.cruise = ''
 
     def update_station_name(self, statn):
-        """
-        :param statn: Station name at visit
-        :return: Using property.setter
+        """Set station information properties.
+
+        See setter of station under the class BaseFileHandler.
+        Station name at visit.
         """
         self.station = statn
 
     def get_data_header(self, data, dataset=None, idx=1, first_row=False):
-        """
-        Get header from identifier in settings file.
-        Assumes all values shall be taken from 'idx' after splitting
-        :param data: pd.Series
-        :param dataset: str
-        :param idx: Default 1 due to Standard Seabird output
-                    Example: '=' is the splitter in this specific case
-                    # name 2 = t090C: Temperature [ITS-90, deg C]
-                    head will then be 't090C: Temperature [ITS-90, deg C]'
-        :return: list of column names (header)
+        """Get header from identifier in settings file.
+
+        Assumes all values shall be taken from string 'idx' after splitting
+        Args:
+            data (pandas.Series): Data to get header information from.
+            dataset (string): Key of setting dataset.
+            idx: Default 1 due to Standard Seabird output
+                 Example: '=' is the splitter in this specific case
+                 # name 2 = t090C: Temperature [ITS-90, deg C]
+                 head will then be 't090C: Temperature [ITS-90, deg C]'
         """
         identifier_header = self.settings.datasets[dataset]['identifier_header']
         reversed = '~' in identifier_header
@@ -204,10 +177,8 @@ class SeriesHandler(BaseFileHandler):
 
     @staticmethod
     def map_doublet_columns(header):
-        """
-        :param header:
-        :return:
-        """
+        """Get header including doublet columns."""
+        # Fixme Do we need to rewrite this method to include x number of doublets instead of just 2?
         doublet_dict = {col: header.count(col) for col in header}
         new_header = []
         for col in header:
@@ -219,15 +190,15 @@ class SeriesHandler(BaseFileHandler):
         return new_header
 
     def get_data_in_frame(self, series, columns, dataset=None, splitter=None):
+        """Get data from pd.Series into a pd.DataFrame. Separates row values into columns.
+
+        Args:
+            series (pd.Series): Data
+            columns (list): Column names
+            dataset (str): Reader specific dataset.
+                           Determines how to handle data format.
         """
-        Get data from pd.Series. separates row values in series into columns within the
-        DataFrame
-        :param series: pd.Series, data
-        :param columns: list, column names
-        :param dataset: str, reader specific dataset. Determines how to handle data format
-        :return: pd.DataFrame
-        """
-        #FIXME NOOOO!! not the way to go! if anything, add reversed as input argument! let the identifier be clean!
+        # FIXME NO! not the way to go! if anything, add reversed as input argument! let the identifier be clean!
         identifier_header = self.settings.datasets[dataset]['identifier_data']
         reversed = '~' in identifier_header
         idx = self.get_index(series, identifier_header.replace('~', ''), reversed_boolean=reversed)
@@ -239,12 +210,13 @@ class SeriesHandler(BaseFileHandler):
         return df
 
     def get_meta_dict(self, series, keys=None, identifier='', separator=''):
-        """
-        :param series: pd.Series, contains metadata
-        :param keys: List of keys to search for
-        :param identifier: str
-        :param separator: str
-        :return: Dictionary
+        """Get metadata in dictionary.
+
+        Args:
+            series (pd.Series): Contains metadata
+            keys (list): Keys to search for
+            identifier (str): Used to identify metadata
+            separator (str): Seperate string value into valuble metadata
         """
         meta_dict = {}
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
@@ -270,30 +242,25 @@ class SeriesHandler(BaseFileHandler):
 
     @staticmethod
     def get_metadata_in_frame(data_dict, columns=None):
-        """
-        :param data_dict: dictionary
-        :param columns: list, column names
-        :return: pd.DataFrame
-        """
+        """Get metadata in a pandas.DataFrame."""
         return pd.DataFrame(data_dict, columns=columns)
 
     @staticmethod
     def get_index(serie, string, contains=False, equals=False, between=False, as_boolean=False, reversed_boolean=False):
+        """ Get index or boolean array.
+
+        Args:
+            serie (pd.Series):
+            string (str): Searching for string in serie
+            contains (bool): False or True depending on purpose
+            equals (bool): False or True depending on purpose
+            as_boolean (bool): False or True depending on purpose
+            reversed_boolean (bool): False or True depending on purpose
         """
-        #FIXME Rename? you get either an index array or boolean array
-        :param serie: pd.Series
-        :param string: str, searching for string in serie
-        :param contains: False or True depending on purpose
-        :param equals: False or True depending on purpose
-        :param as_boolean: False or True depending on purpose
-        :param reversed_boolean: False or True depending on purpose
-        :return: numpy index array or boolean list
-        """
+        # FIXME Rename? you get either an index array or boolean array
         if contains:
-            # contains
             boolean = serie.str.contains(string, regex=False)
         elif equals:
-            # equals
             boolean = serie == string
         elif between:
             start_idx = serie[serie == string[0]].index[0]
@@ -303,7 +270,6 @@ class SeriesHandler(BaseFileHandler):
                 stop_idx = 999999
             boolean = (serie.index > start_idx) & (serie.index < stop_idx)
         else:
-            # startswith
             boolean = serie.str.startswith(string)
 
         if reversed_boolean:
@@ -316,70 +282,41 @@ class SeriesHandler(BaseFileHandler):
 
     @staticmethod
     def get_series_object(obj):
-        """
-        One column with data
-        :param obj: pd.DataFrame or list
-        :return: pd.Series
-        """
+        """Get one column with data, eg. pd.Serie."""
         if isinstance(obj, pd.DataFrame):
-            s = pd.Series(obj.keys()[0])  # Not really necessary if you load file with argument pd.read_csv(..., header=None)
+            # Not really necessary if you load file with argument pd.read_csv(..., header=None)
+            s = pd.Series(obj.keys()[0])
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
             return pd.Series(obj)
 
 
 class BaseReader:
-    """
-    Base structure for data readers
-    """
+    """Base structure for data readers."""
+
     def __init__(self, settings):
+        """Initialize Base Class."""
+
         super().__init__(settings)
 
-    def get_data(self, filenames=None, add_low_resolution_data=False):
-        """
-        :param filenames:
-        :param add_low_resolution_data:
-        :return:
-        """
+    def get_data(self, filenames=None, add_low_resolution_data=False, **kwargs):
+        """Dummie method."""
         raise NotImplementedError
 
-    def get_metadata(self, serie, map_keys=False):
-        """
-        :param serie:
-        :param map_keys:
-        :return:
-        """
+    def get_metadata(self, serie, *args, map_keys=False, **kwargs):
+        """Dummie method."""
         raise NotImplementedError
 
-    # @staticmethod
-    # def get_reader_instance():
-    #     """
-    #     :return:
-    #     """
-    #     raise NotImplementedError
-
-    def merge_data(self, data, resolution=None):
-        """
-        :param data:
-        :param resolution:
-        :return:
-        """
+    def merge_data(self, data, *args, resolution=None, **kwargs):
+        """Dummie method."""
         raise NotImplementedError
 
-    def setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :return:
-        """
+    def setup_dataframe(self, serie, *args, metadata=None, **kwargs):
+        """Dummie method."""
         raise NotImplementedError
 
-    def setup_dictionary(self, fid, data, keys=None):
-        """
-        :param keys:
-        :param fid:
-        :param data:
-        :return:
-        """
+    def setup_dictionary(self, fid, data, *args, keys=None, **kwargs):
+        """Dummie method."""
         raise NotImplementedError
 
 
@@ -395,22 +332,18 @@ class UnitConverter:
         - change [unit] of parameter name eg. CNDC_CTD [S/m] instead of CNDC_CTD [mS/cm]
     """
     def __init__(self, mapper, user):
+        """Initilize and store mapper and user."""
+
         self.mapper = mapper
         self.user = user
         self.meta = None
 
     def update_meta(self, meta_serie):
-        """
-        :param meta_serie:
-        :return:
-        """
+        """Update meta information."""
         self.meta = meta_serie
 
     def convert_values(self, serie):
-        """
-        :param serie: pandas.Series
-        :return:
-        """
+        """Convert unit of values in serie."""
         factor = self.get_conversion_factor(serie.name)
         decimals = self.get_number_of_decimals(serie.name)
 
@@ -419,52 +352,46 @@ class UnitConverter:
         return serie
 
     def get_conversion_factor(self, parameter):
-        """
-        :param parameter: str, parameter with unit eg. DOXY_CTD [mg/l]
-        :return: float, conversion factor
+        """Return conversion factor (float) for the given parameter.
+
+        Args:
+            parameter (str): parameter with unit eg. 'DOXY_CTD [mg/l]'
         """
         return self.mapper[parameter].get('conversion_factor')
 
     def get_number_of_decimals(self, parameter):
-        """
-        :param parameter: str, parameter with unit eg. DOXY_CTD [mg/l]
-        :return: int, number_of_decimals
+        """Return number of decimals (integer) for the given parameter.
+
+        Args:
+            parameter (str): parameter with unit eg. 'DOXY_CTD [mg/l]'
         """
         return self.mapper[parameter].get('number_of_decimals')
 
     def set_new_parameter_name(self, serie):
-        """
-        Change name of serie if mapping is found
-        :param serie: pandas.Series
-        """
+        """Change name of serie if mapping is found."""
         new_name = self.mapper[serie.name].get('standard_parameter_name')
         serie.name = new_name or serie.name
 
     def rename_dataframe_columns(self, df):
-        """
-        #TODO move to utils?
-        :param df: pandas.DataFrame
-        :return: Renames columns of dataframe based on the corresponding Series.name
-        """
+        """Rename columns of the given dataframe based on the corresponding Series.name."""
         mapper = {key: self.mapper[key].get('standard_parameter_name') for key in df.columns if key in self.mapper}
         df.rename(columns=mapper, inplace=True)
 
     def append_conversion_comment(self):
-        """
-        :param metadata:
-        :return:
-        """
+        """Append comment self.meta."""
         time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
         self.meta[len(self.meta) + 1] = '//COMNT_UNIT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'.format(
             self.user, time_stamp)
 
 
 class CorrectionFile(dict):
-    """
-    For now hardcoded parameters..
+    """For now hardcoded parameters.."""
+
     # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
-    """
+
     def __init__(self, fid):
+        """Initilize and store information from 'fid'-file."""
+
         super().__init__()
         df = load_txt(file_path=fid)
         for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
@@ -476,8 +403,8 @@ class CorrectionFile(dict):
 
 
 class DeltaCorrection:
-    """
-    If data deliverer has provided correction deltas for specific parameter profiles, we append that correction here.
+    """If data deliverer has provided correction deltas (BIAS correction)
+       for specific parameter profiles, we append that correction here.
     Eg.
         SALT_CTD:
             corr: 0.04
@@ -485,12 +412,13 @@ class DeltaCorrection:
             corr: -0.2
     """
     def __init__(self, corr_obj=None, user=None):
-        """
-        :param corr_obj: dictionary
-        corr_obj:
-            visit keys:
-                parameters:
-                    correction delta
+        """Initilize and store corr_obj and user.
+
+        Args:
+            corr_obj (dict):
+                visit keys:
+                    parameters:
+                        correction delta
         """
         self.corr_obj = corr_obj
         self.user = user

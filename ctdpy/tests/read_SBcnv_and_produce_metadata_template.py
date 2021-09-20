@@ -18,8 +18,8 @@ from pprint import pprint
 
 """ GET FILES """
 # base_dir = '...\\Svea_v16 april\\CTD\\data'  # tar längre tid att läsa ifrån filtjänst
-# base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\test_data\\exprapp_april_2020'
-base_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2019\\SHARK_Profile_2019_SMHI\\received_data'
+base_dir = 'C:\\Utveckling\\ctdpy\\ctdpy\\tests\\test_data\\exprapp_april_2020'
+# base_dir = 'C:\\Arbetsmapp\\datasets\\Profile\\2019\\SHARK_Profile_2019_SMHI\\received_data'
 
 # Note the time difference (~ x10) when loading data from fileserver (EXPRAPP) compared to reading from local disc..
 files = generate_filepaths(base_dir,

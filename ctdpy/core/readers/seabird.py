@@ -132,3 +132,14 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         """
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
+
+    def _get_datetime(self, date_string):
+        """
+        Expecting date_string with format e.g. "Feb 21 2018 16:08:54 [Instrument's time stamp, header]"
+        :param date_string: str
+        :return:
+        """
+        if not date_string:
+            return ''
+        return utils.convert_string_to_datetime_obj(date_string.split('[')[0].strip(),
+                                                    '%b %d %Y %H:%M:%S')

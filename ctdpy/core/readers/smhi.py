@@ -52,6 +52,10 @@ class SeaBirdSMHI(SeaBird):
         :param meta_dict:
         :return:
         """
+        timestamp = self._get_datetime(meta_dict['SDATE'])
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
+
         meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
         meta_dict.setdefault('PROJ', 'BAS')
         meta_dict.setdefault('ORDERER', 'HAV, SMHI')
@@ -211,6 +215,10 @@ class MasterSMHI(SeaBird):
         :param meta_dict:
         :return:
         """
+        timestamp = self._get_datetime(meta_dict['SDATE'])
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
+
         # meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
         meta_dict.setdefault('PROJ', 'BAS')
         meta_dict.setdefault('ORDERER', 'HAV, SMHI')
