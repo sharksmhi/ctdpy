@@ -11,7 +11,6 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.readers.cnv_reader import CNVreader
-from ctdpy.core.profile import Profile
 
 
 class SeaBird(BaseReader, CNVreader, SeriesHandler):

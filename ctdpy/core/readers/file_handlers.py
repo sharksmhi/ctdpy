@@ -87,7 +87,7 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
     def longitude_dd(self, longitude):
         """Set the longitude property in DD.dddd (Decimal degrees)."""
         if len(longitude.split('.')[0]) > 2:
-            self._longitude_dd = utils.decmin_to_decdeg(l)
+            self._longitude_dd = utils.decmin_to_decdeg(longitude)
         else:
             self._longitude_dd = longitude
 

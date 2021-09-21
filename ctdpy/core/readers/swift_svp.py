@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on 2021-04-19 10:55
+
 @author: johannes
 """
 import pandas as pd
@@ -9,7 +10,6 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.readers.cnv_reader import CNVreader
-from ctdpy.core.profile import Profile
 
 
 class SwiftSVP(BaseReader, CNVreader, SeriesHandler):

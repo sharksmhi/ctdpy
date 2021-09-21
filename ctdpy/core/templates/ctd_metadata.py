@@ -30,7 +30,7 @@ class CTDTemplateHandler(DataFrameHandler):
         return reader(**kwargs)
 
     def get_template_columns(self, template_key=None):
-        """ Return list of template primary columns."""
+        """Return list of template primary columns."""
         # FIXME Needed? we have .get_data_header(df) in baseclass but not as list...
         return list(self.template[template_key].columns)
 

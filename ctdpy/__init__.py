@@ -13,5 +13,5 @@ except DistributionNotFound:
     # package is not installed
     pass
 
-from ctdpy import core
+from ctdpy import core  # noqa: F401
 name = "ctdpy"

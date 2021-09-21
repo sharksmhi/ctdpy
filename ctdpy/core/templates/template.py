@@ -28,7 +28,7 @@ class Template(pd.DataFrame):
 
     @property
     def _constructor(self):
-        """Constructor for Template"""
+        """Construct Template"""
         return Template
 
     def check_data(self, data):
@@ -37,7 +37,7 @@ class Template(pd.DataFrame):
         return data[only_keys]
 
     def convert_formats(self, ship_map=None):
-        """Converts formats."""
+        """Convert formats."""
         # FIXME Test version.. Use methods outside Template instead..
         if 'timestamp' in self:
             self['timestamp']
@@ -52,7 +52,7 @@ class Template(pd.DataFrame):
 
         try:
             self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
-        except:
+        except Exception:
             self['SHIPC'] = '77SE'
 
     def import_column_order(self, order):
@@ -84,9 +84,9 @@ class Template(pd.DataFrame):
     def import_metadata(self, meta, len_col=None):
         """Append metadata to template (self)."""
         if isinstance(meta, dict):
-            meta = pd.DataFrame([meta]*len_col)
+            meta = pd.DataFrame([meta] * len_col)
         elif isinstance(meta, pd.core.frame.DataFrame):
-            meta = pd.concat([meta]*len_col, ignore_index=True)
+            meta = pd.concat([meta] * len_col, ignore_index=True)
         else:
             raise TypeError(type(meta) + ' is not supported by this import function')
 
@@ -95,5 +95,5 @@ class Template(pd.DataFrame):
     def sort(self, sort_by_keys=None):
         """Sort dataframe by "sort_by_keys"."""
         sort_by_keys = sort_by_keys or []
-        self.sort_values(sort_by_keys, ascending=[True]*len(sort_by_keys), inplace=True)
+        self.sort_values(sort_by_keys, ascending=[True] * len(sort_by_keys), inplace=True)
         self.reset_index(drop=True, inplace=True)

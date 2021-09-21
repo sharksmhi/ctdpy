@@ -4,14 +4,13 @@ Created on Thu Jul 05 11:38:08 2018
 
 @author: a002028
 """
-from ctdpy.core import readers
-from ctdpy.core import writers
-from ctdpy.core import templates
-from ctdpy.core import profile
-from ctdpy.core import data_handlers
-from ctdpy.core import calculator
-from ctdpy.core import mapping
-from ctdpy.core import session
-
-from ctdpy.core import config
-from ctdpy.core import utils
+from ctdpy.core import readers  # noqa: F401
+from ctdpy.core import writers  # noqa: F401
+from ctdpy.core import templates  # noqa: F401
+from ctdpy.core import profile  # noqa: F401
+from ctdpy.core import data_handlers  # noqa: F401
+from ctdpy.core import calculator  # noqa: F401
+from ctdpy.core import mapping  # noqa: F401
+from ctdpy.core import session  # noqa: F401
+from ctdpy.core import config  # noqa: F401
+from ctdpy.core import utils  # noqa: F401

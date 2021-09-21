@@ -4,7 +4,6 @@ Created on Fri Oct 19 17:06:23 2018
 
 @author: a002028
 """
-import pandas as pd
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.templates.template import Template
 
@@ -21,8 +20,10 @@ class PhyCheTemplateHandler(DataFrameHandler):
         """Append data and metadata to template."""
         mapper = {key: self.settings.pmap.get(key) for key in data.columns}
         # ts = '{YEAR:4s}-{MONTH:2s}-{DAY:2s} {HOUR:2s}:{MINUTE:2s}:{SECOND:2s}'
-        # data['timestamp'] = data[['YEAR', 'MONTH', 'DAY', 'HOUR', 'MINUTE', 'SECOND']].apply(lambda x: pd.Timestamp(ts.format(**x)), axis=1)
-        # data['SDATE'] = data[['YEAR', 'MONTH', 'DAY']].apply(lambda x: '{YEAR:4s}-{MONTH:2s}-{DAY:2s}'.format(**x), axis=1)
+        # data['timestamp'] = data[['YEAR', 'MONTH', 'DAY', 'HOUR', 'MINUTE', 'SECOND']]\
+        #     .apply(lambda x: pd.Timestamp(ts.format(**x)), axis=1)
+        # data['SDATE'] = data[['YEAR', 'MONTH', 'DAY']]\
+        #     .apply(lambda x: '{YEAR:4s}-{MONTH:2s}-{DAY:2s}'.format(**x), axis=1)
         # data['STIME'] = data[['HOUR', 'MINUTE']].apply(lambda x: '{HOUR:2s}:{MINUTE:2s}'.format(**x), axis=1)
         data = self.template.check_data(data.rename(mapper, axis=1))
 

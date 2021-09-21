@@ -102,7 +102,8 @@ class StyleSheet:
 
     def highlight_odd_rows(self, style_object):
         """Highlight odd rows (1,3,5,7,9)."""
-        return ['background-color: ' + self.odd_row_color if self._is_odd(i) else '' for i, v in enumerate(style_object)]
+        return ['background-color: ' + self.odd_row_color if self._is_odd(i)
+                else '' for i, v in enumerate(style_object)]
 
     def add_fontweight(self, style_object):
         """Set fontweight to style object."""
