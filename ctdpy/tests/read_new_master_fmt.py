@@ -38,7 +38,8 @@ pprint(list(datasets[0].keys()))
 
 # WRITE METADATA TO TEMPLATE
 # start_time = time.time()
-# s.save_data(datasets[0],  # datasets are stored in a list of 2 (idx 0: data, idx 1: metadata). For this example we only have data
+# datasets are stored in a list of 2 (idx 0: data, idx 1: metadata). For this example we only have data
+# s.save_data(datasets[0],
 #             writer='metadata_template',
 #             )
 
