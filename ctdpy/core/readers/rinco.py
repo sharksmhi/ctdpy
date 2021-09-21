@@ -5,21 +5,18 @@ Created on 2019-12-11 15:28
 @author: a002028
 
 """
-""" Rinco reader
-"""
 from ctdpy.core import utils
+from ctdpy.core.profile import Profile
+from ctdpy.core.calculator import Calculator
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.readers.cnv_reader import CNVreader
-from ctdpy.core.profile import Profile
-
-from ctdpy.core.calculator import Calculator
 
 
 class Rinco(BaseReader, CNVreader, SeriesHandler):
-    """
-    """
+    """Reader for rinco data."""
+
     ts_map = {'YEAR': 'year',
               'MONTH': 'month',
               'DAY': 'day',
@@ -28,16 +25,12 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
               'SECOND': 'second'}
 
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
         self.df_handler = DataFrameHandler(self.settings)
-        # self.metadata_update = {'Sensorinfo': {}}
 
     def add_calculated_parameters(self, df, latit):
-        """
-        :param df:
-        :param latit:
-        :return:
-        """
+        """Calculate parameters and add them to the dataframe."""
         # if 'DEPH' not in df:
         #     calc = Calculator()
         #     df['DEPH'] = calc.get_true_depth(attribute_dictionary={'latitude': latit,
@@ -52,11 +45,11 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
             df[ts_key] = df[ts_key].str.zfill(2)
 
     def get_data(self, filenames=None, add_low_resolution_data=False):
-        """
-        :param filenames: list of file paths
-        :param merge_data_and_metadata: False or True
-        :param add_low_resolution_data: False or True
-        :return: datasets
+        """Get data and metadata.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
+            add_low_resolution_data: False | True
         """
         data = {}
         if add_low_resolution_data:
@@ -90,18 +83,15 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         return data
 
     def get_metadata(self, serie, map_keys=True, filename=None, sdate=None, stime=None):
-        """
-        :param serie: pd.Series
-        :param map_keys: False or True
-        :return: Dictionary with metadata
-        """
+        """Dummie method."""
         raise NotImplementedError
 
     def merge_data(self, data, resolution='lores_data'):
-        """
-        :param data: Dictionary of specified dataset
-        :param resolution: str
-        :return: Updates data (dictionary with pd.DataFrames)
+        """Merge data with metadata.
+
+        Args:
+            data (dict): Dictionary of specified dataset
+            resolution (str): key for resolution
         """
         for fid in data:
             in_data = data[fid][resolution]
@@ -111,11 +101,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
             data[fid][resolution + '_all'] = in_data
 
     def setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :param metadata: used if needed for parameter calculations
-        :return:
-        """
+        """Convert pandas Serie into pandas DataFrame."""
         header = self.get_data_header(serie, dataset='tob', first_row=True)
         if header[0] == ';':
             header.remove(';')
@@ -127,9 +113,6 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """
-        :param fid: str, file name identifier
-        :return: standard dictionary structure
-        """
+        """Setup standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}

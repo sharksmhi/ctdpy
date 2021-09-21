@@ -11,16 +11,14 @@ from ctdpy.core.utils import get_filename
 
 
 class SvpSGUS(SwiftSVP):
-    """
-    """
+    """Swift-SVP reader, using SwiftSVP as base."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
 
     def _convert_formats(self, meta_dict, filename=None):
-        """
-        :param meta_dict:
-        :return:
-        """
+        """Set and/or convert formats of metadata."""
         meta_dict.setdefault('PROJ', 'NMK')
         meta_dict.setdefault('ORDERER', 'HAV')
         meta_dict.setdefault('SLABO', 'SGUS')
@@ -51,17 +49,20 @@ class SvpSGUS(SwiftSVP):
 
 
 class MetadataSGUS(XLSXmeta):
-    """
-    """
+    """Reader for metadata according to SMHI datahost template."""
+
     def __init__(self, settings):
+        """Initialize. """
         super().__init__(settings)
         self.data = {}
-        self.file_specs = self.settings.readers['smhi']['datasets']['xlsx']
+        self.file_specs = self.settings.readers['sgus']['datasets']['xlsx']
 
     def get_data(self, filenames=None, add_low_resolution_data=False):
-        """
-        :param filenames: list of file paths
-        :return: Dictionary with DataFrames
+        """Get data and metadata.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
+            add_low_resolution_data: False | True
         """
         data = {}
         reader = self.get_reader_instance()
@@ -76,6 +77,7 @@ class MetadataSGUS(XLSXmeta):
         return data
 
     def _add_serno(self, df):
+        """Add serno to dataframe."""
         if set(df['SERNO']) == {''}:
             # df['SERNO'] = df['FILE_NAME'].apply(lambda x: x.split('_')[1].zfill(4))
             df = df.sort_values(

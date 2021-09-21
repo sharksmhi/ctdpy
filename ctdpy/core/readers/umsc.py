@@ -4,11 +4,6 @@ Created on Mon Oct 22 11:01:38 2018
 
 @author: a002028
 """
-#
-#
-""" Sea-Bird-UMSC reader 
-"""
-import re
 import numpy as np
 from ctdpy.core import utils
 from ctdpy.core.readers.seabird import SeaBird
@@ -17,18 +12,15 @@ from ctdpy.core.calculator import Calculator
 
 
 class SeaBirdUMSC(SeaBird):
-    """
-    """
+    """Reader for seabird data according to UMSC processing routines."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
 
     @staticmethod
     def add_calculated_parameters(df, latit):
-        """
-        :param df:
-        :param latit:
-        :return:
-        """
+        """Add caluculated parameters to dataframe."""
         calc = Calculator()
         df['DEPH'] = calc.get_true_depth(attribute_dictionary={'latitude': latit,
                                                                'pressure': df['PRES_CTD'].astype(np.float),
@@ -36,10 +28,7 @@ class SeaBirdUMSC(SeaBird):
                                                                'density': df['DENS_CTD'].astype(np.float)})
 
     def _convert_formats(self, meta_dict, filename):
-        """
-        :param meta_dict:
-        :return:
-        """
+        """Set and/or convert formats of metadata."""
         timestamp = self._get_datetime(meta_dict['SDATE'])
         meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
         meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
@@ -53,11 +42,7 @@ class SeaBirdUMSC(SeaBird):
             meta_dict['FILE_NAME'] = filename
 
     def get_metadata(self, serie, map_keys=True, filename=None):
-        """
-        :param serie: pd.Series
-        :param map_keys: False or True
-        :return: Dictionary with metadata
-        """
+        """Return dictionary with metadata."""
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
@@ -69,7 +54,6 @@ class SeaBirdUMSC(SeaBird):
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
-            # meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
@@ -81,13 +65,7 @@ class SeaBirdUMSC(SeaBird):
         return meta_dict
 
     def get_meta_dict(self, series, keys=None, identifier='', separator=''):
-        """
-        :param series: pd.Series, contains metadata
-        :param keys: List of keys to search for
-        :param identifier: str
-        :param separator: str
-        :return: Dictionary
-        """
+        """Get metadata information for a specific identifier and separator."""
         keys = keys or []
         meta_dict = {}
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
@@ -98,7 +76,6 @@ class SeaBirdUMSC(SeaBird):
                 boolean = boolean_startswith & boolean_contains
                 if any(boolean):
                     if key == 'SERIAL NO':
-                        # print('series[boolean]', series[boolean])
                         meta = re.search('SERIAL NO. (.+?) ', series[boolean].iloc[0]).group(1)
                     else:
                         meta = series[boolean].tolist()[0].split(separator)[-1].strip()
@@ -108,24 +85,22 @@ class SeaBirdUMSC(SeaBird):
         return meta_dict
 
     def _setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :param metadata:
-        :return:
-        """
+        """Convert pandas Serie into pandas DataFrame."""
         header = self.get_data_header(serie, dataset='cnv')
         df = self.get_data_in_frame(serie, header, dataset='cnv')
         df = self.df_handler.map_column_names_of_dataframe(df)
 
+        # TODO use metadata['LATIT'] instead of 62.
         self.add_calculated_parameters(df, latit=62.)  # metadata['LATIT'])
 
         return df
 
 
 class MetadataUMSC(XLSXmeta):
-    """
-    """
+    """Metadata Class for UMSC reader."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
         self.data = {}
         self.file_specs = self.settings.readers['umsc']['datasets']['xlsx']

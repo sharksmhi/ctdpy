@@ -274,7 +274,8 @@ class SeriesHandler(BaseFileHandler):
             boolean = serie.str.startswith(string)
 
         if reversed_boolean:
-            boolean = boolean == False
+            # boolean = boolean == False
+            boolean = ~boolean
 
         if as_boolean:
             return boolean
@@ -285,7 +286,7 @@ class SeriesHandler(BaseFileHandler):
     def get_series_object(obj):
         """Get one column with data, eg. pd.Serie."""
         if isinstance(obj, pd.DataFrame):
-            # Not really necessary if you load file with argument pd.read_csv(..., header=None)
+            # Not really necessary if you load file with argument header=None pd.read_csv(..., header=None)
             s = pd.Series(obj.keys()[0])
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
@@ -321,7 +322,8 @@ class BaseReader:
 
 
 class UnitConverter:
-    """
+    """Convert unit of given parameters.
+
     Plan:
     - input ctd-standard-format unit (rawdata unit)
         - dataframe metadata?
@@ -404,6 +406,7 @@ class CorrectionFile(dict):
 class DeltaCorrection:
     """If data deliverer has provided correction deltas (BIAS correction)
        for specific parameter profiles, we append that correction here.
+
     Eg.
         SALT_CTD:
             corr: 0.04
@@ -454,7 +457,6 @@ class DeltaCorrection:
                 nr_decimals = len(df[para][0].split('.')[1])
                 s = df[para].astype(float) + value
                 df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_decimals))
-                # print(para, df[para])
 
     def update_meta(self, meta_serie):
         """Update meta serie."""

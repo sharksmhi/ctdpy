@@ -10,26 +10,21 @@ import pandas as pd
 def load_txt(file_path='',
              seperator='\t',
              encoding='cp1252',
-             # encoding='utf-8',
-             # encoding='ISO-8859-1',
-             # encoding_list=['cp1252','utf-8','ISO-8859-1'],
              fill_nan='',
              header_row=0,
              as_dtype=None,
-             as_dict=False,
-             loading_info=''):
+             as_dict=False):
+    """Load text file and return pandas DataFrame.
+
+    Args:
+        file_path (str): path to file
+        seperator (str):
+        encoding (str):
+        fill_nan: str | np.nan
+        header_row (int): row number
+        as_dtype: str | np.float | int
+        as_dict (bool): False | True
     """
-    :param file_path: str
-    :param seperator: str
-    :param encoding: str
-    :param fill_nan: str | np.nan
-    :param header_row: int
-    :param as_dtype: str | np.float | int
-    :param as_dict: False | True
-    :param loading_info: NotImplementedError
-    :return: pd.DataFrame | Dictionary
-    """
-    # print('Loading text file: {}'.format(file_path.split('/')[-1]))
     if as_dtype:
         with open(file_path, 'r') as f:
             # is .strip('\r') necessary?

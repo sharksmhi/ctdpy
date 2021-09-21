@@ -5,60 +5,53 @@ Created on 2019-11-04 10:37
 @author: a002028
 
 """
-""" Metadata reader
-"""
-from ctdpy.core.utils import get_filename, thread_process, eliminate_empty_rows
-from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import BaseReader
+from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.xlsx_reader import load_excel
+from ctdpy.core.utils import (
+    get_filename,
+    thread_process,
+    eliminate_empty_rows
+)
 
 
 class XLSXmeta(BaseReader, DataFrameHandler):
-    """
-    """
+    """Base Class reader for SMHI datahost excel template for CTD metadata."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
-        # self.data = {}
         self.file_specs = None
 
-    def get_data(self, filenames=None, add_low_resolution_data=False):
+    def get_data(self, filenames=None, **kwargs):
+        """Get metadata.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
         """
-        :param filenames: list of file paths
-        :return: Dictionary with DataFrames
-        """
-        print(self.__class__.__name__)
         data = {}
         reader = self.get_reader_instance()
         for file_path in filenames:
-            # print('file_path', file_path)
             fid = get_filename(file_path)
             data[fid] = {}
-            # print('before _read')
             self._read(file_path, self.file_specs, reader, data[fid])
-
-        print('DONE XLSXmeta')
         return data
 
     def merge_data(self, data, resolution=None):
-        """
-        :param data: data
-        :param resolution: None
-        :return: pass
-        """
+        """Merge data."""
+        # Not used when we only have metadata.
         pass
 
     def _read(self, file_path, file_specs, reader, data):
-        """
-        :param file_path: str
-        :param file_specs: Dictionary
-        :param reader: Reader instance
-        :param data: Dictionary
-        :return: Updates data
+        """Read one sheet at a time.
+
+        Args:
+            file_path (str): Path to file
+            file_specs (dict): Settings for reader
+            reader (obj): Reader instance
+            data (dict): Data
         """
         for sheet_name, header_row in zip(file_specs['sheet_names'], file_specs['header_rows']):
-            # print(sheet_name, header_row)
-
-            # thread_process(self.load_func, file_path, sheet_name, header_row, data, reader)
             df = reader(
                 file_path=file_path,
                 sheet_name=sheet_name,
@@ -69,6 +62,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
 
     @staticmethod
     def load_func(file_path, sheet_name, header_row, data, reader):
+        """Load function for data."""
         df = reader(
             file_path=file_path,
             sheet_name=sheet_name,
@@ -79,8 +73,6 @@ class XLSXmeta(BaseReader, DataFrameHandler):
 
     @staticmethod
     def get_reader_instance():
-        """
-        Could be done differently
-        :return: Reader instance
-        """
+        """Get reader."""
+        # Could be done differently
         return load_excel

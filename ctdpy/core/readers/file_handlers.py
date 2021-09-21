@@ -4,18 +4,20 @@ Created on Thu Jul 05 11:18:06 2018
 
 @author: a002028
 """
-from abc import ABCMeta
 import six
+from abc import ABCMeta
 from ctdpy.core import utils
 
 
 class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
-    """ BaseClass to hold various methods for loading different types of files
-        Can be settings files, data files, info files..
+    """BaseClass to hold various methods for loading different types of files.
 
-        Holds properties and their setters (perhaps we should move this to a "BaseProperties"?)
+    Can be settings files, data files, info files, etc.
+    Holds properties and their setters (perhaps we should move this to a "BaseProperties"?)
     """
+
     def __init__(self, settings):
+        """Initialize and set properies to None."""
         super().__init__()
         self.class_methods = utils.get_method_dictionary(BaseFileHandler)
         self.settings = settings
@@ -32,78 +34,62 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         self._second = None
 
     def __str__(self):
-        """ """
+        """Customize __str__."""
         return "<{}: '{}'>".format(self.__class__.__name__, self.filename)
 
     def __repr__(self):
-        """ """
+        """Customize __repr__."""
         return str(self)
 
     def get_dataset(self, dataset_id, ds_info, out=None,
                     xslice=slice(None), yslice=slice(None)):
-        raise NotImplementedError
-
-    def get_bounding_box(self):
-        """Get the bounding box of the files, as a (lons, lats) tuple.
-
-        The tuple return should a lons and lats list of coordinates traveling
-        clockwise around the points available in the file.
-        """
+        """Get dataset."""
         raise NotImplementedError
 
     def get_property_value(self, key):
+        """Get value from property of self.
+
+        Args:
+            key: Intended to be the name of a property method of self.
         """
-        :param key: Intended to be the name of a property method
-        :return: return of property method
-        """
-        #FIXME Perhaps we need to check aginst .__class__.__name__ attributes in order to exclude child class attributes..
-        #FIXME if so: use self.class_methods
+        # FIXME Perhaps we need to check aginst .__class__.__name__ attributes in order to exclude child class attributes..
+        # FIXME if so: use self.class_methods
         return getattr(self, key.lower(), '')
 
     @property
     def station(self):
-        """
-        :return: Station name with capital letters
-        """
+        """Return station."""
         return self._station
 
     @station.setter
     def station(self, s):
-        """
-        Setter of station
-        :param s: station name
-        :return: Sets station name with capital letters
-        """
+        """Set the station property with capital letters."""
         self._station = s.upper()
 
     @property
     def cruise(self):
-        """
-        :return: str, Cruise name according to Year_ShipCode_CruiseNumber ('NNNN_LLLL_NN')
-        """
+        """Return cruise."""
         return self._cruise
 
     @cruise.setter
     def cruise(self, cruise_list):
-        """
-        Setter of cruise
-        :param cruise_list: tuple, (year, shipc, cruise_no)
+        """Set the station property with capital letters.
+
+        Cruise name according to Year_ShipCode_CruiseNumber ('NNNN_LLLL_NN')
+
+        Args:
+            cruise_list (iterable): (year, shipc, cruise_no)
         """
         self._cruise = '_'.join(cruise_list)
 
     @property
     def longitude_dd(self):
-        """
-        :return: Longitude in DD.dddd (Decimal degrees)
-        """
+        """Return longitude_dd."""
         return self._longitude_dd
 
     @longitude_dd.setter
     def longitude_dd(self, l):
-        """
-        Setter of longitude_dd
-        :param l: str
-        """
+        """Set the longitude property in DD.dddd (Decimal degrees)."""
         if len(l.split('.')[0]) > 2:
             self._longitude_dd = utils.decmin_to_decdeg(l)
         else:
@@ -111,17 +97,12 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
 
     @property
     def latitude_dd(self):
-        """
-        :return: latitude in DD.dddd (Decimal degrees)
-        """
+        """Return latitude_dd."""
         return self._latitude_dd
 
     @latitude_dd.setter
     def latitude_dd(self, l):
-        """
-        Setter of longitude_dd
-        :param l: str
-        """
+        """Set the latitude property in DD.dddd (Decimal degrees)."""
         if len(l.split('.')[0]) > 2:
             self._latitude_dd = utils.decmin_to_decdeg(l)
         else:
@@ -129,98 +110,60 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
 
     @property
     def year(self):
-        """
-        :return: str, YYYY
-        """
+        """Return year."""
         return self._year
 
     @year.setter
     def year(self, datetime_obj):
-        """
-        Setter of year
-        """
+        """Set year."""
         self._year = datetime_obj.strftime('%Y')
 
     @property
     def month(self):
-        """
-        :return: str, MM
-        """
+        """Return month."""
         return self._month
 
     @month.setter
     def month(self, datetime_obj):
-        """
-        Setter of month
-        """
+        """Set month."""
         self._month = datetime_obj.strftime('%m')
 
     @property
     def day(self):
-        """
-        :return: str, DD
-        """
+        """Return day."""
         return self._day
 
     @day.setter
     def day(self, datetime_obj):
-        """
-        Setter of day
-        """
+        """Set day."""
         self._day = datetime_obj.strftime('%d')
 
     @property
     def hour(self):
-        """
-        :return: str, HH
-        """
+        """Return hour."""
         return self._hour
 
     @hour.setter
     def hour(self, datetime_obj):
-        """
-        Setter of hour
-        """
+        """Set hour."""
         self._hour = datetime_obj.strftime('%H')
 
     @property
     def minute(self):
-        """
-        :return: str, MM
-        """
+        """Return minute."""
         return self._minute
 
     @minute.setter
     def minute(self, datetime_obj):
-        """
-        Setter of minute
-        """
+        """Set minute."""
         self._minute = datetime_obj.strftime('%M')
 
     @property
     def second(self):
-        """
-        :return: str, SS
-        """
+        """Return second."""
         return self._second
 
     @second.setter
     def second(self, datetime_obj):
-        """
-        Setter of second
-        """
+        """Set second."""
         self._second = datetime_obj.strftime('%S')
-
-
-class BaseReader:
-    """
-    """
-    def __init__(self, settings):
-        self.settings = settings
-
-    def _extract_info(self):
-        raise NotImplementedError
-#        for ds in self.file_info[]
-
-    def get_reader(self):
-        raise NotImplementedError

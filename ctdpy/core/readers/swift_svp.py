@@ -2,8 +2,6 @@
 Created on 2021-04-19 10:55
 @author: johannes
 """
-""" Swift-SVP reader
-"""
 import pandas as pd
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
@@ -14,9 +12,10 @@ from ctdpy.core.profile import Profile
 
 
 class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
-    """
-    """
+    """Swift-SVP reader."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
         self.df_handler = DataFrameHandler(self.settings)
 
@@ -37,9 +36,11 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         }
 
     def _convert_formats(self, *args, **kwargs):
+        """Convert format. NotImplemented."""
         raise NotImplementedError
 
     def _info_from_timestamp(self, df):
+        """Add time parameters."""
         if 'TIMESTAMP' in df:
             df['TIMESTAMP'] = df['TIMESTAMP'].apply(pd.Timestamp)
             df['YEAR'] = df['TIMESTAMP'].dt.strftime('%Y')
@@ -51,12 +52,14 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
 
     @staticmethod
     def load(fid):
+        """Load text file."""
         return pd.read_csv(
             fid,
             header=None
         )
 
     def load_func(self, fid, dictionary):
+        """Load function for Swift-SVP data."""
         file_data = self.load(fid)
         fid = utils.get_filename(fid)
         self.setup_dictionary(fid, dictionary)
@@ -72,12 +75,12 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         dictionary[fid]['data'] = hires_data
 
     def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
-        """
-        :param thread_load: does not seem to be working as expected.. yes it´s done in 1 sec but the loading function
-        are busy for 30 sec..
-        :param filenames: list of file paths
-        :param add_low_resolution_data: False or True
-        :return: datasets
+        """Read and return data.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
+            add_low_resolution_data: False | True
+            thread_load: False | True
         """
         data = {}
         profile = None
@@ -96,11 +99,7 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return data
 
     def get_metadata(self, serie, map_keys=True, **kwargs):
-        """
-        :param serie: pd.Series
-        :param map_keys: False or True
-        :return: Dictionary with metadata
-        """
+        """Return dictionary with metadata."""
         meta_dict = {}
         data = self.get_meta_dict(
             serie,
@@ -117,10 +116,11 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return meta_dict
 
     def merge_data(self, data, resolution='lores_data'):
-        """
-        :param data: Dictionary of specified dataset
-        :param resolution: str
-        :return: Updates data (dictionary with pd.DataFrames)
+        """Merge data with metadata.
+
+        Args:
+            data (dict): Dictionary of specified dataset
+            resolution (str): key for resolution
         """
         for fid in data:
             in_data = data[fid][resolution]
@@ -132,10 +132,11 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
             data[fid][resolution + '_all'] = in_data
 
     def setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :param metadata: used if needed for parameter calculations
-        :return:
+        """Setup dataframe.
+
+        Args:
+            serie:
+            metadata: used if needed for parameter calculations
         """
         header = self.get_data_header(serie, dataset='vp2')
         df = self.get_data_in_frame(serie, header, dataset='vp2')
@@ -145,22 +146,24 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """
-        :param keys:
-        :param data:
-        :param fid: str, file name identifier
-        :return: standard dictionary structure
+        """Setup standard dictionary structure.
+
+        Args:
+            fid: file name identifier
+            data:
+            keys:
         """
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 
     def get_meta_dict(self, series, keys=None, identifier='', separator=''):
-        """
-        :param series: pd.Series, contains metadata
-        :param keys: List of keys to search for
-        :param identifier: str
-        :param separator: str
-        :return: Dictionary
+        """Return metadata as dictionary.
+
+        Args:
+            series (pd.Series): Metadata
+            keys (list): List of keys to search for
+            identifier (str):
+            separator (str):
         """
         meta_dict = {}
         boolean_startswith = self.get_index(
@@ -190,16 +193,18 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return meta_dict
 
     def get_data_header(self, data, dataset=None, idx=0, first_row=False):
-        """
-        Get header from identifier in settings file.
-        Assumes all values shall be taken from 'idx' after splitting
-        :param data: pd.Series
-        :param dataset: str
-        :param idx: Default 0 due to Standard Seabird output
-                    Example: '=' is the splitter in this specific case
-                    # name 2 = t090C: Temperature [ITS-90, deg C]
-                    head will then be 't090C: Temperature [ITS-90, deg C]'
-        :return: list of column names (header)
+        """Get header from identifier in settings file.
+
+        Assumes all values shall be taken from 'idx' after splitting.
+
+        Args:
+            data (pd.Series): Data
+            dataset (str): Dataset key name
+            idx: Default 0 due to Standard Seabird output
+                 Example: '=' is the splitter in this specific case
+                 # name 2 = t090C: Temperature [ITS-90, deg C]
+                 head will then be 't090C: Temperature [ITS-90, deg C]'
+            first_row (bool): False | True
         """
         identifier = self.settings.datasets[dataset]['identifier_header']
         boolean = self.get_index(
@@ -215,13 +220,13 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return header
 
     def get_data_in_frame(self, series, columns, dataset=None, **kwargs):
-        """
-        Get data from pd.Series. separates row values in series into columns within the
-        DataFrame
-        :param series: pd.Series, data
-        :param columns: list, column names
-        :param dataset: str, reader specific dataset. Determines how to handle data format
-        :return: pd.DataFrame
+        """Get data from pd.Series. separates row values in series into columns within the DataFrame
+
+        Args:
+            series (pd.Series): data
+            columns (list): Column names
+            dataset (str): Dataset key name
+            **kwargs:
         """
         identifier = self.settings.datasets[dataset]['identifier_data']
         boolean = self.get_index(
@@ -235,7 +240,6 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         # Date / Time\tDepth\tPressure........
         #           \tm\tdBar\tMs-1\tDe........
         index = series[boolean].index[2:]
-
         splitter = self.settings.datasets[dataset].get('separator_data')
 
         if splitter:

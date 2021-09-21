@@ -5,8 +5,7 @@ Created on 2019-11-04 10:31
 @author: a002028
 
 """
-""" Sea-Bird reader
-"""
+import re
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
@@ -16,13 +15,15 @@ from ctdpy.core.profile import Profile
 
 
 class SeaBird(BaseReader, CNVreader, SeriesHandler):
-    """
-    """
+    """Base for all seabird readers."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
         self.df_handler = DataFrameHandler(self.settings)
 
     def load_func(self, fid, dictionary):
+        """Load function for data."""
         file_data = self.load(fid)
         fid = utils.get_filename(fid)
         self.setup_dictionary(fid, dictionary)
@@ -36,12 +37,12 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         dictionary[fid]['data'] = hires_data
 
     def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
-        """
-        :param thread_load: does not seem to be working as expected.. yes it´s done in 1 sec but the loading function
-        are busy for 30 sec..
-        :param filenames: list of file paths
-        :param add_low_resolution_data: False or True
-        :return: datasets
+        """Get data and metadata.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
+            add_low_resolution_data: False | True
+            thread_load: False | True
         """
         data = {}
         profile = None
@@ -57,32 +58,10 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
             else:
                 self.load_func(fid, data)
 
-            # file_data = self.load(fid)
-            # fid = utils.get_filename(fid)
-            # self.setup_dictionary(fid, data, None)
-            #
-            # serie = self.get_series_object(file_data)
-            # metadata = self.get_metadata(serie, filename=fid)
-            # hires_data = self.setup_dataframe(serie, metadata)
-            #
-            # data[fid]['raw_format'] = serie
-            # data[fid]['metadata'] = metadata
-            # data[fid]['data'] = hires_data
-
-            # if add_low_resolution_data:
-            #     profile.update_data(data=hires_data)
-            #     lores_data = profile.extract_lores_data(key_depth='DEPH',
-            #                                             discrete_depths=self.settings.depths)
-            #     data[fid]['lores_data'] = lores_data
-        print('return data')
         return data
 
     def get_metadata(self, serie, map_keys=True, filename=None):
-        """
-        :param serie: pd.Series
-        :param map_keys: False or True
-        :return: Dictionary with metadata
-        """
+        """Return dictionary with metadata."""
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
@@ -99,10 +78,11 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         return meta_dict
 
     def merge_data(self, data, resolution='lores_data'):
-        """
-        :param data: Dictionary of specified dataset
-        :param resolution: str
-        :return: Updates data (dictionary with pd.DataFrames)
+        """Merge data with metadata.
+
+        Args:
+            data (dict): Dictionary of specified dataset
+            resolution (str): key for resolution
         """
         for fid in data:
             in_data = data[fid][resolution]
@@ -112,11 +92,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
             data[fid][resolution + '_all'] = in_data
 
     def setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :param metadata: used if needed for parameter calculations
-        :return:
-        """
+        """Convert pandas Serie into pandas DataFrame."""
         header = self.get_data_header(serie, dataset='cnv')
         df = self.get_data_in_frame(serie, header, dataset='cnv')
         df = self.df_handler.map_column_names_of_dataframe(df)
@@ -124,22 +100,31 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """
-        :param keys:
-        :param data:
-        :param fid: str, file name identifier
-        :return: standard dictionary structure
-        """
+        """Setup standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 
     def _get_datetime(self, date_string):
-        """
+        """Convert data date format to datetime object.
+
         Expecting date_string with format e.g. "Feb 21 2018 16:08:54 [Instrument's time stamp, header]"
-        :param date_string: str
-        :return:
         """
         if not date_string:
             return ''
         return utils.convert_string_to_datetime_obj(date_string.split('[')[0].strip(),
                                                     '%b %d %Y %H:%M:%S')
+
+    @staticmethod
+    def _get_serno(value):
+        """Get serie number of profile/visit.
+
+        In SMHI Seabird CTD-files there usually are specified information about "LIMS Job", which is the SMHI-internal
+        key number YEAR-SHIP-SERNO. This method picks out the SERNO number.
+        """
+        lims_job_list = re.findall(r"[0-9]{4}", value)
+        if len(lims_job_list):
+            serno = lims_job_list[-1]
+        else:
+            serno = ''
+
+        return serno

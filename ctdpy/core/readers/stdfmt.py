@@ -11,17 +11,14 @@ from ctdpy.core.readers.cnv_reader import CNVreader
 
 
 class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
-    """
-    """
+    """Base Class for standard format readers."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
 
     def setup_dataframe(self, serie, metadata=None):
-        """
-        :param serie:
-        :param metadata: used if needed for parameter calculations
-        :return:
-        """
+        """Convert pandas Serie into pandas DataFrame."""
         header = self.get_data_header(serie, dataset='txt', first_row=True)
         df = self.get_data_in_frame(serie, header, dataset='txt', splitter=True)
         self._adjust_dataframe(df)
@@ -29,10 +26,7 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """
-        :param fid: str, file name identifier
-        :return: standard dictionary structure
-        """
+        """Setup standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 
@@ -41,28 +35,21 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
 
 
 class StandardFormatCTD(BaseSTDFMT):
-    """
-    """
+    """Reader for standard CTD-format according to SHARK."""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
 
     @staticmethod
     def _adjust_dataframe(df):
-        """
-        :param df:
-        :return:
-        """
+        """Delete first value if it equals header of the dataframe."""
         if df.iloc[0, 0] == df.columns[0]:
             df.drop(0, inplace=True)
             df.reset_index(drop=True, inplace=True)
 
     def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
-        """
-        :param thread_load:
-        :param add_low_resolution_data:
-        :param filenames: list of file paths
-        :return:
-        """
+        """Get data in dictionary."""
         data = {}
         for fid in filenames:
             print('reading file: {}'.format(fid))
@@ -76,11 +63,7 @@ class StandardFormatCTD(BaseSTDFMT):
         return data
 
     def load_func(self, fid, dictionary):
-        """
-        :param fid:
-        :param dictionary:
-        :return:
-        """
+        """Load function for data."""
         file_data = self.load(fid, sep='NO__SEPERATOR')
         fid = utils.get_filename(fid)
         dictionary[fid] = {}
@@ -93,21 +76,10 @@ class StandardFormatCTD(BaseSTDFMT):
         dictionary[fid]['metadata'] = metadata
 
     def get_metadata(self, serie, map_keys=True, filename=None):
-        """
-        :param serie: pd.Series
-        :param map_keys: False or True
-        :return: Dictionary with metadata
-        """
-        # meta_dict = {}
+        """Return metadata in dictionary."""
         data = self.get_meta_dict(serie,
                                   identifier=self.settings.datasets['txt'].get('identifier_meta'),
                                   # separator=self.settings.datasets['txt'].get('separator_metadata'),
                                   # keys=self.settings.datasets['txt'].get('keys_metadata'),
                                   )
-
-        # meta_dict = config.recursive_dict_update(meta_dict, data)
-
-        # if map_keys:
-        #     meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
-
         return data

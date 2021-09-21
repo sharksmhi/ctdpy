@@ -5,10 +5,9 @@ Created on Thu Jul 05 10:29:30 2018
 @author: a002028
 """
 import os
-
-from ctdpy.core import utils
 import numpy as np
 import yaml
+from ctdpy.core import utils
 
 
 def get_filebase(path, pattern):
@@ -19,20 +18,20 @@ def get_filebase(path, pattern):
 
 
 class YAMLreader(dict):
-    """
-    """
-    def __init__(self):
-        super().__init__()
+    """Reader for yaml-files."""
 
+    def __init__(self):
+        """Initialize."""
+        super().__init__()
         self.config = {}
 
     def load_yaml(self, config_files, file_names_as_key=False, return_config=False):
-        """
+        """Load file (or files).
 
-        :param config_files: Preferably list of file paths
-        :param file_names_as_key: False | True
-        :param return_config: False | True
-        :return: Dictionary with loaded files specifications
+        Args:
+            config_files: Preferably list of file paths
+            file_names_as_key: False | True
+            return_config: False | True
         """
         if not isinstance(config_files, (list, np.ndarray)):
             config_files = [config_files]
@@ -43,9 +42,6 @@ class YAMLreader(dict):
                     file = yaml.load(fd, Loader=yaml.FullLoader)
                 except yaml.YAMLError:
                     file = yaml.safe_load(fd)
-                # file = yaml.load(fd)
-                # print('config_file', config_file)
-                # print(file)
                 if file_names_as_key:
                     file_name = self.get_file_name(config_file)
                     self.config[file_name] = file
@@ -57,9 +53,6 @@ class YAMLreader(dict):
 
     @staticmethod
     def get_file_name(file_path):
-        """
-        :param file_path: str, complete path to file
-        :return: filename without extension
-        """
+        """Get filename without extension."""
         filename = os.path.basename(file_path)
         return os.path.splitext(filename)[0]
