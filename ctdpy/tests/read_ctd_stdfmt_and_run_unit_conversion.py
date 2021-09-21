@@ -7,32 +7,30 @@ Created on 2020-07-10 14:09
 
 """
 import sys
-# sys.path.append('C:\\Utveckling\\ctdpy')  # should not be necessary to append path here
-
 from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
-
 from ctdpy.core import config, data_handlers
-
 import time
 from pprint import pprint
 
-###################        GET FILES        ####################
+
+# GET FILES
 base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_NMK_SGUS\processed_data'
 
-files = generate_filepaths(base_dir,
-                           endswith='.txt',                # Presumably CTD-standard format
-                           only_from_dir=False,
-                           )
+files = generate_filepaths(
+    base_dir,
+    endswith='.txt',  # Presumably CTD-standard format
+    only_from_dir=False,
+)
 
 
-###################        Create SESSION object        ###################
-s = Session(filepaths=files,
-            reader='ctd_stdfmt',
-            )
+# Create SESSION object
+s = Session(
+    filepaths=files,
+    reader='ctd_stdfmt',
+)
 
-
-###################        READ DELIVERY DATA, CNV, XLSX        ###################
+# READ DELIVERY DATA, CNV, XLSX
 start_time = time.time()
 datasets = s.read()
 print("Datasets loaded--%.3f sec" % (time.time() - start_time))
@@ -40,12 +38,13 @@ print('Files loaded:')
 pprint(list(datasets[0]))
 
 
-##################        Unit Conversion       ###################
-converter = data_handlers.UnitConverter(s.settings.mapping_unit,
-                                        s.settings.user)
+# Unit Conversion
+converter = data_handlers.UnitConverter(
+    s.settings.mapping_unit,
+    s.settings.user
+)
 
 for data_key, item in datasets[0].items():
-    # print(data_key)
     converter.update_meta(item['metadata'])
     unit_converted = False
     for parameter in converter.mapper:
@@ -58,7 +57,7 @@ for data_key, item in datasets[0].items():
         converter.append_conversion_comment()
 
 
-#  ##################        UPDATE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)        ###################
+# UPDATE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)
 # As of now we only export the updated ctd-datafile (ctd-standard-format).
 # delivery_note, metadata, sensorinfo, information are exclude..
 

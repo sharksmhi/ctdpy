@@ -2,6 +2,7 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2021-04-19 10:22
+
 @author: johannes
 """
 from ctdpy.core.session import Session
@@ -12,7 +13,7 @@ base_dir = r'C:\Temp\CTD_DV\SGU\SGU_upp20_profile_rapportering_20210401'
 
 files = generate_filepaths(
     base_dir,
-    pattern_list=['.vp2', '.xlsx'],   # Both cnv- and metadata-files
+    pattern_list=['.vp2', '.xlsx'],  # Both cnv- and metadata-files
 )
 
 s = Session(filepaths=files, reader='sgus')

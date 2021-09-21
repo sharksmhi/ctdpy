@@ -165,7 +165,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         return {'meta': pd.Series([''.join([self.writer['prefix_metadata_delimiter'],
                                             '=', self.writer['separator_metadata']])]),
                 'data': pd.Series([''.join([self.writer['prefix_data_delimiter'],
-                                            '=', '\ t'.replace(' ', '')])])}
+                                            '=', '\ t'.replace(' ', '')])])}  # noqa: W605
 
     def _get_delivery_note(self, delivery_info):
         """Return dictionary with information taken from the delivery_note ("Förklarings-flik")"""
