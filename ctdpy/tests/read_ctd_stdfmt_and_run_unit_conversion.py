@@ -1,4 +1,4 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute.
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2020-07-10 14:09
@@ -6,10 +6,9 @@ Created on 2020-07-10 14:09
 @author: a002028
 
 """
-import sys
 from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
-from ctdpy.core import config, data_handlers
+from ctdpy.core.utils import generate_filepaths
+from ctdpy.core import data_handlers
 import time
 from pprint import pprint
 
@@ -44,7 +43,7 @@ converter = data_handlers.UnitConverter(
     s.settings.user
 )
 
-for data_key, item in datasets[0].items():
+for item in datasets[0].values():
     converter.update_meta(item['metadata'])
     unit_converted = False
     for parameter in converter.mapper:

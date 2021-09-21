@@ -1,4 +1,4 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2021-04-19 10:22
@@ -6,7 +6,7 @@ Created on 2021-04-19 10:22
 @author: johannes
 """
 from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
+from ctdpy.core.utils import generate_filepaths
 
 
 base_dir = r'C:\Temp\CTD_DV\SGU\SGU_upp20_profile_rapportering_20210401'

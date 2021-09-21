@@ -1,4 +1,4 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute.
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2020-07-10 13:59
@@ -7,7 +7,7 @@ Created on 2020-07-10 13:59
 
 """
 from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
+from ctdpy.core.utils import generate_filepaths
 import time
 from pprint import pprint
 

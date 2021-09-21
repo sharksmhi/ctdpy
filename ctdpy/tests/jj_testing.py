@@ -7,10 +7,7 @@ Created on Thu Jul 05 08:22:21 2018
 import time
 from pprint import pprint
 from ctdpy.core.session import Session
-from ctdpy.core import config, data_handlers
-from ctdpy.core.archive_handler import Archive
-from sharkpylib.qc.qc_default import QCBlueprint
-from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, get_reversed_dictionary, match_filenames
+from ctdpy.core.utils import generate_filepaths
 
 
 base_dir = r'C:\Utveckling\ctdpy\ctdpy\tests\test_data\exprapp_april_2020'

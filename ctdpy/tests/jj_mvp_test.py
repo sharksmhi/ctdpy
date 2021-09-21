@@ -3,12 +3,10 @@
 Created on 2020-02-18 13:42
 
 @author: a002028
-
 """
 import time
 from ctdpy.core.session import Session
-from ctdpy.core import config
-from ctdpy.core.utils import get_file_list_based_on_suffix, generate_filepaths, match_filenames
+from ctdpy.core.utils import generate_filepaths
 
 
 base_dir = r'...Svea v6-7 Feb/mvp/cnv'

@@ -1,10 +1,9 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute.
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2020-07-10 14:15
 
 @author: a002028
-
 """
 from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
@@ -40,7 +39,7 @@ pprint(list(datasets[0]))
 start_time = time.time()
 
 # This will produce alot of prints...
-for data_key, item in datasets[0].items():
+for item in datasets[0].values():
     parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
     qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
     qc_run()
