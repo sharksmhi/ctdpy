@@ -4,6 +4,7 @@ Created on Mon Oct 22 11:01:38 2018
 
 @author: a002028
 """
+import re
 import numpy as np
 from ctdpy.core import utils
 from ctdpy.core.readers.seabird import SeaBird

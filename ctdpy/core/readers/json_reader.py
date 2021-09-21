@@ -15,10 +15,11 @@ class JSONreader:
 
     - Import json
     - Export to json
-    - Find dictionary within json file based on a specific key 
+    - Find dictionary within json file based on a specific key
     - Add elements to dictionary
     - Fill up json/dictionary structure with relevant/desired information
     """
+
     def __init__(self):
         """Initialize."""
         super().__init__()
@@ -37,13 +38,13 @@ class JSONreader:
     def export(self, out_source='', out_file=None):
         """Export data to file."""
         if out_file:
-            self._export_json(out_source=out_source, 
+            self._export_json(out_source=out_source,
                               data_dict=out_file)
         elif hasattr(self, 'out_file'):
-            self._export_json(out_source=out_source, 
+            self._export_json(out_source=out_source,
                               data_dict=self.out_file)
         elif hasattr(self, 'config'):
-            self._export_json(out_source=out_source, 
+            self._export_json(out_source=out_source,
                               data_dict=self.config)
         else:
             raise UserWarning('No outfile specified for export to .json')
@@ -61,7 +62,7 @@ class JSONreader:
         elif isinstance(self.config, dict):
             return self.json_file.get(key)
         else:
-            raise UserWarning('The intended use of a json file has an unrecognizable format', 
+            raise UserWarning('The intended use of a json file has an unrecognizable format',
                               type(self.config))
 
     def find_key(self, key, dictionary):
@@ -73,7 +74,7 @@ class JSONreader:
             for d in dictionary:
                 for result in self.find_key(key, d):
                     yield result
-        else:    
+        else:
             for k, v in dictionary.items():
                 if k == key:
                     yield v
@@ -105,7 +106,6 @@ class JSONreader:
             return self.config
 
     def setup_dict(self, keys=None):
-        """Setup dictionary based on list of keys."""
-        if keys is None:
-            keys = []
-        return {key:True for key in keys}
+        """Set dictionary based on list of keys."""
+        keys = keys or []
+        return {key: True for key in keys}

@@ -7,7 +7,7 @@ Created on 2019-12-11 15:28
 """
 from ctdpy.core import utils
 from ctdpy.core.profile import Profile
-from ctdpy.core.calculator import Calculator
+# from ctdpy.core.calculator import Calculator
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.data_handlers import BaseReader
@@ -61,7 +61,7 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
             self.setup_dictionary(fid, data)
 
             serie = self.get_series_object(file_data)
-            hires_data = self.setup_dataframe(serie, metadata=None)  #, metadata)
+            hires_data = self.setup_dataframe(serie, metadata=None)
             metadata = self.get_metadata(
                 serie,
                 filename=fid,
@@ -113,6 +113,6 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """Setup standard dictionary structure."""
+        """Set standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}

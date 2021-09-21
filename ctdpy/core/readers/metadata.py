@@ -10,7 +10,7 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.xlsx_reader import load_excel
 from ctdpy.core.utils import (
     get_filename,
-    thread_process,
+    # thread_process,
     eliminate_empty_rows
 )
 

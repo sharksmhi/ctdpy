@@ -10,18 +10,15 @@ from ctdpy.core.templates.template import Template
 
 
 class PhyCheTemplateHandler(DataFrameHandler):
-    """
-    Uses DataFrameHandler as Base
-    """
+    """Handler of the excel template of physical and chemical data (discrete depths)."""
+
     def __init__(self, settings):
+        """Initialize and load template."""
         super().__init__(settings)
         self.template = self.load_template()
 
     def append_to_template(self, data, meta=None):
-        """
-        :param data: pd.DataFrame
-        :return: appends data to template
-        """
+        """Append data and metadata to template."""
         mapper = {key: self.settings.pmap.get(key) for key in data.columns}
         # ts = '{YEAR:4s}-{MONTH:2s}-{DAY:2s} {HOUR:2s}:{MINUTE:2s}:{SECOND:2s}'
         # data['timestamp'] = data[['YEAR', 'MONTH', 'DAY', 'HOUR', 'MINUTE', 'SECOND']].apply(lambda x: pd.Timestamp(ts.format(**x)), axis=1)
@@ -37,19 +34,13 @@ class PhyCheTemplateHandler(DataFrameHandler):
         self.template = self.template.append(data, ignore_index=True, sort=False)
 
     def convert_formats(self):
-        """
-        Convert formats of specified parameters (see core.templates.template.Template)
-        :return:
-        """
+        """Convert formats of specified parameters (see core.templates.template.Template)."""
         self.template.convert_formats()
 
     def load_template(self):
-        """
-        Load standard template
-        :return:
-        """
+        """Load standard template."""
         reader = self.get_reader()
-        #TODO **kwargs
+        # TODO **kwargs
         empty_template = reader(self.settings.templates['phyche']['template'].get('file_path'),
                                 sheet_name=self.settings.templates['phyche']['template'].get('data_sheetname'),
                                 header_row=self.settings.templates['phyche']['template'].get('header_row'))
@@ -57,15 +48,10 @@ class PhyCheTemplateHandler(DataFrameHandler):
         return Template(empty_template)
 
     def get_template_columns(self):
-        """
-        :return: list of template primary columns
-        """
-        #FIXME Needed? we have .get_data_header(df) in baseclass but not as list...
+        """Return list of template primary columns."""
+        # FIXME Needed? we have .get_data_header(df) in baseclass but not as list...
         return list(self.template.columns)
 
     def get_reader(self):
-        """
-        :return: Reader instance
-        """
+        """Reader instance."""
         return self.settings.templates['phyche']['template'].get('reader')
-

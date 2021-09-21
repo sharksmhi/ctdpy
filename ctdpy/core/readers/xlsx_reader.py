@@ -19,13 +19,13 @@ def load_excel(file_path='', sheet_name=None, header_row=None):
                 sheet,
                 header=h_row,
                 dtype=str,
-                keep_default_na=False,
+                keep_default_na=False
             )
         return sheets
     else:
         return xlxs.parse(
-                sheet_name,
-                header=header_row,
-                dtype=str,
-                keep_default_na=False,
-            )
+            sheet_name,
+            header=header_row,
+            dtype=str,
+            keep_default_na=False
+        )

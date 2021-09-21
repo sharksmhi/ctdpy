@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Created on 2021-04-19 10:55
 @author: johannes
@@ -83,10 +84,6 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
             thread_load: False | True
         """
         data = {}
-        profile = None
-        if add_low_resolution_data:
-            profile = Profile()
-
         for fid in filenames:
             print('loading: {}'.format(fid))
             if thread_load:
@@ -132,7 +129,7 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
             data[fid][resolution + '_all'] = in_data
 
     def setup_dataframe(self, serie, metadata=None):
-        """Setup dataframe.
+        """Set dataframe.
 
         Args:
             serie:
@@ -146,7 +143,7 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """Setup standard dictionary structure.
+        """Set standard dictionary structure.
 
         Args:
             fid: file name identifier
@@ -183,8 +180,8 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        #FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
-                        meta = value[value.index(key)+len(key):].strip()
+                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        meta = value[value.index(key) + len(key):].strip()
 
                     if meta:
                         meta_dict.setdefault(key, meta)

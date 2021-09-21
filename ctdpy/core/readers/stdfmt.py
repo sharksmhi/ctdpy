@@ -26,7 +26,7 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """Setup standard dictionary structure."""
+        """Set standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 

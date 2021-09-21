@@ -41,18 +41,14 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         """Customize __repr__."""
         return str(self)
 
-    def get_dataset(self, dataset_id, ds_info, out=None,
-                    xslice=slice(None), yslice=slice(None)):
-        """Get dataset."""
-        raise NotImplementedError
-
     def get_property_value(self, key):
         """Get value from property of self.
 
         Args:
             key: Intended to be the name of a property method of self.
         """
-        # FIXME Perhaps we need to check aginst .__class__.__name__ attributes in order to exclude child class attributes..
+        # FIXME Perhaps we need to check aginst .__class__.__name__
+        #  attributes in order to exclude child class attributes..
         # FIXME if so: use self.class_methods
         return getattr(self, key.lower(), '')
 
@@ -62,9 +58,9 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         return self._station
 
     @station.setter
-    def station(self, s):
+    def station(self, name):
         """Set the station property with capital letters."""
-        self._station = s.upper()
+        self._station = name.upper()
 
     @property
     def cruise(self):
@@ -88,12 +84,12 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         return self._longitude_dd
 
     @longitude_dd.setter
-    def longitude_dd(self, l):
+    def longitude_dd(self, longitude):
         """Set the longitude property in DD.dddd (Decimal degrees)."""
-        if len(l.split('.')[0]) > 2:
+        if len(longitude.split('.')[0]) > 2:
             self._longitude_dd = utils.decmin_to_decdeg(l)
         else:
-            self._longitude_dd = l
+            self._longitude_dd = longitude
 
     @property
     def latitude_dd(self):
@@ -101,12 +97,12 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         return self._latitude_dd
 
     @latitude_dd.setter
-    def latitude_dd(self, l):
+    def latitude_dd(self, latitude):
         """Set the latitude property in DD.dddd (Decimal degrees)."""
-        if len(l.split('.')[0]) > 2:
-            self._latitude_dd = utils.decmin_to_decdeg(l)
+        if len(latitude.split('.')[0]) > 2:
+            self._latitude_dd = utils.decmin_to_decdeg(latitude)
         else:
-            self._latitude_dd = l
+            self._latitude_dd = latitude
 
     @property
     def year(self):

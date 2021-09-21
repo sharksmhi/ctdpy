@@ -15,7 +15,9 @@ from ctdpy.core.profile import Profile
 
 class MVP200(BaseReader, CNVreader, SeriesHandler):
     """MVP-reader (Moving Vessel Profiler)"""
+
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
         self.df_handler = DataFrameHandler(self.settings)
 
@@ -90,6 +92,6 @@ class MVP200(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """Setup standard dictionary structure."""
+        """Set standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}

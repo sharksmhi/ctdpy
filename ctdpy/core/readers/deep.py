@@ -58,7 +58,7 @@ class RincoDEEP(Rinco):
             index = index[0]
             instrument_id = self._get_instrument_id(serie.iloc[index])
             instrument_serie = instrument_id.strip('CTM')
-        except:
+        except Exception:
             instrument_serie = None
 
         return instrument_serie

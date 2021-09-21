@@ -1,7 +1,8 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute.
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2021-04-15 16:47
+
 @author: johannes
 """
 from ctdpy.core import utils
@@ -93,8 +94,8 @@ class SeaBirdSLUA(SeaBird):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        #FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
-                        meta = value[value.index(key)+len(key):].strip()
+                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        meta = value[value.index(key) + len(key):].strip()
 
                     if ']' in meta:
                         # special SLUA fix. (** Latitude: [57 29.22 N] 57 29.22 N)

@@ -45,8 +45,8 @@ class SeaBirdSMHI(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie, 
-                                      identifier=self.settings.datasets['cnv'].get(ident), 
+            data = self.get_meta_dict(serie,
+                                      identifier=self.settings.datasets['cnv'].get(ident),
                                       separator=self.settings.datasets['cnv'].get(sep),
                                       keys=self.settings.datasets['cnv'].get('keys_metadata'))
 
@@ -67,7 +67,7 @@ class SeaBirdSMHI(SeaBird):
         header = self.get_data_header(serie, dataset='cnv')
         df = self.get_data_in_frame(serie, header, dataset='cnv')
         df = self.df_handler.map_column_names_of_dataframe(df)
-        
+
         return df
 
 
@@ -132,6 +132,7 @@ class MasterSMHI(SeaBird):
     """Reader for seabird data according to the new SMHI processing routines."""
 
     def __init__(self, settings):
+        """Initialize."""
         super().__init__(settings)
 
     def _extract_filename_information(self, filename):

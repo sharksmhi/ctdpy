@@ -1,7 +1,8 @@
-# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020 SMHI, Swedish Meteorological and Hydrological Institute.
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 """
 Created on 2021-04-19 10:50
+
 @author: johannes
 """
 import pandas as pd
@@ -29,7 +30,7 @@ class SvpSGUS(SwiftSVP):
                 ts = pd.Timestamp(meta_dict['TIMESTAMP'])
                 meta_dict.setdefault('SDATE', ts.strftime('%Y-%m-%d'))
                 meta_dict.setdefault('STIME', ts.strftime('%H:%M:%S'))
-            except:
+            except Exception:
                 pass
 
         if filename:
@@ -52,7 +53,7 @@ class MetadataSGUS(XLSXmeta):
     """Reader for metadata according to SMHI datahost template."""
 
     def __init__(self, settings):
-        """Initialize. """
+        """Initialize."""
         super().__init__(settings)
         self.data = {}
         self.file_specs = self.settings.readers['sgus']['datasets']['xlsx']
@@ -81,7 +82,7 @@ class MetadataSGUS(XLSXmeta):
         if set(df['SERNO']) == {''}:
             # df['SERNO'] = df['FILE_NAME'].apply(lambda x: x.split('_')[1].zfill(4))
             df = df.sort_values(
-                ['SDATE', 'STIME'],  ascending=[True, True]
+                ['SDATE', 'STIME'], ascending=[True, True]
             ).reset_index(drop=True)
             df['SERNO'] = (df.index + 1).map(str).str.zfill(4)
 

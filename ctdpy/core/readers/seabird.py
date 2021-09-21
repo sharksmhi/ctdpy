@@ -45,10 +45,6 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
             thread_load: False | True
         """
         data = {}
-        profile = None
-        if add_low_resolution_data:
-            profile = Profile()
-
         for fid in filenames:
             print('loading: {}'.format(fid))
             if thread_load:
@@ -100,7 +96,7 @@ class SeaBird(BaseReader, CNVreader, SeriesHandler):
         return df
 
     def setup_dictionary(self, fid, data, keys=None):
-        """Setup standard dictionary structure."""
+        """Set standard dictionary structure."""
         keys = keys or ['data', 'lores_data', 'metadata']
         data[fid] = {key: None for key in keys}
 

@@ -36,7 +36,7 @@ def load_txt(file_path='',
                          dtype={key: str for key in header},
                          engine='python').fillna(fill_nan)
     else:
-        df = pd.read_csv(file_path, 
+        df = pd.read_csv(file_path,
                          sep=seperator,
                          header=header_row).fillna(fill_nan)
     if as_dict:

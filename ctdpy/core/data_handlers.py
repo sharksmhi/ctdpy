@@ -404,8 +404,10 @@ class CorrectionFile(dict):
 
 
 class DeltaCorrection:
-    """If data deliverer has provided correction deltas (BIAS correction)
-       for specific parameter profiles, we append that correction here.
+    """BIAS correct data.
+
+    If data deliverer has provided correction deltas (BIAS correction)
+    for specific parameter profiles, we append that correction here.
 
     Eg.
         SALT_CTD:
