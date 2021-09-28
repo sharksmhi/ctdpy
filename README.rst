@@ -58,4 +58,3 @@ guide for how coding should be done.
     $ git push origin my-feature
 
 After your pull request is merged, you can delete your branch
-

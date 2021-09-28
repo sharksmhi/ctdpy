@@ -12,6 +12,7 @@ from ctdpy.core.readers.metadata import XLSXmeta  # noqa: F401
 from ctdpy.core.readers.rinco import Rinco  # noqa: F401
 from ctdpy.core.readers.seabird import SeaBird  # noqa: F401
 from ctdpy.core.readers.sgus import SvpSGUS, MetadataSGUS  # noqa: F401
+from ctdpy.core.readers.nos import SeaBirdNOS, MetadataNOS  # noqa: F401
 from ctdpy.core.readers.smhi import SeaBirdSMHI, MetadataSMHI  # noqa: F401
 from ctdpy.core.readers.slua import SeaBirdSLUA, MetadataSLUA  # noqa: F401
 from ctdpy.core.readers.stdfmt import StandardFormatCTD  # noqa: F401

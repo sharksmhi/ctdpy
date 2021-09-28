@@ -17,12 +17,12 @@ file_types:
         file_suffix: '.cnv'
     rawmvp:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MVPSMHI ''
-        file_patterns: ['FALSE_PATTERN']
+        file_patterns: ''
         file_suffix: '.cnv'
     xlsxmeta:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MetadataSMHI ''
         file_suffix: '.xlsx'
-        
+
 datasets:
     cnv:
         name: cnv
@@ -66,5 +66,5 @@ datasets:
     xlsx:
         name: xlsx
         file_type: xlsxmeta
-        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        sheet_names: ["Fï¿½rklaring", Metadata, Sensorinfo, Information]
         header_rows: [null, 2, 2, 0]
