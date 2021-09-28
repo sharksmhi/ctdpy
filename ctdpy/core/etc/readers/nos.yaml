@@ -1,0 +1,37 @@
+reader:
+    description: CNV Reader for SeaBird data (NOS settings)
+    name: cnv_seabird_nos
+    sensors: [prDM, t090C, c0S/m, sbeox0ML/L, altM, flECO-AFL, par, turbWETntu0, svCM]
+    default_channels: []
+    suffix: '.cnv'
+    reader: !!python/name:ctdpy.core.readers.yaml_reader.YAMLreader ''
+
+file_types:
+    rawctd:
+        file_reader: !!python/name:ctdpy.core.readers.nos.SeaBirdNOS ''
+        comment: "Example name: SBE19PLUS_01906537_2015_10_08_0002.cnv"
+        file_patterns: ['{sensor_id:9s}_{sensor_serial_number:8s}_{visit_year:%Y}_{visit_month:%m}_{visit_day:%d}_{serno:4d}.cnv']
+        file_suffix: '.cnv'
+    xlsxmeta:
+        file_reader: !!python/name:ctdpy.core.readers.nos.MetadataNOS ''
+        file_suffix: '.xlsx'
+
+datasets:
+    cnv:
+        name: cnv
+        file_type: rawctd
+        identifier_data: '    '
+        identifier_header: '# name'
+        identifier_metadata: '* '
+        identifier_metadata_2: '**'
+        keys_metadata: [Cruise, 'NMEA Latitude', 'NMEA Longitude', 'NMEA UTC', 'cast', Ship, Station, FileName, 'Longitude [GG MM.mm E]', 'Latitude [GG MM.mm N]', 'System UTC']
+        keys_data: [DEPH]
+        separator_data: None
+        separator_header: '='
+        separator_metadata: '='
+        separator_metadata_2: ':'
+    xlsx:
+        name: xlsx
+        file_type: xlsxmeta
+        sheet_names: ["Förklaring", Metadata, Sensorinfo, Information]
+        header_rows: [null, 2, 2, 0]

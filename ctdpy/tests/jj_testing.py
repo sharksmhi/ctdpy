@@ -10,17 +10,17 @@ from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths
 
 
-base_dir = r'C:\Utveckling\ctdpy\ctdpy\tests\test_data\exprapp_april_2020'
+base_dir = r'C:\Temp\CTD_DV\ctd_data_sep2021'
 
 files = generate_filepaths(
     base_dir,
-    endswith='.txt',
+    endswith='.cnv',
 )
 
 start_time = time.time()
 s = Session(
     filepaths=files,
-    reader='ctd_stdfmt',
+    reader='smhi',
 )
 
 print("Session--%.3f sec" % (time.time() - start_time))
