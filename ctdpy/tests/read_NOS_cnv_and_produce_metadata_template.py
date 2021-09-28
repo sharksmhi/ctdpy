@@ -4,12 +4,9 @@
 Created on 2020-07-10 13:59
 
 @author: a002028
-
 """
 from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths
-import time
-from pprint import pprint
 
 
 base_dir = r'C:\Temp\CTD_DV\qc_NOS_2015\data'
@@ -23,8 +20,6 @@ s = Session(
     reader='nos',
 )
 datasets = s.read()
-print('Files loaded:')
-pprint(list(datasets[0].keys()))
 
 # s.save_data(
 #     datasets[0],
