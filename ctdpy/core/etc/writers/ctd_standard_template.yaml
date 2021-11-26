@@ -4,20 +4,20 @@ writer:
     extension_filename: .txt
     filename: ctd_profile_
     identifier_instrument_metadata_end: '*END*'
-    mapper_delivery_note: {beskrivning av datasetet: DESCR, "best�llare": ORDERER, data kontrollerad av: '',
+    mapper_delivery_note: {beskrivning av datasetet: DESCR, "beställare": ORDERER, data kontrollerad av: '',
         datatyp: DTYPE, format: FORMAT, kommentar: COMNT_DN, kontaktperson: REPBY, projekt: PROJ,
-        "provtagnings�r": MYEAR, rapporterande institut: RLABO, "�vervakningsprogram": MPROG}
+        "provtagningsår": MYEAR, rapporterande institut: RLABO, "övervakningsprogram": MPROG}
     name: ctd_standard_template
     prefix_data_delimiter: //DATA_DELIMITER
     prefix_format: //FORMAT
     prefix_info: //INFORMATION
     prefix_instrument_metadata: //INSTRUMENT_METADATA
-    prefix_metadata: //METADATAc
+    prefix_metadata: //METADATA
     prefix_metadata_delimiter: //METADATA_DELIMITER
     prefix_sensorinfo: //SENSORINFO
     separator_delivery_note: ": "
     separator_data: "\t"
     separator_metadata: ;
-    standard_delivery_note_header: [data kontrollerad av, format, projekt, rapporterande institut, datatyp, beskrivning av datasetet, "�vervakningsprogram", "best�llare", "provtagnings�r", kontaktperson, kommentar]
+    standard_delivery_note_header: [data kontrollerad av, format, projekt, rapporterande institut, datatyp, beskrivning av datasetet, "övervakningsprogram", "beställare", "provtagningsår", kontaktperson, kommentar]
     standard_data_header: [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CRUISE, STATION,
         LATITUDE_DD, LONGITUDE_DD, COMNT_SAMP]

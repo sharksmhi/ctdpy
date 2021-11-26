@@ -176,7 +176,8 @@ class Session:
         writer_instance = self.settings.writers[writer]['writer'].get('writer')
         return writer_instance(self.settings)
 
-    def save_data(self, datasets, save_path=None, writer=None, return_data_path=False):
+    def save_data(self, datasets, save_path=None, writer=None, return_data_path=False,
+                  **writer_kwargs):
         """Save datasets.
 
         Args:
@@ -189,11 +190,12 @@ class Session:
             self.settings.update_export_path(save_path)
 
         writer = self.load_writer(writer)
-        writer.write(datasets)
+        writer.write(datasets, **writer_kwargs)
         if return_data_path:
             return writer.data_path
 
-    def update_metadata(self, datasets=None, metadata=None, overwrite=False):
+    @staticmethod
+    def update_metadata(datasets=None, metadata=None, overwrite=False):
         """Update the given datasets with information in metadata. Option to overwrite."""
         datasets = datasets or []
         metadata = metadata or {}

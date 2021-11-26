@@ -38,15 +38,15 @@ print('Files loaded:')
 
 # if IntexError, the metadata template has not been loaded:
 # Check setup of file-generator (which should include both 'cnv' and 'xlsx')
-pprint(list(datasets[1].keys()))
 pprint(list(datasets[0].keys()))
+pprint(list(datasets[1].keys()))
 
 # SAVE DATA ACCORDING TO CTD STANDARD FORMAT (TXT)
 # start_time = time.time()
-data_path = s.save_data(
-    datasets,
-    writer='ctd_standard_template',
-    return_data_path=True,
-)
+# data_path = s.save_data(
+#     datasets,
+#     writer='ctd_standard_template',
+#     return_data_path=True,
+# )
 # print("Datasets saved--%.3f sec\n" % (time.time() - start_time))
 # print('Path to saved data: \n{}'.format(data_path))

@@ -25,20 +25,27 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
         self._sensorinfo_boolean = False
         self.std_format = False
+        self.meta_translation = {
+            'Förklaring': 'delivery_note',
+            'Metadata': 'metadata',
+            'Sensorinfo': 'sensorinfo',
+            'Information': 'information',
+        }
 
-    def write(self, datasets):
+    def write(self, datasets, keep_original_file_names=False, **kwargs):
         """Cunduct the writing process.
 
         Call methods in order to strucure data according to standard and then writes to standard output format
         Args:
             datasets: All loaded datasets [pd.DataFrame(s), pd.Series]
+            keep_original_file_names (bool): False or True
         """
         self._check_dataset_format(datasets)
         if self.std_format:
             self._redirect_to_data_update(datasets)
         else:
-            meta = self.get_metadata_sets(datasets)
-            data = self.get_datasets(datasets)
+            meta = self.get_metadata_sets(datasets)  # dict
+            data = self.get_datasets(datasets)  # list
             self.setup_metadata_information(meta)
 
             for dataset in data:
@@ -61,7 +68,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                                                            self.information,
                                                            instrument_metadata,
                                                            data_series)
-                    self._write(fid, data_series)
+                    self._write(fid, data_series, keep_original_file_names=keep_original_file_names)
 
             self._write_delivery_note()
             self._write_metadata()
@@ -101,9 +108,9 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         exclude_str = self.writer['prefix_info'] + self.writer['separator_metadata']
         self._write('information', self.information.str.replace(exclude_str, ''))
 
-    def _write(self, fid, data_series):
+    def _write(self, fid, data_series, **kwargs):
         """Write CTD-cast text file according to standard format to file."""
-        save_path = self._get_save_path(fid)
+        save_path = self._get_save_path(fid, **kwargs)
         self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
 
     def _add_new_information_to_metadata(self):
@@ -116,8 +123,11 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             axis=1,
         )
         new_column = new_column.str.replace('-', '')
-        self.df_metadata.insert(self.df_metadata.columns.get_loc('FILE_NAME') + 1,
-                                'FILE_NAME_DATABASE', new_column)
+        if 'FILE_NAME_DATABASE' in self.df_metadata:
+            self.df_metadata['FILE_NAME_DATABASE'] = new_column
+        else:
+            self.df_metadata.insert(self.df_metadata.columns.get_loc('FILE_NAME') + 1,
+                                    'FILE_NAME_DATABASE', new_column)
 
     def _adjust_data_formats(self):
         """Adjust foramts."""
@@ -141,12 +151,12 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         # TODO should be able to handle multiple metadatasets? (.xlsx delivery files)
         self.delimiters = self._get_delimiters()
-        self.df_metadata = self._get_reduced_dataframe(meta[0]['Metadata'])
-        self.delivery_note = self._get_delivery_note(meta[0]['Förklaring'])
+        self.df_metadata = self._get_reduced_dataframe(meta.get('metadata'))
+        self.delivery_note = self._get_delivery_note(meta.get('delivery_note'))
         self.template_format = self._get_template_format()
-        self.df_sensorinfo = self._get_reduced_dataframe(meta[0]['Sensorinfo'])
+        self.df_sensorinfo = self._get_reduced_dataframe(meta.get('sensorinfo'))
         self.sensorinfo = self._get_sensorinfo_serie(separator=self.writer['separator_metadata'])
-        self.information = self._get_information_serie(meta[0]['Information'],
+        self.information = self._get_information_serie(meta.get('information', pd.DataFrame(columns=[''])),
                                                        separator=self.writer['separator_metadata'])
         self._adjust_data_formats()
         self._add_new_information_to_metadata()
@@ -159,27 +169,32 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _get_delimiters(self):
         """Return delimiters of data and meta."""
-        # FIXME Redo and delete hardcoded parts.. Get better solution than '\ t'.replace(' ','') for tabb-sign
-        # FIXME self.writer['separator_data']])}
+        # FIXME Redo and delete hardcoded parts.. Get better solution than '\ t'.replace(' ','')
+        #  for tabb-sign self.writer['separator_data']])}
         return {'meta': pd.Series([''.join([self.writer['prefix_metadata_delimiter'],
                                             '=', self.writer['separator_metadata']])]),
                 'data': pd.Series([''.join([self.writer['prefix_data_delimiter'],
                                             '=', '\ t'.replace(' ', '')])])}  # noqa: W605
 
     def _get_delivery_note(self, delivery_info):
-        """Return dictionary with information taken from the delivery_note ("Förklarings-flik")"""
+        """Return dictionary with information taken from the delivery_note."""
         info = {}
-        xy_index = self._get_index(delivery_info, check_values=['MYEAR', 'DTYPE'])
-        for key, value in zip(delivery_info.iloc[xy_index[0][0]:, xy_index[1][0]],
-                              delivery_info.iloc[xy_index[0][0]:, xy_index[1][0] + 2]):
-            if not pd.isnull(key):
-                info[key] = value
+        if delivery_info.columns[0] == 0:
+            if delivery_info[0][0].startswith('MYEAR'):
+                for key, value in delivery_info[0].str.split(':'):
+                    info.setdefault(key.strip(), value.strip())
             else:
-                break
+                xy_index = self._get_index(delivery_info, check_values=['MYEAR', 'DTYPE'])
+                for key, value in zip(delivery_info.iloc[xy_index[0][0]:, xy_index[1][0]],
+                                      delivery_info.iloc[xy_index[0][0]:, xy_index[1][0] + 2]):
+                    if not pd.isnull(key):
+                        info[key] = value
+                    else:
+                        break
 
         # Check for info in self.df_metadata
         for key in ['MYEAR', 'ORDERER', 'PROJ']:
-            if not info[key]:
+            if key not in info:
                 info[key] = ','.join(self.df_metadata[key].unique())
 
         return info
@@ -369,35 +384,39 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """Get writer settings"""
         return self.settings.writers['ctd_standard_template']['writer']
 
-    @staticmethod
-    def get_metadata_sets(datasets):
+    def get_metadata_sets(self, datasets):
         """Get metadata sets."""
-        # TODO presumably we might need to handle other metadata formats than xlsx?
-        out_sets = []
+        out_sets = {}
         for dset in datasets:
+            # dset = [datafiles] or [metadata files].
             for key in dset:
                 if key.endswith('.xlsx'):
-                    out_sets.append(dset[key])
+                    for key, item in dset.items():
+                        meta_name = self.meta_translation.get(key, key)
+                        out_sets.setdefault(meta_name, item)
+                elif key in self.meta_translation.values():
+                    out_sets.setdefault(key, dset[key])
         return out_sets
 
-    @staticmethod
-    def get_datasets(datasets):
+    def get_datasets(self, datasets):
         """Get datasets (not metadata files)."""
         out_sets = []
         for dset in datasets:
             for key in dset:
-                if not key.endswith('.xlsx'):
+                if not key.endswith('.xlsx') and key not in self.meta_translation.values():
                     out_sets.append(dset)
                     break
         return out_sets
 
-    def _get_save_path(self, fid):
+    def _get_save_path(self, fid, keep_original_file_names=False):
         """Get filename path."""
         if not hasattr(self, 'data_path'):
             self._set_data_path()
             utils.check_path(self.data_path)
 
         if 'delivery_note' in fid or 'metadata' in fid or 'sensorinfo' in fid or 'information' in fid:
+            pass
+        elif keep_original_file_names:
             pass
         elif not fid.startswith(self.writer.get('filename')):
             fid = self._replace_data_file_name(fid)
