@@ -4,39 +4,49 @@ Created on Thu Jul 05 08:22:21 2018
 
 @author: a002028
 """
+from ctdpy.core.session import Session
+from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
+from sharkpylib.qc.qc_default import QCBlueprint
 import time
 from pprint import pprint
-from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths
 
 
-base_dir = r'C:\Temp\CTD_DV\ctd_data_sep2021'
+# GET FILES
+base_dir = r'C:\Temp\CTD_DV\mw_test'
 
 files = generate_filepaths(
     base_dir,
-    endswith='.cnv',
+    endswith='.txt',  # Presumably CTD-standard format
+    only_from_dir=False,
 )
 
-start_time = time.time()
+# Create SESSION object
 s = Session(
     filepaths=files,
-    reader='smhi',
+    reader='ctd_stdfmt',
 )
-
-print("Session--%.3f sec" % (time.time() - start_time))
-# ###################        TEST PRINTS        ###################
-# print('SHIPmapping test', s.settings.smap.map_cntry_and_shipc(cntry='34', shipc='AR'))
-# print('SHIPmapping test', s.settings.smap.map_shipc('3401'))
-# print('SHIPmapping test', s.settings.smap.map_shipc('Aranda'))
-# pprint(s.settings.templates['ctd_metadata'])
-# pprint(s.settings.settings_paths)
-
-#  ###################        READ DELIVERY DATA, CNV, XLSX        ###################
-start_time = time.time()
-# FIXME "datasets[0]" the list should me merged before given from session.read(add_merged_data=True)
-# datasets = s.read(add_merged_data=True, add_low_resolution_data=True)
-# datasets = s.read(add_merged_data=True)
 datasets = s.read()
-print("Datasets loaded--%.3f sec" % (time.time() - start_time))
-print(len(datasets[0].keys()))
-pprint(list(datasets[0].keys()))
+
+# This will produce alot of prints...
+for item in datasets[0].values():
+    parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
+    qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
+    qc_run()
+
+
+# Auto QC performed. Q-flags inserted
+first_ds = list(datasets[0])[0]
+
+print('Note format of flagfield')
+print(datasets[0][first_ds]['data']['Q0_TEMP_CTD'][:5])
+print('\nDataframe from file: {}'.format(first_ds))
+print(datasets[0][first_ds]['metadata'])
+
+
+# UPDATE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)
+# As of now we only export the updated ctd-datafile (ctd-standard-format).
+# delivery_note, metadata, sensorinfo, information are exclude.. (will be included..)
+
+start_time = time.time()
+data_path = s.save_data(datasets, writer='ctd_standard_template', return_data_path=True, save_path='C:/ctdpy_exports')
+print("Datasets saved--%.3f sec" % (time.time() - start_time))

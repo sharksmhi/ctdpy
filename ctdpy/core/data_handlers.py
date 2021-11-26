@@ -349,7 +349,10 @@ class UnitConverter:
         factor = self.get_conversion_factor(serie.name)
         decimals = self.get_number_of_decimals(serie.name)
 
-        serie = serie.astype(float) * factor
+        if serie.name.startswith('DENS'):
+            serie = serie.astype(float) + factor
+        else:
+            serie = serie.astype(float) * factor
         serie = utils.rounder(serie, decimals=decimals)
         return serie
 
