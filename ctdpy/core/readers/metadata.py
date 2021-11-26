@@ -7,12 +7,51 @@ Created on 2019-11-04 10:37
 """
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.data_handlers import DataFrameHandler
+from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core.readers.xlsx_reader import load_excel
 from ctdpy.core.utils import (
     get_filename,
     # thread_process,
     eliminate_empty_rows
 )
+
+
+class TXTmeta(BaseReader, DataFrameHandler):
+    """Base Class reader for SMHI datahost text file oriented CTD metadata."""
+
+    def __init__(self, settings):
+        """Initialize."""
+        super().__init__(settings)
+        self.file_specs = None
+
+    def get_data(self, filenames=None, **kwargs):
+        """Get metadata.
+
+        Args:
+            filenames (iterable): A sequence of files that will be used to load data from.
+        """
+        data = {}
+        for file_path in filenames:
+            fid = get_filename(file_path)
+            file_specs = self.file_specs.get(fid.replace('.txt', ''))
+            self._read(file_path, file_specs, data, fid)
+        return data
+
+    def _read(self, file_path, file_specs, data, fid):
+        """Read txt file and store content.
+
+        Args:
+            file_path (str): Path to file
+            file_specs (dict): Settings for reader
+            data (dict): Data
+            fid (str): file name
+        """
+        df = load_txt(
+            file_path=file_path,
+            as_dtype=str,
+            **file_specs
+        )
+        data[fid] = eliminate_empty_rows(df)
 
 
 class XLSXmeta(BaseReader, DataFrameHandler):

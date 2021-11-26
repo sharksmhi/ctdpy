@@ -67,7 +67,7 @@ class AttributeDict(dict):
             try:
                 return getattr(self, key.lower())
             except Exception:
-                print('No mapping found for key: ' + key)
+                # print('No mapping found for key: ' + key)
                 return key
 
     def get_list(self, key_list):

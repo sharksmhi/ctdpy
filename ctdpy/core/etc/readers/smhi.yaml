@@ -10,18 +10,22 @@ file_types:
     masterctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MasterSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}{shipc:2s}_{cruise:2s}_{serno:4d}.cnv']
-        file_suffix: '.cnv'
+        # file_suffix: '.cnv'
     rawctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.SeaBirdSMHI ''
         file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}_{shipc:2d}_{serno:4d}.cnv']
-        file_suffix: '.cnv'
+        # file_suffix: '.cnv'
     rawmvp:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MVPSMHI ''
         file_patterns: ''
-        file_suffix: '.cnv'
+#        file_suffix: '.cnv'
+        file_suffix: 'DUMMMMMMY'
     xlsxmeta:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MetadataSMHI ''
         file_suffix: '.xlsx'
+    txtmeta:
+        file_reader: !!python/name:ctdpy.core.readers.smhi.MetadataTxtSMHI ''
+        file_suffix: '.txt'
 
 datasets:
     cnv:
@@ -68,3 +72,18 @@ datasets:
         file_type: xlsxmeta
         sheet_names: ["F�rklaring", Metadata, Sensorinfo, Information]
         header_rows: [null, 2, 2, 0]
+    txt:
+        name: txt
+        file_type: txtmeta
+        delivery_note:
+            header_row: null
+            separator: DUMMY_SEPERATOR
+        metadata:
+            header_row: 0
+            separator: "\t"
+        sensorinfo:
+            header_row: 0
+            separator: "\t"
+        information:
+            header_row: null
+            separator: DUMMY_SEPERATOR
