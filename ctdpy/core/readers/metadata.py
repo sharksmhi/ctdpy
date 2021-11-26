@@ -12,6 +12,7 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core.readers.xlsx_reader import load_excel
 from ctdpy.core.utils import (
+    get_filename,
     get_filename_without_extension,
     # thread_process,
     eliminate_empty_rows
@@ -89,7 +90,7 @@ class XLSXmeta(BaseReader, DataFrameHandler, ABC):
         data = {}
         reader = self.get_reader_instance()
         for file_path in filenames:
-            fid = get_filename_without_extension(file_path)
+            fid = get_filename(file_path)
             data[fid] = {}
             self._read(file_path, reader, data[fid])
         return data

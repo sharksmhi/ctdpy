@@ -11,11 +11,7 @@ from ctdpy.core.utils import generate_filepaths
 # GET FILES
 base_dir = r'C:\Temp\CTD_DV\test_txt_meta_fmt'
 
-files = generate_filepaths(
-    base_dir,
-    pattern_list=['.cnv', '.txt'],  # Both cnv- and metadata-files
-    only_from_dir=True,  # we exclude search of files from folders under "base_dir"
-)
+files = generate_filepaths(base_dir, pattern_list=['.cnv', '.txt'])
 
 # Create SESSION object
 s = Session(
@@ -24,11 +20,14 @@ s = Session(
 )
 
 datasets = s.read()
+print(list(datasets[0]))
 print(list(datasets[1]))
-for df in datasets[1].values():
-    print(df)
 
-"""
-datasets[1]['ctd_metadata.xlsx'].keys()
-dict_keys(['Förklaring', 'Metadata', 'Sensorinfo', 'Information'])
-"""
+# SAVE DATA ACCORDING TO CTD STANDARD FORMAT (TXT)
+data_path = s.save_data(
+    datasets,
+    writer='ctd_standard_template',
+    keep_original_file_names=True,
+    return_data_path=True,
+)
+print('Path to saved data: {}'.format(data_path))

@@ -39,7 +39,7 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         """Call the convert_formats method of the current template handler."""
         self.template_handler.template['Metadata'].convert_formats(ship_map=self.settings.smap)
 
-    def write(self, dataset):
+    def write(self, dataset, **kwargs):
         """Write dataset to file."""
         for fid, item in dataset.items():
             item['metadata']['FILE_NAME'] = fid

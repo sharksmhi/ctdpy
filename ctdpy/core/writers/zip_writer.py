@@ -15,9 +15,10 @@ class ZipWriter:
         """Initialize."""
         pass
 
-    def write(self, folder_with_archives, save_path_for_zipfiles):
+    def write(self, folder_with_archives, save_path_for_zipfiles, **kwargs):
         """Write to zip."""
         def append_sub_directory(folder_name):
+            """Append file to zip archive."""
             root_len = len(dataset_name)
             for root, _, files in os.walk(dataset_name + folder_name):
                 for filename in files:
