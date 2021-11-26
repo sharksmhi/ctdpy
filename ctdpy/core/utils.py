@@ -208,6 +208,11 @@ def get_filename(file_path):
     return os.path.basename(file_path)
 
 
+def get_filename_without_extension(file_path):
+    """Get filename without extension from filepath."""
+    return os.path.basename(file_path).split('.')[0]
+
+
 def get_format_from_datetime_obj(x, fmt):
     """Return str from datetime object according to the given format."""
     try:

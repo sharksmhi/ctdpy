@@ -10,7 +10,7 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core.readers.xlsx_reader import load_excel
 from ctdpy.core.utils import (
-    get_filename,
+    get_filename_without_extension,
     # thread_process,
     eliminate_empty_rows
 )
@@ -32,8 +32,8 @@ class TXTmeta(BaseReader, DataFrameHandler):
         """
         data = {}
         for file_path in filenames:
-            fid = get_filename(file_path)
-            file_specs = self.file_specs.get(fid.replace('.txt', ''))
+            fid = get_filename_without_extension(file_path)
+            file_specs = self.file_specs.get(fid)
             self._read(file_path, file_specs, data, fid)
         return data
 
@@ -71,7 +71,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         data = {}
         reader = self.get_reader_instance()
         for file_path in filenames:
-            fid = get_filename(file_path)
+            fid = get_filename_without_extension(file_path)
             data[fid] = {}
             self._read(file_path, self.file_specs, reader, data[fid])
         return data
@@ -91,6 +91,7 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             data (dict): Data
         """
         for sheet_name, header_row in zip(file_specs['sheet_names'], file_specs['header_rows']):
+            sheet_name = self._encode_fix_sheet_name(sheet_name)
             df = reader(
                 file_path=file_path,
                 sheet_name=sheet_name,
@@ -98,6 +99,17 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             )
             df = eliminate_empty_rows(df)
             data[sheet_name] = df.fillna('')
+
+    def _encode_fix_sheet_name(self, sheet_name):
+        """Return encode corrected string.
+
+        Ooh, pretty things.."""
+        if 'Ã¶' in sheet_name:
+            return sheet_name.replace('Ã¶', 'ö')
+        elif 'ï¿½' in sheet_name:
+            return sheet_name.replace('ï¿½', 'ö')
+        else:
+            return sheet_name
 
     @staticmethod
     def load_func(file_path, sheet_name, header_row, data, reader):

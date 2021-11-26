@@ -27,3 +27,8 @@ datasets = s.read()
 print(list(datasets[1]))
 for df in datasets[1].values():
     print(df)
+
+"""
+datasets[1]['ctd_metadata.xlsx'].keys()
+dict_keys(['Förklaring', 'Metadata', 'Sensorinfo', 'Information'])
+"""
