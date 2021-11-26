@@ -53,7 +53,7 @@ class XlsxWriter:
 
     @staticmethod
     def write(df, save_path, sheet_name='Data', na_rep='', index=False,
-              encoding='cp1252',  **kwargs):
+              encoding='cp1252', **kwargs):
         """Write dataframe to excel file."""
         df.to_excel(
             save_path,
