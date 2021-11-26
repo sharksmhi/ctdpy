@@ -38,8 +38,8 @@ print('Files loaded:')
 
 # if IntexError, the metadata template has not been loaded:
 # Check setup of file-generator (which should include both 'cnv' and 'xlsx')
-pprint(list(datasets[1].keys()))
 pprint(list(datasets[0].keys()))
+pprint(list(datasets[1].keys()))
 
 # SAVE DATA ACCORDING TO CTD STANDARD FORMAT (TXT)
 # start_time = time.time()
