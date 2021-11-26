@@ -8,7 +8,7 @@ from ctdpy.core.readers.cnv_reader import CNVreader  # noqa: F401
 from ctdpy.core.readers.deep import RincoDEEP, MetadataDEEP  # noqa: F401
 from ctdpy.core.readers.file_handlers import BaseFileHandler  # noqa: F401
 from ctdpy.core.readers.json_reader import JSONreader  # noqa: F401
-from ctdpy.core.readers.metadata import XLSXmeta  # noqa: F401
+from ctdpy.core.readers.metadata import TXTmeta, XLSXmeta  # noqa: F401
 from ctdpy.core.readers.rinco import Rinco  # noqa: F401
 from ctdpy.core.readers.seabird import SeaBird  # noqa: F401
 from ctdpy.core.readers.sgus import SvpSGUS, MetadataSGUS  # noqa: F401

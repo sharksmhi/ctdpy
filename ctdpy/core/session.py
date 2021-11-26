@@ -104,7 +104,6 @@ class Session:
     def _get_filenames_matched(filenames, file_type):
         """Get matching filenames."""
         if file_type.get('file_patterns'):
-            print(file_type['file_patterns'])
             filenames_matched = match_filenames(filenames, file_type['file_patterns'])
         elif 'file_suffix' in file_type:
             filenames_matched = get_file_list_based_on_suffix(filenames, file_type['file_suffix'])
