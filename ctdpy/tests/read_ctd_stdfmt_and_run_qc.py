@@ -9,7 +9,6 @@ from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
 from sharkpylib.qc.qc_default import QCBlueprint
 import time
-from pprint import pprint
 
 
 # GET FILES
