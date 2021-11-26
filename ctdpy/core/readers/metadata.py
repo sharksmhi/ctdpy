@@ -5,6 +5,8 @@ Created on 2019-11-04 10:37
 @author: a002028
 
 """
+from abc import ABC
+
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.txt_reader import load_txt
@@ -16,7 +18,7 @@ from ctdpy.core.utils import (
 )
 
 
-class TXTmeta(BaseReader, DataFrameHandler):
+class TXTmeta(BaseReader, DataFrameHandler, ABC):
     """Base Class reader for SMHI datahost text file oriented CTD metadata."""
 
     def __init__(self, settings):
@@ -33,28 +35,44 @@ class TXTmeta(BaseReader, DataFrameHandler):
         data = {}
         for file_path in filenames:
             fid = get_filename_without_extension(file_path)
-            file_specs = self.file_specs.get(fid)
-            self._read(file_path, file_specs, data, fid)
+            self._read(file_path, data, fid)
         return data
 
-    def _read(self, file_path, file_specs, data, fid):
+    def _read(self, file_path, data, fid):
         """Read txt file and store content.
 
         Args:
             file_path (str): Path to file
-            file_specs (dict): Settings for reader
             data (dict): Data
             fid (str): file name
         """
         df = load_txt(
             file_path=file_path,
             as_dtype=str,
-            **file_specs
+            **self.file_specs.get(fid)
         )
         data[fid] = eliminate_empty_rows(df)
 
+    def merge_data(self, *args, **kwargs):
+        """Merge data."""
+        # Not used for metadata.
+        pass
 
-class XLSXmeta(BaseReader, DataFrameHandler):
+
+def _encode_fix_sheet_name(sheet_name):
+    """Return encode corrected string.
+
+    Ooh, pretty things..
+    """
+    if 'Ã¶' in sheet_name:
+        return sheet_name.replace('Ã¶', 'ö')
+    elif 'ï¿½' in sheet_name:
+        return sheet_name.replace('ï¿½', 'ö')
+    else:
+        return sheet_name
+
+
+class XLSXmeta(BaseReader, DataFrameHandler, ABC):
     """Base Class reader for SMHI datahost excel template for CTD metadata."""
 
     def __init__(self, settings):
@@ -73,25 +91,20 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         for file_path in filenames:
             fid = get_filename_without_extension(file_path)
             data[fid] = {}
-            self._read(file_path, self.file_specs, reader, data[fid])
+            self._read(file_path, reader, data[fid])
         return data
 
-    def merge_data(self, data, resolution=None):
-        """Merge data."""
-        # Not used when we only have metadata.
-        pass
-
-    def _read(self, file_path, file_specs, reader, data):
+    def _read(self, file_path, reader, data):
         """Read one sheet at a time.
 
         Args:
             file_path (str): Path to file
-            file_specs (dict): Settings for reader
             reader (obj): Reader instance
             data (dict): Data
         """
-        for sheet_name, header_row in zip(file_specs['sheet_names'], file_specs['header_rows']):
-            sheet_name = self._encode_fix_sheet_name(sheet_name)
+        for sheet_name, header_row in zip(self.file_specs['sheet_names'],
+                                          self.file_specs['header_rows']):
+            sheet_name = _encode_fix_sheet_name(sheet_name)
             df = reader(
                 file_path=file_path,
                 sheet_name=sheet_name,
@@ -99,17 +112,6 @@ class XLSXmeta(BaseReader, DataFrameHandler):
             )
             df = eliminate_empty_rows(df)
             data[sheet_name] = df.fillna('')
-
-    def _encode_fix_sheet_name(self, sheet_name):
-        """Return encode corrected string.
-
-        Ooh, pretty things.."""
-        if 'Ã¶' in sheet_name:
-            return sheet_name.replace('Ã¶', 'ö')
-        elif 'ï¿½' in sheet_name:
-            return sheet_name.replace('ï¿½', 'ö')
-        else:
-            return sheet_name
 
     @staticmethod
     def load_func(file_path, sheet_name, header_row, data, reader):
@@ -127,3 +129,8 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         """Get reader."""
         # Could be done differently
         return load_excel
+
+    def merge_data(self, *args, **kwargs):
+        """Merge data."""
+        # Not used when we only have metadata.
+        pass

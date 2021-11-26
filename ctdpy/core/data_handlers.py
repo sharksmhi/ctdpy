@@ -286,7 +286,8 @@ class SeriesHandler(BaseFileHandler):
     def get_series_object(obj):
         """Get one column with data, eg. pd.Serie."""
         if isinstance(obj, pd.DataFrame):
-            # Not really necessary if you load file with argument header=None pd.read_csv(..., header=None)
+            # Not really necessary if you load file with argument header=None pd.read_csv(...,
+            # header=None)
             s = pd.Series(obj.keys()[0])
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
