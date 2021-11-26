@@ -36,4 +36,4 @@ class CNVreader(BaseFileHandler):
     @staticmethod
     def load(fid, sep='\t', as_series=False, **kwargs):
         """Load "fid"."""
-        return load_txt(file_path=fid, seperator=sep, as_dtype=True, **kwargs)
+        return load_txt(file_path=fid, separator=sep, as_dtype=True, **kwargs)

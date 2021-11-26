@@ -6,7 +6,7 @@ Created on Thu Jul 05 09:37:38 2018
 """
 from ctdpy.core import utils
 from ctdpy.core.readers.seabird import SeaBird
-from ctdpy.core.readers.metadata import XLSXmeta
+from ctdpy.core.readers.metadata import XLSXmeta, TXTmeta
 
 
 class SeaBirdSMHI(SeaBird):
@@ -126,6 +126,16 @@ class MetadataSMHI(XLSXmeta):
         super().__init__(settings)
         self.data = {}
         self.file_specs = self.settings.readers['smhi']['datasets']['xlsx']
+
+
+class MetadataTxtSMHI(TXTmeta):
+    """Reader for text file oriented metadata according to SMHI datahost template."""
+
+    def __init__(self, settings):
+        """Initialize."""
+        super().__init__(settings)
+        self.data = {}
+        self.file_specs = self.settings.readers['smhi']['datasets']['txt']
 
 
 class MasterSMHI(SeaBird):
