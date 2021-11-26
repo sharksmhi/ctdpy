@@ -23,7 +23,7 @@ datasets = s.read()
 print(list(datasets[0]))
 print(list(datasets[1]))
 
-# SAVE DATA ACCORDING TO CTD STANDARD FORMAT (TXT)
+# SAVE DATA ACCORDING TO CTD STANDARD FORMAT (TXT), but "keep_original_file_names"
 data_path = s.save_data(
     datasets,
     writer='ctd_standard_template',
