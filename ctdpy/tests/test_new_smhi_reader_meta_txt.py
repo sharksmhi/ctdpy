@@ -5,9 +5,7 @@ Created on 2021-11-26 13:51
 @author: johannes
 """
 from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
-from sharkpylib.qc.qc_default import QCBlueprint
-import time
+from ctdpy.core.utils import generate_filepaths
 
 
 # GET FILES
