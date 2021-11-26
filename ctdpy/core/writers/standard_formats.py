@@ -410,6 +410,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """Return FILE_NAME_DATABASE."""
         if not hasattr(self, 'df_metadata'):
             return fid
+
         boolean = self.file_name == fid.upper()
         return self.df_metadata.loc[boolean, 'FILE_NAME_DATABASE'].values[0]
 

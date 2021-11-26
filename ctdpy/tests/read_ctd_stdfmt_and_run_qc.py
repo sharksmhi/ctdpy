@@ -9,11 +9,10 @@ from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
 from sharkpylib.qc.qc_default import QCBlueprint
 import time
-from pprint import pprint
 
 
 # GET FILES
-base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_NMK_SGUS\processed_data'
+base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_COD_SMHI\processed_data'
 
 files = generate_filepaths(
     base_dir,
@@ -31,8 +30,8 @@ s = Session(
 start_time = time.time()
 datasets = s.read()
 print("Datasets loaded--%.3f sec" % (time.time() - start_time))
-print('Files loaded:')
-pprint(list(datasets[0]))
+# print('Files loaded:')
+# pprint(list(datasets[0]))
 
 
 # QUALITY CONTROL
@@ -50,9 +49,9 @@ print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
 first_ds = list(datasets[0])[0]
 
 print('Note format of flagfield')
-print(datasets[0][first_ds]['data']['Q0_TEMP_CTD'][:5])
-print('\nDataframe from file: {}'.format(first_ds))
-print(datasets[0][first_ds]['metadata'])
+# print(datasets[0][first_ds]['data']['Q0_TEMP_CTD'][:5])
+# print('\nDataframe from file: {}'.format(first_ds))
+# print(datasets[0][first_ds]['metadata'])
 
 
 # UPDATE DATA ACCORDING TO CTD TEMPLATE (TXT-FORMAT)
