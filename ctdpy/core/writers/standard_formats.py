@@ -391,8 +391,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             # dset = [datafiles] or [metadata files].
             for key in dset:
                 if key.endswith('.xlsx'):
-                    for key, item in dset.items():
-                        meta_name = self.meta_translation.get(key, key)
+                    for dset_key, item in dset[key].items():
+                        meta_name = self.meta_translation.get(dset_key, dset_key)
                         out_sets.setdefault(meta_name, item)
                 elif key in self.meta_translation.values():
                     out_sets.setdefault(key, dset[key])
