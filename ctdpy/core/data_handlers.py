@@ -420,7 +420,7 @@ class DeltaCorrection:
             corr: -0.2
     """
 
-    def __init__(self, corr_obj=None, user=None):
+    def __init__(self, corr_obj=None, user=None, raw_format=False):
         """Initialize and store corr_obj and user.
 
         Args:
@@ -432,14 +432,30 @@ class DeltaCorrection:
         """
         self.corr_obj = corr_obj
         self.user = user
+        self.raw_format = raw_format
         self.meta = None
+        self.serie_correction_comnt = {}
 
     def append_correction_comment(self, key_dict):
         """Append comment self.meta."""
-        time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
-        corr = ', '.join((': '.join((para, str(key_dict[para]))) for para in key_dict))
-        self.meta[len(self.meta) + 1] = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; ' \
-                                        'TIMESTAMP {}; CORRECTION: {}'.format(self.user, time_stamp, corr)
+        if self.serie_correction_comnt:
+            time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
+            corr_template_str = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; TIMESTAMP {}; {}-{}: {}'
+            comnt_list = []
+
+            for para, item in self.serie_correction_comnt.items():
+                comnt = corr_template_str.format(
+                    self.user, time_stamp, para, item['type'], item['value']
+                )
+                if self.raw_format:
+                    comnt_list.append(comnt)
+                else:
+                    # Data according to datahost standard format.
+                    self.meta[len(self.meta) + 1] = comnt
+            if self.raw_format:
+                self.meta['COMNTS'] = comnt_list
+
+        self.serie_correction_comnt = {}
 
     def correct_dataset(self, ds):
         """Loop over datasets and correct data series."""
@@ -456,13 +472,40 @@ class DeltaCorrection:
         Args:
             df (pd.DataFrame): Data.
             key (str): visit key. Eg.'ctd_profile_20180122_7798_5051'
+
+        'B1201207.TOB': {
+            'SALT_CTD': {'type': 'bias', 'value': 0.01},
+            'PRES_CTD': {'type': 'bias', 'value': -0.04},
+            'DO_mg': {
+                'type': 'equation',
+                'value': 'OXYGEN_MG + ((0.14*TEMP – 0.0045*TEMP**2 – 0.2)*(OXYGEN_MG/10))',
+                'mapping': {'OXYGEN_MG': 'DO_mg', 'TEMP': 'TEMP_CTD'}
+            },
+            'DOXY_CTD': {
+                'type': 'equation',
+                'value': 'DO_mg * 0.7',
+                'mapping': {'DO_mg': 'DO_mg'}
+            }
+        }
         """
         visit_corr = self.corr_obj.get(key)
-        for para, value in visit_corr.items():
+        for para, item in visit_corr.items():
             if para in df:
                 nr_decimals = len(df[para][0].split('.')[1])
-                s = df[para].astype(float) + value
+
+                if item['type'] == 'bias':
+                    s = df[para].astype(float)
+                    s = s + item['value']
+                elif item['type'] == 'equation':
+                    s = df[item['mapping'].values()].apply(lambda x: eval(
+                        item.get('value'), {key: float(x[i]) for i, key in enumerate(item['mapping'].keys())}
+                    ), axis=1)
+                else:
+                    raise ValueError('Could not identify correction type: {}'.format(item['type']))
+
                 df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_decimals))
+
+                self.serie_correction_comnt[para] = item
 
     def update_meta(self, meta_serie):
         """Update meta serie."""

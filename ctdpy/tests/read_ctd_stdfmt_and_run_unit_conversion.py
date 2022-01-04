@@ -14,7 +14,7 @@ from pprint import pprint
 
 
 # GET FILES
-base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_NMK_SGUS\processed_data'
+base_dir = r'C:\Arbetsmapp\datasets\Profile\2020\SHARK_Profile_2020_UMSC\processed_data'
 
 files = generate_filepaths(
     base_dir,

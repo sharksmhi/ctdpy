@@ -67,6 +67,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                                                            self.sensorinfo[item['metadata'].get('INSTRUMENT_SERIE')],
                                                            self.information,
                                                            instrument_metadata,
+                                                           pd.Series(item['metadata'].get('COMNTS')),
                                                            data_series)
                     self._write(fid, data_series, keep_original_file_names=keep_original_file_names)
 
@@ -139,7 +140,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     def _append_information(self, *args):
         """Append and return information as pd.Serie."""
         out_serie = pd.Series([])
-        out_serie = out_serie.append([serie for serie in args])
+        out_serie = out_serie.append([serie for serie in args if serie.any()])
         return out_serie
 
     def setup_metadata_information(self, meta):
