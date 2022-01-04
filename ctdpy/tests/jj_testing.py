@@ -5,7 +5,7 @@ Created on Thu Jul 05 08:22:21 2018
 @author: a002028
 """
 from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
+from ctdpy.core.utils import generate_filepaths
 
 
 base_dir = r'C:\Temp\CTD_DV\qc_DEEP_2020\data'
