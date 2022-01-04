@@ -507,7 +507,6 @@ class DeltaCorrection:
 
                 self.serie_correction_comnt[para] = item
 
-
     def update_meta(self, meta_serie):
         """Update meta serie."""
         self.meta = meta_serie

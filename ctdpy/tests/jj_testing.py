@@ -6,12 +6,6 @@ Created on Thu Jul 05 08:22:21 2018
 """
 from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
-from sharkpylib.qc.qc_default import QCBlueprint
-import time
-
-
-from ctdpy.core.session import Session
-from ctdpy.core.utils import generate_filepaths
 
 
 base_dir = r'C:\Temp\CTD_DV\qc_DEEP_2020\data'
@@ -22,7 +16,6 @@ files = generate_filepaths(
     only_from_dir=False,
 )
 
-# Create SESSION object
 s = Session(
     filepaths=files,
     reader='deep',
@@ -32,4 +25,3 @@ datasets = s.read()
 
 # data_path = s.save_data(datasets, writer='ctd_standard_template',
 #                         return_data_path=True, save_path='C:/ctdpy_exports')
-
