@@ -7,7 +7,7 @@ Created on 2020-07-10 14:15
 """
 from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths, get_reversed_dictionary
-from sharkpylib.qc.qc_default import QCBlueprint
+from profileqc.qc import SessionQC
 import time
 
 
@@ -40,8 +40,8 @@ start_time = time.time()
 # This will produce alot of prints...
 for item in datasets[0].values():
     parameter_mapping = get_reversed_dictionary(s.settings.pmap, item['data'].keys())
-    qc_run = QCBlueprint(item, parameter_mapping=parameter_mapping)
-    qc_run()
+    qc_run = SessionQC(item, parameter_mapping=parameter_mapping)
+    qc_run.run()
 
 print("QCBlueprint run--%.3f sec" % (time.time() - start_time))
 
