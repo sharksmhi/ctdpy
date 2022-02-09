@@ -176,8 +176,8 @@ class Session:
         writer_instance = self.settings.writers[writer]['writer'].get('writer')
         return writer_instance(self.settings)
 
-    def save_data(self, datasets, save_path=None, writer=None, return_data_path=False,
-                  **writer_kwargs):
+    def save_data(self, datasets, save_path=None, writer=None,
+                  return_data_path=False, **writer_kwargs):
         """Save datasets.
 
         Args:
