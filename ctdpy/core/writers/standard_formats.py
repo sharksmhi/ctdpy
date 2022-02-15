@@ -19,6 +19,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """Initialize and store the settings object."""
         super().__init__(settings)
         self._file_name = None
+        self.collection_folder = True
         # self.setup_standard_format()
         self.writer = self._get_writer_settings()
         self.txt_writer = TxtWriter()
@@ -32,14 +33,17 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             'Information': 'information',
         }
 
-    def write(self, datasets, keep_original_file_names=False, **kwargs):
+    def write(self, datasets, keep_original_file_names=False,
+              collection_folder=True, **kwargs):
         """Cunduct the writing process.
 
         Call methods in order to strucure data according to standard and then writes to standard output format
         Args:
             datasets: All loaded datasets [pd.DataFrame(s), pd.Series]
             keep_original_file_names (bool): False or True
+            collection_folder (bool):
         """
+        self.collection_folder = collection_folder
         self._check_dataset_format(datasets)
         if self.std_format:
             self._redirect_to_data_update(datasets)
@@ -436,8 +440,14 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _set_data_path(self):
         """Set path to data file."""
-        folder_prefix = 'ctd_std_fmt_' + utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
-        self.data_path = os.path.join(self.settings.settings_paths.get('export_path'), folder_prefix)
+        if self.collection_folder:
+            folder_prefix = 'ctd_std_fmt_' + \
+                            utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
+        else:
+            folder_prefix = ''
+        self.data_path = os.path.join(
+            self.settings.settings_paths.get('export_path'), folder_prefix
+        )
 
     def _update_visit_info(self, metadata):
         """Update visit info properties of parent class."""

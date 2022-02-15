@@ -8,20 +8,17 @@ from ctdpy.core.session import Session
 from ctdpy.core.utils import generate_filepaths
 
 
-base_dir = r'C:\Temp\CTD_DV\qc_DEEP_2020\data'
+base_dir = r'C:\Utveckling\TESTING\data2sqlite\test_data'
 
 files = generate_filepaths(
     base_dir,
-    pattern_list=['.TOB', '.xlsx'],
+    pattern_list=['.cnv', '.xlsx'],
     only_from_dir=False,
 )
 
 s = Session(
     filepaths=files,
-    reader='deep',
+    reader='smhi',
 )
 
 datasets = s.read()
-
-# data_path = s.save_data(datasets, writer='ctd_standard_template',
-#                         return_data_path=True, save_path='C:/ctdpy_exports')

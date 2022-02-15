@@ -226,6 +226,7 @@ class SeriesHandler(BaseFileHandler):
                 boolean_contains = self.get_index(series, key, contains=True,
                                                   as_boolean=True)
                 boolean = boolean_startswith & boolean_contains
+
                 if any(boolean):
                     value = series[boolean].tolist()[0]
 
