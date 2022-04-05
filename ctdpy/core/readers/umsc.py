@@ -77,7 +77,8 @@ class SeaBirdUMSC(SeaBird):
                 boolean = boolean_startswith & boolean_contains
                 if any(boolean):
                     if key == 'SERIAL NO':
-                        meta = re.search('SERIAL NO. (.+?) ', series[boolean].iloc[0]).group(1)
+                        meta = re.search('SERIAL NO. (.+?) ',
+                                         series[boolean].iloc[0]).group(1)
                     else:
                         meta = series[boolean].tolist()[0].split(separator)[-1].strip()
                     meta_dict.setdefault(key, meta)

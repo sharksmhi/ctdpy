@@ -19,6 +19,7 @@
         "TEMP_CTD": [
             "TEMP_CTD [�C (ITS-90)]",
             "TEMP_CTD [°C (ITS-90)]",
+            "TEMP_CTD [°C (ITS-90)]",
             "TEMP_CTD [�C]",
             "TEMP_CTD [deg C]",
             "TEMP_CTD [ITS-90, deg C]",
@@ -171,13 +172,24 @@
             "FileName"
         ], 
         "PAR_CTD": [
+            "PAR_CTD [µmol/(m2 sec)]",
+            "PAR_CTD [µmol/(m2 sec)]",
             "PAR_CTD [�mol/(m2 sec)]",
             "PAR_CTD [�E/(cm2 sec)]",
             "PAR_CTD [�E]",
             "PAR", 
             "par: PAR/Irradiance, Biospherical/Licor", 
             "par: PAR/Irradiance, Biospherical/Lico [µE/(cm^2*s)]",
-            "par: PAR/Irradiance, Biospherical/Lico [\u00b5E/(cm^2*s)]"
+            "par: PAR/Irradiance, Biospherical/Lico [\u00b5E/(cm^2*s)]",
+            "par/sat/log: PAR/Logarithmic, Satlantic [umol photons/m^2/sec]",
+            "par: PAR/Irradiance, Biospherical/Licor [umol photons/m^2/sec]"
+        ],
+        "SPAR_CTD": [
+            "SPAR",
+            "SPAR_CTD [µmol/(m2 sec)]",
+            "SPAR_CTD [�mol/(m2 sec)]",
+            "spar: SPAR/Surface Irradiance",
+            "spar/sat/lin: SPAR/Linear, Satlantic [umol photons/m^2/sec]"
         ],
         "TEMP2_CTD": [
             "TEMP2_CTD [�C (ITS-90)]",
@@ -214,11 +226,7 @@
         ], 
         "HUMUS_CTD": [
             "Humus"
-        ], 
-        "SPAR_CTD": [
-            "SPAR", 
-            "spar: SPAR/Surface Irradiance"
-        ], 
+        ],
         "LATIT": [
             "Latitude",
             "NMEA Latitude",
@@ -243,7 +251,8 @@
             "Datasets"
         ], 
         "INSTRUMENT_SERIE": [
-            "SERIAL NO"
+            "SERIAL NO",
+            "SerialNumber"
         ],
         "Q_FLAG": [
             "flag: flag"

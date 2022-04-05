@@ -67,8 +67,16 @@ class AttributeDict(dict):
             try:
                 return getattr(self, key.lower())
             except Exception:
-                # print('No mapping found for key: ' + key)
-                return key
+                if '[' in key:
+                    try:
+                        key = key.split('[')[0].strip()
+                        return getattr(self, key.lower())
+                    except Exception:
+                        # print('No mapping found for key: ' + key)
+                        return key
+                else:
+                    # print('No mapping found for key: ' + key)
+                    return key
 
     def get_list(self, key_list):
         """Get list of values from self attributes based on key_list."""
