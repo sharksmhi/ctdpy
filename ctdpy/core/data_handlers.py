@@ -6,6 +6,7 @@ Created on Fri Jul 13 13:26:05 2018
 """
 import pandas as pd
 import numpy as np
+import seawater
 from ctdpy.core.readers.file_handlers import BaseFileHandler
 from ctdpy.core.readers.txt_reader import load_txt
 from ctdpy.core import utils
@@ -333,7 +334,8 @@ class UnitConverter:
         - converting factor
     - converting function
         - pandas apply? numpy vecorize?
-        - change [unit] of parameter name eg. CNDC_CTD [S/m] instead of CNDC_CTD [mS/cm]
+        - change [unit] of parameter name eg. CNDC_CTD [S/m]
+          instead of CNDC_CTD [mS/cm]
     """
 
     def __init__(self, mapper, user):
@@ -489,6 +491,16 @@ class DeltaCorrection:
             }
         }
         """
+        def get_doxy_sat(doxy, salt, temp):
+            """Calculate oxygen saturation."""
+            if doxy and salt and temp:
+                doxy = float(doxy)
+                if doxy < 0:
+                    doxy = 0.
+                return doxy / seawater.satO2(float(salt), float(temp)) * 100
+            else:
+                return np.nan
+
         visit_corr = self.corr_obj.get(key)
         for para, item in visit_corr.items():
             if para in df:
@@ -497,6 +509,8 @@ class DeltaCorrection:
                 if item['type'] == 'bias':
                     s = df[para].astype(float)
                     s = s + item['value']
+                elif item['type'] == 'equation' and para == 'DOXY_SAT_CTD':
+                    s = df[item['mapping'].values()].apply(lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
                         item.get('value'), {key: float(x[i]) for i, key in enumerate(item['mapping'].keys())}

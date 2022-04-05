@@ -35,7 +35,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def write(self, datasets, keep_original_file_names=False,
               collection_folder=True, **kwargs):
-        """Cunduct the writing process.
+        """Conduct the writing process.
 
         Call methods in order to strucure data according to standard and then writes to standard output format
         Args:
@@ -54,7 +54,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
             for dataset in data:
                 for fid, item in dataset.items():
-                    self.sensorinfo_boolean = item['metadata'].get('INSTRUMENT_SERIE')
+                    self.sensorinfo_boolean = item['metadata'].get('INSTRUMENT_SERIE')  # @sensorinfo_boolean.setter
                     instrument_metadata = self._get_instrument_metadata(item.get('raw_format'),
                                                                         separator=self.writer['separator_metadata'],
                                                                         data_identifier=item.get('identifier_data'))

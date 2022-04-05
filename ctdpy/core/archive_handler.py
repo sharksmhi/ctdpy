@@ -4,6 +4,7 @@ Created on Wen Oct 31 10:26:30 2018
 
 @author: a002028
 """
+import os
 from ctdpy.core import utils
 
 
@@ -51,8 +52,10 @@ class Archive:
     def _get_destination_path(self, archive_name='archive_'):
         """Path to new archive."""
         folder_time_stamp = utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
-        return ''.join([self.settings.settings_paths.get('export_path'),
-                        archive_name, folder_time_stamp])
+        return os.path.join(
+            self.settings.settings_paths.get('export_path'),
+            archive_name + folder_time_stamp
+        )
 
     def _get_standard_archive_structure(self):
         """Get archive structure path."""
