@@ -492,6 +492,7 @@ class DeltaCorrection:
         }
         """
         def get_doxy_sat(doxy, salt, temp):
+            """Calculate oxygen saturation."""
             if doxy and salt and temp:
                 doxy = float(doxy)
                 if doxy < 0:
