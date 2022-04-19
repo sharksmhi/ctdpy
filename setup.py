@@ -14,7 +14,7 @@ with open('requirements.txt', 'r') as fh:
         requirements.append(line.strip())
 
 NAME = 'ctdpy'
-VERSION = '0.1.6'
+VERSION = '0.1.7'
 README = open('READMEpypi.rst', 'r').read()
 
 setuptools.setup(
