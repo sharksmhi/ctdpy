@@ -106,7 +106,7 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
     """Generate file paths."""
     pattern_list = pattern_list or []
     not_pattern_list = not_pattern_list or []
-    directory = str(directory)  # MW: To also allow directory to be of type pathlib.Path
+    directory = str(directory)
     for path, _, fids in os.walk(directory):
         if only_from_dir:
             if path != directory:
