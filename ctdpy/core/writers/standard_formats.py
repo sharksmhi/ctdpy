@@ -380,7 +380,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             qc0 (bool): True / False. If flag "QC-0" should be included.
         """
         outlist = []
-        check_set = set(())
+        check_set = set(self.writer['standard_data_header'])  # metadata header
         data_params = set(self.df_sensorinfo.loc[self.sensorinfo_boolean,
                                                  'PARAM'].values)
         for param in self.writer['standard_parameter_order']:
@@ -391,6 +391,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                     outlist.append('Q0_' + param)
                 outlist.append('Q_' + param)
         for param in data_params:
+            param = self.settings.pmap.get(param)
             if param not in check_set:
                 check_set.add(param)
                 outlist.append(param)
