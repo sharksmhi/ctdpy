@@ -18,6 +18,54 @@ writer:
     separator_delivery_note: ": "
     separator_data: "\t"
     separator_metadata: ;
-    standard_delivery_note_header: [data kontrollerad av, format, projekt, rapporterande institut, datatyp, beskrivning av datasetet, "övervakningsprogram", "beställare", "provtagningsår", kontaktperson, kommentar]
-    standard_data_header: [YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CRUISE, STATION,
-        LATITUDE_DD, LONGITUDE_DD, COMNT_SAMP, SCAN_BIN_CTD]
+    standard_delivery_note_header:
+        - data kontrollerad av
+        - format
+        - projekt
+        - rapporterande institut
+        - datatyp
+        - beskrivning av datasetet
+        - "övervakningsprogram"
+        - "beställare"
+        - "provtagningsår"
+        - kontaktperson
+        - kommentar
+    standard_data_header:
+        - YEAR
+        - MONTH
+        - DAY
+        - HOUR
+        - MINUTE
+        - SECOND
+        - CRUISE
+        - STATION
+        - LATITUDE_DD
+        - LONGITUDE_DD
+        - COMNT_SAMP
+        - SCAN_BIN_CTD
+    standard_parameter_order:
+        - DEPH
+        - PRES_CTD
+        - PRES2_CTD
+        - TEMP_CTD
+        - TEMP2_CTD
+        - SALT_CTD
+        - SALT2_CTD
+        - CNDC_CTD
+        - CNDC2_CTD
+        - DENS_CTD
+        - DENS2_CTD
+        - DOXY_CTD
+        - DOXY2_CTD
+        - DOXY_SAT_CTD
+        - DOXY_SAT2_CTD
+        - SVEL_CTD
+        - SVEL2_CTD
+        - CHLFLUO_CTD
+        - PHYC_CTD
+        - TURB_CTD
+        - PAR_CTD
+        - SPAR_CTD
+        - ALTM_CTD
+        - DESC_RATE_CTD
+        - PUMP_CTD

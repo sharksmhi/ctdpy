@@ -365,7 +365,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     def set_header(self):
         """Return complete header for CTD standard format.
 
-        Adds specified parameters from sensorinfo (Excel spreadsheet) to the standard "Visit info header".
+        Adds specified parameters from sensorinfo (Excel spreadsheet)
+        to the standard "Visit info header".
         """
         parameters_list = self.get_parameters_from_sensorinfo()
         return self.writer['standard_data_header'] + parameters_list
@@ -373,16 +374,30 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     def get_parameters_from_sensorinfo(self, qc0=True):
         """Return all parameters from sensorinfo including Q-flags.
 
+        Following the standard column order for this writer.
+
         Args:
             qc0 (bool): True / False. If flag "QC-0" should be included.
         """
-        # TODO qc0.. if QC-0 has been performed we have a True value
         outlist = []
-        for param in self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values:
-            outlist.append(param)
-            if qc0:
-                outlist.append('Q0_' + param)
-            outlist.append('Q_' + param)
+        check_set = set(self.writer['standard_data_header'])  # metadata header
+        data_params = set(self.df_sensorinfo.loc[self.sensorinfo_boolean,
+                                                 'PARAM'].values)
+        for param in self.writer['standard_parameter_order']:
+            if param in data_params:
+                check_set.add(param)
+                outlist.append(param)
+                if qc0:
+                    outlist.append('Q0_' + param)
+                outlist.append('Q_' + param)
+        for param in data_params:
+            param = self.settings.pmap.get(param)
+            if param not in check_set:
+                check_set.add(param)
+                outlist.append(param)
+                if qc0:
+                    outlist.append('Q0_' + param)
+                outlist.append('Q_' + param)
         return outlist
 
     def _get_writer_settings(self):
