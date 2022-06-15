@@ -8,7 +8,7 @@ import os
 import numpy as np
 import pandas as pd
 from decimal import Decimal, ROUND_HALF_UP
-from collections import Mapping
+from typing import Mapping
 from fnmatch import fnmatch
 from datetime import datetime
 import shutil
