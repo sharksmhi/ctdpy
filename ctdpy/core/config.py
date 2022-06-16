@@ -5,7 +5,7 @@ Created on Thu Jul 05 14:23:22 2018
 @author: a002028
 """
 import os
-from collections import Mapping
+from typing import Mapping
 from ctdpy.core import readers, mapping
 
 
