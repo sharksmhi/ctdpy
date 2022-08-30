@@ -505,9 +505,9 @@ class DeltaCorrection:
         for para, item in visit_corr.items():
             if para in df:
                 try:
-                    nr_of_decimals = len(df[para][0].split('.')[1])
+                    nr_decimals = len(df[para][0].split('.')[1])
                 except Exception:
-                    nr_of_decimals = 0
+                    nr_decimals = 0
 
                 if item['type'] == 'bias':
                     s = df[para].astype(float)
@@ -523,7 +523,7 @@ class DeltaCorrection:
                 else:
                     raise ValueError('Could not identify correction type: {}'.format(item['type']))
 
-                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_of_decimals))
+                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals))
 
                 self.serie_correction_comnt[para] = item
 
