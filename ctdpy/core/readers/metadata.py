@@ -5,8 +5,6 @@ Created on 2019-11-04 10:37
 @author: a002028
 
 """
-from abc import ABC
-
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.readers.txt_reader import load_txt
@@ -19,7 +17,7 @@ from ctdpy.core.utils import (
 )
 
 
-class TXTmeta(BaseReader, DataFrameHandler, ABC):
+class TXTmeta(BaseReader, DataFrameHandler):
     """Base Class reader for SMHI datahost text file oriented CTD metadata."""
 
     def __init__(self, settings):
@@ -73,7 +71,7 @@ def _encode_fix_sheet_name(sheet_name):
         return sheet_name
 
 
-class XLSXmeta(BaseReader, DataFrameHandler, ABC):
+class XLSXmeta(BaseReader, DataFrameHandler):
     """Base Class reader for SMHI datahost excel template for CTD metadata."""
 
     def __init__(self, settings):
