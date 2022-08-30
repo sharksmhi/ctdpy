@@ -320,8 +320,9 @@ def recursive_dict_update(d, u):
     return d
 
 
-def round_value(value, nr_decimals=3):
+def round_value(value, nr_decimals=None):
     """Calculate rounded value."""
+    nr_decimals = nr_decimals or 3
     return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' % nr_decimals % 1),
                                             rounding=ROUND_HALF_UP))
 

@@ -481,7 +481,7 @@ class DeltaCorrection:
             'PRES_CTD': {'type': 'bias', 'value': -0.04},
             'DO_mg': {
                 'type': 'equation',
-                'value': 'OXYGEN_MG + ((0.14*TEMP – 0.0045*TEMP**2 – 0.2)*(OXYGEN_MG/10))',
+                'value': 'OXYGEN_MG + ((0.14*TEMP - 0.0045*TEMP**2 - 0.2)*(OXYGEN_MG/10))',
                 'mapping': {'OXYGEN_MG': 'DO_mg', 'TEMP': 'TEMP_CTD'}
             },
             'DOXY_CTD': {

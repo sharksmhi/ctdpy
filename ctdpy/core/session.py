@@ -88,8 +88,10 @@ class Session:
         # TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
-            data = self.readers[dataset]['reader'].get_data(filenames=self.readers[dataset]['file_names'],
-                                                            add_low_resolution_data=add_low_resolution_data)
+            data = self.readers[dataset]['reader'].get_data(
+                filenames=self.readers[dataset]['file_names'],
+                add_low_resolution_data=add_low_resolution_data
+            )
 
             # TODO add_merged_data will ONLY merge profile data with meta data into PHYCHE-template.
             #  We should therefore do this elsewhere
