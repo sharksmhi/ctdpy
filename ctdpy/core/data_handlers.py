@@ -516,8 +516,8 @@ class DeltaCorrection:
                     s = df[item['mapping'].values()].apply(lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
-                        item['value'], {
-                            key: float(x[i]) for i, key in enumerate(item['mapping'].keys())
+                        item['value'], {  # noqa: B023
+                            key: float(x[i]) for i, key in enumerate(item['mapping'].keys())  # noqa: B023
                         }
                     ), axis=1)  # noqa: B023
                 else:
