@@ -481,7 +481,7 @@ class DeltaCorrection:
             'PRES_CTD': {'type': 'bias', 'value': -0.04},
             'DO_mg': {
                 'type': 'equation',
-                'value': 'OXYGEN_MG + ((0.14*TEMP – 0.0045*TEMP**2 – 0.2)*(OXYGEN_MG/10))',
+                'value': 'OXYGEN_MG + ((0.14*TEMP - 0.0045*TEMP**2 - 0.2)*(OXYGEN_MG/10))',
                 'mapping': {'OXYGEN_MG': 'DO_mg', 'TEMP': 'TEMP_CTD'}
             },
             'DOXY_CTD': {
@@ -504,7 +504,10 @@ class DeltaCorrection:
         visit_corr = self.corr_obj.get(key)
         for para, item in visit_corr.items():
             if para in df:
-                nr_decimals = len(df[para][0].split('.')[1])
+                try:
+                    decimals = len(df[para][0].split('.')[1])
+                except Exception:
+                    decimals = 0
 
                 if item['type'] == 'bias':
                     s = df[para].astype(float)
@@ -513,12 +516,14 @@ class DeltaCorrection:
                     s = df[item['mapping'].values()].apply(lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
-                        item.get('value'), {key: float(x[i]) for i, key in enumerate(item['mapping'].keys())}
-                    ), axis=1)
+                        item['value'], {  # noqa: B023
+                            key: float(x[i]) for i, key in enumerate(item['mapping'].keys())  # noqa: B023
+                        }
+                    ), axis=1)  # noqa: B023
                 else:
                     raise ValueError('Could not identify correction type: {}'.format(item['type']))
 
-                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_decimals))
+                df[para] = s.apply(lambda x: utils.round_value(x, decimals))  # noqa: B023
 
                 self.serie_correction_comnt[para] = item
 
