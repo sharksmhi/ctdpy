@@ -504,7 +504,10 @@ class DeltaCorrection:
         visit_corr = self.corr_obj.get(key)
         for para, item in visit_corr.items():
             if para in df:
-                nr_decimals = len(df[para][0].split('.')[1])
+                try:
+                    nr_of_decimals = len(df[para][0].split('.')[1])
+                except Exception:
+                    nr_of_decimals = 0
 
                 if item['type'] == 'bias':
                     s = df[para].astype(float)
@@ -513,12 +516,14 @@ class DeltaCorrection:
                     s = df[item['mapping'].values()].apply(lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
-                        item.get('value'), {key: float(x[i]) for i, key in enumerate(item['mapping'].keys())}
+                        item['value'], {
+                            key: float(x[i]) for i, key in enumerate(item['mapping'].keys())
+                        }
                     ), axis=1)
                 else:
                     raise ValueError('Could not identify correction type: {}'.format(item['type']))
 
-                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_decimals))
+                df[para] = s.apply(lambda x: utils.round_value(x, nr_decimals=nr_of_decimals))
 
                 self.serie_correction_comnt[para] = item
 
