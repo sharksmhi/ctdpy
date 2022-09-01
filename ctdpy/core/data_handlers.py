@@ -555,15 +555,16 @@ class DeltaCorrection:
                         lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
-                        item['value'], {key: float(x[i]) for i, key in  # noqa: B023
-                            enumerate(item['mapping'].keys())  # noqa: B023
+                        item['value'], {
+                            key: float(x[i])
+                            for i, key in enumerate(item['mapping'].keys())  # noqa: B023, E501
                         }  # noqa: B023
                     ), axis=1)  # noqa: B023
                 else:
                     raise ValueError('Could not identify correction type: {}'
                                      ''.format(item['type']))
 
-                df[para] = s.apply(lambda x: utils.round_value(x, decimals))  # noqa: B023
+                df[para] = s.apply(lambda x: utils.round_value(x, decimals))  # noqa: B023, E501
 
                 self.serie_correction_comnt[para] = item
 

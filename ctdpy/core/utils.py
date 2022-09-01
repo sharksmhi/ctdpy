@@ -82,8 +82,9 @@ def decdeg_to_decmin(pos, string_type=True, decimals=2):
     if string_type:
         if decimals:
             # FIXME Does not work properly
-            output = ('%%2.%sf'.zfill(8) % decimals % (
-                    float(deg) * 100.0 + minute))
+            output = (
+                '%%2.%sf'.zfill(8) % decimals % (float(deg) * 100.0 + minute)
+            )
         else:
             output = (str(deg * 100.0 + minute))
     else:

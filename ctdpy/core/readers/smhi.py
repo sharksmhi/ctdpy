@@ -139,7 +139,7 @@ class MetadataSMHI(XLSXmeta):
 
 
 class MetadataTxtSMHI(TXTmeta):
-    """Reader for text file oriented metadata according to SMHI datahost template."""
+    """Text reader for metadata according to SMHI datahost template."""
 
     def __init__(self, settings):
         """Initialize."""

@@ -127,8 +127,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _write_information(self):
         """Write "other" information to text file."""
-        exclude_str = self.writer['prefix_info'] + \
-                      self.writer['separator_metadata']
+        exclude_str = self.writer['prefix_info'] + self.writer[
+            'separator_metadata']
         self._write(
             'information',
             self.information.str.replace(exclude_str, '')
@@ -215,12 +215,20 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         #  for tabb-sign self.writer['separator_data']])}
         return {
             'meta': pd.Series(
-                [''.join([self.writer['prefix_metadata_delimiter'],
-                          '=', self.writer['separator_metadata']])]
+                [
+                    ''.join([
+                        self.writer['prefix_metadata_delimiter'],
+                        '=', self.writer['separator_metadata']
+                    ])
+                ]
             ),
             'data': pd.Series(
-                [''.join([self.writer['prefix_data_delimiter'],
-                          '=', '\ t'.replace(' ', '')])]
+                [
+                    ''.join([
+                        self.writer['prefix_data_delimiter'],
+                        '=', '\ t'.replace(' ', '')
+                    ])
+                ]
             )
         }  # noqa: W605
 
@@ -232,7 +240,9 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                 for key, value in delivery_info[0].str.split(':'):
                     info.setdefault(key.strip(), value.strip())
             else:
-                xy_idx = self._get_index(delivery_info, check_values=['MYEAR', 'DTYPE'])
+                xy_idx = self._get_index(
+                    delivery_info, check_values=['MYEAR', 'DTYPE']
+                )
                 for key, value in zip(
                         delivery_info.iloc[xy_idx[0][0]:, xy_idx[1][0]],
                         delivery_info.iloc[xy_idx[0][0]:, xy_idx[1][0] + 2]):
@@ -572,7 +582,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     def sensorinfo_boolean(self, value):
         """Set the sensorinfo_boolean property."""
         self._sensorinfo_boolean = self.df_sensorinfo[
-                                       'INSTRUMENT_SERIE'] == value
+            'INSTRUMENT_SERIE'] == value
 
     def _check_dataset_format(self, datasets):
         """Check dataset format."""

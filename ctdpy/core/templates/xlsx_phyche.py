@@ -9,7 +9,10 @@ from ctdpy.core.templates.template import Template
 
 
 class PhyCheTemplateHandler(DataFrameHandler):
-    """Handler of the excel template of physical and chemical data (discrete depths)."""
+    """Excel template handler for physical and chemical data.
+
+     Discrete depths.
+    """
 
     def __init__(self, settings):
         """Initialize and load template."""

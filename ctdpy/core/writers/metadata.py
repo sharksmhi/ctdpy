@@ -21,7 +21,6 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         handler_instance = self.get_handler_instance()
         self.template_handler = handler_instance(self.settings)
 
-
     def get_handler_instance(self):
         """Return Template Handler."""
         return self.settings.templates['ctd_metadata'].get('template_handler')
