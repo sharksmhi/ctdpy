@@ -13,7 +13,8 @@ class Archive:
 
     # TODO Fix archive name. Either copy archive structure from Phyche
     #  (eg. SHARK_Profile_BAS_UMSC_2018, SHARK_Profile_GAV_UMSC_2018....)
-    #  or simply merge all PROJs as a complete delivery package ? SHARK_Profile_BAS_GAV_RNE_PBX_XXX_UMSC_2018
+    #  or simply merge all PROJs as a complete delivery package ?
+    #  SHARK_Profile_BAS_GAV_RNE_PBX_XXX_UMSC_2018
     #  or just SHARK_Profile_UMSC_2018
 
     def __init__(self, settings, data_path=''):

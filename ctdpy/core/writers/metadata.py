@@ -3,7 +3,6 @@
 Created on 2018-11-20 08:55
 
 @author: Johannes Johansson
-
 """
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import DataFrameHandler
@@ -19,17 +18,9 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
         super().__init__(settings)
         self.writer = self._get_writer_settings()
         self.xlsx_writer = XlsxWriter()
-        # self.template = None
-        # self.load_template()
         handler_instance = self.get_handler_instance()
         self.template_handler = handler_instance(self.settings)
 
-    # def load_template(self):
-    #     """
-    #     :return: Loads Template Handler
-    #     """
-    #     handler_instance = self.get_handler_instance()
-    #     self.template_handler = handler_instance(self.settings)
 
     def get_handler_instance(self):
         """Return Template Handler."""
@@ -37,7 +28,9 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
 
     def convert_formats(self):
         """Call the convert_formats method of the current template handler."""
-        self.template_handler.template['Metadata'].convert_formats(ship_map=self.settings.smap)
+        self.template_handler.template['Metadata'].convert_formats(
+            ship_map=self.settings.smap
+        )
 
     def write(self, dataset, **kwargs):
         """Write dataset to file."""
@@ -46,22 +39,32 @@ class MetadataWriter(SeriesHandler, DataFrameHandler):
             self.append_to_template(item['metadata'])
 
         self.convert_formats()
-        self.template_handler.template['Metadata'].sort(sort_by_keys=['SHIPC', 'SDATE', 'STIME'])
+        self.template_handler.template['Metadata'].sort(
+            sort_by_keys=['SHIPC', 'SDATE', 'STIME']
+        )
         self._write()
 
     def _write(self):
         """Write to file."""
         save_path = self._get_save_path()
-        headers = [True if h is not None else None for h in self.settings.templates['ctd_metadata'][
-            'template']['header_row']]
-        start_rows = [h if h is not None else 0 for h in self.settings.templates['ctd_metadata'][
-            'template']['header_row']]
-        self.xlsx_writer.write_multiple_sheets(save_path,
-                                               dict_df=self.template_handler.template,
-                                               sheet_names=self.settings.templates['ctd_metadata']['template'][
-                                                   'sheet_name'],
-                                               headers=headers,
-                                               start_rows=start_rows)
+        headers = [
+            True if h is not None else None
+            for h in self.settings.templates[
+                'ctd_metadata']['template']['header_row']
+        ]
+        start_rows = [
+            h if h is not None else 0
+            for h in self.settings.templates[
+                'ctd_metadata']['template']['header_row']
+        ]
+        self.xlsx_writer.write_multiple_sheets(
+            save_path,
+            dict_df=self.template_handler.template,
+            sheet_names=self.settings.templates[
+                'ctd_metadata']['template']['sheet_name'],
+            headers=headers,
+            start_rows=start_rows
+        )
         self.data_path = save_path
 
     def append_to_template(self, df):

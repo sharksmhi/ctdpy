@@ -7,7 +7,7 @@ Created on Thu Jul 19 13:35:11 2018
 
 
 class StyleSheet:
-    """Uses style object from pandas DataFrame and CSS formats to style an excel sheet.
+    """Style object from pandas DataFrame.
 
     For HTML-colors: https://html-color-codes.info/?
     CSS styles: https://developer.mozilla.org/en-US/docs/Web/CSS/
@@ -73,7 +73,8 @@ class StyleSheet:
 
         Args:
             setting (dict): with info such as:
-                            none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit
+                            none|hidden|dotted|dashed|solid|double|groove|ridge
+                            |inset|outset|initial|inherit
         """
         for key, item in setting.items():
             setattr(self, key, item)
@@ -107,33 +108,40 @@ class StyleSheet:
 
     def add_fontweight(self, style_object):
         """Set fontweight to style object."""
-        return ['font-weight: ' + self.fontweight if v else '' for v in style_object]
+        return ['font-weight: ' + self.fontweight if v else ''
+                for v in style_object]
 
     def alignment(self, style_object):
         """Set text alignment."""
-        return ['text-align: ' + self.text_alignment if v else '' for v in style_object]
+        return ['text-align: ' + self.text_alignment if v else ''
+                for v in style_object]
 
     @staticmethod
     def cell_border_width(style_object, side='bottom', width='medium'):
         """Get cell_border_width."""
-        return ['border-' + side + '-width:' + width if v else '' for v in style_object]
+        return ['border-' + side + '-width:' + width if v else ''
+                for v in style_object]
 
     @staticmethod
     def cell_border(style_object, side='bottom', style='solid'):
         """Get cell_border."""
-        return ['border-' + side + '-style:' + style if v else '' for v in style_object]
+        return ['border-' + side + '-style:' + style if v else ''
+                for v in style_object]
 
     @staticmethod
     def column_width(style_object, width='auto'):
         """Get column_width."""
-        return ['table-layout:' + width if v else '' for v in style_object]
+        return ['table-layout:' + width if v else ''
+                for v in style_object]
 
     def bold_cell_lines(self, style_object):
         """Get style object with adjusted border style."""
-        return style_object.set_properties(**{'border-left-style': self.border_left,
-                                              'border-right-style': self.border_right,
-                                              'border-top-style': self.border_top,
-                                              'border-bottom-style': self.border_bottom})
+        return style_object.set_properties(**{
+            'border-left-style': self.border_left,
+            'border-right-style': self.border_right,
+            'border-top-style': self.border_top,
+            'border-bottom-style': self.border_bottom
+        })
 
     @staticmethod
     def _is_odd(num):

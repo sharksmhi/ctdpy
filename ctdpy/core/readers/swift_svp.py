@@ -23,7 +23,8 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         self.settings.datasets['vp2'].get('identifier_metadata')
         self.row_identifier = {
             self.settings.datasets['vp2'].get('identifier_metadata'): {
-                'start': self.settings.datasets['vp2'].get('identifier_metadata'),
+                'start': self.settings.datasets['vp2'].get(
+                    'identifier_metadata'),
                 'stop': self.settings.datasets['vp2'].get('identifier_header')
             },
             self.settings.datasets['vp2'].get('identifier_header'): {
@@ -75,11 +76,13 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         dictionary[fid]['metadata'] = metadata
         dictionary[fid]['data'] = hires_data
 
-    def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
+    def get_data(self, filenames=None, add_low_resolution_data=False,
+                 thread_load=False):
         """Read and return data.
 
         Args:
-            filenames (iterable): A sequence of files that will be used to load data from.
+            filenames (iterable): A sequence of files that will be used to
+                                  load data from.
             add_low_resolution_data: False | True
             thread_load: False | True
         """
@@ -108,8 +111,10 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
-            meta_dict = {self.settings.pmap.get(key): meta_dict[key] for key in meta_dict}
-
+            meta_dict = {
+                self.settings.pmap.get(key): meta_dict[key]
+                for key in meta_dict
+            }
         return meta_dict
 
     def merge_data(self, data, resolution='lores_data'):
@@ -165,14 +170,17 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         meta_dict = {}
         boolean_startswith = self.get_index(
             series,
-            (self.row_identifier[identifier]['start'], self.row_identifier[identifier]['stop']),
+            (self.row_identifier[identifier]['start'],
+             self.row_identifier[identifier]['stop']),
             between=True,
             as_boolean=True,
         )
 
         if keys:
             for key in keys:
-                boolean_contains = self.get_index(series, key, contains=True, as_boolean=True)
+                boolean_contains = self.get_index(
+                    series, key, contains=True, as_boolean=True
+                )
                 boolean = boolean_startswith & boolean_contains
                 if any(boolean):
                     value = series[boolean].tolist()[0]
@@ -180,7 +188,8 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        # FIXME do we really want this? better to SLAM down
+                        #  hard with a KeyError/ValueError?
                         meta = value[value.index(key) + len(key):].strip()
 
                     if meta:
@@ -206,7 +215,8 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         identifier = self.settings.datasets[dataset]['identifier_header']
         boolean = self.get_index(
             data,
-            (self.row_identifier[identifier]['start'], self.row_identifier[identifier]['stop']),
+            (self.row_identifier[identifier]['start'],
+             self.row_identifier[identifier]['stop']),
             between=True,
             as_boolean=True,
         )
@@ -217,7 +227,9 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         return header
 
     def get_data_in_frame(self, series, columns, dataset=None, **kwargs):
-        """Get data from pd.Series. separates row values in series into columns within the DataFrame
+        """Get data from pd.Series.
+
+        Separates row values in series into columns within the DataFrame.
 
         Args:
             series (pd.Series): data
@@ -228,7 +240,8 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         identifier = self.settings.datasets[dataset]['identifier_data']
         boolean = self.get_index(
             series,
-            (self.row_identifier[identifier]['start'], self.row_identifier[identifier]['stop']),
+            (self.row_identifier[identifier]['start'],
+             self.row_identifier[identifier]['stop']),
             between=True,
             as_boolean=True,
         )
@@ -240,8 +253,14 @@ class SwiftSVP(BaseReader, CNVreader, SeriesHandler):
         splitter = self.settings.datasets[dataset].get('separator_data')
 
         if splitter:
-            df = pd.DataFrame(series[index].str.split(splitter).tolist(), columns=columns).fillna('')
+            df = pd.DataFrame(
+                series[index].str.split(splitter).tolist(),
+                columns=columns
+            ).fillna('')
         else:
-            df = pd.DataFrame(series[index].str.split().tolist(), columns=columns).fillna('')
+            df = pd.DataFrame(
+                series[index].str.split().tolist(),
+                columns=columns
+            ).fillna('')
 
         return df

@@ -26,8 +26,10 @@ class SeaBirdNOS(SeaBird):
 
     def _convert_formats(self, meta_dict, filename=None):
         """Set and/or convert formats of metadata."""
-        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(meta_dict['TIMESTAMP'], '%Y-%m-%d')
-        meta_dict['STIME'] = utils.get_format_from_datetime_obj(meta_dict['TIMESTAMP'], '%H:%M')
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(
+            meta_dict['TIMESTAMP'], '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(
+            meta_dict['TIMESTAMP'], '%H:%M')
 
         # meta_dict['SERNO'] = str(self._running_serno).zfill(4)
         meta_dict.setdefault('PROJ', 'NOS')
@@ -45,10 +47,12 @@ class SeaBirdNOS(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie,
-                                      identifier=self.settings.datasets['cnv'].get(ident),
-                                      separator=self.settings.datasets['cnv'].get(sep),
-                                      keys=self.settings.datasets['cnv'].get('keys_metadata'))
+            data = self.get_meta_dict(
+                serie,
+                identifier=self.settings.datasets['cnv'].get(ident),
+                separator=self.settings.datasets['cnv'].get(sep),
+                keys=self.settings.datasets['cnv'].get('keys_metadata')
+            )
 
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
@@ -56,7 +60,8 @@ class SeaBirdNOS(SeaBird):
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(self.settings.pmap.get(key),
+                                        meta_dict[key])
             meta_dict = new_dict
         self._convert_formats(meta_dict, filename=filename)
 
@@ -87,7 +92,7 @@ class SeaBirdNOS(SeaBird):
                         meta = value[value.index(key) + len(key):].strip()
 
                     if key == 'cast':
-                        # Example string: '3 10 Oct 2015 08:31:43 samples 6673...'
+                        # Example str: '3 10 Oct 2015 08:31:43 samples 6673...'
                         meta_dict.setdefault(
                             'timestamp',
                             utils.get_timestamp(' '.join(value.split()[3:7]))

@@ -17,7 +17,8 @@ warnings.filterwarnings("ignore", 'This pattern has match groups')
 class DataFrameHandler(BaseFileHandler):
     """Handler for dataframes."""
 
-    # TODO perhaps we should move staticmethods (.get_"datetimes", _"position" to utils?
+    # TODO perhaps we should move staticmethods
+    #  (.get_"datetimes", _"position" to utils?
 
     def __init__(self, settings):
         """Store the settings object."""
@@ -35,7 +36,8 @@ class DataFrameHandler(BaseFileHandler):
 
         Args:
             df: pandas.DataFrame
-            mapping_dict: dictionary with old names as keys and new names as values.
+            mapping_dict: dictionary with old names as keys
+                          and new names as values.
 
         """
         return df.rename(index=str, columns=mapping_dict)
@@ -68,20 +70,26 @@ class DataFrameHandler(BaseFileHandler):
 
     @staticmethod
     def get_datetime_format(df, sdate_key=None, stime_key=None):
-        """Get datetime array. Uses date and time to create array with datetime object."""
-        datetime_format = np.vectorize(utils.get_datetime)(df[sdate_key], df[stime_key])
+        """Get datetime array.
+
+        Uses date and time to create array with datetime object.
+        """
+        datetime_format = np.vectorize(utils.get_datetime)(
+            df[sdate_key], df[stime_key])
         return datetime_format
 
     @staticmethod
     def get_sdate(datetime_obj, fmt='%Y-%m-%d'):
         """Return date string array according to fmt from datatime array."""
-        stime = np.vectorize(utils.get_format_from_datetime_obj)(datetime_obj, fmt)
+        stime = np.vectorize(utils.get_format_from_datetime_obj)(
+            datetime_obj, fmt)
         return stime
 
     @staticmethod
     def get_stime(datetime_obj, fmt='%H:%M:%S'):
         """Return time string array according to fmt from datatime array."""
-        stime = np.vectorize(utils.get_format_from_datetime_obj)(datetime_obj, fmt)
+        stime = np.vectorize(utils.get_format_from_datetime_obj)(
+            datetime_obj, fmt)
         return stime
 
     @staticmethod
@@ -90,7 +98,8 @@ class DataFrameHandler(BaseFileHandler):
 
         Uses numpy.vectorize to transform position format DDMM.mm into DD.dddd
 
-        Args: pos_serie pos_serie: pd.Series of coordinates in format DDMM.mm
+        Args:
+            pos_serie: pd.Series of coordinates in format DDMM.mm
         """
         pos = np.vectorize(utils.decmin_to_decdeg)(pos_serie)
         return pos
@@ -112,7 +121,8 @@ class SeriesHandler(BaseFileHandler):
     def update_datetime_object(self, date_string, time_string):
         """Set time information properties.
 
-        See the different setters of year, month day, hour, minute, second under the class BaseFileHandler.
+        See the different setters of year, month day, hour, minute, second
+        under the class BaseFileHandler.
         """
         datetime_obj = utils.get_datetime(date_string, time_string)
         self.year = datetime_obj
@@ -125,7 +135,8 @@ class SeriesHandler(BaseFileHandler):
     def update_position(self, lat, lon):
         """Set position information properties.
 
-        See the different setters of latitude_dd, longitude_dd under the class BaseFileHandler.
+        See the different setters of latitude_dd, longitude_dd
+        under the class BaseFileHandler.
         """
         self.latitude_dd = lat
         self.longitude_dd = lon
@@ -163,7 +174,8 @@ class SeriesHandler(BaseFileHandler):
         """
         identifier_header = self.settings.datasets[dataset]['identifier_header']
         reversed = '~' in identifier_header
-        index = self.get_index(data, identifier_header.replace('~', ''), reversed_boolean=reversed)
+        index = self.get_index(data, identifier_header.replace('~', ''),
+                               reversed_boolean=reversed)
         splitter = self.settings.datasets[dataset].get('separator_header')
         if first_row:
             if not splitter or splitter == 'None':
@@ -180,7 +192,8 @@ class SeriesHandler(BaseFileHandler):
     @staticmethod
     def map_doublet_columns(header):
         """Get header including doublet columns."""
-        # Fixme Do we need to rewrite this method to include x number of doublets instead of just 2?
+        # Fixme Do we need to rewrite this method to include
+        #  x number of doublets instead of just 2?
         doublet_dict = {col: header.count(col) for col in header}
         new_header = []
         for col in header:
@@ -192,7 +205,9 @@ class SeriesHandler(BaseFileHandler):
         return new_header
 
     def get_data_in_frame(self, series, columns, dataset=None, splitter=None):
-        """Get data from pd.Series into a pd.DataFrame. Separates row values into columns.
+        """Get data from pd.Series into a pd.DataFrame.
+
+        Separates row values into columns.
 
         Args:
             series (pd.Series): Data
@@ -200,15 +215,19 @@ class SeriesHandler(BaseFileHandler):
             dataset (str): Reader specific dataset.
                            Determines how to handle data format.
         """
-        # FIXME NO! not the way to go! if anything, add reversed as input argument! let the identifier be clean!
+        # FIXME NO! not the way to go! if anything,
+        #  add reversed as input argument! let the identifier be clean!
         identifier_header = self.settings.datasets[dataset]['identifier_data']
         reversed = '~' in identifier_header
-        idx = self.get_index(series, identifier_header.replace('~', ''), reversed_boolean=reversed)
+        idx = self.get_index(series, identifier_header.replace('~', ''),
+                             reversed_boolean=reversed)
         if splitter:
             splitter = self.settings.datasets[dataset]['separator_data']
-            df = pd.DataFrame(series[idx].str.split(splitter).tolist(), columns=columns).fillna('')
+            df = pd.DataFrame(series[idx].str.split(splitter).tolist(),
+                              columns=columns).fillna('')
         else:
-            df = pd.DataFrame(series[idx].str.split().tolist(), columns=columns).fillna('')
+            df = pd.DataFrame(series[idx].str.split().tolist(),
+                              columns=columns).fillna('')
         return df
 
     def get_meta_dict(self, series, keys=None, identifier='', separator=''):
@@ -224,8 +243,9 @@ class SeriesHandler(BaseFileHandler):
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
         if keys:
             for key in keys:
-                boolean_contains = self.get_index(series, key, contains=True,
-                                                  as_boolean=True)
+                boolean_contains = self.get_index(
+                    series, key, contains=True, as_boolean=True
+                )
                 boolean = boolean_startswith & boolean_contains
 
                 if any(boolean):
@@ -234,7 +254,8 @@ class SeriesHandler(BaseFileHandler):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        # FIXME do we really want this?
+                        #  better to SLAM down hard with a KeyError/ValueError?
                         meta = value[value.index(key) + len(key):].strip()
 
                     if meta:
@@ -249,7 +270,8 @@ class SeriesHandler(BaseFileHandler):
         return pd.DataFrame(data_dict, columns=columns)
 
     @staticmethod
-    def get_index(serie, string, contains=False, equals=False, between=False, as_boolean=False, reversed_boolean=False):
+    def get_index(serie, string, contains=False, equals=False, between=False,
+                  as_boolean=False, reversed_boolean=False):
         """Get index or boolean array.
 
         Args:
@@ -288,8 +310,8 @@ class SeriesHandler(BaseFileHandler):
     def get_series_object(obj):
         """Get one column with data, eg. pd.Serie."""
         if isinstance(obj, pd.DataFrame):
-            # Not really necessary if you load file with argument header=None pd.read_csv(...,
-            # header=None)
+            # Not really necessary if you load file with argument
+            # header=None pd.read_csv(..., header=None)
             s = pd.Series(obj.keys()[0])
             return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
@@ -382,27 +404,37 @@ class UnitConverter:
         serie.name = new_name or serie.name
 
     def rename_dataframe_columns(self, df):
-        """Rename columns of the given dataframe based on the corresponding Series.name."""
-        mapper = {key: self.mapper[key].get('standard_parameter_name') for key in df.columns if key in self.mapper}
+        """Rename columns of the given dataframe."""
+        mapper = {
+            key: self.mapper[key].get('standard_parameter_name')
+            for key in df.columns if key in self.mapper
+        }
         df.rename(columns=mapper, inplace=True)
 
     def append_conversion_comment(self):
         """Append comment self.meta."""
         time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
-        self.meta[len(self.meta) + 1] = '//COMNT_UNIT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'.format(
+        self.meta[len(self.meta) + 1] = self.comnt_string.format(
             self.user, time_stamp)
+
+    @property
+    def comnt_string(self):
+        """Return comment string."""
+        return '//COMNT_UNIT; UNIT CONVERSION PERFORMED BY {}; TIMESTAMP {}'
 
 
 class CorrectionFile(dict):
     """For now hardcoded parameters.."""
 
-    # TODO make it more flexible.. loop over all columns of df? (corr_file) if parameter in datasets then --> ...
+    # TODO make it more flexible.. loop over all columns of df?
+    #  (corr_file) if parameter in datasets then --> ...
 
     def __init__(self, fid):
         """Initialize and store information from 'fid'-file."""
         super().__init__()
         df = load_txt(file_path=fid)
-        for key, p_corr, s_corr in zip(df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
+        for key, p_corr, s_corr in zip(
+                df['key'], df['PRES_CTD [dbar]'], df['SALT_CTD [psu]']):
             self.setdefault(key, {})
             if p_corr:
                 self[key]['PRES_CTD [dbar]'] = p_corr
@@ -439,15 +471,20 @@ class DeltaCorrection:
         self.meta = None
         self.serie_correction_comnt = {}
 
+    @property
+    def corr_template_str(self):
+        """Return correction template string."""
+        return '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {};' \
+               ' TIMESTAMP {}; {}-{}: {}'
+
     def append_correction_comment(self, key_dict):
         """Append comment self.meta."""
         if self.serie_correction_comnt:
             time_stamp = utils.get_time_as_format(now=True, fmt='%Y%m%d%H%M')
-            corr_template_str = '//COMNT_CORRECTION; PROFILE CORRECTIONS PERFORMED BY {}; TIMESTAMP {}; {}-{}: {}'
-            comnt_list = []
 
+            comnt_list = []
             for para, item in self.serie_correction_comnt.items():
-                comnt = corr_template_str.format(
+                comnt = self.corr_template_str.format(
                     self.user, time_stamp, para, item['type'], item['value']
                 )
                 if self.raw_format:
@@ -481,7 +518,8 @@ class DeltaCorrection:
             'PRES_CTD': {'type': 'bias', 'value': -0.04},
             'DO_mg': {
                 'type': 'equation',
-                'value': 'OXYGEN_MG + ((0.14*TEMP - 0.0045*TEMP**2 - 0.2)*(OXYGEN_MG/10))',
+                'value': 'OXYGEN_MG + ((0.14 * TEMP - 0.0045 * TEMP**2 - 0.2)
+                          * (OXYGEN_MG / 10))',
                 'mapping': {'OXYGEN_MG': 'DO_mg', 'TEMP': 'TEMP_CTD'}
             },
             'DOXY_CTD': {
@@ -513,15 +551,17 @@ class DeltaCorrection:
                     s = df[para].astype(float)
                     s = s + item['value']
                 elif item['type'] == 'equation' and para == 'DOXY_SAT_CTD':
-                    s = df[item['mapping'].values()].apply(lambda x: get_doxy_sat(*x), axis=1)
+                    s = df[item['mapping'].values()].apply(
+                        lambda x: get_doxy_sat(*x), axis=1)
                 elif item['type'] == 'equation':
                     s = df[item['mapping'].values()].apply(lambda x: eval(
-                        item['value'], {  # noqa: B023
-                            key: float(x[i]) for i, key in enumerate(item['mapping'].keys())  # noqa: B023
-                        }
+                        item['value'], {key: float(x[i]) for i, key in  # noqa: B023
+                            enumerate(item['mapping'].keys())  # noqa: B023
+                        }  # noqa: B023
                     ), axis=1)  # noqa: B023
                 else:
-                    raise ValueError('Could not identify correction type: {}'.format(item['type']))
+                    raise ValueError('Could not identify correction type: {}'
+                                     ''.format(item['type']))
 
                 df[para] = s.apply(lambda x: utils.round_value(x, decimals))  # noqa: B023
 

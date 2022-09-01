@@ -25,10 +25,11 @@ class SeaBirdSLUA(SeaBird):
         return dictionary
 
     def _get_pos_format(self, value, remove_char=None):
-        """Return position value striped of "remove_char" and unwanted spaces."""
+        """Return position value striped of unwanted characters."""
         remove_char = remove_char or ''
         if type(value) is str:
-            value = value.replace(' ', '').replace(',', '.').replace(remove_char, '')
+            value = value.replace(' ', '').replace(
+                ',', '.').replace(remove_char, '')
         else:
             print(f'WARNING! position value is not a string ({value})')
         return value
@@ -36,8 +37,10 @@ class SeaBirdSLUA(SeaBird):
     def _convert_formats(self, meta_dict, filename=None):
         """Set and/or convert formats of metadata."""
         meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
-        meta_dict['LATIT'] = self._get_pos_format(meta_dict['LATIT'], remove_char='N')
-        meta_dict['LONGI'] = self._get_pos_format(meta_dict['LONGI'], remove_char='E')
+        meta_dict['LATIT'] = self._get_pos_format(
+            meta_dict['LATIT'], remove_char='N')
+        meta_dict['LONGI'] = self._get_pos_format(
+            meta_dict['LONGI'], remove_char='E')
         meta_dict.setdefault('PROJ', 'COD')
         meta_dict.setdefault('ORDERER', 'HAV, SLUA')
         meta_dict.setdefault('SLABO', 'SLUA')
@@ -53,18 +56,21 @@ class SeaBirdSLUA(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie,
-                                      identifier=self.settings.datasets['cnv'].get(ident),
-                                      separator=self.settings.datasets['cnv'].get(sep),
-                                      keys=self.settings.datasets['cnv'].get('keys_metadata'))
-
+            data = self.get_meta_dict(
+                serie,
+                identifier=self.settings.datasets['cnv'].get(ident),
+                separator=self.settings.datasets['cnv'].get(sep),
+                keys=self.settings.datasets['cnv'].get('keys_metadata')
+            )
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
         if map_keys:
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(
+                        self.settings.pmap.get(key), meta_dict[key]
+                    )
             meta_dict = new_dict
         self._convert_formats(meta_dict, filename=filename)
 
@@ -85,8 +91,9 @@ class SeaBirdSLUA(SeaBird):
         boolean_startswith = self.get_index(series, identifier, as_boolean=True)
         if keys:
             for key in keys:
-                boolean_contains = self.get_index(series, key, contains=True,
-                                                  as_boolean=True)
+                boolean_contains = self.get_index(
+                    series, key, contains=True, as_boolean=True
+                )
                 boolean = boolean_startswith & boolean_contains
                 if any(boolean):
                     value = series[boolean].tolist()[0]
@@ -94,11 +101,13 @@ class SeaBirdSLUA(SeaBird):
                     if separator in value:
                         meta = value.split(separator)[-1].strip()
                     else:
-                        # FIXME do we really want this? better to SLAM down hard with a KeyError/ValueError?
+                        # FIXME do we really want this? better to
+                        #  SLAM down hard with a KeyError/ValueError?
                         meta = value[value.index(key) + len(key):].strip()
 
                     if ']' in meta:
-                        # special SLUA fix. (** Latitude: [57 29.22 N] 57 29.22 N)
+                        # special SLUA fix.
+                        # (** Latitude: [57 29.22 N] 57 29.22 N)
                         meta = meta.split(']')[1].strip()
 
                     if meta:

@@ -13,7 +13,7 @@ from ctdpy.core import utils
 
 
 class CNVreader(BaseFileHandler):
-    """Base Class."""
+    """Reader for cnv files."""
 
     def select_files_from_directory(self, directory=None):
         """Return files that matches the given reader.
@@ -31,7 +31,9 @@ class CNVreader(BaseFileHandler):
     def get_file_list_match(self, file_directory):
         """Return list of matching files."""
         file_list = os.listdir(file_directory)
-        return utils.get_file_list_match(file_list, self.settings.reader['suffix'])
+        return utils.get_file_list_match(
+            file_list, self.settings.reader['suffix']
+        )
 
     @staticmethod
     def load(fid, sep='\t', as_series=False, **kwargs):

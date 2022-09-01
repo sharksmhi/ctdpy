@@ -43,10 +43,12 @@ def copytree(src, dst, symlinks=False, ignore=None, file_paths=None):
     for item in items:
         d = os.path.join(dst, os.path.basename(item))
         if '.' not in item[-5:-2]:
-            # so, rather then using os.path.isdir(s) we do a string check to conclude if its a directory or a file that
-            # we´re trying to copy. Why?! Because item might be a directory on a SLOooW file server..
-            # os.path.isdir or os.path.isfile will be unnecessary time consuming..
-            # assuming that all file extension are between 2 and 4 characters long (eg. '.7z', '.txt', '.xlsx')
+            # so, rather then using os.path.isdir(s) we do a string check to
+            # conclude if its a directory or a file that we´re trying to copy.
+            # Why?! Because item might be a directory on a SLOooW file server..
+            # os.path.isdir or os.path.isfile will be unnecessary time
+            # consuming.. assuming that all file extension are between 2 and 4
+            # characters long (eg. '.7z', '.txt', '.xlsx')
             thread_process(shutil.copytree, item, d, symlinks, ignore)
         else:
             thread_process(shutil.copy2, item, d)
@@ -58,22 +60,30 @@ def create_directory_structure(dictionary, base_path):
         for direc in dictionary:
             if isinstance(direc, str):
                 if '.' not in direc:
-                    create_directory_structure(dictionary[direc], os.path.join(base_path, direc))
+                    create_directory_structure(
+                        dictionary[direc], os.path.join(base_path, direc)
+                    )
             elif isinstance(direc, dict):
-                create_directory_structure(dictionary[direc], os.path.join(base_path, direc))
+                create_directory_structure(
+                    dictionary[direc], os.path.join(base_path, direc)
+                )
     else:
         os.makedirs(base_path)
 
 
 def decdeg_to_decmin(pos, string_type=True, decimals=2):
-    """Convert position from decimal degrees into degrees and decimal minutes."""
+    """Convert coordinates.
+
+    Decimal degrees into degrees and decimal minutes.
+    """
     pos = float(pos)
     deg = np.floor(pos)
     minute = pos % deg * 60.0
     if string_type:
         if decimals:
             # FIXME Does not work properly
-            output = ('%%2.%sf'.zfill(8) % decimals % (float(deg) * 100.0 + minute))
+            output = ('%%2.%sf'.zfill(8) % decimals % (
+                    float(deg) * 100.0 + minute))
         else:
             output = (str(deg * 100.0 + minute))
     else:
@@ -82,7 +92,10 @@ def decdeg_to_decmin(pos, string_type=True, decimals=2):
 
 
 def decmin_to_decdeg(pos, string_type=True, decimals=4):
-    """Convert position from degrees and decimal minutes into decimal degrees."""
+    """Convert coordinates.
+
+    Degrees and decimal minutes into decimal degrees.
+    """
     pos = float(pos)
     if pos < 99:
         # Allready in decdeg
@@ -102,7 +115,8 @@ def eliminate_empty_rows(df):
 
 
 def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
-                       pattern_list=None, not_pattern_list=None, endswith='', only_from_dir=True):
+                       pattern_list=None, not_pattern_list=None, endswith='',
+                       only_from_dir=True):
     """Generate file paths."""
     pattern_list = pattern_list or []
     not_pattern_list = not_pattern_list or []
@@ -157,9 +171,11 @@ def get_datetime(date_string, time_string):
     if ' ' in date_string:
         date_string = date_string.split(' ')[0]
     if len(time_string) == 8:
-        return datetime.strptime(date_string + ' ' + time_string, '%Y-%m-%d %H:%M:%S')
+        return datetime.strptime(
+            date_string + ' ' + time_string, '%Y-%m-%d %H:%M:%S')
     elif len(time_string) == 5:
-        return datetime.strptime(date_string + ' ' + time_string, '%Y-%m-%d %H:%M')
+        return datetime.strptime(
+            date_string + ' ' + time_string, '%Y-%m-%d %H:%M')
     else:
         return None
 
@@ -239,7 +255,10 @@ def get_kwargs(func, info):
 
 
 def get_method_dictionary(obj):
-    """Return dictionary of all methods from the given object, including those from parent classes."""
+    """Return dictionary of all methods from the given object.
+
+    Including those from parent classes.
+    """
     return {func: True for func in dir(obj) if not func.startswith("__")}
 
 
@@ -280,7 +299,7 @@ def match_filenames(filenames, pattern):
     """Get the filenames matching *pattern*."""
     matching = []
     for filename in filenames:
-        filename = str(filename)  # MW: To also allow filename to be of type pathlib.Path
+        filename = str(filename)
         if '~$' in filename:
             # memory prefix when a file is open
             continue
@@ -300,17 +319,16 @@ def milliseconds(ts):
 
 
 def is_sequence(arg):
-    """Return if an object is iterable (you can loop over it) and not a string."""
+    """Check if an object is iterable.
+
+    Return True if an object is iterable (you can loop over it)
+    and not a string.
+    """
     return (not hasattr(arg, "strip") and hasattr(arg, "__iter__"))
 
 
 def recursive_dict_update(d, u):
-    """Recursive dictionary update.
-
-    Copied from:
-        http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
-        via satpy
-    """
+    """Recursive dictionary update."""
     for k, v in u.items():
         if isinstance(v, Mapping):
             r = recursive_dict_update(d.get(k, {}), v)
@@ -323,8 +341,9 @@ def recursive_dict_update(d, u):
 def round_value(value, nr_decimals=None):
     """Calculate rounded value."""
     nr_decimals = nr_decimals or 3
-    return str(Decimal(str(value)).quantize(Decimal('%%1.%sf' % nr_decimals % 1),
-                                            rounding=ROUND_HALF_UP))
+    return str(Decimal(str(value)).quantize(
+        Decimal('%%1.%sf' % nr_decimals % 1), rounding=ROUND_HALF_UP)
+    )
 
 
 def f_string_1(value):

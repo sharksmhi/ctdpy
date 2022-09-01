@@ -13,7 +13,8 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
     """BaseClass to hold various methods for loading different types of files.
 
     Can be settings files, data files, info files, etc.
-    Holds properties and their setters (perhaps we should move this to a "BaseProperties"?)
+    Holds properties and their setters
+    (perhaps we should move this to a "BaseProperties"?)
     """
 
     def __init__(self, settings):

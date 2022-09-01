@@ -35,7 +35,13 @@ class TxtWriter:
             sep (str): separator
             encoding (str): Encoding to use when writing
         """
-        data.to_csv(save_path, sep=sep, encoding=encoding, index=False, header=header)
+        data.to_csv(
+            save_path,
+            sep=sep,
+            encoding=encoding,
+            index=False,
+            header=header
+        )
 
     @staticmethod
     def write_with_numpy(data=None, save_path=None, fmt='%s'):

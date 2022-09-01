@@ -25,7 +25,8 @@ class YAMLreader(dict):
         super().__init__()
         self.config = {}
 
-    def load_yaml(self, config_files, file_names_as_key=False, return_config=False):
+    def load_yaml(self, config_files, file_names_as_key=False,
+                  return_config=False):
         """Load file (or files).
 
         Args:

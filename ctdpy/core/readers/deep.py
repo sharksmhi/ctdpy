@@ -3,7 +3,6 @@
 Created on 2019-12-11 15:26
 
 @author: a002028
-
 """
 from ctdpy.core import utils
 from ctdpy.core.readers.rinco import Rinco
@@ -32,9 +31,10 @@ class RincoDEEP(Rinco):
         try:
             index = self._get_string_index(file_name, date_str)
         except Exception:
-            # The filename SDATE is based on when the ship arrived to the sampling station. Quite often the CTD-cast is
-            # taken several hours later.. Which in turn means that SDATE can differ by one day between the
-            # Station VISIT date and the SAMPLING date
+            # The filename SDATE is based on when the ship arrived to the
+            # sampling station. Quite often the CTD-cast is taken several
+            # hours later.. Which in turn means that SDATE can differ by one
+            # day between the station VISIT date and the SAMPLING date
             sdate = utils.get_timestamp_minus_daydelta(sdate, delta=1)
             date_str = utils.get_format_from_datetime_obj(sdate, '%y%m%d')
             index = self._get_string_index(file_name, date_str)
@@ -45,7 +45,8 @@ class RincoDEEP(Rinco):
     def _get_instrument_serie(self, serie):
         """Return instrument serial number.
 
-        DEEP CTD-data files processing routines follow pattern '001 {INSTRUMENT_ID{INSTRUMENT_SERIE}}.... '
+        DEEP CTD-data files processing routines follow pattern
+        '001 {INSTRUMENT_ID{INSTRUMENT_SERIE}}.... '
         We therefore locate rows that starts with '001 '..
         Example:
             StandardDataAcquisition SDA (C)opyright by T. Finger 1999-2010
@@ -81,7 +82,9 @@ class RincoDEEP(Rinco):
 
     def _convert_formats(self, meta_dict):
         """Set and/or convert formats of metadata."""
-        meta_dict['timestamp'] = self._get_timestamp(meta_dict['SDATE'], meta_dict['STIME'])
+        meta_dict['timestamp'] = self._get_timestamp(
+            meta_dict['SDATE'], meta_dict['STIME']
+        )
         statn = self._get_statn(meta_dict['FILE_NAME'], meta_dict['SDATE'])
         meta_dict.setdefault('STATN', statn)
         meta_dict.setdefault('SHIPC', '7798')
@@ -91,7 +94,8 @@ class RincoDEEP(Rinco):
         meta_dict.setdefault('ALABO', 'DEEP')
         meta_dict.setdefault('POSYS', 'NOM')
 
-    def get_metadata(self, serie, map_keys=True, filename=None, sdate=None, stime=None):
+    def get_metadata(self, serie, map_keys=True, filename=None,
+                     sdate=None, stime=None):
         """Return dictionary with metadata."""
         instrument_serie = self._get_instrument_serie(serie)
         meta_dict = {'FILE_NAME': filename,
@@ -103,7 +107,9 @@ class RincoDEEP(Rinco):
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(
+                        self.settings.pmap.get(key), meta_dict[key]
+                    )
             meta_dict = new_dict
         self._convert_formats(meta_dict)
 
@@ -114,7 +120,6 @@ class RincoDEEP(Rinco):
         header = self.get_data_header(serie, dataset='tob')
         df = self.get_data_in_frame(serie, header, dataset='tob')
         df = self.df_handler.map_column_names_of_dataframe(df)
-
         return df
 
 

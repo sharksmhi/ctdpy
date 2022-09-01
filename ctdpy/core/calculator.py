@@ -3,7 +3,6 @@
 Created on 2019-11-06 08:27
 
 @author: a002028
-
 """
 import gsw
 import numpy as np
@@ -11,7 +10,10 @@ from ctdpy.core import utils
 
 
 class Depth:
-    """Handler for the depth parameter. Consider density, pressure and latitude when calculating true depth."""
+    """Handling depth calculations.
+
+    Considerin density, pressure and latitude when calculating true depth.
+    """
 
     def __init__(self):
         """Set default values to class properties."""
@@ -37,8 +39,8 @@ class Depth:
             # Mean density for water package.
             dens_1 = np.mean((dens_0, dens))
 
-            # Water package height depending on mean density and pressure step (usually 0.5-1.0 dbar for hi resolution
-            # CTD-data)
+            # Water package height depending on mean density and
+            # pressure step (usually 0.5-1.0 dbar for hi resolution CTD-data)
             height = pres_1 / (grav * dens_1)
 
             # add current calculated water package height and sum up height list
@@ -76,6 +78,9 @@ class Depth:
         """Set the density property."""
         if density_series[0] < 100:
             # input equals Sigma-T (density - 1000)
+            # FIXME NO! Sigma-T does not equal density - 1000.
+            #  SIGMA-T represent the density of a water package
+            #  brought up to the surface (pressure = 0).
             self._density = density_series + 1000
         else:
             self._density = density_series

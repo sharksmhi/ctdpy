@@ -19,7 +19,12 @@ class Profile:
         self.data = data
 
     def extract_lores_data(self, key_depth=None, discrete_depths=None):
-        """Return data from discrete depths based on the list discrete_depths."""
+        """Return data from discrete depths.
+
+        Args:
+            key_depth (str): Key of depth column.
+            discrete_depths (iterable): Depths to extract data from.
+        """
         discrete_depths = discrete_depths or []
         idx = self._get_index_array(key_depth, discrete_depths)
         return self.data.iloc[idx, :]
@@ -30,7 +35,8 @@ class Profile:
         qf_pres = 'Q_PRES_CTD'
         if qf_pres in self.data:
             hires_dep[self.data[qf_pres] == 'B'] = -999
-        idx = [(np.abs(hires_dep - dep)).argmin() for dep in depths if dep <= hires_dep.max()]
+        idx = [(np.abs(hires_dep - dep)).argmin()
+               for dep in depths if dep <= hires_dep.max()]
         idx = self._append_maximum_depth_index(idx, hires_dep)
         return sorted(set(idx))
 
