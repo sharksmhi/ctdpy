@@ -60,7 +60,8 @@ class ZipArchive:
         """Append file to zip."""
         ziparchive = None
         try:
-            ziparchive = zipfile.ZipFile(self._filepathname, 'a', zipfile.ZIP_DEFLATED)
+            ziparchive = zipfile.ZipFile(
+                self._filepathname, 'a', zipfile.ZIP_DEFLATED)
             ziparchive.write(file_name_path, arcname=file_name_in_zip)
         finally:
             if ziparchive:

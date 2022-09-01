@@ -41,14 +41,19 @@ class Template(pd.DataFrame):
         # FIXME Test version.. Use methods outside Template instead..
         if 'timestamp' in self:
             self['timestamp']
-            self['MYEAR'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
-            self['STIME'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
-            self['SDATE'] = self['timestamp'].apply(lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
+            self['MYEAR'] = self['timestamp'].apply(
+                lambda x: utils.get_format_from_datetime_obj(x, '%Y'))
+            self['STIME'] = self['timestamp'].apply(
+                lambda x: utils.get_format_from_datetime_obj(x, '%H:%M'))
+            self['SDATE'] = self['timestamp'].apply(
+                lambda x: utils.get_format_from_datetime_obj(x, '%Y-%m-%d'))
         elif 'SDATE' in self:
             self['MYEAR'] = self['SDATE'].apply(lambda x: x[:4])
 
-        self['LATIT'] = self['LATIT'].apply(lambda x: utils.strip_text(x, ['N', ' ']))
-        self['LONGI'] = self['LONGI'].apply(lambda x: utils.strip_text(x, ['E', ' ']))
+        self['LATIT'] = self['LATIT'].apply(
+            lambda x: utils.strip_text(x, ['N', ' ']))
+        self['LONGI'] = self['LONGI'].apply(
+            lambda x: utils.strip_text(x, ['E', ' ']))
 
         try:
             self['SHIPC'] = self['SHIPC'].apply(lambda x: ship_map.map_shipc(x))
@@ -59,7 +64,8 @@ class Template(pd.DataFrame):
         """Set order of columns."""
         self.column_order = order
 
-    def export_data_as_excel(self, with_style=False, columns=None, save_path='', sheet_name='Data'):
+    def export_data_as_excel(self, with_style=False, columns=None,
+                             save_path='', sheet_name='Data'):
         """Write data to excel file.
 
         Args:
@@ -88,12 +94,17 @@ class Template(pd.DataFrame):
         elif isinstance(meta, pd.core.frame.DataFrame):
             meta = pd.concat([meta] * len_col, ignore_index=True)
         else:
-            raise TypeError(type(meta) + ' is not supported by this import function')
+            raise TypeError(
+                type(meta) + ' is not supported by this import function')
 
         self = self.append(meta, ignore_index=True)
 
     def sort(self, sort_by_keys=None):
         """Sort dataframe by "sort_by_keys"."""
         sort_by_keys = sort_by_keys or []
-        self.sort_values(sort_by_keys, ascending=[True] * len(sort_by_keys), inplace=True)
+        self.sort_values(
+            sort_by_keys,
+            ascending=[True] * len(sort_by_keys),
+            inplace=True
+        )
         self.reset_index(drop=True, inplace=True)

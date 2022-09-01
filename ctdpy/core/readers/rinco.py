@@ -3,7 +3,6 @@
 Created on 2019-12-11 15:28
 
 @author: a002028
-
 """
 from ctdpy.core import utils
 from ctdpy.core.profile import Profile
@@ -33,22 +32,29 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         """Calculate parameters and add them to the dataframe."""
         # if 'DEPH' not in df:
         #     calc = Calculator()
-        #     df['DEPH'] = calc.get_true_depth(attribute_dictionary={'latitude': latit,
-        #                                                            'pressure': df['PRES_CTD'].astype(np.float),
-        #                                                            'gravity': df['PRES_CTD'].astype(np.float),
-        #                                                            'density': df['DENS_CTD'].astype(np.float)})
+        #     df['DEPH'] = calc.get_true_depth(
+        #         attribute_dictionary={
+        #             'latitude': latit,
+        #             'pressure': df['PRES_CTD'].astype(np.float),
+        #             'gravity': df['PRES_CTD'].astype(np.float),
+        #             'density': df['DENS_CTD'].astype(np.float)
+        #         }
+        #     )
         #     self.metadata_update.setdefault('DEPH': )
 
-        timestamp_array = df[['SDATE', 'STIME']].apply(lambda x: utils.get_timestamp(' '.join(x)), axis=1)
+        timestamp_array = df[['SDATE', 'STIME']].apply(
+            lambda x: utils.get_timestamp(' '.join(x)), axis=1)
         for ts_key in self.ts_map:
-            df[ts_key] = timestamp_array.dt.__getattribute__(self.ts_map.get(ts_key)).astype(str)
+            df[ts_key] = timestamp_array.dt.__getattribute__(
+                self.ts_map.get(ts_key)).astype(str)
             df[ts_key] = df[ts_key].str.zfill(2)
 
     def get_data(self, filenames=None, add_low_resolution_data=False):
         """Get data and metadata.
 
         Args:
-            filenames (iterable): A sequence of files that will be used to load data from.
+            filenames (iterable): A sequence of files that will be used to
+                                  load data from.
             add_low_resolution_data: False | True
         """
         data = {}
@@ -72,17 +78,20 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
             data[fid]['raw_format'] = serie
             data[fid]['metadata'] = metadata
             data[fid]['data'] = hires_data
-            data[fid]['identifier_data'] = self.settings.datasets['tob']['identifier_data']
+            data[fid]['identifier_data'] = self.settings.datasets['tob'][
+                'identifier_data']
 
             if add_low_resolution_data:
                 profile.update_data(data=hires_data)
-                lores_data = profile.extract_lores_data(key_depth='DEPH',
-                                                        discrete_depths=self.settings.depths)
+                lores_data = profile.extract_lores_data(
+                    key_depth='DEPH',
+                    discrete_depths=self.settings.depths
+                )
                 data[fid]['lores_data'] = lores_data
-
         return data
 
-    def get_metadata(self, serie, map_keys=True, filename=None, sdate=None, stime=None):
+    def get_metadata(self, serie, map_keys=True, filename=None,
+                     sdate=None, stime=None):
         """Dummie method."""
         raise NotImplementedError
 
@@ -95,9 +104,11 @@ class Rinco(BaseReader, CNVreader, SeriesHandler):
         """
         for fid in data:
             in_data = data[fid][resolution]
-            in_data = self.df_handler.add_metadata_to_frame(in_data,
-                                                            data[fid]['metadata'],
-                                                            len_col=len(data[fid][resolution].index))
+            in_data = self.df_handler.add_metadata_to_frame(
+                in_data,
+                data[fid]['metadata'],
+                len_col=len(data[fid][resolution].index)
+            )
             data[fid][resolution + '_all'] = in_data
 
     def setup_dataframe(self, serie, metadata=None):

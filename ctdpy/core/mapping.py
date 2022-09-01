@@ -21,7 +21,19 @@ class AttributeDict(dict):
             setattr(self, key, array)
 
     def add_entries(self, **entries):
-        """Turn elements in arrays into attributes with a corresponding official field name."""
+        """Turn elements in arrays into attributes.
+
+        For mapping purposes with a corresponding official field name.
+
+        Example key and list:
+        "SALT2_CTD": [
+            "SALT2_CTD [psu (PSS-78)]",
+            "Salthalt2",
+            "sal11: Salinity, Practical, 2 [PSU]"
+        ]
+
+        Here all values in the list will be mapped to "SALT2_CTD".
+        """
         for key, array in entries.items():
             setattr(self, key, key)
             setattr(self, key.lower(), key)
@@ -34,7 +46,8 @@ class AttributeDict(dict):
                     setattr(self, value, key)
                     setattr(self, value.lower(), key)
 
-    def add_entries_from_keylist(self, data, from_combo_keys=None, from_synonyms=None, to_key=''):
+    def add_entries_from_keylist(self, data, from_combo_keys=None,
+                                 from_synonyms=None, to_key=''):
         """Create mapping attributes for ShipMapping().
 
         Args:
@@ -49,7 +62,9 @@ class AttributeDict(dict):
         for i, value in enumerate(data[to_key]):
             setattr(self, value, value)
             if any(from_combo_keys):
-                setattr(self, ''.join([data[key][i].zfill(2) for key in from_combo_keys]), value)
+                setattr(self, ''.join([
+                    data[key][i].zfill(2) for key in from_combo_keys
+                ]), value)
             if any(from_synonyms):
                 for key in from_synonyms:
                     setattr(self, data[key][i], value)
@@ -92,7 +107,7 @@ class AttributeDict(dict):
 
 
 class ParameterMapping(AttributeDict):
-    """Load file to map data fields and parameters to a standard setting format."""
+    """Imports parameter mapping file."""
 
     def __init__(self):
         """Initialize."""
@@ -113,7 +128,7 @@ class ParameterMapping(AttributeDict):
 
 
 class ShipMapping(AttributeDict):
-    """Load file to map 2sign-cntry and 2sign-shipc to 4sign-shipc (ICES / SMHI)."""
+    """Load file to map 2sign-cntry and 2sign-shipc to 4sign-shipc."""
 
     def __init__(self):
         """Initialize."""

@@ -49,24 +49,8 @@ class JSONreader:
         else:
             raise UserWarning('No outfile specified for export to .json')
 
-    def get_dict(self, key=None):
-        """Find a dictionary based on a specific key within the target dictionary.
-
-        Config could potentially be a list with dictionaries within.
-        """
-        if isinstance(self.config, list):
-            for element in self.config:
-                if key in element:
-                    return element.get(key)
-            return None
-        elif isinstance(self.config, dict):
-            return self.json_file.get(key)
-        else:
-            raise UserWarning('The intended use of a json file has an unrecognizable format',
-                              type(self.config))
-
     def find_key(self, key, dictionary):
-        """Generate path to an element of a specific key within the given dictionary.
+        """Generate path to an element within the given dictionary.
 
         Note that a key can occur multiple times in a nested dictionary.
         """
@@ -91,7 +75,8 @@ class JSONreader:
 
         Args:
             config_files: will be either a list of dictionaries or one
-                          single dictionary depending on what the json file includes
+                          single dictionary depending on what the
+                          json file includes
             return_config: False | True
         """
         config_files = config_files or []
@@ -100,7 +85,9 @@ class JSONreader:
 
         for config_file in config_files:
             with open(config_file, 'r') as fd:
-                self.config = utils.recursive_dict_update(self.config, json.load(fd))
+                self.config = utils.recursive_dict_update(
+                    self.config, json.load(fd)
+                )
 
         if return_config:
             return self.config

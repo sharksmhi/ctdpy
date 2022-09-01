@@ -62,7 +62,8 @@ class MetadataSGUS(XLSXmeta):
         """Get data and metadata.
 
         Args:
-            filenames (iterable): A sequence of files that will be used to load data from.
+            filenames (iterable): A sequence of files that will be used to
+                                  load data from.
             add_low_resolution_data: False | True
         """
         data = {}
@@ -80,7 +81,8 @@ class MetadataSGUS(XLSXmeta):
     def _add_serno(self, df):
         """Add serno to dataframe."""
         if set(df['SERNO']) == {''}:
-            # df['SERNO'] = df['FILE_NAME'].apply(lambda x: x.split('_')[1].zfill(4))
+            # df['SERNO'] = df['FILE_NAME'].apply(
+            #     lambda x: x.split('_')[1].zfill(4))
             df = df.sort_values(
                 ['SDATE', 'STIME'], ascending=[True, True]
             ).reset_index(drop=True)

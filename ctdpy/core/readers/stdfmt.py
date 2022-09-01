@@ -3,7 +3,6 @@
 Created on 2019-11-21 12:27
 
 @author: a002028
-
 """
 from ctdpy.core import utils
 from ctdpy.core.data_handlers import SeriesHandler, BaseReader
@@ -48,7 +47,8 @@ class StandardFormatCTD(BaseSTDFMT):
             df.drop(0, inplace=True)
             df.reset_index(drop=True, inplace=True)
 
-    def get_data(self, filenames=None, add_low_resolution_data=False, thread_load=False):
+    def get_data(self, filenames=None, add_low_resolution_data=False,
+                 thread_load=False):
         """Get data in dictionary."""
         data = {}
         for fid in filenames:
@@ -77,9 +77,10 @@ class StandardFormatCTD(BaseSTDFMT):
 
     def get_metadata(self, serie, map_keys=True, filename=None):
         """Return metadata in dictionary."""
-        data = self.get_meta_dict(serie,
-                                  identifier=self.settings.datasets['txt'].get('identifier_meta'),
-                                  # separator=self.settings.datasets['txt'].get('separator_metadata'),
-                                  # keys=self.settings.datasets['txt'].get('keys_metadata'),
-                                  )
+        data = self.get_meta_dict(
+            serie,
+            identifier=self.settings.datasets['txt'].get('identifier_meta'),
+            # separator=self.settings.datasets['txt'].get('separator_metadata'),
+            # keys=self.settings.datasets['txt'].get('keys_metadata'),
+        )
         return data

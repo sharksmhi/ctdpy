@@ -5,24 +5,7 @@ Created on Thu Jul 05 14:23:22 2018
 @author: a002028
 """
 import os
-from typing import Mapping
 from ctdpy.core import readers, mapping
-
-
-def recursive_dict_update(d, u):
-    """Recursive dictionary update.
-
-    Copied from:
-        http://stackoverflow.com/questions/3232943/update-value-of-a-nested-dictionary-of-varying-depth
-        via satpy
-    """
-    for k, v in u.items():
-        if isinstance(v, Mapping):
-            r = recursive_dict_update(d.get(k, {}), v)
-            d.setdefault(k, r)
-        else:
-            d.setdefault(k, u[k])
-    return d
 
 
 class Settings:
@@ -30,7 +13,9 @@ class Settings:
 
     def __init__(self):
         """Load all static files."""
-        self.dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\core', '')
+        # TODO Handling of paths should be dealt with using pathlib instead.
+        self.dir_path = os.path.dirname(
+            os.path.realpath(__file__)).replace('\\core', '')
         etc_path = '\\'.join([self.dir_path, 'core', 'etc', ''])
         self.user = os.path.expanduser('~').split('\\')[-1]
         self._load_settings(etc_path)
@@ -54,19 +39,27 @@ class Settings:
         if new_path:
             if os.path.isdir(new_path):
                 self.settings_paths['export_path'] = new_path
-                print('new export path: %s' % self.settings_paths['export_path'])
+                print('new export path: %s'
+                      % self.settings_paths['export_path'])
             else:
                 try:
                     os.makedirs(new_path)
                     self.settings_paths['export_path'] = new_path
-                    print('new export path: %s' % self.settings_paths['export_path'])
+                    print('new export path: %s'
+                          % self.settings_paths['export_path'])
                 except BaseException:
-                    raise Warning('Could not change export path, the given path is not valid: %s \n '
-                                  'using default export path' % new_path)
+                    raise Warning('Could not change export path, the given path'
+                                  ' is not valid: %s \n using default'
+                                  ' export path' % new_path)
 
     def _check_archive_folder_structure(self):
-        """Create the "received_data" folder. It is an empty folder, and hence might need to be created."""
-        received_folder = os.path.join(self.settings_paths['archive_structure_path'], 'received_data')
+        """Create the "received_data" folder.
+
+        It is an empty folder, and hence might need to be created.
+        """
+        received_folder = os.path.join(
+            self.settings_paths['archive_structure_path'], 'received_data'
+        )
         if not os.path.exists(received_folder):
             os.makedirs(received_folder)
 
@@ -75,13 +68,16 @@ class Settings:
         # FIXME Näh, så här kan vi inte ha det..
 
         for path in self.settings_paths:
-            if not os.path.exists(self.settings_paths.get(path)) and '.' not in self.settings_paths.get(path):
+            if not os.path.exists(self.settings_paths.get(path)) and \
+                    '.' not in self.settings_paths.get(path):
                 os.makedirs(self.settings_paths.get(path))
 
     def _check_for_paths(self, dictionary):
         """Save pathways from dictionary.
 
-        Since default path settings are set to ctdpy base folder we need to add that base folder to all paths
+        Since default path settings are set to ctdpy base folder
+        we need to add that base folder to all paths.
+
         Args:
              dictionary: Dictionary with paths as values and keys as items.
         """
@@ -105,9 +101,9 @@ class Settings:
         for subdir in subdirectories:
             subdir_path = '/'.join([etc_path, subdir, ''])
             paths = self.get_filepaths_from_directory(subdir_path)
-            sub_settings = readers.YAMLreader().load_yaml(paths,
-                                                          file_names_as_key=True,
-                                                          return_config=True)
+            sub_settings = readers.YAMLreader().load_yaml(
+                paths, file_names_as_key=True, return_config=True
+            )
             self._check_for_paths(sub_settings)
             self._set_sub_object(subdir, sub_settings)
 
@@ -125,7 +121,8 @@ class Settings:
 
     def _setup_mapping_parameter(self):
         """Create parameter mapping object."""
-        # FIXME god damn it!:) where does self.mapping_parameter come from???.. in .set_attributes()
+        # FIXME god damn it!:) where does self.mapping_parameter
+        #  come from???.. in .set_attributes()
         self.pmap = mapping.ParameterMapping()
         self.pmap.add_entries(**self.mapping_parameter)
 
@@ -138,16 +135,19 @@ class Settings:
         to_key = 'kodlista'
         """
         self.smap = mapping.ShipMapping()
-        self.smap.add_entries_from_keylist(self.mapping_ship,
-                                           from_combo_keys=['land', 'SMHI-kod'],
-                                           from_synonyms=['namn'],
-                                           to_key='kodlista')
+        self.smap.add_entries_from_keylist(
+            self.mapping_ship,
+            from_combo_keys=['land', 'SMHI-kod'],
+            from_synonyms=['namn'],
+            to_key='kodlista'
+        )
 
     @staticmethod
     def set_attributes(obj, **kwargs):
         """Set attributes.
 
-        With the possibility to add attributes to an object which is not 'self'.
+        With the possibility to add attributes to an
+        object which is not 'self'.
         """
         # TODO Move to utils?
 

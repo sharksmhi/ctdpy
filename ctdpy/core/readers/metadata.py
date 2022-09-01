@@ -3,7 +3,6 @@
 Created on 2019-11-04 10:37
 
 @author: a002028
-
 """
 from ctdpy.core.data_handlers import BaseReader
 from ctdpy.core.data_handlers import DataFrameHandler
@@ -12,7 +11,6 @@ from ctdpy.core.readers.xlsx_reader import load_excel
 from ctdpy.core.utils import (
     get_filename,
     get_filename_without_extension,
-    # thread_process,
     eliminate_empty_rows
 )
 
@@ -29,7 +27,8 @@ class TXTmeta(BaseReader, DataFrameHandler):
         """Get metadata.
 
         Args:
-            filenames (iterable): A sequence of files that will be used to load data from.
+            filenames (iterable): A sequence of files that will be used to
+                                  load data from.
         """
         data = {}
         for file_path in filenames:
@@ -83,7 +82,8 @@ class XLSXmeta(BaseReader, DataFrameHandler):
         """Get metadata.
 
         Args:
-            filenames (iterable): A sequence of files that will be used to load data from.
+            filenames (iterable): A sequence of files that will be used to
+                                  load data from.
         """
         data = {}
         reader = self.get_reader_instance()

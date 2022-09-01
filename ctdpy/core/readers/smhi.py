@@ -26,8 +26,10 @@ class SeaBirdSMHI(SeaBird):
     def _convert_formats(self, meta_dict, filename=None):
         """Set and/or convert formats of metadata."""
         timestamp = self._get_datetime(meta_dict['SDATE'])
-        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
-        meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(
+            timestamp, '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(
+            timestamp, '%H:%M')
 
         meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
         meta_dict.setdefault('PROJ', 'BAS')
@@ -45,10 +47,12 @@ class SeaBirdSMHI(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie,
-                                      identifier=self.settings.datasets['cnv'].get(ident),
-                                      separator=self.settings.datasets['cnv'].get(sep),
-                                      keys=self.settings.datasets['cnv'].get('keys_metadata'))
+            data = self.get_meta_dict(
+                serie,
+                identifier=self.settings.datasets['cnv'].get(ident),
+                separator=self.settings.datasets['cnv'].get(sep),
+                keys=self.settings.datasets['cnv'].get('keys_metadata')
+            )
 
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
@@ -56,7 +60,9 @@ class SeaBirdSMHI(SeaBird):
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(
+                        self.settings.pmap.get(key), meta_dict[key]
+                    )
             meta_dict = new_dict
         self._convert_formats(meta_dict, filename=filename)
 
@@ -92,10 +98,12 @@ class MVPSMHI(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie,
-                                      identifier=self.settings.datasets['cnv'].get(ident),
-                                      separator=self.settings.datasets['cnv'].get(sep),
-                                      keys=self.settings.datasets['cnv'].get('keys_metadata'))
+            data = self.get_meta_dict(
+                serie,
+                identifier=self.settings.datasets['cnv'].get(ident),
+                separator=self.settings.datasets['cnv'].get(sep),
+                keys=self.settings.datasets['cnv'].get('keys_metadata')
+            )
 
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
@@ -103,7 +111,9 @@ class MVPSMHI(SeaBird):
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(
+                        self.settings.pmap.get(key), meta_dict[key]
+                    )
             meta_dict = new_dict
         self._convert_formats(meta_dict)
 
@@ -129,7 +139,7 @@ class MetadataSMHI(XLSXmeta):
 
 
 class MetadataTxtSMHI(TXTmeta):
-    """Reader for text file oriented metadata according to SMHI datahost template."""
+    """Text reader for metadata according to SMHI datahost template."""
 
     def __init__(self, settings):
         """Initialize."""
@@ -156,8 +166,10 @@ class MasterSMHI(SeaBird):
     def _convert_formats(self, meta_dict, filename=None):
         """Set and/or convert formats of metadata."""
         timestamp = self._get_datetime(meta_dict['SDATE'])
-        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(timestamp, '%Y-%m-%d')
-        meta_dict['STIME'] = utils.get_format_from_datetime_obj(timestamp, '%H:%M')
+        meta_dict['SDATE'] = utils.get_format_from_datetime_obj(
+            timestamp, '%Y-%m-%d')
+        meta_dict['STIME'] = utils.get_format_from_datetime_obj(
+            timestamp, '%H:%M')
 
         # meta_dict['SERNO'] = self._get_serno(meta_dict['SERNO'])
         meta_dict.setdefault('PROJ', 'BAS')
@@ -175,10 +187,12 @@ class MasterSMHI(SeaBird):
         meta_dict = {}
         for ident, sep in zip(['identifier_metadata', 'identifier_metadata_2'],
                               ['separator_metadata', 'separator_metadata_2']):
-            data = self.get_meta_dict(serie,
-                                      identifier=self.settings.datasets['cnv'].get(ident),
-                                      separator=self.settings.datasets['cnv'].get(sep),
-                                      keys=self.settings.datasets['cnv'].get('keys_metadata'))
+            data = self.get_meta_dict(
+                serie,
+                identifier=self.settings.datasets['cnv'].get(ident),
+                separator=self.settings.datasets['cnv'].get(sep),
+                keys=self.settings.datasets['cnv'].get('keys_metadata')
+            )
 
             meta_dict = utils.recursive_dict_update(meta_dict, data)
 
@@ -186,7 +200,9 @@ class MasterSMHI(SeaBird):
             new_dict = {}
             for key in meta_dict:
                 if meta_dict[key]:
-                    new_dict.setdefault(self.settings.pmap.get(key), meta_dict[key])
+                    new_dict.setdefault(
+                        self.settings.pmap.get(key), meta_dict[key]
+                    )
             meta_dict = new_dict
         self._convert_formats(meta_dict, filename=filename)
 
