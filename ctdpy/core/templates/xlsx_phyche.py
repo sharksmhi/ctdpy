@@ -11,7 +11,7 @@ from ctdpy.core.templates.template import Template
 class PhyCheTemplateHandler(DataFrameHandler):
     """Excel template handler for physical and chemical data.
 
-     Discrete depths.
+    Discrete depths.
     """
 
     def __init__(self, settings):

@@ -223,12 +223,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                 ]
             ),
             'data': pd.Series(
-                [
-                    ''.join([
-                        self.writer['prefix_data_delimiter'],
-                        '=', '\ t'.replace(' ', '')
-                    ])
-                ]
+                [''.join([self.writer['prefix_data_delimiter'], '=', r'\t'])]
             )
         }  # noqa: W605
 
