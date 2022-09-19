@@ -5,6 +5,10 @@ Created on Thu Jul 05 13:47:52 2018
 @author: a002028
 """
 import pandas as pd
+import logging
+
+
+logger = logging.getLogger(__file__)
 
 
 class AttributeDict(dict):
@@ -76,10 +80,13 @@ class AttributeDict(dict):
 
     def get(self, key):
         """Get attribute from self using key."""
+        logger.info(f'{key=}')
         try:
+            logger.debug(f'try getting attribute: {key} -> {getattr(self, key)}')
             return getattr(self, key)
         except AttributeError:
             try:
+                logger.debug(f'try getting attribute (lower): {key.lower()} -> {getattr(self, key)}')
                 return getattr(self, key.lower())
             except Exception:
                 if '[' in key:
@@ -87,10 +94,10 @@ class AttributeDict(dict):
                         key = key.split('[')[0].strip()
                         return getattr(self, key.lower())
                     except Exception:
-                        # print('No mapping found for key: ' + key)
+                        logger.warning(f'No mapping found for key ([): {key}')
                         return key
                 else:
-                    # print('No mapping found for key: ' + key)
+                    logger.warning(f'No mapping found for key: {key}')
                     return key
 
     def get_list(self, key_list):

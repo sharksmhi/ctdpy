@@ -10,6 +10,9 @@ from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
 from ctdpy.core.writers.txt_writer import TxtWriter
 from ctdpy.core import utils
+import logging
+
+logger = logging.getLogger(__file__)
 
 
 class StandardCTDWriter(SeriesHandler, DataFrameHandler):
@@ -442,6 +445,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         data_params = set(
             self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values
         )
+        logger.info(f'{data_params=}')
         for param in self.writer['standard_parameter_order']:
             if param in data_params:
                 check_set.add(param)
