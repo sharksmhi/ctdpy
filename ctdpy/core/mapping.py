@@ -7,7 +7,6 @@ Created on Thu Jul 05 13:47:52 2018
 import pandas as pd
 import logging
 
-
 logger = logging.getLogger(__file__)
 
 
@@ -82,11 +81,14 @@ class AttributeDict(dict):
         """Get attribute from self using key."""
         logger.info(f'{key=}')
         try:
-            logger.debug(f'try getting attribute: {key} -> {getattr(self, key)}')
+            logger.debug(
+                f'try getting attribute: {key} -> {getattr(self, key)}')
             return getattr(self, key)
         except AttributeError:
             try:
-                logger.debug(f'try getting attribute (lower): {key.lower()} -> {getattr(self, key)}')
+                logger.debug(
+                    f'try getting attribute (lower): '
+                    f'{key.lower()} -> {getattr(self, key)}')
                 return getattr(self, key.lower())
             except Exception:
                 if '[' in key:
