@@ -9,7 +9,10 @@ reader:
 file_types:
     masterctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.MasterSMHI ''
-        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d}{shipc:2s}_{cruise:2s}_{serno:4d}.cnv']
+        file_patterns: ['{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d
+        }{shipc:2s}_{cruise:2s}_{serno:4d}.cnv',
+                        '{sensor_id:5s}_{sensor_serial_number:4s}_{visit_date:%Y%m%d}_{sample_time:%H%M}_{cntry:2d
+                        }{shipc:2s}_{cruise:2s}_{serno:4d}_TEST.cnv']
 #        file_suffix: '.cnv'
     rawctd:
         file_reader: !!python/name:ctdpy.core.readers.smhi.SeaBirdSMHI ''
