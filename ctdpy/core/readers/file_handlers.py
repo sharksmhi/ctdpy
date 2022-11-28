@@ -51,6 +51,7 @@ class BaseFileHandler(six.with_metaclass(ABCMeta, object)):
         # FIXME Perhaps we need to check aginst .__class__.__name__
         #  attributes in order to exclude child class attributes..
         # FIXME if so: use self.class_methods
+        print(f'get_property_value: {key=}')
         return getattr(self, key.lower(), '')
 
     @property

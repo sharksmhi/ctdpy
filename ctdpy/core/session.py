@@ -78,7 +78,7 @@ class Session:
         if add_low_resolution_data:
             raise FutureWarning(
                 'The functionality of ctdpy.core.session.Session.read('
-                'add_low_resolution_data=True)will be '
+                'add_low_resolution_data=True) will be '
                 'moved elsewhere in the future.')
         datasets = self._read_datasets(add_merged_data, add_low_resolution_data)
         return datasets
@@ -138,6 +138,7 @@ class Session:
         # TODO Redo and move to utils.py or __init__.py
         reader_instances = {}
         for dset, dicty in self.settings.readers[reader]['datasets'].items():
+            print(f'{dset=}   :   {dicty=}')
             file_type = self.settings.readers[reader]['file_types'][
                 dicty['file_type']]
             filenames_matched = self._get_filenames_matched(
@@ -218,7 +219,6 @@ class Session:
         """
         if save_path:
             self.settings.update_export_path(save_path)
-
         writer = self.load_writer(writer)
         writer.write(datasets, **writer_kwargs)
         if return_data_path:

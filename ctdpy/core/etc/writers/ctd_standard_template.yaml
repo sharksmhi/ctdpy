@@ -41,12 +41,10 @@ writer:
         - STATION
         - LATITUDE_DD
         - LONGITUDE_DD
-        - COMNT_SAMP
-        - SCAN_BIN_CTD
     standard_parameter_order:
-        - DEPH
         - PRES_CTD
         - PRES2_CTD
+        - DEPH
         - TEMP_CTD
         - TEMP2_CTD
         - SALT_CTD
@@ -69,3 +67,8 @@ writer:
         - ALTM_CTD
         - DESC_RATE_CTD
         - PUMP_CTD
+    ending_parameters:
+        - SCAN_BIN_CTD
+        - SCAN_CTD
+    ending_parameters_no_qv:
+        - COMNT_SAMP

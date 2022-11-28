@@ -47,6 +47,10 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             keep_original_file_names (bool): False or True
             collection_folder (bool):
         """
+        print('='*50)
+        print(f'{keep_original_file_names=}')
+        print(f'{self.std_format=}')
+        print(f'{collection_folder=}')
         self.collection_folder = collection_folder
         self._check_dataset_format(datasets)
         if self.std_format:
@@ -372,15 +376,51 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             df: data
             separator (str): separator to separate row values
         """
+        df.columns = self._get_column_names_to_odv_standard(df.columns)
         out_info = [separator.join(df.columns)]
         out_info.extend(df.apply(lambda x: separator.join(x), axis=1).to_list())
         out_info = self.get_series_object(out_info)
         return out_info
 
+    def _get_column_names_to_odv_standard(self, columns):
+        mapp_dict = {}
+        try:
+            mapp_dict = self._get_header_mapping_dict()
+        except:
+            pass
+        col_to_colunit = self._get_unit_mapped_column_names(columns)
+        print(f'{col_to_colunit}')
+        new_columns_names = []
+        for col in columns:
+            if col == 'COMNT_SAMP':
+                new_columns_names.append('COMNT_SAMP:TEXT')
+                continue
+            if not col.startswith(('Q_', 'Q0_')):
+                new_columns_names.append(col)
+                continue
+            _, par = col.split('_', 1)
+            if col.startswith('Q_'):
+                new_columns_names.append(f'QV:SMHI:{mapp_dict.get(par, col_to_colunit.get(par, par))}')
+            elif col.startswith('Q0_'):
+                new_columns_names.append(f'QV:SMHI:Q0_{par}')
+        return new_columns_names
+
+    @staticmethod
+    def _get_unit_mapped_column_names(columns):
+        mapping = {}
+        for col in columns:
+            if col.startswith(('Q_', 'Q0_')):
+                continue
+            if '[' not in col:
+                continue
+            par, unit = col.split(' ', 1)
+            mapping[par] = col
+        return mapping
+
     def _get_data_columns(self, data, metadata):
         """Rename columns of dataframe.
 
-        Merge column data with extended metadata
+        Merge column data with extended metadatas
         (multiply selected metadata fields to "data"-column length).
 
         Args:
@@ -440,27 +480,82 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         Args:
             qc0 (bool): True / False. If flag "QC-0" should be included.
         """
+
+        def add_param(par, check_data=True):
+            if check_data and param not in data_params:
+                return
+            if par in check_set:
+                return
+            par = self.settings.pmap.get(par)
+            print(f'add_param: {par=}')
+            check_set.add(param)
+            outlist.append(param)
+            if qc0:
+                outlist.append('Q0_' + par)
+                # outlist.append(f'QV:SMHI:Q0_{par}')
+            outlist.append('Q_' + par)
+            # outlist.append(f'QV:SMHI:{mapp_dict.get(par)}')
+
         outlist = []
         check_set = set(self.writer['standard_data_header'])  # metadata header
-        data_params = set(
-            self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values
-        )
+        data_params = set(self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values)
+        ending_params = self.writer['ending_parameters']
+
+        param_list = list(self.writer['standard_parameter_order'])
+        for par in data_params:
+            if par in param_list:
+                continue
+            if par in ending_params:
+                continue
+            param_list.append(par)
+        param_list.extend(ending_params)
+
         logger.info(f'{data_params=}')
-        for param in self.writer['standard_parameter_order']:
-            if param in data_params:
-                check_set.add(param)
-                outlist.append(param)
-                if qc0:
-                    outlist.append('Q0_' + param)
-                outlist.append('Q_' + param)
-        for param in data_params:
-            param = self.settings.pmap.get(param)
-            if param not in check_set:
-                check_set.add(param)
-                outlist.append(param)
-                if qc0:
-                    outlist.append('Q0_' + param)
-                outlist.append('Q_' + param)
+        mapp_dict = self._get_header_mapping_dict()
+
+        for param in param_list:
+            add_param(param)
+        for param in self.writer['ending_parameters_no_qv']:
+            outlist.append(param)
+
+        # for param in self.writer['standard_parameter_order']:
+        #     # print(f'==== {param=}')
+        #     # print(f'===- {param=}')
+        #     # print(f'===+ {(param not in data_params)=}')
+        #     add_param(param)
+        #     # check_set.add(param)
+        #     # outlist.append(param)
+        #     # add_param(param)
+        #     # if qc0:
+        #     #     # outlist.append('Q0_' + param)
+        #     #     outlist.append(f'QV:SMHI:Q0_{param}')
+        #     # # outlist.append('Q_' + param)
+        #     # outlist.append(f'QV:SMHI:{mapp_dict.get(param)}')
+        # for param in data_params:
+        #     add_param(param)
+        # for param in self.writer['ending_parameters_no_qv']:
+        #     outlist.append(param)
+
+        # for param in ending_params:
+        #     add_param(param)
+        #     # check_set.add(param)
+        #     # outlist.append(param)
+        #     # _add_qv(param)
+        #     # if qc0:
+        #     #     # outlist.append('Q0_' + param)
+        #     #     outlist.append(f'QV:SMHI:Q0_{param}')
+        #     # # outlist.append('Q_' + param)
+        #     # outlist.append(f'QV:SMHI:{mapp_dict.get(param)}')
+        # for param in self.writer['ending_parameters_no_qv']:
+        #     outlist.append(param)
+        #     # check_set.add(param)
+        #     # outlist.append(param)
+        #     # if qc0:
+        #     #     # outlist.append('Q0_' + param)
+        #     #     outlist.append(f'QV:SMHI:Q0_{param}')
+        #     # # outlist.append('Q_' + param)
+        #     # outlist.append(f'QV:SMHI:{mapp_dict.get(param)}')
+
         return outlist
 
     def _get_writer_settings(self):

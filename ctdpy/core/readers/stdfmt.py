@@ -21,6 +21,7 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
         header = self.get_data_header(serie, dataset='txt', first_row=True)
         df = self.get_data_in_frame(serie, header, dataset='txt', splitter=True)
         self._adjust_dataframe(df)
+        self._make_odv_format_adjustment(df)
 
         return df
 
@@ -31,6 +32,26 @@ class BaseSTDFMT(BaseReader, CNVreader, SeriesHandler):
 
     def _adjust_dataframe(self, df):
         raise NotImplementedError
+
+    @staticmethod
+    def _make_odv_format_adjustment(df):
+        """Strips column names from DOV specific syntax"""
+        # QV:SMHI:Q0_SALT_CTD          QV:SMHI:SALT_CTD [psu]
+        columns = []
+        for col in df.columns:
+            if 'SMHI' in col:
+                par = col.split(':')[-1]
+                if not par.startswith('Q0_'):
+                    par = par.split()[0]
+                    par = f'Q_{par}'
+                columns.append(par)
+            elif col.endswith(':TEXT'):
+                par = col.split(':', 1)[0]
+                columns.append(par)
+            else:
+                columns.append(col)
+        print(f'{columns=}')
+        df.columns = columns
 
 
 class StandardFormatCTD(BaseSTDFMT):
