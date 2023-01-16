@@ -83,6 +83,8 @@ class AttributeDict(dict):
         try:
             logger.debug(
                 f'try getting attribute: {key} -> {getattr(self, key)}')
+            # if key == '77SN':
+            #     raise
             return getattr(self, key)
         except AttributeError:
             try:

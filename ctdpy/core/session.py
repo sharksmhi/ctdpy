@@ -101,10 +101,12 @@ class Session:
         # TODO Merge the different datasets?
         datasets = []
         for dataset in self.readers:
+            # print('======')
             data = self.readers[dataset]['reader'].get_data(
                 filenames=self.readers[dataset]['file_names'],
                 add_low_resolution_data=add_low_resolution_data
             )
+            # print((f'{data=}'))
 
             # TODO add_merged_data will ONLY merge profile data with meta data
             #  into PHYCHE-template. We should therefore do this elsewhere
@@ -114,12 +116,16 @@ class Session:
                 )
 
             datasets.append(data)
+        # raise
 
         return datasets
 
     @staticmethod
     def _get_filenames_matched(filenames, file_type):
         """Get matching filenames."""
+        print(f'{filenames=}')
+        print(f'{file_type=}')
+        print()
         if file_type.get('file_patterns'):
             filenames_matched = match_filenames(
                 filenames, file_type['file_patterns']
@@ -148,6 +154,10 @@ class Session:
                 reader_instances[dset] = {}
                 reader_instances[dset]['file_names'] = filenames_matched
                 reader_instances[dset]['reader'] = self.load_reader(file_type)
+                # print(f'{filepaths[0]=}')
+                # print(f'{reader=}')
+                # print(f'{filenames_matched=}')
+                break
         return reader_instances
 
     def get_data_in_template(self, datasets, template=None, resolution='lores'):

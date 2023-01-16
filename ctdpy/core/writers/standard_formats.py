@@ -498,7 +498,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
         outlist = []
         check_set = set(self.writer['standard_data_header'])  # metadata header
-        data_params = set(self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values)
+        data_params = sorted(set(self.df_sensorinfo.loc[self.sensorinfo_boolean, 'PARAM'].values))
         ending_params = self.writer['ending_parameters']
 
         param_list = list(self.writer['standard_parameter_order'])
@@ -696,6 +696,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         sep = self.writer['separator_data']
         for key, item in datasets[0].items():
             data_series = self._get_data_serie(item['data'], separator=sep)
+            print(f"{type(item['metadata'])=}")
+            print(f"{item['metadata']=}")
             data_series = self._append_information(
                 item['metadata'], data_series
             )
