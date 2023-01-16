@@ -157,7 +157,7 @@ class Session:
                 # print(f'{filepaths[0]=}')
                 # print(f'{reader=}')
                 # print(f'{filenames_matched=}')
-                break
+                # break
         return reader_instances
 
     def get_data_in_template(self, datasets, template=None, resolution='lores'):
