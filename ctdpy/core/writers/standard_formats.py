@@ -47,10 +47,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             keep_original_file_names (bool): False or True
             collection_folder (bool):
         """
-        print('='*50)
-        print(f'{keep_original_file_names=}')
-        print(f'{self.std_format=}')
-        print(f'{collection_folder=}')
+        self.encoding = self.writer['encoding']
         self.collection_folder = collection_folder
         self._check_dataset_format(datasets)
         if self.std_format:
@@ -83,6 +80,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                         self.template_format,
                         self.delimiters['meta'],
                         self.delimiters['data'],
+                        self.encoding_str,
                         metadata,
                         self.sensorinfo[item['metadata'].get(
                             'INSTRUMENT_SERIE')],
@@ -144,7 +142,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
     def _write(self, fid, data_series, **kwargs):
         """Write CTD-cast text file according to standard format to file."""
         save_path = self._get_save_path(fid, **kwargs)
-        self.txt_writer.write_with_numpy(data=data_series, save_path=save_path)
+        self.txt_writer.write_with_numpy(data=data_series, save_path=save_path, encoding=self.encoding)
 
     def _add_new_information_to_metadata(self):
         """Add information to metadata.
@@ -194,6 +192,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         """
         # TODO should be able to handle multiple metadatasets?
         #  (.xlsx delivery files)
+        self.encoding_str = self._get_encoding()
         self.delimiters = self._get_delimiters()
         self.df_metadata = self._get_reduced_dataframe(meta.get('metadata'))
         self.delivery_note = self._get_delivery_note(meta.get('delivery_note'))
@@ -213,6 +212,11 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         # TODO adjust reader, get format from tamplate ('Förklaring').. ö..
         return pd.Series([''.join([
             self.writer['prefix_format'], '=', self.delivery_note['DTYPE']
+        ])])
+
+    def _get_encoding(self):
+        return pd.Series([''.join([
+            self.writer['prefix_encoding'], '=', self.encoding
         ])])
 
     def _get_delimiters(self):
@@ -389,7 +393,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         except:
             pass
         col_to_colunit = self._get_unit_mapped_column_names(columns)
-        print(f'{col_to_colunit}')
         new_columns_names = []
         for col in columns:
             if col == 'COMNT_SAMP':
@@ -447,6 +450,7 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         df = pd.DataFrame(data=dictionary, columns=header).fillna('')
         mapp_dict = self._get_header_mapping_dict()
         df = self._rename_columns_of_dataframe(df, mapp_dict)
+        # raise
 
         return df
 
@@ -487,7 +491,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
             if par in check_set:
                 return
             par = self.settings.pmap.get(par)
-            print(f'add_param: {par=}')
             check_set.add(param)
             outlist.append(param)
             if qc0:
@@ -696,8 +699,6 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
         sep = self.writer['separator_data']
         for key, item in datasets[0].items():
             data_series = self._get_data_serie(item['data'], separator=sep)
-            print(f"{type(item['metadata'])=}")
-            print(f"{item['metadata']=}")
             data_series = self._append_information(
                 item['metadata'], data_series
             )

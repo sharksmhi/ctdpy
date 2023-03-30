@@ -44,7 +44,7 @@ class TxtWriter:
         )
 
     @staticmethod
-    def write_with_numpy(data=None, save_path=None, fmt='%s'):
+    def write_with_numpy(data=None, save_path=None, fmt='%s', **kwargs):
         """Write numpy arrays or pd.Series to file.
 
         Args:
@@ -52,7 +52,8 @@ class TxtWriter:
             save_path (str): complete path to file
             fmt: format of file eg. '%s', '%f'
         """
-        thread_process(np.savetxt, save_path, data, fmt=fmt)
+        thread_process(np.savetxt, save_path, data, fmt=fmt, **kwargs)
+        # thread_process(np.savetxt, save_path, data, fmt=fmt)
 
     @staticmethod
     def write_with_python(data=None, save_path=None):
