@@ -7,7 +7,6 @@ Created on Thu Jul 05 14:23:22 2018
 import os
 from ctdpy.core import readers, mapping
 
-
 class Settings:
     """Settings class for ctdpy."""
 
