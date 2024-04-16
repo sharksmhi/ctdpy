@@ -5,6 +5,8 @@ Created on Tue Jul 10 14:46:21 2018
 @author: a002028
 """
 import os
+import pathlib
+
 import numpy as np
 import pandas as pd
 from decimal import Decimal, ROUND_HALF_UP
@@ -17,10 +19,10 @@ import inspect
 from threading import Thread
 
 
-def check_path(path):
-    """Create fodler if path doesn´t exists."""
-    if not os.path.exists(path):
-        os.makedirs(path)
+def check_path(path: pathlib.Path):
+    """Create folder if path does not exist."""
+    if not path.suffix:
+        path.mkdir(parents=True, exist_ok=True)
 
 
 def convert_string_to_datetime_obj(x, fmt):
@@ -38,11 +40,16 @@ def copyfile(src, dst):
 
 def copytree(src, dst, symlinks=False, ignore=None, file_paths=None):
     """Copy folder tree."""
-    items = file_paths or (os.path.join(src, item) for item in os.listdir(src))
+    if file_paths:
+        items = [pathlib.Path(path) for path in file_paths]
+    else:
+        items = list(pathlib.Path(src).iterdir())
+    # items = file_paths or (os.path.join(src, item) for item in os.listdir(src))
 
     for item in items:
-        d = os.path.join(dst, os.path.basename(item))
-        if '.' not in item[-5:-2]:
+        d = pathlib.Path(dst, item.name)
+        # d = os.path.join(dst, os.path.basename(item))
+        if '.' not in str(item)[-5:-2]:
             # so, rather then using os.path.isdir(s) we do a string check to
             # conclude if its a directory or a file that we´re trying to copy.
             # Why?! Because item might be a directory on a SLOooW file server..
@@ -61,11 +68,11 @@ def create_directory_structure(dictionary, base_path):
             if isinstance(direc, str):
                 if '.' not in direc:
                     create_directory_structure(
-                        dictionary[direc], os.path.join(base_path, direc)
+                        dictionary[direc], pathlib.Path(base_path, direc)
                     )
             elif isinstance(direc, dict):
                 create_directory_structure(
-                    dictionary[direc], os.path.join(base_path, direc)
+                    dictionary[direc], pathlib.Path(base_path, direc)
                 )
     else:
         os.makedirs(base_path)
@@ -131,16 +138,16 @@ def generate_filepaths(directory, pattern='', not_pattern='DUMMY_PATTERN',
                 if any(pattern_list):
                     for pat in pattern_list:
                         if pat in f:
-                            yield os.path.abspath(os.path.join(path, f))
+                            yield pathlib.Path(path, f).resolve()
                 elif any(not_pattern_list):
                     include = True
                     for pat in not_pattern_list:
                         if pat in f:
                             include = False
                     if include:
-                        yield os.path.abspath(os.path.join(path, f))
+                        yield pathlib.Path(path, f).resolve()
                 else:
-                    yield os.path.abspath(os.path.join(path, f))
+                    yield pathlib.Path(path, f).resolve()
 
 
 def generate_strings_based_on_suffix(dictionary, suffix):
