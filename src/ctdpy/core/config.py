@@ -6,6 +6,7 @@ Created on Thu Jul 05 14:23:22 2018
 """
 import os
 from ctdpy.core import readers, mapping
+import pathlib
 
 
 class Settings:
@@ -14,10 +15,17 @@ class Settings:
     def __init__(self):
         """Load all static files."""
         # TODO Handling of paths should be dealt with using pathlib instead.
-        self.dir_path = os.path.dirname(
-            os.path.realpath(__file__)).replace('\\core', '')
-        etc_path = '\\'.join([self.dir_path, 'core', 'etc', ''])
-        self.user = os.path.expanduser('~').split('\\')[-1]
+        self.dir_path = pathlib.Path(__file__).parent.resolve()
+        if self.dir_path.name == 'core':
+            self.dir_path = self.dir_path.parent
+        etc_path = self.dir_path / 'core' / 'etc'
+
+        # self.dir_path = os.path.dirname(
+        #     os.path.realpath(__file__)).replace('\\core', '')
+        # etc_path = '\\'.join([self.dir_path, 'core', 'etc', ''])
+        self.user = pathlib.Path.home().name
+        # self.user = os.path.expanduser('~').split('\\')[-1]
+
         self._load_settings(etc_path)
         self._check_local_paths()
         self._setup_mapping_parameter()
@@ -37,13 +45,16 @@ class Settings:
     def update_export_path(self, new_path):
         """Update path to export directory."""
         if new_path:
-            if os.path.isdir(new_path):
+            new_path = pathlib.Path(new_path)
+            if new_path.exists() and new_path.is_dir():
+            # if os.path.isdir(new_path):
                 self.settings_paths['export_path'] = new_path
                 print('new export path: %s'
                       % self.settings_paths['export_path'])
             else:
                 try:
-                    os.makedirs(new_path)
+                    new_path.mkdir(parents=True, exist_ok=True)
+                    # os.makedirs(new_path)
                     self.settings_paths['export_path'] = new_path
                     print('new export path: %s'
                           % self.settings_paths['export_path'])
@@ -57,20 +68,25 @@ class Settings:
 
         It is an empty folder, and hence might need to be created.
         """
-        received_folder = os.path.join(
-            self.settings_paths['archive_structure_path'], 'received_data'
-        )
-        if not os.path.exists(received_folder):
-            os.makedirs(received_folder)
+        # received_folder = os.path.join(self.settings_paths['archive_structure_path'], 'received_data')
+        received_folder = pathlib.Path(self.settings_paths['archive_structure_path'], 'received_data')
+        received_folder.mkdir(parents=True, exist_ok=True)
+        # if not os.path.exists(received_folder):
+        #     os.makedirs(received_folder)
 
     def _check_local_paths(self):
         """Check paths in settings_paths."""
         # FIXME Näh, så här kan vi inte ha det..
 
-        for path in self.settings_paths:
-            if not os.path.exists(self.settings_paths.get(path)) and \
-                    '.' not in self.settings_paths.get(path):
-                os.makedirs(self.settings_paths.get(path))
+        for name, path in self.settings_paths.items():
+            path = pathlib.Path(path)
+            if not path.suffix:
+                path.mkdir(parents=True, exist_ok=True)
+
+        # for path in self.settings_paths:
+        #     if not os.path.exists(self.settings_paths.get(path)) and \
+        #             '.' not in self.settings_paths.get(path):
+        #         os.makedirs(self.settings_paths.get(path))
 
     def _check_for_paths(self, dictionary):
         """Save pathways from dictionary.
@@ -85,9 +101,10 @@ class Settings:
             if isinstance(value, dict):
                 self._check_for_paths(value)
             elif 'path' in item:
-                dictionary[item] = ''.join([self.dir_path, value])
+                dictionary[item] = pathlib.Path(self.dir_path, value)
+                # dictionary[item] = ''.join([self.dir_path, value])
 
-    def _load_settings(self, etc_path):
+    def _load_settings(self, etc_path: pathlib.Path):
         """Load all settings.
 
         Args:
@@ -98,14 +115,16 @@ class Settings:
         self.set_attributes(self, **settings)
         subdirectories = self.get_subdirectories(etc_path)
 
-        for subdir in subdirectories:
-            subdir_path = '/'.join([etc_path, subdir, ''])
+        # for subdir in subdirectories:
+        for subdir_path in subdirectories:
+            # subdir_path = '/'.join([etc_path, subdir, ''])
             paths = self.get_filepaths_from_directory(subdir_path)
             sub_settings = readers.YAMLreader().load_yaml(
                 paths, file_names_as_key=True, return_config=True
             )
             self._check_for_paths(sub_settings)
-            self._set_sub_object(subdir, sub_settings)
+            self._set_sub_object(subdir_path.name, sub_settings)
+            # self._set_sub_object(subdir, sub_settings)
 
     def set_reader(self, reader):
         """Set attributes for the given reader."""
@@ -162,16 +181,19 @@ class Settings:
         for path, _, fids in os.walk(directory):
             for f in fids:
                 if pattern in f:
-                    yield os.path.abspath(os.path.join(path, f))
+                    yield pathlib.Path(path, f).resolve()
+                    # yield os.path.abspath(os.path.join(path, f))
 
     @staticmethod
-    def get_subdirectories(directory):
+    def get_subdirectories(directory: pathlib.Path) -> list[pathlib.Path]:
         """Return list of existing directories (not files)."""
-        return [subdir for subdir in os.listdir(directory)
-                if os.path.isdir(os.path.join(directory, subdir))]
+        return [path for path in directory.iterdir() if path.is_dir()]
+        # return [subdir for subdir in os.listdir(directory)
+        #         if os.path.isdir(os.path.join(directory, subdir))]
 
     @staticmethod
-    def get_filepaths_from_directory(directory):
+    def get_filepaths_from_directory(directory: pathlib.Path) -> list[pathlib.Path]:
         """Return list of files in directory (not sub directories)."""
-        return [''.join([directory, fid]) for fid in os.listdir(directory)
-                if not os.path.isdir(directory + fid)]
+        return [path for path in directory.iterdir() if path.is_file()]
+        # return [''.join([directory, fid]) for fid in os.listdir(directory)
+        #         if not os.path.isdir(directory + fid)]

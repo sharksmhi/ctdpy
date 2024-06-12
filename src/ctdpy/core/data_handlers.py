@@ -312,8 +312,12 @@ class SeriesHandler(BaseFileHandler):
         if isinstance(obj, pd.DataFrame):
             # Not really necessary if you load file with argument
             # header=None pd.read_csv(..., header=None)
+            print()
+            print(f'{obj.keys()[0]=}')
+            print(f'{obj[obj.keys()[0]]=}')
             s = pd.Series(obj.keys()[0])
-            return s.append(obj[obj.keys()[0]], ignore_index=True)
+            return pd.concat([s, obj[obj.keys()[0]]], ignore_index=True)
+            # return s.append(obj[obj.keys()[0]], ignore_index=True)
         elif isinstance(obj, list):
             return pd.Series(obj)
 

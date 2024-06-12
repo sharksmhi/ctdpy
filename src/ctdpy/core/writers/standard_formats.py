@@ -5,6 +5,8 @@ Created on Fri Oct 26 17:00:35 2018
 @author: a002028
 """
 import os
+import pathlib
+
 import pandas as pd
 from ctdpy.core.data_handlers import DataFrameHandler
 from ctdpy.core.data_handlers import SeriesHandler
@@ -179,8 +181,9 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
 
     def _append_information(self, *args):
         """Append and return information as pd.Serie."""
-        out_serie = pd.Series([])
-        out_serie = out_serie.append([serie for serie in args if serie.any()])
+        # out_serie = pd.Series([])
+        # out_serie = out_serie.append([serie for serie in args if serie.any()])
+        out_serie = pd.concat([serie for serie in args if serie.any()])
         return out_serie
 
     def setup_metadata_information(self, meta):
@@ -626,9 +629,8 @@ class StandardCTDWriter(SeriesHandler, DataFrameHandler):
                             utils.get_datetime_now(fmt='%Y%m%d_%H%M%S')
         else:
             folder_prefix = ''
-        self.data_path = os.path.join(
-            self.settings.settings_paths.get('export_path'), folder_prefix
-        )
+        # self.data_path = os.path.join(self.settings.settings_paths.get('export_path'), folder_prefix)
+        self.data_path = pathlib.Path(self.settings.settings_paths.get('export_path'), folder_prefix)
 
     def _update_visit_info(self, metadata):
         """Update visit info properties of parent class."""
